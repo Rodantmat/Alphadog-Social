@@ -1,0 +1,33 @@
+name: fetch-clips
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Official post URL (NBA / team / league account)"
+        required: true
+      start:
+        description: "Start seconds"
+        default: "0"
+      length:
+        description: "Clip length seconds (3-6 recommended)"
+        default: "5"
+      credit:
+        description: "Credit handle, e.g. @nba"
+        required: true
+      tag:
+        description: "Short name, e.g. wemby_putback"
+        required: true
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -y && sudo apt-get install -y ffmpeg && pip install -U yt-dlp
+      - name: Download and trim
+        run: python scripts/fetch_clip.py "${{ inputs.url }}" "${{ inputs.start }}" "${{ inputs.length }}" "${{ inputs.credit }}" "${{ inputs.tag }}"
+      - name: Commit clip and manifest
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add clips && git commit -m "clip: ${{ inputs.tag }} (${{ inputs.credit }})" && git push
