@@ -1,0 +1,73 @@
+[
+  {
+    "source": "tiktok_nba_raptors_heat",
+    "url": "https://www.tiktok.com/@nba/video/7692627847864749342",
+    "ok": true,
+    "secs": 2.1,
+    "file": "clips/probe2/tiktok_nba_raptors_heat.mp4",
+    "info": "{\n    \"programs\": [\n\n    ],\n    \"streams\": [\n        {\n            \"codec_type\": \"video\",\n            \"width\": 1080,\n            \"height\": 1920\n        },\n        {\n            \"codec_type\": \"audio\"\n        }\n    ],\n    \"format\": {\n        \"duration\": \"5.005005\",\n        \"size\": \"2551185\"\n    }\n}\n"
+  },
+  {
+    "source": "tiktok_nba_kyrie",
+    "url": "https://www.tiktok.com/@nba/video/7689676638186933535",
+    "ok": true,
+    "secs": 1.6,
+    "file": "clips/probe2/tiktok_nba_kyrie.mp4",
+    "info": "{\n    \"programs\": [\n\n    ],\n    \"streams\": [\n        {\n            \"codec_type\": \"video\",\n            \"width\": 720,\n            \"height\": 1280\n        },\n        {\n            \"codec_type\": \"audio\"\n        }\n    ],\n    \"format\": {\n        \"duration\": \"5.000000\",\n        \"size\": \"1411058\"\n    }\n}\n"
+  },
+  {
+    "source": "youtube_tv",
+    "url": "https://www.youtube.com/watch?v=NZmml7nxVaI",
+    "ok": false,
+    "secs": 1.4,
+    "error": "[youtube] Extracting URL: https://www.youtube.com/watch?v=NZmml7nxVaI\n[youtube] NZmml7nxVaI: Downloading webpage\n[youtube] NZmml7nxVaI: Downloading tv client config\n[youtube] NZmml7nxVaI: Downloading player cbcfbf2f-main\n[youtube] NZmml7nxVaI: Downloading tv player API JSON\nERROR: [youtube] NZmml7nxVaI: Sign in to confirm you\u2019re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+  },
+  {
+    "source": "youtube_web_safari",
+    "url": "https://www.youtube.com/watch?v=NZmml7nxVaI",
+    "ok": false,
+    "secs": 1.5,
+    "error": "[youtube] Extracting URL: https://www.youtube.com/watch?v=NZmml7nxVaI\n[youtube] NZmml7nxVaI: Downloading webpage\n[youtube] NZmml7nxVaI: Downloading web safari client config\n[youtube] NZmml7nxVaI: Downloading web safari player API JSON\nERROR: [youtube] NZmml7nxVaI: Sign in to confirm you\u2019re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+  },
+  {
+    "source": "youtube_mweb",
+    "url": "https://www.youtube.com/watch?v=NZmml7nxVaI",
+    "ok": false,
+    "secs": 1.5,
+    "error": "[youtube] Extracting URL: https://www.youtube.com/watch?v=NZmml7nxVaI\n[youtube] NZmml7nxVaI: Downloading webpage\n[youtube] NZmml7nxVaI: Downloading mweb client config\n[youtube] NZmml7nxVaI: Downloading mweb player API JSON\nERROR: [youtube] NZmml7nxVaI: Sign in to confirm you\u2019re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+  },
+  {
+    "source": "youtube_android_vr",
+    "url": "https://www.youtube.com/watch?v=NZmml7nxVaI",
+    "ok": false,
+    "secs": 1.3,
+    "error": "[youtube] Extracting URL: https://www.youtube.com/watch?v=NZmml7nxVaI\n[youtube] NZmml7nxVaI: Downloading webpage\n[youtube] NZmml7nxVaI: Downloading android vr player API JSON\n[info] NZmml7nxVaI: Downloading 1 format(s): 18\nERROR: unable to download video data: HTTP Error 403: Forbidden\n"
+  },
+  {
+    "source": "nba_cdn_stats_headers",
+    "ok": false,
+    "steps": [
+      "cdn_pbp: FAIL <HTTPError 403: 'Forbidden'>",
+      "cdn_boxscore: FAIL <HTTPError 403: 'Forbidden'>",
+      "cdn_headshot: 200 222241B b'\\x89PNG\\r\\n\\x1a\\n\\x00\\x00\\x00\\rIHDR\\x00\\x00\\x04\\x10\\x00\\x00\\x02\\xf8\\x08\\x03\\x00\\x00\\x00\\xf5|\\xf4\\x17\\x00\\x00\\x03\\x00PLTE\\x00\\x00\\x00ZC;ZB:[C;u^S\\\\D;\\x85mbZB9[C:ze^[C:YA7[C9[C9ZB7\\xe8\\xe3\\xf0hPCYB5YA6\\x96\\x7fxiRFw`SX@4s\\\\PqZP\\xb7\\x9e\\x99\\xa5\\x8f\\x8a\\x89rf\\xe1\\xd2\\xd2}ie\\x9b\\x84x\\xea\\xda\\xd8\\x92{q\\x88qe\\x8exq\\xf3\\xe8\\xe7\\xf8\\xf0\\xef\\xf5\\xeb\\xe9\\xf8\\xf1\\xf0\\xb4\\x9a'",
+      "stats_pbpv3: FAIL TimeoutError('The read operation timed out')",
+      "stats_video: FAIL TimeoutError('The read operation timed out')"
+    ]
+  },
+  {
+    "source": "nbacom_top10_oct16",
+    "url": "https://www.nba.com/watch/video/top-10-plays-october-16-2026",
+    "ok": false,
+    "page_status": 403,
+    "title": "Access Denied",
+    "media_seen": []
+  },
+  {
+    "source": "nbacom_wemby",
+    "url": "https://www.nba.com/watch/video/victor-wembanyamas-best-guard-like-plays-of-the-season",
+    "ok": false,
+    "page_status": 403,
+    "title": "Access Denied",
+    "media_seen": []
+  }
+]
