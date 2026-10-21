@@ -13,11 +13,13 @@
      "url": "https://www.instagram.com/reel/DexSD4gSenE/", "topic": "Opening night top 5 plays (Thompson, LeBron, Wemby, Maxey, SGA)"},
     {"id": "story-2026-10-21-castle-one-shoe", "platform": "instagram", "type": "story", "posted": "2026-10-21 ~15:55 PT",
      "file": "story1_castle_one_shoe_v7.mp4", "music": "original audio (none added)", "topic": "Stephon Castle lost his shoe, kept guarding", "credit": "@nba"},
-    {"id": "reel-2026-10-21-pick-rui-under-reb", "platform": "instagram", "type": "reel", "posted": "pending (2026-10-21, before 19:40 PT)",
+    {"id": "reel-2026-10-21-pick-rui-under-reb", "platform": "instagram", "type": "reel", "posted": "2026-10-21 ~16:20 PT",
      "file": "pick_rui_under_reb.mp4", "music": "What You Waiting For? - Gwen Stefani",
-     "topic": "Pick of the day: Rui Hachimura UNDER 5.5 rebounds, LAC vs SAC", "pick": {"player": "Rui Hachimura", "prop": "rebounds", "line": 5.5, "side": "Under", "book": "PrizePicks standard", "alphadog_final_hp": 0.886, "result": null}}
+     "topic": "Pick of the day: Rui Hachimura UNDER 5.5 rebounds, LAC vs SAC", "pick": {"player": "Rui Hachimura", "prop": "rebounds", "line": 5.5, "side": "Under", "book": "PrizePicks standard", "alphadog_final_hp": 0.886, "result": null}},
+    {"id": "story-2026-10-21-jwill-vs-wemby", "platform": "instagram", "type": "story", "posted": "pending (~18:00 PT)",
+     "file": "story2_jwill_vs_wemby.mp4", "music": "original audio (none added)", "topic": "OKC-SAS scuffle: 3 Williamses vs Wemby, 4 techs", "credit": "@houseofhighlights"}
   ],
   "planned": [
-    {"type": "story", "count": 2, "date": "2026-10-21", "note": "small balloons over source captions only"}
+    {"type": "story", "count": 1, "date": "2026-10-21", "note": "story 3 of the day, small balloons over source captions only; candidate: De'Aaron Fox postgame on the flagrant (@bleacherreport) or LeBron pregame golf swing (@houseofhighlights)"}
   ]
 }
