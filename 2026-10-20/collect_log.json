@@ -1,0 +1,37 @@
+[
+  {
+    "acct": "nba",
+    "listed": 20,
+    "new_in_window": 20
+  },
+  {
+    "acct": "celtics",
+    "listed": 20,
+    "new_in_window": 4
+  },
+  {
+    "acct": "detroitpistons",
+    "listed": 20,
+    "new_in_window": 7
+  },
+  {
+    "acct": "sixers",
+    "listed": 20,
+    "new_in_window": 11
+  },
+  {
+    "acct": "nyknicks",
+    "listed": 20,
+    "new_in_window": 8
+  },
+  {
+    "acct": "okcthunder",
+    "listed": 20,
+    "new_in_window": 16
+  },
+  {
+    "acct": "spurs",
+    "listed": 20,
+    "new_in_window": 20
+  }
+]
