@@ -1,0 +1,32 @@
+[
+  {
+    "acct": "nbaonnbc",
+    "listed": 20,
+    "new_in_window": 20
+  },
+  {
+    "acct": "nbaonpeacock",
+    "listed": 0,
+    "new_in_window": 0
+  },
+  {
+    "acct": "houseofhighlights",
+    "listed": 20,
+    "new_in_window": 20
+  },
+  {
+    "acct": "bleacherreport",
+    "listed": 20,
+    "new_in_window": 20
+  },
+  {
+    "acct": "espn",
+    "listed": 20,
+    "new_in_window": 20
+  },
+  {
+    "acct": "sportscenter",
+    "listed": 3,
+    "new_in_window": 0
+  }
+]
