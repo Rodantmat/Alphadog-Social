@@ -1,0 +1,51 @@
+[
+  {
+    "source": "youtube_nba_latest",
+    "url": "https://www.youtube.com/@NBA/videos",
+    "ok": false,
+    "secs": 1.9,
+    "error": "[youtube:tab] Extracting URL: https://www.youtube.com/@NBA/videos\n[youtube:tab] @NBA/videos: Downloading webpage\n[download] Downloading playlist: NBA - Videos\n[youtube:tab] Playlist NBA - Videos: Downloading 1 items\n[download] Downloading item 1 of 1\n[youtube] Extracting URL: https://www.youtube.com/watch?v=l57uLaHad_E\n[youtube] l57uLaHad_E: Downloading webpage\n[youtube] l57uLaHad_E: Downloading visionos player API JSON\n[download] Finished downloading playlist: NBA - Videos\nERROR: [youtube] l57uLaHad_E: Sign in to confirm you\u2019re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+  },
+  {
+    "source": "youtube_bos_det",
+    "url": "https://www.youtube.com/watch?v=NZmml7nxVaI",
+    "ok": false,
+    "secs": 1.3,
+    "error": "[youtube] Extracting URL: https://www.youtube.com/watch?v=NZmml7nxVaI\n[youtube] NZmml7nxVaI: Downloading webpage\n[youtube] NZmml7nxVaI: Downloading visionos player API JSON\nERROR: [youtube] NZmml7nxVaI: Sign in to confirm you\u2019re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+  },
+  {
+    "source": "tiktok_nba_latest",
+    "url": "https://www.tiktok.com/@nba",
+    "ok": false,
+    "secs": 1.2,
+    "error": "[tiktok:user] Extracting URL: https://www.tiktok.com/@nba\n[tiktok:user] nba: Downloading user webpage\n[download] Downloading playlist: nba\n[tiktok:user] nba: Downloading page 1\n[tiktok:user] Playlist nba: Downloading 1 items\n[download] Finished downloading playlist: nba\nERROR: nba: Failed to parse JSON (caused by JSONDecodeError(\"Expecting value in '': line 1 column 1 (char 0)\")); please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U\n"
+  },
+  {
+    "source": "instagram_nba_reels",
+    "url": "https://www.instagram.com/nba/reels/",
+    "ok": false,
+    "secs": 0.8,
+    "error": "[generic] Extracting URL: https://www.instagram.com/nba/reels/\n[generic] reels: Downloading webpage\nERROR: [generic] reels: Unable to download webpage: HTTP Error 429: Too Many Requests (caused by <HTTPError 429: Too Many Requests>)\n"
+  },
+  {
+    "source": "x_nba_media",
+    "url": "https://x.com/NBA/media",
+    "ok": false,
+    "secs": 1.3,
+    "error": "[generic] Extracting URL: https://x.com/NBA/media\n[generic] media: Downloading webpage\n[redirect] Following redirect to https://x.com/i/jf/onboarding/web?redirect_after_login=%2FNBA%2Fmedia&mode=login\n[generic] Extracting URL: https://x.com/i/jf/onboarding/web?redirect_after_login=%2FNBA%2Fmedia&mode=login\n[generic] web?redirect_after_login=/NBA/media&mode=login: Downloading webpage\n[generic] web?redirect_after_login=/NBA/media&mode=login: Extracting information\nERROR: Unsupported URL: https://x.com/i/jf/onboarding/web?redirect_after_login=%2FNBA%2Fmedia&mode=login\n"
+  },
+  {
+    "source": "nbacom_watch_impersonate",
+    "url": "https://www.nba.com/watch/video/victor-wembanyamas-best-guard-like-plays-of-the-season",
+    "ok": false,
+    "secs": 35.7,
+    "error": "[nba:watch] Extracting URL: https://www.nba.com/watch/video/victor-wembanyamas-best-guard-like-plays-of-the-season\n[nba:watch] victor-wembanyamas-best-guard-like-plays-of-the-season: Downloading JSON metadata\nERROR: [nba:watch] victor-wembanyamas-best-guard-like-plays-of-the-season: Unable to download JSON metadata: HTTP Error 504: Gateway Time-out (caused by <HTTPError 504: Gateway Time-out>)\n"
+  },
+  {
+    "source": "nba_perplay",
+    "ok": false,
+    "steps": [
+      "cdn pbp failed: <HTTPError 403: 'Forbidden'>"
+    ]
+  }
+]
