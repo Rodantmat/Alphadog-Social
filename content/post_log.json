@@ -1,0 +1,23 @@
+{
+  "rules": {
+    "no_repeat_music": "Never reuse a song across any post, reel or story. Check music_used before suggesting a track.",
+    "timezone": "America/Los_Angeles"
+  },
+  "music_used": [
+    {"song": "STORM II", "artist": "Gener8ion & Yung Lean", "used_on": "reel-2026-10-21-opening-night-top5"},
+    {"song": "What You Waiting For?", "artist": "Gwen Stefani", "used_on": "reel-2026-10-21-pick-rui-under-reb"}
+  ],
+  "posts": [
+    {"id": "reel-2026-10-21-opening-night-top5", "platform": "instagram", "type": "reel", "posted": "2026-10-21 ~13:40 PT",
+     "file": "opening_night_top5_v3.mp4", "music": "STORM II - Gener8ion & Yung Lean",
+     "url": "https://www.instagram.com/reel/DexSD4gSenE/", "topic": "Opening night top 5 plays (Thompson, LeBron, Wemby, Maxey, SGA)"},
+    {"id": "story-2026-10-21-castle-one-shoe", "platform": "instagram", "type": "story", "posted": "2026-10-21 ~15:55 PT",
+     "file": "story1_castle_one_shoe_v7.mp4", "music": "original audio (none added)", "topic": "Stephon Castle lost his shoe, kept guarding", "credit": "@nba"},
+    {"id": "reel-2026-10-21-pick-rui-under-reb", "platform": "instagram", "type": "reel", "posted": "pending (2026-10-21, before 19:40 PT)",
+     "file": "pick_rui_under_reb.mp4", "music": "What You Waiting For? - Gwen Stefani",
+     "topic": "Pick of the day: Rui Hachimura UNDER 5.5 rebounds, LAC vs SAC", "pick": {"player": "Rui Hachimura", "prop": "rebounds", "line": 5.5, "side": "Under", "book": "PrizePicks standard", "alphadog_final_hp": 0.886, "result": null}}
+  ],
+  "planned": [
+    {"type": "story", "count": 2, "date": "2026-10-21", "note": "small balloons over source captions only"}
+  ]
+}
