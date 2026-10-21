@@ -1,0 +1,25 @@
+name: probe-sources2
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -y && sudo apt-get install -y ffmpeg
+      - run: pip install -U "yt-dlp[default,curl-cffi]" playwright && python -m playwright install --with-deps chromium
+      - name: Probe sources
+        run: python scripts/probe_sources2.py
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add clips/probe2 || true
+          git commit -m "probe2: footage source results" || true
+          git push || true
