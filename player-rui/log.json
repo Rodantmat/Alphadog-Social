@@ -1,0 +1,20 @@
+[
+  {
+    "acct": "laclippers",
+    "listed": 200,
+    "matches": 6,
+    "err": ""
+  },
+  {
+    "acct": "lakers",
+    "listed": 200,
+    "matches": 3,
+    "err": ""
+  },
+  {
+    "acct": "nba",
+    "listed": 200,
+    "matches": 0,
+    "err": ""
+  }
+]
