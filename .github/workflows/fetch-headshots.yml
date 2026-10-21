@@ -1,0 +1,24 @@
+name: fetch-headshots
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: "Space-separated NBA player ids"
+        required: true
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download headshots
+        run: |
+          mkdir -p assets/headshots
+          for id in ${{ inputs.ids }}; do
+            curl -sS -f -A "Mozilla/5.0" -o assets/headshots/$id.png "https://cdn.nba.com/headshots/nba/latest/1040x760/$id.png" && echo "ok $id" || echo "fail $id"
+          done
+      - name: Commit
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add assets/headshots && git commit -m "headshots" && git push || true
