@@ -1,6 +1,6 @@
 """Collect TikTok videos from hashtag pages and/or accounts, filtered by caption regex, most-viewed first.
 Usage: python collect_tiktok.py <regex> <list_per_source> <max_dl> <out_dir> src1 src2 ...
-  src = "#tag" (hashtag page) or "@handle" (account)
+  src = "tag:NAME" (hashtag page) or "@handle" / "handle" (account)
 Keeps native aspect (no padding), <=60 s, metadata stripped; index.json has credit/url/title/views."""
 import json, os, re, subprocess, sys, time
 
@@ -14,7 +14,10 @@ def sh(cmd, timeout=300):
         return 124, "", "timeout"
 
 for s in srcs:
-    url = f"https://www.tiktok.com/tag/{s[1:]}" if s.startswith("#") else f"https://www.tiktok.com/@{s.lstrip('@')}"
+    if s.startswith("tag:") or s.startswith("#"):
+        url = f"https://www.tiktok.com/tag/{s.split(':', 1)[-1].lstrip('#')}"
+    else:
+        url = f"https://www.tiktok.com/@{s.lstrip('@')}"
     rc, so, se = sh(["yt-dlp", "--flat-playlist", "--playlist-items", f"1:{per}", "--impersonate", "chrome",
                      "--print", "%(id)s|%(uploader)s|%(view_count)s|%(duration)s|%(webpage_url)s|%(title).250s", url], 900)
     got = [l.split("|", 5) for l in so.splitlines() if l.count("|") >= 5]
@@ -25,7 +28,7 @@ for s in srcs:
         if vid not in rows:
             rows[vid] = {"id": vid, "uploader": up, "views": int(views) if views.isdigit() else 0, "dur": dur, "url": wurl,
                          "title": title, "src": s}
-    log.append({"src": s, "listed": len(got), "matches": m, "err": se[-300:] if not got else ""}); print(log[-1], flush=True)
+    log.append({"src": s, "url": url, "listed": len(got), "matches": m, "err": se[-300:] if not got else ""}); print(log[-1], flush=True)
 
 cands = sorted(rows.values(), key=lambda r: -r["views"])
 idx = []
