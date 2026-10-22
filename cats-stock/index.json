@@ -1,0 +1,855 @@
+{
+ "queries": [
+  "sleeping cat",
+  "sleepy cat",
+  "cat yawning",
+  "kitten sleeping",
+  "cat sleep",
+  "lazy cat",
+  "cat"
+ ],
+ "pages": {
+  "pixabay:sleeping cat": {
+   "status": 403,
+   "cands": 0
+  },
+  "mixkit:sleeping cat": {
+   "status": 200,
+   "cands": 0
+  },
+  "coverr:sleeping cat": {
+   "status": 200,
+   "cands": 243
+  },
+  "pixabay:sleepy cat": {
+   "status": 403,
+   "cands": 0
+  },
+  "mixkit:sleepy cat": {
+   "status": 200,
+   "cands": 0
+  },
+  "coverr:sleepy cat": {
+   "status": 200,
+   "cands": 239
+  },
+  "pixabay:cat yawning": {
+   "status": 403,
+   "cands": 0
+  },
+  "mixkit:cat yawning": {
+   "status": 200,
+   "cands": 0
+  },
+  "coverr:cat yawning": {
+   "status": 200,
+   "cands": 115
+  },
+  "pixabay:kitten sleeping": {
+   "status": 403,
+   "cands": 0
+  },
+  "mixkit:kitten sleeping": {
+   "status": 200,
+   "cands": 0
+  },
+  "coverr:kitten sleeping": {
+   "status": 200,
+   "cands": 227
+  },
+  "pixabay:cat sleep": {
+   "status": 403,
+   "cands": 0
+  },
+  "mixkit:cat sleep": {
+   "status": 200,
+   "cands": 0
+  },
+  "coverr:cat sleep": {
+   "status": 200,
+   "cands": 239
+  },
+  "pixabay:lazy cat": {
+   "status": 403,
+   "cands": 0
+  },
+  "mixkit:lazy cat": {
+   "status": 200,
+   "cands": 0
+  },
+  "coverr:lazy cat": {
+   "status": 200,
+   "cands": 251
+  },
+  "pixabay:cat": {
+   "status": 403,
+   "cands": 0
+  },
+  "mixkit:cat": {
+   "status": 200,
+   "cands": 0
+  },
+  "coverr:cat": {
+   "status": 200,
+   "cands": 231
+  }
+ },
+ "clips": [
+  {
+   "file": "coverr_ce150abb93.mp4",
+   "site": "coverr",
+   "query": "sleeping cat",
+   "src": "https://cdn.coverr.co/videos/coverr-black-bug-crawling-2704/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 14.533333
+  },
+  {
+   "file": "coverr_1c9c79fa56.mp4",
+   "site": "coverr",
+   "query": "sleeping cat",
+   "src": "https://cdn.coverr.co/videos/coverr-woman-doing-the-cat-yoga-pose-5933/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 27.485792
+  },
+  {
+   "file": "coverr_65dbc0d91d.mp4",
+   "site": "coverr",
+   "query": "sleeping cat",
+   "src": "https://ak.picdn.net/shutterstock/videos/34798222/preview/stock-footage-cute-muslim-children-come-running-to-give-surprise-gifts-to-their-parents-on-eid-holiday.mp4",
+   "w": 596,
+   "h": 336,
+   "dur": 6.733991
+  },
+  {
+   "file": "coverr_70415d7dd7.mp4",
+   "site": "coverr",
+   "query": "sleeping cat",
+   "src": "https://ak.picdn.net/shutterstock/videos/12977543/preview/stock-footage-christmas-homemade-gingerbread-cookies-hot-chocolate-and-candles-on-wooden-table.mp4",
+   "w": 596,
+   "h": 336,
+   "dur": 8.7087
+  },
+  {
+   "file": "coverr_d5b7bc434d.mp4",
+   "site": "coverr",
+   "query": "sleeping cat",
+   "src": "https://cdn.coverr.co/videos/coverr-a-gorgeous-black-cat-sitting-on-a-carpet-3575/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 12.303958
+  },
+  {
+   "file": "coverr_9353dfe80f.mp4",
+   "site": "coverr",
+   "query": "sleeping cat",
+   "src": "https://cdn.coverr.co/videos/coverr-a-red-cat-in-a-fabric-pet-house-6867/360p.mp4",
+   "w": 640,
+   "h": 360,
+   "dur": 12.303958
+  },
+  {
+   "file": "coverr_b1e433a1ac.mp4",
+   "site": "coverr",
+   "query": "sleeping cat",
+   "src": "https://cdn.coverr.co/videos/coverr-cat-eating-grass-1749/360p.mp4",
+   "w": 640,
+   "h": 360,
+   "dur": 26.791667
+  },
+  {
+   "file": "coverr_04248b23bd.mp4",
+   "site": "coverr",
+   "query": "sleeping cat",
+   "src": "https://ak.picdn.net/shutterstock/videos/1016752708/preview/stock-footage-much-money-earned-capital-wealth-in-the-bank-the-depository-of-gold-coins-treasure-hoard.mp4",
+   "w": 596,
+   "h": 336,
+   "dur": 12.96
+  },
+  {
+   "file": "coverr_60c69adb08.mp4",
+   "site": "coverr",
+   "query": "sleeping cat",
+   "src": "https://cdn.coverr.co/videos/coverr-person-in-bed-on-their-iphone-3025/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 14.014
+  },
+  {
+   "file": "coverr_92063e38ad.mp4",
+   "site": "coverr",
+   "query": "sleeping cat",
+   "src": "https://cdn.coverr.co/videos/coverr-dog-lying-on-the-floor-3429/360p.mp4",
+   "w": 640,
+   "h": 336,
+   "dur": 10.677333
+  },
+  {
+   "file": "coverr_77fa3ffdb6.mp4",
+   "site": "coverr",
+   "query": "sleeping cat",
+   "src": "https://ak.picdn.net/shutterstock/videos/958243/thumb/stock-footage-christmas-shopping-mania-in-decorated-shop.mp4",
+   "w": 320,
+   "h": 178,
+   "dur": 22.989656
+  },
+  {
+   "file": "coverr_bfe4990457.mp4",
+   "site": "coverr",
+   "query": "sleeping cat",
+   "src": "https://cdn.coverr.co/videos/coverr-cat-sitting-on-the-street-204/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 25.400375
+  },
+  {
+   "file": "coverr_ec3361752f.mp4",
+   "site": "coverr",
+   "query": "sleepy cat",
+   "src": "https://cdn.coverr.co/videos/user-ai-generation-VlzTMEbjgVkr/1080p.mp4",
+   "w": 606,
+   "h": 1080,
+   "dur": 4.01
+  },
+  {
+   "file": "coverr_159ad9446d.mp4",
+   "site": "coverr",
+   "query": "sleepy cat",
+   "src": "https://ak.picdn.net/shutterstock/videos/8902036/preview/stock-footage-malaysian-kite-maker-whittling-bamboo-on-kite-in-his-work-shop.mp4",
+   "w": 596,
+   "h": 336,
+   "dur": 17.995011
+  },
+  {
+   "file": "coverr_35e2a67c02.mp4",
+   "site": "coverr",
+   "query": "sleepy cat",
+   "src": "https://cdn.coverr.co/videos/coverr-a-beautiful-cat-licks-itself-381/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 16.625
+  },
+  {
+   "file": "coverr_8b39619c77.mp4",
+   "site": "coverr",
+   "query": "sleepy cat",
+   "src": "https://cdn.coverr.co/videos/coverr-a-man-plays-with-his-cat-3547/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 17.875
+  },
+  {
+   "file": "coverr_ce4acbfbbe.mp4",
+   "site": "coverr",
+   "query": "sleepy cat",
+   "src": "https://cdn.coverr.co/videos/coverr-a-dog-approaching-a-cat-3381/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 19.686333
+  },
+  {
+   "file": "coverr_f1571216dd.mp4",
+   "site": "coverr",
+   "query": "sleepy cat",
+   "src": "https://cdn.coverr.co/videos/coverr-cat-at-the-breakfast-table-7958/360p.mp4",
+   "w": 640,
+   "h": 360,
+   "dur": 25.692333
+  },
+  {
+   "file": "coverr_4c90b8d99c.mp4",
+   "site": "coverr",
+   "query": "sleepy cat",
+   "src": "https://cdn.coverr.co/videos/coverr-temp-user-ai-generation-vc0yhsnudppf-original-mp4-8376/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 7.0
+  },
+  {
+   "file": "coverr_69aac3786c.mp4",
+   "site": "coverr",
+   "query": "sleepy cat",
+   "src": "https://cdn.coverr.co/videos/user-ai-generation-rMLqTtnhL5WA/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 8.0
+  },
+  {
+   "file": "coverr_dcdde9a270.mp4",
+   "site": "coverr",
+   "query": "sleepy cat",
+   "src": "https://cdn.coverr.co/videos/coverr-temp-user-ai-generation-vc0yhsnudppf-original-mp4-8376/360p.mp4",
+   "w": 640,
+   "h": 360,
+   "dur": 7.0
+  },
+  {
+   "file": "coverr_5c97c3a3b1.mp4",
+   "site": "coverr",
+   "query": "sleepy cat",
+   "src": "https://cdn.coverr.co/videos/coverr-a-man-plays-with-his-cat-3547/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 17.875
+  },
+  {
+   "file": "coverr_26ac5e022d.mp4",
+   "site": "coverr",
+   "query": "sleepy cat",
+   "src": "https://cdn.coverr.co/videos/coverr-petting-cat-near-a-chapel-1494/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 16.599917
+  },
+  {
+   "file": "coverr_94d67e0399.mp4",
+   "site": "coverr",
+   "query": "sleepy cat",
+   "src": "https://cdn.coverr.co/videos/coverr-a-dog-approaching-a-cat-3381/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 19.686333
+  },
+  {
+   "file": "coverr_cb8c929e50.mp4",
+   "site": "coverr",
+   "query": "cat yawning",
+   "src": "https://ak.picdn.net/shutterstock/videos/1017542515/preview/stock-footage-happy-girl-with-teddy-bear-present-for-new-year-for-child.mp4",
+   "w": 596,
+   "h": 336,
+   "dur": 5.88
+  },
+  {
+   "file": "coverr_7351edf50e.mp4",
+   "site": "coverr",
+   "query": "cat yawning",
+   "src": "https://cdn-staging.coverr.co/videos/user-ai-generation-UIvjmPIQn6Wa/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 5.046708
+  },
+  {
+   "file": "coverr_b6d8f4953b.mp4",
+   "site": "coverr",
+   "query": "cat yawning",
+   "src": "https://ak.picdn.net/shutterstock/videos/1020065344/preview/stock-footage-boy-teenager-shakes-and-checks-for-christmas-presents-gifts-stacked-under-the-tree.mp4",
+   "w": 596,
+   "h": 336,
+   "dur": 18.44
+  },
+  {
+   "file": "coverr_33d7a5c178.mp4",
+   "site": "coverr",
+   "query": "cat yawning",
+   "src": "https://cdn-staging.coverr.co/videos/user-ai-generation-IPI3L5wr0vHo/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 5.041667
+  },
+  {
+   "file": "coverr_00d064e115.mp4",
+   "site": "coverr",
+   "query": "cat yawning",
+   "src": "https://ak.picdn.net/shutterstock/videos/1009641959/thumb/stock-footage-man-walking-in-a-snowy-forest-slow-motion-view-following-a-young-male-hiking-in-a-frozen-forest.mp4",
+   "w": 320,
+   "h": 178,
+   "dur": 28.75
+  },
+  {
+   "file": "coverr_b721005182.mp4",
+   "site": "coverr",
+   "query": "cat yawning",
+   "src": "https://cdn-staging.coverr.co/videos/user-ai-generation-ux3JA5DvXZHu/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 5.041667
+  },
+  {
+   "file": "coverr_6e3d438490.mp4",
+   "site": "coverr",
+   "query": "cat yawning",
+   "src": "https://cdn.coverr.co/videos/coverr-temp-coverr-paywall-subscription-modal-video-mp4-9473/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 26.8268
+  },
+  {
+   "file": "coverr_399e8a769d.mp4",
+   "site": "coverr",
+   "query": "cat yawning",
+   "src": "https://ak.picdn.net/shutterstock/videos/21468403/thumb/stock-footage-wooden-toy-christmas-trees-and-snow-angels-and-snowflakes.mp4",
+   "w": 320,
+   "h": 178,
+   "dur": 12.36
+  },
+  {
+   "file": "coverr_dd3184bd1b.mp4",
+   "site": "coverr",
+   "query": "cat yawning",
+   "src": "https://cdn-staging.coverr.co/videos/user-ai-generation-L2cNwxIociwt/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 5.046708
+  },
+  {
+   "file": "coverr_3a7d7369e6.mp4",
+   "site": "coverr",
+   "query": "cat yawning",
+   "src": "https://ak.picdn.net/shutterstock/videos/33944947/thumb/stock-footage-christmas-shopping-in-the-mall.mp4",
+   "w": 320,
+   "h": 178,
+   "dur": 10.666667
+  },
+  {
+   "file": "coverr_89d058c800.mp4",
+   "site": "coverr",
+   "query": "cat yawning",
+   "src": "https://ak.picdn.net/shutterstock/videos/8083798/thumb/stock-footage-young-woman-looking-out-the-window-with-depression-at-christmas-slider-shot.mp4",
+   "w": 320,
+   "h": 178,
+   "dur": 23.732042
+  },
+  {
+   "file": "coverr_7c7b095181.mp4",
+   "site": "coverr",
+   "query": "cat yawning",
+   "src": "https://ak.picdn.net/shutterstock/videos/24694262/preview/stock-footage-senior-old-woman-young-man-hold-hand-wrinkle-skin-close-up.mp4",
+   "w": 596,
+   "h": 336,
+   "dur": 7.28
+  },
+  {
+   "file": "coverr_820ac0165c.mp4",
+   "site": "coverr",
+   "query": "kitten sleeping",
+   "src": "https://cdn.coverr.co/videos/coverr-girl-lying-on-a-hammock-6062/1080p.mp4",
+   "w": 1920,
+   "h": 1012,
+   "dur": 14.806458
+  },
+  {
+   "file": "coverr_c73e5708eb.mp4",
+   "site": "coverr",
+   "query": "kitten sleeping",
+   "src": "https://cdn.coverr.co/videos/coverr-a-dog-snifiing-and-scratching-its-back-on-the-grass-1326/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 22.731042
+  },
+  {
+   "file": "coverr_066001f349.mp4",
+   "site": "coverr",
+   "query": "kitten sleeping",
+   "src": "https://cdn.coverr.co/videos/coverr-dog-sleeping-on-the-floor-5220/360p.mp4",
+   "w": 640,
+   "h": 360,
+   "dur": 29.396033
+  },
+  {
+   "file": "coverr_03348eb2b0.mp4",
+   "site": "coverr",
+   "query": "kitten sleeping",
+   "src": "https://cdn.coverr.co/videos/coverr-dog-lying-on-the-wooden-floor-5398/720p.mp4",
+   "w": 1280,
+   "h": 674,
+   "dur": 9.592917
+  },
+  {
+   "file": "coverr_01d28d97ae.mp4",
+   "site": "coverr",
+   "query": "kitten sleeping",
+   "src": "https://cdn.coverr.co/videos/coverr-a-gorgeous-black-cat-sitting-on-a-carpet-3575/360p.mp4",
+   "w": 640,
+   "h": 360,
+   "dur": 12.303958
+  },
+  {
+   "file": "coverr_c1c13b9579.mp4",
+   "site": "coverr",
+   "query": "kitten sleeping",
+   "src": "https://cdn.coverr.co/videos/coverr-dog-playing-with-a-tennis-ball-8435/360p.mp4",
+   "w": 640,
+   "h": 360,
+   "dur": 14.36
+  },
+  {
+   "file": "coverr_0f230a8721.mp4",
+   "site": "coverr",
+   "query": "kitten sleeping",
+   "src": "https://cdn.coverr.co/videos/coverr-cat-in-the-grass-9011/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 14.84
+  },
+  {
+   "file": "coverr_f112046975.mp4",
+   "site": "coverr",
+   "query": "kitten sleeping",
+   "src": "https://cdn.coverr.co/videos/coverr-a-beautiful-cat-licks-itself-381/360p.mp4",
+   "w": 640,
+   "h": 360,
+   "dur": 16.625
+  },
+  {
+   "file": "coverr_79e4466b87.mp4",
+   "site": "coverr",
+   "query": "kitten sleeping",
+   "src": "https://cdn.coverr.co/videos/coverr-a-cat-is-scratching-against-the-wall-3402/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 20.583333
+  },
+  {
+   "file": "coverr_bdf0a3dff9.mp4",
+   "site": "coverr",
+   "query": "kitten sleeping",
+   "src": "https://cdn.coverr.co/videos/coverr-cat-sitting-on-the-street-204/360p.mp4",
+   "w": 640,
+   "h": 360,
+   "dur": 25.400375
+  },
+  {
+   "file": "coverr_a2eb53e4d2.mp4",
+   "site": "coverr",
+   "query": "kitten sleeping",
+   "src": "https://cdn.coverr.co/videos/coverr-black-kitten-cleaning-its-paws-6810/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 16.8
+  },
+  {
+   "file": "coverr_51a29c4e75.mp4",
+   "site": "coverr",
+   "query": "kitten sleeping",
+   "src": "https://cdn.coverr.co/videos/coverr-girl-laughing-at-her-phone-in-bed-8622/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 34.0
+  },
+  {
+   "file": "coverr_1b4d60ab1c.mp4",
+   "site": "coverr",
+   "query": "cat sleep",
+   "src": "https://cdn.coverr.co/videos/coverr-temp-lumalion-mp4-8219/1080p.mp4",
+   "w": 1952,
+   "h": 1080,
+   "dur": 9.041667
+  },
+  {
+   "file": "coverr_31e750d06f.mp4",
+   "site": "coverr",
+   "query": "cat sleep",
+   "src": "https://cdn.coverr.co/videos/coverr-a-dog-approaching-a-cat-3381/360p.mp4",
+   "w": 640,
+   "h": 360,
+   "dur": 19.686333
+  },
+  {
+   "file": "coverr_4ddd5c35b4.mp4",
+   "site": "coverr",
+   "query": "cat sleep",
+   "src": "https://cdn.coverr.co/videos/coverr-woman-doing-the-cat-yoga-pose-5933/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 27.485792
+  },
+  {
+   "file": "coverr_a6ddd66e01.mp4",
+   "site": "coverr",
+   "query": "cat sleep",
+   "src": "https://cdn.coverr.co/videos/coverr-petting-a-black-cat-near-a-chapel-7194/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 9.592917
+  },
+  {
+   "file": "coverr_8181fba34c.mp4",
+   "site": "coverr",
+   "query": "cat sleep",
+   "src": "https://cdn.coverr.co/videos/coverr-dog-sleeping-in-a-shelter-9902/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 10.25
+  },
+  {
+   "file": "coverr_a355fce7df.mp4",
+   "site": "coverr",
+   "query": "cat sleep",
+   "src": "https://cdn.coverr.co/videos/user-ai-generation-aZ5w8H65qIGK/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 8.0
+  },
+  {
+   "file": "coverr_25ca1a249f.mp4",
+   "site": "coverr",
+   "query": "cat sleep",
+   "src": "https://cdn.coverr.co/videos/coverr-dog-sleeping-on-the-floor-5220/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 29.37935
+  },
+  {
+   "file": "coverr_ff74ad29ab.mp4",
+   "site": "coverr",
+   "query": "cat sleep",
+   "src": "https://cdn.coverr.co/videos/coverr-a-man-plays-with-his-cat-3547/360p.mp4",
+   "w": 640,
+   "h": 360,
+   "dur": 17.875
+  },
+  {
+   "file": "coverr_670f415c05.mp4",
+   "site": "coverr",
+   "query": "cat sleep",
+   "src": "https://cdn.coverr.co/videos/coverr-dog-sleeping-in-a-shelter-9902/360p.mp4",
+   "w": 640,
+   "h": 360,
+   "dur": 10.25
+  },
+  {
+   "file": "coverr_9c855e060a.mp4",
+   "site": "coverr",
+   "query": "cat sleep",
+   "src": "https://ak.picdn.net/shutterstock/videos/1018204933/thumb/stock-footage-psychologist-sitting-and-touch-hand-young-depressed-asian-man-for-encouragement-near-window-with.mp4",
+   "w": 320,
+   "h": 178,
+   "dur": 8.791667
+  },
+  {
+   "file": "coverr_663484deec.mp4",
+   "site": "coverr",
+   "query": "cat sleep",
+   "src": "https://cdn-staging.coverr.co/videos/user-ai-generation-IpPrlDDn1eBW/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 5.046708
+  },
+  {
+   "file": "coverr_7a2d8f3b65.mp4",
+   "site": "coverr",
+   "query": "cat sleep",
+   "src": "https://cdn.coverr.co/videos/user-ai-generation-aZ5w8H65qIGK/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 8.0
+  },
+  {
+   "file": "coverr_343bc0f096.mp4",
+   "site": "coverr",
+   "query": "lazy cat",
+   "src": "https://cdn.coverr.co/videos/coverr-sunset-fetch-playtime-with-dog/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 14.44
+  },
+  {
+   "file": "coverr_9f711a2594.mp4",
+   "site": "coverr",
+   "query": "lazy cat",
+   "src": "https://cdn.coverr.co/videos/coverr-a-black-dog-playing-with-a-dry-leaf-8632/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 22.105417
+  },
+  {
+   "file": "coverr_97cc60beaf.mp4",
+   "site": "coverr",
+   "query": "lazy cat",
+   "src": "https://cdn.coverr.co/videos/coverr-black-dog-playing-in-a-garden-9674/360p.mp4",
+   "w": 640,
+   "h": 360,
+   "dur": 13.138125
+  },
+  {
+   "file": "coverr_aa5926734a.mp4",
+   "site": "coverr",
+   "query": "lazy cat",
+   "src": "https://cdn.coverr.co/videos/coverr-sunset-fetch-playtime-with-dog/360p.mp4",
+   "w": 640,
+   "h": 360,
+   "dur": 14.44
+  },
+  {
+   "file": "coverr_8e5949150f.mp4",
+   "site": "coverr",
+   "query": "lazy cat",
+   "src": "https://cdn.coverr.co/videos/coverr-premium-man-running-with-a-kite-5701/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 15.083333
+  },
+  {
+   "file": "coverr_34721b9abd.mp4",
+   "site": "coverr",
+   "query": "lazy cat",
+   "src": "https://cdn.coverr.co/videos/coverr-temp-66wdwatermarkedvideo03af806d6a9d449f0916d28b0d8ab7a6dmp4-7553/720p.mp4",
+   "w": 1302,
+   "h": 720,
+   "dur": 5.25
+  },
+  {
+   "file": "coverr_3b02bdd81a.mp4",
+   "site": "coverr",
+   "query": "lazy cat",
+   "src": "https://cdn.coverr.co/videos/coverr-premium-ai-generated-ginger-fluffy-cat-gazing-with-captivating-eyes-7051/720p.mp4",
+   "w": 1280,
+   "h": 710,
+   "dur": 8.666667
+  },
+  {
+   "file": "coverr_0c1d1e0a15.mp4",
+   "site": "coverr",
+   "query": "lazy cat",
+   "src": "https://cdn.coverr.co/videos/user-ai-generation-6vmHVDQ8F0/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 5.0
+  },
+  {
+   "file": "coverr_1c4614b4c7.mp4",
+   "site": "coverr",
+   "query": "lazy cat",
+   "src": "https://cdn.coverr.co/videos/user-ai-generation-EUlJuQpDXVVj/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 4.0
+  },
+  {
+   "file": "coverr_56c878a18c.mp4",
+   "site": "coverr",
+   "query": "lazy cat",
+   "src": "https://cdn.coverr.co/videos/coverr-woman-preparing-for-outdoor-yoga/360p.mp4",
+   "w": 640,
+   "h": 360,
+   "dur": 27.76
+  },
+  {
+   "file": "coverr_26238eccc1.mp4",
+   "site": "coverr",
+   "query": "lazy cat",
+   "src": "https://cdn.coverr.co/videos/user-ai-generation-6vmHVDQ8F0/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 5.0
+  },
+  {
+   "file": "coverr_13ea0a627b.mp4",
+   "site": "coverr",
+   "query": "lazy cat",
+   "src": "https://cdn.coverr.co/videos/coverr-a-black-dog-playing-with-a-dry-leaf-8632/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 22.105417
+  },
+  {
+   "file": "coverr_1b4250c13b.mp4",
+   "site": "coverr",
+   "query": "cat",
+   "src": "https://cdn.coverr.co/videos/coverr-premium-man-reads-chatgpt-response-5684/360p.mp4",
+   "w": 640,
+   "h": 360,
+   "dur": 12.48
+  },
+  {
+   "file": "coverr_9ea0d1c3f0.mp4",
+   "site": "coverr",
+   "query": "cat",
+   "src": "https://cdn.coverr.co/videos/coverr-dancing-puppets-1939/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 11.26125
+  },
+  {
+   "file": "coverr_3de8a46cbc.mp4",
+   "site": "coverr",
+   "query": "cat",
+   "src": "https://cdn.coverr.co/videos/coverr-pink-chinese-cat-waving-3022/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 18.4
+  },
+  {
+   "file": "coverr_5383ea2004.mp4",
+   "site": "coverr",
+   "query": "cat",
+   "src": "https://cdn.coverr.co/videos/coverr-premium-man-reads-chatgpt-response-5684/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 12.48
+  },
+  {
+   "file": "coverr_e8e25973bd.mp4",
+   "site": "coverr",
+   "query": "cat",
+   "src": "https://cdn.coverr.co/videos/coverr-a-woman-teases-her-dog-by-showing-him-a-statue-of-a-cat-584/720p.mp4",
+   "w": 1280,
+   "h": 720,
+   "dur": 22.939583
+  },
+  {
+   "file": "coverr_b2cf264087.mp4",
+   "site": "coverr",
+   "query": "cat",
+   "src": "https://cdn.coverr.co/videos/coverr-temp-lv020260723160118-mp4-6563/360p.mp4",
+   "w": 640,
+   "h": 360,
+   "dur": 8.0
+  },
+  {
+   "file": "coverr_ef26cf7284.mp4",
+   "site": "coverr",
+   "query": "cat",
+   "src": "https://ak.picdn.net/shutterstock/videos/1019902258/preview/stock-footage-christmas-gift-box-opens-and-comes-out-light-d-render.mp4",
+   "w": 596,
+   "h": 336,
+   "dur": 7.307307
+  },
+  {
+   "file": "coverr_8d819cdd66.mp4",
+   "site": "coverr",
+   "query": "cat",
+   "src": "https://cdn.coverr.co/videos/coverr-cat-standing-on-a-table-7835/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 30.864167
+  },
+  {
+   "file": "coverr_af1c921da5.mp4",
+   "site": "coverr",
+   "query": "cat",
+   "src": "https://cdn.coverr.co/videos/coverr-a-beautiful-domestic-cat-with-green-eyes-4785/360p.mp4",
+   "w": 640,
+   "h": 360,
+   "dur": 11.958333
+  },
+  {
+   "file": "coverr_f4b7430c9a.mp4",
+   "site": "coverr",
+   "query": "cat",
+   "src": "https://cdn.coverr.co/videos/coverr-a-red-cat-in-a-fabric-pet-house-6867/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 12.303958
+  },
+  {
+   "file": "coverr_467ef17dd7.mp4",
+   "site": "coverr",
+   "query": "cat",
+   "src": "https://cdn.coverr.co/videos/coverr-a-cat-is-scratching-against-the-wall-3402/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 20.583333
+  },
+  {
+   "file": "coverr_b535ee2fa1.mp4",
+   "site": "coverr",
+   "query": "cat",
+   "src": "https://cdn-staging.coverr.co/videos/user-ai-generation-BLei1gN9HMqE/1080p.mp4",
+   "w": 1920,
+   "h": 1080,
+   "dur": 5.046708
+  }
+ ]
+}
