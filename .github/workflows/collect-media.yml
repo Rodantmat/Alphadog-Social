@@ -1,0 +1,34 @@
+name: collect-media
+on:
+  workflow_dispatch:
+    inputs:
+      label:
+        description: "Folder label on footage branch"
+        required: true
+      config:
+        description: "JSON config"
+        required: true
+permissions:
+  contents: write
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -y && sudo apt-get install -y ffmpeg
+      - run: pip install -U curl-cffi
+      - name: Collect
+        env:
+          CFG: ${{ inputs.config }}
+        run: python scripts/collect_place_media.py "/tmp/out/${{ inputs.label }}" "$CFG"
+      - name: Push to footage branch
+        if: always()
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git fetch origin footage && git checkout footage
+          mkdir -p "${{ inputs.label }}" && cp -r /tmp/out/${{ inputs.label }}/. "${{ inputs.label }}/"
+          git add "${{ inputs.label }}" && git commit -m "media: ${{ inputs.label }}" && git push origin footage
