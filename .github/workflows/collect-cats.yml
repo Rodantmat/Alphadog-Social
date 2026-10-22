@@ -4,16 +4,25 @@ on:
     inputs:
       label:
         description: "Folder label on footage branch"
-        default: "cats-commons"
+        default: "cats-tiktok"
       max_dl:
         description: "Max videos to download"
-        default: "30"
+        default: "45"
+      regex:
+        description: "Caption regex"
+        default: "sleep|nap|tired|yawn|asleep|dream|snor|bed|zzz|wake|doz|lazy|eepy"
+      sources:
+        description: "Space-separated tag:NAME and/or handles"
+        default: "tag:sleepycat tag:sleepingcat"
+      list_per_source:
+        description: "Items listed per source"
+        default: "60"
 permissions:
   contents: write
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -22,11 +31,11 @@ jobs:
       - run: sudo apt-get update -y && sudo apt-get install -y ffmpeg
       - run: pip install -U "yt-dlp[default,curl-cffi]"
       - name: Collect
-        run: python scripts/collect_cats.py "/tmp/out/${{ inputs.label }}" "${{ inputs.max_dl }}"
+        run: python scripts/collect_tiktok.py "${{ inputs.regex }}" "${{ inputs.list_per_source }}" "${{ inputs.max_dl }}" "/tmp/out/${{ inputs.label }}" ${{ inputs.sources }}
       - name: Push to footage branch
         if: always()
         run: |
           git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
           git fetch origin footage && git checkout footage
           mkdir -p "${{ inputs.label }}" && cp -r /tmp/out/${{ inputs.label }}/. "${{ inputs.label }}/"
-          git add "${{ inputs.label }}" && git commit -m "cat footage: ${{ inputs.label }}" && git push origin footage
+          git add "${{ inputs.label }}" && git commit -m "footage: ${{ inputs.label }}" && git push origin footage
