@@ -16,10 +16,10 @@
     {"id": "reel-2026-10-21-pick-rui-under-reb", "platform": "instagram", "type": "reel", "posted": "2026-10-21 ~16:20 PT",
      "file": "pick_rui_under_reb.mp4", "music": "What You Waiting For? - Gwen Stefani",
      "topic": "Pick of the day: Rui Hachimura UNDER 5.5 rebounds, LAC vs SAC", "pick": {"player": "Rui Hachimura", "prop": "rebounds", "line": 5.5, "side": "Under", "book": "PrizePicks standard", "alphadog_final_hp": 0.886, "result": null}},
-    {"id": "story-2026-10-21-jwill-vs-wemby", "platform": "instagram", "type": "story", "posted": "pending (~17:00 PT)",
-     "file": "story2_jwill_vs_wemby_v2.mp4", "music": "original audio (none added)", "topic": "OKC-SAS scuffle: wide scrum (3 Williamses circled) + JWill face-off, 4 techs", "credit": "@houseofhighlights"}
+    {"id": "story-2026-10-21-jwill-vs-wemby", "platform": "instagram", "type": "story", "posted": "2026-10-21 ~17:05 PT",
+     "file": "story2_jwill_vs_wemby_v2.mp4", "music": "original audio (none added)", "topic": "OKC-SAS scuffle: wide scrum (3 Williamses circled) + JWill face-off, 4 techs", "credit": "@houseofhighlights"},
+    {"id": "story-2026-10-21-fox-postgame", "platform": "instagram", "type": "story", "posted": "pending (~18:30-19:00 PT)",
+     "file": "story3_fox_postgame.mp4", "music": "original audio (none added)", "topic": "De'Aaron Fox postgame on his flagrant foul on Chet", "credit": "@bleacherreport (video via Cory_Mose/X)"}
   ],
-  "planned": [
-    {"type": "story", "count": 1, "date": "2026-10-21", "time": "~18:30-19:00 PT", "note": "story 3 of the day; candidate: De'Aaron Fox postgame on the flagrant (@bleacherreport) or LeBron pregame golf swing (@houseofhighlights)"}
-  ]
+  "planned": []
 }
