@@ -4,7 +4,7 @@ DEM: USGS 3DEP 1/3 arc-second (10 m) COGs on AWS (public domain); fallback Coper
 Imagery: NAIP (USDA, public domain) via Planetary Computer STAC, or Sentinel-2 L2A (Copernicus, free) via Earth Search.
 Reads are windowed through WarpedVRT so only the needed area/overview is downloaded.
 Usage: terrain_flyover.py CONFIG_JSON OUTDIR
-CONFIG: {"bbox": [W,S,E,N], "grid": 1400, "tex": 4096, "exag": 1.15, "imagery": "naip|s2",
+CONFIG: {"bbox": [W,S,E,N], "grid": 800, "tex": 4096, "exag": 1.15, "imagery": "naip|s2", "aa": "fxaa|ssaa|none",
          "basemaps": [{"name": "region", "bbox": [W,S,E,N], "px": 2400, "imagery": "s2"}],
          "shots": [{"name": "...", "secs": 10, "path": [[lon,lat,alt_m_above_ground],...], "look": [[lon,lat,elev_offset],...]}]}"""
 import json, math, os, sys, time
@@ -15,12 +15,14 @@ from rasterio.enums import Resampling
 from rasterio.transform import from_bounds as tfb
 
 T0 = time.time()
-def say(*a): print(f"[{time.time()-T0:7.1f}s]", *a, flush=True)
 CFG = json.loads(open(sys.argv[1]).read()) if os.path.exists(sys.argv[1]) else json.loads(sys.argv[1])
 OUT = sys.argv[2]; os.makedirs(OUT, exist_ok=True)
 os.environ.setdefault("GDAL_DISABLE_READDIR_ON_OPEN", "EMPTY_DIR")
 os.environ.setdefault("GDAL_HTTP_MULTIRANGE", "YES"); os.environ.setdefault("GDAL_HTTP_MERGE_CONSECUTIVE_RANGES", "YES")
-log = {}
+log = {"progress": []}
+def say(*a):
+    msg = f"[{time.time()-T0:7.1f}s] " + " ".join(str(x) for x in a); print(msg, flush=True)
+    log["progress"].append(msg); json.dump(log, open(f"{OUT}/progress.json", "w"), indent=1)
 
 def warp_read(href, bbox, w, h, bands=(1,), resampling=Resampling.bilinear, nodata=None):
     W_, S_, E_, N_ = bbox
@@ -111,12 +113,13 @@ for bm in CFG.get("basemaps", []):
     Image.fromarray((np.clip(rgb, 0, 1) * 255).astype(np.uint8)).save(f"{OUT}/basemap_{bm['name']}.jpg", quality=92)
     Image.fromarray((hs * 255).astype(np.uint8)).save(f"{OUT}/hillshade_{bm['name']}.jpg", quality=90)
     json.dump({"bbox": bb, "px": px}, open(f"{OUT}/basemap_{bm['name']}.json", "w"))
+    say("basemap done", bm["name"])
 
 if not CFG.get("shots"):
     json.dump(log, open(f"{OUT}/flyover_log.json", "w"), indent=1); sys.exit(0)
 
 # ---------- 3D ----------
-W, S, E, N = CFG["bbox"]; GRID = CFG.get("grid", 1400); TEX = CFG.get("tex", 4096)
+W, S, E, N = CFG["bbox"]; GRID = CFG.get("grid", 800); TEX = CFG.get("tex", 4096)
 say("dem"); dem = get_dem((W, S, E, N), GRID); log["dem_range"] = [float(dem.min()), float(dem.max())]
 say("imagery"); tex = get_imagery((W, S, E, N), TEX, CFG.get("imagery", "naip"))
 Image.fromarray((tex.transpose(1, 2, 0) * 255).astype(np.uint8)).save(f"{OUT}/texture.jpg", quality=92)
@@ -148,8 +151,10 @@ pl = pv.Plotter(off_screen=True, window_size=(CFG.get("w", 1920), CFG.get("h", 1
 pl.add_mesh(grid, texture=texture, smooth_shading=True, ambient=0.35, diffuse=0.75, specular=0.05)
 pl.set_background([0.70, 0.78, 0.88], top=[0.32, 0.47, 0.72])
 pl.add_light(pv.Light(position=to_xyz(W - (E - W), S + (N - S) * 0.2, 25000), light_type="scene light", intensity=0.85, color=[1.0, 0.95, 0.85]))
-try: pl.enable_anti_aliasing("ssaa")
-except Exception: pass
+aa = CFG.get("aa", "fxaa")
+if aa != "none":
+    try: pl.enable_anti_aliasing(aa)
+    except Exception: pass
 pl.camera.view_angle = CFG.get("fov", 40)
 for shot in CFG["shots"]:
     n = int(shot["secs"] * FPS); cam = spline([to_xyz(*p) for p in shot["path"]], n); look = spline([to_xyz(*p) for p in shot["look"]], n)
@@ -157,7 +162,8 @@ for shot in CFG["shots"]:
     for k in range(n):
         pl.camera.position = cam[k]; pl.camera.focal_point = look[k]; pl.camera.up = (0, 0, 1); pl.camera.clipping_range = (10, 300000)
         pl.write_frame()
+        if k == 30: say("first 30 frames of", shot["name"])
     log[f"shot:{shot['name']}"] = n; say("shot", shot["name"], n)
 pl.close()
 json.dump(log, open(f"{OUT}/flyover_log.json", "w"), indent=1)
-say("done", json.dumps(log)[:1500])
+say("done")
