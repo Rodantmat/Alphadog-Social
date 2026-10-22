@@ -1,0 +1,41 @@
+name: tts
+on:
+  workflow_dispatch:
+    inputs:
+      segments:
+        description: "Path to segments JSON in repo"
+        required: true
+      label:
+        description: "Output folder on footage branch"
+        required: true
+      voices:
+        description: "Comma-separated Kokoro voices"
+        default: "am_michael"
+      speed:
+        default: "0.95"
+permissions:
+  contents: write
+jobs:
+  tts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: sudo apt-get update -y && sudo apt-get install -y espeak-ng ffmpeg
+      - run: pip install "kokoro>=0.9.4" soundfile torch --extra-index-url https://download.pytorch.org/whl/cpu
+      - name: Narrate
+        run: python scripts/tts_kokoro.py "${{ inputs.segments }}" "/tmp/out/${{ inputs.label }}" "${{ inputs.voices }}" "${{ inputs.speed }}"
+      - name: Compress to m4a
+        run: |
+          cd /tmp/out/${{ inputs.label }}
+          for f in */*.wav; do ffmpeg -v error -y -i "$f" -c:a aac -b:a 160k "${f%.wav}.m4a" && rm "$f"; done
+      - name: Push to footage branch
+        if: always()
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git fetch origin footage && git checkout footage
+          mkdir -p "${{ inputs.label }}" && cp -r /tmp/out/${{ inputs.label }}/. "${{ inputs.label }}/"
+          git add "${{ inputs.label }}" && git commit -m "tts: ${{ inputs.label }}" && git push origin footage
