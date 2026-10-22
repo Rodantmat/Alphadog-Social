@@ -1,0 +1,16 @@
+{
+ "dem:n32w110": "ok",
+ "dem:n33w110": "ok",
+ "dem_range": [
+  1283.4271240234375,
+  2468.458251953125
+ ],
+ "naip_items": 40,
+ "naip_year": "2023",
+ "naip_err": "Chunk and warp failed",
+ "s2_items": 10,
+ "s2_used": "S2B_12SXA_20260927_0_L2A",
+ "shot:east_approach": 300,
+ "shot:spires_lowpass": 270,
+ "shot:south_wide": 270
+}
