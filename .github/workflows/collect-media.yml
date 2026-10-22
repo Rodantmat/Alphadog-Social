@@ -13,7 +13,7 @@ permissions:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -25,6 +25,17 @@ jobs:
         env:
           CFG: ${{ inputs.config }}
         run: python scripts/collect_place_media.py "/tmp/out/${{ inputs.label }}" "$CFG"
+      - name: Shrink large files
+        if: always()
+        run: |
+          cd /tmp/out/${{ inputs.label }} || exit 0
+          for f in $(find . -type f -size +40M); do
+            case "$f" in
+              *.mp4) ffmpeg -v error -y -i "$f" -t 90 -vf "scale='min(1920,iw)':-2" -c:v libx264 -crf 25 -preset veryfast -pix_fmt yuv420p -c:a aac -b:a 96k -movflags +faststart "$f.tmp.mp4" && mv "$f.tmp.mp4" "$f" ;;
+              *) ffmpeg -v error -y -i "$f" -vf "scale='min(3000,iw)':-2" -q:v 3 "$f.tmp.jpg" && mv "$f.tmp.jpg" "$f" ;;
+            esac
+          done
+          find . -type f -size +95M -print -delete
       - name: Push to footage branch
         if: always()
         run: |
