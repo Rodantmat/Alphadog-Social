@@ -27,10 +27,16 @@ jobs:
           GDAL_DISABLE_READDIR_ON_OPEN: EMPTY_DIR
           CPL_VSIL_CURL_ALLOWED_EXTENSIONS: .tif
         run: python scripts/terrain_flyover.py "${{ inputs.config }}" "/tmp/out/${{ inputs.label }}"
+      - name: Compress
+        if: always()
+        run: |
+          cd /tmp/out/${{ inputs.label }} || exit 0
+          rm -f dem.npy
+          for f in *.mp4; do [ -f "$f" ] || continue; ffmpeg -v error -y -i "$f" -vf "crop=1920:1080:0:0" -c:v libx264 -crf 21 -preset slow -pix_fmt yuv420p -movflags +faststart "c_$f" && mv "c_$f" "$f"; done
+          find . -type f -size +95M -print -delete
       - name: Push to footage branch
         if: always()
         run: |
-          rm -f /tmp/out/${{ inputs.label }}/dem.npy
           git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
           git fetch origin footage && git checkout footage
           mkdir -p "${{ inputs.label }}" && cp -r /tmp/out/${{ inputs.label }}/. "${{ inputs.label }}/"
