@@ -1,0 +1,37 @@
+name: flyover
+on:
+  workflow_dispatch:
+    inputs:
+      config:
+        description: "Path to flyover config JSON in repo"
+        required: true
+      label:
+        description: "Output folder on footage branch"
+        required: true
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: pyvista/setup-headless-display-action@v3
+      - run: sudo apt-get update -y && sudo apt-get install -y ffmpeg
+      - run: pip install pyvista imageio imageio-ffmpeg rasterio planetary-computer pystac-client pillow numpy
+      - name: Render
+        env:
+          GDAL_DISABLE_READDIR_ON_OPEN: EMPTY_DIR
+          CPL_VSIL_CURL_ALLOWED_EXTENSIONS: .tif
+        run: python scripts/terrain_flyover.py "${{ inputs.config }}" "/tmp/out/${{ inputs.label }}"
+      - name: Push to footage branch
+        if: always()
+        run: |
+          rm -f /tmp/out/${{ inputs.label }}/dem.npy
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git fetch origin footage && git checkout footage
+          mkdir -p "${{ inputs.label }}" && cp -r /tmp/out/${{ inputs.label }}/. "${{ inputs.label }}/"
+          git add "${{ inputs.label }}" && git commit -m "flyover: ${{ inputs.label }}" && git push origin footage
