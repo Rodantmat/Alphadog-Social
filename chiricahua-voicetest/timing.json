@@ -1,0 +1,26 @@
+{
+ "am_michael": {
+  "open": 24.325,
+  "volcano": 17.175
+ },
+ "am_fenrir": {
+  "open": 21.925,
+  "volcano": 15.225
+ },
+ "bm_george": {
+  "open": 23.975,
+  "volcano": 16.65
+ },
+ "bm_lewis": {
+  "open": 24.375,
+  "volcano": 16.075
+ },
+ "am_onyx": {
+  "open": 20.575,
+  "volcano": 13.975
+ },
+ "af_heart": {
+  "open": 22.175,
+  "volcano": 15.7
+ }
+}
