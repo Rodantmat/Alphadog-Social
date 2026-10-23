@@ -2,9 +2,11 @@ name: transcribe
 on:
   workflow_dispatch:
     inputs:
-      folders:
-        description: "space-separated footage-branch folders"
-        default: "yt-audio stock-audio"
+      files:
+        description: "space-separated footage-branch file paths"
+        default: "yt-audio/yt_M6QqDRYspfU_0.mp4 yt-audio/yt_-ApI8htOOaU_20.mp4 stock-audio/ia_ad64da0120_36.mp4"
+      label:
+        default: "transcripts"
 permissions:
   contents: write
 jobs:
@@ -13,21 +15,21 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
-        with:
-          path: main
-      - uses: actions/checkout@v4
-        with:
-          ref: footage
-          path: fb
-          sparse-checkout: ${{ inputs.folders }}
-          sparse-checkout-cone-mode: true
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: sudo apt-get update -y -qq && sudo apt-get install -y -qq ffmpeg >/dev/null && pip install -q faster-whisper numpy
-      - run: cd fb && python ../main/scripts/transcribe.py ${{ inputs.folders }}
+      - name: Download and transcribe
+        run: |
+          mkdir -p /tmp/out/${{ inputs.label }}
+          for f in ${{ inputs.files }}; do curl -sfL "https://raw.githubusercontent.com/${{ github.repository }}/footage/$f" -o "/tmp/out/${{ inputs.label }}/$(basename $f)"; done
+          ls -la /tmp/out/${{ inputs.label }}
+          python scripts/transcribe.py /tmp/out/${{ inputs.label }}
+          rm -f /tmp/out/${{ inputs.label }}/*.mp4
       - name: Push
         run: |
-          cd fb; git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
-          git add -A . && git commit -m "transcripts" || exit 0
-          for i in 1 2 3 4 5 6; do git pull --rebase -q origin footage && git push origin HEAD:footage && exit 0; sleep $((i*10)); done; exit 1
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git fetch origin footage && git checkout footage
+          mkdir -p "${{ inputs.label }}" && cp -r /tmp/out/${{ inputs.label }}/. "${{ inputs.label }}/"
+          git add "${{ inputs.label }}" && git commit -m "transcripts" || exit 0
+          for i in 1 2 3 4 5 6; do git pull --rebase -q origin footage && git push origin footage && exit 0; sleep $((i*10)); done; exit 1
