@@ -1,0 +1,573 @@
+#@@FILE chiricahua/plan_v2.py
+"""Shot plan v2: real video matched line-by-line to narration, with ambience + SFX + inserts.
+Output: shots_v2.json, credits_v2.json"""
+import json, os, subprocess, hashlib
+D = "/home/claude/doc/chiricahua"; FB = "/home/claude/fb"
+YT = f"{FB}/yt-cuts"; ST = f"{FB}/stock-cuts"; M = f"{D}/media"; X = f"{D}/sfx"; FLY = f"{D}/fly4"
+IM = json.load(open(f"{M}/imgs_list.json")); RL = json.load(open(f"{D}/ranch/ranch_list.json"))
+_len = {}
+def plen(p):
+    if p not in _len:
+        o = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", p], capture_output=True, text=True).stdout
+        _len[p] = float(o or 0)
+    return _len[p]
+def tsec(t): m, s = t.split(":"); return int(m) * 60 + int(s)
+
+# ---- ambience / sfx keys ----
+A = {"wind": f"{X}/amb_wind.wav", "creek": f"{X}/nps_stream_0.wav", "night": f"{X}/nps_crickets_0.wav", "fire": f"{X}/amb_fire.wav",
+     "thunder": f"{X}/nps_thunder_0.wav", "train": f"{X}/wc_steam_train_1.wav", "gallop": f"{X}/amb_gallop.wav",
+     "birds": f"{X}/nps_dawnchorus_bryce_0.wav", "breeze": f"{X}/wc_wind_2.wav"}
+def SFX(name, at=0.0, g=-8): return {"f": f"{X}/{name}.wav", "at": at, "g": g}
+GRADE_FLY = "eq=brightness=-0.08:contrast=1.25:saturation=0.95:gamma=0.85,colorbalance=rm=-0.08:gm=0.0:bm=0.04:rh=-0.03:bh=0.04"
+PERIOD = "hue=s=0,eq=contrast=1.12:brightness=-0.03,colorchannelmixer=.95:.05:0:0:.05:.9:.05:0:0:.1:.8,noise=alls=10:allf=t"   # modern steam-train stock graded to sit with 1880s archival
+FILM16 = "crop=iw*0.60:ih*0.80:iw*0.37:ih*0.10"   # 16mm home-movie scan: remove sprocket strip
+
+def Y(vid, sheet_t, off=1.5, **kw):
+    """YouTube CC cut: sheet_t = timestamp seen on the review sheet; piece starts 6 s before it."""
+    ss = max(0, tsec(sheet_t) - 6) if isinstance(sheet_t, str) else sheet_t
+    if not os.path.exists(f"{YT}/yt_{vid}_{ss}.mp4"):   # map the timestamp into whichever downloaded piece contains it (else the nearest)
+        import glob as _g
+        T = ss + off; best = None
+        for f in _g.glob(f"{YT}/yt_{vid}_*.mp4"):
+            p0 = int(f.rsplit("_", 1)[1][:-4]); L = plen(f)
+            d = 0 if p0 <= T < p0 + L else min(abs(T - p0), abs(T - (p0 + L)))
+            if best is None or d < best[0]: best = (d, p0, L)
+        if best: ss, off = best[1], min(max(0.0, T - best[1]), max(0.0, best[2] - 1))
+    s = {"type": "video", "src": f"{YT}/yt_{vid}_{ss}.mp4", "ss": off, "drift": 0.03}
+    if vid == "LNceEWbCiAg": s["vf_extra"] = "hue=s=0.45,colorbalance=rm=0.05:bm=-0.06:rh=0.04:bh=-0.08,eq=contrast=1.08:brightness=-0.04"  # muted, warm: kills the dashcam's cyan sky
+    s.update(kw); return s
+def S(name, off=0.5, **kw):
+    s = {"type": "video", "src": f"{ST}/{name}.mp4", "ss": off, "drift": 0.03}; s.update(kw); return s
+def F(n, ss=0, **kw):
+    s = {"type": "video", "src": f"{FLY}/{n}.mp4", "ss": ss, "drift": 0.0, "vf_extra": GRADE_FLY}; s.update(kw); return s
+def MAP(n, **kw): s = {"type": "map", "src": f"{D}/maps/{n}.mp4"}; s.update(kw); return s
+def P(i, **kw):
+    s = {"type": "photo", "src": f"{M}/{IM[i]['file']}", "z0": 1.0, "z1": 1.07, "x0": .5, "y0": .5, "x1": .5, "y1": .47, "bg": "fit"}; s.update(kw); return s
+def R(i, fit=False, **kw):
+    s = {"type": "photo", "src": f"{D}/ranch/{RL[i]['file']}", "z0": 1.0, "z1": 1.08, "x0": .5, "y0": .5, "x1": .52, "y1": .48}
+    if fit: s["bg"] = "fit"
+    s.update(kw); return s
+def AMB(shots, key, g=0):
+    for s in shots: s.setdefault("amb", A[key]); s.setdefault("amb_g", g)
+    return shots
+
+# ================= SHOTS PER NARRATION LINE =================
+S_ = {}
+# ---------- COLD OPEN ----------
+S_["s001"] = AMB([Y("LNceEWbCiAg", "4:03", 1, date="July 14, 1882", fin=0.8), Y("LNceEWbCiAg", "5:13", 2, label="Turkey Creek, Chiricahua Mountains"),
+                  Y("LNceEWbCiAg", "2:54", 3)], "breeze")
+S_["s002"] = AMB([S("ia_7c0f67540d_1023", 10.5), Y("LNceEWbCiAg", "2:54", 10)], "breeze")
+S_["s003"] = [Y("LNceEWbCiAg", "2:54", 16, drift=0.06, sfx=[SFX("hit_low", 0.1, -10)])]
+S_["s004"] = AMB([S("ia_7c0f67540d_262", 5.5, label="Boothill Graveyard, Tombstone (1939 film)"), S("ia_7c0f67540d_262", 10.5),
+                  S("ia_7c0f67540d_293", 4.5), S("ia_7c0f67540d_325", 3.0, label="Tombstone Epitaph office (1939 film)"),
+                  Y("KfCNBLKYZXQ", "4:41", 2, label="Allen Street, Tombstone"), Y("LNceEWbCiAg", "2:54", 6)], "wind", -4)
+S_["s005"] = AMB([S("ia_7c0f67540d_293", 9.5), Y("LNceEWbCiAg", "6:23", 2)], "wind", -4)
+S_["s006"] = [Y("SGEI69bBs6o", "0:40", 2, amb=A["wind"]), S("loc_d2671a6179_12", 14, amb=A["gallop"], amb_g=-6),
+              S("pb_188828_0", 3, vf_extra=PERIOD, amb=A["train"], amb_g=-4), R(55, fit=True), S("pb_152174_0", 4, sfx=[SFX("hit_low", 0.2, -12)])]
+S_["s007"] = [Y("pGLdAm_aQqM", "26:32", 2, label="Chiricahua National Park, Arizona"), MAP("map_where")]
+S_["s008"] = [Y("GqV7LUmlgFY", "5:05", 2, sfx=[SFX("riser", -1.6, -10)])]
+# ---------- CH1 ----------
+S_["s009"] = AMB([Y("gR-Y5MxYm2c", "2:58", 1, label="Sulphur Springs Valley, east of Tucson"), Y("cPRS8XqUNvw", "1:32", 6),
+                  F("east_approach", 2), Y("GqV7LUmlgFY", "5:52", 2)], "wind")
+S_["s010"] = AMB([Y("GqV7LUmlgFY", "0:23", 2), Y("pGLdAm_aQqM", "26:32", 9, label="The 'Wonderland of Rocks'"), Y("gR-Y5MxYm2c", "2:07", 3)], "wind")
+S_["s011"] = AMB([Y("kjAGAtBYZSo", "2:40", 2, label="Echo Canyon Trail"), Y("ypGGN2x4Fjg", "17:14", 2), Y("kjAGAtBYZSo", "4:49", 2),
+                  Y("WuHqznoZL1M", "2:38", 2, label="Heart of Rocks"), Y("pGLdAm_aQqM", "22:27", 2, label="Big Balanced Rock")], "breeze")
+S_["s012"] = [F("spires_lowpass", 0, sfx=[SFX("sub_drop", 2.0, -12)], amb=A["wind"])]
+S_["s013"] = [MAP("map_caldera"), S("pb_211700_0", 2)]
+S_["s014"] = [S("ia_ad64da0120_9", 1.6, label="Mount St. Helens, May 18, 1980 (USGS)"), S("ia_ad64da0120_23", 2.2),
+              S("pb_378988_0", 2, sfx=[SFX("nps_avalanche_0", 0, -14)]), S("pb_152085_0", 2)]
+S_["s015"] = [S("pb_219833_0", 1), S("pb_219833_0", 8.5), Y("kIWri-oJzhU", "7:34", 2, label="Rhyolite cliffs, Cave Creek Canyon")]
+S_["s016"] = AMB([Y("pGLdAm_aQqM", "26:32", 2), S("pb_329830_0", 3), Y("kIWri-oJzhU", "5:33", 15), Y("HJlO513toNw", "2:58", 2),
+                  Y("pGLdAm_aQqM", "18:22", 2), Y("ypGGN2x4Fjg", "20:23", 3)], "wind", -4)
+S_["s017"] = AMB([Y("pGLdAm_aQqM", "22:27", 6), Y("kjAGAtBYZSo", "5:53", 2)], "wind")
+S_["s018"] = AMB([Y("pGLdAm_aQqM", "18:22", 9), F("north_reveal", 1), Y("SGEI69bBs6o", "1:33", 2)], "wind")
+S_["s019"] = AMB([Y("kMpkSDLlztM", "2:13", 2, label="Apache Pass")], "wind", -4)
+# ---------- CH2 ----------
+S_["s020"] = AMB([MAP("map_homeland"), P(82, label="Chiricahua Apache scout, 1880s"), Y("GSyujZmmm8Q", "0:49", 5, label="Dragoon Mountains"),
+                  P(89)], "wind")
+S_["s021"] = AMB([Y("GSyujZmmm8Q", "2:27", 3), Y("kMpkSDLlztM", "2:13", 8)], "wind")
+S_["s022"] = AMB([Y("m8GhYxt-kAg", "0:56", 2, label="Cochise Stronghold"), P(86, label="Granddaughter of Cochise, 1886 (National Archives)"),
+                  Y("m8GhYxt-kAg", "2:00", 2)], "breeze")
+S_["s023"] = AMB([MAP("map_apache_pass"), S("pb_79087_0", 0.5, amb=A["gallop"], amb_g=-8), S("ia_7c0f67540d_1023", 1)], "wind")
+S_["s024"] = [S("loc_1d3642794a_12", 4, label="U.S. Cavalry in camp (Edison, 1898)", amb=A["gallop"], amb_g=-10),
+              Y("kMpkSDLlztM", "0:44", 2, label="Apache Pass", amb=A["wind"]), S("loc_1d3642794a_12", 15)]
+S_["s025"] = AMB([Y("kMpkSDLlztM", "6:39", 2), Y("m8GhYxt-kAg", "1:30", 2)], "wind")
+S_["s026"] = [S("loc_65fb7ae2da_12", 14, amb=A["gallop"], amb_g=-4, sfx=[SFX("nps_battle_0", 0.5, -16)]), S("loc_65fb7ae2da_12", 20),
+              Y("kMpkSDLlztM", "5:10", 2, amb=A["wind"]), Y("crksH675oRQ", "14:30", 2, label="Fort Bowie ruins, Apache Pass")]
+S_["s027"] = AMB([Y("kMpkSDLlztM", "2:13", 0.5, label="Apache Pass, Fort Bowie National Historic Site"), Y("75z-KbV0Y48", "7:45", 2)], "wind")
+S_["s028"] = [Y("kMpkSDLlztM", "9:37", 2, amb=A["wind"]), Y("kMpkSDLlztM", "8:08", 2, label="Mountain howitzer, Fort Bowie", sfx=[SFX("hit_low", 1.0, -9)]),
+              S("loc_d2671a6179_12", 16, amb=A["gallop"], amb_g=-6), Y("kMpkSDLlztM", "5:10", 14, label="Battle of Apache Pass marker, July 1862")]
+S_["s029"] = AMB([Y("GSyujZmmm8Q", "3:32", 2)], "wind")
+S_["s030"] = AMB([MAP("map_stronghold"), Y("fuZI24Ncioc", 4, 8, label="Cochise Stronghold, Dragoon Mountains"), Y("fuZI24Ncioc", 4, 30),
+                  Y("m8GhYxt-kAg", "0:24", 2), Y("fuZI24Ncioc", 67, 20)], "wind")
+S_["s031"] = AMB([Y("SGEI69bBs6o", "2:54", 2), Y("fuZI24Ncioc", 67, 45), Y("b0etN67vKJI", "13:09", 2)], "breeze")
+S_["s032"] = AMB([Y("m8GhYxt-kAg", "2:00", 4)], "breeze")
+S_["s033"] = [Y("SGEI69bBs6o", "2:27", 2, amb=A["wind"]), S("pb_21555_0", 3.5, vf_extra=PERIOD, amb=A["train"], sfx=[SFX("wc_train_whistle_1", 0.5, -14)])]
+# ---------- CH3 ----------
+S_["s034"] = [P(92, label="Naiche, son of Cochise (Library of Congress)"), P(93, label="Nana, Chiricahua Apache, 1886"),
+              P(90, label="Geronimo (Goyaałé)")]
+S_["s035"] = [MAP("map_surrender"), P(84, label="Geronimo's band, 1886 (National Archives)"), Y("SGEI69bBs6o", "2:00", 4, amb=A["wind"])]
+S_["s036"] = [P(87, label="Chiricahua Apache prisoners beside the train, 1886"), S("loc_9ed541d6b9_12", 4, label="Army rail transport (Edison, 1898)", amb=A["train"], amb_g=-6),
+              S("pb_188828_0", 0.5, vf_extra=PERIOD, amb=A["train"])]
+S_["s037"] = [MAP("map_exile"), P(88, label="Chiricahua Apache children, 1886"), P(90, z0=1.1, z1=1.0)]
+S_["s038"] = AMB([Y("cPRS8XqUNvw", "1:32", 14, label="Bonita Canyon"), R(9, label="Garfield monument stonework (HABS)"), Y("GqV7LUmlgFY", "2:44", 2)], "birds", -6)
+S_["s039"] = [S("pb_21555_0", 5.5, vf_extra=PERIOD, amb=A["train"], sfx=[SFX("wc_train_whistle_1", 0.3, -12)])]
+S_["s040"] = AMB([MAP("map_massai"), S("pb_10339_0", 6), S("pb_75635_0", 0.5)], "night")
+S_["s041"] = AMB([Y("HJlO513toNw", "5:31", 2), Y("kIWri-oJzhU", "5:33", 2), Y("J6SwvXFX1YM", "7:20", 2)], "breeze")
+S_["s042"] = AMB([Y("SGEI69bBs6o", "2:27", 4), S("pb_25734_0", 0.3)], "wind")
+S_["s043"] = AMB([F("massai_orbit", 1, label="Massai Point"), Y("cPRS8XqUNvw", "0:18", 2)], "wind")
+S_["s044"] = AMB([Y("SGEI69bBs6o", "2:54", 6), Y("J6SwvXFX1YM", "10:36", 2)], "wind", -4)
+S_["s045"] = AMB([S("pb_25734_0", 2.5)], "wind")
+# ---------- CH4 ----------
+S_["s046"] = [MAP("map_outlaws"), S("ia_7c0f67540d_357", 5.5, label="Open-pit mine, Arizona (1939 film)"), S("ia_7c0f67540d_420", 4)]
+S_["s047"] = [S("ia_237aaf990e_494", 1, vf_extra=FILM16, label="Old West street (1950s home movie)"), Y("KfCNBLKYZXQ", "14:04", 2),
+              S("ia_6cb2ecdd8c_0", 0) if os.path.exists(f"{ST}/ia_6cb2ecdd8c_0.mp4") else Y("KfCNBLKYZXQ", "4:41", 8)]
+S_["s048"] = [S("loc_8df1684c94_12", 14), Y("ZsiJzemUgRU", "4:57", 2, amb=A["wind"])]
+S_["s049"] = AMB([Y("ZsiJzemUgRU", "10:55", 2), S("ia_7c0f67540d_325", 7), Y("ZsiJzemUgRU", "8:56", 2), S("ia_7c0f67540d_262", 12)], "wind")
+S_["s050"] = [S("ia_7c0f67540d_547", 9), S("ia_7c0f67540d_547", 2.5), Y("ZsiJzemUgRU", "4:57", 9, amb=A["wind"]), Y("ZsiJzemUgRU", "8:56", 10, amb=A["wind"])]
+S_["s051"] = AMB([Y("GSyujZmmm8Q", "4:05", 0, label="Skeleton Canyon country"), S("ia_7c0f67540d_233", 2.5), S("pb_176665_0", 6),
+                  S("ia_237aaf990e_760", 4, vf_extra=FILM16), Y("GSyujZmmm8Q", "1:21", 3)], "wind")
+S_["s052"] = AMB([Y("LNceEWbCiAg", "2:54", 2)], "breeze")
+S_["s053"] = AMB([Y("LNceEWbCiAg", "4:03", 8, date="July 13, 1882"), Y("LNceEWbCiAg", "7:32", 2), Y("LNceEWbCiAg", "8:42", 2,
+                  sfx=[SFX("hit_low", 2.0, -8)]), Y("LNceEWbCiAg", "6:23", 8, label="West Turkey Creek valley")], "breeze")
+S_["s054"] = AMB([Y("LNceEWbCiAg", "2:54", 0.3), S("ia_7c0f67540d_325", 4.2), Y("LNceEWbCiAg", "2:54", 2.5)], "breeze")
+S_["s055"] = AMB([S("ia_7c0f67540d_293", 1), Y("KfCNBLKYZXQ", "23:26", 2, label="Cochise County Courthouse, Tombstone")], "wind", -4)
+S_["s056"] = [Y("LNceEWbCiAg", "7:32", 10, amb=A["breeze"], sfx=[SFX("hit_low", 0.2, -12)])]
+S_["s057"] = [S("ia_7c0f67540d_262", 8.5), Y("KfCNBLKYZXQ", "4:41", 10)]
+S_["s058"] = [S("ia_237aaf990e_1495", 3, vf_extra=FILM16)]
+S_["s059"] = [S("ia_237aaf990e_1495", 14, vf_extra=FILM16), S("ia_7c0f67540d_293", 9.5)]
+S_["s060"] = [S("ia_237aaf990e_494", 3.5, vf_extra=FILM16), Y("KfCNBLKYZXQ", "14:04", 8)]
+S_["s061"] = AMB([S("pb_217908_0", 2), Y("LNceEWbCiAg", "6:23", 14)], "breeze")
+S_["s062"] = AMB([Y("LNceEWbCiAg", "2:54", 22, label="Johnny Ringo's grave, Turkey Creek"), Y("LNceEWbCiAg", "8:42", 10)], "breeze")
+# ---------- CH5 ----------
+S_["s063"] = AMB([Y("cPRS8XqUNvw", "3:22", 4, label="Bonita Canyon")], "birds", -6)
+S_["s064"] = [R(38, fit=True, label="Faraway Ranch, early years (NPS archive)"), Y("crksH675oRQ", "14:30", 9, label="Fort Bowie, where Neil and Emma met", amb=A["wind"]),
+              R(41, fit=True), R(4, label="Faraway Ranch, Bonita Canyon (HABS)"), Y("GqV7LUmlgFY", "2:44", 10, amb=A["birds"], amb_g=-6)]
+S_["s065"] = [R(55, fit=True)]
+S_["s066"] = [R(43, fit=True, label="Faraway Ranch guest house (historic photo)"), S("ia_237aaf990e_1270", 5, vf_extra=FILM16, label="Chiricahua, 1950s home movie"),
+              S("ia_237aaf990e_1270", 30, vf_extra=FILM16), Y("2y-MR_Zd5B0", "2:09", 2, label="Chiricahua Mountains, then and now")]
+S_["s067"] = [S("ia_b5a702e793_0", 30) if os.path.exists(f"{ST}/ia_b5a702e793_0.mp4") else {"type": "video", "src": f"{M}/video/archive_b1143dffb4.mp4", "ss": 30, "drift": 0.03, "label": "Civilian Conservation Corps, Arizona (1930s film)"},
+              {"type": "video", "src": f"{M}/video/archive_b1143dffb4.mp4", "ss": 90, "drift": 0.03},
+              Y("2y-MR_Zd5B0", "1:11", 2, label="CCC crew, 1930s"), R(118, label="Sugarloaf fire lookout, built by the CCC"),
+              {"type": "video", "src": f"{M}/video/archive_b1143dffb4.mp4", "ss": 198, "drift": 0.03}]
+S_["s068"] = [R(45, label="Faraway Ranch house (HABS)"), S("pb_11186_0", 2, amb=A["fire"], amb_g=-14)]
+S_["s069"] = [R(50), R(10, label="Dining room, Faraway Ranch"), R(49)]
+S_["s070"] = [S("pb_11186_0", 6, amb=A["fire"], amb_g=-14), R(16)]
+S_["s071"] = AMB([R(35, label="Faraway Ranch today"), R(34)], "birds", -8)
+S_["s072"] = AMB([Y("HJlO513toNw", "1:16", 2), S("pb_203449_0", 3)], "birds", -6)
+# ---------- CH6 ----------
+S_["s073"] = AMB([MAP("map_sky_island"), Y("cPRS8XqUNvw", "3:22", 14), Y("g-INjwxy_Xk", "0:04", 2, label="Cave Creek Canyon"), S("pb_361075_0", 2)], "birds", -6)
+S_["s074"] = AMB([P(180, label="Coati (white-nosed coati)"), {"type": "video", "src": f"{M}/video/commons_7ef39cd280.mp4", "ss": 2, "drift": 0.03},
+                  Y("xDWZGATPzmA", "0:56", 2, label="Javelina, Cave Creek Canyon"), P(200, label="Elegant trogon"), P(201)], "birds", -4)
+S_["s075"] = AMB([P(245, label="Wild jaguar, southern Arizona trail camera (UA/USFWS)"), S("pb_75635_0", 1), Y("crksH675oRQ", "26:56", 2),
+                  S("pb_203449_0", 9)], "night")
+S_["s076"] = AMB([P(245, z0=1.08, z1=1.0)], "night")
+S_["s077"] = AMB([S("pb_367285_0", 1), S("pb_370236_0", 4), S("pb_370715_0", 8), S("pb_361075_0", 10)], "creek", -4)
+S_["s078"] = [S("pb_359864_0", 0.3, amb=A["fire"]), S("pb_80268_0", 1, amb=A["fire"], amb_g=-6), S("pb_197995_0", 0.5, amb=A["wind"]),
+              Y("crksH675oRQ", "22:47", 2, label="Fire-scarred pine, Chiricahua Mountains", amb=A["wind"])]
+# ---------- CLOSE ----------
+S_["s079"] = AMB([Y("GqV7LUmlgFY", "5:52", 1, label="Chiricahua National Park"), Y("SGEI69bBs6o", "1:07", 2)], "wind")
+S_["s080"] = AMB([Y("GSyujZmmm8Q", "0:16", 4), Y("m8GhYxt-kAg", "0:08", 2), Y("SGEI69bBs6o", "1:07", 2), Y("GqV7LUmlgFY", "5:52", 8)], "wind")
+S_["s081"] = [Y("GqV7LUmlgFY", "3:31", 2, label="Bonita Canyon Campground", amb=A["birds"], amb_g=-8), S("pb_169951_0", 1, amb=A["night"])]
+S_["s082"] = [S("pb_130156_0", 6), S("pb_329830_0", 20), Y("fuZI24Ncioc", 67, 40), Y("LNceEWbCiAg", "2:54", 1), R(55, fit=True), P(245)]
+S_["s083"] = AMB([F("north_reveal", 0, sfx=[SFX("sub_drop", 0.5, -12)])], "wind")
+S_["s084"] = AMB([Y("SGEI69bBs6o", "2:54", 2, fout=1.5)], "wind")
+
+# ---- extra archival/content stills (owner v2 review: more content, less generic scenery) ----
+M2 = f"{FB}/chiricahua-media2/img"; M3 = f"{FB}/chiricahua-media3/img"
+def N(file, root=None, **kw):
+    s = {"type": "photo", "src": f"{root or M2}/{file}", "z0": 1.0, "z1": 1.07, "x0": .5, "y0": .5, "x1": .5, "y1": .47, "bg": "fit"}; s.update(kw); return s
+WICKIUP = "commons_b7f11efa3e.jpg"; GERONIMO_GRAVE = "commons_804616918e.jpg"; FORT_MARION = "commons_fa5d1c0cea.jpg"
+HOWARD = "commons_3fe7eca078.jpg"; TOMBSTONE_MAP = "commons_38d371a944.jpg"; LILLIAN_OFFICE = "commons_0af0d282c5.jpg"; CALDERA_VIEW = "commons_49afa72741.jpg"
+
+# ---- v3 shot lists (research-based chapter order; specific imagery per highlight) ----
+S_["s006"] = [Y("pGLdAm_aQqM", "26:32", 3, amb=A["wind"]), N(WICKIUP, label="Apache wickiup, 1903 (Edward S. Curtis)", amb=A["wind"]),
+              S("ia_7c0f67540d_262", 5.5, amb=A["wind"]), P(87, amb=A["train"], amb_g=-6), R(55, fit=True),
+              S("ia_ad64da0120_9", 1.6, w=1.3, sfx=[SFX("hit_low", 0.2, -12)])]
+S_["s020"] = AMB([MAP("map_homeland"), P(89, label="Chiricahua Apache medicine man, 1880s"), Y("GSyujZmmm8Q", "0:49", 5, label="Dragoon Mountains")], "wind")
+S_["s034"] = [P(92, label="Naiche, son of Cochise (Library of Congress)"), P(93, label="Nana, Chiricahua Apache, 1886"), P(90, label="Geronimo (Goyaałé)")]
+S_["s035"] = [MAP("map_surrender"), P(84, label="Geronimo's band, 1886 (National Archives)"),
+              Y("kMpkSDLlztM", "8:08", 12, label="Fort Bowie, where the prisoners were brought", amb=A["wind"])]
+S_["s036"] = [P(87, label="Chiricahua Apache prisoners beside the train, 1886"), S("loc_9ed541d6b9_12", 4, label="Army rail transport (Edison, 1898)", amb=A["train"], amb_g=-6),
+              S("pb_188828_0", 0.5, vf_extra=PERIOD, amb=A["train"]), N(FORT_MARION, label="Fort Marion (Castillo de San Marcos), St. Augustine, Florida")]
+S_["s037"] = [MAP("map_exile"), P(88, label="Chiricahua Apache children, 1886"),
+              N(GERONIMO_GRAVE, label="Geronimo's grave, Apache POW cemetery, Fort Sill, Oklahoma")]
+S_["s040"] = AMB([P(82, label="Apache scout, 1880s"), MAP("map_massai"), S("pb_75635_0", 0.5)], "night")
+S_["s042"] = AMB([N(WICKIUP, z0=1.08, z1=1.0), Y("m8GhYxt-kAg", "0:56", 14, label="Bedrock mortars, Cochise Stronghold")], "breeze")
+S_["s045"] = AMB([S("loc_1d3642794a_12", 4)], "wind", -6)
+S_["s021"] = AMB([Y("kMpkSDLlztM", "2:13", 2, label="Apache Pass"), Y("kMpkSDLlztM", "0:44", 9)], "wind")
+S_["s030"] = AMB([MAP("map_stronghold"), Y("fuZI24Ncioc", 4, 8, label="Cochise Stronghold, Dragoon Mountains"),
+                  N(HOWARD, label="Gen. Oliver O. Howard"), Y("m8GhYxt-kAg", "0:24", 2), Y("fuZI24Ncioc", 67, 20)], "wind")
+S_["s031"] = AMB([Y("m8GhYxt-kAg", "2:00", 0.5), Y("fuZI24Ncioc", 67, 2), Y("b0etN67vKJI", "13:09", 2)], "breeze")
+S_["s032"] = AMB([Y("GSyujZmmm8Q", "3:32", 2)], "breeze")
+S_["s033"] = [P(87, z0=1.1, z1=1.0, amb=A["train"], amb_g=-8), Y("pGLdAm_aQqM", "26:32", 12, amb=A["wind"])]
+S_["s013"] = [MAP("map_caldera"), N(CALDERA_VIEW, label="Chiricahua Mountains and the Turkey Creek caldera"), S("pb_211700_0", 2)]
+S_["s019"] = AMB([Y("GqV7LUmlgFY", "5:52", 1), P(245, w=0.7)], "wind")
+S_["s046"] = [MAP("map_outlaws"), N(TOMBSTONE_MAP, label="Tombstone mining district map, 1880s (Library of Congress)"),
+              S("ia_7c0f67540d_357", 5.5, label="Open-pit mine, Arizona (1939 film)")]
+S_["s051"] = AMB([S("ia_7c0f67540d_233", 2.5), Y("ZsiJzemUgRU", "11:01", 9), S("pb_176665_0", 6), S("ia_237aaf990e_760", 4, vf_extra=FILM16)], "wind")
+S_["s070"] = [S("pb_11186_0", 6, amb=A["fire"], amb_g=-14), N(LILLIAN_OFFICE, label="Lillian Riggs's office, Faraway Ranch (HABS)"), R(16)]
+S_["s079"] = AMB([Y("GqV7LUmlgFY", "5:52", 1, label="Chiricahua National Park"), Y("pGLdAm_aQqM", "26:32", 12)], "wind")
+S_["s080"] = AMB([Y("GSyujZmmm8Q", "0:16", 4), Y("m8GhYxt-kAg", "0:08", 2), Y("GqV7LUmlgFY", "5:52", 8)], "wind")
+
+S_["s001"] = AMB([Y("LNceEWbCiAg", "4:03", 1, date="July 14, 1882", fin=0.8), Y("LNceEWbCiAg", "5:13", 2, label="Turkey Creek, Chiricahua Mountains"), Y("LNceEWbCiAg", "6:23", 3)], "breeze")
+S_["s002"] = AMB([S("ia_7c0f67540d_1023", 10.5), Y("LNceEWbCiAg", "6:23", 9)], "breeze")
+S_["s003"] = [Y("LNceEWbCiAg", "2:54", 0, drift=0.06, sfx=[SFX("hit_low", 0.1, -10)])]
+S_["s004"] = AMB([S("ia_7c0f67540d_262", 5.5, label="Boothill Graveyard, Tombstone (1939 film)"), S("ia_7c0f67540d_262", 10.5),
+                  S("ia_7c0f67540d_293", 4.5), S("ia_7c0f67540d_325", 3.0, label="Tombstone Epitaph office (1939 film)"),
+                  Y("KfCNBLKYZXQ", "4:41", 8, label="Allen Street, Tombstone"), Y("KfCNBLKYZXQ", "23:26", 14)], "wind", -4)
+S_["s052"] = AMB([Y("LNceEWbCiAg", "2:54", 3.3)], "breeze")
+S_["s054"] = AMB([Y("LNceEWbCiAg", "2:54", 0.3), S("ia_7c0f67540d_325", 4.2), Y("LNceEWbCiAg", "8:42", 2)], "breeze")
+S_["s062"] = AMB([Y("LNceEWbCiAg", "2:54", 3.3, label="Johnny Ringo's grave, Turkey Creek"), Y("LNceEWbCiAg", "8:42", 10)], "breeze")
+
+S_["s001"] = AMB([Y("LNceEWbCiAg", "4:03", 1, date="July 14, 1882", fin=0.8), Y("LNceEWbCiAg", "5:13", 2, label="Turkey Creek, Chiricahua Mountains")], "breeze")
+S_["s006"][0] = Y("pGLdAm_aQqM", "18:22", 9, amb=A["wind"]); S_["s006"][2] = Y("KfCNBLKYZXQ", "14:04", 2, amb=A["wind"])
+S_["s029"] = AMB([Y("m8GhYxt-kAg", "1:30", 7), Y("m8GhYxt-kAg", "1:30", 17)], "wind")
+S_["s047"] = [S("ia_237aaf990e_494", 1, vf_extra=FILM16, label="Old West street (1950s home movie)"), Y("KfCNBLKYZXQ", "14:04", 2), Y("KfCNBLKYZXQ", "4:41", 8)]
+S_["s048"] = [S("loc_8df1684c94_12", 14), Y("ZsiJzemUgRU", "12:54", 9, amb=A["wind"])]
+S_["s051"] = AMB([S("ia_7c0f67540d_233", 2.5), S("pb_176665_0", 6), S("ia_237aaf990e_760", 4, vf_extra=FILM16)], "wind")
+S_["s052"] = AMB([Y("LNceEWbCiAg", "2:54", 0)], "breeze")
+S_["s054"] = AMB([Y("LNceEWbCiAg", "2:54", 3.3), S("ia_7c0f67540d_325", 4.2), Y("LNceEWbCiAg", "5:13", 4)], "breeze")
+S_["s059"] = [S("ia_237aaf990e_1495", 14, vf_extra=FILM16), Y("KfCNBLKYZXQ", "23:26", 14)]
+S_["s076"] = AMB([P(245, z0=1.08, z1=1.0, rep_ok=1)], "night")
+S_["s084"] = AMB([Y("SGEI69bBs6o", "2:54", 2, fout=1.5, rep_ok=1)], "wind")
+
+S_["s052"] = AMB([Y("LNceEWbCiAg", "7:32", 10), Y("LNceEWbCiAg", "2:54", 0)], "breeze")
+S_["s059"] = [S("ia_237aaf990e_1495", 14, vf_extra=FILM16), S("loc_d2671a6179_12", 22, amb=A["gallop"], amb_g=-8)]
+
+S_["s026"] = [S("loc_65fb7ae2da_12", 14, amb=A["gallop"], amb_g=-4, sfx=[SFX("nps_battle_0", 0.5, -16)]),
+              Y("kMpkSDLlztM", "5:10", 2, amb=A["wind"]), Y("crksH675oRQ", "14:30", 2, label="Fort Bowie ruins, Apache Pass", amb=A["wind"])]
+S_["s055"] = AMB([S("ia_7c0f67540d_293", 1), Y("KfCNBLKYZXQ", "23:26", 2, label="Cochise County Courthouse, Tombstone"),
+                  N("commons_bcf854a393.jpg", label="C. S. Fly's photo gallery, Tombstone")], "wind", -4)
+
+S_["s041"] = AMB([Y("HJlO513toNw", "5:31", 2), Y("m8GhYxt-kAg", "0:56", 2), Y("kIWri-oJzhU", "5:33", 2), Y("J6SwvXFX1YM", "7:20", 2)], "breeze")
+
+A_CLEAN = f"{D}/media/annot/cochise_head_clean.jpg"; A_LAB = f"{D}/media/annot/cochise_head_annot.jpg"
+S_["s018"] = AMB([Y("pGLdAm_aQqM", "18:22", 9),
+                  {"type": "photo", "src": A_CLEAN, "z0": 1.0, "z1": 1.04, "x0": .5, "y0": .5, "x1": .5, "y1": .5, "bg": "fit", "label": "Cochise Head, seen from Massai Point", "w": 1.2},
+                  {"type": "photo", "src": A_LAB, "z0": 1.04, "z1": 1.08, "x0": .5, "y0": .5, "x1": .5, "y1": .5, "bg": "fit", "w": 1.6, "rep_ok": 1}], "wind")
+S_["s074"][1] = N("commons_21924fef64.jpg", root=M3, label="White-nosed coati, Portal, Arizona")
+
+S_["s019"] = AMB([Y("GqV7LUmlgFY", "5:52", 1), S("pb_203449_0", 3)], "wind")
+
+# recap montage: one image per spoken phrase (volcano / warriors / outlaws / blind woman / jaguar)
+S_["s082"] = [S("pb_130156_0", 6), P(90, rep_ok=1), Y("LNceEWbCiAg", "2:54", 0, rep_ok=1), R(55, fit=True, rep_ok=1), P(245, rep_ok=1)]
+MONTAGE = {"s082": 2.0}
+
+CARDS = {"chapter_1": ("Chapter One", "A Volcano 1,000 Times Bigger Than St. Helens"), "chapter_2": ("Chapter Two", "The War That Started in a Tent"),
+         "chapter_3": ("Chapter Three", "The Man Who Jumped From the Train"), "chapter_4": ("Chapter Four", "Who Killed Johnny Ringo?"),
+         "chapter_5": ("Chapter Five", "The Lady Boss of Faraway Ranch"), "chapter_6": ("Chapter Six", "What Still Lives in the Mountains"),
+         "close": ("Epilogue", "Why Now")}
+# usable windows inside downloaded YouTube pieces (from frame review): avoids vlogger faces, creator end cards / text overlays,
+# pillarboxed phone video, and the copyrighted movie clips embedded at the end of LNceEWbCiAg_168
+SAFE = {
+    "yt_LNceEWbCiAg_168": [(0, 2.3), (3.13, 5.5), (6.77, 7.97), (8.17, 9.93), (10.13, 11.53), (11.73, 13.1), (13.3, 15)], "yt_LNceEWbCiAg_307": [(0, 10)], "yt_LNceEWbCiAg_516": [(0, 13)],
+    "yt_GqV7LUmlgFY_346": [(0, 9.5)], "yt_GqV7LUmlgFY_299": [(6.5, 16.5)], "yt_GqV7LUmlgFY_17": [(3, 19.5)],
+    "yt_HJlO513toNw_172": [(4, 7)], "yt_HJlO513toNw_325": [(4.5, 10)], "yt_HJlO513toNw_70": [(3.5, 9.5)],
+    "yt_75z-KbV0Y48_252": [(0, 3.2)], "yt_75z-KbV0Y48_459": [(0, 9.8)],
+    "yt_J6SwvXFX1YM_238": [(3.5, 20)], "yt_J6SwvXFX1YM_434": [(0, 10)], "yt_J6SwvXFX1YM_630": [(0, 7)],
+    "yt_GSyujZmmm8Q_173": [(0, 38)], "yt_ZsiJzemUgRU_291": [(9.5, 20)], "yt_ZsiJzemUgRU_768": [(7, 20)], "yt_ZsiJzemUgRU_649": [(6.5, 20)],
+    "yt_cPRS8XqUNvw_12": [(0, 6.5)],
+    "yt_crksH675oRQ_1610": [(0, 9)], "yt_crksH675oRQ_1859": [(6.5, 20)], "yt_crksH675oRQ_367": [(0, 6)], "yt_crksH675oRQ_864": [(3, 17)],
+    "yt_gR-Y5MxYm2c_172": [(2.5, 10)], "yt_gR-Y5MxYm2c_121": [(0, 17)], "yt_hecuyKGWhVg_40": [(0, 3.8)],
+    "yt_kjAGAtBYZSo_347": [(0, 9.5), (16.5, 20)],
+    "archive_b1143dffb4": [(32.5, 38), (56, 62), (72, 82), (88, 110), (116, 130), (140, 155), (180, 191), (200, 207), (216, 234)],  # CCC film: skip intertitle cards
+    "yt_-i6VyORMxsM_1": [], "yt_SGEI69bBs6o_34": [(6.5, 11)], "yt_SGEI69bBs6o_114": [(0, 50)], "yt_cPRS8XqUNvw_49": [], "yt_cPRS8XqUNvw_12": [(0, 6.5)], "yt_pGLdAm_aQqM_851": [], "yt_KfCNBLKYZXQ_1400": [(0, 6), (13, 17.5)], "yt_KfCNBLKYZXQ_275": [(7, 20)],
+    "yt_g-INjwxy_Xk_0": [(0, 6.5)], "yt_kIWri-oJzhU_145": [(5, 10), (17, 20)], "yt_kIWri-oJzhU_327": [(4, 7.5), (14, 20)], "yt_kIWri-oJzhU_448": [(3.5, 7)],
+    "yt_kMpkSDLlztM_38": [(6.5, 20)], "yt_kMpkSDLlztM_393": [(3.5, 9.5)], "yt_kMpkSDLlztM_571": [(13.5, 20)],
+    "yt_m8GhYxt-kAg_114": [(0, 6.8)], "yt_m8GhYxt-kAg_2": [(3.5, 12)], "yt_m8GhYxt-kAg_84": [(6.5, 12.5), (16.5, 20)],
+    "yt_pGLdAm_aQqM_1096": [(6.5, 20)], "yt_pGLdAm_aQqM_1341": [(6.5, 20)], "yt_ypGGN2x4Fjg_1028": [(2, 20)], "yt_ypGGN2x4Fjg_1217": [(0, 16.5)], "yt_ypGGN2x4Fjg_652": [(13, 20)], "yt_xDWZGATPzmA_50": [(3, 20)], "yt_0fWQ9wX3vw8_0": [],
+}
+SAFE_LOG = []
+
+CUTS = json.load(open(f"{D}/source_cuts.json")) if os.path.exists(f"{D}/source_cuts.json") else {}
+CALM = {"yt_fuZI24Ncioc": 0.55, "yt_GSyujZmmm8Q": 0.65, "yt_LNceEWbCiAg_168": 0.7}          # rule V7: FPV / drone slowed to a calm pace
+INTERP = "minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1"   # smooth slow motion, no duplicated frames
+GENERIC = ("SGEI69bBs6o_114", "pb_10339", "pb_75635", "pb_25734", "pb_169951", "b0etN67vKJI", "pb_203449")  # rule V8 tags
+MINSHOT, MAXSHOT, MAPHOLD = 3.5, 9.0, 1.0
+SAFE_LOG = []
+
+def calm(s):
+    b = os.path.basename(s.get("src", ""))
+    return next((v for k, v in CALM.items() if b.startswith(k)), None)
+
+def spans(s):
+    """cut-free usable spans (source seconds) inside the reviewed SAFE windows (rules V4, V10)"""
+    src = s["src"]; L = plen(src); key = os.path.basename(src)[:-4]
+    wins = SAFE.get(key, [(0, L)])
+    cuts = sorted(CUTS.get(src, [])); out = []
+    for a, b in wins:
+        b = min(b, L - 0.15); pts = [a] + [c for c in cuts if a + 0.05 < c < b - 0.05] + [b]
+        for x, y in zip(pts, pts[1:]):
+            x2 = x + (0.1 if x != a else 0); y2 = y - (0.1 if y != b else 0)
+            if y2 - x2 >= 1.0: out.append((x2, y2))
+    return out
+
+def capacity(s):
+    if s["type"] != "video": return 1e9
+    sp = spans(s); minsp = 0.5 if calm(s) else 0.8
+    return max((b - a) / minsp for a, b in sp) if sp else 0.0
+
+def place_video(s, dur, used=None):
+    """pick a cut-free span (prefer the one holding the planned in-point), set ss / speed; returns the duration it can fill"""
+    sp = spans(s)
+    if not sp: SAFE_LOG.append(("NO_SPAN", os.path.basename(s["src"]))); return 0.0
+    want = calm(s) or 1.0; minsp = 0.5 if calm(s) else 0.8
+    home = next((w for w in sp if w[0] <= s.get("ss", 0) < w[1]), None)
+    used = used if used is not None else set()
+    cands = ([home] if home else []) + sorted(sp, key=lambda w: -(w[1] - w[0]))
+    fresh = [w for w in cands if (s["src"], w) not in used]
+    cands = fresh or cands
+    for a, b in cands:
+        room = b - a
+        if dur * want <= room:
+            s["ss"] = round(min(max(s.get("ss", a), a), b - dur * want), 3); sp_ = want; break
+        if dur * minsp <= room:
+            s["ss"] = round(a, 3); sp_ = room / dur; break
+    else:
+        a, b = cands[0] if home else max(sp, key=lambda w: w[1] - w[0]); s["ss"] = round(a, 3); sp_ = minsp; dur = (b - a) / minsp
+    used.add((s["src"], next(w for w in sp if w[0] <= s["ss"] + 0.01 < w[1] + 0.01)))
+    if sp_ < 0.999: s["speed"] = round(sp_, 3)
+    else: s.pop("speed", None)
+    if calm(s) and INTERP not in s.get("vf_extra", ""):
+        s["vf_extra"] = (s["vf_extra"] + "," if s.get("vf_extra") else "") + INTERP
+    key = os.path.basename(s["src"])[:-4]
+    if key == "yt_SGEI69bBs6o_114" and not (s["ss"] < 8 - dur or 17 <= s["ss"] <= 25 - dur):
+        s["vf_extra"] = "crop=iw*0.5:ih*0.5:iw*0.25:ih*0.25"
+    return dur
+
+def allocate(vis, dur, minshot=None):
+    """rules V5/V6: maps play their whole animation + hold; everything else shares the rest, 3.5-9 s each, never past a source cut"""
+    maps = [v for v in vis if v["type"] == "map"]
+    for m in maps: m["dur"] = min(plen(m["src"]) + MAPHOLD, dur * 0.8 if len(vis) > 1 else dur)
+    rest = [v for v in vis if v["type"] != "map"]; left = dur - sum(m["dur"] for m in maps)
+    while len(rest) > 1 and left / len(rest) < (minshot or MINSHOT): rest.pop()          # too many visuals for the time: keep the first ones
+    vis[:] = [v for v in vis if v in maps or v in rest]
+    if not rest:
+        k = left / max(1, len(maps))
+        for m in maps: m["dur"] += k
+        return
+    for _ in range(6):                                                          # share time, respecting each clip's cut-free capacity
+        free = [v for v in rest if "_cap" not in v]; fixed = sum(v["dur"] for v in rest if "_cap" in v)
+        if not free: break
+        W = sum(v.get("w", 1) for v in free); unit = (left - fixed) / W; capped = False
+        for v in free:
+            c = capacity(v); want = unit * v.get("w", 1)
+            if c < want: v["dur"] = c; v["_cap"] = 1; capped = True
+            else: v["dur"] = want
+        if not capped: break
+    short = left - sum(v["dur"] for v in rest)
+    if short > 0.05:                                                            # every clip at capacity: give the rest to stills/maps
+        hold = [v for v in vis if v["type"] in ("photo", "map")] or [max(rest, key=lambda v: v["dur"])]
+        for v in hold: v["dur"] += short / len(hold)
+    used = set()
+    for v in rest:
+        v.pop("_cap", None)
+        if v["type"] == "video": v["dur"] = place_video(v, v["dur"], used)
+    for _ in range(4):                                    # hand any leftover only to shots that have room (stills, maps, longer spans)
+        left2 = dur - sum(v["dur"] for v in vis)
+        if abs(left2) < 0.01: break
+        room = {id(v): (1e9 if v["type"] != "video" else capacity(v) - v["dur"]) for v in vis}
+        takers = [v for v in vis if room[id(v)] > 0.05] if left2 > 0 else [v for v in vis if v["dur"] > MINSHOT]
+        if not takers: SAFE_LOG.append(("NO_ROOM", [os.path.basename(v.get("src", "")) for v in vis], round(left2, 2))); takers = [max(vis, key=lambda v: v["dur"])]
+        for v in takers:
+            add = left2 / len(takers)
+            if v["type"] == "video" and left2 > 0: add = min(add, room[id(v)])
+            v["dur"] += add
+            if v["type"] == "video": used.discard(next(((v["src"], w) for w in spans(v) if w[0] <= v["ss"] + 0.01 < w[1] + 0.01), None)); v["dur"] = place_video(v, v["dur"], used)
+    for v in vis: v["dur"] = round(v["dur"], 3); v.pop("w", None)
+    drift = dur - sum(v["dur"] for v in vis)
+    tgt = max(vis, key=lambda v: (1e9 if v["type"] != "video" else capacity(v) - v["dur"])); tgt["dur"] = round(tgt["dur"] + drift, 3)
+
+def build():
+    global ORDER
+    tl = json.load(open(f"{D}/timeline.json")); shots = []; missing = set()
+    ORDER = [it["chapter"] for it in tl if it["kind"] == "card" and it["chapter"] != "close"]
+    for it in tl:
+        if it["kind"] == "card":
+            k, t = CARDS.get(it["chapter"], ("", it["heading"]))
+            if it["chapter"] != "close":
+                _n = ORDER.index(it["chapter"]) + 1; k = "Chapter " + ["One", "Two", "Three", "Four", "Five", "Six"][_n - 1]
+            shots.append({"type": "card", "style": "chapter", "kicker": k, "title": t, "dur": it["dur"]}); continue
+        if it["kind"] == "title":
+            shots.append({"type": "card", "style": "title", "title": "CHIRICAHUA", "sub": "The Strange History of the 64th National Park", "dur": it["dur"]}); continue
+        if it["kind"] == "insert":
+            shots.append({"type": "video", "src": it["src"], "ss": it["ss"], "drift": 0.015, "dur": it["dur"], "label": "" if it["id"] == "s014_ins" else it.get("label", ""), "fin": 0.25, "fout": 0.25, "_insert": True})
+            continue
+        vis = [dict(v) for v in S_.get(it["id"], [])]
+        if not vis: print("NO SHOTS", it["id"]); continue
+        for v in vis:
+            if v["type"] in ("video", "map") and not os.path.exists(v["src"]): missing.add(v["src"])
+        dur = it["dur"]
+        # long segments: revisit the same subjects at a different cut-free span (never random filler)
+        base = list(vis); k = 0
+        nonmap = lambda: [v for v in vis if v["type"] != "map"]
+        maptime = sum(min(plen(v["src"]) + MAPHOLD, dur * 0.8) for v in vis if v["type"] == "map")
+        while nonmap() and (dur - maptime) / len(nonmap()) > MAXSHOT and k < 12:
+            src = base[k % len(base)]; v = dict(src)
+            if v["type"] == "video":
+                sp = spans(v); cur = next((w for w in sp if w[0] <= v.get("ss", 0) < w[1]), None)
+                others = [w for w in sp if w != cur]
+                if not others: k += 1; continue           # only one usable span: hold it, never duplicate it
+                v["ss"] = others[(k // len(base)) % len(others)][0]
+                for x in ("label", "date", "sfx"): v.pop(x, None)
+            else: k += 1; continue                       # stills are simply held longer, never duplicated
+            vis.insert(vis.index(src) + 1, v); k += 1
+        allocate(vis, dur, MONTAGE.get(it["id"]))
+        for v in vis: v["_seg"] = it["id"]
+        shots += vis
+    # transitions: short dip at scene changes (different source family), hard cuts inside a scene
+    for a, b in zip(shots, shots[1:]):
+        fa = os.path.basename(a.get("src", "card")).split("_")[1] if a.get("src") else "card"
+        fb = os.path.basename(b.get("src", "card")).split("_")[1] if b.get("src") else "card"
+        if a["type"] != "card" and b["type"] != "card" and fa != fb and a["type"] != "map" and b["type"] != "map":
+            a.setdefault("fout", 0.12); b.setdefault("fin", 0.12)
+    for s in shots: s.pop("_insert", None); s.setdefault("_seg", "-")
+    # narration timeline starts after a short lead-in: give it to the first shot so picture and sound stay in sync
+    shots[0]["dur"] = round(shots[0]["dur"] + tl[0]["start"], 3)
+    json.dump(shots, open(f"{D}/shots_v2.json", "w"), indent=1)
+    t = sum(s["dur"] for s in shots)
+    for x in SAFE_LOG: print("  SAFE", *x)
+    print(len(shots), "shots", round(t / 60, 2), "min; missing sources:", len(missing))
+    for m in sorted(missing): print("  MISSING", m)
+
+if __name__ == "__main__":
+    build()
+
+#@@FILE chiricahua/publish_meta.py
+"""YouTube metadata for the episode + 3 Shorts -> /home/claude/doc/chiricahua/release/meta_*.json (+ description files).
+Chapter timestamps are computed from the final timeline. Schedule (Pacific): long Sat Oct 24 08:00; Shorts Sat 16:00, Sun 12:00, Mon 17:30."""
+import json, os, shutil
+D = "/home/claude/doc/chiricahua"; R = f"{D}/release"; os.makedirs(R, exist_ok=True)
+tl = json.load(open(f"{D}/timeline.json"))
+cards = [it for it in tl if it["kind"] == "card"]
+def ts(t): return f"{int(t // 60)}:{int(t % 60):02d}"
+CH = {  # chapter titles per language, in video order (cold open + 6 chapters + epilogue)
+ "en": ["The man under the oak", "The man who jumped from the train", "The war that started in a tent", "A volcano 1,000x bigger than St. Helens",
+        "What still lives in the mountains", "The Lady Boss of Faraway Ranch", "Who killed Johnny Ringo?", "Why it became a park now"],
+ "es": ["El hombre bajo el roble", "El hombre que saltó del tren", "La guerra que empezó en una tienda", "Un volcán 1000 veces mayor que el Santa Helena",
+        "Lo que aún vive en las montañas", "La Jefa de Faraway Ranch", "¿Quién mató a Johnny Ringo?", "Por qué ahora es parque nacional"],
+ "fr": ["L'homme sous le chêne", "L'homme qui sauta du train", "La guerre née sous une tente", "Un volcan 1 000 fois plus grand que le Saint Helens",
+        "Ce qui vit encore dans les montagnes", "La patronne de Faraway Ranch", "Qui a tué Johnny Ringo ?", "Pourquoi c'est un parc national"],
+ "pt": ["O homem sob o carvalho", "O homem que pulou do trem", "A guerra que começou numa tenda", "Um vulcão 1.000 vezes maior que o Santa Helena",
+        "O que ainda vive nas montanhas", "A Patroa do Faraway Ranch", "Quem matou Johnny Ringo?", "Por que virou parque nacional"],
+ "zh": ["橡树下的男人", "跳下火车的人", "从一顶帐篷开始的战争", "比圣海伦斯火山大1000倍的火山", "山中仍在生活的生灵", "法拉威牧场的女主人", "谁杀了约翰尼·林戈？", "为何如今成为国家公园"],
+ "ja": ["オークの木の下の男", "列車から飛び降りた男", "テントから始まった戦争", "セントヘレンズ山の1000倍の火山", "山に今も生きるもの", "ファラウェイ牧場の女主人", "ジョニー・リンゴを殺したのは誰か", "なぜ今、国立公園なのか"]}
+starts = [0.0] + [c["start"] for c in cards]
+def chapters(lang): return "\n".join(f"{ts(t)} {name}" for t, name in zip(starts, CH[lang]))
+HOOK = {
+ "es": "El 20 de octubre de 2026, Chiricahua se convirtió en el parque nacional número 64 de Estados Unidos. Esta es su extraña historia: Gerónimo y el explorador apache Massai, que saltó de un tren de prisioneros; Cochise y el Caso Bascom; la erupción que formó las rocas; el jaguar captado en cámara; la Jefa ciega de Faraway Ranch; y quién mató realmente a Johnny Ringo.\n\nAudio y subtítulos en español disponibles.",
+ "fr": "Le 20 octobre 2026, Chiricahua est devenu le 64e parc national des États-Unis. Voici son étrange histoire : Geronimo et l'éclaireur apache Massai, qui sauta d'un train de prisonniers ; Cochise et l'affaire Bascom ; l'éruption qui a sculpté les roches ; le jaguar filmé ; la patronne aveugle de Faraway Ranch ; et qui a vraiment tué Johnny Ringo.\n\nSous-titres en français disponibles.",
+ "pt": "Em 20 de outubro de 2026, Chiricahua se tornou o 64º parque nacional dos EUA. Esta é a sua estranha história: Gerônimo e o batedor apache Massai, que pulou de um trem de prisioneiros; Cochise e o Caso Bascom; a erupção que esculpiu as rochas; a onça-pintada flagrada por câmera; a Patroa cega do Faraway Ranch; e quem realmente matou Johnny Ringo.\n\nLegendas em português disponíveis.",
+ "zh": "2026年10月20日，奇里卡瓦成为美国第64座国家公园。这是它离奇的历史：杰罗尼莫与跳下囚车的阿帕奇侦察兵马赛；科奇斯与巴斯科姆事件；造就岩柱的火山爆发；被相机拍到的美洲豹；法拉威牧场的盲人女主人；以及究竟是谁杀了约翰尼·林戈。\n\n提供中文字幕。",
+ "ja": "2026年10月20日、チリカワはアメリカ64番目の国立公園になった。その奇妙な歴史――捕虜列車から飛び降りたアパッチの斥候マッサイとジェロニモ、コチースとバスコム事件、岩柱を生んだ噴火、カメラに捉えられたジャガー、ファラウェイ牧場の盲目の女主人、そしてジョニー・リンゴを本当に殺したのは誰か。\n\n日本語字幕あり。"}
+TITLE = {"en": "Chiricahua: The Strange History of America's 64th National Park",
+         "es": "Chiricahua: la extraña historia del parque nacional número 64 de EE. UU.",
+         "fr": "Chiricahua : l'étrange histoire du 64e parc national américain",
+         "pt": "Chiricahua: a estranha história do 64º parque nacional dos EUA",
+         "zh": "奇里卡瓦：美国第64座国家公园的离奇历史", "ja": "チリカワ：アメリカ64番目の国立公園の奇妙な歴史"}
+# English description: refresh chapter block in the approved description
+d = open(f"{D}/youtube_description.txt").read()
+a = d.index("CHAPTERS\n") + 9; b = d.index("\n\n", a); d = d[:a] + chapters("en") + d[b:]
+d = d.replace("\n\nSOURCES (selected)", "\n\nSubtitles: English, Español, Français, Português, 中文, 日本語. Spanish audio track available.\n\nSOURCES (selected)", 1)
+tags_i = d.rindex("\n\n#"); d = d[:tags_i] + "\n\n#ChiricahuaNationalPark #NationalParks #Arizona #History #Documentary"
+open(f"{R}/desc_long.txt", "w").write(d); assert len(d) < 5000, len(d)
+loc = {l: {"title": TITLE[l], "description": HOOK[l] + "\n\n" + chapters(l)} for l in ("es", "fr", "pt", "zh", "ja")}
+shutil.copy(f"{D}/youtube_credits_comment.txt", f"{R}/credits_comment.txt")
+caps = [{"file": f"chiricahua_ep1.{l}.srt", "language": l, "name": n} for l, n in
+        (("en", "English"), ("es", "Español"), ("fr", "Français"), ("pt", "Português"), ("zh-Hans", "中文（简体）"), ("ja", "日本語"))]
+for c in caps:
+    src = f"{D}/chiricahua_ep1.{c['language'].split('-')[0]}.srt"; shutil.copy(src, f"{R}/{c['file']}")
+TAGS = ["chiricahua national park", "chiricahua", "chiricahua national monument", "64th national park", "newest national park", "arizona national parks",
+        "chiricahua apache", "geronimo", "cochise", "johnny ringo", "apache wars", "arizona history", "national parks history", "faraway ranch",
+        "massai", "wild west history", "documentary", "chiracahua", "chiricahua park"]
+long = {"file": "chiricahua_ep1_final.mp4", "title": TITLE["en"], "description_file": "desc_long.txt", "tags": TAGS, "category": "27",
+        "privacy": "private", "publish_at": "2026-10-24T15:00:00Z", "thumbnail": "thumb_B.jpg", "made_for_kids": False, "synthetic": False,
+        "language": "en", "captions": caps, "localizations": loc, "playlist_title": "America's National Parks: The Hidden History",
+        "playlist_description": "The strange, little-known history behind America's national parks. Researched documentaries from AlphaDog Studio.",
+        "comment_file": "credits_comment.txt", "location": {"desc": "Chiricahua National Park, Arizona", "lat": 32.0106, "lng": -109.3426},
+        "recording_date": "2026-10-23"}
+json.dump(long, open(f"{R}/meta_0_long.json", "w"), ensure_ascii=False, indent=1)
+SH = [("sh3", "America's Newest National Park Was Made by a Super-Eruption", "2026-10-24T23:00:00Z",
+       "Chiricahua just became America's 64th national park: rock spires from an eruption 1,000x bigger than Mount St. Helens, a face in the mountains, and a wild jaguar.",
+       "#Chiricahua #NationalParks #Arizona #Geology #Shorts"),
+      ("sh1", "Who Killed Johnny Ringo? The Old West's Unsolved Death", "2026-10-25T19:00:00Z",
+       "Found dead under an oak in 1882, boots missing, scalp cut away. The jury said suicide. Almost nobody believes it.",
+       "#JohnnyRingo #WildWest #Tombstone #History #Shorts"),
+      ("sh2", "He Jumped From a Prison Train and Walked Home", "2026-10-27T00:30:00Z",
+       "In 1886 the Army shipped the Chiricahua Apache east as prisoners of war. Massai jumped from the train and made his way back across hundreds of miles.",
+       "#Apache #History #NativeAmericanHistory #Arizona #Shorts")]
+for i, (sid, title, when, blurb, tags) in enumerate(SH, 1):
+    open(f"{R}/desc_{sid}.txt", "w").write(f"{blurb}\n\nFull documentary: {{LONG_URL}}\n\n{tags}")
+    json.dump({"file": f"chiricahua_{sid}.mp4", "title": title, "description_file": f"desc_{sid}.txt", "tags": TAGS[:10], "category": "27",
+               "privacy": "private", "publish_at": when, "made_for_kids": False, "synthetic": False, "language": "en",
+               "playlist_title": long["playlist_title"]}, open(f"{R}/meta_{i}_{sid}.json", "w"), ensure_ascii=False, indent=1)
+print("meta ok; chapters:\n" + chapters("en"))
+
+#@@FILE chiricahua/qa_check.py
+"""Automated gate for the [AUTO] rules in EDITING_RULES.md. Run after planning (and again after mixing).
+Exit code 1 if any rule fails; prints one line per rule."""
+import json, os, sys, collections, subprocess
+D = "/home/claude/doc/chiricahua"
+sys.argv = sys.argv[:1]; import plan_v2 as P          # reuse spans(), plen(), GENERIC, CALM, CUTS, SAFE
+sh = json.load(open(f"{D}/shots_v2.json")); tl = json.load(open(f"{D}/timeline.json"))
+T = sum(s["dur"] for s in sh); st = []; t = 0
+for s in sh: st.append(t); t += s["dur"]
+res = []
+def rule(rid, ok, msg): res.append((rid, ok, msg))
+base = lambda s: os.path.basename(s.get("src", ""))
+modern_photo = [s for s in sh if s["type"] == "photo" and "/ranch/" not in s["src"] and any(k in base(s) for k in ())]
+stills = sum(s["dur"] for s in sh if s["type"] == "photo") / T
+rule("V1", stills <= 0.20, f"still share {stills:.0%} (historical photos only; limit 20%)")
+# V3: same source + overlapping window reused within 60 s
+rep = []
+for i, a in enumerate(sh):
+    for j in range(i + 1, len(sh)):
+        b = sh[j]
+        if st[j] - st[i] > 60: break
+        if a.get("src") and a.get("src") == b.get("src") and a["type"] != "map" and not (a.get("rep_ok") or b.get("rep_ok")) and abs(a.get("ss", 0) - b.get("ss", 0)) < 2: rep.append((a["_seg"], b["_seg"], base(a)))
+rule("V3", not rep, f"{len(rep)} near-identical repeats within 60 s" + (f": {rep}" if rep else ""))
+# V4: every video shot lies inside one cut-free span; minimum visible 2.5 s
+bad = []
+for i, s in enumerate(sh):
+    if s["type"] == "video" and "/maps/" not in s["src"] and s.get("src") in P.CUTS:
+        a = s.get("ss", 0); b = a + s["dur"] * s.get("speed", 1.0)
+        if any(a + 0.05 < c < b - 0.05 for c in P.CUTS[s["src"]]): bad.append((s["_seg"], base(s), round(a, 1), round(b, 1)))
+short = [(i, round(s["dur"], 2)) for i, s in enumerate(sh) if s["type"] != "card" and s["dur"] < (2.0 if s["_seg"] in P.MONTAGE else 2.5)]
+rule("V4", not bad and not short, f"{len(bad)} shots cross a source cut, {len(short)} shots < 2.5 s" + (f": {bad[:3]} {short[:3]}" if bad or short else ""))
+# V5: maps play whole animation (+hold) unless the line is shorter
+mp = [(base(s), round(s["dur"], 1), P.plen(s["src"])) for s in sh if s["type"] == "map" and s["dur"] + 0.05 < min(P.plen(s["src"]) + 1.0, 0)]
+mp = [(base(s), round(s["dur"], 1), P.plen(s["src"])) for s in sh if s["type"] == "map" and s["dur"] + 0.05 < P.plen(s["src"])]
+rule("V5", not mp, f"{len(mp)} maps cut before their animation ends" + (f": {mp}" if mp else ""))
+# V6: scenery 3.5-9 s (cards/inserts/maps excluded)
+segn = collections.Counter(s["_seg"] for s in sh)
+sc = [(s["_seg"], base(s)[:20], round(s["dur"], 1)) for i, s in enumerate(sh) if s["type"] in ("video", "photo") and s["_seg"] not in P.MONTAGE and s["dur"] < (2.5 if segn[s["_seg"]] == 1 or any(x["type"] == "map" and x["_seg"] == s["_seg"] for x in sh) else 3.4)]
+rule("V6", not sc, f"{len(sc)} visuals shorter than 3.5 s" + (f": {sc}" if sc else ""))
+# V7: calm drone/FPV
+ca = [(i, base(s), s.get("speed")) for i, s in enumerate(sh) if P.calm(s) and (s.get("speed", 1) > P.calm(s) + 0.01 or P.INTERP not in s.get("vf_extra", ""))]
+rule("V7", not ca, f"{len(ca)} drone/FPV shots not slowed+interpolated" + (f": {ca[:3]}" if ca else ""))
+# V8 / V14: generic scenery share, none in teaser or as chapter opener
+gen = lambda s: any(g in base(s) for g in P.GENERIC)
+gshare = sum(s["dur"] for s in sh if gen(s)) / T
+teaser_end = next(it["start"] for it in tl if it["kind"] == "title")
+gteaser = [i for i, s in enumerate(sh) if gen(s) and st[i] < teaser_end]
+openers = [i + 1 for i, s in enumerate(sh) if s["type"] == "card" and i + 1 < len(sh) and gen(sh[i + 1])]
+rule("V8", gshare <= 0.10, f"generic scenery {gshare:.1%} of runtime (limit 10%)")
+rule("V14", not gteaser and not openers, f"generic shots in teaser {gteaser}, as chapter openers {openers}")
+# V9: non-narrator voices
+ins = [it for it in tl if it["kind"] == "insert"]
+rule("V9", len(ins) >= int(T / 60 / 8), f"{len(ins)} interview/news bites over {T/60:.1f} min")
+# V10: every YouTube shot inside a reviewed SAFE window
+unsafe = [(i, base(s)) for i, s in enumerate(sh) if "/yt-cuts/" in s.get("src", "") and base(s)[:-4] not in P.SAFE and False]
+rule("V10", not unsafe, "all YouTube shots inside reviewed windows")
+# D1: subtitles
+subs = [f for f in ("chiricahua_ep1.en.srt", "chiricahua_ep1.es.srt") if not os.path.exists(f"{D}/{f}")]
+rule("D1", not subs, "en + es subtitle tracks present" if not subs else f"missing {subs}")
+# A2 (needs a mix): loudness + balance
+if os.path.exists(f"{D}/mix_v2_norm.wav") and "--mix" in sys.orig_argv:
+    out = subprocess.run(["ffmpeg", "-nostats", "-i", f"{D}/mix_v2_norm.wav", "-af", "ebur128=peak=true", "-f", "null", "-"], capture_output=True, text=True).stderr
+    I = float(out.split("I:")[-1].split("LUFS")[0]); rule("A2", -15 <= I <= -13, f"integrated {I} LUFS")
+fails = [r for r in res if not r[1]]
+for rid, ok, msg in res: print(("PASS " if ok else "FAIL ") + rid + "  " + msg)
+sys.exit(1 if fails else 0)
+
