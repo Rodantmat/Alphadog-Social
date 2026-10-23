@@ -59,10 +59,15 @@ jobs:
             done
             SCAN_FILES="${files#,}" python scripts/ytcc.py fetch "/tmp/out/${{ inputs.label }}" "${{ inputs.picks }}"
           fi
-      - name: Push to footage branch
+      - name: Push to footage branch (retries; other jobs may push at the same time)
         if: always()
         run: |
           git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
           git fetch origin footage && git checkout footage
           mkdir -p "${{ inputs.label }}" && cp -r /tmp/out/${{ inputs.label }}/. "${{ inputs.label }}/" || true
-          git add "${{ inputs.label }}" && git commit -m "footage: ${{ inputs.label }}" && git push origin footage || echo "nothing to push"
+          git add "${{ inputs.label }}" && git commit -m "footage: ${{ inputs.label }}" || { echo "nothing to push"; exit 0; }
+          for i in 1 2 3 4 5 6; do
+            git pull --rebase -q origin footage && git push origin footage && exit 0
+            sleep $((i * 10))
+          done
+          exit 1
