@@ -59,6 +59,12 @@ jobs:
             done
             SCAN_FILES="${files#,}" python scripts/ytcc.py fetch "/tmp/out/${{ inputs.label }}" "${{ inputs.picks }}"
           fi
+      - name: Transcribe clips that kept audio
+        if: inputs.mode == 'fetch'
+        run: |
+          if ls /tmp/out/${{ inputs.label }}/*.mp4 >/dev/null 2>&1 && grep -q '"audio": *true' "${{ inputs.picks }}"; then
+            pip install -q faster-whisper && python scripts/transcribe.py "/tmp/out/${{ inputs.label }}" || true
+          fi
       - name: Push to footage branch (retries; other jobs may push at the same time)
         if: always()
         run: |
