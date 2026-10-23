@@ -1,0 +1,235 @@
+#@@FILE chiricahua/render_v2.py
+"""Render episode v2: shots_v2.json -> video; narration(+inserts) + music bed + ambience + SFX -> mix -> final mp4.
+Shot extras: amb (wav path), amb_g (dB), sfx [{"f": wav, "at": sec from shot start, "g": dB}], fin/fout fades.
+Audio rules: voice always on top; music & ambience duck under voice; inserts (interviews/news) get no SFX, music ~off."""
+import json, os, sys, numpy as np, soundfile as sf
+sys.path.insert(0, "/home/claude/doc/chiricahua"); import engine as E
+D = "/home/claude/doc/chiricahua"; FPS = 30; SR = 48000
+shots = json.load(open(f"{D}/shots_v2.json")); tl = json.load(open(f"{D}/timeline.json"))
+TAG = os.environ.get("MIX_TAG", "")   # "" = English; "_es" = Spanish dub (audio only)
+narr, _ = sf.read(f"{D}/narration_full{TAG}.wav", dtype="float32"); total = len(narr) / SR
+vmask = np.load(f"{D}/voice_mask{TAG}.npy").astype(np.float32)  # 100 Hz, 1 where any voice
+
+# ---------- frame-accurate timing ----------
+edges = [0.0]
+for s in shots: edges.append(edges[-1] + s["dur"])
+edges[-1] = total
+fr = [round(e * FPS) for e in edges]
+for i, s in enumerate(shots):
+    s["dur"] = (fr[i + 1] - fr[i]) / FPS; s["_start"] = fr[i] / FPS
+
+# ---------- video ----------
+work = f"{D}/render_v2"; os.makedirs(work, exist_ok=True)
+only = sys.argv[1] if len(sys.argv) > 1 else None
+sel = range(*map(int, only.split(":"))) if only and ":" in only else range(len(shots))
+os.environ.setdefault("ENGINE_CACHE", f"{D}/cache")
+files = []
+for i in (sel if only != "audio" else []):
+    s = {k: v for k, v in shots[i].items() if not k.startswith("_") and k not in ("amb", "amb_g", "sfx", "tag")}
+    f = f"{work}/{i:04d}_{E.key(s)}.mp4"
+    if s.get("src") and not os.path.exists(s["src"]):
+        print("SKIP_MISSING", i, s["src"], flush=True); files.append(f); continue
+    if not os.path.exists(f):
+        try: E.render_shot(s, f)
+        except Exception as e:
+            print("FAIL", i, s.get("src"), str(e)[-300:], flush=True)
+            E.render_shot({"type": "card", "style": "date", "title": "", "dur": s["dur"]}, f)
+    files.append(f)
+    if i % 10 == 0: print("shot", i, "/", len(shots), flush=True)
+if only != "audio": open(f"{work}/concat.txt", "w").write("".join(f"file '{f}'\n" for f in files))
+if only == "video" or (only != "audio" and any(not os.path.exists(f) for f in files)): print("VIDEO_PASS_DONE (missing shots remain)" if any(not os.path.exists(f) for f in files) else "VIDEO_PASS_DONE"); sys.exit(0)
+
+# ---------- audio ----------
+N = int(total * SR); hop = SR // 100
+def env100(mask100):  # 100 Hz -> sample rate, smoothed
+    m = np.convolve(mask100, np.ones(30) / 30, mode="same")
+    g = np.repeat(m.astype(np.float32), hop); return np.pad(g, (0, max(0, N - len(g))), mode="edge")[:N]
+voice = env100(vmask[: N // hop + 1])
+ins = np.zeros(N // hop + 1, np.float32)
+for it in tl:
+    if it["kind"] == "insert": ins[int(it["start"] * 100): int((it["start"] + it["dur"]) * 100)] = 1
+ins = env100(ins)
+cache = {}
+def load(p):
+    if p not in cache:
+        a, sr = sf.read(p, dtype="float32", always_2d=True)
+        if a.shape[1] == 1: a = np.repeat(a, 2, 1)
+        if sr != SR:
+            import subprocess
+            raw = subprocess.run(["ffmpeg", "-v", "error", "-i", p, "-ac", "2", "-ar", str(SR), "-f", "f32le", "-"], capture_output=True).stdout
+            a = np.frombuffer(raw, np.float32).reshape(-1, 2)
+        cache[p] = a
+    return cache[p]
+def place(buf, a, t0, gain, fade=0.05):
+    s = int(t0 * SR);
+    if s >= N: return
+    a = a[: N - max(s, 0)].copy() if s >= 0 else a[-s:N - 0].copy()
+    s = max(s, 0); n = len(a)
+    if n == 0: return
+    k = min(int(fade * SR), n // 2)
+    if k: r = np.linspace(0, 1, k, dtype=np.float32); a[:k] *= r[:, None]; a[-k:] *= r[::-1, None]
+    buf[s:s + n] += a * gain
+
+# music bed by chapter mood
+MOOD = {"cold_open": "tension", "chapter_1": "wonder", "chapter_2": "tension", "chapter_3": "somber",
+        "chapter_4": "western", "chapter_5": "somber", "chapter_6": "wonder", "close": "wonder"}
+music = np.zeros((N, 2), np.float32)
+spans = []; cur = "cold_open"; t0 = 0.0
+for it in tl:
+    ch = it.get("chapter", cur)
+    if ch != cur: spans.append((cur, t0, it["start"])); cur = ch; t0 = it["start"]
+spans.append((cur, t0, total))
+for ch, a, b in spans:
+    bed = load(f"{D}/music/{MOOD.get(ch, 'wonder')}.wav"); L = int((b - a + 2.5) * SR)
+    loop = np.tile(bed, (L // len(bed) + 1, 1))[:L]
+    place(music, loop, a, 1.0, fade=2.5)
+g_music = (0.40 - 0.34 * voice) * (1 - 0.92 * ins)          # 0.40 in gaps, 0.06 under voice (~18-19 dB below narrator), ~0 under inserts
+g_music *= 0.6; music *= g_music[:, None]; del g_music
+mix = np.zeros((N, 2), np.float32)
+def bank(name, layer):
+    sf.write(f"{D}/stem_{name}{TAG}.wav", layer, SR); np.add(mix, layer, out=mix)
+bank("music", music); del music
+
+# ambience per shot (cross-faded), RMS-normalized
+amb = np.zeros((N, 2), np.float32)
+for s in shots:
+    if not s.get("amb") or not os.path.exists(s["amb"]): continue
+    a = load(s["amb"]); rms = float(np.sqrt(np.mean(a ** 2)) + 1e-9); a = a / rms * 0.035
+    L = int((s["dur"] + 0.8) * SR); loop = np.tile(a, (L // len(a) + 1, 1))[:L]
+    place(amb, loop, s["_start"] - 0.4, 10 ** (s.get("amb_g", 0) / 20), fade=0.6)
+amb *= ((1.0 - 0.72 * voice) * (1 - ins))[:, None]
+bank("amb", amb); del amb
+
+# SFX: per shot + automatic transition sounds
+sfx = np.zeros((N, 2), np.float32)
+X = f"{D}/sfx"
+for s in shots:
+    for e in s.get("sfx", []):
+        if os.path.exists(e["f"]):
+            a = load(e["f"]); pk = float(np.max(np.abs(a)) + 1e-9)
+            place(sfx, a / pk * 0.5, s["_start"] + e.get("at", 0), 10 ** (e.get("g", -6) / 20), fade=0.03)
+    if s.get("type") == "card":
+        place(sfx, load(f"{X}/whoosh.wav") * 0.55, s["_start"] - 0.55, 1.0)
+        place(sfx, load(f"{X}/hit_low.wav") * 0.7, s["_start"] + 0.15, 1.0)
+    if s.get("date"):
+        place(sfx, load(f"{X}/type.wav"), s["_start"] + 0.25, 0.5)
+sfx *= (1 - ins)[:, None]
+bank("sfx", sfx); del sfx; cache.clear()
+
+nm = narr if narr.ndim == 1 else narr.mean(1)
+nm = np.pad(nm[:N], (0, max(0, N - len(nm))))
+sf.write(f"{D}/stem_voice{TAG}.wav", nm.astype(np.float32), SR)
+mix += nm.astype(np.float32)[:, None]; del nm
+pk = float(np.max(np.abs(mix))); mix /= max(1.0, pk / 0.97)
+sf.write(f"{D}/mix_v2{TAG}.wav", mix, SR, subtype="FLOAT")
+import subprocess, re as _re
+_m = subprocess.run(["ffmpeg", "-nostats", "-i", f"{D}/mix_v2{TAG}.wav", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json", "-f", "null", "-"], capture_output=True, text=True).stderr
+_j = json.loads(_m[_m.rindex("{"):_m.rindex("}") + 1])
+LN2 = f"loudnorm=I=-14:TP=-1.5:LRA=11:measured_I={_j['input_i']}:measured_TP={_j['input_tp']}:measured_LRA={_j['input_lra']}:measured_thresh={_j['input_thresh']}:offset={_j['target_offset']}:linear=true"
+E.run(["ffmpeg", "-v", "error", "-y", "-i", f"{D}/mix_v2{TAG}.wav", "-af", LN2, "-ar", "48000", f"{D}/mix_v2{TAG}_norm.wav"])
+out = f"{D}/chiricahua_ep1_v2.mp4"
+if not only:
+    E.final(f"{work}/concat.txt", f"{D}/mix_v2{TAG}_norm.wav", out); print("FINAL", out)
+else:
+    print("partial ok")
+
+#@@FILE chiricahua/score.py
+"""Procedural ambient documentary score (original, royalty-free). Writes WAV beds per mood.
+moods: wonder (D major/lydian pads), tension (low drone, minor clusters, pulse), somber (minor pads, sparse piano), western (open fifths, slow guitar-like plucks)."""
+import numpy as np, sys, subprocess, os
+SR = 48000
+rng = np.random.default_rng(11)
+
+def note(m): return 440.0 * 2 ** ((m - 69) / 12)
+
+def lowpass(x, cutoff):
+    # one-pole lowpass, cutoff in Hz (scalar)
+    a = np.exp(-2 * np.pi * cutoff / SR); y = np.empty_like(x); acc = 0.0
+    b = 1 - a
+    for i in range(0, len(x), 4096):
+        seg = x[i:i + 4096]
+        from scipy.signal import lfilter
+        y_seg, zf = lfilter([b], [1, -a], seg, zi=[acc * a]); y[i:i + 4096] = y_seg; acc = y_seg[-1]
+    return y
+
+def pad(freqs, dur, bright=900, detune=0.003, vol=0.18):
+    t = np.arange(int(dur * SR)) / SR; out = np.zeros_like(t)
+    for f in freqs:
+        for d in (-detune, 0, detune):
+            ph = rng.uniform(0, 2 * np.pi)
+            saw = 2 * ((t * f * (1 + d) + ph / (2 * np.pi)) % 1) - 1
+            out += saw * 0.33
+    from scipy.signal import butter, sosfilt
+    sos = butter(2, bright, "low", fs=SR, output="sos"); out = sosfilt(sos, out)
+    env = np.minimum(1, t / 3.0) * np.minimum(1, (dur - t) / 3.0)
+    return out / (len(freqs) * 1.2) * env * vol
+
+def pluck(f, dur=4.0, vol=0.22, decay=2.2):
+    t = np.arange(int(dur * SR)) / SR
+    x = (np.sin(2 * np.pi * f * t) + 0.35 * np.sin(2 * np.pi * 2 * f * t) + 0.12 * np.sin(2 * np.pi * 3 * f * t))
+    return x * np.exp(-t * decay) * vol * np.minimum(1, t / 0.005)
+
+def reverb(x, wet=0.35):
+    from scipy.signal import fftconvolve
+    n = int(SR * 3.2); t = np.arange(n) / SR
+    ir = rng.normal(0, 1, n) * np.exp(-t * 2.3); ir[0] = 0
+    y = fftconvolve(x, ir)[:len(x)]; y /= (np.max(np.abs(y)) + 1e-9)
+    return x * (1 - wet) + y * wet * np.max(np.abs(x))
+
+def wind(dur, vol=0.03):
+    from scipy.signal import butter, sosfilt
+    n = rng.normal(0, 1, int(dur * SR)); sos = butter(2, [200, 900], "band", fs=SR, output="sos")
+    mod = 0.6 + 0.4 * np.sin(2 * np.pi * np.arange(len(n)) / SR / 9.0)
+    return sosfilt(sos, n) * mod * vol
+
+def place(buf, x, at):
+    i = int(at * SR); j = min(len(buf), i + len(x)); buf[i:j] += x[:j - i]
+
+def build(mood, dur=240):
+    N = int(dur * SR); L = np.zeros(N); R = np.zeros(N)
+    if mood == "wonder":
+        prog = [[50, 57, 62, 66, 69], [47, 54, 59, 62, 66], [43, 50, 55, 59, 62], [45, 52, 57, 61, 64]]  # D, Bm, G, A
+        seg = 12.0; bright = 1400; pluck_scale = [62, 64, 66, 69, 71, 74]; pl_every = 1.5
+    elif mood == "tension":
+        prog = [[38, 45, 50, 53], [38, 44, 50, 53], [36, 43, 48, 51], [37, 44, 49, 52]]
+        seg = 10.0; bright = 600; pluck_scale = [50, 53, 56]; pl_every = 3.0
+    elif mood == "somber":
+        prog = [[45, 52, 57, 60, 64], [41, 48, 53, 57, 60], [43, 50, 55, 59, 62], [40, 47, 52, 55, 59]]  # Am F G Em
+        seg = 12.0; bright = 900; pluck_scale = [57, 60, 64, 67, 69]; pl_every = 2.5
+    else:  # western
+        prog = [[40, 47, 52, 59], [45, 52, 57, 64], [43, 50, 55, 62], [40, 47, 52, 59]]
+        seg = 11.0; bright = 1100; pluck_scale = [52, 55, 57, 59, 62, 64]; pl_every = 1.8
+    t = 0.0; k = 0
+    while t < dur:
+        ch = prog[k % len(prog)]
+        p = pad([note(m) for m in ch], seg + 4, bright=bright)
+        place(L, p, t); place(R, p * 0.95, t + 0.02)
+        k += 1; t += seg
+    # drone
+    tt = np.arange(N) / SR; root = note(prog[0][0] - 12)
+    drone = (np.sin(2 * np.pi * root * tt) * 0.06 + np.sin(2 * np.pi * root * 1.5 * tt) * 0.02) * (0.7 + 0.3 * np.sin(2 * np.pi * tt / 20))
+    L += drone; R += drone
+    if mood == "tension":
+        beat = np.zeros(N)
+        for s in np.arange(4, dur - 2, 1.6):
+            th = pluck(note(26), 1.2, vol=0.35, decay=6); place(beat, th, s)
+        L += beat; R += beat
+    s = 3.0
+    while s < dur - 5:
+        if rng.random() < 0.75:
+            f = note(int(rng.choice(pluck_scale)))
+            pl = pluck(f, 4.0, vol=0.10 if mood != "western" else 0.13, decay=1.6 if mood != "tension" else 2.5)
+            pan = rng.uniform(0.3, 0.7); place(L, pl * (1 - pan), s); place(R, pl * pan, s)
+        s += pl_every * rng.uniform(0.8, 1.6)
+    w = wind(dur, 0.02 if mood != "tension" else 0.03); L += w; R += w[::-1]
+    L = reverb(L, 0.4); R = reverb(R, 0.4)
+    fade = np.minimum(1, np.minimum(tt / 4, (dur - tt) / 4))
+    st = np.stack([L * fade, R * fade], 1); st /= np.max(np.abs(st)) * 1.12
+    return st.astype(np.float32)
+
+if __name__ == "__main__":
+    import soundfile as sf
+    out = sys.argv[1]; os.makedirs(out, exist_ok=True)
+    for m in (sys.argv[2:] or ["wonder", "tension", "somber", "western"]):
+        sf.write(f"{out}/{m}.wav", build(m, 240), SR); print("score", m, flush=True)
+
