@@ -1,0 +1,7 @@
+{"per": 3,
+ "nps": ["sounds-stream", "sounds-rain", "sounds-thunder", "sounds-crickets", "sounds-coyotes", "sounds-cannon-fire", "sounds-battle",
+         "sounds-common-raven", "rockfall", "avalanche", "sounds-spotted-owl", "sounds-common-poorwill", "sounds-dawnchorus_bryce", "sounds-elk", "sounds-musket-fire"],
+ "commons": {"wind": "wind ambience", "wind_mountain": "wind mountain", "horse": "horse gallop", "horse_neigh": "horse neigh", "steam_train": "steam locomotive",
+             "train_whistle": "steam whistle", "fire": "fire crackling", "campfire": "campfire", "gunshot": "gunshot revolver", "creek": "creek water",
+             "night": "night insects", "footsteps": "footsteps gravel", "wagon": "wagon wheels", "pen": "writing pen paper", "clock": "clock ticking",
+             "bell": "church bell", "hawk": "hawk call", "thunder": "thunder rumble", "eruption": "volcano eruption", "crowd": "crowd murmur"}}
