@@ -1,0 +1,92 @@
+name: chiricahua-build
+# Fully automated: rebuild Episode 1 from text recipes + footage-branch sources, QA-gate it, then (publish=true) upload + schedule.
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Upload to YouTube after the build passes"
+        default: "true"
+permissions:
+  contents: write
+env:
+  GH_TOKEN: ${{ github.token }}
+  FOLDERS: "yt-cuts stock-cuts stock-audio yt-audio sfx chiricahua chiricahua-ranch chiricahua-media2 chiricahua-media3 chiricahua-narration chiricahua-narration-fix1 chiricahua-narration-fix2 chiricahua-narration-fix3 chiricahua-narration-fix4 chiricahua-narration-fix5 chiricahua-narration-es chiricahua-narration-es-fix5 chiricahua-shorts-narr2 chiricahua-flyover-v4 chiricahua-basemaps"
+jobs:
+  prep:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.13" }
+      - run: pip install -q numpy==2.5.3 scipy==1.18.1 pillow==12.3.0 soundfile==0.14.0 || pip install -q numpy scipy pillow soundfile
+      - run: bash ci/chiricahua/setup.sh "$FOLDERS"
+      - run: bash /home/claude/doc/runner/ci/prep.sh
+      - run: tar -C /home/claude/doc -cf /tmp/prep.tar --exclude=chiricahua/media/img --exclude=chiricahua/media/video --exclude=chiricahua/ranch/img --exclude=chiricahua/fly4 chiricahua geo
+      - uses: actions/upload-artifact@v4
+        with: { name: prep, path: /tmp/prep.tar, retention-days: 2, compression-level: 0 }
+  shard:
+    needs: prep
+    runs-on: ubuntu-24.04
+    timeout-minutes: 300
+    strategy:
+      fail-fast: true
+      matrix:
+        range: ["0:41", "41:82", "82:123", "123:164", "164:205", "205:245"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.13" }
+      - run: pip install -q numpy==2.5.3 scipy==1.18.1 pillow==12.3.0 soundfile==0.14.0 || pip install -q numpy scipy pillow soundfile
+      - run: bash ci/chiricahua/setup.sh "$FOLDERS"
+      - uses: actions/download-artifact@v4
+        with: { name: prep, path: /tmp }
+      - run: tar -C /home/claude/doc -xf /tmp/prep.tar && rm /tmp/prep.tar
+      - name: Render shots ${{ matrix.range }}
+        run: |
+          cd /home/claude/doc/chiricahua
+          python3 render_v2.py ${{ matrix.range }} 2>&1 | tee shard.log
+          ! grep -E "SKIP_MISSING|FAIL" shard.log
+          R="${{ matrix.range }}"; tar -C /home/claude/doc/chiricahua -cf /tmp/shard.tar render_v2 && echo "SHARD_NAME=shard_${R/:/_}" >> $GITHUB_ENV
+      - uses: actions/upload-artifact@v4
+        with: { name: "${{ env.SHARD_NAME }}", path: /tmp/shard.tar, retention-days: 2, compression-level: 0 }
+  final:
+    needs: shard
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.13" }
+      - run: pip install -q numpy==2.5.3 scipy==1.18.1 pillow==12.3.0 soundfile==0.14.0 || pip install -q numpy scipy pillow soundfile
+      - run: bash ci/chiricahua/setup.sh "$FOLDERS"
+      - uses: actions/download-artifact@v4
+        with: { path: /tmp/art }
+      - run: |
+          tar -C /home/claude/doc -xf /tmp/art/prep/prep.tar
+          for t in /tmp/art/shard_*/shard.tar; do tar -C /home/claude/doc/chiricahua -xf "$t"; done
+          rm -rf /tmp/art; ls /home/claude/doc/chiricahua/render_v2 | wc -l; df -h / | tail -1
+      - run: bash /home/claude/doc/runner/ci/final.sh
+      - name: Push QA proofs to footage branch
+        if: always()
+        run: |
+          [ -d /tmp/qa/qa ] || exit 0
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbq
+          cd /tmp/fbq && git sparse-checkout set qa/chiricahua-ep1 && mkdir -p qa && cp -r /tmp/qa/qa/. qa/
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add qa && git commit -qm "qa: chiricahua ep1 build ${{ github.run_id }}" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase --depth 1 origin footage && git push -q origin HEAD:footage && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*8)); done; exit 1
+      - name: Publish to YouTube (scheduled)
+        if: inputs.publish == 'true'
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: bash /home/claude/doc/runner/ci/publish.sh
+      - name: Record video IDs / queued comment in repo
+        if: always() && inputs.publish == 'true'
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add content/published content/pending 2>/dev/null || true
+          git commit -qm "published: chiricahua ep1" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
