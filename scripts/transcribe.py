@@ -6,7 +6,7 @@ from faster_whisper import WhisperModel
 m = WhisperModel(os.environ.get("WHISPER_MODEL", "small.en"), device="cpu", compute_type="int8")
 for D in sys.argv[1:]:
     for f in sorted(os.listdir(D)):
-        if not f.endswith(".mp4"): continue
+        if not f.endswith((".mp4", ".m4a", ".wav", ".mp3")): continue
         p = f"{D}/{f}"
         raw = subprocess.run(["ffmpeg", "-v", "error", "-i", p, "-vn", "-ac", "1", "-ar", "16000", "-f", "f32le", "-"], capture_output=True).stdout
         if len(raw) < 16000 * 4: continue
