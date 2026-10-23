@@ -2,6 +2,7 @@
 """Narrate segments with Kokoro TTS (Apache-2.0 open model).
 Usage: tts_kokoro.py SEGMENTS_JSON OUTDIR VOICES SPEED
 SEGMENTS_JSON: [{"id": "c0_01", "text": "..."}...]; VOICES: comma list (sample mode renders each segment with each voice).
+Voice prefix picks the language: a=US English, b=UK English, e=Spanish, f=French, h=Hindi, i=Italian, j=Japanese, p=Portuguese (BR), z=Chinese.
 Writes OUTDIR/<voice>/<id>.wav (24 kHz) and timing.json with durations."""
 import json, os, sys, time
 import numpy as np, soundfile as sf
@@ -10,7 +11,7 @@ from kokoro import KPipeline
 segs = json.load(open(sys.argv[1])); out = sys.argv[2]; voices = sys.argv[3].split(","); speed = float(sys.argv[4])
 timing = {}
 for v in voices:
-    lang = "b" if v.startswith("b") else "a"
+    lang = v[0] if v[0] in "abefhijpz" else "a"
     pipe = KPipeline(lang_code=lang)
     os.makedirs(f"{out}/{v}", exist_ok=True); timing[v] = {}
     for s in segs:
