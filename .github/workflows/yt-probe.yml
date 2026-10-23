@@ -1,0 +1,29 @@
+name: yt-probe
+on:
+  workflow_dispatch:
+    inputs:
+      vid:
+        description: "Video id to test"
+        default: "fuZI24Ncioc"
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - run: sudo apt-get update -y -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
+      - run: pip install -U "yt-dlp[default,curl-cffi]" bgutil-ytdlp-pot-provider
+      - name: Start PO token server
+        run: |
+          docker run -d --name bgutil -p 4416:4416 --init brainicism/bgutil-ytdlp-pot-provider
+          sleep 15; curl -s http://127.0.0.1:4416/ping || true
+      - name: Probe
+        run: yt-dlp --version; bash scripts/yt_probe_access.sh "${{ inputs.vid }}"
