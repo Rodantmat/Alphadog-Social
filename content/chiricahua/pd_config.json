@@ -1,0 +1,9 @@
+{"per_query": 8, "frames": 8,
+ "archive": ["chiricahua", "apache indians arizona", "geronimo", "civilian conservation corps arizona", "national park service arizona",
+             "cavalry 1900s", "steam locomotive 1900s", "tombstone arizona", "arizona 1930s", "cowboys cattle drive 1900s",
+             "jaguar", "volcano eruption", "mount st helens", "forest fire arizona", "coronado national forest", "fort bowie", "buffalo soldiers"],
+ "loc": ["arizona", "apache", "cavalry", "cowboys", "indian", "train arizona", "geronimo"],
+ "commons": ["Chiricahua", "Arizona mountains", "coati", "elegant trogon", "jaguar Arizona", "volcanic eruption", "pyroclastic flow",
+             "cavalry", "steam locomotive", "Sky Islands", "Tombstone Arizona", "rhyolite", "hoodoo", "Milky Way timelapse"],
+ "mixkit": ["desert", "mountains", "canyon", "hiking", "horse", "cowboy", "forest", "night sky", "volcano", "train", "campfire", "rocks", "drone"],
+ "coverr": ["arizona", "desert mountains", "hiking", "canyon", "horse", "forest aerial", "night sky", "road trip desert"]}
