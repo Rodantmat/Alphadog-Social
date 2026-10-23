@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "url or exchange"
+        description: "url, exchange or check"
         default: "url"
       code:
         description: "Redirect URL or one-time code (exchange mode)"
@@ -24,6 +24,8 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           SECRETS_WRITER_TOKEN: ${{ secrets.SECRETS_WRITER_TOKEN }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           CODE: ${{ inputs.code }}
+          MODE: ${{ inputs.mode }}
         run: |
-          if [ "${{ inputs.mode }}" = "url" ]; then python scripts/yt_auth.py url; else python scripts/yt_auth.py exchange "$CODE"; fi
+          if [ "$MODE" = "exchange" ]; then python scripts/yt_auth.py exchange "$CODE"; else python scripts/yt_auth.py "$MODE"; fi
