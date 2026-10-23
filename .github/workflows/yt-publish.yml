@@ -1,0 +1,39 @@
+name: yt-publish
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "GitHub release tag holding the media + meta_*.json files"
+        required: true
+      only:
+        description: "optional: a single meta file name to run (e.g. meta_long.json)"
+        default: ""
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Download release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/rel && cd /tmp/rel
+          gh release download "${{ inputs.tag }}" -R "${{ github.repository }}" -D /tmp/rel
+          ls -la /tmp/rel
+      - name: Upload to YouTube (long video, captions, localizations, thumbnail, playlist, credits; scheduled Shorts)
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          cd /tmp/rel
+          for m in $(ls meta_*.json | sort); do
+            if [ -n "${{ inputs.only }}" ] && [ "$m" != "${{ inputs.only }}" ]; then continue; fi
+            echo "=== $m"; python $GITHUB_WORKSPACE/scripts/yt_upload.py "$m"
+          done
