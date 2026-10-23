@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "url, exchange or check"
+        description: "url | exchange | check | inspect | privatize | branding"
         default: "url"
       code:
         description: "Redirect URL or one-time code (exchange mode)"
@@ -18,7 +18,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install pynacl
+      - run: pip install pynacl pillow numpy scipy
+      - name: Fonts
+        if: inputs.mode == 'branding'
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-dejavu-core fonts-inter >/dev/null || true
       - name: Run
         env:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
@@ -28,4 +31,10 @@ jobs:
           CODE: ${{ inputs.code }}
           MODE: ${{ inputs.mode }}
         run: |
-          if [ "$MODE" = "exchange" ]; then python scripts/yt_auth.py exchange "$CODE"; else python scripts/yt_auth.py "$MODE"; fi
+          case "$MODE" in
+            exchange) python scripts/yt_auth.py exchange "$CODE" ;;
+            url|check) python scripts/yt_auth.py "$MODE" ;;
+            inspect|privatize) python scripts/yt_channel.py "$MODE" ;;
+            branding) mkdir -p out && ls /usr/share/fonts/opentype/inter/ 2>/dev/null | head -3; python scripts/yt_banner.py assets/brand/logo300.png out/banner.jpg && python scripts/yt_channel.py branding content/channel/channel.json ;;
+            *) echo "unknown mode $MODE"; exit 1 ;;
+          esac
