@@ -4,7 +4,8 @@ scan:  ytcc.py scan OUT_DIR PER_QUERY @queries.txt
        CC-filtered search -> verify license in metadata -> 360p video-only preview (native downloader, through WARP)
        -> OUT_DIR/scan.json + OUT_DIR/review/<query>.jpg (one row per video, 8 frames, timestamps)
 fetch: ytcc.py fetch OUT_DIR picks.json    picks = [{"key": "yt_<id>", "ss": 12.0, "dur": 8, "tag": "..."}]
-       -> 1080p video-only download per video (once), trimmed pieces OUT_DIR/<key>_<ss>.mp4 + index.json with credits."""
+       -> 1080p video-only download per video (once), trimmed pieces OUT_DIR/<key>_<ss>.mp4 + index.json with credits.
+       If YouTube refuses the WARP address, the WARP registration is renewed (new address) and the download retried."""
 import json, os, re, subprocess, sys, time, urllib.parse
 from PIL import Image, ImageDraw, ImageFont
 
@@ -19,6 +20,15 @@ def sh(cmd, timeout=900):
     try:
         p = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout); return p.returncode, p.stdout, p.stderr[-600:]
     except subprocess.TimeoutExpired: return 124, "", "timeout"
+
+def new_warp():
+    for c in (["warp-cli", "--accept-tos", "disconnect"], ["warp-cli", "--accept-tos", "registration", "delete"],
+              ["warp-cli", "--accept-tos", "registration", "new"], ["warp-cli", "--accept-tos", "mode", "proxy"],
+              ["warp-cli", "--accept-tos", "connect"]):
+        sh(c, 60); time.sleep(2)
+    time.sleep(10)
+    rc, so, _ = sh(["curl", "-s", "-x", "socks5h://127.0.0.1:40000", "https://www.cloudflare.com/cdn-cgi/trace"], 30)
+    print("WARP_RENEWED", " ".join(l for l in so.splitlines() if l.startswith(("ip=", "warp="))), flush=True)
 
 def dur(path):
     rc, so, _ = sh(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", path], 60)
@@ -84,14 +94,21 @@ elif mode == "fetch":
     for sf in [l for l in os.environ.get("SCAN_FILES", "").split(",") if l]:
         for r in json.load(open(sf)): scan[r["key"]] = r
     idx, have = [], {}
+    def download(vid, page):
+        raw = f"/tmp/full_{vid}"
+        for attempt in range(4):
+            rc, so, se = sh(YT + ["-f", "bv*[height<=1080][ext=mp4]/bv*[height<=1080]/b[height<=1080]", "-o", raw + ".%(ext)s", page], 2400)
+            got = [f for f in os.listdir("/tmp") if f.startswith(f"full_{vid}.") and not f.endswith((".part", ".ytdl"))]
+            if got: return "/tmp/" + got[0]
+            print("DL_RETRY", vid, attempt, se[-160:].replace("\n", " "), flush=True)
+            if "Sign in" in se or "bot" in se or "403" in se: new_warp()
+            else: time.sleep(15)
+        return None
     for p in picks:
         r = scan.get(p["key"]) or {"key": p["key"], "id": p["key"][3:], "page": f"https://www.youtube.com/watch?v={p['key'][3:]}"}
         vid = r["id"]
         if vid not in have:
-            raw = f"/tmp/full_{vid}"
-            sh(YT + ["-f", "bv*[height<=1080][ext=mp4]/bv*[height<=1080]/b[height<=1080]", "-o", raw + ".%(ext)s", r["page"]], 2400)
-            got = [f for f in os.listdir("/tmp") if f.startswith(f"full_{vid}.") and not f.endswith(".part")]
-            have[vid] = "/tmp/" + got[0] if got else None
+            have[vid] = download(vid, r["page"])
         src = have[vid]
         if not src: print("DL_FAIL", vid, flush=True); continue
         name = f"{p['key']}_{int(float(p.get('ss', 0)))}.mp4"
