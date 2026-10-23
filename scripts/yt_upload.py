@@ -3,7 +3,9 @@
 Usage: yt_upload.py META_JSON
 META: {"file": "ep.mp4", "title": "...", "description_file": "desc.txt", "tags": [...], "category": "27",
        "privacy": "private|unlisted|public", "publish_at": "2026-10-24T16:00:00Z" (optional, requires private),
-       "thumbnail": "thumb.jpg", "made_for_kids": false, "synthetic": true, "language": "en", "playlist_id": "" }
+       "thumbnail": "thumb.jpg", "made_for_kids": false, "synthetic": true, "language": "en", "playlist_id": "",
+       "captions": [{"file": "ep.en.srt", "language": "en", "name": "English"}, {"file": "ep.es.srt", "language": "es", "name": "Español"}],
+       "localizations": {"es": {"title": "...", "description": "..."}} }  # selectable subtitle tracks (rule D1), localized metadata
 Env: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN. Prints VIDEO_ID=..."""
 import json, os, sys, time, urllib.parse, urllib.request
 
@@ -58,3 +60,19 @@ if vid and M.get("thumbnail") and os.path.exists(M["thumbnail"]):
 if vid and M.get("playlist_id"):
     api("POST", "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet", tok,
         body={"snippet": {"playlistId": M["playlist_id"], "resourceId": {"kind": "youtube#video", "videoId": vid}}})
+for c in (M.get("captions") or []) if vid else []:            # selectable subtitle tracks, not burned in
+    if not os.path.exists(c["file"]): print("caption missing", c["file"]); continue
+    b = "capboundary7f3a"; meta_c = json.dumps({"snippet": {"videoId": vid, "language": c["language"], "name": c.get("name", c["language"]), "isDraft": False}})
+    body = (f"--{b}\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{meta_c}\r\n--{b}\r\nContent-Type: application/octet-stream\r\n\r\n").encode() \
+           + open(c["file"], "rb").read() + f"\r\n--{b}--".encode()
+    for attempt in range(3):
+        try:
+            st, _, out = api("POST", "https://www.googleapis.com/upload/youtube/v3/captions?part=snippet&uploadType=multipart", tok,
+                             raw=body, headers={"Content-Type": f"multipart/related; boundary={b}"})
+            print("caption", c["language"], st); break
+        except Exception as e:
+            print("caption retry", c["language"], str(e)[:300]); time.sleep(5); tok = access_token()
+if vid and M.get("localizations"):
+    st, _, _ = api("PUT", "https://www.googleapis.com/youtube/v3/videos?part=localizations,snippet", tok,
+                   body={"id": vid, "snippet": meta["snippet"], "localizations": M["localizations"]})
+    print("localizations", st)
