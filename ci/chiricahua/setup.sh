@@ -15,6 +15,7 @@ ln -sfn "$WS" /home/claude/rs
 git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /home/claude/fb
 (cd /home/claude/fb && git sparse-checkout set $1)
 python3 "$WS/ci/chiricahua/unpack.py" /home/claude/doc/runner
+python3 "$WS/ci/chiricahua/patch_plan.py" /home/claude/doc/runner/chiricahua/plan_v2.py
 cp -r /home/claude/doc/runner/chiricahua /home/claude/doc/chiricahua
 cp -r /home/claude/doc/runner/geo /home/claude/doc/geo
 python3 /home/claude/doc/runner/prepare.py
