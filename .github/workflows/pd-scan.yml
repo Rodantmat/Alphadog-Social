@@ -21,8 +21,16 @@ jobs:
           python-version: "3.12"
       - run: sudo apt-get update -y -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core >/dev/null
       - run: pip install curl_cffi
+      - name: ffmpeg/ffprobe wrappers with a descriptive User-Agent (Wikimedia policy)
+        run: |
+          mkdir -p $HOME/bin
+          for t in ffmpeg ffprobe; do
+            printf '#!/bin/sh\nexec /usr/bin/%s -user_agent "AlphaDogStudio/1.0 (documentary research; https://github.com/Rodantmat/Alphadog-Social)" "$@"\n' "$t" > $HOME/bin/$t
+            chmod +x $HOME/bin/$t
+          done
+          echo "$HOME/bin" >> $GITHUB_PATH
       - name: Scan
-        run: python scripts/pd_scan.py "/tmp/out/${{ inputs.label }}" "${{ inputs.config }}"
+        run: which ffprobe; python scripts/pd_scan.py "/tmp/out/${{ inputs.label }}" "${{ inputs.config }}"
       - name: Push to footage branch
         if: always()
         run: |
