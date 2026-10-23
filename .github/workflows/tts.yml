@@ -32,10 +32,16 @@ jobs:
         run: |
           cd /tmp/out/${{ inputs.label }}
           for f in */*.wav; do ffmpeg -v error -y -i "$f" -c:a aac -b:a 160k "${f%.wav}.m4a" && rm "$f"; done
-      - name: Push to footage branch
+      - name: Push to footage branch (sparse clone; retries)
         if: always()
         run: |
+          L="${{ inputs.label }}"
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" /tmp/fb
+          cd /tmp/fb && git sparse-checkout set "$L" && mkdir -p "$L" && cp -r /tmp/out/$L/. "$L/"
           git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
-          git fetch origin footage && git checkout footage
-          mkdir -p "${{ inputs.label }}" && cp -r /tmp/out/${{ inputs.label }}/. "${{ inputs.label }}/"
-          git add "${{ inputs.label }}" && git commit -m "tts: ${{ inputs.label }}" && git push origin footage
+          git add "$L" && git commit -qm "tts: $L" || { echo "nothing to push"; exit 0; }
+          for i in 1 2 3 4 5 6 7 8; do
+            git pull -q --rebase --depth 1 origin footage && git push -q origin HEAD:footage && exit 0
+            git rebase --abort 2>/dev/null || true; sleep $((i * 8))
+          done
+          exit 1
