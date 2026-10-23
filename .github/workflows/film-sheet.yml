@@ -1,0 +1,37 @@
+name: film-sheet
+on:
+  workflow_dispatch:
+    inputs:
+      label:
+        description: "Folder on footage branch"
+        default: "film-sheets"
+      frames:
+        description: "Frames per film"
+        default: "72"
+      items:
+        description: "Space-separated KEY=URL"
+        default: ""
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -y -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core >/dev/null
+      - run: pip install pillow
+      - name: Sheets
+        env:
+          ITEMS: ${{ inputs.items }}
+        run: python scripts/film_sheet.py "/tmp/out/${{ inputs.label }}" "${{ inputs.frames }}" $ITEMS
+      - name: Push to footage branch
+        if: always()
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git fetch origin footage && git checkout footage
+          mkdir -p "${{ inputs.label }}" && cp -r /tmp/out/${{ inputs.label }}/. "${{ inputs.label }}/" || true
+          git add "${{ inputs.label }}" && git commit -m "sheets: ${{ inputs.label }}" && git push origin footage || echo "nothing to push"
