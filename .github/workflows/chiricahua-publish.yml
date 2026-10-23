@@ -1,0 +1,38 @@
+name: chiricahua-publish
+# Publish the release artifact of a finished chiricahua-build run (after QA review): upload + schedule long video and Shorts.
+on:
+  workflow_dispatch:
+    inputs:
+      build_run_id:
+        description: "chiricahua-build run id whose release artifact to publish"
+        required: true
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo mkdir -p /home/claude && sudo chown "$(id -u):$(id -g)" /home/claude && mkdir -p /home/claude/doc/chiricahua/release
+      - uses: actions/download-artifact@v4
+        with:
+          name: release
+          path: /home/claude/doc/chiricahua/release
+          run-id: ${{ inputs.build_run_id }}
+          github-token: ${{ github.token }}
+      - run: ls -la /home/claude/doc/chiricahua/release && python3 ci/chiricahua/unpack.py /tmp/u
+      - name: Publish to YouTube (scheduled)
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: bash /tmp/u/ci/publish.sh
+      - name: Record video IDs / queued comment in repo
+        if: always()
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add content/published content/pending 2>/dev/null || true
+          git commit -qm "published: chiricahua ep1" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
