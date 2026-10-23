@@ -3,7 +3,8 @@
 set -euo pipefail
 WS="$GITHUB_WORKSPACE"
 sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL || true
-sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-inter fonts-dejavu-core >/dev/null
+for i in 1 2 3 4; do timeout 420 bash -c "sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-inter fonts-dejavu-core >/dev/null" && break; echo "apt retry $i"; sleep 20; done
+which ffmpeg
 pip install -q numpy scipy pillow soundfile
 sudo mkdir -p /home/claude && sudo chown "$(id -u):$(id -g)" /home/claude
 ln -sfn "$WS" /home/claude/rs
