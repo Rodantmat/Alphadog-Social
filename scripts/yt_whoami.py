@@ -24,17 +24,17 @@ def uploads_list():
 for it in uploads_list():
     print("UPLOAD", it["snippet"]["resourceId"]["videoId"], "|", it["snippet"]["title"], "|", it.get("status", {}).get("privacyStatus"))
 if "--test-upload" in sys.argv:
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "color=c=black:s=320x240:d=3", "-pix_fmt", "yuv420p", "/tmp/t.mp4"], check=True)
-    meta = {"snippet": {"title": "upload check (auto-deleted)", "categoryId": "27"}, "status": {"privacyStatus": "unlisted", "selfDeclaredMadeForKids": False}}
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "testsrc2=s=1280x720:d=15:r=30", "-f", "lavfi", "-i", "sine=f=440:d=15", "-shortest", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-c:a", "aac", "/tmp/t.mp4"], check=True)
+    meta = {"snippet": {"title": "upload check (auto-deleted)", "categoryId": "27"}, "status": {"privacyStatus": "private", "selfDeclaredMadeForKids": False}}
     sz = os.path.getsize("/tmp/t.mp4")
     r = urllib.request.urlopen(urllib.request.Request("https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status&notifySubscribers=false",
         data=json.dumps(meta).encode(), method="POST", headers={**H, "Content-Type": "application/json", "X-Upload-Content-Length": str(sz), "X-Upload-Content-Type": "video/mp4"}), timeout=60)
     with urllib.request.urlopen(urllib.request.Request(r.headers["Location"], data=open("/tmp/t.mp4", "rb").read(), method="PUT", headers={**H, "Content-Type": "video/mp4"}), timeout=120) as r2:
         v = json.loads(r2.read())
-    print("TEST_UPLOAD id", v["id"], "requested=unlisted got=", v["status"].get("privacyStatus"), "| upload:", v["status"].get("uploadStatus"))
+    print("TEST_UPLOAD id", v["id"], "requested=private got=", v["status"].get("privacyStatus"), "| upload:", v["status"].get("uploadStatus"))
     for k in range(8):
         time.sleep(30)
-        items = get(f"https://www.googleapis.com/youtube/v3/videos?part=status,processingDetails&id={v['id']}").get("items", [])
+        items = get(f"https://www.googleapis.com/youtube/v3/videos?part=status,processingDetails,suggestions&id={v['id']}").get("items", [])
         print("TEST_UPLOAD after", (k + 1) * 30, "s:", json.dumps(items[0]["status"]) if items else "not listed", "|", json.dumps(items[0].get("processingDetails", {}).get("processingStatus")) if items else "")
         if items and items[0]["status"].get("uploadStatus") in ("processed", "rejected", "failed"): break
     for it in uploads_list():
