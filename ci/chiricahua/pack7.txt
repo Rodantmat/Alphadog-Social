@@ -1,0 +1,305 @@
+#@@FILE chiricahua/timeline_v3.json
+[{"id":"s001","dur":13.733},{"id":"s002","dur":8.655},{"id":"s003","dur":2.767},{"id":"s004","dur":26.362},{"id":"s005","dur":9.295},{"id":"s006","dur":22.138},{"id":"s007","dur":12.794},{"id":"s008","dur":2.853},{"id":"h036","dur":4.0},{"id":"s020","dur":27.215},{"id":"s034","dur":18.853},{"id":"s035","dur":29.775},{"id":"s036","dur":22.437},{"id":"s037","dur":20.559},{"id":"s038","dur":27.727},{"id":"s038_ins","dur":12.1},{"id":"s039","dur":8.101},{"id":"s040","dur":22.138},{"id":"s041","dur":23.29},{"id":"s042","dur":20.559},{"id":"s043","dur":18.597},{"id":"s044","dur":11.855},{"id":"s045","dur":10.661},{"id":"h021","dur":4.0},{"id":"s021","dur":13.477},{"id":"s022","dur":15.397},{"id":"s023","dur":23.717},{"id":"s024","dur":19.962},{"id":"s025","dur":12.751},{"id":"s026","dur":26.533},{"id":"s027","dur":10.387},{"id":"s028","dur":23.503},{"id":"s029","dur":10.575},{"id":"s030","dur":31.226},{"id":"s031","dur":23.461},{"id":"s032","dur":10.911},{"id":"s033","dur":14.415},{"id":"h009","dur":4.0},{"id":"s009","dur":20.261},{"id":"s010","dur":17.999},{"id":"s011","dur":26.405},{"id":"s012","dur":7.802},{"id":"s013","dur":23.077},{"id":"s014","dur":17.274},{"id":"s014_ins","dur":8.0},{"id":"s015","dur":13.477},{"id":"s016","dur":25.807},{"id":"s017","dur":12.751},{"id":"s018","dur":17.103},{"id":"s019","dur":9.466},{"id":"h078","dur":4.0},{"id":"s073","dur":18.127},{"id":"s074","dur":25.338},{"id":"s075","dur":25.679},{"id":"s076","dur":8.741},{"id":"s077","dur":23.247},{"id":"s078","dur":19.962},{"id":"h067","dur":4.0},{"id":"s063","dur":9.082},{"id":"s064","dur":30.586},{"id":"s065","dur":6.138},{"id":"s066","dur":23.205},{"id":"s067","dur":25.466},{"id":"s068","dur":14.031},{"id":"s069","dur":17.786},{"id":"s070","dur":13.647},{"id":"s071","dur":12.965},{"id":"h049","dur":4.0},{"id":"s046","dur":20.303},{"id":"s047","dur":22.266},{"id":"s048","dur":15.525},{"id":"s049","dur":25.082},{"id":"s050","dur":21.109},{"id":"s051","dur":31.269},{"id":"s052","dur":3.962},{"id":"s053","dur":25.193},{"id":"s054","dur":21.583},{"id":"s055","dur":13.903},{"id":"s056","dur":4.047},{"id":"s057","dur":9.807},{"id":"s058","dur":7.759},{"id":"s059","dur":13.562},{"id":"s060","dur":6.863},{"id":"s061","dur":13.69},{"id":"s062","dur":14.159},{"id":"h085","dur":4.0},{"id":"s079","dur":16.89},{"id":"s079_ins","dur":21.1},{"id":"s080","dur":32.549},{"id":"s081","dur":11.855},{"id":"s082","dur":10.874},{"id":"s083","dur":7.461},{"id":"s084","dur":12.837}]
+#@@FILE chiricahua/validate_shots.py
+"""Delete rendered shot files whose duration doesn't match the plan (partial writes from interrupted renders)."""
+import json, os, subprocess, sys
+sys.path.insert(0, "/home/claude/doc/chiricahua"); import engine as E, soundfile as sf
+D = "/home/claude/doc/chiricahua"; shots = json.load(open(f"{D}/shots_v2.json"))
+total = sf.info(f"{D}/narration_full.wav").duration; edges = [0.0]
+for s in shots: edges.append(edges[-1] + s["dur"])
+edges[-1] = total; fr = [round(e * 30) for e in edges]; bad = 0; ok = 0; miss = 0
+for i, s in enumerate(shots):
+    s["dur"] = (fr[i + 1] - fr[i]) / 30
+    f = f"{D}/render_v2/{i:04d}_{E.key({k: v for k, v in s.items() if not k.startswith('_') and k not in ('amb', 'amb_g', 'sfx', 'tag')})}.mp4"
+    if not os.path.exists(f): miss += 1; continue
+    d = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f], capture_output=True, text=True).stdout.strip()
+    try: d = float(d)
+    except ValueError: d = -1
+    if abs(d - s["dur"]) > 0.12: print("BAD", i, f, d, s["dur"]); os.remove(f); bad += 1
+    else: ok += 1
+print("ok", ok, "bad", bad, "missing", miss)
+
+#@@FILE chiricahua/verify.json
+[["fly4/east_approach.mp4","0da29594e6c0"],["fly4/massai_orbit.mp4","1e6a43a3a242"],["fly4/north_reveal.mp4","9a71e790024e"],["fly4/spires_lowpass.mp4","b66f33094544"],["maps/map_apache_pass.mp4","303885bbaa26"],["maps/map_caldera.mp4","c7696b7f3d6c"],["maps/map_exile.mp4","606ace38df48"],["maps/map_homeland.mp4","ebf6a0897c3a"],["maps/map_massai.mp4","11616d4f9b08"],["maps/map_outlaws.mp4","71d73b827eee"],["maps/map_sky_island.mp4","c73d6f9cb61b"],["maps/map_stronghold.mp4","080fcf78ef46"],["maps/map_surrender.mp4","c01697a18215"],["maps/map_where.mp4","324edcbf8a70"],["media/annot/cochise_head_annot.jpg","5008202f844b"],["media/annot/cochise_head_clean.jpg","437f39957e96"],["media/img/commons_02dae79bf3.jpg","245239b40a78"],["media/img/commons_392333a450.jpg","fa6e22a10bf8"],["media/img/commons_4c5c3d807f.jpg","c029b179092f"],["media/img/commons_5220c4eb94.jpg","b9d5a8c65ab7"],["media/img/commons_53644b3912.jpg","a632bb60e738"],["media/img/commons_5cdeefad1d.jpg","b19e2b75e0e2"],["media/img/commons_836be49578.jpg","46b32c56b93d"],["media/img/commons_837ddd63db.jpg","6da75bda786c"],["media/img/commons_8cf932b164.jpg","8081b8684518"],["media/img/commons_95469fd8e8.jpg","a42ee4794667"],["media/img/commons_b34474933c.jpg","512c96a9faf5"],["media/img/commons_cf0abb124e.jpg","0a407f7b5622"],["media/img/commons_e940ce1f6a.jpg","e3e8a2b2d3f2"],["media/video/archive_b1143dffb4.mp4","888a1f7a060a"],["ranch/img/commons_10051a4c86.jpg","188e10f6db2a"],["ranch/img/commons_31016a11d7.jpg","17aae4152c28"],["ranch/img/commons_521d1148ac.jpg","827b9f7c26ee"],["ranch/img/commons_7311f45f81.jpg","a478ce0269de"],["ranch/img/commons_76994906d2.jpg","c5a09beb122e"],["ranch/img/commons_9769963e0b.jpg","76a523b9385d"],["ranch/img/commons_a7125e63bd.jpg","d6a2ffbcc999"],["ranch/img/commons_bcc1efa07c.jpg","4afcb7dcf6ff"],["ranch/img/commons_c3a035526b.jpg","3443aa844088"],["ranch/img/commons_cc4a7c526e.jpg","5070fcb4ec7a"],["ranch/img/commons_d7d592687e.jpg","efb0261a3c0f"],["ranch/img/commons_dae0913869.jpg","2755ab3cbd6c"],["ranch/img/commons_f960536bba.jpg","c2aa9291b82f"],["ranch/img/commons_ff516ffcef.jpg","a97842fc1810"],["sfx/amb_fire.wav","01d9a9ea447e"],["sfx/amb_gallop.wav","41f9e02685d5"],["sfx/amb_wind.wav","f2447bcde1bd"],["sfx/hit_low.wav","2f9eeddbf366"],["sfx/nps_avalanche_0.wav","5a45586d48c1"],["sfx/nps_battle_0.wav","facfd757f73f"],["sfx/nps_crickets_0.wav","93bb65275647"],["sfx/nps_dawnchorus_bryce_0.wav","10b0225e498a"],["sfx/nps_stream_0.wav","3d310ed12307"],["sfx/riser.wav","490a560ebcca"],["sfx/sub_drop.wav","8427e1d0c284"],["sfx/wc_steam_train_1.wav","1594c5bf6d2d"],["sfx/wc_train_whistle_1.wav","ac46e0ae7534"],["sfx/wc_wind_2.wav","e14aa43970c8"]]
+#@@FILE chiricahua/youtube_credits_comment.txt
+Full credits for Chiricahua (AlphaDog Studio). Thank you to every creator who licensed their work openly.
+
+VIDEO (YOUTUBE, CREATIVE COMMONS ATTRIBUTION)
+• "Outlaw Johnny Ringo Grave and Turkey Creek Rd" by Overlanding Paradise — https://www.youtube.com/watch?v=LNceEWbCiAg — CC BY
+• "Tombstone, Arizona - The haunting real history of this old west town. #tombstone #haunting #vanlife" by Destination Possible Adventures - Vanlife - Travel — https://www.youtube.com/watch?v=KfCNBLKYZXQ — CC BY
+• "Secret Volcanic Maze | Arizona Trail Named After a Wardrobe Malfunction | Balancing 1,000-Ton Spires" by Roamapf — https://www.youtube.com/watch?v=pGLdAm_aQqM — CC BY
+• "Camping in Chiricahua National Monument | Bonita Canyon Campground | Willcox, Arizona" by Great West Treks — https://www.youtube.com/watch?v=GqV7LUmlgFY — CC BY
+• "Dragoon Rocks - Benson, AZ" by Thomas Elliott — https://www.youtube.com/watch?v=GSyujZmmm8Q — CC BY
+• ""GERONIMO SURRENDERS " Ends 25 YEAR WAR WITH US Ft Bowie #geronimo #history" by MAD HISTORY — https://www.youtube.com/watch?v=kMpkSDLlztM — CC BY
+• "Chiricahua National Monument" by Out-Spokin Wheels on Wheels — https://www.youtube.com/watch?v=cPRS8XqUNvw — CC BY
+• "Early Colorado Warriors - The Buffalo Soldiers Month" by Colorado National Guard — https://www.youtube.com/watch?v=-ApI8htOOaU — CC BY
+• "Cathedrals of the Chiricahuas Live in Portal Arizona" by Chris Aanensen — https://www.youtube.com/watch?v=HJlO513toNw — CC BY
+• "Cochise Stronghold, January 2019" by Ron Stewart — https://www.youtube.com/watch?v=m8GhYxt-kAg — CC BY
+• "Reputation Destroyers Live in Portal, Arizona" by Chris Aanensen — https://www.youtube.com/watch?v=kIWri-oJzhU — CC BY
+• "Cacti-Christmas: Chiricahua National Monument" by Buffalo&Bear Adventures — https://www.youtube.com/watch?v=J6SwvXFX1YM — CC BY
+• "The Many Faces of the Chiricahua Mountains" by Friends of Cave Creek Canyon — https://www.youtube.com/watch?v=SGEI69bBs6o — CC BY
+• "Exploring Wild Arizona: Dust Storms, Fort Bowie & Mountain Trails" by Campfires & Motors — https://www.youtube.com/watch?v=crksH675oRQ — CC BY
+• "Chiricahua National Monument and Fort Bowie National Historic Site" by wandering WandA — https://www.youtube.com/watch?v=75z-KbV0Y48 — CC BY
+• "Cochise Stronghold Rock Fellow Dome FPV" by Nathan Goldsmith — https://www.youtube.com/watch?v=fuZI24Ncioc — CC BY
+• "BUSLIFE! Toaster Test & Historical Hike to Fort Bowie!" by Bussy McBusface — https://www.youtube.com/watch?v=b0etN67vKJI — CC BY
+• "Visiting Chiricahua & The Historic Southern Pacific Railroad Town of Willcox Az" by Ramblin Pam — https://www.youtube.com/watch?v=gR-Y5MxYm2c — CC BY
+• "Canyons, Cuties, & Canines: An Adventure at Chiricahua" by Su Craig Travels — https://www.youtube.com/watch?v=kjAGAtBYZSo — CC BY
+• "Altitude: 1, Us: 0 - Hiking Chiricahua | Truck Camper Life" by The Time Is Now Adventures — https://www.youtube.com/watch?v=ypGGN2x4Fjg — CC BY
+• "Mountain Views & Happy Hounds Best Hiking Trip" by Su Craig Travels — https://www.youtube.com/watch?v=WuHqznoZL1M — CC BY
+• "Cave Creek Canyon Time Lapse" by Friends of Cave Creek Canyon — https://www.youtube.com/watch?v=g-INjwxy_Xk — CC BY
+• "The Chiricahua Journals: Javelina" by Friends of Cave Creek Canyon — https://www.youtube.com/watch?v=xDWZGATPzmA — CC BY
+• "Then and Now in the Chiricahua Mountains" by Friends of Cave Creek Canyon — https://www.youtube.com/watch?v=2y-MR_Zd5B0 — CC BY
+• "Why name a town Tombstone?- it's Darker than you think." by Outer Range — https://www.youtube.com/watch?v=ZsiJzemUgRU — CC BY
+
+PHOTOGRAPHS (WIKIMEDIA COMMONS / LIBRARY OF CONGRESS / NATIONAL ARCHIVES / HABS)
+• Apache Wickiup, Edward Curtis, 1903 — Edward S. Curtis (Public domain)
+• Chiricahua Apache prisoners, including Geronimo, 1886 - NARA - 530797 — Unknown author (Public domain)
+• HABS (Library of Congress), c.1915: EMMA ERICKSON AND MRS. COLLINS ON BALCONY OF RANCH HOUSE - HABS ARIZ,2-WILCO.V,1A-36 (Public domain)
+• Chiricahua medicine man — Randall, A. Frank. (but see [1]) (Public domain)
+• Naiche-Hereditary chief-Chiricahua Apaches LCCN2001700296 — Muhr, Adolph F., -1913, photographer (Public domain)
+• Nana (Nanay), a Chiricahua Apache subchief, full-length, seated, 1886 - NARA - 530800 — Unknown author (Public domain)
+• Geronimo (Goyathlay), a Chiricahua Apache, full-length, kneeling with rifle, 1887 - NARA - 530880 — Ben Wittick (Public domain)
+• Chiricahua Apache Prisoners, Including Geronimo - NARA - 530797 (page 1) — Unknown author (Public domain)
+• Castillo de San Marcos, St. Augustine, FL - 50857006483 — w_lemay (CC BY-SA 2.0) — https://commons.wikimedia.org/wiki/File:Castillo_de_San_Marcos,_St._Augustine,_FL_-_50857006483.jpg
+• Chiricahua Apaches as they arrived at Carlisle from Fort Marion, Florida (F26703 DPLW) — Choate, J. N. (John N.), 1848-1902. (Public domain)
+• Indian Cemeteries, Fort Sill, OK, US (04) — Bubba73 (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File:Indian_Cemeteries,_Fort_Sill,_OK,_US_(04).jpg
+• DETAIL OF GARFIELD FIREPLACE LOOKING SOUTH - Faraway Ranch HABS ARIZ,2-WILCO.V,1A-7 (Public domain)
+• Apaches Ba-keitz-ogie, (The Yellow Coyote), called Dutchy Chiricahua scout (F19052 DPLW) — Unknown author (Public domain)
+• Chiricahua Apache girl, granddaughter of Cochise, full-length, seated, 1886 - NARA - 530900 — Unknown author (Public domain)
+• Oliver Otis Howard portrait and signature — Unknown author (Public domain)
+• Chiricahua mountains and turkey creek caldera — Ken Bosma from Green Valley, Arizona, USA (CC BY 2.0) — https://commons.wikimedia.org/wiki/File:Chiricahua_mountains_and_turkey_creek_caldera.jpg
+• Cochise's Head, Chiracahua National Monument - panoramio — hakkun (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File:Cochise's_Head,_Chiracahua_National_Monument_-_panoramio.jpg
+• Cochise's Head, Chiracahua National Monument - panoramio — hakkun (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File:Cochise's_Head,_Chiracahua_National_Monument_-_panoramio.jpg
+• Coati Nasua narica Climbing Down 2048px — Photo by Julie Ramsey (Ram-Man) (CC BY-SA 2.5) — https://commons.wikimedia.org/wiki/File:Coati_Nasua_narica_Climbing_Down_2048px.jpg
+• White-nosed Coati Cave Creek Ranch Portal AZ 2018-05-11 11-43-03 (46924655945) — Bettina Arrigoni (CC BY 2.0) — https://commons.wikimedia.org/wiki/File:White-nosed_Coati_Cave_Creek_Ranch_Portal_AZ_2018-05-11_11-43-03_(46924655945).jpg
+• Elegant Trogon (Trogon elegans) — Dominic Sherony (CC BY-SA 2.0)
+• Elegant Trogon (Trogon elegans) (4412444696) — Dominic Sherony (CC BY-SA 2.0) — https://commons.wikimedia.org/wiki/File:Elegant_Trogon_(Trogon_elegans)_(4412444696).jpg
+• Male Jaguar–Photo Courtesy of UA-USFWS (11297458736) — USFWS Southwest (Public domain)
+• HABS (Library of Congress), 1935: RANCH HOUSE - Faraway Ranch, Erickson-Riggs Ranch House, State HABS ARIZ,2-WILCO.V,1A-40 (Public domain)
+• HABS (Library of Congress), undated: RANCH HOUSE - Faraway Ranch, Erickson-Riggs Ranch House, State HABS ARIZ,2-WILCO.V,1A-45 (Public domain)
+• CONTEXTUAL VIEW OF RANCH HOUSE LOOKING WEST - Faraway Ranch, Willcox, Cochise County, AZ HABS ARIZ,2-WILCO.V,1-1 (Public domain)
+• HABS (Library of Congress), c.1915: FARAWAY RANCH AS COMPLETED WITH ADOBE BRICK WALLS AND WOOD SHINGLE ROOF - Faraway Ranch, HABS ARIZ,2-WILCO.V,1A-35 (Public domain)
+• Sugarloaf Mountain Fire Tower, Sugarloaf Mountain Trail, Chiricahua National Monument, Willcox, AZ - 54293283501 — w_lemay (CC BY-SA 2.0)
+• WEST SIDE LOOKING NORTHEAST - Faraway Ranch HABS ARIZ,2-WILCO.V,1A-3 (Public domain)
+• FIRST FLOOR, GUEST DINING ROOM, LOOKING WEST - Faraway Ranch HABS ARIZ,2-WILCO.V,1A-17 (Public domain)
+• Dining Room Faraway Ranch House Arizona 2014 — The Old Pueblo (CC BY-SA 4.0)
+• FIRST FLOOR, DETAIL OF FIREPLACE IN GUEST DINING ROOM - Faraway Ranch HABS ARIZ,2-WILCO.V,1A-18 (Public domain)
+• SECOND FLOOR, BOARD AND BATTEN SOUTH WALL OF LILLIAN RIGGS'S OFFICE - Faraway Ranch HABS ARIZ,2-WILCO.V,1A-25 (Public domain)
+• FIRST FLOOR, KITCHEN SEEN FROM EAST END - Faraway Ranch HABS ARIZ,2-WILCO.V,1A-15 (Public domain)
+• Faraway Ranch House Arizona 2014 — The Old Pueblo (CC BY-SA 4.0)
+• Faraway Ranch — Leland Jackson (CC BY 2.0)
+• Map of the Tombstone mining district - Cochise Co., Arizona Ter. LOC 2012586611 — Ingoldsby, Frank S.; Kelleher, M.; Peel, M. R.; H.S. Crocker & Co. (Public domain)
+• FLY'S PHOTOGRAPHY GALLERY — JERRYE & ROY KLOTZ MD (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File:FLY'S_PHOTOGRAPHY_GALLERY.jpg
+
+STOCK VIDEO (PIXABAY CONTENT LICENSE)
+Pixabay creators: BlenderTimer, CharlesAldridge, DancingSky, Gylfi, JoshuaWoroniecki, Kanenori, ReconnServices, Taylord_Adventures, TungArt7, Wolfgang-1958, baranova_n, josefgadermaier, klaatubaradanikto, klimkin, loswin23, md579 (pixabay.com)
+
+NEWS & INTERVIEWS
+• U.S. House of Representatives floor proceedings, March 2026 (public domain)
+
+#@@FILE chiricahua/youtube_description.txt
+On October 20, 2026, Chiricahua became America's 64th national park — and almost nobody knows its story. An ancient volcano built it. Apache warriors defended it. Outlaws hid in it. A gunfighter died under an oak tree here in 1882, and the case was never really closed.
+
+In this documentary: Geronimo's surrender and the Apache scout Massai, who jumped from a prisoner train and made his way home; Cochise and the Bascom Affair; the eruption that built the rocks; the jaguar caught on camera; the blind "Lady Boss" of Faraway Ranch; and who really killed Johnny Ringo.
+
+CHAPTERS
+0:00 The man under the oak
+1:43 The man who jumped from the train
+6:21 The war that started in a tent
+10:21 A volcano 1,000x bigger than St. Helens
+13:45 What still lives in the mountains
+15:50 The Lady Boss of Faraway Ranch
+18:27 Who killed Johnny Ringo?
+23:01 Why it became a park now
+
+A note on respect: this episode does not identify or speculate about burial or ceremonial sites. The new park law protects traditional cultural and religious sites and guarantees access for tribal members.
+
+SOURCES (selected)
+National Park Service — Chiricahua & Fort Bowie history pages; NPS Geodiversity Atlas; Chiricahua National Park Act (S.3715 / H.R.6380); HistoryNet; True West Magazine; Arizona Highways; USFWS; Center for Biological Diversity.
+
+NARRATION: AI-generated voice (disclosed). Script researched and written for this channel.
+MUSIC & SOUND DESIGN: Original. Natural sounds from the National Park Service (public domain).
+MAPS & 3D TERRAIN: Natural Earth (public domain); USGS 3DEP elevation and USDA NAIP imagery (public domain).
+ARCHIVAL FILM: "The Civilian Conservation Corps at Work — Arizona" (U.S. Forest Service, public domain, via Internet Archive).
+
+FOOTAGE, PHOTO & SOUND CREDITS: Creative Commons footage from 25 YouTube creators, public-domain archival film (Library of Congress, Internet Archive, U.S. Bureau of Mines, NSF Science Nation, U.S. House), Pixabay stock, and Wikimedia Commons / NARA / HABS photographs. Full list with links in the pinned comment.
+
+INTERVIEWS: John Bishop, Washington State University Vancouver (NSF Science Nation, public domain); John Bell, Buffalo Soldiers living-history interpreter (Colorado National Guard, CC BY); Rep. Juan Ciscomani, U.S. House floor (public domain).
+
+MORE CREDITS
+ARCHIVAL FILM & PUBLIC-DOMAIN VIDEO
+• "Arizona And Its Natural Resources" — United States. Bureau of Mines (1939) — Public Domain Mark
+• "Science Nation: Mount St. Helens - Rising From the Ashes" — Internet Archive (n.d.) — CC0
+• "U.S. cavalry supplies unloading at Tampa, Florida" — Library of Congress — public domain (pre-1929)
+• "Trained cavalry horses" — Library of Congress — public domain (pre-1929)
+• "Charge of Boer cavalry [no. 1]" — Library of Congress — public domain (pre-1929)
+• "Charge of Boer cavalry [no. 2]" — Library of Congress — public domain (pre-1929)
+• "Home Movie: 004237" — Internet Archive (n.d.) — Prelinger Archives (public domain)
+• "Bucking broncho" — Library of Congress — public domain (pre-1929)
+
+ARCHIVAL FILM (PUBLIC DOMAIN)
+• "The Civilian Conservation Corps at Work" — U.S. Forest Service, public domain (Internet Archive)
+
+SOUND (NPS NATURAL SOUNDS PUBLIC DOMAIN; WIKIMEDIA COMMONS)
+• Gentle breeze and birds singing by ezwa (Public domain)
+• "6024 Lickey Bank" (Wikimedia Commons contributor, CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File:6024_Lickey_Bank.ogg
+• National Park Service — https://www.nps.gov/subjects/sound/sounds-dawnchorus_bryce.htm
+• 2022-07-18 KaiserWilhelmPfeife by Michael32710 (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File:2022-07-18_KaiserWilhelmPfeife.wav
+• National Park Service — https://www.nps.gov/subjects/sound/sounds-crickets.htm
+• National Park Service — https://www.nps.gov/subjects/sound/sounds-battle.htm
+• National Park Service — https://www.nps.gov/subjects/sound/avalanche.htm
+• National Park Service — https://www.nps.gov/subjects/sound/sounds-stream.htm
+
+Narration: AI-generated voice. Original music and sound design by AlphaDog Studio. Maps: Natural Earth; 3D terrain: USGS 3DEP + USDA NAIP (public domain).
+
+#Chiricahua #NationalParks #Arizona #History #Documentary #Geronimo #JohnnyRingo #WildWest
+
+#@@FILE ci/final.sh
+#!/usr/bin/env bash
+# Assemble the episode from the rendered shards, build the Spanish track, subtitles, Shorts, thumbnails, metadata; push QA proofs.
+set -euo pipefail
+R=/home/claude/doc/runner; D=/home/claude/doc/chiricahua; REL=$D/release
+cd $D
+python3 validate_shots.py | tail -1
+python3 render_v2.py 2>&1 | tee render.log
+grep -E "SKIP_MISSING|FAIL" render.log && { echo "render had missing/failed shots"; exit 1; }
+mv chiricahua_ep1_v2.mp4 chiricahua_ep1_final.mp4
+python3 measure_mix.py | tee mix_report.txt
+# Spanish dub track (audio only; YouTube has no API for extra audio tracks -> kept ready as a file)
+python3 make_dub_es.py em_alex | tail -3
+MIX_TAG=_es python3 render_v2.py audio | tail -1
+ffmpeg -v error -y -i mix_v2_es_norm.wav -c:a aac -b:a 192k chiricahua_ep1_audio_es.m4a
+python3 make_subs.py
+python3 make_shorts.py
+python3 $R/thumbs.py
+python3 publish_meta.py
+# the Spanish audio track can only be attached in YouTube Studio: don't claim it in the metadata until it is there
+python3 - <<'EOF'
+import json
+R = "/home/claude/doc/chiricahua/release"
+d = open(f"{R}/desc_long.txt").read().replace(" Spanish audio track available.", ""); open(f"{R}/desc_long.txt", "w").write(d)
+m = json.load(open(f"{R}/meta_0_long.json"))
+m["localizations"]["es"]["description"] = m["localizations"]["es"]["description"].replace("Audio y subtítulos en español disponibles.", "Subtítulos en español disponibles.")
+json.dump(m, open(f"{R}/meta_0_long.json", "w"), ensure_ascii=False, indent=1)
+EOF
+ln -f chiricahua_ep1_final.mp4 $REL/ && cp shorts/chiricahua_sh*.mp4 thumbs_v3/thumb_B.jpg $REL/
+# hard gates on deliverables
+python3 - <<'EOF'
+import json, subprocess
+def probe(f):
+    o = json.loads(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration:stream=width,height,codec_type", "-of", "json", f], capture_output=True, text=True).stdout)
+    v = [s for s in o["streams"] if s["codec_type"] == "video"][0]; return float(o["format"]["duration"]), v["width"], v["height"], len(o["streams"])
+R = "/home/claude/doc/chiricahua/release"
+d, w, h, n = probe(f"{R}/chiricahua_ep1_final.mp4"); print("long", d, w, h, n); assert 1450 < d < 1560 and (w, h) == (1920, 1080) and n == 2
+for s in ("sh1", "sh2", "sh3"):
+    d, w, h, n = probe(f"{R}/chiricahua_{s}.mp4"); print(s, d, w, h); assert d < 59.9 and (w, h) == (1080, 1920)
+EOF
+# QA proofs (small) -> footage branch qa/chiricahua-ep1
+Q=/tmp/qa/qa/chiricahua-ep1; mkdir -p $Q
+for t in $(seq 15 30 1500); do ffmpeg -v error -y -ss $t -i chiricahua_ep1_final.mp4 -frames:v 1 -vf scale=480:-2 -q:v 6 $Q/f_$(printf %04d $t).jpg; done
+for s in sh1 sh2 sh3; do for t in 2 15 30 45; do ffmpeg -v error -y -ss $t -i shorts/chiricahua_$s.mp4 -frames:v 1 -vf scale=270:-2 -q:v 6 $Q/${s}_$t.jpg || true; done; done
+cp mix_report.txt render.log plan.log $Q/ 2>/dev/null || true
+cp $REL/*.json $REL/*.txt $REL/*.srt thumbs_v3/*.jpg chiricahua_ep1_audio_es.m4a $Q/
+echo FINAL_OK
+
+#@@FILE ci/prep.sh
+#!/usr/bin/env bash
+# Rebuild every generated input, then gate on: timeline + shot plan identical to the approved cut (fingerprints), QA rules pass.
+set -euo pipefail
+R=/home/claude/doc/runner; D=/home/claude/doc/chiricahua; G=/home/claude/doc/geo
+NE=https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson
+for n in ne_10m_rivers_lake_centerlines ne_50m_admin_0_countries ne_50m_admin_1_states_provinces; do curl -fsSL "$NE/$n.geojson" -o "$G/$n.geojson"; done
+python3 $R/relief.py
+cd $D
+python3 $R/fit_narr.py
+python3 score.py $D/music wonder tension somber western
+python3 synth_sfx.py
+python3 $R/annot.py
+python3 $G/maps.py map_scenes.json maps
+KEEP_TIMING=timeline_v3.json python3 timeline_v2.py
+python3 plan_v2.py > plan.log
+python3 $R/gate.py
+python3 make_subs.py
+python3 qa_check.py
+python3 $R/verify.py
+echo PREP_OK
+
+#@@FILE ci/publish.sh
+#!/usr/bin/env bash
+# Upload long video + 3 Shorts (scheduled), record IDs in the repo (idempotent on re-runs), queue the credits comment if
+# YouTube refuses comments while the video is still private (yt-followup.yml posts it after the premiere time).
+set -euo pipefail
+WS="$GITHUB_WORKSPACE"; REL=/home/claude/doc/chiricahua/release; LOG="$WS/content/published/chiricahua_ep1.json"
+mkdir -p "$WS/content/published" "$WS/content/pending"
+[ -f "$LOG" ] || echo '{}' > "$LOG"
+cd $REL
+for m in meta_0_long meta_1_sh3 meta_2_sh1 meta_3_sh2; do
+  done_id=$(python3 -c "import json,sys;print(json.load(open('$LOG')).get('$m',''))")
+  if [ -n "$done_id" ]; then echo "$m already uploaded: $done_id"; [ "$m" = meta_0_long ] && LONG=$done_id; continue; fi
+  if [ "$m" != meta_0_long ]; then sed -i "s#{LONG_URL}#https://youtu.be/${LONG}#" desc_${m##*_}.txt; fi
+  python3 "$WS/scripts/yt_upload.py" $m.json 2>&1 | tee up_$m.log
+  vid=$(grep -oP '^VIDEO_ID=\K[\w-]{11}' up_$m.log | head -1)
+  [ -n "$vid" ] || { echo "upload failed for $m"; exit 1; }
+  [ "$m" = meta_0_long ] && LONG=$vid
+  python3 - "$LOG" "$m" "$vid" <<'EOF'
+import json, sys
+p, k, v = sys.argv[1:]; d = json.load(open(p)); d[k] = v; json.dump(d, open(p, "w"), indent=1)
+EOF
+  if [ "$m" = meta_0_long ] && ! grep -q "^comment 200" up_$m.log; then
+    python3 - "$WS/content/pending/comment_$vid.json" "$vid" <<'EOF'
+import json, sys
+json.dump({"video_id": sys.argv[2], "after": "2026-10-24T15:05:00Z", "text_file": "content/pending/credits_comment.txt"}, open(sys.argv[1], "w"))
+EOF
+    cp credits_comment.txt "$WS/content/pending/credits_comment.txt"
+  fi
+done
+cat "$LOG"
+
+#@@FILE ci/setup.sh
+#!/usr/bin/env bash
+# Recreate the authoring machine's layout on a GitHub runner: /home/claude/{fb,rs,doc}. Usage: setup.sh "<footage folders...>"
+set -euo pipefail
+WS="$GITHUB_WORKSPACE"
+sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL || true
+for i in 1 2 3 4; do timeout 420 bash -c "sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-inter fonts-dejavu-core >/dev/null" && break; echo "apt retry $i"; sleep 20; done
+which ffmpeg
+pip install -q numpy scipy pillow soundfile
+sudo mkdir -p /home/claude && sudo chown "$(id -u):$(id -g)" /home/claude
+ln -sfn "$WS" /home/claude/rs
+git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /home/claude/fb
+(cd /home/claude/fb && git sparse-checkout set $1)
+python3 "$WS/ci/chiricahua/unpack.py" /home/claude/doc/runner
+cp -r /home/claude/doc/runner/chiricahua /home/claude/doc/chiricahua
+cp -r /home/claude/doc/runner/geo /home/claude/doc/geo
+python3 /home/claude/doc/runner/prepare.py
+ffmpeg -version | head -1; fc-list | grep -c -i inter; df -h / | tail -1
+
+#@@FILE fit_narr.py
+"""Rebuild time-fitted narration WAVs: a re-voiced line fitted to the exact length of the line it replaced."""
+import json, subprocess, numpy as np, soundfile as sf
+SR = 48000; D = "/home/claude/doc/chiricahua"
+def dec(p, af=None):
+    return np.frombuffer(subprocess.run(["ffmpeg", "-v", "error", "-i", p] + (["-af", af] if af else []) + ["-f", "f32le", "-ac", "1", "-ar", str(SR), "-"], capture_output=True).stdout, np.float32)
+for it in json.load(open(f"{D}/narr_fit.json")):
+    old = dec(it["ref"]); new = dec(it["src"])
+    if it["method"] == "pad" and len(new) <= len(old): out = np.pad(new, (0, len(old) - len(new)))
+    else:
+        out = dec(it["src"], f"atempo={len(new) / len(old):.6f}"); out = np.pad(out, (0, max(0, len(old) - len(out))))[:len(old)]
+    sf.write(f"{D}/narr/{it['id']}.wav", out, SR, subtype="FLOAT"); print("fit", it["id"], len(old))
+
+#@@FILE gate.py
+"""The runner build must reproduce the approved cut exactly: compare timeline + shot plan against fingerprint.json."""
+import json, hashlib, os
+os.chdir("/home/claude/doc/chiricahua")
+def h(x): return hashlib.sha1(json.dumps(x, sort_keys=True).encode()).hexdigest()[:8]
+fp = json.load(open("fingerprint.json")); tl = json.load(open("timeline.json")); sh = json.load(open("shots_v2.json"))
+t = [h([it.get("id"), round(it["start"], 3), round(it["dur"], 3)]) for it in tl]
+s = [h([x.get("src"), round(x["dur"], 3), x.get("t0"), x.get("type")]) for x in sh]
+bt = [i for i, (x, y) in enumerate(zip(t, fp["timeline"])) if x != y]; bs = [i for i, (x, y) in enumerate(zip(s, fp["shots"])) if x != y]
+print("timeline", len(t), "diffs", bt[:10], [(tl[i].get("id"), tl[i]["start"], tl[i]["dur"]) for i in bt[:5]])
+print("shots", len(s), "diffs", bs[:20], [(sh[i].get("src"), sh[i]["dur"]) for i in bs[:5]])
+assert len(t) == len(fp["timeline"]) and len(s) == len(fp["shots"]) and not bt and not bs, "build differs from the approved cut"
+print("GATE_OK")
+
+#@@FILE geo/base/basemap_region.json
+{"bbox":[-111.2,31.2,-108.6,32.6],"px":2600}
