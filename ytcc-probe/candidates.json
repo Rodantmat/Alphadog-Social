@@ -1,0 +1,46 @@
+{
+  "log": [
+    {
+      "q": "Chiricahua National Monument",
+      "found": 8,
+      "err": ""
+    },
+    {
+      "q": "Chiricahua drone",
+      "found": 8,
+      "err": ""
+    },
+    {
+      "q": "Chiricahua hike",
+      "found": 8,
+      "err": ""
+    },
+    {
+      "q": "Fort Bowie",
+      "found": 8,
+      "err": ""
+    },
+    {
+      "q": "Cochise Stronghold",
+      "found": 8,
+      "err": ""
+    }
+  ],
+  "candidates": [
+    {
+      "id": "fuZI24Ncioc",
+      "title": "Cochise Stronghold Rock Fellow Dome FPV",
+      "channel": "Nathan Goldsmith",
+      "channel_url": "https://www.youtube.com/channel/UCNEzzDx5E3SxWj_0Viu2UtQ",
+      "url": "https://www.youtube.com/watch?v=fuZI24Ncioc",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "duration": 167,
+      "height": 1440,
+      "views": 318,
+      "upload_date": "20211109",
+      "q": "Cochise Stronghold",
+      "desc": "Another trip out to the Stronghold, man a lot went into making this one... A brutal two hour hike up crazy steep trail, to discover a surreal vista. A carefully planned line and some luck and my drone returned safely. Still haven't been able to  get up to dive the front side of Rock Fellow Dome, nee",
+      "dl_err": "from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    }
+  ]
+}
