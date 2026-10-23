@@ -1,11 +1,12 @@
 name: chiricahua-build
-# Fully automated: rebuild Episode 1 from text recipes + footage-branch sources, QA-gate it, then (publish=true) upload + schedule.
+# Fully automated: rebuild Episode 1 from text recipes + footage-branch sources, QA-gate it, keep the release as an artifact,
+# then (publish=true) upload + schedule. With publish=false, chiricahua-publish.yml publishes the reviewed release later.
 on:
   workflow_dispatch:
     inputs:
       publish:
-        description: "Upload to YouTube after the build passes"
-        default: "true"
+        description: "Upload to YouTube right after the build passes"
+        default: "false"
 permissions:
   contents: write
 env:
@@ -76,6 +77,8 @@ jobs:
           git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
           git add qa && git commit -qm "qa: chiricahua ep1 build ${{ github.run_id }}" || exit 0
           for i in 1 2 3 4 5 6; do git pull -q --rebase --depth 1 origin footage && git push -q origin HEAD:footage && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*8)); done; exit 1
+      - uses: actions/upload-artifact@v4
+        with: { name: release, path: /home/claude/doc/chiricahua/release, retention-days: 4, compression-level: 0 }
       - name: Publish to YouTube (scheduled)
         if: inputs.publish == 'true'
         env:
