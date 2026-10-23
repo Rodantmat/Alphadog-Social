@@ -1,0 +1,32 @@
+name: pd-scan
+on:
+  workflow_dispatch:
+    inputs:
+      label:
+        description: "Folder label on footage branch"
+        default: "pd-scan"
+      config:
+        description: "Config json path"
+        default: "content/chiricahua/pd_config.json"
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -y -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core >/dev/null
+      - run: pip install curl_cffi
+      - name: Scan
+        run: python scripts/pd_scan.py "/tmp/out/${{ inputs.label }}" "${{ inputs.config }}"
+      - name: Push to footage branch
+        if: always()
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git fetch origin footage && git checkout footage
+          mkdir -p "${{ inputs.label }}" && cp -r /tmp/out/${{ inputs.label }}/. "${{ inputs.label }}/" || true
+          git add "${{ inputs.label }}" && git commit -m "footage: ${{ inputs.label }}" && git push origin footage || echo "nothing to push"
