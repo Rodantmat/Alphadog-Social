@@ -1,0 +1,29 @@
+name: yt-auth
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "url or exchange"
+        default: "url"
+      code:
+        description: "Redirect URL or one-time code (exchange mode)"
+        default: ""
+permissions:
+  contents: read
+jobs:
+  auth:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pynacl
+      - name: Run
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          SECRETS_WRITER_TOKEN: ${{ secrets.SECRETS_WRITER_TOKEN }}
+          CODE: ${{ inputs.code }}
+        run: |
+          if [ "${{ inputs.mode }}" = "url" ]; then python scripts/yt_auth.py url; else python scripts/yt_auth.py exchange "$CODE"; fi
