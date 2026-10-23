@@ -1,0 +1,330 @@
+#@@FILE geo/maps.py
+"""Animated documentary maps (Natural Earth, public domain) rendered with PIL -> mp4.
+Scene spec:
+{"name": "...", "dur": 8, "cam": [[W,S,E,N] start], [[W,S,E,N] end]],
+ "layers": [
+   {"type":"pin","lon":..,"lat":..,"label":"...","t":1.0,"color":"gold","big":true},
+   {"type":"route","pts":[[lon,lat],...],"t0":1,"t1":5,"dash":false,"color":"red","label":"..."},
+   {"type":"circle","lon":..,"lat":..,"r_km":10,"t":2,"label":"...","fill":true},
+   {"type":"region","pts":[[lon,lat],...],"t":1,"label":"...","color":"gold"},
+   {"type":"text","lon":..,"lat":..,"text":"...","t":1,"size":34,"italic":true}
+ ],
+ "title": "optional top-left title"}
+"""
+import json, math, os, subprocess, sys
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
+import numpy as np
+
+W, H, FPS = 1920, 1080, 30
+GEO = os.path.dirname(os.path.abspath(__file__))
+FD = "/usr/share/fonts/opentype/inter/"
+SERIFB = "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf"
+SERIFI = "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Italic.ttf"
+def F(w, s): return ImageFont.truetype(FD + {"bold": "Inter-Bold.otf", "semi": "Inter-SemiBold.otf", "med": "Inter-Medium.otf", "black": "InterDisplay-Black.otf"}[w], s)
+def SB(s): return ImageFont.truetype(SERIFB if os.path.exists(SERIFB) else FD + "Inter-Bold.otf", s)
+def SI(s): return ImageFont.truetype(SERIFI if os.path.exists(SERIFI) else FD + "Inter-Medium.otf", s)
+
+PAL = {"bg": (24, 28, 32), "land": (62, 58, 50), "land_focus": (88, 78, 62), "sea": (22, 34, 44), "border": (150, 140, 120),
+       "state": (110, 102, 88), "text": (238, 230, 214), "gold": (226, 172, 84), "red": (206, 72, 58), "blue": (110, 170, 220),
+       "white": (240, 240, 240), "river": (60, 96, 120)}
+
+_cache = {}
+def load(name):
+    if name not in _cache:
+        _cache[name] = json.load(open(f"{GEO}/{name}.geojson"))
+    return _cache[name]
+
+def polys(geom):
+    t = geom["type"]; c = geom["coordinates"]
+    if t == "Polygon": return [c]
+    if t == "MultiPolygon": return c
+    return []
+def lines(geom):
+    t = geom["type"]; c = geom["coordinates"]
+    if t == "LineString": return [c]
+    if t == "MultiLineString": return c
+    return []
+
+def ease(t): t = max(0.0, min(1.0, t)); return 0.5 - 0.5 * math.cos(math.pi * t)
+
+class Proj:
+    def __init__(self, bbox):
+        Wb, S, E, N = bbox; self.lat0 = (S + N) / 2; k = math.cos(math.radians(self.lat0))
+        # fit bbox to 16:9 keeping center
+        cx, cy = (Wb + E) / 2, (S + N) / 2
+        w = (E - Wb) * k; h = (N - S)
+        if w / h < W / H: w = h * W / H
+        else: h = w * H / W
+        self.cx, self.cy, self.k = cx, cy, k; self.sx = W / w; self.sy = H / h
+    def __call__(self, lon, lat):
+        return ((lon - self.cx) * self.k * self.sx + W / 2, -(lat - self.cy) * self.sy + H / 2)
+    def km_px(self): return self.sy / 111.0
+
+def lerp_bbox(a, b, t):
+    # interpolate in log-scale of size for smooth zoom
+    ca = [(a[0] + a[2]) / 2, (a[1] + a[3]) / 2]; cb = [(b[0] + b[2]) / 2, (b[1] + b[3]) / 2]
+    sa, sb = a[3] - a[1], b[3] - b[1]; wa, wb = a[2] - a[0], b[2] - b[0]
+    s = math.exp(math.log(sa) + (math.log(sb) - math.log(sa)) * t); w = math.exp(math.log(wa) + (math.log(wb) - math.log(wa)) * t)
+    c = [ca[0] + (cb[0] - ca[0]) * t, ca[1] + (cb[1] - ca[1]) * t]
+    return [c[0] - w / 2, c[1] - s / 2, c[0] + w / 2, c[1] + s / 2]
+
+def _bb(geom):
+    xs, ys = [], []
+    def walk(c):
+        if not c: return
+        if isinstance(c[0], (int, float)): xs.append(c[0]); ys.append(c[1])
+        else:
+            for q in c: walk(q)
+    walk(geom["coordinates"])
+    return (min(xs), min(ys), max(xs), max(ys)) if xs else (0, 0, 0, 0)
+def visible(f, P):
+    if "_bb" not in f: f["_bb"] = _bb(f["geometry"])
+    a, b, c, d_ = f["_bb"]; x0, y1 = P(a, b); x1, y0 = P(c, d_)
+    return not (x1 < -200 or x0 > W + 200 or y1 < -200 or y0 > H + 200)
+COUNTRY_COL = {"United States of America": (84, 78, 64), "Mexico": (66, 62, 54)}
+_rcache = {}
+def paste_raster(im, P, raster):
+    path, (rw, rs, re_, rn) = raster["img"], raster["bbox"]
+    if path not in _rcache:
+        R = Image.open(path).convert("RGB"); _rcache[path] = R
+        m = Image.new("L", R.size, 0); md = ImageDraw.Draw(m); b = int(R.width * 0.04)
+        md.rectangle([b, b, R.width - b, R.height - b], fill=255); _rcache[path + "#m"] = m.filter(ImageFilter.GaussianBlur(b / 2))
+    R = _rcache[path]; Mk = _rcache[path + "#m"]
+    x0, y0 = P(rw, rn); x1, y1 = P(re_, rs)
+    if x1 < 0 or y1 < 0 or x0 > W or y0 > H: return
+    # crop the part of the raster visible on screen, then scale
+    cx0, cy0, cx1, cy1 = max(0, x0), max(0, y0), min(W, x1), min(H, y1)
+    sx = R.width / (x1 - x0); sy = R.height / (y1 - y0)
+    box = (int((cx0 - x0) * sx), int((cy0 - y0) * sy), int((cx1 - x0) * sx), int((cy1 - y0) * sy))
+    if box[2] - box[0] < 2 or box[3] - box[1] < 2: return
+    tw, th = int(cx1 - cx0), int(cy1 - cy0)
+    if tw < 2 or th < 2: return
+    part = R.crop(box).resize((tw, th), Image.BILINEAR); mpart = Mk.crop(box).resize((tw, th), Image.BILINEAR)
+    im.paste(part, (int(cx0), int(cy0)), mpart)
+
+def base_map(P, focus_states=(), focus_countries=("United States of America", "Mexico"), raster=None):
+    im = Image.new("RGB", (W, H), PAL["sea"]); d = ImageDraw.Draw(im)
+    for f in load("ne_50m_admin_0_countries")["features"]:
+        if not visible(f, P): continue
+        name = f["properties"].get("ADMIN") or f["properties"].get("NAME")
+        col = COUNTRY_COL.get(name, PAL["land"])
+        for poly in polys(f["geometry"]):
+            pts = [P(*p) for p in poly[0]]
+            if len(pts) > 2: d.polygon(pts, fill=col)
+    if raster: paste_raster(im, P, raster); d = ImageDraw.Draw(im)
+    for f in load("ne_50m_admin_1_states_provinces")["features"]:
+        if f["properties"].get("adm0_a3") not in ("USA", "MEX") or not visible(f, P): continue
+        for poly in polys(f["geometry"]):
+            pts = [P(*p) for p in poly[0]]
+            if len(pts) > 2: d.line(pts + [pts[0]], fill=PAL["state"], width=2)
+    for f in load("ne_10m_rivers_lake_centerlines")["features"]:
+        if (f["properties"].get("scalerank") or 9) > 6 or not visible(f, P): continue
+        for ln in lines(f["geometry"]):
+            pts = [P(*p) for p in ln]
+            if len(pts) > 1: d.line(pts, fill=PAL["river"], width=2)
+    for f in load("ne_50m_admin_0_countries")["features"]:
+        if not visible(f, P): continue
+        for poly in polys(f["geometry"]):
+            pts = [P(*p) for p in poly[0]]
+            if len(pts) > 2: d.line(pts + [pts[0]], fill=(196, 184, 160), width=4)
+    # paper texture + vignette
+    arr = np.asarray(im).astype(np.float32)
+    rng = np.random.default_rng(7); noise = rng.normal(0, 4, (H, W, 1))
+    yy, xx = np.mgrid[0:H, 0:W]; r = np.sqrt(((xx - W / 2) / W) ** 2 + ((yy - H / 2) / H) ** 2)
+    vig = np.clip(1.15 - r * 0.9, 0.55, 1.0)[..., None]
+    arr = np.clip((arr + noise) * vig, 0, 255)
+    return Image.fromarray(arr.astype(np.uint8))
+
+def state_labels(d, P, names):
+    for f in load("ne_50m_admin_1_states_provinces")["features"]:
+        n = f["properties"].get("name")
+        if n in names:
+            lon, lat = f["properties"].get("longitude"), f["properties"].get("latitude")
+            if lon is None:
+                a, b, c, d_ = _bb(f["geometry"]); lon, lat = (a + c) / 2, (b + d_) / 2
+            x, y = P(lon, lat)
+            d.text((x, y), n.upper(), font=F("semi", 30), fill=(176, 166, 146), anchor="mm")
+
+def glow_text(im, xy, text, font, fill, anchor="la", glow=6):
+    L = Image.new("RGBA", im.size, (0, 0, 0, 0)); ld = ImageDraw.Draw(L)
+    ld.text(xy, text, font=font, fill=(0, 0, 0, 200), anchor=anchor, stroke_width=glow, stroke_fill=(0, 0, 0, 160))
+    L = L.filter(ImageFilter.GaussianBlur(3)); im.alpha_composite(L)
+    ImageDraw.Draw(im).text(xy, text, font=font, fill=fill, anchor=anchor)
+
+def render(scene, out):
+    frames = int(scene["dur"] * FPS)
+    cam0, cam1 = scene["cam"][0], scene["cam"][-1]
+    still = cam0 == cam1
+    base_cache = None
+    p = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
+                          "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", out], stdin=subprocess.PIPE)
+    zt = scene.get("zoom_t", [0.0, 0.75])
+    for k in range(frames):
+        t = k / FPS; u = ease((k / max(frames - 1, 1) - zt[0]) / max(zt[1] - zt[0], 1e-6))
+        bbox = cam0 if still else lerp_bbox(cam0, cam1, u)
+        P = Proj(bbox)
+        if still and base_cache is not None: im = base_cache.copy()
+        else:
+            im = base_map(P, focus_countries=scene.get("focus", ("United States of America", "Mexico")), raster=scene.get("raster"))
+            if scene.get("states"): state_labels(ImageDraw.Draw(im), P, scene["states"])
+            if still: base_cache = im.copy()
+        im = im.convert("RGBA"); d = ImageDraw.Draw(im)
+        for L in scene["layers"]:
+            typ = L["type"]; col = PAL.get(L.get("color", "gold"), PAL["gold"])
+            if typ == "region":
+                a = ease((t - L.get("t", 0)) / 1.0)
+                if a <= 0: continue
+                R = Image.new("RGBA", im.size, (0, 0, 0, 0)); rd = ImageDraw.Draw(R)
+                pts = [P(*q) for q in L["pts"]]
+                rd.polygon(pts, fill=col + (int(70 * a),)); rd.line(pts + [pts[0]], fill=col + (int(200 * a),), width=4)
+                R = R.filter(ImageFilter.GaussianBlur(1.2)); im.alpha_composite(R)
+                if L.get("label"):
+                    cx = sum(q[0] for q in pts) / len(pts); cy = sum(q[1] for q in pts) / len(pts)
+                    glow_text(im, (cx, cy), L["label"], SB(L.get("size", 40)), (255, 236, 200, int(255 * a)), "mm")
+            elif typ == "circle":
+                a = ease((t - L.get("t", 0)) / 1.2)
+                if a <= 0: continue
+                x, y = P(L["lon"], L["lat"]); r = L["r_km"] * P.km_px() * (0.6 + 0.4 * a)
+                R = Image.new("RGBA", im.size, (0, 0, 0, 0)); rd = ImageDraw.Draw(R)
+                if L.get("fill", True): rd.ellipse([x - r, y - r, x + r, y + r], fill=col + (int(60 * a),))
+                rd.ellipse([x - r, y - r, x + r, y + r], outline=col + (int(230 * a),), width=5)
+                im.alpha_composite(R)
+                if L.get("label"): glow_text(im, (x, y - r - 18), L["label"], F("bold", 34), (255, 240, 210, int(255 * a)), "md")
+            elif typ == "route":
+                t0, t1 = L["t0"], L["t1"]; frac = ease((t - t0) / max(t1 - t0, 0.01))
+                if frac <= 0: continue
+                pts = [P(*q) for q in L["pts"]]
+                seglen = [math.dist(pts[i], pts[i + 1]) for i in range(len(pts) - 1)]; tot = sum(seglen) or 1
+                want = tot * frac; drawn = [pts[0]]; acc = 0
+                for i, sl in enumerate(seglen):
+                    if acc + sl <= want: drawn.append(pts[i + 1]); acc += sl
+                    else:
+                        r_ = (want - acc) / sl if sl else 0
+                        drawn.append((pts[i][0] + (pts[i + 1][0] - pts[i][0]) * r_, pts[i][1] + (pts[i + 1][1] - pts[i][1]) * r_)); break
+                R = Image.new("RGBA", im.size, (0, 0, 0, 0)); rd = ImageDraw.Draw(R)
+                if L.get("dash"):
+                    for i in range(len(drawn) - 1):
+                        a_, b_ = drawn[i], drawn[i + 1]; L_ = math.dist(a_, b_); n = max(int(L_ / 22), 1)
+                        for j in range(n):
+                            if j % 2: continue
+                            s0 = j / n; s1 = min((j + 1) / n, 1)
+                            rd.line([(a_[0] + (b_[0] - a_[0]) * s0, a_[1] + (b_[1] - a_[1]) * s0), (a_[0] + (b_[0] - a_[0]) * s1, a_[1] + (b_[1] - a_[1]) * s1)], fill=col + (255,), width=6)
+                else:
+                    rd.line(drawn, fill=(0, 0, 0, 120), width=12, joint="curve"); rd.line(drawn, fill=col + (255,), width=7, joint="curve")
+                hx, hy = drawn[-1]; rd.ellipse([hx - 9, hy - 9, hx + 9, hy + 9], fill=(255, 255, 255, 255))
+                im.alpha_composite(R)
+                if L.get("label") and frac > 0.3:
+                    mx_, my_ = pts[len(pts) // 2]
+                    glow_text(im, (mx_ + 14, my_ - 14), L["label"], F("semi", 30), (255, 236, 210, int(255 * min(1, (frac - 0.3) * 3))))
+            elif typ == "pin":
+                a = ease((t - L.get("t", 0)) / 0.6)
+                if a <= 0: continue
+                x, y = P(L["lon"], L["lat"]); s = (14 if L.get("big") else 9) * (0.5 + 0.5 * a)
+                pulse = 1 + 0.35 * (0.5 + 0.5 * math.sin(t * 4)) if L.get("big") else 1
+                R = Image.new("RGBA", im.size, (0, 0, 0, 0)); rd = ImageDraw.Draw(R)
+                if L.get("big"): rd.ellipse([x - s * 2.2 * pulse, y - s * 2.2 * pulse, x + s * 2.2 * pulse, y + s * 2.2 * pulse], outline=col + (int(140 * a),), width=3)
+                rd.ellipse([x - s, y - s, x + s, y + s], fill=col + (int(255 * a),), outline=(20, 20, 20, int(255 * a)), width=3)
+                im.alpha_composite(R)
+                if L.get("label"):
+                    dx = L.get("dx", 26); anchor = "lm" if dx >= 0 else "rm"
+                    glow_text(im, (x + dx, y + L.get("dy", 0)), L["label"], F("bold" if L.get("big") else "semi", L.get("size", 36 if L.get("big") else 30)), (255, 245, 225, int(255 * a)), anchor)
+            elif typ == "text":
+                a = ease((t - L.get("t", 0)) / 0.8)
+                if a <= 0: continue
+                x, y = P(L["lon"], L["lat"]); f = SI(L.get("size", 34)) if L.get("italic") else F("semi", L.get("size", 34))
+                glow_text(im, (x, y), L["text"], f, (230, 220, 200, int(230 * a)), "mm")
+        if scene.get("title"):
+            a = ease(t / 0.8)
+            glow_text(im, (90, 80), scene["title"].upper(), F("bold", 40), (226, 172, 84, int(255 * a)))
+            if scene.get("subtitle"): glow_text(im, (90, 132), scene["subtitle"], F("med", 30), (230, 222, 205, int(255 * a)))
+        if scene.get("note"):
+            glow_text(im, (W - 60, H - 50), scene["note"], F("med", 24), (200, 190, 175, 200), "rd")
+        p.stdin.write(im.convert("RGB").tobytes())
+    p.stdin.close(); p.wait()
+    return out
+
+if __name__ == "__main__":
+    scenes = json.load(open(sys.argv[1])); outdir = sys.argv[2]; os.makedirs(outdir, exist_ok=True)
+    only = sys.argv[3:]
+    for s in scenes:
+        if only and s["name"] not in only: continue
+        render(s, f"{outdir}/{s['name']}.mp4"); print("map", s["name"], flush=True)
+
+#@@FILE prepare.py
+"""Place every input exactly where the build expects it (same absolute paths as the authoring machine), from the footage branch.
+Then rebuild generated assets is done by pipeline.sh. Verifies referenced files against git blob hashes."""
+import json, os, shutil, subprocess, glob
+FB = "/home/claude/fb"; D = "/home/claude/doc/chiricahua"
+def fill(dst, srcs, overwrite=False):
+    os.makedirs(dst, exist_ok=True); n = 0
+    for s in srcs:
+        for f in glob.glob(f"{FB}/{s}/*"):
+            if not os.path.isfile(f): continue
+            t = f"{dst}/{os.path.basename(f)}"
+            if overwrite or not os.path.exists(t): shutil.copy2(f, t); n += 1
+    print("fill", dst, n, flush=True)
+fill(f"{D}/media/img", ["chiricahua/img", "chiricahua-ranch/img", "chiricahua-media2/img", "chiricahua-media3/img"])
+fill(f"{D}/ranch/img", ["chiricahua-ranch/img", "chiricahua-media2/img", "chiricahua-media3/img"])
+fill(f"{D}/media/video", ["chiricahua/video"])
+shutil.copy2(f"{FB}/chiricahua/index.json", f"{D}/media/index.json"); shutil.copy2(f"{FB}/chiricahua-ranch/index.json", f"{D}/ranch/index.json")
+fill(f"{D}/fly4", ["chiricahua-flyover-v4"])
+fill(f"{D}/sfx", ["sfx"])
+shutil.copy2(f"{D}/sfx/wc_steam_train_0.wav", f"{D}/sfx/wc_train_whistle_0.wav")
+for i, s in enumerate(["chiricahua-narration/am_michael", "chiricahua-narration-fix1/am_michael", "chiricahua-narration-fix3/am_michael", "chiricahua-narration-fix5/am_michael"]):
+    fill(f"{D}/narr", [s], overwrite=i > 0)
+fill("/home/claude/doc/geo/base", ["chiricahua-basemaps"])
+print("prepare done", flush=True)
+for lst, idx in (("media/imgs_list.json", "media/index.json"), ("ranch/ranch_list.json", "ranch/index.json")):
+    json.dump(json.load(open(f"{D}/{idx}"))["img"], open(f"{D}/{lst}", "w"))
+print("lists derived", flush=True)
+
+#@@FILE relief.py
+"""Shaded-relief raster used under the Arizona maps: toned hillshade (fit to the approved render, mean error ~1 gray level)."""
+from PIL import Image; import numpy as np
+B = "/home/claude/doc/geo/base"; H = np.asarray(Image.open(f"{B}/hillshade_region.jpg").convert("L")).astype(np.float32)
+co = [(0.27354, 40.18), (0.26334, 34.642), (0.23378, 23.42)]
+out = np.stack([H * a + b for a, b in co], -1)
+Image.fromarray(np.clip(out, 0, 255).astype(np.uint8)).save(f"{B}/relief_region.jpg", quality=92); print("relief ok")
+
+#@@FILE thumbs.py
+"""Three thumbnail variants (1280x720 JPG < 2 MB): A Balanced Rock, B Geronimo + pinnacles, C Cochise Head face."""
+from PIL import Image, ImageDraw, ImageFont, ImageEnhance
+import numpy as np, json, os, subprocess
+D = "/home/claude/doc/chiricahua"; O = f"{D}/thumbs_v3"; os.makedirs(O, exist_ok=True); YT = "/home/claude/fb/yt-cuts"
+for n, t in (("yt_GqV7LUmlgFY_299", 10), ("yt_pGLdAm_aQqM_1586", 14)):
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(t), "-i", f"{YT}/{n}.mp4", "-frames:v", "1", f"{O}/{n}_{t}.png"], check=True)
+FB = "/usr/share/fonts/opentype/inter/InterDisplay-Black.otf"
+def grade(im, warm=1.0):
+    im = ImageEnhance.Contrast(im).enhance(1.18); im = ImageEnhance.Color(im).enhance(1.15)
+    a = np.asarray(im).astype(np.float32); h, w = a.shape[:2]
+    yy, xx = np.mgrid[0:h, 0:w]; r = np.sqrt(((xx - w / 2) / w) ** 2 + ((yy - h / 2) / h) ** 2); v = np.clip(1 - 0.9 * r ** 2, 0.35, 1)[..., None]
+    a = a * v; a[..., 0] *= 1.04 * warm; a[..., 2] *= 0.94
+    return Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))
+def text(d, xy, lines, size, stroke=10):
+    x, y = xy; f = ImageFont.truetype(FB, size)
+    for t, c in lines: d.text((x, y), t, font=f, fill=c, stroke_width=stroke, stroke_fill=(10, 8, 6)); y += int(size * 1.02)
+def cover(p):
+    im = Image.open(p).convert("RGB"); W, H = im.size; s = max(1280 / W, 720 / H); im = im.resize((int(W * s) + 1, int(H * s) + 1), Image.LANCZOS)
+    x = (im.width - 1280) // 2; y = (im.height - 720) // 2; return im.crop((x, y, x + 1280, y + 720))
+Y = (255, 214, 74); Wt = (255, 255, 255)
+a = grade(cover(f"{O}/yt_GqV7LUmlgFY_299_10.png")); text(ImageDraw.Draw(a), (48, 40), [("AMERICA'S", Wt), ("NEWEST", Y), ("NATIONAL PARK", Wt)], 112); a.save(f"{O}/thumb_A.jpg", quality=92)
+b = grade(cover(f"{O}/yt_pGLdAm_aQqM_1586_14.png"), 1.05); d = ImageDraw.Draw(b)
+IM = json.load(open(f"{D}/media/imgs_list.json")); g = Image.open(f"{D}/media/" + IM[90]["file"]).convert("L").convert("RGB")
+g = ImageEnhance.Contrast(g).enhance(1.25); gw = 430; g = g.resize((gw, int(g.height * gw / g.width))); g = g.crop((0, 0, gw, min(g.height, 620)))
+sep = np.asarray(g).astype(np.float32); sep[..., 0] *= 1.08; sep[..., 2] *= 0.86; g = Image.fromarray(np.clip(sep, 0, 255).astype(np.uint8))
+fr = Image.new("RGB", (gw + 16, g.height + 16), (235, 225, 205)); fr.paste(g, (8, 8)); fr = fr.convert("RGBA").rotate(-3, expand=True)
+b.paste(fr, (800, 40), fr); text(d, (48, 60), [("ITS HISTORY", Wt), ("IS DARKER", Y), ("THAN ITS", Wt), ("ROCKS", Y)], 104); b.save(f"{O}/thumb_B.jpg", quality=92)
+c = grade(cover(f"{D}/media/annot/cochise_head_annot.jpg")); text(ImageDraw.Draw(c), (48, 430), [("A FACE", Y), ("IN THE MOUNTAIN", Wt)], 100); c.save(f"{O}/thumb_C.jpg", quality=92)
+print("thumbs ok", [os.path.getsize(f"{O}/thumb_{n}.jpg") // 1024 for n in "ABC"])
+
+#@@FILE verify.py
+"""Check referenced inputs against the authoring machine's git blob hashes. Missing = fail; hash drift = warning (re-encodes)."""
+import json, os, subprocess, sys
+D = "/home/claude/doc/chiricahua"; miss = []; drift = []
+for rel, h in json.load(open(f"{D}/verify.json")):
+    p = f"{D}/{rel}"
+    if not os.path.exists(p): miss.append(rel); continue
+    if subprocess.run(["git", "hash-object", p], capture_output=True, text=True).stdout.strip()[:12] != h: drift.append(rel)
+print("verify: missing", miss, "| drift", drift)
+sys.exit(1 if miss else 0)
+
