@@ -1,0 +1,34 @@
+name: sheets
+on:
+  workflow_dispatch:
+    inputs:
+      label:
+        description: "Footage-branch folder holding scan.json"
+        default: "stock-scan"
+      frames:
+        description: "Frames per clip"
+        default: "4"
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -y -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core >/dev/null
+      - run: pip install pillow
+      - name: Sheets
+        run: |
+          curl -sfL "https://raw.githubusercontent.com/${{ github.repository }}/footage/${{ inputs.label }}/scan.json" -o /tmp/scan.json
+          python scripts/make_sheets.py /tmp/scan.json "/tmp/out/review" "${{ inputs.frames }}"
+      - name: Push to footage branch
+        if: always()
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git fetch origin footage && git checkout footage
+          mkdir -p "${{ inputs.label }}/review" && cp -r /tmp/out/review/. "${{ inputs.label }}/review/" || true
+          git add "${{ inputs.label }}" && git commit -m "sheets: ${{ inputs.label }}" && git push origin footage || echo "nothing to push"
