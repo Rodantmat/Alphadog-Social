@@ -73,6 +73,8 @@ jobs:
           git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" /tmp/fb
           cd /tmp/fb && git sparse-checkout set "$L" && mkdir -p "$L"
           git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          [ -f "$SRC/index.json" ] && mv "$SRC/index.json" "$SRC/index_${{ github.run_id }}.json"
+          [ -f "$SRC/review.jpg" ] && mv "$SRC/review.jpg" "$SRC/review_${{ github.run_id }}.jpg"
           find "$SRC" -type f -size +95M -print -delete | sed 's/^/TOO_BIG /'
           ls "$SRC" | split -l 6 - /tmp/batch_
           fail=0
@@ -82,7 +84,7 @@ jobs:
             ok=0
             for i in 1 2 3 4 5 6; do
               git pull -q --rebase --depth 1 origin footage && git push -q origin HEAD:footage && { ok=1; break; }
-              sleep $((i * 10))
+              git rebase --abort 2>/dev/null || true; sleep $((i * 10))
             done
             [ $ok = 1 ] && echo "PUSHED $(basename $b) $(wc -l < $b) files" || { echo "PUSH_FAIL $(basename $b)"; fail=1; }
           done
