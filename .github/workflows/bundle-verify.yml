@@ -1,0 +1,12 @@
+name: bundle-verify
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 ci/chiricahua/unpack.py /tmp/u && for f in $(find /tmp/u -name "*.py"); do python3 -m py_compile $f; done && for f in /tmp/u/ci/*.sh; do bash -n $f; done && echo BUNDLE_OK
