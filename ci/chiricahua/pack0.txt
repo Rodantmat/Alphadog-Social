@@ -1,0 +1,495 @@
+#@@FILE annot.py
+"""Cochise Head clean + labeled frames (rule V13: show the 'face' the narration describes)."""
+from PIL import Image, ImageDraw, ImageFont
+import os
+D = "/home/claude/doc/chiricahua"; os.makedirs(f"{D}/media/annot", exist_ok=True)
+im = Image.open("/home/claude/fb/chiricahua-media3/img/commons_a74692ca08.jpg").convert("RGB")
+W = 2048; H = int(W * 9 / 16); top = 60; im = im.crop((0, top, W, top + H)); im.save(f"{D}/media/annot/cochise_head_clean.jpg", quality=92)
+d = ImageDraw.Draw(im, "RGBA"); F = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 46)
+pts = {"CHIN": (333, 579), "NOSE": (678, 425), "FOREHEAD": (1510, 451)}; lab = {"CHIN": (170, 250), "NOSE": (560, 170), "FOREHEAD": (1330, 190)}
+for k, (x, y) in pts.items():
+    y -= top; lx, ly = lab[k]; tw = d.textlength(k, font=F)
+    d.line([(x, y - 14), (lx + tw / 2, ly + 56)], fill=(255, 236, 190, 230), width=4)
+    d.ellipse([x - 11, y - 25, x + 11, y - 3], outline=(255, 236, 190, 255), width=4)
+    d.rounded_rectangle([lx - 14, ly - 6, lx + tw + 14, ly + 58], radius=10, fill=(0, 0, 0, 150))
+    d.text((lx, ly), k, font=F, fill=(255, 236, 190, 255))
+im.save(f"{D}/media/annot/cochise_head_annot.jpg", quality=92); print("annot ok")
+
+#@@FILE chiricahua/engine.py
+"""Documentary render engine: shot plan -> 1920x1080 episode.
+Shot types:
+  video: {"type":"video","src":path,"ss":s,"dur":d,"speed":1.0,"drift":0.04,"fx":0.5,"fy":0.5}
+  photo: {"type":"photo","src":path,"dur":d,"z0":1.0,"z1":1.12,"x0":.5,"y0":.5,"x1":.5,"y1":.45}
+  card:  {"type":"card","dur":d,"title":"...","sub":"...","style":"chapter|date|title"}
+  map:   {"type":"map","src":mp4} (pre-rendered)
+Common: "label": lower-third text, "date": corner date stamp.
+"""
+import os, subprocess, json, math, hashlib
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
+import numpy as np
+
+W, H, FPS = 1920, 1080, 30
+FD = "/usr/share/fonts/opentype/inter/"
+SERIF = None
+for p in ["/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf", "/usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf"]:
+    if os.path.exists(p): SERIF = p; break
+def F(w, s):
+    return ImageFont.truetype(FD + {"black": "InterDisplay-Black.otf", "bold": "Inter-Bold.otf", "semi": "Inter-SemiBold.otf",
+                                    "med": "Inter-Medium.otf", "light": "Inter-Light.otf" if os.path.exists(FD + "Inter-Light.otf") else "Inter-Medium.otf"}[w], s)
+def SF(s, bold=False):
+    for p in (["/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf"] if bold else []) + [SERIF]:
+        if p and os.path.exists(p): return ImageFont.truetype(p, s)
+    return F("bold", s)
+
+GRADE = "eq=contrast=1.06:saturation=1.05:gamma=0.98,vignette=PI/5"
+CACHE = os.environ.get("ENGINE_CACHE", "/home/claude/doc/chiricahua/cache"); os.makedirs(CACHE, exist_ok=True)
+
+def run(cmd):
+    p = subprocess.run(cmd, capture_output=True, text=True)
+    if p.returncode: raise RuntimeError(p.stderr[-1500:])
+
+def key(shot):
+    return hashlib.md5(json.dumps(shot, sort_keys=True).encode()).hexdigest()[:12]
+
+def overlay_png(shot):
+    """Lower-third label and/or date stamp as transparent PNG (None if nothing)."""
+    if not shot.get("label") and not shot.get("date"): return None
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    if shot.get("date"):
+        f = F("semi", 42); t = shot["date"].upper()
+        tw = d.textlength(t, font=f)
+        d.rectangle([90, 84, 90 + 7, 84 + 56], fill=(214, 160, 82, 255))
+        d.text((112, 88), t, font=f, fill=(245, 238, 225, 255), stroke_width=2, stroke_fill=(0, 0, 0, 140))
+    if shot.get("label"):
+        f = F("med", 34); t = shot["label"]
+        tw = d.textlength(t, font=f)
+        x, y = 90, H - 130
+        g = Image.new("RGBA", (int(tw + 60), 64), (0, 0, 0, 0)); gd = ImageDraw.Draw(g)
+        gd.rounded_rectangle([0, 0, g.width, g.height], 8, fill=(10, 10, 12, 150))
+        im.alpha_composite(g, (x - 20, y - 10))
+        d.text((x + 10, y), t, font=f, fill=(235, 230, 220, 255))
+    p = f"{CACHE}/ov_{key({'l': shot.get('label'), 'd': shot.get('date')})}.png"; im.save(p); return p
+
+def card_png(shot):
+    im = Image.new("RGB", (W, H), (12, 11, 10)); d = ImageDraw.Draw(im)
+    # subtle warm radial
+    arr = np.zeros((H, W, 3), np.float32)
+    yy, xx = np.mgrid[0:H, 0:W]; r = np.sqrt(((xx - W / 2) / W) ** 2 + ((yy - H / 2) / H) ** 2)
+    glow = np.clip(1 - r * 1.6, 0, 1)[..., None] * np.array([46, 34, 22], np.float32)
+    im = Image.fromarray(np.clip(arr + 12 + glow, 0, 255).astype(np.uint8)); d = ImageDraw.Draw(im)
+    st = shot.get("style", "chapter")
+    if st == "chapter":
+        if shot.get("kicker"): d.text((W / 2, H / 2 - 120), shot["kicker"].upper(), font=F("semi", 30), fill=(214, 160, 82), anchor="mm")
+        fs = 84
+        while d.textlength(shot["title"], font=SF(fs, True)) > W - 240 and fs > 40: fs -= 4
+        d.text((W / 2, H / 2 - 20), shot["title"], font=SF(fs, True), fill=(240, 232, 218), anchor="mm")
+        d.line([(W / 2 - 60, H / 2 + 60), (W / 2 + 60, H / 2 + 60)], fill=(214, 160, 82), width=3)
+        if shot.get("sub"): d.text((W / 2, H / 2 + 110), shot["sub"], font=F("med", 34), fill=(190, 182, 168), anchor="mm")
+    elif st == "date":
+        d.text((W / 2, H / 2), shot["title"], font=SF(96, True), fill=(240, 232, 218), anchor="mm")
+        if shot.get("sub"): d.text((W / 2, H / 2 + 90), shot["sub"].upper(), font=F("semi", 30), fill=(214, 160, 82), anchor="mm")
+    elif st == "title":
+        d.text((W / 2, H / 2 - 30), shot["title"], font=SF(120, True), fill=(244, 236, 220), anchor="mm")
+        if shot.get("sub"): d.text((W / 2, H / 2 + 80), shot["sub"], font=F("semi", 38), fill=(214, 160, 82), anchor="mm")
+    p = f"{CACHE}/card_{key(shot)}.png"; im.save(p); return p
+
+def render_shot(shot, out):
+    dur = shot["dur"]; t = shot["type"]; frames = int(round(dur * FPS))
+    ov = overlay_png(shot)
+    fades = []
+    if shot.get("fin"): fades.append(f"fade=t=in:st=0:d={shot['fin']}")
+    if shot.get("fout"): fades.append(f"fade=t=out:st={max(0, dur - shot['fout']):.3f}:d={shot['fout']}")
+    fade = ",".join(fades) if fades else None
+    vf_tail = [GRADE, f"fps={FPS}", "format=yuv420p"]
+    if t == "video":
+        sp = shot.get("speed", 1.0); drift = shot.get("drift", 0.035)
+        # cover-crop to 16:9 around focus, then slow push-in drift
+        fx, fy = shot.get("fx", 0.5), shot.get("fy", 0.5)
+        z = f"(1+{drift}*on/{max(frames,1)})"
+        vf = [f"setpts=PTS/{sp}", "tpad=stop_mode=clone:stop_duration=60"] + ([shot["vf_extra"]] if shot.get("vf_extra") else []) + [ f"scale={W*2}:{H*2}:force_original_aspect_ratio=increase",
+              f"crop={W*2}:{H*2}:(in_w-{W*2})*{fx}:(in_h-{H*2})*{fy}",
+              f"zoompan=z='{z}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s={W}x{H}:fps={FPS}"] + vf_tail
+        if fade: vf.append(fade)
+        inp = ["-ss", str(shot.get("ss", 0)), "-t", str(dur * sp + 0.5), "-i", shot["src"]]
+    elif t == "photo":
+        z0, z1 = shot.get("z0", 1.0), shot.get("z1", 1.12)
+        x0, y0, x1, y1 = shot.get("x0", .5), shot.get("y0", .5), shot.get("x1", .5), shot.get("y1", .5)
+        e = f"(on/{frames})"; ez = f"(0.5-0.5*cos(PI*{e}))"
+        z = f"({z0}+({z1}-{z0})*{ez})"
+        x = f"(({x0}+({x1}-{x0})*{ez})*iw-iw/zoom/2)"; y = f"(({y0}+({y1}-{y0})*{ez})*ih-ih/zoom/2)"
+        bg = shot.get("bg", "cover")
+        if bg == "cover":
+            pre = f"scale={W*3}:{H*3}:force_original_aspect_ratio=increase,crop={W*3}:{H*3}"
+        else:  # fit with blurred fill (for portraits / documents)
+            pre = (f"split[a][b];[a]scale={W*3}:{H*3}:force_original_aspect_ratio=increase,crop={W*3}:{H*3},boxblur=40:2,eq=brightness=-0.15[bgx];"
+                   f"[b]scale={W*3}:{H*3}:force_original_aspect_ratio=decrease[fg];[bgx][fg]overlay=(W-w)/2:(H-h)/2")
+        vf = [pre, f"zoompan=z='{z}':x='max(0,min(iw-iw/zoom,{x}))':y='max(0,min(ih-ih/zoom,{y}))':d={frames}:s={W}x{H}:fps={FPS}"] + vf_tail
+        if shot.get("sepia"): vf.insert(-2, "colorchannelmixer=.393:.769:.189:0:.349:.686:.168:0:.272:.534:.131")
+        if fade: vf.append(fade)
+        inp = ["-loop", "1", "-t", str(dur + 0.2), "-i", shot["src"]]
+    elif t == "card":
+        png = card_png(shot)
+        vf = [f"zoompan=z='1+0.03*on/{frames}':d={frames}:s={W}x{H}:fps={FPS}", "format=yuv420p",
+              f"fade=t=in:st=0:d=0.6", f"fade=t=out:st={dur-0.6}:d=0.6"]
+        inp = ["-loop", "1", "-t", str(dur + 0.2), "-i", png]
+    elif t == "map":
+        vf = ["tpad=stop_mode=clone:stop_duration=60", f"scale={W}:{H}", f"fps={FPS}", "format=yuv420p"] + ([fade] if fade else [])
+        inp = ["-i", shot["src"]]
+    else:
+        raise ValueError(t)
+    chain = ",".join(vf)
+    if ov:
+        fc = f"[0:v]{chain}[v0];[v0][1:v]overlay=0:0:format=auto,format=yuv420p[v]"
+        cmd = ["ffmpeg", "-v", "error", "-y"] + inp + ["-loop", "1", "-i", ov, "-filter_complex", fc, "-map", "[v]"]
+    else:
+        cmd = ["ffmpeg", "-v", "error", "-y"] + inp + ["-vf", chain]
+    cmd += ["-frames:v", str(frames), "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-r", str(FPS), out]
+    run(cmd)
+    return out
+
+def render_all(shots, workdir):
+    os.makedirs(workdir, exist_ok=True); files = []
+    for i, s in enumerate(shots):
+        f = f"{workdir}/{i:04d}_{key(s)}.mp4"
+        if not os.path.exists(f):
+            render_shot(s, f)
+        files.append(f)
+    lst = f"{workdir}/concat.txt"; open(lst, "w").write("".join(f"file '{f}'\n" for f in files))
+    return lst
+
+def mix_audio(narr_wav, music, out, music_db=-20, duck=True):
+    """music bed ducked under narration."""
+    if music:
+        fc = (f"[1:a]volume={10**(music_db/20):.3f},aloop=loop=-1:size=2e9[m];"
+              f"[m][0:a]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=400[md];"
+              f"[0:a][md]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-16:TP=-1.5[a]")
+        run(["ffmpeg", "-v", "error", "-y", "-i", narr_wav, "-i", music, "-filter_complex", fc, "-map", "[a]", "-ar", "48000", out])
+    else:
+        run(["ffmpeg", "-v", "error", "-y", "-i", narr_wav, "-af", "loudnorm=I=-16:TP=-1.5", "-ar", "48000", out])
+
+def final(concat_list, audio, out):
+    run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", concat_list, "-i", audio,
+         "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
+         "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", "-map_metadata", "-1", out])
+
+#@@FILE chiricahua/fingerprint.json
+{"timeline":["3841c567","3952f02e","6602266d","421bc2dc","f77d9fc8","b65361ff","b6ef1ae3","b09ad80b","5f789927","6505942d","0cb5755a","5d20f9d1","b359148a","1f258877","bfd8d725","2a03dd9e","1aaacdc3","223fc99e","a6667470","9fa39abf","a89fc742","648cf323","fc23a29e","93f796bb","9d96a020","ffd471a8","315f2c98","38611222","fb59f1c3","ef0798ca","bceffbf1","2caff31b","342544e1","849f0887","c584b652","261a4569","3933f4aa","b492b686","9bffd641","5ade8f14","7d1f64a6","26ce4d0d","579d0ee6","191873e3","57769e39","c66bced0","bfa36aeb","f314562a","e612a323","eff38d10","1321d56b","3683c2fc","011677f9","2c6c6a74","681bfb38","5c91affc","f7f8fdb7","74ce4ad2","9c54a87a","44d34905","e0a48c39","7ea53010","704b0acc","ac0289ca","45d33123","b668ef64","3b3afb82","70e6c6f5","3a26a43e","a81b0ebe","cb7dd2fa","5474b1c4","297d6094","2bb86b24","514aa686","2b546123","01d6b98e","6d4afe93","4264fe2a","e82c0378","53acdb73","805eafc6","b5b39ec7","2f229838","07abed2d","e3192a9d","80e57982","9185eced","72fc05a1","e1719400","2639e40f","654c20ff","7cb973ce","392766fb"],"shots":["4873f8f1","8b4331e1","6357683f","95243524","d7febdf2","75e173ac","56459e0f","bfcd0ca7","b7a4a643","991ea012","0ba032c3","6f07f337","b8d77bfa","27e3124b","325d679c","d07a8aab","6c3deea8","f508c8b3","b3dda61c","bd17ee94","9bd1180c","830c8c49","7d456a1e","9cf8847b","498f1a59","d59167b8","618c54c0","e750a21a","d7492edf","2c2e4af9","f999f4b8","7c3f7063","7074b69b","7074b69b","69795392","3fa09a28","5c50003a","aef6875d","45801fcd","44dc183d","c1015dc2","d9452ee4","d9452ee4","9ba890e5","c74ccdc5","819a5489","713f0b87","113ca234","287b5303","3b5207d3","35a17829","f1c8f422","10d433f5","51ef3372","363fb318","0d27e5fc","012fd6dd","afe0864e","5aac32db","1ba51637","0705a884","e3a98f2b","9cf8847b","8039981b","96673ecd","f42d3d5d","3fb71b6e","59800a49","b8de1d64","eb81cd09","316e67b7","8d1a2e67","1abd6b7a","8d1a2e67","c75aaf2a","c80b1764","100bfbc1","971779cc","1dc27364","3d7f9026","6f23873d","4a73fd0e","38232c4b","906a766c","3ed46a14","38b17bdb","4c608af6","2a84ebcd","8eaeffc2","4509bc77","9386dba0","ba504c35","7350013d","7bf10e4c","1e0a75b9","92068f6e","d719541f","77b05863","9cf8847b","bdc7afcb","36e03e51","6148f2a5","75733d42","a6d67e34","ace29df3","f1bd71e3","f9c5f6e5","e81d098f","dd6c7daf","2a870f35","5c78797c","a4dc2f5c","ee2af4aa","5baa34ea","f655cade","8920ab0b","25f82ceb","b5403eb2","67cdbc69","e6fd363d","264ea5bd","264ea5bd","46052dd9","64dcb94c","da88da89","dff3de93","7bc5f0a0","a55ca48b","ed372ec0","c5b8e66d","97c62517","bc78138e","ec397cab","b61dba22","d7875cce","7c72807a","9cf8847b","a3d4b5b5","dde99415","dc666af6","63e22928","b5bc6133","88f2d43e","95d4eba3","38668abc","8f2aa701","1fe3f6d4","ddf5a995","c99cf090","32cd2c7e","1153fad5","3ecd4ff2","2dc3ad00","0f87f401","b861c896","9b31857c","2689628b","f8e0c14a","9cf8847b","e405be8c","371ab3b5","7d905111","d32c1b76","94751b6c","c6957514","ef88f0e1","7ed64c60","a53692a0","a53692a0","2b7ca933","d1547cf3","d1547cf3","652bac79","6fee2724","d1547cf3","9194fdd6","e0914f4c","74edb704","1e0a9671","5897f100","94ff3145","01fdf93f","3cb180dc","d0fa8859","4f671403","9cf8847b","8e38865a","f58d079d","54123880","bde8b57b","3e667929","0a9d4daa","0a13914e","21af8dfd","d6c2abcf","924fce96","89194233","5607fc75","59df3a3b","59df3a3b","4c428f49","e6f39cb6","c7d09179","c7d09179","6cf4f2cc","357ce4d3","72d3c32e","5f9948b2","90c73a77","75ba835c","1a6a06d7","96514356","6994cd55","060d6d62","91493a55","b262a39f","8b8f97bf","5f22c087","089ae1bd","c2cfa801","73ac3e4b","d2734fa7","cc6cb329","5dbddaec","5f020703","b2782c72","96514356","30c468ba","9cf8847b","3380b109","1e07b4e1","971de042","15f76020","cc56b05f","743da6cd","026c5da9","d3076f9f","e43b6c9b","67fd5269","03592ef5","f1140b46","99718320","e3b311b5","35cf53b4","fb5fb3ab"]}
+#@@FILE chiricahua/inserts.json
+{"s014":{"src":"/home/claude/fb/stock-audio/ia_ad64da0120_36.mp4","ss":2.95,"dur":7.3,"label":"John Bishop, biologist, Washington State University Vancouver (NSF Science Nation)"},"s038":{"src":"/home/claude/fb/yt-audio/yt_-ApI8htOOaU_20.mp4","ss":33.2,"dur":11.4,"label":"John Bell, 10th Cavalry Buffalo Soldiers living-history interpreter (Colorado National Guard)"},"s079":{"src":"/home/claude/fb/yt-audio/yt_M6QqDRYspfU_0.mp4","ss":25.35,"dur":20.4,"label":"Rep. Juan Ciscomani (R-AZ), U.S. House floor, March 2026"}}
+#@@FILE chiricahua/make_dub_es.py
+"""Spanish dub track (rule: main audio English, optional Spanish track).
+Places each Spanish narration line in the exact slot of its English line (same timeline, same picture),
+time-fitting with atempo when Spanish runs long; interview/news bites keep their original voices; cards stay silent.
+Writes narration_full_es.wav + voice_mask_es.npy, then render_v2.py (MIX_TAG=_es, audio) builds the same music/ambience/SFX bed."""
+import json, os, subprocess, sys, numpy as np, soundfile as sf
+D = "/home/claude/doc/chiricahua"; SR = 48000
+VOICE = sys.argv[1] if len(sys.argv) > 1 else "em_alex"; SRC = f"/home/claude/fb/chiricahua-narration-es/{VOICE}"
+tl = json.load(open(f"{D}/timeline.json")); en, _ = sf.read(f"{D}/narration_full.wav", dtype="float32")
+if en.ndim > 1: en = en.mean(1)
+N = len(en); out = np.zeros(N, np.float32); mask = np.zeros(N, bool); report = []
+def dec(p, af=None):
+    cmd = ["ffmpeg", "-v", "error", "-i", p] + (["-af", af] if af else []) + ["-f", "f32le", "-ac", "1", "-ar", str(SR), "-"]
+    return np.frombuffer(subprocess.run(cmd, capture_output=True).stdout, np.float32)
+def trim(a, thr=10 ** (-45 / 20)):
+    idx = np.where(np.abs(a) > thr)[0]
+    return a[max(0, idx[0] - 1200): idx[-1] + 2400] if len(idx) else a
+items = sorted(tl, key=lambda it: it["start"])
+for k, it in enumerate(items):
+    s0 = int(it["start"] * SR); s1 = int((it["start"] + it["dur"]) * SR)
+    if it["kind"] == "insert":
+        out[s0:s1] = en[s0:s1]; mask[s0:s1] = True; continue
+    if it["kind"] != "seg": continue
+    sp = f"{SRC}/{it['id']}.m4a"; fx = sp.replace("chiricahua-narration-es/", "chiricahua-narration-es-fix5/")
+    if os.path.exists(fx): sp = fx                       # corrected line (fact-check) wins
+    a = trim(dec(sp))
+    # the slot: this line's time, plus the silent tail of the next item if it is a card/title (never into another voice)
+    slot = (s1 - s0) - int(0.12 * SR)
+    nxt = items[k + 1] if k + 1 < len(items) else None
+    if nxt and nxt["kind"] in ("card", "title"): slot += int(min(1.2, nxt["dur"] * 0.3) * SR)
+    r = len(a) / slot
+    if r > 1.0:
+        a = trim(dec(sp, f"atempo={min(r, 1.35):.4f}"))
+        if len(a) > slot: report.append((it["id"], round(r, 2), "TRUNC", round((len(a) - slot) / SR, 2))); a = a[:slot].copy(); a[-2400:] *= np.linspace(1, 0, 2400)
+    report.append((it["id"], round(r, 3)))
+    n = min(len(a), N - s0); out[s0:s0 + n] = a[:n]; mask[s0:s0 + n] = np.abs(a[:n]) > 1e-4
+# match narrator loudness to the English narration
+def rms(x): return float(np.sqrt(np.mean(x[np.abs(x) > 1e-3] ** 2)))
+g = rms(en) / max(rms(out), 1e-6); out *= g
+sf.write(f"{D}/narration_full_es.wav", out, SR, subtype="FLOAT")
+vm = mask[: N // (SR // 100) * (SR // 100)].reshape(-1, SR // 100).any(1)
+np.save(f"{D}/voice_mask_es.npy", vm)
+fast = [x for x in report if len(x) == 2 and x[1] > 1.12]; trunc = [x for x in report if len(x) == 4]
+print("lines:", sum(1 for x in report if len(x) == 2), "| sped up >12%:", len(fast), fast[:12], "| truncated:", trunc, "| gain", round(g, 2))
+
+#@@FILE chiricahua/make_shorts.py
+"""Vertical Shorts (1080x1920) from the episode's verified sources.
+Rules applied: no flash shots (cut-free spans, >= 2.5 s), calm drones, matching imagery per phrase, < 60 s (Shorts with
+archive/CC footage over 60 s are blocked worldwide on any claim), big burned-in captions timed to the voice, music bed under voice.
+usage: python3 make_shorts.py [sh1 sh2 sh3]"""
+import json, os, re, subprocess, sys, numpy as np, soundfile as sf
+D = "/home/claude/doc/chiricahua"; OUT = f"{D}/shorts"; os.makedirs(OUT, exist_ok=True)
+argv = sys.argv[1:]; sys.argv = sys.argv[:1]
+sys.path.insert(0, D); import engine as E; import plan_v2 as P
+E.W, E.H = 1080, 1920
+NARR = "/home/claude/fb/chiricahua-shorts-narr2/am_michael"; SR = 48000
+TEXT = {x["id"]: x["text"] for x in json.load(open("/home/claude/rs/content/chiricahua/shorts_narration.json"))}
+A_CLEAN = f"{D}/media/annot/cochise_head_clean.jpg"; A_LAB = f"{D}/media/annot/cochise_head_annot.jpg"
+def ph(src, **kw):
+    s = {"type": "photo", "src": src, "z0": 1.0, "z1": 1.08, "x0": .5, "y0": .5, "x1": .5, "y1": .5, "bg": "fit"}; s.update(kw); return s
+SHORTS = {
+ "sh1": {"music": "tension", "title": "Who killed Johnny Ringo?", "shots": [
+     P.Y("LNceEWbCiAg", "2:54", 3.3), P.Y("LNceEWbCiAg", "4:03", 8), P.S("ia_7c0f67540d_262", 5.5), P.S("ia_7c0f67540d_293", 4.5),
+     P.Y("KfCNBLKYZXQ", "4:41", 8), ph(f"{P.M2}/commons_bcf854a393.jpg"), P.Y("KfCNBLKYZXQ", "14:04", 2), P.S("ia_237aaf990e_1495", 3, vf_extra=P.FILM16),
+     P.Y("LNceEWbCiAg", "2:54", 0), P.Y("LNceEWbCiAg", "6:23", 8)]},
+ "sh2": {"music": "somber", "title": "He jumped from a prison train", "shots": [
+     P.P(87, bg="fit"), P.S("pb_21555_0", 5.5, vf_extra=P.PERIOD), P.P(82, bg="fit"), P.S("pb_188828_0", 0.5, vf_extra=P.PERIOD),
+     P.S("pb_75635_0", 0.5), P.Y("m8GhYxt-kAg", "0:56", 2), P.Y("HJlO513toNw", "5:31", 2), ph(f"{P.M2}/{P.WICKIUP}"),
+     P.F("massai_orbit", 1), P.Y("cPRS8XqUNvw", "0:18", 1)]},
+ "sh3": {"music": "wonder", "title": "America's newest national park", "shots": [
+     P.Y("pGLdAm_aQqM", "26:32", 9), P.S("ia_ad64da0120_9", 1.6), P.S("pb_219833_0", 1), P.Y("pGLdAm_aQqM", "18:22", 9),
+     P.Y("kjAGAtBYZSo", "5:53", 2), P.Y("pGLdAm_aQqM", "22:27", 6), ph(A_CLEAN, z1=1.03), ph(A_LAB, z0=1.03, z1=1.06),
+     P.P(245, bg="fit"), P.Y("fuZI24Ncioc", 67, 20), P.Y("GqV7LUmlgFY", "5:05", 2)]},
+}
+
+def load(p):
+    a = np.frombuffer(subprocess.run(["ffmpeg", "-v", "error", "-i", p, "-f", "f32le", "-ac", "1", "-ar", str(SR), "-"], capture_output=True).stdout, np.float32)
+    idx = np.where(np.abs(a) > 0.003)[0]; return a[max(0, idx[0] - 2400): idx[-1] + 4800]
+
+def caption_cues(text, a, t0):
+    """phrases of <= 4 words, sentence starts anchored to real pauses"""
+    hop = SR // 100; env = np.sqrt(np.mean(a[: len(a) // hop * hop].reshape(-1, hop) ** 2, 1)); thr = 10 ** (-40 / 20)
+    sil = env < thr; P_ = []; n = 0
+    for k, s in enumerate(sil):
+        if s: n += 1
+        else:
+            if n >= 14: P_.append((k - n / 2) / 100)
+            n = 0
+    sents = [x for x in re.split(r"(?<=[.?!])\s+", text.strip()) if x]
+    L = np.cumsum([len(x) for x in sents]); tot = L[-1]; s0 = 0.0; s1 = len(a) / SR; cuts = []
+    for k in range(len(sents) - 1):
+        g = s1 * L[k] / tot; c = [p for p in P_ if (not cuts or p > cuts[-1] + 0.3)]
+        b = min(c, key=lambda p: abs(p - g)) if c else g; cuts.append(b if abs(b - g) < 1.8 else g)
+    T = [s0] + cuts + [s1]; cues = []
+    for k, s in enumerate(sents):
+        w = s.split(); ph_ = []; cur = []
+        for x in w:
+            cur.append(x)
+            if len(cur) >= 4 or (len(cur) >= 2 and x[-1] in ",.?!:"): ph_.append(" ".join(cur)); cur = []
+        if cur: ph_.append(" ".join(cur))
+        a_, b_ = T[k] + 0.05, T[k + 1] - 0.05; tt = sum(len(p) for p in ph_); t = a_
+        for p in ph_:
+            d = (b_ - a_) * len(p) / tt; cues.append((t0 + t, t0 + t + d, p)); t += d
+    return cues
+
+def ass_time(x): h, r = divmod(x, 3600); m, s = divmod(r, 60); return f"{int(h)}:{int(m):02d}:{s:05.2f}"
+def hl(p):   # highlight numbers and names in gold
+    return " ".join(("{\\c&H52A0D6&}" + w + "{\\c&HFFFFFF&}") if (re.search(r"\d", w) or (w[:1].isupper() and w.lower() not in ("in", "the", "his", "and", "a", "he", "it", "which", "today", "some", "look", "twenty-seven", "revolver", "boots", "almost", "somewhere", "traveling", "america"))) else w for w in p.split())
+
+def build(sid):
+    cfg = SHORTS[sid]; a = load(f"{NARR}/{sid}.m4a"); lead = 0.35; dur = lead + len(a) / SR + 1.2
+    assert dur < 59.5, (sid, dur)
+    shots = [dict(s) for s in cfg["shots"]]
+    for s in shots:
+        for k in ("label", "date", "amb", "amb_g", "sfx", "rep_ok"): s.pop(k, None)
+        s["fx"] = 0.5
+    P.allocate(shots, dur, 2.5)
+    work = f"{OUT}/{sid}"; os.makedirs(work, exist_ok=True); files = []
+    for i, s in enumerate(shots):
+        f = f"{work}/{i:02d}_{E.key(s)}.mp4"
+        if not os.path.exists(f): E.render_shot(s, f)
+        files.append(f)
+    open(f"{work}/concat.txt", "w").write("".join(f"file '{f}'\n" for f in files))
+    # captions
+    cues = caption_cues(TEXT[sid], a, lead)
+    ass = ["[Script Info]", "ScriptType: v4.00+", "PlayResX: 1080", "PlayResY: 1920", "", "[V4+ Styles]",
+           "Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV",
+           "Style: Cap,Inter Display Black,86,&H00FFFFFF,&H00000000,&H64000000,1,1,6,2,2,80,80,640",
+           "Style: Top,Inter Display Black,64,&H00FFFFFF,&H00000000,&H64000000,1,1,5,2,8,70,70,230", "", "[Events]",
+           "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text",
+           f"Dialogue: 0,{ass_time(0)},{ass_time(3.2)},Top,,0,0,0,,{{\\fad(150,300)}}{cfg['title'].upper()}",
+           f"Dialogue: 0,{ass_time(dur - 1.3)},{ass_time(dur)},Top,,0,0,0,,{{\\fad(200,0)}}FULL STORY ON THE CHANNEL"]
+    for x, y, p in cues: ass.append(f"Dialogue: 0,{ass_time(x)},{ass_time(y)},Cap,,0,0,0,,{{\\fad(60,60)}}{hl(p)}")
+    open(f"{work}/cap.ass", "w").write("\n".join(ass) + "\n")
+    # audio: narration + music bed (-22 dB under voice), whoosh on first cut
+    N = int(dur * SR); voice = np.zeros(N, np.float32); s0 = int(lead * SR); voice[s0:s0 + len(a)] = a[: N - s0]
+    m, _ = sf.read(f"{D}/music/{cfg['music']}.wav", dtype="float32", always_2d=True); m = m.mean(1)
+    m = np.tile(m, N // len(m) + 1)[:N]
+    vm = np.convolve((np.abs(voice) > 0.01).astype(np.float32), np.ones(SR // 4) / (SR // 4), "same")
+    g = (0.22 - 0.16 * np.clip(vm * 4, 0, 1)); m *= g
+    fade = np.ones(N, np.float32); k = int(1.0 * SR); fade[:k] = np.linspace(0, 1, k); fade[-k:] = np.linspace(1, 0, k)
+    mix = voice + m * fade
+    sf.write(f"{work}/mix.wav", np.stack([mix, mix], 1), SR)
+    out = f"{OUT}/chiricahua_{sid}.mp4"
+    E.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{work}/concat.txt", "-i", f"{work}/mix.wav",
+           "-filter_complex", f"[0:v]ass={work}/cap.ass:fontsdir=/usr/share/fonts/opentype/inter[v];[1:a]loudnorm=I=-14:TP=-1.5[a]",
+           "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
+           "-c:a", "aac", "-b:a", "192k", "-t", f"{dur:.2f}", "-movflags", "+faststart", out])
+    print(sid, round(dur, 1), "s,", len(shots), "shots,", len(cues), "caption cues ->", out, flush=True)
+
+for sid in (argv or list(SHORTS)): build(sid)
+
+#@@FILE chiricahua/make_subs.py
+"""Selectable subtitle tracks (rule D1): English + Spanish SRT, timed to the voice.
+Sentence boundaries are anchored to real pauses detected in narration_full.wav; text inside a sentence is split
+into <=2-line cues (42 chars/line) timed by character share. Spanish uses the same sentence anchors.
+usage: python3 make_subs.py  -> chiricahua_ep1.en.srt, chiricahua_ep1.es.srt"""
+import json, re, textwrap, numpy as np, soundfile as sf
+D = "/home/claude/doc/chiricahua"
+tl = json.load(open(f"{D}/timeline.json")); disp = {s["id"]: s["text"] for s in json.load(open(f"{D}/segments.json"))}
+import os
+TR = {"es": json.load(open(f"{D}/subs_es.json"))}
+for _l in ("fr", "pt", "zh", "ja"):
+    if os.path.exists(f"{D}/subs/{_l}.json"): TR[_l] = json.load(open(f"{D}/subs/{_l}.json"))
+CJK = ("zh", "ja"); LANG = "en"
+def wrap(t, width=42):
+    if LANG not in CJK: return textwrap.wrap(t, width)
+    w = 18; out = []; cur = ""
+    for ch in t:
+        cur += ch
+        if len(cur) >= w: out.append(cur); cur = ""
+    if cur: out.append(cur)
+    return out
+BITES_EN = {"s014_ins": "It was just a barren landscape, gray and pumice-colored, covered with rocks.",
+            "s038_ins": "I'm dressed in the uniform of the United States Army cavalry of the 1870s and the 1880s.",
+            "s079_ins": "For more than a century… one of the most biologically diverse mountain ranges in the entire Southwest."}
+NUM = [("July fourteenth, eighteen eighty-two", "July 14, 1882"), ("twenty twenty-six", "2026"), ("February nineteenth", "February 19"),
+       ("February fourth", "February 4"), ("February eighth", "February 8"), ("July thirteenth", "July 13"), ("September thirtieth", "September 30"),
+       ("October twentieth", "October 20"), ("twenty-seven million", "27 million"), ("sixteen hundred feet", "1,600 feet"),
+       ("two hundred twenty thousand", "220,000"), ("a hundred and twenty miles", "120 miles"), ("Around two hundred kinds", "Around 200 kinds"),
+       ("twelve hundred square miles", "1,200 square miles"), ("fifty-four soldiers", "54 soldiers"), ("thirty-seven people", "37 people"),
+       ("twenty-seven years", "27 years"), ("sixty-fourth", "64th")]
+audio, SR = sf.read(f"{D}/narration_full.wav", dtype="float32")
+if audio.ndim > 1: audio = audio.mean(1)
+HOP = SR // 100
+env = np.sqrt(np.convolve(audio[: len(audio) // HOP * HOP].reshape(-1, HOP).astype(np.float64) ** 2 @ np.ones(HOP) / HOP, np.ones(3) / 3, "same"))
+thr = 10 ** (-42 / 20)
+
+def pauses(a, b):
+    """midpoints (s) of silent runs >= 0.16 s strictly inside [a, b]"""
+    i0, i1 = int(a * 100), int(b * 100); q = env[i0:i1] < thr; out = []; n = 0
+    for k, s in enumerate(q):
+        if s: n += 1
+        else:
+            if n >= 16 and k - n > 5: out.append((i0 + k - n / 2) / 100)
+            n = 0
+    return out
+
+ABBR = ("St.", "O.K.", "U.S.", "O.", "Mt.", "Dr.", "Jr.", "Sr.", "U S")
+def sentences(t):
+    if LANG in CJK and re.search(r"[。？！]", t): return [x for x in re.findall(r"[^。？！]+[。？！」』]*", t.strip()) if x.strip()]
+    parts = [x for x in re.split(r"(?<=[.?!»\"”])\s+(?=[A-ZÁÉÍÓÚÑ¿«\"“])", t.strip()) if x]; out = []
+    for x in parts:
+        if out and out[-1].endswith(ABBR): out[-1] += " " + x
+        else: out.append(x)
+    return out
+
+def speech_bounds(a, b):
+    i0, i1 = int(a * 100), int(b * 100); v = np.where(env[i0:i1] >= thr)[0]
+    return (a, b) if not len(v) else ((i0 + v[0]) / 100, (i0 + v[-1] + 1) / 100)
+
+def fits(t, width=42, lines=2): return len(wrap(t, width)) <= lines
+def chunks(t, width=42, lines=2):
+    """balanced cues of <= 2 wrapped lines (no tiny tails)"""
+    if fits(t, width, lines): return [t]
+    if LANG in CJK:   # split at commas / mid-points into balanced pieces of <= 2 lines
+        n = 2
+        while True:
+            target = len(t) / n; out, cur = [], ""
+            for ch in t:
+                cur += ch
+                if len(out) < n - 1 and len(cur) >= target and (ch in "，、；：" or len(cur) >= target * 1.15): out.append(cur); cur = ""
+            if cur: out.append(cur)
+            if all(fits(c) for c in out): return out
+            n += 1
+    words = t.split()
+    n = 2
+    while True:
+        target = len(t) / n; out, cur = [], ""
+        for w in words:
+            cand = (cur + " " + w).strip()
+            if cur and len(out) < n - 1 and (len(cand) > target * 1.08 or not fits(cand, width, lines)):
+                out.append(cur); cur = w
+            else: cur = cand
+        out.append(cur)
+        if all(fits(c, width, lines) for c in out): return out
+        n += 1
+
+def anchors(a, b, en_sents):
+    """sentence start/end times anchored to pauses; fall back to char share"""
+    s0, s1 = speech_bounds(a, b); P = pauses(s0, s1); n = len(en_sents)
+    L = np.cumsum([len(x) for x in en_sents]); tot = L[-1]; cuts = []
+    for k in range(n - 1):
+        guess = s0 + (s1 - s0) * L[k] / tot
+        cand = [p for p in P if p not in cuts and (not cuts or p > cuts[-1])]
+        best = min(cand, key=lambda p: abs(p - guess)) if cand else None
+        cuts.append(best if best is not None and abs(best - guess) < 2.5 else guess)
+    return [s0] + cuts + [s1]
+
+def build(lang):
+    cues = []
+    for it in tl:
+        if it["kind"] == "insert":
+            txt = (TR[lang] if lang != "en" else BITES_EN).get(it["id"]); a, b = speech_bounds(it["start"] + 0.2, it["start"] + it["dur"] - 0.2)
+            if txt:
+                cs = chunks(txt); n = len(cs)
+                cues += [(a + (b - a) * i / n, a + (b - a) * (i + 1) / n, c) for i, c in enumerate(cs)]
+            continue
+        sid = it.get("id")
+        if it["kind"] != "seg" or not disp.get(sid): continue
+        en = disp[sid]
+        for x, y in NUM: en = en.replace(x, y)
+        en_s = sentences(en); spoken = sentences(it["text"])
+        T = anchors(it["start"], it["start"] + it["dur"], spoken if len(spoken) == len(en_s) else en_s)
+        sents = en_s if lang == "en" else sentences(TR[lang][sid])
+        if len(sents) != len(en_s):   # translation regrouped sentences: spread by char share over the whole line
+            T = [T[0], T[-1]]; sents = [("" if lang in CJK else " ").join(sents)]
+        for k, s in enumerate(sents):
+            a, b = T[k], T[k + 1]; cs = chunks(s); tot = sum(len(c) for c in cs); t = a
+            for c in cs:
+                d = (b - a) * len(c) / tot; cues.append((t, t + d, c)); t += d
+    # merge cues that would flash (< 1.3 s) or are a lone word into a neighbour when the text still fits two lines
+    merged = []; sep = "" if lang in CJK else " "
+    for a, b, c in cues:
+        if merged and (b - a < 1.3 or (len(c) <= 6 if lang in CJK else len(c.split()) <= 2)) and fits(merged[-1][2] + sep + c) and a - merged[-1][1] < 0.6:
+            pa, pb, pc = merged[-1]; merged[-1] = (pa, b, pc + sep + c); continue
+        if merged and (merged[-1][1] - merged[-1][0] < 1.3) and fits(merged[-1][2] + sep + c) and a - merged[-1][1] < 0.6:
+            pa, pb, pc = merged[-1]; merged[-1] = (pa, b, pc + sep + c); continue
+        merged.append((a, b, c))
+    cues = merged
+    # hygiene: no overlaps, min 1.0 s on screen where room allows, small gap
+    fixed = []
+    for i, (a, b, c) in enumerate(cues):
+        nxt = cues[i + 1][0] if i + 1 < len(cues) else b + 5
+        b = min(max(b, a + 1.0), nxt - 0.04)
+        fixed.append((a, b, c))
+    return fixed
+
+def ts(x): h, r = divmod(x, 3600); m, s = divmod(r, 60); ms = int(round((s - int(s)) * 1000)); return f"{int(h):02d}:{int(m):02d}:{int(s):02d},{min(ms, 999):03d}"
+for lang in ["en"] + list(TR):
+    LANG = lang; cues = build(lang)
+    with open(f"{D}/chiricahua_ep1.{lang}.srt", "w", encoding="utf-8") as f:
+        for i, (a, b, c) in enumerate(cues, 1):
+            f.write(f"{i}\n{ts(a)} --> {ts(b)}\n" + "\n".join(wrap(c, 42)) + "\n\n")
+    print(lang, len(cues), "cues")
+
+#@@FILE chiricahua/map_scenes.json
+[{"name":"map_where","dur":9,"cam":[[-125,24,-66,50],[-112.6,30.9,-106.4,34.0]],"zoom_t":[0.05,0.75],"states":["Arizona"],"layers":[{"type":"text","lon":-107.6,"lat":33.6,"text":"NEW MEXICO","t":4,"size":30},{"type":"text","lon":-110.6,"lat":31.1,"text":"MEXICO","t":4,"size":34},{"type":"pin","lon":-109.35,"lat":32.02,"label":"Chiricahua National Park","big":true,"t":5.2},{"type":"pin","lon":-110.97,"lat":32.22,"label":"Tucson","t":5.8,"color":"white"},{"type":"route","pts":[[-110.97,32.22],[-109.35,32.02]],"t0":6.2,"t1":7.8,"dash":true,"color":"white","label":"~120 miles"}],"title":"Southeastern Arizona","subtitle":"America's 64th national park","raster":{"img":"/home/claude/doc/geo/base/relief_region.jpg","bbox":[-111.2,31.2,-108.6,32.6]}},{"name":"map_caldera","dur":10,"cam":[[-110.3,31.35,-108.4,32.45],[-109.95,31.55,-108.7,32.25]],"zoom_t":[0.0,1.0],"layers":[{"type":"pin","lon":-109.35,"lat":32.02,"label":"Today's park","t":0.8,"dy":-30},{"type":"circle","lon":-109.31,"lat":31.9,"r_km":9.7,"t":2.0,"label":"","color":"red"},{"type":"text","lon":-109.31,"lat":31.9,"text":"Turkey Creek caldera","t":2.6,"size":30},{"type":"circle","lon":-109.31,"lat":31.9,"r_km":31,"t":5.0,"label":"Ash flows (illustrative)","color":"gold","fill":false}],"title":"27 million years ago","subtitle":"Ash buried more than 1,200 square miles","note":"Caldera position and ash extent illustrative","raster":{"img":"/home/claude/doc/geo/base/relief_region.jpg","bbox":[-111.2,31.2,-108.6,32.6]}},{"name":"map_homeland","dur":10,"cam":[[-114,28.5,-104,35.2],[-113,29.2,-105,34.6]],"layers":[{"type":"region","pts":[[-111.6,32.9],[-110.2,33.6],[-108.4,34.1],[-107.0,33.6],[-106.6,32.2],[-107.3,30.4],[-108.4,29.3],[-109.8,29.6],[-110.6,30.9],[-111.3,31.8]],"t":0.8,"label":"","color":"gold"},{"type":"text","lon":-109.75,"lat":32.25,"text":"Chokonen","t":2.5,"size":36,"italic":true},{"type":"text","lon":-107.6,"lat":33.25,"text":"Chihenne","t":3.2,"size":36,"italic":true},{"type":"text","lon":-108.6,"lat":33.75,"text":"Bedonkohe","t":3.9,"size":36,"italic":true},{"type":"text","lon":-108.7,"lat":30.2,"text":"Nednhi","t":4.6,"size":36,"italic":true},{"type":"pin","lon":-109.35,"lat":32.02,"label":"Chiricahua Mountains","t":6,"dx":26}],"title":"Chiricahua Apache homeland","subtitle":"Four related bands","note":"Band areas approximate"},{"name":"map_apache_pass","dur":9,"cam":[[-111.4,31.3,-108.9,32.6],[-111.4,31.3,-108.9,32.6]],"layers":[{"type":"pin","lon":-110.7,"lat":31.62,"label":"Fort Buchanan","t":0.8,"color":"white"},{"type":"pin","lon":-109.45,"lat":32.15,"label":"Apache Pass","t":1.6,"big":true},{"type":"route","pts":[[-110.7,31.62],[-110.25,31.85],[-109.85,32.05],[-109.45,32.15]],"t0":2.4,"t1":5.5,"color":"blue","label":"54 soldiers"},{"type":"pin","lon":-109.35,"lat":32.02,"label":"Today's park","t":6.2,"dx":26,"dy":28}],"title":"The Bascom Affair","subtitle":"February 1861","raster":{"img":"/home/claude/doc/geo/base/relief_region.jpg","bbox":[-111.2,31.2,-108.6,32.6]}},{"name":"map_stronghold","dur":8,"cam":[[-110.6,31.55,-109.0,32.35],[-110.6,31.55,-109.0,32.35]],"layers":[{"type":"pin","lon":-109.97,"lat":31.92,"label":"Dragoon Mountains","t":0.8,"big":true,"dx":-26},{"type":"pin","lon":-109.35,"lat":32.02,"label":"Chiricahua Mountains","t":1.6},{"type":"text","lon":-109.97,"lat":31.75,"text":"Peace of 1872","t":3,"size":34,"italic":true}],"title":"Cochise and Jeffords","subtitle":"Autumn 1872","raster":{"img":"/home/claude/doc/geo/base/relief_region.jpg","bbox":[-111.2,31.2,-108.6,32.6]}},{"name":"map_surrender","dur":9,"cam":[[-110.8,30.6,-107.6,32.6],[-110.3,30.9,-108.1,32.4]],"layers":[{"type":"text","lon":-108.8,"lat":30.75,"text":"Sierra Madre","t":0.8,"size":34,"italic":true},{"type":"route","pts":[[-108.75,30.75],[-108.95,31.1],[-109.05,31.45],[-109.08,31.59]],"t0":1.5,"t1":4.5,"dash":true,"color":"gold"},{"type":"pin","lon":-109.08,"lat":31.59,"label":"Skeleton Canyon","t":4.5,"big":true},{"type":"pin","lon":-109.35,"lat":32.02,"label":"Chiricahua Mountains","t":5.5,"dx":-26}],"title":"The last surrender","subtitle":"Early September 1886","note":"Route illustrative","raster":{"img":"/home/claude/doc/geo/base/relief_region.jpg","bbox":[-111.2,31.2,-108.6,32.6]}},{"name":"map_exile","dur":11,"cam":[[-114,26,-78,42],[-114,26,-78,42]],"layers":[{"type":"pin","lon":-109.49,"lat":32.32,"label":"Arizona","t":0.5,"dx":-26},{"type":"route","pts":[[-109.49,32.32],[-106.4,31.8],[-98.5,29.4],[-94.0,30.1],[-90.1,30.0],[-87.0,30.5],[-84.3,30.4],[-81.31,29.9]],"t0":1.2,"t1":5,"color":"red"},{"type":"pin","lon":-81.31,"lat":29.9,"label":"Fort Marion, Florida","t":5,"dx":-26},{"type":"pin","lon":-88.01,"lat":31.09,"label":"Mount Vernon, Alabama","t":6.5,"dy":-30},{"type":"route","pts":[[-81.31,29.9],[-88.01,31.09]],"t0":6,"t1":7,"color":"red"},{"type":"route","pts":[[-88.01,31.09],[-93.0,33.5],[-98.4,34.66]],"t0":7.8,"t1":9.2,"color":"red"},{"type":"pin","lon":-98.4,"lat":34.66,"label":"Fort Sill, Oklahoma","t":9.2,"big":true}],"title":"Prisoners of war","subtitle":"27 years in exile, 1886-1913","note":"Routes simplified"},{"name":"map_massai","dur":11,"cam":[[-112,30,-86,42],[-112,30,-86,42]],"layers":[{"type":"pin","lon":-110.16,"lat":34.9,"label":"Holbrook, Arizona","t":0.5,"dx":-26},{"type":"route","pts":[[-110.16,34.9],[-106.65,35.08],[-101.9,36.6],[-97.3,37.7],[-94.6,38.4],[-92.2,38.6]],"t0":1,"t1":4.5,"color":"red","label":"Prisoner train, 1886"},{"type":"pin","lon":-92.2,"lat":38.6,"label":"Somewhere in Missouri","t":4.6,"big":true},{"type":"route","pts":[[-92.2,38.6],[-96.5,36.8],[-101.0,35.0],[-104.5,33.8],[-105.8,33.2]],"t0":5.6,"t1":9.6,"dash":true,"color":"gold","label":"Route unknown"},{"type":"pin","lon":-105.8,"lat":33.2,"label":"Back to the mountains","t":9.6,"dx":-26}],"title":"Massai's escape","subtitle":"Traveling by night","note":"Train route and return path approximate"},{"name":"map_outlaws","dur":10,"cam":[[-110.8,31.3,-108.7,32.5],[-110.8,31.3,-108.7,32.5]],"layers":[{"type":"pin","lon":-110.068,"lat":31.713,"label":"Tombstone","t":0.6,"color":"white"},{"type":"pin","lon":-109.218,"lat":31.95,"label":"Galeyville","t":1.6},{"type":"pin","lon":-109.08,"lat":31.59,"label":"Skeleton Canyon","t":2.6},{"type":"pin","lon":-110.38,"lat":31.83,"label":"Whetstone Mountains","t":3.6,"color":"white","dx":-26},{"type":"pin","lon":-109.38,"lat":31.87,"label":"West Turkey Creek","t":5,"big":true,"color":"red","dx":-26},{"type":"pin","lon":-109.35,"lat":32.02,"label":"Today's park","t":6,"dy":-30}],"title":"Outlaw country","subtitle":"1880-1882","note":"Locations approximate","raster":{"img":"/home/claude/doc/geo/base/relief_region.jpg","bbox":[-111.2,31.2,-108.6,32.6]}},{"name":"map_sky_island","dur":10,"cam":[[-118,24,-100,40],[-114,27.5,-104,36.5]],"layers":[{"type":"text","lon":-106.5,"lat":36.8,"text":"Rocky Mountains","t":1,"size":34,"italic":true},{"type":"text","lon":-106.8,"lat":28.2,"text":"Sierra Madre","t":1.8,"size":34,"italic":true},{"type":"text","lon":-112.6,"lat":32.0,"text":"Sonoran Desert","t":2.6,"size":34,"italic":true},{"type":"text","lon":-105.6,"lat":31.0,"text":"Chihuahuan Desert","t":3.4,"size":34,"italic":true},{"type":"pin","lon":-109.35,"lat":32.02,"label":"Chiricahua","t":4.6,"big":true}],"title":"A sky island","subtitle":"Where four worlds meet"}]
+#@@FILE chiricahua/measure_mix.py
+import numpy as np, soundfile as sf, json
+SR=48000; W=SR//2
+def rms_db(p):
+    a,_=sf.read(p,dtype='float32',always_2d=True); a=a.mean(1); n=len(a)//W
+    r=np.sqrt((a[:n*W].reshape(n,W)**2).mean(1))+1e-7; return 20*np.log10(r)
+v=rms_db('stem_voice.wav'); m=rms_db('stem_music.wav'); am=rms_db('stem_amb.wav'); sx=rms_db('stem_sfx.wav')
+n=min(map(len,(v,m,am,sx))); v,m,am,sx=v[:n],m[:n],am[:n],sx[:n]
+tl=json.load(open('timeline.json')); ins=np.zeros(n,bool)
+for it in tl:
+    if it['kind']=='insert': ins[int(it['start']*2):int((it['start']+it['dur'])*2)]=True
+spk=(v>-35)&~ins; gap=(v<-50)&~ins
+print("voice-music under speech median %.1f dB (p10 %.1f)"%(np.median(v[spk]-m[spk]),np.percentile(v[spk]-m[spk],10)))
+print("voice-amb under speech median %.1f dB"%np.median(v[spk]-am[spk]))
+print("narr voice %.1f, insert voice %.1f"%(np.median(v[spk]),np.median(v[ins&(v>-40)])))
+print("music in gaps %.1f"%np.median(m[gap]))
+
+#@@FILE chiricahua/narr_fit.json
+[{"id":"s039","method":"atempo","src":"/home/claude/fb/chiricahua-narration-fix2/am_michael/s039.m4a","ref":"/home/claude/fb/chiricahua-narration/am_michael/s039.m4a"},{"id":"s040","method":"atempo","src":"/home/claude/fb/chiricahua-narration-fix2/am_michael/s040.m4a","ref":"/home/claude/fb/chiricahua-narration/am_michael/s040.m4a"},{"id":"s043","method":"atempo","src":"/home/claude/fb/chiricahua-narration-fix2/am_michael/s043.m4a","ref":"/home/claude/fb/chiricahua-narration/am_michael/s043.m4a"},{"id":"s067","method":"atempo","src":"/home/claude/fb/chiricahua-narration-fix2/am_michael/s067.m4a","ref":"/home/claude/fb/chiricahua-narration/am_michael/s067.m4a"},{"id":"s007","method":"pad","src":"/home/claude/fb/chiricahua-narration-fix4/am_michael/s007.m4a","ref":"/home/claude/fb/chiricahua-narration/am_michael/s007.m4a"}]
