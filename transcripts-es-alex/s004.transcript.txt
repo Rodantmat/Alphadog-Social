@@ -1,0 +1,5 @@
+[   0.00-   5.36] El hombre era Jonny Ringo, uno de los pistoleros más temidos del territorio, un forajido ligado
+[   5.36-  10.08] a la misma rivalidad que terminó en el OK Corral. Tenía un revolver en la mano derecha
+[  10.08-  14.92] y una sola herida de bala en la cabeza. Le faltaban las botas. Tenía los pies envueltos
+[  14.92-  19.82] en tiras arrancadas de su propia camiseta. Llevaba el cinturón de las pistolas abrochado
+[  19.82-  23.76] al revés. Y le habían cortado parte del cuero cabelludo.
