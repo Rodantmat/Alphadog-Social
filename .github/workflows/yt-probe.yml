@@ -21,9 +21,24 @@ jobs:
           deno-version: v2.x
       - run: sudo apt-get update -y -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
       - run: pip install -U "yt-dlp[default,curl-cffi]" bgutil-ytdlp-pot-provider
+      - name: Cloudflare WARP (local SOCKS proxy)
+        run: |
+          curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor -o /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
+          echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
+          sudo apt-get update -qq && sudo apt-get install -y -qq cloudflare-warp >/dev/null
+          sleep 3
+          warp-cli --accept-tos registration new || true
+          warp-cli --accept-tos mode proxy || true
+          warp-cli --accept-tos connect || true
+          sleep 8; warp-cli --accept-tos status || true
+          echo "direct:"; curl -s https://www.cloudflare.com/cdn-cgi/trace | grep -E "ip=|warp=" || true
+          echo "via warp:"; curl -s -x socks5h://127.0.0.1:40000 https://www.cloudflare.com/cdn-cgi/trace | grep -E "ip=|warp=" || true
       - name: Start PO token server
         run: |
           docker run -d --name bgutil -p 4416:4416 --init brainicism/bgutil-ytdlp-pot-provider
           sleep 15; curl -s http://127.0.0.1:4416/ping || true
-      - name: Probe
-        run: yt-dlp --version; bash scripts/yt_probe_access.sh "${{ inputs.vid }}"
+      - name: Probe via WARP
+        run: |
+          yt-dlp --version
+          export YTP="--proxy socks5://127.0.0.1:40000"
+          bash scripts/yt_probe_access.sh "${{ inputs.vid }}"
