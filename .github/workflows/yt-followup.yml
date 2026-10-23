@@ -1,0 +1,24 @@
+name: yt-followup
+# Posts queued comments (e.g. the credits comment) once a scheduled video has gone public. Idle runs exit in seconds.
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Post due comments
+        if: hashFiles('content/pending/comment_*.json') != ''
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          python3 scripts/yt_comment.py
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add -A content/pending && git commit -qm "followup: comments posted" && git push -q origin HEAD:main || true
