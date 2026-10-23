@@ -1,0 +1,55 @@
+name: stock
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "scan or fetch"
+        default: "scan"
+      label:
+        description: "Folder label on footage branch"
+        default: "stock-scan"
+      qfile:
+        description: "scan: queries file"
+        default: "content/chiricahua/stock_queries.txt"
+      per_query:
+        description: "scan: results per source per query"
+        default: "6"
+      picks:
+        description: "fetch: picks json path in repo"
+        default: "content/chiricahua/stock_picks.json"
+      scan_labels:
+        description: "fetch: comma-separated footage-branch labels holding scan.json"
+        default: "stock-scan"
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -y -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core >/dev/null
+      - name: Run
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: |
+          if [ "${{ inputs.mode }}" = "scan" ]; then
+            python scripts/stock_scan.py scan "/tmp/out/${{ inputs.label }}" "${{ inputs.per_query }}" "@${{ inputs.qfile }}"
+          else
+            files=""
+            for l in $(echo "${{ inputs.scan_labels }}" | tr ',' ' '); do
+              curl -sfL "https://raw.githubusercontent.com/${{ github.repository }}/footage/$l/scan.json" -o "/tmp/scan_$l.json" && files="$files,/tmp/scan_$l.json"
+            done
+            SCAN_FILES="${files#,}" python scripts/stock_scan.py fetch "/tmp/out/${{ inputs.label }}" "${{ inputs.picks }}"
+          fi
+      - name: Push to footage branch
+        if: always()
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git fetch origin footage && git checkout footage
+          mkdir -p "${{ inputs.label }}" && cp -r /tmp/out/${{ inputs.label }}/. "${{ inputs.label }}/" || true
+          git add "${{ inputs.label }}" && git commit -m "footage: ${{ inputs.label }}" && git push origin footage || echo "nothing to push"
