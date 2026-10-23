@@ -1,0 +1,68 @@
+name: ytcc
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "scan or fetch"
+        default: "scan"
+      label:
+        description: "Folder label on footage branch"
+        default: "ytcc-scan"
+      qfile:
+        description: "scan: queries file"
+        default: "content/chiricahua/yt_queries.txt"
+      per_query:
+        description: "scan: search results per query"
+        default: "8"
+      picks:
+        description: "fetch: picks json path in repo"
+        default: "content/chiricahua/yt_picks.json"
+      scan_labels:
+        description: "fetch: footage-branch labels holding scan.json"
+        default: "ytcc-scan"
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - run: sudo apt-get update -y -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core >/dev/null
+      - run: pip install -U "yt-dlp[default,curl-cffi]" bgutil-ytdlp-pot-provider pillow
+      - name: Cloudflare WARP (free, no account) as local SOCKS proxy
+        run: |
+          curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor -o /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
+          echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
+          sudo apt-get update -qq && sudo apt-get install -y -qq cloudflare-warp >/dev/null
+          sleep 3
+          warp-cli --accept-tos registration new || true
+          warp-cli --accept-tos mode proxy || true
+          warp-cli --accept-tos connect || true
+          sleep 8; curl -s -x socks5h://127.0.0.1:40000 https://www.cloudflare.com/cdn-cgi/trace | grep -E "warp=" || true
+      - name: PO token server
+        run: docker run -d --name bgutil -p 4416:4416 --init brainicism/bgutil-ytdlp-pot-provider && sleep 12
+      - name: Run
+        run: |
+          if [ "${{ inputs.mode }}" = "scan" ]; then
+            python scripts/ytcc.py scan "/tmp/out/${{ inputs.label }}" "${{ inputs.per_query }}" "@${{ inputs.qfile }}"
+          else
+            files=""
+            for l in $(echo "${{ inputs.scan_labels }}" | tr ',' ' '); do
+              curl -sfL "https://raw.githubusercontent.com/${{ github.repository }}/footage/$l/scan.json" -o "/tmp/scan_$l.json" && files="$files,/tmp/scan_$l.json"
+            done
+            SCAN_FILES="${files#,}" python scripts/ytcc.py fetch "/tmp/out/${{ inputs.label }}" "${{ inputs.picks }}"
+          fi
+      - name: Push to footage branch
+        if: always()
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git fetch origin footage && git checkout footage
+          mkdir -p "${{ inputs.label }}" && cp -r /tmp/out/${{ inputs.label }}/. "${{ inputs.label }}/" || true
+          git add "${{ inputs.label }}" && git commit -m "footage: ${{ inputs.label }}" && git push origin footage || echo "nothing to push"
