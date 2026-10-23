@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Stock video scan/fetch for Pexels + Pixabay (API keys in env PEXELS_API_KEY / PIXABAY_API_KEY).
+"""Stock video scan/fetch for Pexels + Pixabay (API keys in env PEXELS_API_KEY / PIXABAY_API_KEY); fetch also works for any
+scan.json with a "full" URL (archive.org, LoC, Commons, Coverr).
 scan:  stock_scan.py scan OUT_DIR PER_QUERY @queries.txt
        -> OUT_DIR/scan.json (every candidate with id, source, url, credit, duration, size) and
           OUT_DIR/sheets/<query-slug>.jpg (one row per clip: 4 frames from the smallest rendition, labeled with clip key)
 fetch: stock_scan.py fetch OUT_DIR picks.json      (env SCAN_FILES=comma-separated scan.json paths)
-       picks.json = [{"key": "px_123", "ss": 0, "dur": 12}, ...]  (key from scan.json)
-       -> OUT_DIR/<key>_<ss>.mp4 (1080p max, no audio, trimmed) and OUT_DIR/index.json with credits"""
+       picks.json = [{"key": "px_123", "ss": 0, "dur": 12, "tag": "...", "audio": false}, ...]  (key from scan.json)
+       -> OUT_DIR/<key>_<ss>.mp4 (1080p max, trimmed; audio only if asked) and OUT_DIR/index.json with credits"""
 import json, os, re, subprocess, sys, time, urllib.parse, urllib.request
 
 PX = os.environ.get("PEXELS_API_KEY", "").strip(); PB = os.environ.get("PIXABAY_API_KEY", "").strip()
@@ -103,10 +104,10 @@ elif mode == "fetch":
         name = f"{r['key']}_{int(p.get('ss', 0))}.mp4"
         cmd = ["ffmpeg", "-y", "-v", "error", "-ss", str(p.get("ss", 0)), "-i", raw]
         if p.get("dur"): cmd += ["-t", str(p["dur"])]
-        cmd += ["-an", "-vf", "scale='min(1920,iw)':-2,fps=30", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p",
+        cmd += (["-c:a", "aac", "-b:a", "160k"] if p.get("audio") else ["-an"]) + ["-vf", "scale='min(1920,iw)':-2,fps=30", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p",
                 "-map_metadata", "-1", "-movflags", "+faststart", f"{out}/{name}"]
         sh(cmd)
         if os.path.exists(f"{out}/{name}"):
-            idx.append({**r, "file": name, "ss": p.get("ss", 0), "dur": p.get("dur")}); print("SAVED", name, flush=True)
+            idx.append({**r, **p, "file": name}); print("SAVED", name, flush=True)
     json.dump(idx, open(f"{out}/index.json", "w"), indent=1)
     print("FETCH_TOTAL", len(idx))
