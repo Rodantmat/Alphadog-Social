@@ -3,8 +3,8 @@
 scan:  ytcc.py scan OUT_DIR PER_QUERY @queries.txt
        CC-filtered search -> verify license in metadata -> 360p video-only preview (native downloader, through WARP)
        -> OUT_DIR/scan.json + OUT_DIR/review/<query>.jpg (one row per video, 8 frames, timestamps)
-fetch: ytcc.py fetch OUT_DIR picks.json    picks = [{"key": "yt_<id>", "ss": 12.0, "dur": 8, "tag": "..."}]
-       -> 1080p video-only download per video (once), trimmed pieces OUT_DIR/<key>_<ss>.mp4 + index.json with credits.
+fetch: ytcc.py fetch OUT_DIR picks.json    picks = [{"key": "yt_<id>", "ss": 12.0, "dur": 8, "tag": "...", "audio": false}]
+       -> 1080p download per video (once; with audio if any pick asks for it), trimmed pieces OUT_DIR/<key>_<ss>.mp4 + index.json.
        If YouTube refuses the WARP address, the WARP registration is renewed (new address) and the download retried."""
 import json, os, re, subprocess, sys, time, urllib.parse
 from PIL import Image, ImageDraw, ImageFont
@@ -94,10 +94,12 @@ elif mode == "fetch":
     for sf in [l for l in os.environ.get("SCAN_FILES", "").split(",") if l]:
         for r in json.load(open(sf)): scan[r["key"]] = r
     idx, have = [], {}
+    audio_vids = {p["key"][3:] for p in picks if p.get("audio")}
     def download(vid, page):
         raw = f"/tmp/full_{vid}"
+        fmt = "bv*[height<=1080]+ba/b[height<=1080]" if vid in audio_vids else "bv*[height<=1080][ext=mp4]/bv*[height<=1080]/b[height<=1080]"
         for attempt in range(4):
-            rc, so, se = sh(YT + ["-f", "bv*[height<=1080][ext=mp4]/bv*[height<=1080]/b[height<=1080]", "-o", raw + ".%(ext)s", page], 2400)
+            rc, so, se = sh(YT + ["-f", fmt, "--merge-output-format", "mp4", "-o", raw + ".%(ext)s", page], 2400)
             got = [f for f in os.listdir("/tmp") if f.startswith(f"full_{vid}.") and not f.endswith((".part", ".ytdl"))]
             if got: return "/tmp/" + got[0]
             print("DL_RETRY", vid, attempt, se[-160:].replace("\n", " "), flush=True)
@@ -114,7 +116,7 @@ elif mode == "fetch":
         name = f"{p['key']}_{int(float(p.get('ss', 0)))}.mp4"
         cmd = ["ffmpeg", "-y", "-v", "error", "-ss", str(p.get("ss", 0)), "-i", src]
         if p.get("dur"): cmd += ["-t", str(p["dur"])]
-        cmd += ["-an", "-vf", "scale='min(1920,iw)':-2,fps=30", "-c:v", "libx264", "-preset", "veryfast", "-crf", "19", "-pix_fmt", "yuv420p",
+        cmd += (["-c:a", "aac", "-b:a", "160k"] if p.get("audio") else ["-an"]) + ["-vf", "scale='min(1920,iw)':-2,fps=30", "-c:v", "libx264", "-preset", "veryfast", "-crf", "19", "-pix_fmt", "yuv420p",
                 "-map_metadata", "-1", "-movflags", "+faststart", f"{OUT}/{name}"]
         sh(cmd)
         if os.path.exists(f"{OUT}/{name}"):
