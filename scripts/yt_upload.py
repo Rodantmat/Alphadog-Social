@@ -5,7 +5,8 @@ META: {"file": "ep.mp4", "title": "...", "description_file": "desc.txt", "tags":
        "privacy": "private|unlisted|public", "publish_at": "2026-10-24T16:00:00Z" (optional, requires private),
        "thumbnail": "thumb.jpg", "made_for_kids": false, "synthetic": true, "language": "en", "playlist_id": "",
        "captions": [{"file": "ep.en.srt", "language": "en", "name": "English"}, {"file": "ep.es.srt", "language": "es", "name": "Español"}],
-       "localizations": {"es": {"title": "...", "description": "..."}} }  # selectable subtitle tracks (rule D1), localized metadata
+       "localizations": {"es": {"title": "...", "description": "..."}},   # selectable subtitle tracks (rule D1), localized metadata
+       "playlist_title": "...", "comment_file": "credits.txt", "location": {"desc": "...", "lat": 0, "lng": 0}, "recording_date": "2026-10-23" }
 Env: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN. Prints VIDEO_ID=..."""
 import json, os, sys, time, urllib.parse, urllib.request
 
@@ -54,9 +55,20 @@ with open(M["file"], "rb") as f:
         sent = end + 1; print(f"uploaded {sent/size:.0%}", flush=True)
 print("VIDEO_ID=" + str(vid))
 if vid and M.get("thumbnail") and os.path.exists(M["thumbnail"]):
+    ctype = "image/png" if M["thumbnail"].lower().endswith(".png") else "image/jpeg"
     st, _, _ = api("POST", f"https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId={vid}", tok,
-                   raw=open(M["thumbnail"], "rb").read(), headers={"Content-Type": "image/jpeg"})
+                   raw=open(M["thumbnail"], "rb").read(), headers={"Content-Type": ctype})
     print("thumbnail", st)
+if vid and M.get("playlist_title") and not M.get("playlist_id"):     # find or create the series playlist
+    _, _, out = api("GET", "https://www.googleapis.com/youtube/v3/playlists?part=snippet&mine=true&maxResults=50", tok)
+    hit = [p for p in json.loads(out).get("items", []) if p["snippet"]["title"] == M["playlist_title"]]
+    if hit: M["playlist_id"] = hit[0]["id"]
+    else:
+        _, _, out = api("POST", "https://www.googleapis.com/youtube/v3/playlists?part=snippet,status", tok,
+                        body={"snippet": {"title": M["playlist_title"], "description": M.get("playlist_description", ""), "defaultLanguage": "en"},
+                              "status": {"privacyStatus": "public"}})
+        M["playlist_id"] = json.loads(out)["id"]
+    print("playlist", M["playlist_id"])
 if vid and M.get("playlist_id"):
     api("POST", "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet", tok,
         body={"snippet": {"playlistId": M["playlist_id"], "resourceId": {"kind": "youtube#video", "videoId": vid}}})
@@ -76,3 +88,17 @@ if vid and M.get("localizations"):
     st, _, _ = api("PUT", "https://www.googleapis.com/youtube/v3/videos?part=localizations,snippet", tok,
                    body={"id": vid, "snippet": meta["snippet"], "localizations": M["localizations"]})
     print("localizations", st)
+if vid and M.get("comment_file") and os.path.exists(M["comment_file"]):      # credits as the first comment (pin it in Studio)
+    try:
+        st, _, _ = api("POST", "https://www.googleapis.com/youtube/v3/commentThreads?part=snippet", tok,
+                       body={"snippet": {"videoId": vid, "topLevelComment": {"snippet": {"textOriginal": open(M["comment_file"]).read()[:9900]}}}})
+        print("comment", st)
+    except Exception as e: print("comment failed", str(e)[:300])
+if vid and (M.get("location") or M.get("recording_date")):
+    rd = {}
+    if M.get("recording_date"): rd["recordingDate"] = M["recording_date"] + "T00:00:00Z"
+    if M.get("location"): rd["locationDescription"] = M["location"]["desc"]; rd["location"] = {"latitude": M["location"]["lat"], "longitude": M["location"]["lng"]}
+    try:
+        st, _, _ = api("PUT", "https://www.googleapis.com/youtube/v3/videos?part=recordingDetails", tok, body={"id": vid, "recordingDetails": rd}); print("recordingDetails", st)
+    except Exception as e: print("recordingDetails failed", str(e)[:300])
+print("DONE", vid)
