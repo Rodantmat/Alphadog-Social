@@ -1,0 +1,21 @@
+name: yt-check
+on:
+  workflow_dispatch:
+    inputs:
+      test_upload:
+        description: "Also upload + delete a 3 s unlisted test clip"
+        default: "true"
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
+      - env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python3 scripts/yt_whoami.py ${{ inputs.test_upload == 'true' && '--test-upload' || '' }}
