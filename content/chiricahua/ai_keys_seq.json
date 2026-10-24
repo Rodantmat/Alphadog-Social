@@ -1,0 +1,45 @@
+{
+ "_doc": "Episode 1 AI story sequences (owner 2026-10-24: AI clips grouped into whole story passages, not mixed in between photos/footage). Each shot = keyframe beat (SDXL, short) + motion (Wan2.2 I2V, detailed). Cochise's face is never shown (episode states no verified image exists).",
+ "A": {"title": "The man under the oak (cold open)", "segs": ["s001", "s002", "s003", "s004 tail"], "shots": [
+  ["A01", "side view, bearded 1880s teamster walking beside two mules pulling a wagon heaped with firewood up a dirt mountain road, {LAND}"],
+  ["A02", "low close view of mule hooves and iron-rimmed wagon wheels rolling over stones on a dusty dirt road, dust in sunlight, oak trees"],
+  ["A03", "close-up of a bearded 1880s teamster in a dusty felt hat and faded blue shirt, squinting at something ahead, mules behind him"],
+  ["A04", "wide view across a rocky creek, a man in a white shirt and dark vest sitting against the trunk of a huge oak, far away, {LAND}"],
+  ["A05", "medium view, a man in white shirt and dark vest sitting still against a huge oak, hat tipped over his face as if asleep, dappled shade"],
+  ["A06", "side view, two women in long 1880s riding skirts and straw hats riding a bay horse and a grey horse on a dirt track past a big oak, {LAND}"],
+  ["A07", "the bearded teamster seen from behind walking slowly toward a man sitting motionless under a big oak, long shadows, eerie silence"],
+  ["A08", "close-up of a limp hand on dry oak leaves holding an old 1870s revolver, dappled sunlight, no face"],
+  ["A09", "close-up of two bare feet wrapped in torn white cloth strips resting on dry oak leaves at the base of a tree, dappled light"],
+  ["A10", "close-up of a leather cartridge belt buckled on upside down around a man's waist, brass cartridges, white shirt, no face"]]},
+ "B": {"title": "The Bascom Affair", "segs": ["s024", "s025", "s026 head"], "shots": [
+  ["B01", "a column of 1861 US cavalry soldiers in blue riding single file up a rocky mountain pass, guidon flag, oak and juniper, grey rocks"],
+  ["B02", "an 1861 army camp of white canvas tents in a rocky mountain pass, soldiers standing guard, Apache family approaching on foot from afar"],
+  ["B03", "inside an 1861 army canvas tent, a young lieutenant in a blue coat pointing angrily across a camp table at a tall Apache leader seen from behind"],
+  ["B04", "inside a canvas army tent, soldiers with rifles stepping in to block the tent flap, an Apache leader seen from behind turning his head"],
+  ["B05", "inside a canvas army tent, a knife blade slicing down through the tent wall, bright daylight bursting through the cut"],
+  ["B06", "seen from behind, an Apache man in a calico shirt and headband running uphill away from army tents into rocky hills, soldiers chasing"],
+  ["B07", "Apache women and a man sitting under guard by army tents, soldiers with rifles standing over them, somber, faces in shadow"],
+  ["B08", "a lone Apache rider seen from afar approaching an army camp carrying a white flag on a pole, rocky mountain pass"],
+  ["B09", "dozens of Apache warriors on horseback lined along a high rocky ridge above a mountain pass, silhouettes against the sky"]]},
+ "C": {"title": "Massai's escape from the prison train", "segs": ["s039", "s040"], "shots": [
+  ["C01", "night, 1886 steam locomotive with glowing headlamp and smoke pulling dark wooden passenger cars slowly up a steep wooded grade, moonlight"],
+  ["C02", "night, an Apache man in a dark shirt and headband crouching on the open platform between two moving train cars, wind, smoke, moonlight"],
+  ["C03", "night, a man leaping from a slow moving 1880s train into dark brush beside the tracks, smoke and sparks, moonlight"],
+  ["C04", "night, the red lights of a train fading into the distance as a man rises from the brush beside the tracks, moonlight"],
+  ["C05", "night, an Apache man in a headband running through dark woods, moonlight through bare branches, mist"],
+  ["C06", "night, a lone man walking across wide open plains under a sky full of stars, tiny figure, distant hills"],
+  ["C07", "dawn, a lone man on a rocky ridge looking at distant mountains glowing in the first light, seen from behind"]]},
+ "D": {"title": "Ringo's last days", "segs": ["s053", "s054"], "shots": [
+  ["D01", "an 1880s gunman in a dark vest and hat seen from behind sitting on a ranch porch drinking from a whiskey bottle, hot afternoon, {LAND}"],
+  ["D02", "distant view, a deputy on horseback meeting a lone rider with two whiskey bottles in his saddlebag on a dusty road, {LAND}"],
+  ["D03", "an 1880s ranch house in the afternoon, two ranch hands by a corral suddenly turning toward the hills as if hearing a shot, {LAND}"],
+  ["D04", "next morning, a small group of 1880s men standing in a circle around a big oak tree by a creek, hats in hands, {LAND}"],
+  ["D05", "a man in a white shirt sitting dead still against a big oak, seen from a respectful distance, men standing around, no blood"],
+  ["D06", "close-up of an old 1880s rifle leaning against the bark of an oak tree, dry leaves, dappled light"],
+  ["D07", "close-up of two leather cartridge belts with brass cartridges lying in dry oak leaves at the base of a tree"],
+  ["D08", "close-up of dusty ground at the base of an oak with no boots, only bare footprints and strips of white cloth, dappled light"]]},
+ "E": {"title": "Curly Bill's fight in Galeyville", "segs": ["s048"], "shots": [
+  ["E01", "night, a lamplit 1881 mining camp street of plank and canvas buildings with a saloon front, horses at a hitching rail, {LAND}"],
+  ["E02", "inside a lamplit 1881 saloon, a drunk outlaw with a curly mustache shoving another man at the bar, onlookers backing away"],
+  ["E03", "inside a lamplit 1881 saloon, a revolver flash in the smoke, a man staggering back against the bar, onlookers ducking"]]}
+}
