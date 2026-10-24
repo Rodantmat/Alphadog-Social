@@ -2,7 +2,7 @@
 Free: SDXL base + SDXL-Lightning 4-step (OpenRAIL++) on a CPU GitHub runner. Each still is the FIRST frame of a clip, so
 it shows the start of the action in the right place (Chiricahua look: oak, golden grass, grey rock spires - no snow, no
 pines, no red rock). SDXL reads only ~75 tokens: the style goes first, then a short beat.
-Usage: keys.py OUTDIR PART NPARTS   (shots x seeds are split across parallel runners)"""
+Usage: keys.py OUTDIR PART NPARTS [SEQ_JSON]   (shots x seeds are split across parallel runners)"""
 import os, sys, time, torch
 from diffusers import StableDiffusionXLPipeline, UNet2DConditionModel, EulerDiscreteScheduler
 from huggingface_hub import hf_hub_download
@@ -34,6 +34,11 @@ KEYS = {
 SEEDS = (5, 23, 41, 77)
 
 out, part, nparts = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]); os.makedirs(out, exist_ok=True)
+if len(sys.argv) > 4:   # story sequences file (A01..E03): replaces the single-beat list
+    import json
+    seq = json.load(open(sys.argv[4]))
+    KEYS = {sid: beat.replace("{LAND}", LAND) for k, v in seq.items() if not k.startswith("_") for sid, beat in v["shots"]}
+    SEEDS = (5, 23, 41)
 jobs = [(n, s) for n in KEYS for s in SEEDS][part::nparts]
 torch.set_num_threads(os.cpu_count())
 base = "stabilityai/stable-diffusion-xl-base-1.0"
