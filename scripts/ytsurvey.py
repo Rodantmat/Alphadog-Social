@@ -37,7 +37,7 @@ for key in keys:
     if not pv: print("SURVEY_FAIL", key, flush=True); continue
     rc, so, _ = sh(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", pv], 60)
     D = float(so.strip() or 0); fr = f"/tmp/fr_{vid}"; os.makedirs(fr, exist_ok=True)
-    sh(["ffmpeg", "-v", "error", "-i", pv, "-vf", f"fps=1/{STEP},scale={TW}:{TH}:force_original_aspect_ratio=decrease,pad={TW}:{TH}:(ow-iw)/2:(oh-ih)/2",
+    sh(["ffmpeg", "-v", "error", "-i", pv, "-vf", f"fps=1/{STEP},scale={TW}:{TH}",
         f"{fr}/%05d.jpg"], 3600)
     frames = sorted(os.listdir(fr)); per = COLS * ROWS; pages = 0
     for p in range(0, len(frames), per):
