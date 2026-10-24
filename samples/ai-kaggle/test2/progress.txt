@@ -1,0 +1,37 @@
+06:46:17 encoded 5 prompts in 349 s
+06:51:10 gpu0 t2v_s001_teamster step 5/30 249s
+06:52:27 gpu1 t2v_s001_teamster_close step 5/30 325s
+06:55:29 gpu0 t2v_s001_teamster step 10/30 507s
+06:58:16 gpu1 t2v_s001_teamster_close step 10/30 674s
+06:59:46 gpu0 t2v_s001_teamster step 15/30 764s
+07:04:03 gpu1 t2v_s001_teamster_close step 15/30 1022s
+07:04:03 gpu0 t2v_s001_teamster step 20/30 1022s
+07:08:20 gpu0 t2v_s001_teamster step 25/30 1279s
+07:09:51 gpu1 t2v_s001_teamster_close step 20/30 1369s
+07:12:38 gpu0 t2v_s001_teamster step 30/30 1537s
+07:13:58 gpu0 FAIL t2v_s001_teamster OutOfMemoryError('CUDA out of memory. Tried to allocate 884.00 MiB. GPU 0 has a total capacity of 14.56 GiB of which 604.81 MiB is free. Including non-PyTorch memory, this process has 13.97 GiB memory in use. Of the allocated memory 9.91 GiB is allocated by PyTorch, and 3.90 GiB is reserved by PyTor
+07:15:37 gpu1 t2v_s001_teamster_close step 25/30 1715s
+07:18:22 gpu0 t2v_s002_oak_wide step 5/30 265s
+07:21:22 gpu1 t2v_s001_teamster_close step 30/30 2061s
+07:22:46 gpu0 t2v_s002_oak_wide step 10/30 528s
+07:23:19 gpu1 DONE t2v_s001_teamster_close 2177s
+07:27:11 gpu0 t2v_s002_oak_wide step 15/30 793s
+07:29:05 gpu1 t2v_s002_riders step 5/30 346s
+07:31:35 gpu0 t2v_s002_oak_wide step 20/30 1057s
+07:34:53 gpu1 t2v_s002_riders step 10/30 694s
+07:35:59 gpu0 t2v_s002_oak_wide step 25/30 1321s
+07:40:23 gpu0 t2v_s002_oak_wide step 30/30 1585s
+07:40:36 gpu1 t2v_s002_riders step 15/30 1037s
+07:41:59 gpu0 DONE t2v_s002_oak_wide 1681s
+07:46:20 gpu0 t2v_s004_belt_feet step 5/30 261s
+07:46:24 gpu1 t2v_s002_riders step 20/30 1385s
+07:50:40 gpu0 t2v_s004_belt_feet step 10/30 521s
+07:52:09 gpu1 t2v_s002_riders step 25/30 1730s
+07:54:59 gpu0 t2v_s004_belt_feet step 15/30 780s
+07:57:55 gpu1 t2v_s002_riders step 30/30 2076s
+07:59:17 gpu0 t2v_s004_belt_feet step 20/30 1038s
+07:59:53 gpu1 DONE t2v_s002_riders 2194s
+08:03:53 gpu0 t2v_s004_belt_feet step 25/30 1313s
+08:08:31 gpu0 t2v_s004_belt_feet step 30/30 1592s
+08:10:10 gpu0 DONE t2v_s004_belt_feet 1690s
+08:10:11 ALL_DONE ['t2v_s001_teamster_close.mp4', 't2v_s002_oak_wide.mp4', 't2v_s002_riders.mp4', 't2v_s004_belt_feet.mp4']
