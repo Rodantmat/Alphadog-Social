@@ -1,0 +1,51 @@
+name: ai-video
+# Free real-motion AI clips (no paid APIs): LTX-Video 2B image-to-video on a CPU runner, from the AI stills in samples/ai-ringo.
+on:
+  workflow_dispatch:
+    inputs:
+      width: { default: "768" }
+      height: { default: "448" }
+      frames: { default: "81" }
+      steps: { default: "40" }
+permissions:
+  contents: write
+jobs:
+  clip:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - img: paint_wide_11
+            prompt: "a painted western scene, a man in a hat sits motionless against a huge oak tree, oak leaves sway gently in a warm breeze, drifting dust in sunbeams, slow cinematic camera push in, painterly oil painting style"
+          - img: paint_found_23
+            prompt: "a painted western scene, two travelers walk slowly along a dirt road under a big oak tree, a horse shakes its head, a wagon waits, leaves sway in the breeze, slow cinematic camera drift, painterly oil painting style"
+          - img: real_wide_11
+            prompt: "cinematic film shot, a cowboy sits motionless against an old oak tree in the Arizona desert, branches and leaves move gently in the wind, dust drifts in the light, slow dolly in, 1880s western, natural light"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: |
+          sudo fallocate -l 20G /swap2 && sudo chmod 600 /swap2 && sudo mkswap /swap2 >/dev/null && sudo swapon /swap2 || true
+          sudo apt-get -o DPkg::Lock::Timeout=120 update -qq && sudo DEBIAN_FRONTEND=noninteractive apt-get -o DPkg::Lock::Timeout=120 install -y -qq ffmpeg
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -q diffusers transformers accelerate safetensors sentencepiece huggingface_hub imageio imageio-ffmpeg pillow
+          free -g | head -3; nproc
+      - name: Fetch still
+        run: curl -sSfL -o /tmp/in.jpg "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/footage/samples/ai-ringo/${{ matrix.img }}.jpg"
+      - name: Generate clip
+        run: |
+          mkdir -p /tmp/out
+          python3 scripts/ai_samples/vid.py /tmp/in.jpg /tmp/out/${{ matrix.img }}_motion.mp4 ${{ inputs.width }} ${{ inputs.height }} ${{ inputs.frames }} ${{ inputs.steps }} "${{ matrix.prompt }}"
+          ls -la /tmp/out
+      - name: Push to footage branch
+        if: always()
+        run: |
+          ls /tmp/out/*.mp4 >/dev/null 2>&1 || exit 0
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb
+          cd /tmp/fb && git sparse-checkout set samples/ai-ringo && mkdir -p samples/ai-ringo && cp /tmp/out/*.mp4 samples/ai-ringo/
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add samples && git commit -qm "samples: ai motion ${{ matrix.img }}" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase --depth 1 origin footage && git push -q origin HEAD:footage && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*9)); done; exit 1
