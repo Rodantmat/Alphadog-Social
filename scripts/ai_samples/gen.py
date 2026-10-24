@@ -1,5 +1,5 @@
 """Free AI stills on a CPU GitHub runner: SDXL base + SDXL-Lightning 4-step UNet (both OpenRAIL++, commercial use allowed).
-Usage: gen.py STYLE OUTDIR   (STYLE = real | paint)"""
+Usage: gen.py STYLE OUTDIR   (STYLE = real | paint | toon)"""
 import os, sys, time, torch
 from diffusers import StableDiffusionXLPipeline, UNet2DConditionModel, EulerDiscreteScheduler
 from huggingface_hub import hf_hub_download
@@ -25,7 +25,15 @@ BEATS = {
 STY = {
     "real": "photorealistic cinematic film still, 35mm, natural light, muted earthy color, historical drama",
     "paint": "graphic novel painting, oil paint and ink, bold brush strokes, warm ochre and dusty blue, dramatic light",
+    "toon": "2D animated true-crime series still, clean cel shading, bold dark outlines, semi-realistic proportions, flat muted colors, soft painted background",
 }
+if style == "toon":   # cold-open beats in the flat 2D docu-animation look
+    BEATS = {
+        "teamster": "an 1880s bearded teamster in a felt hat driving a mule wagon loaded with firewood up a dirt mountain road through oak woodland, grey rock spires",
+        "oak": "a man in a white shirt and dark vest sitting slumped against a big oak tree beside a rocky creek, hat low over his face, oak woodland",
+        "riders": "two women in long 1880s dresses and bonnets riding horses at a walk on a dirt trail, glancing at a distant oak tree",
+        "teamster_close": "close-up of a worried bearded 1880s teamster in a dusty felt hat stopping his wagon and staring ahead, oak trees behind",
+    }
 for name, beat in BEATS.items():
     for seed in (11, 23):
         t = time.time()
