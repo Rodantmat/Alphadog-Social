@@ -1,7 +1,8 @@
 name: kaggle-wan
-# Real-motion AI clips on Kaggle's free 2x T4 GPUs (Wan2.1 1.3B, Apache-2.0). The job list is a JSON file in the repo;
-# it is embedded into the notebook script, pushed as a private Kaggle notebook, polled, and the clips are pushed to the
-# footage branch under samples/ai-kaggle/<label>/. The Kaggle token stays a secret (never printed).
+# Real-motion AI clips on Kaggle's free 2x T4 GPUs (Wan2.1 1.3B text-to-video, or Wan2.2 TI2V-5B image-to-video; both
+# Apache-2.0). The job list is a JSON file in the repo; it is embedded into the notebook script, pushed as a private
+# Kaggle notebook, polled, and the clips are pushed to the footage branch under samples/ai-kaggle/<label>/.
+# The Kaggle token stays a secret (never printed).
 on:
   workflow_dispatch:
     inputs:
@@ -10,6 +11,9 @@ on:
         default: "content/chiricahua/kaggle_jobs_test1.json"
       label:
         default: "test1"
+      script:
+        description: "wan_kaggle.py (text-to-video) or wan_kaggle_i2v.py (image-to-video)"
+        default: "wan_kaggle.py"
 permissions:
   contents: write
 jobs:
@@ -27,12 +31,12 @@ jobs:
         run: |
           U=$(python3 -c "from kaggle.api.kaggle_api_extended import KaggleApi as K;a=K();a.authenticate();print((getattr(a,'config_values',{}) or {}).get('username') or a.get_config_value('username'))")
           SLUG="alphadog-wan-${{ inputs.label }}"; echo "KID=$U/$SLUG" >> $GITHUB_ENV
-          mkdir -p k && python3 - "${{ inputs.jobs }}" <<'EOF'
+          mkdir -p k && python3 - "${{ inputs.jobs }}" "${{ inputs.script }}" <<'EOF'
           import json, sys
           jobs = json.load(open(sys.argv[1]))
-          src = open("scripts/kaggle/wan_kaggle.py").read()
+          src = open("scripts/kaggle/" + sys.argv[2]).read()
           open("k/run.py", "w").write("JOBS_JSON = " + repr(json.dumps(jobs)) + "\n" + src)
-          print("jobs", len(jobs))
+          print("jobs", len(jobs), "script", sys.argv[2])
           EOF
           cat > k/kernel-metadata.json <<EOF
           {"id": "$U/$SLUG", "title": "$SLUG", "code_file": "run.py", "language": "python", "kernel_type": "script",
@@ -60,10 +64,11 @@ jobs:
       - name: Push clips to footage branch
         if: always()
         run: |
-          ls out/*.mp4 >/dev/null 2>&1 || exit 0
+          ls out/*.mp4 out/progress.txt >/dev/null 2>&1 || exit 0
           L="samples/ai-kaggle/${{ inputs.label }}"
           git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb
-          cd /tmp/fb && git sparse-checkout set "$L" && mkdir -p "$L" && cp $GITHUB_WORKSPACE/out/*.mp4 "$L/" && cp $GITHUB_WORKSPACE/out/progress.txt "$L/" 2>/dev/null || true
+          cd /tmp/fb && git sparse-checkout set "$L" && mkdir -p "$L"
+          cp $GITHUB_WORKSPACE/out/*.mp4 "$L/" 2>/dev/null || true; cp $GITHUB_WORKSPACE/out/progress.txt "$L/" 2>/dev/null || true
           git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
           git add samples && git commit -qm "ai clips: kaggle ${{ inputs.label }}" || exit 0
           for i in 1 2 3 4 5 6; do git pull -q --rebase --depth 1 origin footage && git push -q origin HEAD:footage && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*9)); done; exit 1
