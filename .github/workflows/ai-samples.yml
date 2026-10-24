@@ -1,0 +1,44 @@
+name: ai-samples
+# Free AI-visual test for future episodes (no paid APIs): SDXL + Lightning stills on CPU, depth parallax / Ken Burns clips.
+# Results are pushed to the footage branch under samples/ai-ringo/.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  make:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      matrix:
+        style: [real, paint]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: |
+          sudo apt-get -o DPkg::Lock::Timeout=120 update -qq && sudo DEBIAN_FRONTEND=noninteractive apt-get -o DPkg::Lock::Timeout=120 install -y -qq ffmpeg
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -q diffusers transformers accelerate safetensors huggingface_hub opencv-python-headless pillow
+          df -h / | tail -1; nproc; free -g | head -2
+      - name: Generate stills
+        run: python3 scripts/ai_samples/gen.py ${{ matrix.style }} /tmp/out
+      - name: Animate
+        run: |
+          cd /tmp/out
+          for f in ${{ matrix.style }}_*.png; do
+            python3 $GITHUB_WORKSPACE/scripts/ai_samples/anim.py "$f" "${f%.png}_parallax.mp4" parallax 6
+          done
+          if [ "${{ matrix.style }}" = real ]; then
+            for f in real_*_11.png; do python3 $GITHUB_WORKSPACE/scripts/ai_samples/anim.py "$f" "${f%.png}_basic.mp4" kenburns 6; done
+          fi
+          for f in *.png; do ffmpeg -v error -y -i "$f" -q:v 3 "${f%.png}.jpg" && rm "$f"; done
+          ls -la
+      - name: Push to footage branch
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb
+          cd /tmp/fb && git sparse-checkout set samples/ai-ringo && mkdir -p samples/ai-ringo && cp /tmp/out/* samples/ai-ringo/
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add samples && git commit -qm "samples: ai ringo ${{ matrix.style }}" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase --depth 1 origin footage && git push -q origin HEAD:footage && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*7)); done; exit 1
