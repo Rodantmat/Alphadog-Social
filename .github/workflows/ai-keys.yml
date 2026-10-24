@@ -1,0 +1,30 @@
+name: ai-keys
+# Free keyframe stills (SDXL + Lightning on CPU) for Episode 1's AI scenes, split over parallel runners.
+# Pushed to the footage branch under samples/ai-keys/ for review before any paid animation.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  make:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        part: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: |
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -q diffusers transformers accelerate safetensors huggingface_hub pillow
+      - run: python3 scripts/ai_samples/keys.py /tmp/out ${{ matrix.part }} 9
+      - name: Push to footage branch
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb
+          cd /tmp/fb && git sparse-checkout set samples/ai-keys && mkdir -p samples/ai-keys && cp /tmp/out/* samples/ai-keys/
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add samples && git commit -qm "ai keys part ${{ matrix.part }}" || exit 0
+          for i in 1 2 3 4 5 6 7 8; do git pull -q --rebase --depth 1 origin footage && git push -q origin HEAD:footage && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*7+${{ matrix.part }})); done; exit 1
