@@ -31,14 +31,14 @@ jobs:
           sudo fallocate -l 20G /swap2 && sudo chmod 600 /swap2 && sudo mkswap /swap2 >/dev/null && sudo swapon /swap2 || true
           sudo apt-get -o DPkg::Lock::Timeout=120 update -qq && sudo DEBIAN_FRONTEND=noninteractive apt-get -o DPkg::Lock::Timeout=120 install -y -qq ffmpeg
           pip install -q torch --index-url https://download.pytorch.org/whl/cpu
-          pip install -q diffusers transformers accelerate safetensors sentencepiece huggingface_hub imageio imageio-ffmpeg pillow
+          pip install -q diffusers transformers accelerate safetensors sentencepiece protobuf tiktoken huggingface_hub imageio imageio-ffmpeg pillow
           free -g | head -3; nproc
       - name: Fetch still
         run: curl -sSfL -o /tmp/in.jpg "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/footage/samples/ai-ringo/${{ matrix.img }}.jpg"
       - name: Generate clip
         run: |
           mkdir -p /tmp/out
-          python3 scripts/ai_samples/vid.py /tmp/in.jpg /tmp/out/${{ matrix.img }}_motion.mp4 ${{ inputs.width }} ${{ inputs.height }} ${{ inputs.frames }} ${{ inputs.steps }} "${{ matrix.prompt }}"
+          python3 scripts/ai_samples/vid.py /tmp/in.jpg /tmp/out/${{ matrix.img }}_motion_${{ inputs.width }}.mp4 ${{ inputs.width }} ${{ inputs.height }} ${{ inputs.frames }} ${{ inputs.steps }} "${{ matrix.prompt }}"
           ls -la /tmp/out
       - name: Push to footage branch
         if: always()
