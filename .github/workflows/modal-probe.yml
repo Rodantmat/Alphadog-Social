@@ -1,0 +1,32 @@
+name: modal-probe
+# Tiny Modal test: one CPU function that runs a few seconds (well under a cent of the free allowance).
+# Spend limit on the account is $0, so if the free allowance does not apply, Modal refuses instead of charging.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}
+      MODAL_TOKEN_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
+    steps:
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -q modal && modal --version
+      - name: Run tiny function
+        run: |
+          cat > probe.py <<'EOF'
+          import modal
+          app = modal.App("alphadog-probe")
+          @app.function(timeout=60)
+          def hello():
+              import platform, os
+              return f"hello from modal: {platform.platform()} cpus={os.cpu_count()}"
+          @app.local_entrypoint()
+          def main():
+              print(hello.remote())
+          EOF
+          modal run probe.py
