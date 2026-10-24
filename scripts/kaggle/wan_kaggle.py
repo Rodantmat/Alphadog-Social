@@ -28,7 +28,7 @@ if len(sys.argv) == 1:
     t0 = time.time()
     negE = enc(NEG)
     for j in JOBS:
-        torch.save({"pe": enc(j["prompt"]), "ne": negE}, f"/tmp/emb_{j['name']}.pt")
+        torch.save({"pe": enc(j["prompt"]), "ne": enc(j["neg"]) if j.get("neg") else negE}, f"/tmp/emb_{j['name']}.pt")
     del te; gc.collect(); log("encoded", len(JOBS), "prompts in", round(time.time() - t0), "s")
     n = torch.cuda.device_count(); procs = []
     for g in range(n):
