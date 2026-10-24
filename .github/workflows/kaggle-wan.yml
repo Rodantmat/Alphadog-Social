@@ -1,0 +1,69 @@
+name: kaggle-wan
+# Real-motion AI clips on Kaggle's free 2x T4 GPUs (Wan2.1 1.3B, Apache-2.0). The job list is a JSON file in the repo;
+# it is embedded into the notebook script, pushed as a private Kaggle notebook, polled, and the clips are pushed to the
+# footage branch under samples/ai-kaggle/<label>/. The Kaggle token stays a secret (never printed).
+on:
+  workflow_dispatch:
+    inputs:
+      jobs:
+        description: "repo path of the jobs JSON"
+        default: "content/chiricahua/kaggle_jobs_test1.json"
+      label:
+        default: "test1"
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    env:
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -q -U "kaggle>=2.2.4"
+      - name: Build and push the notebook
+        run: |
+          U=$(python3 -c "from kaggle.api.kaggle_api_extended import KaggleApi as K;a=K();a.authenticate();print((getattr(a,'config_values',{}) or {}).get('username') or a.get_config_value('username'))")
+          SLUG="alphadog-wan-${{ inputs.label }}"; echo "KID=$U/$SLUG" >> $GITHUB_ENV
+          mkdir -p k && python3 - "${{ inputs.jobs }}" <<'EOF'
+          import json, sys
+          jobs = json.load(open(sys.argv[1]))
+          src = open("scripts/kaggle/wan_kaggle.py").read()
+          open("k/run.py", "w").write("JOBS_JSON = " + repr(json.dumps(jobs)) + "\n" + src)
+          print("jobs", len(jobs))
+          EOF
+          cat > k/kernel-metadata.json <<EOF
+          {"id": "$U/$SLUG", "title": "$SLUG", "code_file": "run.py", "language": "python", "kernel_type": "script",
+           "is_private": true, "enable_gpu": true, "enable_internet": true, "machine_shape": "NvidiaTeslaT4",
+           "dataset_sources": [], "competition_sources": [], "kernel_sources": []}
+          EOF
+          kaggle kernels push -p k --accelerator NvidiaTeslaT4 || kaggle kernels push -p k
+      - name: Wait for the notebook (polls every 2 min)
+        run: |
+          for i in $(seq 1 170); do
+            s=$(kaggle kernels status "$KID" 2>&1 | tail -1); echo "$(date +%T) $s"
+            echo "$s" | grep -qiE "complete|error|cancel" && break; sleep 120
+          done
+      - name: Download clips and log
+        if: always()
+        run: |
+          mkdir -p out && kaggle kernels output "$KID" -p out || true
+          python3 -c "
+          import json,glob
+          for f in glob.glob('out/*.log'):
+              for e in json.load(open(f)):
+                  if 'step' in e['data'] or 'DONE' in e['data'] or 'FAIL' in e['data'] or 'Error' in e['data'] or 'encoded' in e['data']: print(e['data'], end='')
+          " || true
+          ls -la out
+      - name: Push clips to footage branch
+        if: always()
+        run: |
+          ls out/*.mp4 >/dev/null 2>&1 || exit 0
+          L="samples/ai-kaggle/${{ inputs.label }}"
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb
+          cd /tmp/fb && git sparse-checkout set "$L" && mkdir -p "$L" && cp $GITHUB_WORKSPACE/out/*.mp4 "$L/" && cp $GITHUB_WORKSPACE/out/progress.txt "$L/" 2>/dev/null || true
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add samples && git commit -qm "ai clips: kaggle ${{ inputs.label }}" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase --depth 1 origin footage && git push -q origin HEAD:footage && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*9)); done; exit 1
