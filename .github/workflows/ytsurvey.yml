@@ -1,0 +1,49 @@
+name: ytsurvey
+# Dense contact sheets of whole CC YouTube videos (360p preview only, nothing re-published) -> footage branch survey/<label>/
+on:
+  workflow_dispatch:
+    inputs:
+      keys:
+        description: "space-separated yt_<id> keys"
+        required: true
+      label:
+        default: "s1"
+      step:
+        default: "2"
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: denoland/setup-deno@v2
+        with: { deno-version: v2.x }
+      - run: sudo apt-get update -y -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core >/dev/null
+      - run: pip install -U "yt-dlp[default,curl-cffi]" bgutil-ytdlp-pot-provider pillow
+      - name: Cloudflare WARP (free, no account) as local SOCKS proxy
+        run: |
+          curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor -o /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
+          echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
+          sudo apt-get update -qq && sudo apt-get install -y -qq cloudflare-warp >/dev/null
+          sleep 3
+          warp-cli --accept-tos registration new || true
+          warp-cli --accept-tos mode proxy || true
+          warp-cli --accept-tos connect || true
+          sleep 8
+      - name: PO token server
+        run: docker run -d --name bgutil -p 4416:4416 --init brainicism/bgutil-ytdlp-pot-provider && sleep 12
+      - name: Survey
+        run: python scripts/ytsurvey.py /tmp/out/${{ inputs.label }} ${{ inputs.step }} ${{ inputs.keys }}
+      - name: Push sheets to footage branch
+        if: always()
+        run: |
+          ls /tmp/out/${{ inputs.label }}/*.jpg >/dev/null 2>&1 || exit 0
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" /tmp/fb
+          cd /tmp/fb && git sparse-checkout set survey && mkdir -p survey/${{ inputs.label }} && cp /tmp/out/${{ inputs.label }}/* survey/${{ inputs.label }}/
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add survey && git commit -qm "survey: ${{ inputs.label }}" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase --depth 1 origin footage && git push -q origin HEAD:footage && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*10)); done; exit 1
