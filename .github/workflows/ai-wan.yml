@@ -1,0 +1,50 @@
+name: ai-wan
+# Free real-motion AI video (Wan2.1 T2V 1.3B, Apache-2.0) on CPU runners: one job per scripted story beat.
+on:
+  workflow_dispatch:
+    inputs:
+      width: { default: "480" }
+      height: { default: "272" }
+      frames: { default: "81" }
+      steps: { default: "25" }
+permissions:
+  contents: write
+jobs:
+  beat:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: s001_teamster
+            prompt: "1880s Arizona Territory, a bearded teamster in a dusty hat drives a horse-drawn wagon loaded with firewood slowly up a winding dirt mountain road through oak and pine woodland, the horses plod forward, the wagon wheels turn and bounce, dust rises, warm afternoon light, cinematic western film, slow tracking shot"
+          - name: s001_oak_creek
+            prompt: "1880s western scene, a man in a white shirt, dark vest and wide-brimmed hat sits slumped against the trunk of a large old oak tree beside a small rocky mountain creek, head bowed, the creek water flows and sparkles, oak leaves sway in the breeze, the camera slowly moves closer, quiet and eerie, cinematic film"
+          - name: s002_riders
+            prompt: "two women in long 1880s dresses and bonnets ride horses at a slow walk along a dirt trail through an oak woodland in the Arizona mountains, the horses walk forward, the women glance toward a distant oak tree, dappled sunlight, cinematic western film, side tracking shot"
+          - name: s004_revolver_painted
+            prompt: "painterly oil painting animation, a dark old western revolver lies in dry oak leaves beside a worn felt hat, leaves drift and tumble across the ground in the wind, shadows of branches move over them, slow camera push in, somber mood, rich brush strokes"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: |
+          sudo fallocate -l 24G /swap2 && sudo chmod 600 /swap2 && sudo mkswap /swap2 >/dev/null && sudo swapon /swap2 || true
+          sudo apt-get -o DPkg::Lock::Timeout=120 update -qq && sudo DEBIAN_FRONTEND=noninteractive apt-get -o DPkg::Lock::Timeout=120 install -y -qq ffmpeg
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -q diffusers transformers accelerate safetensors sentencepiece protobuf tiktoken ftfy huggingface_hub imageio imageio-ffmpeg
+          free -g | head -3; nproc
+      - name: Generate
+        run: |
+          mkdir -p /tmp/out
+          python3 scripts/ai_samples/wan.py /tmp/out/wan_${{ matrix.name }}.mp4 ${{ inputs.width }} ${{ inputs.height }} ${{ inputs.frames }} ${{ inputs.steps }} "${{ matrix.prompt }}"
+      - name: Push to footage branch
+        if: always()
+        run: |
+          ls /tmp/out/*.mp4 >/dev/null 2>&1 || exit 0
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb
+          cd /tmp/fb && git sparse-checkout set samples/ai-ringo && mkdir -p samples/ai-ringo && cp /tmp/out/*.mp4 samples/ai-ringo/
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add samples && git commit -qm "samples: wan ${{ matrix.name }}" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase --depth 1 origin footage && git push -q origin HEAD:footage && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*9)); done; exit 1
