@@ -14,25 +14,21 @@ pipe = StableDiffusionXLPipeline.from_pretrained(base, unet=unet, torch_dtype=to
 pipe.scheduler = EulerDiscreteScheduler.from_config(pipe.scheduler.config, timestep_spacing="trailing")
 pipe.set_progress_bar_config(disable=True)
 
-PLACE = ("1882 Arizona Territory, oak and juniper woodland in a quiet canyon of the Chiricahua Mountains, "
-         "pale rhyolite rock outcrops on the hillside, dry summer grass")
+# SDXL's text encoders read only ~75 tokens: style goes FIRST and scenes stay short, or the style gets cut off
 BEATS = {
-    "wide": f"a man in a white shirt, dark vest and wide-brimmed hat sitting at the base of a huge old oak tree with several trunks, "
-            f"leaning back against the trunk, head bowed as if asleep, seen from a distance, {PLACE}, still midday heat",
-    "found": f"two travelers in 1880s clothing, a man and a woman, walking slowly toward a large oak tree where a man sits slumped "
-             f"in the shade, seen from behind them, a horse-drawn freight wagon on a dirt road, {PLACE}",
-    "detail": "close view of an old leather boot and a dropped wide-brimmed felt hat in dry oak leaves at the foot of an oak tree, "
-              "a nickel-plated single action revolver lying in the leaves, dappled light, 1880s, quiet and somber",
+    "wide": "a cowboy in white shirt and dark vest sitting slumped against a huge old oak tree, head bowed, hat low, seen from far away, "
+            "oak woodland canyon, grey rhyolite rock spires, Arizona 1882",
+    "found": "a man and a woman in 1880s clothes walking toward a big oak tree where a cowboy sits slumped in the shade, "
+             "a freight wagon behind them, oak woodland, Arizona 1882",
+    "detail": "a worn leather boot, a felt hat and an old revolver lying in dry oak leaves at the foot of an oak trunk, dappled light",
 }
 STY = {
-    "real": "cinematic film still, photorealistic, 35mm film, natural light, muted earthy colors, shallow depth of field, "
-            "historical drama, highly detailed, no text",
-    "paint": "painterly illustration in the style of a graphic novel, oil paint and ink, visible brush strokes, "
-             "warm ochre and dusty blue palette, dramatic soft light, beautifully composed, no text",
+    "real": "photorealistic cinematic film still, 35mm, natural light, muted earthy color, historical drama",
+    "paint": "graphic novel painting, oil paint and ink, bold brush strokes, warm ochre and dusty blue, dramatic light",
 }
 for name, beat in BEATS.items():
     for seed in (11, 23):
         t = time.time()
-        img = pipe(f"{beat}, {STY[style]}", num_inference_steps=4, guidance_scale=0, width=1344, height=768,
+        img = pipe(f"{STY[style]}, {beat}", num_inference_steps=4, guidance_scale=0, width=1344, height=768,
                    generator=torch.Generator().manual_seed(seed)).images[0]
         img.save(f"{out}/{style}_{name}_{seed}.png"); print("IMG", style, name, seed, round(time.time() - t), "s", flush=True)
