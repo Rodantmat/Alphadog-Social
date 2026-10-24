@@ -45,6 +45,7 @@ else:
     from diffusers.utils import export_to_video
     vae = AutoencoderKLWan.from_pretrained(M, subfolder="vae", torch_dtype=torch.float32)
     pipe = WanPipeline.from_pretrained(M, vae=vae, text_encoder=None, tokenizer=None, torch_dtype=torch.float16).to("cuda")
+    pipe.vae.enable_tiling()   # test1: one clip hit CUDA OOM in the full-frame VAE decode on a 15 GB T4
     by = {j["name"]: j for j in JOBS}
     for name in names:
         j = by[name]; e = torch.load(f"/tmp/emb_{name}.pt")
