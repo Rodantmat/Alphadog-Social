@@ -1,0 +1,30 @@
+name: ai-toon
+# Test 1 (free, CPU): flat 2D docu-animation stills (SDXL + Lightning) animated as a motion comic (depth parallax).
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  make:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: |
+          sudo apt-get -o DPkg::Lock::Timeout=120 update -qq && sudo DEBIAN_FRONTEND=noninteractive apt-get -o DPkg::Lock::Timeout=120 install -y -qq ffmpeg
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -q diffusers transformers accelerate safetensors huggingface_hub opencv-python-headless pillow
+      - run: python3 scripts/ai_samples/gen.py toon /tmp/out
+      - run: |
+          cd /tmp/out
+          for f in toon_*.png; do python3 $GITHUB_WORKSPACE/scripts/ai_samples/anim.py "$f" "${f%.png}_parallax.mp4" parallax 5; done
+          for f in *.png; do ffmpeg -v error -y -i "$f" -q:v 3 "${f%.png}.jpg" && rm "$f"; done
+      - name: Push to footage branch
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb
+          cd /tmp/fb && git sparse-checkout set samples/ai-toon && mkdir -p samples/ai-toon && cp /tmp/out/* samples/ai-toon/
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add samples && git commit -qm "samples: ai toon" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase --depth 1 origin footage && git push -q origin HEAD:footage && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*7)); done; exit 1
