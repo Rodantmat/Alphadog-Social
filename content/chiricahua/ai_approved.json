@@ -2,7 +2,7 @@
  "_doc": "Episode 1 AI story clips approved by the owner. Pipeline: still on Modal (Qwen-Image, A100-80GB) -> strict check -> clip on Modal (Wan2.2 TI2V-5B, L4, 1280x704, 24 fps). Kaggle free clips rejected by owner 2026-10-24 (too soft/low-res). Rule (owner 2026-10-24): motion must play at real-time speed; a slow-motion clip is re-rendered, never just sped up (speeding up makes it too short). Story-detail rule: stills must respect script facts (e.g. the dead man has no boots).",
  "A": {
   "A01": {"still": "review/A01qwen/A01_41.jpg (main)", "clip": "samples/ai-modal/A01clip/A01_clip.mp4 (footage)", "secs": 5.04, "jobs": "content/chiricahua/modal_jobs_A01clip.json", "approved": "2026-10-24 owner"},
-  "A02": {"still": "review/A02bqwen/A02_5.jpg (main, mirrored via flip:true)", "clip": "samples/ai-modal/A02clip2/A02_clip.mp4 (footage)", "secs": 5.04, "jobs": "content/chiricahua/modal_jobs_A02clip2.json", "approved": "redo in progress: first render (A02clip) looked slow-motion"},
+  "A02": {"still": "review/A02bqwen/A02_5.jpg (main, mirrored via flip:true)", "clip": "samples/ai-modal/A02clip2/A02_clip.mp4 (footage)", "secs": 5.04, "jobs": "content/chiricahua/modal_jobs_A02clip2.json", "approved": "pending owner (re-rendered at real-time pace, ~1 stride per 1.3 s; passed Claude check 2026-10-25)"},
   "A03": {"still": "review/A03qwen/A03_23.jpg (main)", "clip": "samples/ai-modal/A03clip/A03_clip.mp4 (footage)", "secs": 4.04, "jobs": "content/chiricahua/modal_jobs_A03clip.json", "approved": "pending owner (passed Claude check 2026-10-25)"}
  }
 }
