@@ -1,6 +1,7 @@
 """Image-to-video on Modal (free $30/month allowance, account spend limit $0): Wan2.2 TI2V-5B (Apache-2.0) animates a
 keyframe still in the channel's illustrated style with real motion. GPU: L4 (24 GB). Weights are baked into the image at
 build time (CPU), so GPU minutes are spent only on generation. Hard caps: MAX_JOBS per run, 1 attempt per job, timeout.
+Job option "flip": true mirrors the still left-right first (keeps screen direction consistent between shots).
 Usage: modal run modal_i2v.py --jobs jobs.json --out outdir"""
 import json, os, modal
 
@@ -31,6 +32,8 @@ def render(job: dict) -> bytes:
     pipe.enable_model_cpu_offload()
     pipe.vae.enable_tiling()          # run 1 (i2v1) hit CUDA OOM in the full-frame VAE decode after 18 min of denoising
     img = Image.open(io.BytesIO(requests.get(job["image_url"], timeout=60).content)).convert("RGB")
+    if job.get("flip"):
+        img = img.transpose(Image.FLIP_LEFT_RIGHT)
     W, H = job.get("w", 1280), job.get("h", 704)
     img = img.resize((W, H), Image.LANCZOS)
     steps = job.get("steps", 40)
