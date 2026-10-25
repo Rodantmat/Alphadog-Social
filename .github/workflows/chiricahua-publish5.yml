@@ -22,7 +22,7 @@ jobs:
           path: /home/claude/doc/chiricahua/release
           run-id: ${{ inputs.build_run_id }}
           github-token: ${{ github.token }}
-      - run: ls -la /home/claude/doc/chiricahua/release && base64 -d ci/chiricahua5/r5.b64 | tar -xz -C /home/claude/doc/runner5
+      - run: ls -la /home/claude/doc/chiricahua/release && python3 ci/chiricahua5/unpack5.py /home/claude/doc/runner5
       - name: Refresh the schedule (publish_at must still be >= 1 h ahead, else go public now)
         run: |
           python3 - <<'PY'
