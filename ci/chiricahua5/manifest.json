@@ -3,13 +3,14 @@
  "chiricahua/render_v2.py": "8e2d19f0dacf",
  "ci/check5.py": "00729e34c915",
  "ci/final5.sh": "856ad0219fae",
- "ci/patch5.py": "db4411e3932d",
+ "ci/patch5.py": "070c2ef5c63f",
  "ci/place5.py": "a021bb8929dc",
  "ci/prep5.sh": "e2205ea5892e",
  "ci/publish5.sh": "24befebde93a",
  "ai_blobs.json": "bc59af1c73bd",
  "expected.json": "52def29b6738",
- "stab_list.json": "ebca873c72f7",
+ "stab_list.json": "3992c7238d76",
  "chiricahua/youtube_description.txt": "cceab7bb7cb0",
- "chiricahua/youtube_credits_comment.txt": "c7272a24884c"
+ "chiricahua/youtube_credits_comment.txt": "c7272a24884c",
+ "chiricahua/shots_patch.jsonl": "b088194fb07f"
 }
