@@ -1,0 +1,44 @@
+23:28:51 encoded 6 prompts in 444 s
+23:34:38 gpu1 t2v2_s001_teamster_close step 5/30 301s
+23:35:04 gpu0 t2v2_s001_teamster step 5/30 326s
+23:39:58 gpu1 t2v2_s001_teamster_close step 10/30 621s
+23:40:45 gpu0 t2v2_s001_teamster step 10/30 668s
+23:45:17 gpu1 t2v2_s001_teamster_close step 15/30 940s
+23:46:19 gpu0 t2v2_s001_teamster step 15/30 1001s
+23:50:36 gpu1 t2v2_s001_teamster_close step 20/30 1258s
+23:51:54 gpu0 t2v2_s001_teamster step 20/30 1336s
+23:55:54 gpu1 t2v2_s001_teamster_close step 25/30 1577s
+23:57:28 gpu0 t2v2_s001_teamster step 25/30 1670s
+00:01:12 gpu1 t2v2_s001_teamster_close step 30/30 1895s
+00:03:03 gpu0 t2v2_s001_teamster step 30/30 2005s
+00:04:18 gpu1 DONE t2v2_s001_teamster_close 2080s
+00:06:18 gpu0 DONE t2v2_s001_teamster 2201s
+00:09:41 gpu1 t2v2_s002_riders step 5/30 323s
+00:12:03 gpu0 t2v2_s002_oak_wide step 5/30 345s
+00:15:02 gpu1 t2v2_s002_riders step 10/30 644s
+00:17:44 gpu0 t2v2_s002_oak_wide step 10/30 686s
+00:20:19 gpu1 t2v2_s002_riders step 15/30 961s
+00:23:26 gpu0 t2v2_s002_oak_wide step 15/30 1027s
+00:25:38 gpu1 t2v2_s002_riders step 20/30 1280s
+00:29:15 gpu0 t2v2_s002_oak_wide step 20/30 1377s
+00:30:58 gpu1 t2v2_s002_riders step 25/30 1600s
+00:35:03 gpu0 t2v2_s002_oak_wide step 25/30 1725s
+00:36:19 gpu1 t2v2_s002_riders step 30/30 1921s
+00:39:25 gpu1 DONE t2v2_s002_riders 2107s
+00:40:45 gpu0 t2v2_s002_oak_wide step 30/30 2067s
+00:44:02 gpu0 DONE t2v2_s002_oak_wide 2264s
+00:44:43 gpu1 t2v2_s024_tent step 5/30 318s
+00:49:52 gpu0 t2v2_s004_belt_feet step 5/30 350s
+00:50:01 gpu1 t2v2_s024_tent step 10/30 636s
+00:55:18 gpu1 t2v2_s024_tent step 15/30 953s
+00:55:42 gpu0 t2v2_s004_belt_feet step 10/30 701s
+01:00:37 gpu1 t2v2_s024_tent step 20/30 1272s
+01:01:34 gpu0 t2v2_s004_belt_feet step 15/30 1052s
+01:05:55 gpu1 t2v2_s024_tent step 25/30 1590s
+01:07:28 gpu0 t2v2_s004_belt_feet step 20/30 1406s
+01:11:15 gpu1 t2v2_s024_tent step 30/30 1910s
+01:13:14 gpu0 t2v2_s004_belt_feet step 25/30 1752s
+01:14:20 gpu1 DONE t2v2_s024_tent 2095s
+01:19:10 gpu0 t2v2_s004_belt_feet step 30/30 2108s
+01:22:26 gpu0 DONE t2v2_s004_belt_feet 2304s
+01:22:28 ALL_DONE ['t2v2_s001_teamster.mp4', 't2v2_s001_teamster_close.mp4', 't2v2_s002_oak_wide.mp4', 't2v2_s002_riders.mp4', 't2v2_s004_belt_feet.mp4', 't2v2_s024_tent.mp4']
