@@ -1,11 +1,12 @@
 """Text-to-image stills on Modal (paid from the $30/month allowance; account spend limit $0): Qwen-Image (Apache-2.0),
 the open model with the strongest prompt adherence (counts, placement, props, long natural-language prompts).
 GPU: A100-80GB (bf16 model ~58 GB, no offload). Weights are baked into the image at build time (no Volumes), so later
-runs start fast. One container renders all seeds of a job list. Hard caps: MAX_IMAGES per run, 1 attempt, timeout.
+runs start fast. One container renders all seeds of a job list (a whole story passage per run saves model loads).
+Hard caps: MAX_IMAGES per run, 1 attempt, timeout.
 Usage: modal run modal_t2i.py --jobs jobs.json --out outdir      (job: {id, prompt, neg?, seeds?, w?, h?, steps?, cfg?})"""
 import json, os, modal
 
-MAX_IMAGES = 12
+MAX_IMAGES = 30
 M = "Qwen/Qwen-Image"
 
 def _download():
@@ -19,7 +20,7 @@ image = (modal.Image.debian_slim(python_version="3.11")
          .run_function(_download, timeout=3600))
 app = modal.App("alphadog-t2i", image=image)
 
-@app.function(gpu="A100-80GB", timeout=2400, max_containers=1, retries=0)
+@app.function(gpu="A100-80GB", timeout=3600, max_containers=1, retries=0)
 def render(todo: list) -> list:
     import io, time, torch
     from diffusers import QwenImagePipeline
