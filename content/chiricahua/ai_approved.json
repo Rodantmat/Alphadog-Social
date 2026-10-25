@@ -1,0 +1,6 @@
+{
+ "_doc": "Episode 1 AI story clips approved by the owner. Pipeline: still on Modal (Qwen-Image, A100-80GB) -> strict check -> clip on Modal (Wan2.2 TI2V-5B, L4, 1280x704, 24 fps). Kaggle free clips rejected by owner 2026-10-24 (too soft/low-res).",
+ "A": {
+  "A01": {"still": "review/A01qwen/A01_41.jpg (main)", "clip": "samples/ai-modal/A01clip/A01_clip.mp4 (footage)", "secs": 5.04, "jobs": "content/chiricahua/modal_jobs_A01clip.json", "approved": "2026-10-24 owner"}
+ }
+}
