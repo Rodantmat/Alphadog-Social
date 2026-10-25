@@ -1,0 +1,263 @@
+#@@FILE chiricahua/shots_v5.jsonl
+{"type":"video","src":"@F/ai-clips/A01.mp4","ss":0,"drift":0.02,"dur":4.603,"ai":true,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/A02.mp4","ss":0,"drift":0.02,"dur":3.7,"ai":true,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/A03.mp4","ss":0,"drift":0.02,"dur":3.0,"ai":true,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/A04.mp4","ss":0,"drift":0.02,"dur":3.03,"ai":true,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/A05.mp4","ss":0,"drift":0.02,"dur":4.4,"ai":true,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/A06.mp4","ss":0,"drift":0.02,"dur":4.255,"ai":true,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/A07.mp4","ss":0,"drift":0.02,"dur":4.047,"ai":true,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/ia_7c0f67540d_262.mp4","ss":5.3,"drift":0.03,"dur":4.5,"speed":0.978,"label":"Boothill Graveyard, Tombstone (1939 film)","amb":"@D/sfx/amb_wind.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_KfCNBLKYZXQ_705.mp4","ss":0.0,"drift":0.03,"dur":5.3,"speed":0.981,"label":"Gunfight reenactment, Tombstone","amb":"@D/sfx/amb_wind.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/A08.mp4","ss":0,"drift":0.02,"dur":4.47,"ai":true,"amb":"@D/sfx/amb_wind.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/A09.mp4","ss":0,"drift":0.02,"dur":5.5,"ai":true,"amb":"@D/sfx/amb_wind.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/A10b.mp4","ss":0,"drift":0.02,"dur":5.545,"ai":true,"amb":"@D/sfx/amb_wind.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_KfCNBLKYZXQ_1397.mp4","ss":0.0,"drift":0.03,"dur":4.64,"amb":"@D/sfx/amb_wind.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/pb_370236_0.mp4","ss":1.0,"drift":0.03,"dur":4.655,"speed":0.578,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/amb_wind.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_pGLdAm_aQqM_344.mp4","ss":0.0,"drift":0.03,"dur":3.5,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_75z-KbV0Y48_332.mp4","ss":0.0,"drift":0.03,"dur":5.0,"speed":0.8,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/img/commons_53644b3912.jpg","bg":"fit","dur":4.5,"z0":1.0,"z1":1.08,"x0":0.5,"y0":0.5,"x1":0.53,"y1":0.48,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/ranch/img/commons_dae0913869.jpg","bg":"fit","dur":4.16,"z0":1.08,"z1":1.0,"x0":0.47,"y0":0.52,"x1":0.5,"y1":0.5,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_pGLdAm_aQqM_1585.mp4","ss":3.03,"drift":0.03,"dur":3.44,"speed":0.805,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_GqV7LUmlgFY_17.mp4","ss":4.5,"drift":0.03,"dur":5.195,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"speed":0.98,"fin":0.12,"fout":0.12}
+{"type":"map","src":"@D/maps/map_where.mp4","dur":10.004}
+{"type":"video","src":"@F/yt-cuts/yt_GqV7LUmlgFY_299.mp4","ss":8.0,"drift":0.03,"dur":2.853,"speed":0.965,"fin":0.12,"fout":0.12}
+{"type":"card","style":"title","title":"CHIRICAHUA","sub":"The Strange History of the 64th National Park","dur":4.5}
+{"type":"card","style":"chapter","kicker":"Chapter One","title":"The Man Who Jumped From the Train","dur":4.0}
+{"type":"map","src":"@D/maps/map_homeland.mp4","amb":"@D/sfx/amb_wind.wav","amb_g":0,"dur":11.001}
+{"type":"photo","src":"@D/media/img/commons_836be49578.jpg","bg":"fit","dur":7.21,"z0":1.0,"z1":1.07,"x0":0.52,"y0":0.47,"x1":0.47,"y1":0.52,"label":"Chiricahua Apache medicine man, 1880s","amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_GqV7LUmlgFY_2.mp4","ss":0.5,"drift":0.03,"dur":9.004,"speed":0.805,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_kMpkSDLlztM_144.mp4","ss":0.5,"drift":0.03,"dur":5.0,"speed":0.8,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_fuZI24Ncioc_20.mp4","ss":0.5,"drift":0.03,"dur":5.6,"speed":0.582,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/img/commons_392333a450.jpg","bg":"fit","dur":8.253,"z0":1.06,"z1":1.0,"x0":0.53,"y0":0.5,"x1":0.48,"y1":0.5,"label":"Geronimo (Goyaale), 1887","fin":0.12,"fout":0.12}
+{"type":"map","src":"@D/maps/map_surrender.mp4","dur":10.0}
+{"type":"video","src":"@D/media/video/coverr_d5a2b42670.mp4","ss":0.0,"drift":0.03,"dur":4.8,"speed":0.979,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/img/commons_5220c4eb94.jpg","bg":"fit","dur":4.5,"z0":1.0,"z1":1.08,"x0":0.5,"y0":0.5,"x1":0.53,"y1":0.48,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/pb_16163_0.mp4","ss":0.0,"drift":0.03,"dur":7.0,"speed":0.986,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_b0etN67vKJI_1734.mp4","ss":0.0,"drift":0.03,"dur":4.808,"speed":0.8,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_kMpkSDLlztM_263.mp4","ss":0.0,"drift":0.03,"dur":5.33,"speed":0.981,"label":"Post cemetery, Fort Bowie","amb":"@D/sfx/wc_steam_train_1.wav","amb_g":-6,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/img/commons_5cdeefad1d.jpg","bg":"fit","dur":5.5,"z0":1.08,"z1":1.0,"x0":0.47,"y0":0.52,"x1":0.5,"y1":0.5,"label":"Chiricahua Army scout 'Dutchy', 1880s","amb":"@D/sfx/wc_steam_train_1.wav","amb_g":-6,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/img/commons_53644b3912.jpg","bg":"fit","dur":6.0,"z0":1.0,"z1":1.07,"x0":0.52,"y0":0.47,"x1":0.47,"y1":0.52,"label":"Chiricahua Apache prisoners beside the train, 1886","amb":"@D/sfx/wc_steam_train_1.wav","amb_g":-6,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/loc_9ed541d6b9_12.mp4","ss":9.03,"drift":0.03,"label":"Army rail transport (Edison, 1898)","amb":"@D/sfx/wc_steam_train_1.wav","amb_g":-6,"dur":5.607,"fin":0.12,"fout":0.12}
+{"type":"map","src":"@D/maps/map_exile.mp4","dur":11.999}
+{"type":"photo","src":"@D/media/img/commons_b34474933c.jpg","z0":1.0,"z1":1.07,"x0":0.5,"y0":0.5,"x1":0.5,"y1":0.47,"bg":"fit","label":"Chiricahua Apache children, 1886","dur":4.28,"fout":0.12,"fin":0.12}
+{"type":"photo","src":"@F/chiricahua-media2/img/commons_804616918e.jpg","z0":1.0,"z1":1.07,"x0":0.5,"y0":0.5,"x1":0.5,"y1":0.47,"bg":"fit","label":"Geronimo's grave, Apache POW cemetery, Fort Sill, Oklahoma","dur":4.28,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/img/commons_fad1fd0d65.jpg","bg":"fit","dur":6.4,"z0":1.06,"z1":1.0,"x0":0.53,"y0":0.5,"x1":0.48,"y1":0.5,"amb":"@D/sfx/nps_dawnchorus_bryce_0.wav","amb_g":-6,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stab/yt_-ApI8htOOaU_464.mp4","ss":0.5,"drift":0.03,"dur":4.8,"speed":0.81,"amb":"@D/sfx/nps_dawnchorus_bryce_0.wav","amb_g":-6,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_gR-Y5MxYm2c_121.mp4","ss":12.0,"drift":0.03,"dur":6.0,"speed":0.8,"amb":"@D/sfx/nps_dawnchorus_bryce_0.wav","amb_g":-6,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/ranch/img/commons_c3a035526b.jpg","bg":"fit","dur":6.655,"z0":1.0,"z1":1.08,"x0":0.5,"y0":0.5,"x1":0.53,"y1":0.48,"amb":"@D/sfx/nps_dawnchorus_bryce_0.wav","amb_g":-6,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_WuHqznoZL1M_420.mp4","ss":0.0,"drift":0.03,"dur":3.872,"amb":"@D/sfx/nps_dawnchorus_bryce_0.wav","amb_g":-6,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-audio/yt_-ApI8htOOaU_20.mp4","ss":32.85,"drift":0.015,"dur":12.1,"label":"John Bell, 10th Cavalry Buffalo Soldiers living-history interpreter (Colorado National Guard)","fin":0.25,"fout":0.25}
+{"type":"video","src":"@F/ai-clips/C01.mp4","ss":0,"drift":0.02,"dur":4.6,"ai":true,"amb":"@D/sfx/wc_steam_train_1.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/C03.mp4","ss":0,"drift":0.02,"dur":3.501,"ai":true,"amb":"@D/sfx/wc_steam_train_1.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/C04.mp4","ss":0,"drift":0.02,"dur":5.0,"ai":true,"amb":"@D/sfx/nps_crickets_0.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/C05.mp4","ss":0,"drift":0.02,"dur":3.8,"ai":true,"amb":"@D/sfx/nps_crickets_0.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/C06.mp4","ss":0,"drift":0.02,"dur":5.2,"ai":true,"amb":"@D/sfx/nps_crickets_0.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/C07.mp4","ss":0,"drift":0.02,"dur":3.07,"ai":true,"amb":"@D/sfx/nps_crickets_0.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/pb_75635_0.mp4","ss":0.381,"drift":0.03,"amb":"@D/sfx/nps_crickets_0.wav","amb_g":0,"dur":5.068,"fout":0.12,"fin":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_J6SwvXFX1YM_434.mp4","ss":4.43,"drift":0.03,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"dur":6.96,"speed":0.8,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_kMpkSDLlztM_352.mp4","ss":0.2,"drift":0.03,"dur":5.5,"speed":0.8,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/pb_217908_0.mp4","ss":2,"drift":0.03,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"dur":4.5,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stab/yt_J6SwvXFX1YM_422.mp4","ss":0.0,"drift":0.03,"dur":7.93,"speed":0.987,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/pb_176670_0.mp4","ss":2.0,"drift":0.03,"dur":4.5,"speed":0.978,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@F/chiricahua-media2/img/commons_b7f11efa3e.jpg","bg":"fit","dur":6.5,"z0":1.08,"z1":1.0,"x0":0.47,"y0":0.52,"x1":0.5,"y1":0.5,"label":"Apache family wickiup, 1903 (Edward S. Curtis)","amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_crksH675oRQ_1342.mp4","ss":0.0,"drift":0.03,"dur":4.0,"speed":0.975,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_GSyujZmmm8Q_10.mp4","ss":8.0,"drift":0.03,"dur":5.559,"speed":0.582,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@D/fly4/massai_orbit.mp4","ss":1,"drift":0.0,"vf_extra":"eq=brightness=-0.08:contrast=1.25:saturation=0.95:gamma=0.85,colorbalance=rm=-0.08:gm=0.0:bm=0.04:rh=-0.03:bh=0.04","label":"Massai Point","amb":"@D/sfx/amb_wind.wav","amb_g":0,"dur":7.5,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_cPRS8XqUNvw_12.mp4","ss":0,"drift":0.03,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"dur":5.5,"speed":0.8,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/ranch/img/commons_31016a11d7.jpg","bg":"fit","dur":5.597,"z0":1.0,"z1":1.07,"x0":0.52,"y0":0.47,"x1":0.47,"y1":0.52,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_pGLdAm_aQqM_1096.mp4","ss":13.0,"drift":0.03,"dur":6.585,"speed":0.985,"amb":"@D/sfx/amb_wind.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_J6SwvXFX1YM_630.mp4","ss":1.43,"drift":0.03,"amb":"@D/sfx/amb_wind.wav","amb_g":-4,"dur":5.337,"speed":0.8,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_crksH675oRQ_1318.mp4","ss":0.0,"drift":0.03,"dur":5.33,"speed":0.981,"amb":"@D/sfx/amb_wind.wav","amb_g":-6,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/loc_1d3642794a_12.mp4","ss":4,"drift":0.03,"amb":"@D/sfx/amb_wind.wav","amb_g":-6,"dur":5.331,"fin":0.12,"fout":0.12}
+{"type":"card","style":"chapter","kicker":"Chapter Two","title":"The War That Started in a Tent","dur":4.0}
+{"type":"video","src":"@F/yt-cuts-v3/yt_GSyujZmmm8Q_100.mp4","ss":0.5,"drift":0.03,"dur":7.815,"speed":0.587,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_kMpkSDLlztM_38.mp4","ss":8.5,"drift":0.03,"dur":6.629,"speed":0.8,"label":"Apache Pass","amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_GSyujZmmm8Q_13.mp4","ss":0.5,"drift":0.03,"dur":5.4,"speed":0.581,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/img/commons_8cf932b164.jpg","bg":"fit","dur":5.0,"z0":1.06,"z1":1.0,"x0":0.53,"y0":0.5,"x1":0.48,"y1":0.5,"label":"Granddaughter of Cochise, 1886 (National Archives)","amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_fuZI24Ncioc_70.mp4","ss":0.5,"drift":0.03,"dur":4.997,"speed":0.58,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"map","src":"@D/maps/map_apache_pass.mp4","amb":"@D/sfx/amb_wind.wav","amb_g":0,"dur":10.001}
+{"type":"video","src":"@F/stock-cuts/pb_79087_0.mp4","ss":0.5,"drift":0.03,"amb":"@D/sfx/amb_gallop.wav","amb_g":-8,"dur":6.86,"fout":0.12,"fin":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_kMpkSDLlztM_187.mp4","ss":0.0,"drift":0.03,"dur":6.856,"speed":0.986,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/B01.mp4","ss":0,"drift":0.02,"dur":4.6,"ai":true,"amb":"@D/sfx/amb_gallop.wav","amb_g":-10,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/B02.mp4","ss":0,"drift":0.02,"dur":5.04,"ai":true,"amb":"@D/sfx/amb_gallop.wav","amb_g":-10,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/B03.mp4","ss":0,"drift":0.02,"dur":5.04,"ai":true,"amb":"@D/sfx/amb_gallop.wav","amb_g":-10,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/B04.mp4","ss":0,"drift":0.02,"dur":5.282,"ai":true,"amb":"@D/sfx/amb_gallop.wav","amb_g":-10,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/B05.mp4","ss":0,"drift":0.02,"dur":2.21,"ai":true,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/B06.mp4","ss":0,"drift":0.02,"dur":5.04,"ai":true,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/B07.mp4","ss":0,"drift":0.02,"dur":5.5,"ai":true,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/B08.mp4","ss":0,"drift":0.02,"dur":4.4,"ai":true,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/B09.mp4","ss":0,"drift":0.02,"dur":5.46,"ai":true,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/loc_65fb7ae2da_12.mp4","ss":14,"drift":0.03,"amb":"@D/sfx/amb_gallop.wav","amb_g":-4,"sfx":[{"f":"@D/sfx/nps_battle_0.wav","at":0.5,"g":-16}],"dur":5.64,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_kMpkSDLlztM_688.mp4","ss":0.0,"drift":0.03,"dur":5.0,"speed":0.8,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_ZsiJzemUgRU_657.mp4","ss":0.0,"drift":0.03,"dur":6.033,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/img/commons_60b46dd1a8.jpg","bg":"fit","dur":5.0,"z0":1.0,"z1":1.08,"x0":0.5,"y0":0.5,"x1":0.53,"y1":0.48,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_75z-KbV0Y48_548.mp4","ss":0.0,"drift":0.03,"dur":5.387,"speed":0.982,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_kMpkSDLlztM_442.mp4","ss":0.2,"drift":0.03,"dur":6.5,"speed":0.8,"label":"Apache Pass","amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_GSyujZmmm8Q_108.mp4","ss":2.0,"drift":0.03,"dur":5.0,"speed":0.58,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_kMpkSDLlztM_482.mp4","ss":5.0,"drift":0.03,"dur":4.0,"speed":0.8,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/img/commons_9a24dc4086.jpg","bg":"fit","dur":8.003,"z0":1.08,"z1":1.0,"x0":0.47,"y0":0.52,"x1":0.5,"y1":0.5,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_kMpkSDLlztM_534.mp4","ss":0.0,"drift":0.03,"dur":5.0,"speed":0.8,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_GSyujZmmm8Q_61.mp4","ss":0.0,"drift":0.03,"dur":6.542,"speed":0.585,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"map","src":"@D/maps/map_stronghold.mp4","amb":"@D/sfx/amb_wind.wav","amb_g":0,"dur":9.002}
+{"type":"photo","src":"@F/chiricahua-media2/img/commons_3fe7eca078.jpg","bg":"fit","dur":5.0,"z0":1.0,"z1":1.07,"x0":0.52,"y0":0.47,"x1":0.47,"y1":0.52,"label":"Gen. Oliver O. Howard","amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/img/commons_d6c13fcb31.jpg","bg":"fit","dur":4.5,"z0":1.06,"z1":1.0,"x0":0.53,"y0":0.5,"x1":0.48,"y1":0.5,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_fuZI24Ncioc_0.mp4","ss":0.0,"drift":0.03,"dur":5.5,"speed":0.55,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_GSyujZmmm8Q_36.mp4","ss":0.0,"drift":0.03,"dur":7.224,"speed":0.587,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_fuZI24Ncioc_120.mp4","ss":0.0,"drift":0.03,"dur":5.0,"speed":0.58,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/pb_25734_0.mp4","ss":0.0,"drift":0.03,"dur":6.0,"speed":0.8,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_GSyujZmmm8Q_150.mp4","ss":0.0,"drift":0.03,"dur":6.5,"speed":0.585,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_fuZI24Ncioc_51.mp4","ss":0.0,"drift":0.03,"dur":5.961,"speed":0.583,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_GSyujZmmm8Q_170.mp4","ss":0.0,"drift":0.03,"dur":6.0,"speed":0.583,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/img/commons_e7ba1e058a.jpg","bg":"fit","dur":4.911,"z0":1.0,"z1":1.08,"x0":0.5,"y0":0.5,"x1":0.53,"y1":0.48,"label":"Cochise Stronghold, Dragoon Mountains","amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_kMpkSDLlztM_644.mp4","ss":0.0,"drift":0.03,"dur":4.5,"speed":0.822,"amb":"@D/sfx/wc_steam_train_1.wav","amb_g":-8,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stab/yt_b0etN67vKJI_1214.mp4","ss":0.5,"drift":0.03,"dur":5.5,"speed":0.8,"amb":"@D/sfx/wc_steam_train_1.wav","amb_g":-8,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_pGLdAm_aQqM_1104.mp4","ss":0.0,"drift":0.03,"dur":4.415,"speed":0.976,"amb":"@D/sfx/wc_steam_train_1.wav","amb_g":-8,"fin":0.12,"fout":0.12}
+{"type":"card","style":"chapter","kicker":"Chapter Three","title":"A Volcano 1,000 Times Bigger Than St. Helens","dur":4.0}
+{"type":"video","src":"@F/yt-cuts/yt_gR-Y5MxYm2c_172.mp4","ss":4.37,"drift":0.03,"label":"Sulphur Springs Valley, east of Tucson","amb":"@D/sfx/amb_wind.wav","amb_g":0,"dur":5.07,"speed":0.999,"fout":0.12,"fin":0.12}
+{"type":"video","src":"@D/fly4/east_approach.mp4","ss":2.0,"drift":0.03,"dur":7.19,"speed":0.986,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_gR-Y5MxYm2c_122.mp4","ss":0.0,"drift":0.03,"dur":8.001,"speed":0.987,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_pGLdAm_aQqM_344.mp4","ss":0.0,"drift":0.03,"dur":6.5,"speed":0.985,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_75z-KbV0Y48_84.mp4","ss":0.5,"drift":0.03,"dur":5.0,"speed":0.8,"label":"The 'Wonderland of Rocks'","amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stab/yt_crksH675oRQ_1881.mp4","ss":0.0,"drift":0.03,"dur":6.499,"speed":0.985,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_pGLdAm_aQqM_1676.mp4","ss":0.0,"drift":0.03,"dur":5.23,"speed":0.981,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stab/yt_ypGGN2x4Fjg_1193.mp4","ss":0.2,"drift":0.03,"dur":4.4,"speed":0.8,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_WuHqznoZL1M_216.mp4","ss":5.4,"drift":0.03,"dur":5.25,"speed":0.8,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stab/yt_pGLdAm_aQqM_1432.mp4","ss":0.5,"drift":0.03,"dur":4.0,"speed":0.8,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_pGLdAm_aQqM_1194.mp4","ss":0.0,"drift":0.03,"dur":7.525,"speed":0.987,"label":"Big Balanced Rock","amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@D/fly4/spires_lowpass.mp4","ss":0,"drift":0.0,"vf_extra":"eq=brightness=-0.08:contrast=1.25:saturation=0.95:gamma=0.85,colorbalance=rm=-0.08:gm=0.0:bm=0.04:rh=-0.03:bh=0.04","sfx":[{"f":"@D/sfx/sub_drop.wav","at":2.0,"g":-12}],"amb":"@D/sfx/amb_wind.wav","dur":8.202,"fin":0.12,"fout":0.12}
+{"type":"map","src":"@D/maps/map_caldera.mp4","dur":10.999}
+{"type":"photo","src":"@F/chiricahua-media2/img/commons_49afa72741.jpg","z0":1.0,"z1":1.07,"x0":0.5,"y0":0.5,"x1":0.5,"y1":0.47,"bg":"fit","label":"Chiricahua Mountains and the Turkey Creek caldera","dur":6.039,"fout":0.12,"fin":0.12}
+{"type":"video","src":"@D/fly4/bonita_canyon.mp4","ss":0.0,"drift":0.03,"dur":6.039,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_75z-KbV0Y48_62.mp4","ss":1.0,"drift":0.03,"dur":3.8,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/ia_ad64da0120_44.mp4","ss":2.65,"drift":0.03,"dur":4.12,"speed":0.8,"label":"Mount St. Helens","fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/pb_237116_0.mp4","ss":1.0,"drift":0.03,"dur":5.03,"speed":0.98,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/ranch/img/commons_9da9b072a4.jpg","bg":"fit","dur":5.624,"z0":1.08,"z1":1.0,"x0":0.47,"y0":0.52,"x1":0.5,"y1":0.5,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-audio/ia_ad64da0120_36.mp4","ss":3.9,"drift":0.03,"dur":4.85,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_kjAGAtBYZSo_49.mp4","ss":0.0,"drift":0.03,"dur":6.45,"speed":0.992,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/img/commons_87753df407.jpg","bg":"fit","dur":8.877,"z0":1.0,"z1":1.07,"x0":0.52,"y0":0.47,"x1":0.47,"y1":0.52,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_kIWri-oJzhU_448.mp4","ss":3.5,"drift":0.03,"label":"Rhyolite cliffs, Cave Creek Canyon","dur":4.0,"speed":0.8,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/pb_329830_0.mp4","ss":3,"drift":0.03,"amb":"@D/sfx/amb_wind.wav","amb_g":-4,"dur":4.64,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_ypGGN2x4Fjg_1035.mp4","ss":0.0,"drift":0.03,"dur":5.0,"speed":0.8,"amb":"@D/sfx/amb_wind.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_pGLdAm_aQqM_1272.mp4","ss":0.0,"drift":0.03,"dur":6.487,"speed":0.91,"amb":"@D/sfx/amb_wind.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stab/yt_ypGGN2x4Fjg_1146.mp4","ss":0.0,"drift":0.03,"dur":5.68,"speed":0.81,"amb":"@D/sfx/amb_wind.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_pGLdAm_aQqM_1441.mp4","ss":0.0,"drift":0.03,"dur":6.73,"speed":0.985,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_WuHqznoZL1M_89.mp4","ss":0.8,"drift":0.03,"dur":6.721,"speed":0.985,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@D/fly4/south_wide.mp4","ss":0.0,"drift":0.03,"dur":4.5,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/annot/cochise_head_clean.jpg","z0":1.0,"z1":1.04,"x0":0.5,"y0":0.5,"x1":0.5,"y1":0.5,"bg":"fit","label":"Cochise Head, seen from Massai Point","amb":"@D/sfx/amb_wind.wav","amb_g":0,"dur":5.401,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/annot/cochise_head_annot.jpg","z0":1.04,"z1":1.08,"x0":0.5,"y0":0.5,"x1":0.5,"y1":0.5,"bg":"fit","rep_ok":1,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"dur":7.202,"fout":0.12,"fin":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_ypGGN2x4Fjg_1013.mp4","ss":1.0,"drift":0.03,"dur":4.5,"speed":0.8,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/pb_203449_0.mp4","ss":3.0,"drift":0.03,"dur":5.366,"speed":0.982,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"card","style":"chapter","kicker":"Chapter Four","title":"What Still Lives in the Mountains","dur":4.0}
+{"type":"map","src":"@D/maps/map_sky_island.mp4","amb":"@D/sfx/nps_dawnchorus_bryce_0.wav","amb_g":-6,"dur":11.001}
+{"type":"video","src":"@F/stock-cuts/pb_370715_0.mp4","ss":2.0,"drift":0.03,"dur":7.126,"speed":0.586,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/nps_dawnchorus_bryce_0.wav","amb_g":-6,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_pGLdAm_aQqM_1461.mp4","ss":1.0,"drift":0.03,"dur":6.5,"speed":0.915,"amb":"@D/sfx/nps_dawnchorus_bryce_0.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@D/media/video/commons_5f65334cec.mp4","ss":2.0,"drift":0.03,"dur":4.0,"speed":0.975,"amb":"@D/sfx/nps_dawnchorus_bryce_0.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@F/chiricahua-media3/img/commons_21924fef64.jpg","bg":"fit","dur":4.8,"z0":1.06,"z1":1.0,"x0":0.53,"y0":0.5,"x1":0.48,"y1":0.5,"label":"White-nosed coati, Portal, Arizona","amb":"@D/sfx/nps_dawnchorus_bryce_0.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_b0etN67vKJI_676.mp4","ss":0.5,"drift":0.03,"dur":4.2,"speed":0.976,"amb":"@D/sfx/nps_dawnchorus_bryce_0.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/img/commons_cf0abb124e.jpg","bg":"fit","dur":5.838,"z0":1.0,"z1":1.08,"x0":0.5,"y0":0.5,"x1":0.53,"y1":0.48,"amb":"@D/sfx/nps_dawnchorus_bryce_0.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/pb_10339_0.mp4","ss":2.0,"drift":0.03,"dur":5.0,"speed":0.98,"amb":"@D/sfx/nps_crickets_0.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/img/commons_837ddd63db.jpg","bg":"fit","dur":7.5,"z0":1.08,"z1":1.0,"x0":0.47,"y0":0.52,"x1":0.5,"y1":0.5,"label":"Wild jaguar, southern Arizona trail camera (UA/USFWS)","amb":"@D/sfx/nps_crickets_0.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_crksH675oRQ_1429.mp4","ss":0.0,"drift":0.03,"dur":6.0,"speed":0.983,"amb":"@D/sfx/nps_crickets_0.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_ypGGN2x4Fjg_137.mp4","ss":0.0,"drift":0.03,"dur":7.179,"speed":0.986,"amb":"@D/sfx/nps_crickets_0.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_ZsiJzemUgRU_112.mp4","ss":0.0,"drift":0.03,"dur":8.741,"speed":0.588,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/nps_crickets_0.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stab/yt_pGLdAm_aQqM_1620.mp4","ss":0.0,"drift":0.03,"dur":5.5,"speed":0.882,"amb":"@D/sfx/nps_stream_0.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/pb_367285_0.mp4","ss":1,"drift":0.03,"amb":"@D/sfx/nps_stream_0.wav","amb_g":-4,"dur":5.81,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_b0etN67vKJI_649.mp4","ss":0.0,"drift":0.03,"dur":4.5,"speed":0.978,"amb":"@D/sfx/nps_stream_0.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_g-INjwxy_Xk_21.mp4","ss":0.0,"drift":0.03,"dur":7.437,"speed":0.987,"amb":"@D/sfx/nps_stream_0.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_gR-Y5MxYm2c_68.mp4","ss":0.0,"drift":0.03,"dur":4.5,"speed":0.8,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/pb_359864_0.mp4","ss":0,"drift":0.03,"amb":"@D/sfx/amb_fire.wav","dur":4.5,"speed":0.979,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/pb_80268_0.mp4","ss":1.0,"drift":0.03,"dur":5.96,"speed":0.983,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_crksH675oRQ_1560.mp4","ss":0.0,"drift":0.03,"dur":5.002,"speed":0.8,"label":"Fire-scarred pine, Chiricahua Mountains","amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"card","style":"chapter","kicker":"Chapter Five","title":"The Lady Boss of Faraway Ranch","dur":4.0}
+{"type":"video","src":"@F/yt-cuts/yt_GqV7LUmlgFY_158.mp4","ss":1.0,"drift":0.03,"dur":5.58,"speed":0.982,"amb":"@D/sfx/nps_dawnchorus_bryce_0.wav","amb_g":-6,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_HJlO513toNw_70.mp4","ss":5.0,"drift":0.03,"dur":3.502,"speed":0.971,"amb":"@D/sfx/nps_dawnchorus_bryce_0.wav","amb_g":-6,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_hecuyKGWhVg_40.mp4","ss":14.0,"drift":0.03,"dur":3.8,"speed":0.8,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_crksH675oRQ_1244.mp4","ss":0.0,"drift":0.03,"dur":6.07,"speed":0.984,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/ranch/img/commons_a7125e63bd.jpg","bg":"fit","dur":8.0,"z0":1.0,"z1":1.07,"x0":0.52,"y0":0.47,"x1":0.47,"y1":0.52,"label":"Emma Erickson and Mrs. Collins, c. 1915 (NPS)","amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_pGLdAm_aQqM_1586.mp4","ss":7.55,"drift":0.03,"dur":7.5,"speed":0.94,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_pGLdAm_aQqM_402.mp4","ss":0.0,"drift":0.03,"dur":6.283,"speed":0.842,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_crksH675oRQ_673.mp4","ss":0.0,"drift":0.03,"dur":6.138,"speed":0.984,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_GqV7LUmlgFY_299.mp4","ss":11.0,"drift":0.03,"dur":7.0,"speed":0.8,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/ranch/img/commons_7311f45f81.jpg","bg":"fit","dur":5.5,"z0":1.06,"z1":1.0,"x0":0.53,"y0":0.5,"x1":0.48,"y1":0.5,"label":"Faraway Ranch, c. 1915","fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_pGLdAm_aQqM_478.mp4","ss":0.0,"drift":0.03,"dur":5.95,"speed":0.983,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_pGLdAm_aQqM_1341.mp4","ss":8.0,"drift":0.03,"dur":4.755,"speed":0.799,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","fin":0.12,"fout":0.12}
+{"type":"video","src":"@D/media/video/archive_b1143dffb4.mp4","ss":89.5,"drift":0.03,"label":"Civilian Conservation Corps, Arizona (1930s film)","dur":11.37,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_crksH675oRQ_306.mp4","ss":0.0,"drift":0.03,"dur":5.27,"speed":0.854,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/ranch/img/commons_d7d592687e.jpg","z0":1.0,"z1":1.08,"x0":0.5,"y0":0.5,"x1":0.52,"y1":0.48,"label":"Sugarloaf fire lookout, built by the CCC","dur":5.205,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_cPRS8XqUNvw_12.mp4","ss":4.6,"drift":0.03,"dur":3.621,"speed":0.801,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@D/media/video/coverr_7a81a6002b.mp4","ss":5.4,"drift":0.03,"dur":7.01,"speed":0.986,"amb":"@D/sfx/amb_fire.wav","amb_g":-14,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/pb_11186_0.mp4","ss":2,"drift":0.03,"amb":"@D/sfx/amb_fire.wav","amb_g":-14,"dur":7.021,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/ranch/img/commons_d197aa2e9e.jpg","bg":"fit","dur":5.5,"z0":1.0,"z1":1.08,"x0":0.5,"y0":0.5,"x1":0.53,"y1":0.48,"label":"Faraway Ranch, 1950","fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/ia_7c0f67540d_991.mp4","ss":7.6,"drift":0.03,"dur":5.5,"speed":0.982,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_pGLdAm_aQqM_177.mp4","ss":0.0,"drift":0.03,"dur":6.786,"speed":0.986,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@F/chiricahua-media2/img/commons_0af0d282c5.jpg","z0":1.0,"z1":1.07,"x0":0.5,"y0":0.5,"x1":0.5,"y1":0.47,"bg":"fit","label":"Lillian Riggs's office, Faraway Ranch (HABS)","dur":5.0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@D/media/video/coverr_b8cb9bafb2.mp4","ss":0.0,"drift":0.03,"dur":8.647,"speed":0.989,"amb":"@D/sfx/amb_fire.wav","amb_g":-14,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@D/media/video/coverr_f51b6d252f.mp4","ss":1.0,"drift":0.03,"dur":4.5,"speed":0.978,"amb":"@D/sfx/nps_dawnchorus_bryce_0.wav","amb_g":-8,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/ranch/img/commons_76994906d2.jpg","z0":1.0,"z1":1.08,"x0":0.5,"y0":0.5,"x1":0.52,"y1":0.48,"label":"Faraway Ranch today","amb":"@D/sfx/nps_dawnchorus_bryce_0.wav","amb_g":-8,"dur":4.0,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/ranch/img/commons_f960536bba.jpg","z0":1.0,"z1":1.08,"x0":0.5,"y0":0.5,"x1":0.52,"y1":0.48,"label":"Dining room, Faraway Ranch","dur":4.465,"fin":0.12,"fout":0.12}
+{"type":"card","style":"chapter","kicker":"Chapter Six","title":"Who Killed Johnny Ringo?","dur":4.0}
+{"type":"map","src":"@D/maps/map_outlaws.mp4","dur":10.999}
+{"type":"video","src":"@F/yt-cuts-v3/yt_KfCNBLKYZXQ_361.mp4","ss":0.0,"drift":0.03,"dur":4.3,"speed":0.977,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/img/commons_b403cfa05f.jpg","bg":"fit","dur":5.004,"z0":1.08,"z1":1.0,"x0":0.47,"y0":0.52,"x1":0.5,"y1":0.5,"label":"Eastern slope of the Chiricahuas, near Portal","fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/img/commons_2e890c6a09.jpg","bg":"fit","dur":4.27,"z0":1.0,"z1":1.07,"x0":0.52,"y0":0.47,"x1":0.47,"y1":0.52,"label":"Tough Nut Mine, Tombstone, c. 1880 (C. E. Watkins)","fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_KfCNBLKYZXQ_326.mp4","ss":0.0,"drift":0.03,"dur":7.0,"speed":0.976,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/ia_7c0f67540d_1023.mp4","ss":3.5,"drift":0.03,"dur":5.0,"speed":0.98,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_KfCNBLKYZXQ_712.mp4","ss":0.0,"drift":0.03,"dur":5.996,"speed":0.984,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/E01.mp4","ss":0,"drift":0.02,"dur":3.9,"ai":true,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/E02b.mp4","ss":0,"drift":0.02,"dur":2.9,"ai":true,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/E03b.mp4","ss":0,"drift":0.02,"dur":3.0,"ai":true,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/loc_8df1684c94_12.mp4","ss":13.921,"drift":0.03,"dur":5.725,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_KfCNBLKYZXQ_826.mp4","ss":0.3,"drift":0.03,"dur":5.0,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@D/media/video/coverr_fa3a5aad6f.mp4","ss":0.0,"drift":0.03,"dur":8.85,"speed":0.989,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_ZsiJzemUgRU_794.mp4","ss":0.0,"drift":0.03,"dur":6.25,"speed":0.8,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_KfCNBLKYZXQ_1462.mp4","ss":0.0,"drift":0.03,"dur":5.248,"speed":0.8,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/ia_7c0f67540d_547.mp4","ss":9.6,"drift":0.03,"dur":4.0,"speed":0.975,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_ZsiJzemUgRU_72.mp4","ss":0.0,"drift":0.03,"dur":5.5,"speed":0.787,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_crksH675oRQ_805.mp4","ss":0.0,"drift":0.03,"dur":5.43,"speed":0.81,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_ZsiJzemUgRU_39.mp4","ss":0.0,"drift":0.03,"dur":6.179,"speed":0.55,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/pb_176665_0.mp4","ss":6,"drift":0.03,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"dur":10.8,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/ia_7c0f67540d_233.mp4","ss":3.05,"drift":0.03,"dur":4.7,"speed":0.82,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_kMpkSDLlztM_200.mp4","ss":0.0,"drift":0.03,"dur":5.0,"speed":0.846,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_ZsiJzemUgRU_768.mp4","ss":8.5,"drift":0.03,"dur":6.0,"speed":0.983,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stab/yt_75z-KbV0Y48_787.mp4","ss":0.0,"drift":0.03,"dur":5.369,"speed":0.982,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@D/media/video/coverr_64dc4fa880.mp4","ss":10.0,"drift":0.03,"dur":3.962,"speed":0.975,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/D01.mp4","ss":0,"drift":0.02,"dur":4.4,"ai":true,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/D02b.mp4","ss":0,"drift":0.02,"dur":5.04,"ai":true,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/D03.mp4","ss":0,"drift":0.02,"dur":4.75,"ai":true,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/D04.mp4","ss":0,"drift":0.02,"dur":5.5,"ai":true,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/D05.mp4","ss":0,"drift":0.02,"dur":5.503,"ai":true,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/D06.mp4","ss":0,"drift":0.02,"dur":4.0,"ai":true,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/D08.mp4","ss":0,"drift":0.02,"dur":5.4,"ai":true,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/ai-clips/D07.mp4","ss":0,"drift":0.02,"dur":5.38,"ai":true,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/ia_7c0f67540d_325.mp4","ss":4.0,"drift":0.03,"dur":6.803,"speed":0.808,"label":"Tombstone Epitaph office (1939 film)","amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@F/chiricahua-media2/img/commons_bcf854a393.jpg","bg":"fit","dur":8.3,"z0":1.06,"z1":1.0,"x0":0.53,"y0":0.5,"x1":0.48,"y1":0.5,"amb":"@D/sfx/amb_wind.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/ia_7c0f67540d_262.mp4","ss":5.5,"drift":0.03,"dur":5.603,"speed":0.8,"amb":"@D/sfx/amb_wind.wav","amb_g":-4,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_crksH675oRQ_1680.mp4","ss":0.0,"drift":0.03,"dur":4.047,"speed":0.801,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_KfCNBLKYZXQ_1491.mp4","ss":0.0,"drift":0.03,"dur":5.53,"speed":0.982,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_ZsiJzemUgRU_291.mp4","ss":12.5,"drift":0.03,"dur":4.277,"speed":0.977,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_KfCNBLKYZXQ_838.mp4","ss":10.0,"drift":0.03,"dur":7.759,"speed":0.987,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_KfCNBLKYZXQ_382.mp4","ss":0.0,"drift":0.03,"dur":4.6,"amb":"@D/sfx/amb_gallop.wav","amb_g":-8,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_KfCNBLKYZXQ_680.mp4","ss":0.0,"drift":0.03,"dur":8.962,"speed":0.897,"amb":"@D/sfx/amb_gallop.wav","amb_g":-8,"fin":0.12,"fout":0.12}
+{"type":"photo","src":"@D/media/img/commons_7f899d5663.jpg","bg":"fit","dur":6.863,"z0":1.0,"z1":1.08,"x0":0.5,"y0":0.5,"x1":0.53,"y1":0.48,"label":"Bella Union Saloon, Tombstone","fin":0.12,"fout":0.12}
+{"type":"video","src":"@D/media/video/coverr_25e1535f7a.mp4","ss":0.0,"drift":0.03,"dur":6.0,"speed":0.983,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_crksH675oRQ_1227.mp4","ss":0.0,"drift":0.03,"dur":7.69,"speed":0.987,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_LNceEWbCiAg_144.mp4","ss":0.0,"drift":0.03,"dur":8.0,"speed":0.988,"vf_extra":"hue=s=0.45,colorbalance=rm=0.05:bm=-0.06:rh=0.04:bh=-0.08,eq=contrast=1.08:brightness=-0.04","label":"Johnny Ringo's grave, West Turkey Creek","amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_GSyujZmmm8Q_173.mp4","ss":5.0,"drift":0.03,"dur":6.159,"speed":0.584,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"card","style":"chapter","kicker":"Epilogue","title":"Why Now","dur":4.0}
+{"type":"video","src":"@F/yt-cuts/yt_GqV7LUmlgFY_346.mp4","ss":0,"drift":0.03,"label":"Chiricahua National Park","amb":"@D/sfx/amb_wind.wav","amb_g":0,"dur":8.45,"speed":0.947,"fout":0.12,"fin":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_pGLdAm_aQqM_1361.mp4","ss":0.0,"drift":0.03,"dur":8.44,"speed":0.936,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-audio/yt_M6QqDRYspfU_0.mp4","ss":25.0,"drift":0.015,"dur":21.1,"label":"Rep. Juan Ciscomani (R-AZ), U.S. House floor, March 2026","fin":0.25,"fout":0.25}
+{"type":"photo","src":"@D/media/img/commons_ac315ee3de.jpg","bg":"fit","dur":6.0,"z0":1.08,"z1":1.0,"x0":0.47,"y0":0.52,"x1":0.5,"y1":0.5,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_m8GhYxt-kAg_50.mp4","ss":12.0,"drift":0.03,"dur":4.2,"speed":0.976,"label":"Grinding stone, Cochise Stronghold","amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_fuZI24Ncioc_67.mp4","ss":10.0,"drift":0.03,"dur":7.95,"speed":0.587,"vf_extra":"minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1","amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_kMpkSDLlztM_342.mp4","ss":0.5,"drift":0.03,"dur":5.5,"speed":0.982,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_pGLdAm_aQqM_1125.mp4","ss":0.0,"drift":0.03,"dur":4.0,"speed":0.975,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_ypGGN2x4Fjg_828.mp4","ss":2.5,"drift":0.03,"dur":4.899,"speed":0.8,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts/yt_m8GhYxt-kAg_18.mp4","ss":1.0,"drift":0.03,"dur":5.927,"speed":0.983,"amb":"@D/sfx/nps_dawnchorus_bryce_0.wav","amb_g":-8,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/pb_169951_0.mp4","ss":1,"drift":0.03,"amb":"@D/sfx/nps_crickets_0.wav","dur":5.928,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/stock-cuts/pb_130156_0.mp4","ss":6.0,"drift":0.03,"dur":3.6,"speed":0.972,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_kMpkSDLlztM_362.mp4","ss":0.0,"drift":0.03,"dur":3.6,"speed":0.8,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_ypGGN2x4Fjg_934.mp4","ss":0.0,"drift":0.03,"dur":3.674,"speed":0.972,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@D/fly4/north_reveal.mp4","ss":0,"drift":0.0,"vf_extra":"eq=brightness=-0.08:contrast=1.25:saturation=0.95:gamma=0.85,colorbalance=rm=-0.08:gm=0.0:bm=0.04:rh=-0.03:bh=0.04","sfx":[{"f":"@D/sfx/sub_drop.wav","at":0.5,"g":-12}],"amb":"@D/sfx/amb_wind.wav","amb_g":0,"dur":7.461,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_ypGGN2x4Fjg_1057.mp4","ss":0.0,"drift":0.03,"dur":6.0,"speed":0.983,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
+{"type":"video","src":"@F/yt-cuts-v3/yt_pGLdAm_aQqM_1484.mp4","ss":0.5,"drift":0.03,"dur":6.84,"speed":0.985,"amb":"@D/sfx/amb_wind.wav","amb_g":0,"fin":0.12,"fout":0.12}
