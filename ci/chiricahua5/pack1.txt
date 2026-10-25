@@ -1,0 +1,370 @@
+#@@FILE chiricahua/render_v2.py
+"""Render episode v2: shots_v2.json -> video; narration(+inserts) + music bed + ambience + SFX -> mix -> final mp4.
+Shot extras: amb (wav path), amb_g (dB), sfx [{"f": wav, "at": sec from shot start, "g": dB}], fin/fout fades.
+Audio rules: voice always on top; music & ambience duck under voice; inserts (interviews/news) get no SFX, music ~off."""
+import json, os, sys, numpy as np, soundfile as sf
+sys.path.insert(0, "/home/claude/doc/chiricahua"); import engine as E
+D = "/home/claude/doc/chiricahua"; FPS = 30; SR = 48000
+shots = json.load(open(os.environ.get("SHOTS", f"{D}/shots_v2.json"))); tl = json.load(open(f"{D}/timeline.json"))
+TAG = os.environ.get("MIX_TAG", "")   # "" = English; "_es" = Spanish dub (audio only)
+narr, _ = sf.read(f"{D}/narration_full{TAG}.wav", dtype="float32"); total = len(narr) / SR
+vmask = np.load(f"{D}/voice_mask{TAG}.npy").astype(np.float32)  # 100 Hz, 1 where any voice
+
+# ---------- frame-accurate timing ----------
+edges = [0.0]
+for s in shots: edges.append(edges[-1] + s["dur"])
+edges[-1] = total
+fr = [round(e * FPS) for e in edges]
+for i, s in enumerate(shots):
+    s["dur"] = (fr[i + 1] - fr[i]) / FPS; s["_start"] = fr[i] / FPS
+
+# ---------- video ----------
+work = f"{D}/render_v2"; os.makedirs(work, exist_ok=True)
+only = sys.argv[1] if len(sys.argv) > 1 else None
+sel = range(*map(int, only.split(":"))) if only and ":" in only else range(len(shots))
+os.environ.setdefault("ENGINE_CACHE", f"{D}/cache")
+files = []
+for i in (sel if only != "audio" else []):
+    s = {k: v for k, v in shots[i].items() if not k.startswith("_") and k not in ("amb", "amb_g", "sfx", "tag")}
+    f = f"{work}/{i:04d}_{E.key(s)}.mp4"
+    if s.get("src") and not os.path.exists(s["src"]):
+        print("SKIP_MISSING", i, s["src"], flush=True); files.append(f); continue
+    if not os.path.exists(f):                       # same shot rendered before at another index: reuse it (hard link)
+        import glob as _g
+        prev = [p for p in _g.glob(f"{work}/*_{E.key(s)}.mp4") if os.path.getsize(p) > 0]
+        if prev:
+            try: os.link(prev[0], f)
+            except OSError: import shutil as _sh; _sh.copy(prev[0], f)
+    if not os.path.exists(f):
+        try: E.render_shot(s, f)
+        except Exception as e:
+            print("FAIL", i, s.get("src"), str(e)[-300:], flush=True)
+            E.render_shot({"type": "card", "style": "date", "title": "", "dur": s["dur"]}, f)
+    files.append(f)
+    if i % 10 == 0: print("shot", i, "/", len(shots), flush=True)
+if os.environ.get("VIDEO_ONLY"): print("VIDEO_RANGE_DONE", flush=True); sys.exit(0)   # parallel partial video passes
+if only != "audio": open(f"{work}/concat.txt", "w").write("".join(f"file '{f}'\n" for f in files))
+if only == "video" or (only != "audio" and any(not os.path.exists(f) for f in files)): print("VIDEO_PASS_DONE (missing shots remain)" if any(not os.path.exists(f) for f in files) else "VIDEO_PASS_DONE"); sys.exit(0)
+
+# ---------- audio ----------
+N = int(total * SR); hop = SR // 100
+def env100(mask100):  # 100 Hz -> sample rate, smoothed
+    m = np.convolve(mask100, np.ones(30) / 30, mode="same")
+    g = np.repeat(m.astype(np.float32), hop); return np.pad(g, (0, max(0, N - len(g))), mode="edge")[:N]
+voice = env100(vmask[: N // hop + 1])
+ins = np.zeros(N // hop + 1, np.float32)
+for it in tl:
+    if it["kind"] == "insert": ins[int(it["start"] * 100): int((it["start"] + it["dur"]) * 100)] = 1
+ins = env100(ins)
+cache = {}
+def load(p):
+    if p not in cache:
+        a, sr = sf.read(p, dtype="float32", always_2d=True)
+        if a.shape[1] == 1: a = np.repeat(a, 2, 1)
+        if sr != SR:
+            import subprocess
+            raw = subprocess.run(["ffmpeg", "-v", "error", "-i", p, "-ac", "2", "-ar", str(SR), "-f", "f32le", "-"], capture_output=True).stdout
+            a = np.frombuffer(raw, np.float32).reshape(-1, 2)
+        cache[p] = a
+    return cache[p]
+def place(buf, a, t0, gain, fade=0.05):
+    s = int(t0 * SR);
+    if s >= N: return
+    a = a[: N - max(s, 0)].copy() if s >= 0 else a[-s:N - 0].copy()
+    s = max(s, 0); n = len(a)
+    if n == 0: return
+    k = min(int(fade * SR), n // 2)
+    if k: r = np.linspace(0, 1, k, dtype=np.float32); a[:k] *= r[:, None]; a[-k:] *= r[::-1, None]
+    buf[s:s + n] += a * gain
+
+# music bed by chapter mood
+MOOD = {"cold_open": "tension", "chapter_1": "wonder", "chapter_2": "tension", "chapter_3": "somber",
+        "chapter_4": "western", "chapter_5": "somber", "chapter_6": "wonder", "close": "wonder"}
+music = np.zeros((N, 2), np.float32)
+spans = []; cur = "cold_open"; t0 = 0.0
+for it in tl:
+    ch = it.get("chapter", cur)
+    if ch != cur: spans.append((cur, t0, it["start"])); cur = ch; t0 = it["start"]
+spans.append((cur, t0, total))
+import score as SC
+for n, (ch, a, b) in enumerate(spans):
+    # one original bed per chapter, as long as the chapter: no audible loop, no identical music restarting in a later chapter
+    mp = f"{D}/music/span_{n:02d}_{ch}.wav"
+    if not os.path.exists(mp):
+        SC.rng = np.random.default_rng(101 + 17 * n); sf.write(mp, SC.build(MOOD.get(ch, "wonder"), b - a + 6.0), SR)
+    loop = load(mp)[: int((b - a + 2.5) * SR)]
+    place(music, loop, a, 1.0, fade=2.5)
+g_music = (0.40 - 0.34 * voice) * (1 - 0.92 * ins)          # 0.40 in gaps, 0.06 under voice (~18-19 dB below narrator), ~0 under inserts
+g_music *= 0.6; music *= g_music[:, None]; del g_music
+mix = np.zeros((N, 2), np.float32)
+def bank(name, layer):
+    sf.write(f"{D}/stem_{name}{TAG}.wav", layer, SR); np.add(mix, layer, out=mix)
+bank("music", music); del music
+
+# ambience per shot (cross-faded), RMS-normalized
+amb = np.zeros((N, 2), np.float32)
+from scipy.signal import butter, sosfiltfilt
+BED = {}
+def bed(p):
+    """clean ambience bed: high-pass 100 Hz (no rumble / hum), tame sudden events, and stretch short recordings to 120 s
+    by shuffling crossfaded segments so nothing repeats on a beat; RMS-normalized."""
+    if p in BED: return BED[p]
+    a = sosfiltfilt(butter(4, 100, "high", fs=SR, output="sos"), load(p), axis=0).astype(np.float32)
+    w = int(0.2 * SR); e = np.sqrt(np.convolve((a ** 2).mean(1), np.ones(w) / w, "same")) + 1e-9
+    cap = 2.0 * np.median(e); a *= np.minimum(1.0, cap / e)[:, None]
+    if len(a) < 60 * SR:
+        r = np.random.default_rng(len(a)); seg = min(int(3.0 * SR), len(a) // 2); xf = int(0.8 * SR); out = [a[:seg]]
+        while sum(len(x) for x in out) < 120 * SR:
+            st = int(r.integers(0, len(a) - seg)); nx = a[st:st + seg].copy(); r_ = np.linspace(0, 1, xf, dtype=np.float32)[:, None]
+            prev = out[-1]; prev[-xf:] = prev[-xf:] * (1 - r_) + nx[:xf] * r_; out.append(nx[xf:])
+        a = np.concatenate(out)
+    a = a / (float(np.sqrt(np.mean(a ** 2))) + 1e-9) * 0.035
+    BED[p] = a; return a
+for s in shots:
+    if not s.get("amb") or not os.path.exists(s["amb"]): continue
+    a = bed(s["amb"]); L = int((s["dur"] + 0.8) * SR); st = int((s["_start"] - 0.4) * SR)
+    loop = a[(max(st, 0) + np.arange(L)) % len(a)]          # continuous bed: offset by timeline position, never restarts per shot
+    place(amb, loop, s["_start"] - 0.4, 10 ** (s.get("amb_g", 0) / 20), fade=0.6)
+amb *= ((1.0 - 0.72 * voice) * (1 - ins))[:, None]
+bank("amb", amb); del amb
+
+# SFX: per shot + automatic transition sounds
+sfx = np.zeros((N, 2), np.float32)
+X = f"{D}/sfx"
+for s in shots:
+    for e in s.get("sfx", []):
+        if os.path.exists(e["f"]):
+            a = load(e["f"]); pk = float(np.max(np.abs(a)) + 1e-9)
+            place(sfx, a / pk * 0.5, s["_start"] + e.get("at", 0), 10 ** (e.get("g", -6) / 20), fade=0.03)
+    if s.get("type") == "card":
+        place(sfx, load(f"{X}/whoosh.wav") * 0.55, s["_start"] - 0.55, 1.0)
+        place(sfx, load(f"{X}/hit_low.wav") * 0.7, s["_start"] + 0.15, 1.0)
+    if s.get("date"):
+        place(sfx, load(f"{X}/type.wav"), s["_start"] + 0.25, 0.5)
+sfx *= (1 - ins)[:, None]
+bank("sfx", sfx); del sfx; cache.clear()
+
+nm = narr if narr.ndim == 1 else narr.mean(1)
+nm = np.pad(nm[:N], (0, max(0, N - len(nm))))
+sf.write(f"{D}/stem_voice{TAG}.wav", nm.astype(np.float32), SR)
+mix += nm.astype(np.float32)[:, None]; del nm
+pk = float(np.max(np.abs(mix))); mix /= max(1.0, pk / 0.97)
+sf.write(f"{D}/mix_v2{TAG}.wav", mix, SR, subtype="FLOAT")
+import subprocess, re as _re
+_m = subprocess.run(["ffmpeg", "-nostats", "-i", f"{D}/mix_v2{TAG}.wav", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json", "-f", "null", "-"], capture_output=True, text=True).stderr
+_j = json.loads(_m[_m.rindex("{"):_m.rindex("}") + 1])
+LN2 = f"loudnorm=I=-14:TP=-1.5:LRA=11:measured_I={_j['input_i']}:measured_TP={_j['input_tp']}:measured_LRA={_j['input_lra']}:measured_thresh={_j['input_thresh']}:offset={_j['target_offset']}:linear=true"
+E.run(["ffmpeg", "-v", "error", "-y", "-i", f"{D}/mix_v2{TAG}.wav", "-af", LN2, "-ar", "48000", f"{D}/mix_v2{TAG}_norm.wav"])
+out = os.environ.get("FINAL_OUT", f"{D}/chiricahua_ep1_v2.mp4")
+if not only:
+    E.final(f"{work}/concat.txt", f"{D}/mix_v2{TAG}_norm.wav", out); print("FINAL", out)
+else:
+    print("partial ok")
+
+#@@FILE ci/check5.py
+"""Gate: the regenerated narration timeline + subtitles equal the reviewed ones, and every source the v5 shot list needs exists."""
+import json, os, sys, hashlib
+D = "/home/claude/doc/chiricahua"; ex = json.load(open("/home/claude/doc/runner5/expected.json"))
+tl = json.load(open(f"{D}/timeline.json"))
+k = [(i.get("id"), i["kind"], round(i["start"], 3), round(i["dur"], 3)) for i in tl]
+if hashlib.sha1(json.dumps(k).encode()).hexdigest() != ex["timeline"]: sys.exit(f"timeline differs from the reviewed cut ({len(tl)} items)")
+bad = [l for l, h in ex["srt"].items() if hashlib.sha1(open(f"{D}/chiricahua_ep1.{l}.srt", "rb").read()).hexdigest() != h]
+if bad: sys.exit(f"subtitles differ from the reviewed ones: {bad}")
+S = json.load(open(f"{D}/shots_v5.json"))
+miss = sorted({p for s in S for p in [s.get("src"), s.get("amb")] + [e["f"] for e in s.get("sfx", [])] if p and not os.path.exists(p)})
+miss += [p for p in ("narration_full.wav", "voice_mask.npy") if not os.path.exists(f"{D}/{p}")]
+if miss: sys.exit(f"missing {len(miss)}: {miss[:30]}")
+print("CHECK5_OK", len(S), "shots", round(sum(s["dur"] for s in S), 2), "s")
+
+#@@FILE ci/final5.sh
+#!/usr/bin/env bash
+# Assemble Episode 1 v5 from the rendered shards, then metadata + release folder + QA proofs (frames + a 360p proxy).
+set -euo pipefail
+R=/home/claude/doc/runner; R5=/home/claude/doc/runner5; D=/home/claude/doc/chiricahua; REL=$D/release
+cd $D; mkdir -p $REL
+SHOTS=shots_v5.json FINAL_OUT=chiricahua_ep1_final.mp4 python3 render_v2.py 2>&1 | tee render.log
+if grep -E "SKIP_MISSING|FAIL" render.log; then echo "render had missing/failed shots"; exit 1; fi
+python3 measure_mix.py | tee mix_report.txt || true
+python3 $R/thumbs.py
+python3 publish_meta5.py
+ln -f chiricahua_ep1_final.mp4 $REL/ && cp thumbs_v3/thumb_B.jpg $REL/
+python3 - <<'PY'
+import json, subprocess
+o = json.loads(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration:stream=width,height,codec_type", "-of", "json",
+                               "/home/claude/doc/chiricahua/release/chiricahua_ep1_final.mp4"], capture_output=True, text=True).stdout)
+v = [s for s in o["streams"] if s["codec_type"] == "video"][0]; d = float(o["format"]["duration"]); print("long", d, v["width"], v["height"], len(o["streams"]))
+assert 1500 < d < 1520 and (v["width"], v["height"]) == (1920, 1080) and len(o["streams"]) == 2
+PY
+Q=/tmp/qa/qa/chiricahua-ep1-v5; mkdir -p $Q
+for t in $(seq 15 30 1500); do ffmpeg -v error -y -ss $t -i chiricahua_ep1_final.mp4 -frames:v 1 -vf scale=480:-2 -q:v 6 $Q/f_$(printf %04d $t).jpg; done
+ffmpeg -v error -y -i chiricahua_ep1_final.mp4 -vf scale=640:360 -c:v libx264 -preset veryfast -b:v 260k -c:a aac -b:a 64k $Q/proxy_360p.mp4
+ls -la $Q/proxy_360p.mp4
+cp mix_report.txt render.log $Q/ 2>/dev/null || true
+cp $REL/*.json $REL/*.txt $REL/*.srt thumbs_v3/thumb_B.jpg $Q/
+echo FINAL5_OK
+
+#@@FILE ci/patch5.py
+"""v5 patches applied on the runner: expand shots_v5.jsonl, fix the engine (fps resample before zoompan), derive publish_meta5.py."""
+import json, os
+D = "/home/claude/doc/chiricahua"; R5 = "/home/claude/doc/runner5"
+S = [json.loads(l.replace("@D/", D + "/").replace("@F/", "/home/claude/fb/")) for l in open(f"{R5}/chiricahua/shots_v5.jsonl") if l.strip()]
+PP = f"{R5}/chiricahua/shots_patch.jsonl"            # later per-shot corrections: {"i": index, "shot": {...}} per line
+if os.path.exists(PP):
+    for l in open(PP):
+        if l.strip():
+            x = json.loads(l.replace("@D/", D + "/").replace("@F/", "/home/claude/fb/")); S[x["i"]] = x["shot"]; print("patched shot", x["i"])
+json.dump(S, open(f"{D}/shots_v5.json", "w"), indent=1); print("shots_v5", len(S))
+p = f"{D}/engine.py"; s = open(p).read()
+a = '''def key(shot):
+    return hashlib.md5(json.dumps(shot, sort_keys=True).encode()).hexdigest()[:12]'''
+b = '''ENGINE_VER = 2   # v2 (2026-10-25): video shots resampled to FPS by timestamp before zoompan (speed + 24 fps sources were wrong)
+def key(shot):
+    k = dict(shot)
+    if shot.get("type") == "video": k["_engine"] = ENGINE_VER
+    return hashlib.md5(json.dumps(k, sort_keys=True).encode()).hexdigest()[:12]'''
+c = '''vf = [f"setpts=PTS/{sp}", "tpad=stop_mode=clone:stop_duration=60"] + ([shot["vf_extra"]] if shot.get("vf_extra") else []) + ['''
+d = '''vf = [f"setpts=PTS/{sp}"] + ([shot["vf_extra"]] if shot.get("vf_extra") else []) + [f"fps={FPS}", "tpad=stop_mode=clone:stop_duration=60"] + ['''
+if "ENGINE_VER" not in s:
+    assert s.count(a) == 1 and s.count(c) == 1, "engine patch anchors"
+    s = s.replace(a, b).replace(c, d); open(p, "w").write(s); print("engine patched")
+p = f"{D}/publish_meta.py"; s = open(p).read()
+x = '''long = {"file": "chiricahua_ep1_final.mp4",'''
+y = '''import datetime as _dt
+_now = _dt.datetime.now(_dt.timezone.utc); _at = _dt.datetime(2026, 10, 26, 15, 0, tzinfo=_dt.timezone.utc)
+PUBLISH_AT = _at.strftime("%Y-%m-%dT%H:%M:%SZ") if _at - _now > _dt.timedelta(hours=1) else None
+d2 = open(f"{R}/desc_long.txt").read().replace(" Spanish audio track available.", ""); open(f"{R}/desc_long.txt", "w").write(d2)
+long = {"file": "chiricahua_ep1_final.mp4",'''
+for u, v in ((x, y), ('"privacy": "private", "publish_at": "2026-10-24T15:00:00Z", "thumbnail"', '"privacy": "private" if PUBLISH_AT else "public", "publish_at": PUBLISH_AT, "thumbnail"'),
+             ('"recording_date": "2026-10-23"}', '"recording_date": "2026-10-23"}\nif not PUBLISH_AT: long.pop("publish_at")'),
+             ("Audio y subtítulos en español disponibles.", "Subtítulos en español disponibles.")):
+    assert s.count(u) == 1, u[:40]; s = s.replace(u, v)
+s = s[:s.index("SH = [(")] + 'print("meta ok (long only); publish_at", PUBLISH_AT, "; chapters:\\n" + chapters("en"))\n'
+open(f"{D}/publish_meta5.py", "w").write(s); print("publish_meta5 written")
+
+#@@FILE ci/place5.py
+"""Place the 36 approved AI clips (matched by git blob sha in footage samples/ai-modal) at /home/claude/fb/ai-clips/<ID>.mp4,
+and build the stabilized copies (/home/claude/fb/stab) for the shaky handheld pieces. Idempotent; used by every job."""
+import json, os, subprocess, shutil, sys
+FB = "/home/claude/fb"; R5 = "/home/claude/doc/runner5"
+want = json.load(open(f"{R5}/ai_blobs.json"))
+ls = subprocess.run(["git", "-C", FB, "ls-files", "-s", "samples/ai-modal"], capture_output=True, text=True, check=True).stdout
+by = {}
+for l in ls.splitlines():
+    meta, path = l.split("\t", 1); by.setdefault(meta.split()[1], path)
+os.makedirs(f"{FB}/ai-clips", exist_ok=True); miss = []
+for k, sha in want.items():
+    p = by.get(sha)
+    if not p or not os.path.exists(f"{FB}/{p}"): miss.append(k); continue
+    shutil.copy2(f"{FB}/{p}", f"{FB}/ai-clips/{k}.mp4")
+if miss: sys.exit(f"AI clips not found on footage: {miss}")
+print("ai clips placed", len(want))
+if os.environ.get("NO_STAB"): sys.exit(0)
+os.makedirs(f"{FB}/stab", exist_ok=True)
+for b in json.load(open(f"{R5}/stab_list.json")):
+    o = f"{FB}/stab/{b}"
+    if os.path.exists(o) and os.path.getsize(o) > 0: continue
+    src = f"{FB}/yt-cuts-v3/{b}"; trf = f"/tmp/{b}.trf"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", src, "-vf", f"vidstabdetect=shakiness=7:accuracy=15:result={trf}", "-f", "null", "-"], check=True)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", src, "-vf", f"vidstabtransform=input={trf}:smoothing=24:optzoom=1:interpol=bicubic,unsharp=5:5:0.6",
+                    "-c:v", "libx264", "-crf", "14", "-preset", "veryfast", "-pix_fmt", "yuv420p", "-an", o], check=True)
+    print("stab", b, flush=True)
+
+#@@FILE ci/prep5.sh
+#!/usr/bin/env bash
+# Episode 1 v5 (owner review 2026-10-25): regenerate the generated inputs exactly as the approved pipeline does, then
+# install the v5 recipe (resolved shot list + fixed engine), place AI clips + stabilized pieces, and verify everything.
+set -euo pipefail
+R=/home/claude/doc/runner; R5=/home/claude/doc/runner5; D=/home/claude/doc/chiricahua; G=/home/claude/doc/geo
+NE=https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson
+for n in ne_10m_rivers_lake_centerlines ne_50m_admin_0_countries ne_50m_admin_1_states_provinces; do curl -fsSL "$NE/$n.geojson" -o "$G/$n.geojson"; done
+python3 $R/relief.py
+cd $D
+python3 $R/fit_narr.py
+python3 score.py $D/music wonder tension somber western
+python3 synth_sfx.py
+python3 $R/annot.py
+python3 $G/maps.py map_scenes.json maps
+KEEP_TIMING=timeline_v3.json python3 timeline_v2.py
+python3 make_subs.py
+cp -r $R5/chiricahua/. $D/
+python3 $R5/ci/patch5.py
+python3 $R5/ci/place5.py
+python3 $R5/ci/check5.py
+echo PREP5_OK
+
+#@@FILE ci/publish5.sh
+#!/usr/bin/env bash
+# Upload the long video (captions in 6 languages, localized titles, thumbnail, playlist, credits comment). Idempotent.
+set -euo pipefail
+WS="$GITHUB_WORKSPACE"; REL=/home/claude/doc/chiricahua/release; LOG="$WS/content/published/chiricahua_ep1.json"
+mkdir -p "$WS/content/published" "$WS/content/pending"; [ -f "$LOG" ] || echo '{}' > "$LOG"
+cd $REL
+done_id=$(python3 -c "import json;print(json.load(open('$LOG')).get('meta_0_long',''))")
+if [ -n "$done_id" ]; then echo "already uploaded: $done_id"; exit 0; fi
+python3 "$WS/scripts/yt_upload.py" meta_0_long.json 2>&1 | tee up_long.log
+vid=$(grep -oP '^VIDEO_ID=\K[\w-]{11}' up_long.log | head -1); [ -n "$vid" ] || { echo "upload failed"; exit 1; }
+python3 - "$LOG" "$vid" <<'PY'
+import json, sys
+p, v = sys.argv[1:]; d = json.load(open(p)); d["meta_0_long"] = v; json.dump(d, open(p, "w"), indent=1)
+PY
+if ! grep -q "^comment 200" up_long.log; then
+  after=$(python3 -c "import json,datetime as t;m=json.load(open('meta_0_long.json'));a=m.get('publish_at');print((t.datetime.fromisoformat(a.replace('Z','+00:00'))+t.timedelta(minutes=5)).strftime('%Y-%m-%dT%H:%M:%SZ') if a else t.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'))")
+  python3 -c "import json,sys;json.dump({'video_id':'$vid','after':'$after','text_file':'content/pending/credits_comment.txt'},open('$WS/content/pending/comment_$vid.json','w'))"
+  cp credits_comment.txt "$WS/content/pending/credits_comment.txt"
+fi
+cat "$LOG"
+
+#@@FILE ai_blobs.json
+{
+"A01": "ac5d8fab58e010af56ab94210ce17cbefccb12fa",
+"A02": "822f85722a1703b8ea6520b0aa5d4fe712b50c8d",
+"A03": "25542e9f4b747361bb53c9fe50820f435a239581",
+"A04": "5c2bf84422c1c7f9b706d9a4f017db6f67556508",
+"A05": "c7e3ab013bc317cdc477cf3b4c0c546d54fe1d82",
+"A06": "d0cdfd8b63cf3dd04912ed4910cb6e6ce723d981",
+"A07": "15afd78fc508386c9ec1e2db56d407002b07ffa6",
+"A08": "a77fdf8fbbb4cff46af53d1d88a61a768457b0d5",
+"A09": "ed03c6ea7afdda94d815486ee664658d05a1235a",
+"A10b": "951c22e0d0d870c0bb77c8f800dc509555ebc7c3",
+"B01": "4b0efe76745c4d03c928d7f511cc5b77c3d4b6ad",
+"B02": "66da7d26da9f6b4f21814751009933ad08f16abd",
+"B03": "70ee242c79cb8ed09e97527c44c7e3346c4fa666",
+"B04": "f23d837f98ec4be95fa3f42fb6d3072aeb939e86",
+"B05": "55a28f789a3ab731a3e559a6414fca97ff9a1846",
+"B06": "d1c83d2ea9224204da6b2e5ed39a975d99c31864",
+"B07": "7dd6066c1d3375b235d7d21136b9c9f9912e58d3",
+"B08": "82489f15c22abbf80a5807abe2d00a800b215a7e",
+"B09": "ebb2a6ad66d5987780eab0664eb466cb32291f45",
+"C01": "58004c7c37c5d2215e8998d13523c1d06933514f",
+"C03": "2d6fee24b56bd2c682d68d414a80d637714ab38a",
+"C04": "0e3325c6c2c378ccc5991f1cbdd870844a6f3e10",
+"C05": "36af7545f25e4f7b7ebc09822f6dbca7fd0d44f0",
+"C06": "b4984f5eba9506f22657517d59460b3ea5adb987",
+"C07": "f267f8e7a099e134681663cc8c021b53fea79145",
+"D01": "566a32fd56e5638dc7e63af493af31fcabe309a0",
+"D02b": "844980b1ce95a8c21f1756b48e8ff41ad663a998",
+"D03": "588f6ece200ce0e6ef76b5d421f47e48f4c1d3ce",
+"D04": "85a07e475dc1fdc69e92f448c03ad131bbdcfe7f",
+"D05": "446ad1a599d2b019d3c65d5bba4f9d4a4a6519dd",
+"D06": "ce1473c4472ff10a1e2cc05aef9630e87d451cd2",
+"D07": "96839f27ec7decfec19de39fd22526eac8137124",
+"D08": "d2c75b0f8196dcf0cad981abd5a6c5b1a1fdd9ea",
+"E01": "5f5c2c3ff23ab89fadc139e75f45138ffcc2dc23",
+"E02b": "9b35cb685c0db7aa942bd5a5ef4e9a341ceac141",
+"E03b": "4fc083c0ff5a6266176e77ffbefb07eda0a876f3"
+}
+#@@FILE expected.json
+{
+ "timeline": "278ee77a1b0bcc34b509f597f4276027feb455c7",
+ "timeline_len": 94,
+ "srt": {
+  "en": "903b4cbc13722f42c6a34fd9019f9e7979ec6d0f",
+  "es": "c5e86a3e912057ff0d3ffee32428b8f1370baabe",
+  "fr": "620ac1d0f36859949aed59df5784f0916a84fcc2",
+  "pt": "f7ff35758f3b7ae7c1ca4e3cfd8882be1aa77459",
+  "zh": "0aaca8ced4ae4247f5f1274c67a0a34460c6a0bf",
+  "ja": "ce5120a2766577c6667d73cbe75e3b675658042a"
+ }
+}
+#@@FILE stab_list.json
+["yt_-ApI8htOOaU_464.mp4", "yt_75z-KbV0Y48_787.mp4", "yt_J6SwvXFX1YM_422.mp4", "yt_b0etN67vKJI_1214.mp4", "yt_crksH675oRQ_1881.mp4", "yt_pGLdAm_aQqM_1432.mp4", "yt_pGLdAm_aQqM_1620.mp4", "yt_ypGGN2x4Fjg_1146.mp4", "yt_ypGGN2x4Fjg_1193.mp4"]
