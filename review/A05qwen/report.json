@@ -1,0 +1,26 @@
+{
+ "A05_23.jpg": {
+  "person": 3,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": false
+ },
+ "A05_41.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ },
+ "A05_5.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ },
+ "A05_77.jpg": {
+  "person": 3,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": false
+ }
+}
