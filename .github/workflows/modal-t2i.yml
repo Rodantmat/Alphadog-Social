@@ -1,7 +1,8 @@
 name: modal-t2i
 # Stills on Modal (Qwen-Image, A100-80GB). Paid only from the free monthly allowance: usage limit $30, spend limit $0.
-# Hard caps in the script: max 12 images per run, 1 container, 1 attempt, no Volumes.
-# Output + automatic review (person counts + contact sheet) committed to review/<label>/ on main.
+# Hard caps in the script: max 30 images per run, 1 container, 1 attempt, no Volumes.
+# Job lists can be a committed JSON or one written on the runner by scripts/ai_samples/gen_ep1_stills.py
+# (content/chiricahua/gen/stills_<passage>.json). Output + automatic review committed to review/<label>/ on main.
 on:
   workflow_dispatch:
     inputs:
@@ -24,6 +25,8 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -q modal ultralytics pillow
+      - name: Generate episode still job lists
+        run: python3 scripts/ai_samples/gen_ep1_stills.py content/chiricahua/gen
       - name: Render on Modal
         run: modal run scripts/modal/modal_t2i.py --jobs "${{ inputs.jobs }}" --out out
       - name: Review (counts + contact sheet)
