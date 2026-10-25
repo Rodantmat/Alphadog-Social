@@ -1,7 +1,7 @@
 name: chiricahua-v5
 # Episode 1 v5 (owner review 2026-10-25): approved generated inputs (narration, timeline, maps, music, SFX, subtitles) are rebuilt
 # with the v2 pipeline and gated against the reviewed hashes; the picture comes from the resolved v5 shot list
-# (ci/chiricahua5/r5.b64) with the fixed engine. publish=true uploads right after the build; otherwise chiricahua-publish5.yml.
+# (ci/chiricahua5 packs) with the fixed engine. publish=true uploads right after the build; otherwise chiricahua-publish5.yml.
 on:
   workflow_dispatch:
     inputs:
@@ -23,7 +23,7 @@ jobs:
         with: { python-version: "3.13" }
       - run: pip install -q numpy scipy pillow soundfile
       - run: bash ci/chiricahua/setup.sh "$FOLDERS"
-      - run: mkdir -p /home/claude/doc/runner5 && base64 -d ci/chiricahua5/r5.b64 | tar -xz -C /home/claude/doc/runner5
+      - run: mkdir -p /home/claude/doc/runner5 && python3 ci/chiricahua5/unpack5.py /home/claude/doc/runner5
       - run: bash /home/claude/doc/runner5/ci/prep5.sh
       - run: tar -C /home/claude -cf /tmp/prep.tar --exclude=doc/chiricahua/media/img --exclude=doc/chiricahua/media/video --exclude=doc/chiricahua/ranch/img --exclude=doc/chiricahua/fly4 doc/chiricahua doc/geo doc/runner5 fb/stab
       - uses: actions/upload-artifact@v4
