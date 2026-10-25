@@ -1,0 +1,44 @@
+#@@FILE ci/patch5.py
+"""v5 patches applied on the runner: expand shots_v5.jsonl, fix the engine (fps resample before zoompan), derive publish_meta5.py."""
+import json, os
+D = "/home/claude/doc/chiricahua"; R5 = "/home/claude/doc/runner5"
+S = [json.loads(l.replace("@D/", D + "/").replace("@F/", "/home/claude/fb/")) for l in open(f"{R5}/chiricahua/shots_v5.jsonl") if l.strip()]
+PP = f"{R5}/chiricahua/shots_patch.jsonl"            # later per-shot corrections: {"i": index, "shot": {...}} per line
+if os.path.exists(PP):
+    for l in open(PP):
+        if l.strip():
+            x = json.loads(l.replace("@D/", D + "/").replace("@F/", "/home/claude/fb/")); S[x["i"]] = x["shot"]; print("patched shot", x["i"])
+json.dump(S, open(f"{D}/shots_v5.json", "w"), indent=1); print("shots_v5", len(S))
+p = f"{D}/engine.py"; s = open(p).read()
+a = '''def key(shot):
+    return hashlib.md5(json.dumps(shot, sort_keys=True).encode()).hexdigest()[:12]'''
+b = '''ENGINE_VER = 3   # v2/v3 (2026-10-25): resample to FPS by timestamp before zoompan; slowed shots interpolated (no judder)
+def key(shot):
+    k = dict(shot)
+    if shot.get("type") == "video": k["_engine"] = ENGINE_VER
+    return hashlib.md5(json.dumps(k, sort_keys=True).encode()).hexdigest()[:12]'''
+c = '''vf = [f"setpts=PTS/{sp}", "tpad=stop_mode=clone:stop_duration=60"] + ([shot["vf_extra"]] if shot.get("vf_extra") else []) + ['''
+d = '''ex = shot.get("vf_extra") or (f"minterpolate=fps={FPS}:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1" if sp < 0.97 else
+                                      f"minterpolate=fps={FPS}:mi_mode=blend" if sp < 0.999 else None)
+        vf = [f"setpts=PTS/{sp}"] + ([ex] if ex else []) + [f"fps={FPS}", "tpad=stop_mode=clone:stop_duration=60"] + ['''
+if "ENGINE_VER" not in s:
+    assert s.count(a) == 1 and s.count(c) == 1, "engine patch anchors"
+    s = s.replace(a, b).replace(c, d); open(p, "w").write(s); print("engine patched")
+p = f"{D}/publish_meta.py"; s = open(p).read()
+x = '''long = {"file": "chiricahua_ep1_final.mp4",'''
+y = '''import datetime as _dt
+_now = _dt.datetime.now(_dt.timezone.utc); _at = _dt.datetime(2026, 10, 26, 15, 0, tzinfo=_dt.timezone.utc)
+PUBLISH_AT = _at.strftime("%Y-%m-%dT%H:%M:%SZ") if _at - _now > _dt.timedelta(hours=1) else None
+d2 = open(f"{R}/desc_long.txt").read().replace(" Spanish audio track available.", ""); open(f"{R}/desc_long.txt", "w").write(d2)
+long = {"file": "chiricahua_ep1_final.mp4",'''
+for u, v in ((x, y), ('"privacy": "private", "publish_at": "2026-10-24T15:00:00Z", "thumbnail"', '"privacy": "private" if PUBLISH_AT else "public", "publish_at": PUBLISH_AT, "thumbnail"'),
+             ('"recording_date": "2026-10-23"}', '"recording_date": "2026-10-23"}\nif not PUBLISH_AT: long.pop("publish_at")'),
+             ("Audio y subtítulos en español disponibles.", "Subtítulos en español disponibles.")):
+    assert s.count(u) == 1, u[:40]; s = s.replace(u, v)
+s = s[:s.index("SH = [(")] + 'print("meta ok (long only); publish_at", PUBLISH_AT, "; chapters:\\n" + chapters("en"))\n'
+open(f"{D}/publish_meta5.py", "w").write(s); print("publish_meta5 written")
+#@@FILE chiricahua/shots_patch.jsonl
+{"i":58,"shot":{"type":"video","src":"@F/yt-cuts-v3/yt_J6SwvXFX1YM_422.mp4","ss":0.0,"drift":0.03,"dur":7.93,"speed":0.987,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}}
+{"i":123,"shot":{"type":"video","src":"@F/yt-cuts-v3/yt_pGLdAm_aQqM_1432.mp4","ss":0.5,"drift":0.03,"dur":4.0,"speed":0.8,"amb":"@D/sfx/wc_wind_2.wav","amb_g":0,"fin":0.12,"fout":0.12}}
+#@@FILE stab_list.json
+["yt_-ApI8htOOaU_464.mp4", "yt_75z-KbV0Y48_787.mp4", "yt_b0etN67vKJI_1214.mp4", "yt_crksH675oRQ_1881.mp4", "yt_pGLdAm_aQqM_1620.mp4", "yt_ypGGN2x4Fjg_1146.mp4", "yt_ypGGN2x4Fjg_1193.mp4"]
