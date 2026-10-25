@@ -6,6 +6,9 @@ on:
       build_run_id:
         description: "chiricahua-v5 run id whose release artifact to publish"
         required: true
+      publish_at:
+        description: "optional premiere time, UTC (e.g. 2026-10-26T18:00:00Z); empty keeps the release metadata"
+        default: ""
 permissions:
   contents: write
   actions: read
@@ -23,11 +26,15 @@ jobs:
           run-id: ${{ inputs.build_run_id }}
           github-token: ${{ github.token }}
       - run: ls -la /home/claude/doc/chiricahua/release && python3 ci/chiricahua5/unpack5.py /home/claude/doc/runner5
-      - name: Refresh the schedule (publish_at must still be >= 1 h ahead, else go public now)
+      - name: Set the schedule (publish_at must still be >= 1 h ahead, else go public now)
+        env:
+          AT: ${{ inputs.publish_at }}
         run: |
           python3 - <<'PY'
-          import json, datetime as d
-          p = "/home/claude/doc/chiricahua/release/meta_0_long.json"; m = json.load(open(p)); a = m.get("publish_at")
+          import json, os, datetime as d
+          p = "/home/claude/doc/chiricahua/release/meta_0_long.json"; m = json.load(open(p))
+          if os.environ.get("AT"): m["publish_at"] = os.environ["AT"]; m["privacy"] = "private"
+          a = m.get("publish_at")
           if a and d.datetime.fromisoformat(a.replace("Z", "+00:00")) - d.datetime.now(d.timezone.utc) < d.timedelta(hours=1):
               m.pop("publish_at"); m["privacy"] = "public"
           json.dump(m, open(p, "w"), ensure_ascii=False, indent=1); print(m.get("privacy"), m.get("publish_at"))
