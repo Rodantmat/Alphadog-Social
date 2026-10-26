@@ -28,7 +28,19 @@ if mode == "keys":
                                                     "-pass", "env:GEMINI_API_KEY", "-in", "/tmp/wf.key"))
     os.remove("/tmp/wf.key"); print("keys ok"); sys.exit()
 
-# ---- gen: decrypt inputs
+# ---- gen: decrypt inputs (bundle may arrive as base64 parts memorial_in.b64.NN + memorial_in.key.b64, checked against memorial_in.sha)
+import glob, hashlib
+parts = sorted(glob.glob(f"{P}/memorial_in.b64.*"))
+if parts:
+    bad = []
+    want = dict(l.split() for l in open(f"{P}/memorial_in.sha").read().split("\n") if l.strip())
+    for p in parts:
+        h = hashlib.sha256(open(p, "rb").read().strip()).hexdigest()[:12]
+        if want.get(os.path.basename(p)) != h: bad.append(os.path.basename(p))
+    print("parts", len(parts), "bad", bad)
+    if bad: sys.exit("corrupt parts: " + ",".join(bad))
+    open(f"{P}/memorial_in.tar.enc", "wb").write(base64.b64decode("".join(open(p).read().strip() for p in parts)))
+    open(f"{P}/memorial_in.key.bin", "wb").write(base64.b64decode(open(f"{P}/memorial_in.key.b64").read().strip()))
 sh("openssl", "enc", "-d", "-aes-256-cbc", "-pbkdf2", "-iter", "200000", "-a", "-pass", "env:GEMINI_API_KEY", "-in", f"{P}/memorial_wf.key.enc", "-out", "/tmp/wf.key")
 akey = sh("openssl", "pkeyutl", "-decrypt", "-inkey", "/tmp/wf.key", "-pkeyopt", "rsa_padding_mode:oaep", "-in", f"{P}/memorial_in.key.bin")
 os.makedirs("in", exist_ok=True)
