@@ -6,6 +6,7 @@ on:
       mode: { description: "keys | gen", default: "gen" }
       stage: { description: "gen: list | images | videos", default: "list" }
       only: { description: "comma-separated job ids (empty = all)", default: "" }
+      prev: { description: "run id whose keyframes to reuse (videos stage)", default: "" }
 permissions:
   contents: write
 concurrency: { group: memorial, cancel-in-progress: false }
@@ -20,6 +21,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           STAGE: ${{ inputs.stage }}
           ONLY: ${{ inputs.only }}
+          PREV: ${{ inputs.prev }}
         run: python3 scripts/memorial.py "${{ inputs.mode }}"
       - name: Save keys
         if: inputs.mode == 'keys'
