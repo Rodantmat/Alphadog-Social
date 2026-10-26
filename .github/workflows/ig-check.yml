@@ -1,0 +1,39 @@
+name: ig-check
+# Read-only Instagram API connection test: profile, publishing quota (proves publish scope), insights, comments, DMs.
+# Never posts anything and never prints the token.
+on:
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Read-only checks
+        env:
+          IG_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER: ${{ secrets.IG_USER_ID }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, urllib.error, urllib.parse
+          T = os.environ["IG_TOKEN"].strip(); U = os.environ["IG_USER"].strip()
+          print("token length", len(T), "| user id set", bool(U))
+          def get(path, **q):
+              q["access_token"] = T
+              url = f"https://graph.instagram.com/{path}?" + urllib.parse.urlencode(q)
+              try:
+                  with urllib.request.urlopen(url, timeout=30) as r: return r.status, json.loads(r.read())
+              except urllib.error.HTTPError as e:
+                  b = e.read().decode()[:400]
+                  return e.code, b.replace(T, "***")
+          checks = [
+              ("profile", "me", {"fields": "user_id,username,account_type,followers_count,follows_count,media_count"}),
+              ("publish_scope (quota)", f"{U}/content_publishing_limit", {"fields": "config,quota_usage"}),
+              ("recent media + comments", "me/media", {"fields": "id,media_type,timestamp,comments_count,like_count", "limit": "3"}),
+              ("insights", f"{U}/insights", {"metric": "reach", "period": "day"}),
+              ("messages", "me/conversations", {"platform": "instagram", "limit": "1"}),
+          ]
+          for name, path, q in checks:
+              st, body = get(path, **q)
+              print(f"== {name}: HTTP {st}")
+              print(json.dumps(body, indent=1)[:900] if isinstance(body, dict) else body)
+          PY
