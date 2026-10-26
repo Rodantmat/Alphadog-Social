@@ -1,0 +1,51 @@
+name: yt-layout
+# Channel home: remove the old personal-playlist sections, feature the series playlist, set the episode as the trailer for non-subscribers.
+on:
+  workflow_dispatch:
+    inputs:
+      trailer: { description: "video id for non-subscribers", default: "LfoM0KAi8Yo" }
+      series: { description: "series playlist id", default: "PLBVXw4D9bxc0" }
+      drop: { description: "playlist ids whose sections to remove", default: "PLC9261CEFB617E356,PLD086E7788C964179" }
+jobs:
+  layout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          TRAILER: ${{ inputs.trailer }}
+          SERIES: ${{ inputs.series }}
+          DROP: ${{ inputs.drop }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, urllib.parse, urllib.error
+          d = urllib.parse.urlencode({"client_id": os.environ["YT_CLIENT_ID"], "client_secret": os.environ["YT_CLIENT_SECRET"],
+                                      "refresh_token": os.environ["YT_REFRESH_TOKEN"], "grant_type": "refresh_token"}).encode()
+          tok = json.loads(urllib.request.urlopen(urllib.request.Request("https://oauth2.googleapis.com/token", data=d)).read())["access_token"]
+          def api(method, url, body=None):
+              req = urllib.request.Request(url, data=json.dumps(body).encode() if body is not None else None, method=method,
+                                           headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json"})
+              try:
+                  r = urllib.request.urlopen(req).read(); return json.loads(r) if r else {}
+              except urllib.error.HTTPError as e: print("HTTP", e.code, url.split("?")[0], e.read().decode()[:400]); return None
+          G = "https://www.googleapis.com/youtube/v3"; drop = set(os.environ["DROP"].split(",")); series = os.environ["SERIES"]
+          secs = (api("GET", f"{G}/channelSections?part=snippet,contentDetails&mine=true") or {}).get("items", [])
+          have_series = False
+          for s in secs:
+              pls = (s.get("contentDetails") or {}).get("playlists") or []
+              if set(pls) & drop:
+                  r = api("DELETE", f"{G}/channelSections?id={s['id']}"); print("removed section", s["id"], pls, "ok" if r is not None else "")
+              if series in pls: have_series = True
+          if not have_series:
+              r = api("POST", f"{G}/channelSections?part=snippet,contentDetails",
+                      {"snippet": {"type": "singlePlaylist", "position": 0}, "contentDetails": {"playlists": [series]}})
+              print("added series section", (r or {}).get("id"))
+          ch = api("GET", f"{G}/channels?part=brandingSettings&mine=true")["items"][0]
+          b = ch["brandingSettings"]; b.setdefault("channel", {})["unsubscribedTrailer"] = os.environ["TRAILER"]
+          r = api("PUT", f"{G}/channels?part=brandingSettings", {"id": ch["id"], "brandingSettings": b})
+          print("trailer set" if r is not None else "trailer failed")
+          for s in (api("GET", f"{G}/channelSections?part=snippet,contentDetails&mine=true") or {}).get("items", []):
+              print("SECTION", s["snippet"].get("type"), (s.get("contentDetails") or {}).get("playlists"))
+          PY
