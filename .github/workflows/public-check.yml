@@ -1,0 +1,36 @@
+name: public-check
+# Read-only: is a post visible to the public? Never posts anything.
+on:
+  workflow_dispatch:
+    inputs:
+      yt: { default: "4X1O7pEr_FQ" }
+      fb_video: { default: "1464836312261086" }
+      ig_url: { default: "https://www.instagram.com/reel/De9_wSuAVP7/" }
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - env:
+          FB_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          YT: ${{ inputs.yt }}
+          FBV: ${{ inputs.fb_video }}
+          IGU: ${{ inputs.ig_url }}
+        run: |
+          python3 - <<'PY'
+          import os, json, re, urllib.request, urllib.error, urllib.parse
+          UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130 Safari/537.36", "Accept-Language": "en-US"}
+          def fetch(u, h=UA):
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(u, headers=h), timeout=30) as r: return r.status, r.read().decode("utf8", "ignore")
+              except urllib.error.HTTPError as e: return e.code, e.read().decode("utf8", "ignore")[:300]
+              except Exception as e: return 0, str(e)
+          st, b = fetch("https://www.youtube.com/oembed?format=json&url=" + urllib.parse.quote(f"https://www.youtube.com/shorts/{os.environ['YT']}"))
+          print("== YouTube oEmbed (200 = public):", st, b[:200])
+          for name, u in [("FB reel logged-out", f"https://www.facebook.com/reel/{os.environ['FBV']}/"), ("IG reel logged-out", os.environ["IGU"])]:
+              st, b = fetch(u); t = re.search(r"<title[^>]*>(.*?)</title>", b, re.S); og = re.search(r'property="og:(?:title|description)" content="([^"]*)"', b)
+              print(f"== {name}: HTTP {st} | title: {(t.group(1).strip() if t else '')[:120]} | og: {(og.group(1) if og else '')[:160]} | unavailable-marker: {any(k in b for k in ['content isn', 'This content isn', 'Page Not Found', 'not available'])}")
+          T = os.environ["FB_TOKEN"].strip()
+          st, b = fetch(f"https://graph.facebook.com/v26.0/{os.environ['FBV']}?fields=status,permalink_url,published,privacy,is_instagram_eligible&access_token={T}", {})
+          print("== FB video status:", st, b.replace(T, "***")[:700])
+          PY
