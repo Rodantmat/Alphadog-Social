@@ -4,7 +4,8 @@ Actions (argv[1]):
   connect_page  write docs/studio/connect.html (Connect-with-TikTok button; the client key is public by design in OAuth URLs)
   exchange      trade STUDIO_TIKTOK_AUTH_CODE for tokens; store them encrypted (AES-256, key = client secret) in content/tiktok_studio_token.enc
   info          refresh the token, print the connected profile + creator info (read only)
-  post FILE     direct-post FILE (env PRIVACY, default SELF_ONLY; CAPTION) and poll until published
+  post FILE     direct-post FILE (env PRIVACY, default SELF_ONLY; CAPTION) and poll until published (needs audit, or a private account)
+  draft FILE    send FILE to the creator's TikTok inbox/drafts (video.upload) to finish and post in the app
 Env: STUDIO_TIKTOK_CLIENT_KEY, STUDIO_TIKTOK_CLIENT_SECRET, STUDIO_TIKTOK_AUTH_CODE (exchange only). Never prints tokens."""
 import json, os, sys, time, subprocess, urllib.request, urllib.error, urllib.parse, datetime as dt
 KEY = os.environ["STUDIO_TIKTOK_CLIENT_KEY"].strip(); SECRET = os.environ["STUDIO_TIKTOK_CLIENT_SECRET"].strip()
@@ -41,7 +42,7 @@ def fresh():
     st, r = http("POST", f"{API}/oauth/token/", form={"client_key": KEY, "client_secret": SECRET, "grant_type": "refresh_token", "refresh_token": t["refresh_token"]})
     if st != 200 or "access_token" not in r: sys.exit(f"refresh failed: HTTP {st} {scrub(str(r))[:300]}")
     t.update(r); now = time.time(); t["access_expires_at"] = now + r.get("expires_in", 86400); t["refresh_expires_at"] = now + r.get("refresh_expires_in", 31536000)
-    save(t); print("token refreshed; refresh token valid until", dt.datetime.utcfromtimestamp(t["refresh_expires_at"]).date()); return t
+    save(t); print("token refreshed; refresh token valid until", dt.datetime.fromtimestamp(t["refresh_expires_at"], dt.timezone.utc).date()); return t
 
 act = sys.argv[1]
 if act == "connect_page":
@@ -54,26 +55,29 @@ elif act == "exchange":
     st, r = http("POST", f"{API}/oauth/token/", form={"client_key": KEY, "client_secret": SECRET, "code": code, "grant_type": "authorization_code", "redirect_uri": REDIRECT})
     if st != 200 or "access_token" not in r: sys.exit(f"exchange failed: HTTP {st} {scrub(str(r))[:400]}")
     now = time.time(); r["access_expires_at"] = now + r.get("expires_in", 86400); r["refresh_expires_at"] = now + r.get("refresh_expires_in", 31536000)
-    save(r); print("connected; scopes:", r.get("scope"), "| refresh valid until", dt.datetime.utcfromtimestamp(r["refresh_expires_at"]).date())
+    save(r); print("connected; scopes:", r.get("scope"), "| refresh valid until", dt.datetime.fromtimestamp(r["refresh_expires_at"], dt.timezone.utc).date())
 elif act == "info":
     t = fresh(); tok = t["access_token"]
     st, r = http("GET", f"{API}/user/info/?fields=open_id,avatar_url,display_name,username,bio_description,is_verified,follower_count,following_count,likes_count,video_count", token=tok)
     print("== user info: HTTP", st); print(json.dumps(r.get("data", r) if isinstance(r, dict) else r, indent=1)[:1200])
     st, r = http("POST", f"{API}/post/publish/creator_info/query/", js={}, token=tok)
     print("== creator info: HTTP", st); print(json.dumps(r.get("data", r) if isinstance(r, dict) else r, indent=1)[:1200])
-elif act == "post":
+elif act in ("post", "draft"):
     t = fresh(); tok = t["access_token"]; f = sys.argv[2]; n = os.path.getsize(f)
     st, ci = http("POST", f"{API}/post/publish/creator_info/query/", js={}, token=tok); print("creator info", st, json.dumps(ci.get("data", {}) if isinstance(ci, dict) else ci)[:600])
     priv = os.environ.get("PRIVACY", "SELF_ONLY")
     body = {"post_info": {"title": os.environ.get("CAPTION", "")[:2200], "privacy_level": priv, "disable_duet": False, "disable_comment": False,
                           "disable_stitch": False, "video_cover_timestamp_ms": 1200},
             "source_info": {"source": "FILE_UPLOAD", "video_size": n, "chunk_size": n, "total_chunk_count": 1}}
-    st, r = http("POST", f"{API}/post/publish/video/init/", js=body, token=tok); print("init", st, scrub(json.dumps(r) if isinstance(r, dict) else r)[:500])
+    if act == "draft": body = {"source_info": body["source_info"]}
+    ep = "video/init" if act == "post" else "inbox/video/init"
+    st, r = http("POST", f"{API}/post/publish/{ep}/", js=body, token=tok); print("init", st, scrub(json.dumps(r) if isinstance(r, dict) else r)[:500])
+    if not (isinstance(r, dict) and r.get("data", {}).get("upload_url")): sys.exit(f"{act} init failed")
     d = r["data"]; up = d["upload_url"]; pid = d["publish_id"]
     st, r2 = http("PUT", up, raw=open(f, "rb").read(), headers={"Content-Type": "video/mp4", "Content-Range": f"bytes 0-{n - 1}/{n}", "Content-Length": str(n)}, timeout=900)
     print("upload", st, str(r2)[:300])
     for _ in range(60):
         st, s = http("POST", f"{API}/post/publish/status/fetch/", js={"publish_id": pid}, token=tok)
         stat = (s.get("data") or {}).get("status") if isinstance(s, dict) else None; print("status", stat)
-        if stat in ("PUBLISH_COMPLETE", "FAILED"): print(json.dumps(s.get("data"), indent=1)); break
+        if stat in ("PUBLISH_COMPLETE", "FAILED", "SEND_TO_USER_INBOX"): print(json.dumps(s.get("data"), indent=1)); break
         time.sleep(10)
