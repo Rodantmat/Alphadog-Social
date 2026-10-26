@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Cross-post queued Reels to Instagram and Facebook with the never-expiring Page token.
-Queue: content/social_queue.json  [{id, platform: instagram|facebook, file, at (UTC ISO), caption, comment?, done?: {...}}]
+"""Cross-post queued Reels to Instagram and Facebook with the never-expiring Page token, and TikTok drafts.
+Queue: content/social_queue.json  [{id, platform: instagram|facebook|tiktok_draft, file, at (UTC ISO), caption, comment?, done?: {...}}]
 Videos come from a GitHub Actions artifact (downloaded by the workflow into ./media).
-Env: FB_PAGE_TOKEN, FB_PAGE_ID, DRY_RUN=1 (upload + process but never publish), ONLY=<id> (force one item now).
+Env: FB_PAGE_TOKEN, FB_PAGE_ID, STUDIO_TIKTOK_* (tiktok), DRY_RUN=1 (upload + process but never publish), ONLY=<id> (force one item now).
 Instagram: resumable upload (no public URL needed) -> container -> FINISHED -> media_publish.
 Facebook: /video_reels start -> rupload -> finish (PUBLISHED), then the link as the first comment (Meta warns links in captions cut reach).
+TikTok (until the app passes TikTok's audit): the clip goes to the creator's TikTok inbox as a draft to finish in the app.
 Every result is written back to the queue (post log)."""
-import json, os, sys, time, datetime as dt, urllib.request, urllib.error, urllib.parse
+import json, os, sys, time, subprocess, datetime as dt, urllib.request, urllib.error, urllib.parse
 G = "https://graph.facebook.com/v26.0"; T = os.environ["FB_PAGE_TOKEN"].strip(); PAGE = os.environ["FB_PAGE_ID"].strip()
 DRY = os.environ.get("DRY_RUN") == "1"; ONLY = os.environ.get("ONLY", "").strip()
 Q = "content/social_queue.json"; MEDIA = "media"
@@ -65,6 +66,13 @@ def fb_reel(item, path):
         except Exception as e: print("fb comment failed", e)
     return {"video_id": vid, "finish": f, "permalink": ("https://www.facebook.com" + pl) if pl.startswith("/") else pl, "status": st.get("status"), "comment": com}
 
+def tt_draft(item, path):
+    if DRY: return {"dry_run": True, "status": "not sent"}
+    r = subprocess.run(["python3", "scripts/tiktok_studio.py", "draft", path], capture_output=True, text=True)
+    print(r.stdout[-1500:], r.stderr[-500:])
+    if r.returncode != 0 or "SEND_TO_USER_INBOX" not in r.stdout: raise RuntimeError("tiktok draft failed: " + (r.stdout + r.stderr)[-300:])
+    return {"status": "SEND_TO_USER_INBOX"}
+
 q = json.load(open(Q)); now = dt.datetime.now(dt.timezone.utc); changed = False
 for item in q:
     if item.get("done") and not item["done"].get("dry_run") and not ONLY: continue
@@ -73,7 +81,7 @@ for item in q:
     if not due: continue
     path = os.path.join(MEDIA, item["file"]); print(f"== {item['id']} ({item['platform']}) {path} {os.path.getsize(path)} bytes", flush=True)
     try:
-        res = (ig_reel if item["platform"] == "instagram" else fb_reel)(item, path)
+        res = {"instagram": ig_reel, "facebook": fb_reel, "tiktok_draft": tt_draft}[item["platform"]](item, path)
         item["done"] = dict(res, at=now.strftime("%Y-%m-%dT%H:%M:%SZ")); print("OK", item["id"], res, flush=True)
     except Exception as e:
         item.setdefault("errors", []).append(f"{now:%Y-%m-%dT%H:%MZ} {str(e)[:300]}"); print("FAIL", item["id"], e, flush=True)
