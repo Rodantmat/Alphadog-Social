@@ -7,8 +7,9 @@ META: {"file": "ep.mp4", "title": "...", "description_file": "desc.txt", "tags":
        "captions": [{"file": "ep.en.srt", "language": "en", "name": "English"}, {"file": "ep.es.srt", "language": "es", "name": "Español"}],
        "localizations": {"es": {"title": "...", "description": "..."}},   # selectable subtitle tracks (rule D1), localized metadata
        "playlist_title": "...", "comment_file": "credits.txt", "location": {"desc": "...", "lat": 0, "lng": 0}, "recording_date": "2026-10-23" }
-Env: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN. Prints VIDEO_ID=..."""
-import json, os, sys, time, urllib.parse, urllib.request
+Env: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN. Prints VIDEO_ID=...
+Env RESUME_VIDEO_ID: skip the upload + thumbnail and finish the remaining steps (playlist, captions, localizations, comment) on that video."""
+import json, os, sys, time, urllib.error, urllib.parse, urllib.request
 
 def access_token():
     d = urllib.parse.urlencode({"client_id": os.environ["YT_CLIENT_ID"], "client_secret": os.environ["YT_CLIENT_SECRET"],
@@ -32,33 +33,36 @@ if M.get("publish_at"): status["privacyStatus"] = "private"; status["publishAt"]
 meta = {"snippet": {"title": M["title"][:100], "description": desc[:4900], "tags": M.get("tags", [])[:30],
                     "categoryId": M.get("category", "27"), "defaultLanguage": M.get("language", "en"),
                     "defaultAudioLanguage": M.get("language", "en")}, "status": status}
-size = os.path.getsize(M["file"])
-st, hd, _ = api("POST", "https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status&notifySubscribers=true",
-                tok, body=meta, headers={"X-Upload-Content-Length": str(size), "X-Upload-Content-Type": "video/mp4"})
-loc = hd.get("Location") or hd.get("location")
-CH = 64 * 1024 * 1024; sent = 0; vid = None
-with open(M["file"], "rb") as f:
-    while sent < size:
-        chunk = f.read(CH); end = sent + len(chunk) - 1
-        for attempt in range(5):
-            try:
-                req = urllib.request.Request(loc, data=chunk, method="PUT", headers={"Authorization": f"Bearer {tok}",
-                      "Content-Length": str(len(chunk)), "Content-Range": f"bytes {sent}-{end}/{size}"})
+vid = os.environ.get("RESUME_VIDEO_ID") or None
+if vid: print("RESUME on", vid); print("VIDEO_ID=" + vid)
+else:
+    size = os.path.getsize(M["file"])
+    st, hd, _ = api("POST", "https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status&notifySubscribers=true",
+                    tok, body=meta, headers={"X-Upload-Content-Length": str(size), "X-Upload-Content-Type": "video/mp4"})
+    loc = hd.get("Location") or hd.get("location")
+    CH = 64 * 1024 * 1024; sent = 0
+    with open(M["file"], "rb") as f:
+        while sent < size:
+            chunk = f.read(CH); end = sent + len(chunk) - 1
+            for attempt in range(5):
                 try:
-                    with urllib.request.urlopen(req, timeout=900) as r:
-                        vid = json.loads(r.read())["id"]
-                except urllib.error.HTTPError as e:
-                    if e.code != 308: raise
-                break
-            except Exception as e:
-                print("retry", attempt, str(e)[:200], flush=True); time.sleep(5 * (attempt + 1)); tok = access_token()
-        sent = end + 1; print(f"uploaded {sent/size:.0%}", flush=True)
-print("VIDEO_ID=" + str(vid))
-if vid and M.get("thumbnail") and os.path.exists(M["thumbnail"]):
-    ctype = "image/png" if M["thumbnail"].lower().endswith(".png") else "image/jpeg"
-    st, _, _ = api("POST", f"https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId={vid}", tok,
-                   raw=open(M["thumbnail"], "rb").read(), headers={"Content-Type": ctype})
-    print("thumbnail", st)
+                    req = urllib.request.Request(loc, data=chunk, method="PUT", headers={"Authorization": f"Bearer {tok}",
+                          "Content-Length": str(len(chunk)), "Content-Range": f"bytes {sent}-{end}/{size}"})
+                    try:
+                        with urllib.request.urlopen(req, timeout=900) as r:
+                            vid = json.loads(r.read())["id"]
+                    except urllib.error.HTTPError as e:
+                        if e.code != 308: raise
+                    break
+                except Exception as e:
+                    print("retry", attempt, str(e)[:200], flush=True); time.sleep(5 * (attempt + 1)); tok = access_token()
+            sent = end + 1; print(f"uploaded {sent/size:.0%}", flush=True)
+    print("VIDEO_ID=" + str(vid))
+    if vid and M.get("thumbnail") and os.path.exists(M["thumbnail"]):
+        ctype = "image/png" if M["thumbnail"].lower().endswith(".png") else "image/jpeg"
+        st, _, _ = api("POST", f"https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId={vid}", tok,
+                       raw=open(M["thumbnail"], "rb").read(), headers={"Content-Type": ctype})
+        print("thumbnail", st)
 if vid and M.get("playlist_title") and not M.get("playlist_id"):     # find or create the series playlist
     _, _, out = api("GET", "https://www.googleapis.com/youtube/v3/playlists?part=snippet&mine=true&maxResults=50", tok)
     hit = [p for p in json.loads(out).get("items", []) if p["snippet"]["title"] == M["playlist_title"]]
@@ -69,9 +73,19 @@ if vid and M.get("playlist_title") and not M.get("playlist_id"):     # find or c
                               "status": {"privacyStatus": "public"}})
         M["playlist_id"] = json.loads(out)["id"]
     print("playlist", M["playlist_id"])
-if vid and M.get("playlist_id"):
-    api("POST", "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet", tok,
-        body={"snippet": {"playlistId": M["playlist_id"], "resourceId": {"kind": "youtube#video", "videoId": vid}}})
+if vid and M.get("playlist_id"):          # 409 here is a known transient YouTube error: retry, never fatal
+    try:
+        _, _, out = api("GET", f"https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId={M['playlist_id']}", tok)
+        already = any(i["snippet"]["resourceId"].get("videoId") == vid for i in json.loads(out).get("items", []))
+    except Exception as e: already = False; print("playlist list failed", str(e)[:200])
+    for attempt in range(6):
+        if already: print("playlist item present"); break
+        try:
+            st, _, _ = api("POST", "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet", tok,
+                           body={"snippet": {"playlistId": M["playlist_id"], "resourceId": {"kind": "youtube#video", "videoId": vid}}})
+            print("playlist item", st); break
+        except urllib.error.HTTPError as e:
+            print("playlist item retry", attempt, e.code, e.read()[:300], flush=True); time.sleep(15 * (attempt + 1)); tok = access_token()
 for c in (M.get("captions") or []) if vid else []:            # selectable subtitle tracks, not burned in
     if not os.path.exists(c["file"]): print("caption missing", c["file"]); continue
     b = "capboundary7f3a"; meta_c = json.dumps({"snippet": {"videoId": vid, "language": c["language"], "name": c.get("name", c["language"]), "isDraft": False}})
