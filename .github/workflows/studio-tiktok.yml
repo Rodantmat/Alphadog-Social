@@ -1,0 +1,40 @@
+name: studio-tiktok
+# AlphaDog Studio TikTok: connect page, token exchange (encrypted token store), read-only info, private test post.
+on:
+  workflow_dispatch:
+    inputs:
+      action: { description: "connect_page | exchange | info | post", default: "info" }
+      file: { description: "post: video file name from the shorts artifact", default: "chiricahua_sh1.mp4" }
+      privacy: { description: "post: SELF_ONLY (private) or PUBLIC_TO_EVERYONE", default: "SELF_ONLY" }
+      caption: { description: "post: caption", default: "" }
+permissions:
+  contents: write
+  actions: read
+concurrency: { group: studio-tiktok, cancel-in-progress: false }
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - if: inputs.action == 'post'
+        uses: actions/download-artifact@v4
+        with: { name: shorts, path: media, run-id: "40251722496", github-token: "${{ github.token }}" }
+      - name: TikTok ${{ inputs.action }}
+        env:
+          STUDIO_TIKTOK_CLIENT_KEY: ${{ secrets.STUDIO_TIKTOK_CLIENT_KEY }}
+          STUDIO_TIKTOK_CLIENT_SECRET: ${{ secrets.STUDIO_TIKTOK_CLIENT_SECRET }}
+          STUDIO_TIKTOK_AUTH_CODE: ${{ secrets.STUDIO_TIKTOK_AUTH_CODE }}
+          ACTION: ${{ inputs.action }}
+          FILE: ${{ inputs.file }}
+          PRIVACY: ${{ inputs.privacy }}
+          CAPTION: ${{ inputs.caption }}
+        run: |
+          if [ "$ACTION" = "post" ]; then python3 scripts/tiktok_studio.py post "media/$FILE"; else python3 scripts/tiktok_studio.py "$ACTION"; fi
+      - name: Save page / encrypted token
+        if: always()
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add docs/studio/connect.html content/tiktok_studio_token.enc 2>/dev/null || true
+          git commit -qm "studio tiktok: page/token update" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
