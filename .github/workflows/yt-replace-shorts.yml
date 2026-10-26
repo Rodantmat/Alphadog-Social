@@ -1,0 +1,53 @@
+name: yt-replace-shorts
+# Upload re-rendered Shorts from a chiricahua-shorts5 artifact with the same scheduled time/metadata,
+# then unschedule the old upload (stays private, never goes public). Records both IDs.
+on:
+  workflow_dispatch:
+    inputs:
+      shorts_run: { description: "chiricahua-shorts5 run id with the new 'shorts' artifact", required: true }
+      ids: { description: "comma-separated short ids", default: "sh3,sh2" }
+permissions:
+  contents: write
+  actions: read
+jobs:
+  replace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: shorts, path: media, run-id: "${{ inputs.shorts_run }}", github-token: "${{ github.token }}" }
+      - name: Replace
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          IDS: ${{ inputs.ids }}
+        run: |
+          LOG="$GITHUB_WORKSPACE/content/published/chiricahua_ep1.json"; cd media
+          for s in ${IDS//,/ }; do
+            old=$(python3 -c "import json;print(json.load(open('$LOG')).get('meta_$s',''))")
+            python3 "$GITHUB_WORKSPACE/scripts/yt_upload.py" meta_$s.json 2>&1 | tee up_$s.log
+            new=$(grep -oP '^VIDEO_ID=\K[\w-]{11}' up_$s.log | head -1); [ -n "$new" ] || { echo "upload failed $s"; exit 1; }
+            python3 - "$old" "$new" <<'PY'
+          import json, os, sys, urllib.parse, urllib.request
+          old, new = sys.argv[1], sys.argv[2]
+          d = urllib.parse.urlencode({"client_id": os.environ["YT_CLIENT_ID"], "client_secret": os.environ["YT_CLIENT_SECRET"],
+                                      "refresh_token": os.environ["YT_REFRESH_TOKEN"], "grant_type": "refresh_token"}).encode()
+          tok = json.loads(urllib.request.urlopen(urllib.request.Request("https://oauth2.googleapis.com/token", data=d)).read())["access_token"]
+          if old and old != new:
+              body = {"id": old, "status": {"privacyStatus": "private", "selfDeclaredMadeForKids": False, "embeddable": True, "license": "youtube"}}
+              r = urllib.request.Request("https://www.googleapis.com/youtube/v3/videos?part=status", data=json.dumps(body).encode(), method="PUT",
+                                         headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json"})
+              print("unschedule old", old, json.loads(urllib.request.urlopen(r).read())["status"])
+          r = urllib.request.Request(f"https://www.googleapis.com/youtube/v3/videos?part=status&id={new}", headers={"Authorization": f"Bearer {tok}"})
+          print("new", new, json.loads(urllib.request.urlopen(r).read())["items"][0]["status"])
+          PY
+            python3 -c "import json;p='$LOG';d=json.load(open(p));d['meta_$s']='$new';d['meta_${s}_old_unscheduled']='$old';json.dump(d,open(p,'w'),indent=1)"
+          done
+          cat "$LOG"
+      - name: Record IDs
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add content/published && git commit -qm "published: replaced shorts ${{ inputs.ids }} (safe-zone captions)" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
