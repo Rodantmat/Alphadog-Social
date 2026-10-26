@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Cross-post queued Reels to Instagram and Facebook with the never-expiring Page token.
-Queue: content/social_queue.json  [{id, platform: instagram|facebook, file, at (UTC ISO), caption, done?: {...}}]
+Queue: content/social_queue.json  [{id, platform: instagram|facebook, file, at (UTC ISO), caption, comment?, done?: {...}}]
 Videos come from a GitHub Actions artifact (downloaded by the workflow into ./media).
 Env: FB_PAGE_TOKEN, FB_PAGE_ID, DRY_RUN=1 (upload + process but never publish), ONLY=<id> (force one item now).
 Instagram: resumable upload (no public URL needed) -> container -> FINISHED -> media_publish.
-Facebook: /video_reels start -> rupload -> finish (PUBLISHED). Every result is written back to the queue (post log)."""
+Facebook: /video_reels start -> rupload -> finish (PUBLISHED), then the link as the first comment (Meta warns links in captions cut reach).
+Every result is written back to the queue (post log)."""
 import json, os, sys, time, datetime as dt, urllib.request, urllib.error, urllib.parse
 G = "https://graph.facebook.com/v26.0"; T = os.environ["FB_PAGE_TOKEN"].strip(); PAGE = os.environ["FB_PAGE_ID"].strip()
 DRY = os.environ.get("DRY_RUN") == "1"; ONLY = os.environ.get("ONLY", "").strip()
@@ -38,6 +39,9 @@ def ig_reel(item, path):
     if DRY: return {"dry_run": True, "container": cid, "status": "FINISHED (not published)"}
     m = call("POST", f"{G}/{ig}/media_publish", data={"creation_id": cid})
     info = get(m["id"], fields="permalink,timestamp")
+    if item.get("comment"):
+        try: print("ig comment", call("POST", f"{G}/{m['id']}/comments", data={"message": item["comment"]}))
+        except Exception as e: print("ig comment failed", e)
     return {"media_id": m["id"], "permalink": info.get("permalink"), "posted": info.get("timestamp")}
 
 def fb_reel(item, path):
@@ -55,7 +59,11 @@ def fb_reel(item, path):
         if s_.get("video_status") == "error": raise RuntimeError(f"fb video {s_}")
         time.sleep(10)
     pl = st.get("permalink_url") or ""
-    return {"video_id": vid, "finish": f, "permalink": ("https://www.facebook.com" + pl) if pl.startswith("/") else pl, "status": st.get("status")}
+    com = None
+    if item.get("comment"):
+        try: com = call("POST", f"{G}/{vid}/comments", data={"message": item["comment"]}); print("fb comment", com)
+        except Exception as e: print("fb comment failed", e)
+    return {"video_id": vid, "finish": f, "permalink": ("https://www.facebook.com" + pl) if pl.startswith("/") else pl, "status": st.get("status"), "comment": com}
 
 q = json.load(open(Q)); now = dt.datetime.now(dt.timezone.utc); changed = False
 for item in q:
