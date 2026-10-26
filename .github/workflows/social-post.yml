@@ -1,0 +1,49 @@
+name: social-post
+# Posts due items from content/social_queue.json to Instagram + Facebook (Reels) and logs the result back into the queue.
+# Runs every 30 min; idle runs exit after the due-check. Manual: only=<id> forces one item now; dry_run=1 uploads without publishing.
+on:
+  schedule:
+    - cron: "3,33 * * * *"
+  workflow_dispatch:
+    inputs:
+      only: { description: "queue id to post now (empty = whatever is due)", default: "" }
+      dry_run: { description: "1 = upload and process but do not publish", default: "0" }
+permissions:
+  contents: write
+  actions: read
+concurrency: { group: social-post, cancel-in-progress: false }
+env:
+  SHORTS_RUN: "40251722496"
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Anything due?
+        id: due
+        env: { ONLY: "${{ inputs.only }}" }
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os, datetime as dt
+          q = json.load(open("content/social_queue.json")); now = dt.datetime.now(dt.timezone.utc); only = os.environ.get("ONLY", "")
+          due = [i["id"] for i in q if (only and i["id"] == only) or (not only and not (i.get("done") and not i["done"].get("dry_run")) and dt.datetime.fromisoformat(i["at"].replace("Z", "+00:00")) <= now)]
+          print("due=" + ("yes" if due else "no"))
+          PY
+      - if: steps.due.outputs.due == 'yes'
+        uses: actions/download-artifact@v4
+        with: { name: shorts, path: media, run-id: "${{ env.SHORTS_RUN }}", github-token: "${{ github.token }}" }
+      - if: steps.due.outputs.due == 'yes'
+        name: Post
+        env:
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          ONLY: ${{ inputs.only }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: ls -la media && python3 scripts/social_post.py
+      - if: always() && steps.due.outputs.due == 'yes'
+        name: Save post log
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add content/social_queue.json && git commit -qm "social: post log" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
