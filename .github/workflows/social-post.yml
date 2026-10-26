@@ -1,5 +1,5 @@
 name: social-post
-# Posts due items from content/social_queue.json to Instagram + Facebook (Reels) and logs the result back into the queue.
+# Posts due items from content/social_queue.json to Instagram + Facebook (Reels) and TikTok (drafts), and logs the result back into the queue.
 # Runs every 30 min; idle runs exit after the due-check. Manual: only=<id> forces one item now; dry_run=1 uploads without publishing.
 on:
   schedule:
@@ -38,6 +38,8 @@ jobs:
         env:
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          STUDIO_TIKTOK_CLIENT_KEY: ${{ secrets.STUDIO_TIKTOK_CLIENT_KEY }}
+          STUDIO_TIKTOK_CLIENT_SECRET: ${{ secrets.STUDIO_TIKTOK_CLIENT_SECRET }}
           ONLY: ${{ inputs.only }}
           DRY_RUN: ${{ inputs.dry_run }}
         run: ls -la media && python3 scripts/social_post.py
@@ -45,5 +47,6 @@ jobs:
         name: Save post log
         run: |
           git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
-          git add content/social_queue.json && git commit -qm "social: post log" || exit 0
+          for f in content/social_queue.json content/tiktok_studio_token.enc; do [ -f "$f" ] && git add "$f"; done
+          git commit -qm "social: post log" || exit 0
           for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
