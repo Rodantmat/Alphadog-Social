@@ -35,6 +35,6 @@ jobs:
         if: always()
         run: |
           git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
-          git add docs/studio/connect.html content/tiktok_studio_token.enc 2>/dev/null || true
+          for f in docs/studio/connect.html content/tiktok_studio_token.enc; do [ -f "$f" ] && git add "$f"; done
           git commit -qm "studio tiktok: page/token update" || exit 0
           for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
