@@ -2,10 +2,9 @@
 """Private memorial generation on GitHub Actions (public repo, so everything private is encrypted).
 modes:
   keys    make the workflow's RSA keypair; private half encrypted with GEMINI_API_KEY -> content/private/memorial_wf.{pub,key.enc}
-  gen     decrypt content/private/memorial_in.{tar.enc,key.enc}; run plan.json stage (STAGE=list|images|videos);
+  gen     decrypt content/private/memorial_in.{tar.enc,key.enc}; run plan.json stage (STAGE=list|images|videos|omni);
           encrypt ./out for Claude's public key (content/private/claude_out.pub) -> /tmp/enc/out.{tar.enc,key.enc}
-Never prints the API key. Gemini: image model for keyframes (her photos as identity references + the original frame as layout),
-Veo for image-to-video (first frame, optional last frame)."""
+Never prints the API key."""
 import base64, json, os, subprocess, sys, time, urllib.request, urllib.error
 K = os.environ["GEMINI_API_KEY"].strip(); B = "https://generativelanguage.googleapis.com/v1beta"
 P = "content/private"
@@ -50,6 +49,8 @@ plan = json.load(open("in/plan.json"))
 if os.path.exists(f"{P}/memorial_videos.json"):
     vp = json.load(open(f"{P}/memorial_videos.json")); plan["videos"] = vp["videos"]; plan["video_models"] = vp.get("video_models", [plan["video_model"]])
     plan["negative"] = vp.get("negative", plan.get("negative", "")); plan["resolution"] = vp.get("resolution", plan.get("resolution"))
+    for k in ("omni_model", "omni_res"):
+        if k in vp: plan[k] = vp[k]
 PREV = os.environ.get("PREV", "").strip()
 if PREV:  # keyframes from an earlier images run (symmetric, GEMINI_API_KEY)
     u = f"https://raw.githubusercontent.com/{os.environ.get('GITHUB_REPOSITORY','Rodantmat/Alphadog-Social')}/footage/private/memorial/{PREV}/wf_out.tar.enc"
@@ -102,11 +103,7 @@ if STAGE == "videos":
             if st == 200 or (st != 404 and "not found" not in str(r).lower()): break
             note(v["id"], "model unavailable", vm, st)
         plan["video_model"] = vm; plan["video_models"] = [vm] + [m for m in models if m != vm]
-        if st != 200 and "resolution" in str(r):
-            params["resolution"] = "720p"; st, r = req("POST", f"{B}/models/{plan['video_model']}:predictLongRunning", {"instances": [inst], "parameters": params})
-        if st != 200 and "personGeneration" in str(r):
-            params.pop("personGeneration"); st, r = req("POST", f"{B}/models/{plan['video_model']}:predictLongRunning", {"instances": [inst], "parameters": params})
-        if isinstance(r, dict) and r.get("name"): ops.append((v["id"], r["name"])); note(v["id"], "started", plan["video_model"], params.get("resolution"))
+        if isinstance(r, dict) and r.get("name"): ops.append((v["id"], r["name"])); note(v["id"], "started", vm)
         else: note(v["id"], "FAIL start", st, str(r)[:500])
         time.sleep(3)
     pending = dict(ops); t0 = time.time()
@@ -118,10 +115,45 @@ if STAGE == "videos":
             pending.pop(vid)
             samples = (((r.get("response") or {}).get("generateVideoResponse") or {}).get("generatedSamples")) or []
             if not samples: note(vid, "FAIL", json.dumps(r)[:600]); continue
-            uri = samples[0]["video"]["uri"]
-            rr = urllib.request.Request(uri, headers={"x-goog-api-key": K})
+            rr = urllib.request.Request(samples[0]["video"]["uri"], headers={"x-goog-api-key": K})
             open(f"out/{vid}.mp4", "wb").write(urllib.request.urlopen(rr, timeout=600).read()); note(vid, "OK", os.path.getsize(f"out/{vid}.mp4"))
     for vid in pending: note(vid, "TIMEOUT")
+
+if STAGE == "omni":
+    import threading
+    def find_videos(o, acc):
+        if isinstance(o, dict):
+            if o.get("type") == "video" or str(o.get("mime_type", "")).startswith("video"): acc.append(o)
+            for v in o.values(): find_videos(v, acc)
+        elif isinstance(o, list):
+            for v in o: find_videos(v, acc)
+        return acc
+    def one(v):
+        try:
+            prompt = "<FIRST_FRAME> Use the provided image as the exact first frame. " + v["prompt"] + " Keep her face, glasses, hair and blue tropical-leaf dress identical to the image. No text, no captions, no logos."
+            body = {"model": plan.get("omni_model", "gemini-omni-1.1-flash"),
+                    "input": [{"type": "image", "data": b64(f"in/{v['first']}"), "mime_type": mime(v["first"])}, {"type": "text", "text": prompt}],
+                    "generation_config": {"video_config": {"task": "image_to_video"}},
+                    "response_format": {"type": "video", "aspect_ratio": "9:16", "resolution": plan.get("omni_res", "1080p"), "delivery": "uri"}}
+            st, r = req("POST", f"{B}/interactions", body, timeout=1500)
+            if not isinstance(r, dict): note(v["id"], "FAIL", st, str(r)[:700]); return
+            vids = find_videos(r, [])
+            if not vids: note(v["id"], "NOVIDEO", st, json.dumps(r)[:900]); return
+            x = vids[0]
+            if x.get("data"): open(f"out/{v['id']}.mp4", "wb").write(base64.b64decode(x["data"]))
+            else:
+                uri = x.get("uri") or x.get("file_uri"); fid = uri.split("/files/")[-1].split(":")[0].split("?")[0]
+                for _ in range(90):
+                    st2, f = req("GET", f"{B}/files/{fid}")
+                    if isinstance(f, dict) and f.get("state") == "ACTIVE": break
+                    time.sleep(10)
+                rr = urllib.request.Request(f"{B}/files/{fid}:download?alt=media", headers={"x-goog-api-key": K})
+                open(f"out/{v['id']}.mp4", "wb").write(urllib.request.urlopen(rr, timeout=600).read())
+            note(v["id"], "OK", os.path.getsize(f"out/{v['id']}.mp4"))
+        except Exception as e: note(v["id"], "ERR", str(e)[:400])
+    th = [threading.Thread(target=one, args=(v,)) for v in plan["videos"] if not ONLY or v["id"] in ONLY]
+    for t in th: t.start(); time.sleep(2)
+    for t in th: t.join()
 
 open("out/log.txt", "w").write("\n".join(log))
 os.makedirs("/tmp/enc", exist_ok=True)
