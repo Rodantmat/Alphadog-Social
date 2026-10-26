@@ -1,0 +1,38 @@
+name: memorial
+# Private memorial video (Gemini image + Veo). Inputs/outputs are encrypted; nothing private is stored in clear.
+on:
+  workflow_dispatch:
+    inputs:
+      mode: { description: "keys | gen", default: "gen" }
+      stage: { description: "gen: list | images | videos", default: "list" }
+      only: { description: "comma-separated job ids (empty = all)", default: "" }
+permissions:
+  contents: write
+concurrency: { group: memorial, cancel-in-progress: false }
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@v4
+      - name: Memorial ${{ inputs.mode }} ${{ inputs.stage }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          STAGE: ${{ inputs.stage }}
+          ONLY: ${{ inputs.only }}
+        run: python3 scripts/memorial.py "${{ inputs.mode }}"
+      - name: Save keys
+        if: inputs.mode == 'keys'
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add content/private/memorial_wf.pub content/private/memorial_wf.key.enc && git commit -qm "memorial: workflow key (private half encrypted)"
+          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; sleep $((i*5)); done; exit 1
+      - name: Push encrypted outputs
+        if: inputs.mode == 'gen' && always()
+        run: |
+          [ -f /tmp/enc/out.tar.enc ] || exit 0
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb
+          cd /tmp/fb && git sparse-checkout set private/memorial && mkdir -p private/memorial/${{ github.run_id }} && cp /tmp/enc/* private/memorial/${{ github.run_id }}/
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add private && git commit -qm "memorial: encrypted outputs ${{ github.run_id }}" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase --depth 1 origin footage && git push -q origin HEAD:footage && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*8)); done; exit 1
