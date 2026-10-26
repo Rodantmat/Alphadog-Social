@@ -1,0 +1,55 @@
+name: chiricahua-shorts5
+# Episode 1 Shorts with the fixed (v3) engine, reusing the prep artifact of a chiricahua-v5 run. publish=true uploads them scheduled.
+on:
+  workflow_dispatch:
+    inputs:
+      prep_run_id:
+        description: "chiricahua-v5 run id whose prep artifact to reuse"
+        required: true
+      publish:
+        description: "Upload the 3 Shorts (scheduled) after the build"
+        default: "false"
+permissions:
+  contents: write
+  actions: read
+env:
+  GH_TOKEN: ${{ github.token }}
+  FOLDERS: "yt-cuts yt-cuts-v3 stock-cuts stock-audio yt-audio sfx chiricahua chiricahua-ranch chiricahua-media2 chiricahua-media3 chiricahua-narration chiricahua-narration-fix1 chiricahua-narration-fix2 chiricahua-narration-fix3 chiricahua-narration-fix4 chiricahua-narration-fix5 chiricahua-narration-es chiricahua-narration-es-fix5 chiricahua-shorts-narr2 chiricahua-flyover-v4 chiricahua-basemaps samples/ai-modal"
+jobs:
+  shorts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.13" }
+      - run: pip install -q numpy scipy pillow soundfile
+      - run: bash ci/chiricahua/setup.sh "$FOLDERS"
+      - uses: actions/download-artifact@v4
+        with: { name: prep, path: /tmp, run-id: "${{ inputs.prep_run_id }}", github-token: "${{ github.token }}" }
+      - run: tar -C /home/claude -xf /tmp/prep.tar && rm /tmp/prep.tar && NO_STAB=1 python3 /home/claude/doc/runner5/ci/place5.py
+      - name: Build (and publish) Shorts
+        env:
+          PUBLISH: ${{ inputs.publish }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: bash ci/chiricahua5/shorts5.sh
+      - name: Push QA proofs to footage branch
+        if: always()
+        run: |
+          [ -d /tmp/qa/qa ] || exit 0
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbq
+          cd /tmp/fbq && git sparse-checkout set qa/chiricahua-shorts-v5 && mkdir -p qa && cp -r /tmp/qa/qa/. qa/
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add qa && git commit -qm "qa: chiricahua shorts v5 ${{ github.run_id }}" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase --depth 1 origin footage && git push -q origin HEAD:footage && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*8)); done; exit 1
+      - uses: actions/upload-artifact@v4
+        with: { name: shorts, path: /home/claude/doc/chiricahua/release_shorts, retention-days: 7, compression-level: 0 }
+      - name: Record video IDs in repo
+        if: always() && inputs.publish == 'true'
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add content/published 2>/dev/null || true
+          git commit -qm "published: chiricahua ep1 shorts" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
