@@ -13,7 +13,7 @@ permissions:
   actions: read
 concurrency: { group: social-post, cancel-in-progress: false }
 env:
-  SHORTS_RUN: "40251722496"
+  SHORTS_RUN: "40389484496"   # safe-zone captions (2026-10-26); sh1 was posted from 40251722496
 jobs:
   post:
     runs-on: ubuntu-latest
