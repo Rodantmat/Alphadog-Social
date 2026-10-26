@@ -104,11 +104,13 @@ def build(sid):
         if not os.path.exists(f): E.render_shot(s, f)
         files.append(f)
     open(f"{work}/concat.txt", "w").write("".join(f"file '{f}'\n" for f in files))
-    # captions
+    # captions - phone safe zone (owner 2026-10-26: text was getting cut on phones). Keep all text inside x 170..910
+    # (tall phones crop ~100 px per side, right-rail buttons) and y 400..1220 (IG 4:5 feed crop top 285 / bottom 1635,
+    # TikTok top tabs, caption + username block at the bottom).
     ass = ["[Script Info]", "ScriptType: v4.00+", "PlayResX: 1080", "PlayResY: 1920", "", "[V4+ Styles]",
            "Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV",
-           "Style: Cap,Inter Display Black,86,&H00FFFFFF,&H00000000,&H64000000,1,1,6,2,2,80,80,640",
-           "Style: Top,Inter Display Black,64,&H00FFFFFF,&H00000000,&H64000000,1,1,5,2,8,70,70,230", "", "[Events]",
+           "Style: Cap,Inter Display Black,76,&H00FFFFFF,&H00000000,&H64000000,1,1,6,2,2,170,170,700",
+           "Style: Top,Inter Display Black,58,&H00FFFFFF,&H00000000,&H64000000,1,1,5,2,8,160,160,400", "", "[Events]",
            "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text",
            f"Dialogue: 0,{ass_time(0)},{ass_time(3.2)},Top,,0,0,0,,{{\\fad(150,300)}}{cfg['title'].upper()}",
            f"Dialogue: 0,{ass_time(dur - 1.3)},{ass_time(dur)},Top,,0,0,0,,{{\\fad(200,0)}}FULL STORY ON THE CHANNEL"]
