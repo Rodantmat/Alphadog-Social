@@ -46,7 +46,17 @@ akey = sh("openssl", "pkeyutl", "-decrypt", "-inkey", "/tmp/wf.key", "-pkeyopt",
 os.makedirs("in", exist_ok=True)
 sh("openssl", "enc", "-d", "-aes-256-cbc", "-pbkdf2", "-iter", "10000", "-pass", "stdin", "-in", f"{P}/memorial_in.tar.enc", "-out", "/tmp/in.tar", inp=akey)
 sh("tar", "-xf", "/tmp/in.tar", "-C", "in"); os.remove("/tmp/in.tar"); os.remove("/tmp/wf.key")
-plan = json.load(open("in/plan.json")); STAGE = os.environ.get("STAGE", "list"); ONLY = [x for x in os.environ.get("ONLY", "").split(",") if x]
+plan = json.load(open("in/plan.json"))
+if os.path.exists(f"{P}/memorial_videos.json"):
+    vp = json.load(open(f"{P}/memorial_videos.json")); plan["videos"] = vp["videos"]; plan["video_models"] = vp.get("video_models", [plan["video_model"]])
+    plan["negative"] = vp.get("negative", plan.get("negative", "")); plan["resolution"] = vp.get("resolution", plan.get("resolution"))
+PREV = os.environ.get("PREV", "").strip()
+if PREV:  # keyframes from an earlier images run (symmetric, GEMINI_API_KEY)
+    u = f"https://raw.githubusercontent.com/{os.environ.get('GITHUB_REPOSITORY','Rodantmat/Alphadog-Social')}/footage/private/memorial/{PREV}/wf_out.tar.enc"
+    open("/tmp/prev.enc", "wb").write(urllib.request.urlopen(u, timeout=300).read())
+    sh("openssl", "enc", "-d", "-aes-256-cbc", "-pbkdf2", "-iter", "200000", "-pass", "env:GEMINI_API_KEY", "-in", "/tmp/prev.enc", "-out", "/tmp/prev.tar")
+    sh("tar", "-xf", "/tmp/prev.tar", "-C", "in"); print("prev keyframes:", sorted(f for f in os.listdir("in") if f.endswith(".png")))
+STAGE = os.environ.get("STAGE", "list"); ONLY = [x for x in os.environ.get("ONLY", "").split(",") if x]
 os.makedirs("out", exist_ok=True); log = []
 def note(*a):
     s = " ".join(str(x) for x in a); print(s, flush=True); log.append(s)
@@ -84,12 +94,17 @@ if STAGE == "videos":
         if v.get("last"): inst["lastFrame"] = {"bytesBase64Encoded": b64(f"in/{v['last']}"), "mimeType": mime(v["last"])}
         params = {"aspectRatio": "9:16", "durationSeconds": v.get("dur", 8), "resolution": plan.get("resolution", "1080p"),
                   "personGeneration": "allow_adult", "negativePrompt": plan.get("negative", "")}
-        st, r = req("POST", f"{B}/models/{plan['video_model']}:predictLongRunning", {"instances": [inst], "parameters": params})
+        models = plan.get("video_models") or [plan["video_model"]]
+        for vm in models:
+            st, r = req("POST", f"{B}/models/{vm}:predictLongRunning", {"instances": [inst], "parameters": params})
+            if st == 200 or (st != 404 and "not found" not in str(r).lower()): break
+            note(v["id"], "model unavailable", vm, st)
+        plan["video_model"] = vm; plan["video_models"] = [vm] + [m for m in models if m != vm]
         if st != 200 and "resolution" in str(r):
             params["resolution"] = "720p"; st, r = req("POST", f"{B}/models/{plan['video_model']}:predictLongRunning", {"instances": [inst], "parameters": params})
         if st != 200 and "personGeneration" in str(r):
             params.pop("personGeneration"); st, r = req("POST", f"{B}/models/{plan['video_model']}:predictLongRunning", {"instances": [inst], "parameters": params})
-        if isinstance(r, dict) and r.get("name"): ops.append((v["id"], r["name"])); note(v["id"], "started", params["resolution"])
+        if isinstance(r, dict) and r.get("name"): ops.append((v["id"], r["name"])); note(v["id"], "started", plan["video_model"], params.get("resolution"))
         else: note(v["id"], "FAIL start", st, str(r)[:500])
         time.sleep(3)
     pending = dict(ops); t0 = time.time()
@@ -107,8 +122,14 @@ if STAGE == "videos":
     for vid in pending: note(vid, "TIMEOUT")
 
 open("out/log.txt", "w").write("\n".join(log))
+os.makedirs("/tmp/enc", exist_ok=True)
+if STAGE == "images":
+    pngs = [f for f in os.listdir("out") if f.endswith(".png")]
+    if pngs:
+        sh("tar", "-cf", "/tmp/wf_out.tar", "-C", "out", *pngs)
+        sh("openssl", "enc", "-aes-256-cbc", "-pbkdf2", "-iter", "200000", "-salt", "-pass", "env:GEMINI_API_KEY", "-in", "/tmp/wf_out.tar", "-out", "/tmp/enc/wf_out.tar.enc")
 # ---- encrypt outputs for Claude
-os.makedirs("/tmp/enc", exist_ok=True); okey = os.urandom(32).hex().encode()
+okey = os.urandom(32).hex().encode()
 sh("tar", "-cf", "/tmp/out.tar", "-C", "out", ".")
 sh("openssl", "enc", "-aes-256-cbc", "-pbkdf2", "-iter", "10000", "-salt", "-pass", "stdin", "-in", "/tmp/out.tar", "-out", "/tmp/enc/out.tar.enc", inp=okey)
 open("/tmp/enc/out.key.bin", "wb").write(sh("openssl", "pkeyutl", "-encrypt", "-pubin", "-inkey", f"{P}/claude_out.pub", "-pkeyopt", "rsa_padding_mode:oaep", inp=okey))
