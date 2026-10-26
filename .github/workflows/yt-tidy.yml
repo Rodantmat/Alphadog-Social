@@ -1,0 +1,42 @@
+name: yt-tidy
+# Lists the channel's playlists and home sections. apply=true sets every playlist except the series playlist(s) to PRIVATE
+# (reversible in Studio; nothing is deleted).
+on:
+  workflow_dispatch:
+    inputs:
+      apply: { description: "true = make the old playlists private", default: "false" }
+      keep: { description: "comma-separated playlist IDs to keep public", default: "PLBVXw4D9bxc0" }
+jobs:
+  tidy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          APPLY: ${{ inputs.apply }}
+          KEEP: ${{ inputs.keep }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, urllib.parse
+          d = urllib.parse.urlencode({"client_id": os.environ["YT_CLIENT_ID"], "client_secret": os.environ["YT_CLIENT_SECRET"],
+                                      "refresh_token": os.environ["YT_REFRESH_TOKEN"], "grant_type": "refresh_token"}).encode()
+          tok = json.loads(urllib.request.urlopen(urllib.request.Request("https://oauth2.googleapis.com/token", data=d)).read())["access_token"]
+          def api(method, url, body=None):
+              req = urllib.request.Request(url, data=json.dumps(body).encode() if body else None, method=method,
+                                           headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json"})
+              return json.loads(urllib.request.urlopen(req).read() or b"{}")
+          keep = {k.strip() for k in os.environ["KEEP"].split(",") if k.strip()}
+          pl = api("GET", "https://www.googleapis.com/youtube/v3/playlists?part=snippet,status,contentDetails&mine=true&maxResults=50").get("items", [])
+          for p in pl:
+              pid, title, priv, n = p["id"], p["snippet"]["title"], p["status"]["privacyStatus"], p["contentDetails"]["itemCount"]
+              act = ""
+              if pid not in keep and priv != "private" and os.environ["APPLY"] == "true":
+                  api("PUT", "https://www.googleapis.com/youtube/v3/playlists?part=snippet,status",
+                      {"id": pid, "snippet": {"title": title, "description": p["snippet"].get("description", "")}, "status": {"privacyStatus": "private"}})
+                  act = "-> made PRIVATE"
+              print(f"PLAYLIST {pid} | {title} | {priv} | {n} videos {act}")
+          secs = api("GET", "https://www.googleapis.com/youtube/v3/channelSections?part=snippet,contentDetails&mine=true").get("items", [])
+          for s in secs: print("SECTION", s["id"], s["snippet"].get("type"), s["snippet"].get("title", ""), (s.get("contentDetails") or {}).get("playlists"))
+          PY
