@@ -9,6 +9,9 @@ on:
       publish_at:
         description: "optional premiere time, UTC (e.g. 2026-10-26T18:00:00Z); empty keeps the release metadata"
         default: ""
+      resume_video_id:
+        description: "optional: video already uploaded - skip the upload and finish playlist, captions, localizations, comment"
+        default: ""
 permissions:
   contents: write
   actions: read
@@ -44,6 +47,7 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          RESUME_VIDEO_ID: ${{ inputs.resume_video_id }}
         run: bash /home/claude/doc/runner5/ci/publish5.sh
       - name: Record video ID / queued comment in repo
         if: always()
