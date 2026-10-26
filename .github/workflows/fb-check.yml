@@ -1,0 +1,41 @@
+name: fb-check
+# Read-only Facebook Page token test. Never posts anything and never prints the token.
+on:
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Read-only checks
+        env:
+          FB_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          FB_PAGE: ${{ secrets.FB_PAGE_ID }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, urllib.error, urllib.parse, datetime as dt
+          T = os.environ["FB_TOKEN"].strip(); P = os.environ["FB_PAGE"].strip()
+          print("token length", len(T), "| page id set", bool(P))
+          def get(path, **q):
+              q["access_token"] = T
+              url = f"https://graph.facebook.com/v26.0/{path}?" + urllib.parse.urlencode(q)
+              try:
+                  with urllib.request.urlopen(url, timeout=40) as r: return r.status, json.loads(r.read())
+              except urllib.error.HTTPError as e: return e.code, e.read().decode()[:400].replace(T, "***")
+              except Exception as e: return 0, str(e)[:200]
+          st, b = get("debug_token", input_token=T)
+          if isinstance(b, dict) and "data" in b:
+              d = b["data"]; ex = d.get("expires_at")
+              print("== token: type", d.get("type"), "| valid", d.get("is_valid"), "| expires", "never" if not ex else dt.datetime.utcfromtimestamp(ex).isoformat(), "| scopes", d.get("scopes"))
+          else: print("== token debug: HTTP", st, b)
+          for name, path, q in [
+              ("page", P, {"fields": "name,username,link,followers_count,fan_count,category,instagram_business_account{id,username,followers_count,media_count}"}),
+              ("recent posts", f"{P}/posts", {"fields": "id,created_time,message", "limit": "3"}),
+              ("page insights", f"{P}/insights", {"metric": "page_post_engagements", "period": "day"}),
+          ]:
+              st, b = get(path, **q); print(f"== {name}: HTTP {st}"); print(json.dumps(b, indent=1)[:900] if isinstance(b, dict) else b)
+          st, b = get(P, fields="instagram_business_account")
+          ig = (b.get("instagram_business_account") or {}).get("id") if isinstance(b, dict) else None
+          if ig:
+              st, b = get(f"{ig}/content_publishing_limit", fields="config,quota_usage"); print("== instagram via page, publish quota: HTTP", st); print(b)
+          PY
