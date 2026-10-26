@@ -62,11 +62,13 @@ def note(*a):
     s = " ".join(str(x) for x in a); print(s, flush=True); log.append(s)
 
 if STAGE == "list":
-    st, r = req("GET", f"{B}/models?pageSize=200")
-    for m in (r.get("models", []) if isinstance(r, dict) else []):
-        n = m["name"]
-        if any(k in n for k in ("image", "veo", "imagen")): note(n, m.get("supportedGenerationMethods"))
-    if not isinstance(r, dict): note("list failed", st, r)
+    tok = ""
+    while True:
+        st, r = req("GET", f"{B}/models?pageSize=1000" + (f"&pageToken={tok}" if tok else ""))
+        if not isinstance(r, dict): note("list failed", st, r); break
+        for m in r.get("models", []): note(m["name"], m.get("supportedGenerationMethods"))
+        tok = r.get("nextPageToken")
+        if not tok: break
 
 if STAGE == "images":
     for j in plan["images"]:
