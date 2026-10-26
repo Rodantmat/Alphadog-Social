@@ -7,10 +7,10 @@
   "thumb_ms": 1200,
   "caption": "In 1882, a man was found dead under an oak tree in Arizona. Revolver in his hand. Boots gone. Part of his scalp cut away. The jury called it suicide.\n\nHis name was Johnny Ringo, and almost nobody believes the jury. Wyatt Earp? Doc Holliday? A gambler with a grudge? Who do you think did it? 👇\n\n🎬 The full 25-minute documentary is on our YouTube channel. Link in bio.\n\n#JohnnyRingo #WildWest #OldWest #Tombstone #Arizona #History #TrueStory #UnsolvedMystery",
   "done": {
-   "dry_run": true,
-   "container": "18054670322805492",
-   "status": "FINISHED (not published)",
-   "at": "2026-10-26T02:49:34Z"
+   "media_id": "17869890501658096",
+   "permalink": "https://www.instagram.com/reel/De9_wSuAVP7/",
+   "posted": "2026-10-26T19:07:40+0000",
+   "at": "2026-10-26T19:07:13Z"
   }
  },
  {
@@ -21,10 +21,36 @@
   "caption": "In 1882, a man was found dead under an oak tree in Arizona. Revolver in his hand. Boots gone. Part of his scalp cut away. The jury called it suicide.\n\nHis name was Johnny Ringo, and almost nobody believes the jury. Wyatt Earp? Doc Holliday? A gambler with a grudge? Who do you think did it? 👇\n\n🎬 The full 25-minute documentary is on YouTube. Link in the first comment 👇\n\n#JohnnyRingo #WildWest #OldWest #Tombstone #Arizona #History #TrueStory #UnsolvedMystery",
   "comment": "Watch the full documentary on YouTube 👉 https://youtu.be/LfoM0KAi8Yo",
   "done": {
-   "dry_run": true,
-   "video_id": "1805493754090467",
-   "status": "uploaded (not published)",
-   "at": "2026-10-26T02:50:17Z"
+   "video_id": "1464836312261086",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1098997939565865"
+   },
+   "permalink": "https://www.facebook.com/reel/1464836312261086/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 21738151
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-10-26T19:07:45+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1464836312261086_1677086840598535"
+   },
+   "at": "2026-10-26T19:07:13Z"
   }
  },
  {
