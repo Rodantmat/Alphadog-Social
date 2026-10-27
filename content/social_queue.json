@@ -74,6 +74,12 @@
   "at": "2026-10-27T23:30:00Z",
   "caption": "America just got its 64th national park, and most people have never heard of it.\n\n27 million years ago an eruption 1,000 times bigger than Mount St. Helens buried this place in ash. Ice and time carved it into thousands of stone spires, balanced boulders, and a mountain shaped like a face. A wild jaguar has walked these canyons.\n\nThis is Chiricahua. Would you go? 🏜️\n\n🎬 The full 25-minute documentary is on YouTube. Link in the first comment 👇\n\n#Chiricahua #NationalParks #Arizona #Geology #Hoodoos #RoadTrip #Travel #NationalPark",
   "comment": "Watch the full documentary on YouTube 👉 https://youtu.be/LfoM0KAi8Yo",
+  "done": {
+   "video_id": "1367441375278212",
+   "permalink": "https://www.facebook.com/reel/1367441375278212/",
+   "note": "upload + finish(PUBLISHED) succeeded; the status read right after failed (object not loadable yet) so the first comment was not posted. Marked done by hand to avoid a duplicate reel - verify on the Page.",
+   "at": "2026-10-27T23:33:25Z"
+  },
   "errors": [
    "2026-10-27T23:33Z HTTP 400 https://graph.facebook.com/v26.0/1367441375278212: {\"error\":{\"message\":\"Unsupported get request. Object with ID '1367441375278212' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https:\\/\\/developers"
   ]
