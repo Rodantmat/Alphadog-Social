@@ -1,0 +1,67 @@
+name: vision-model
+# Builds an offline image-recognition model for the media catalog: exports the CLIP-family image encoder to ONNX and
+# precomputes text embeddings for content/mediacat/labels.json, then publishes them as release "mediacat-model".
+on:
+  workflow_dispatch:
+    inputs:
+      model: { description: "open_clip model name", default: "MobileCLIP-S2" }
+      pretrained: { description: "open_clip pretrained tag", default: "datacompdr" }
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -q torch torchvision --index-url https://download.pytorch.org/whl/cpu && pip install -q open_clip_torch timm onnx onnxruntime numpy
+      - name: Export
+        env: { MODEL: "${{ inputs.model }}", PRE: "${{ inputs.pretrained }}" }
+        run: |
+          mkdir -p out && python3 - <<'PY'
+          import json, os, numpy as np, torch, open_clip
+          M, PRE = os.environ["MODEL"], os.environ["PRE"]
+          print("open_clip", open_clip.__version__, [p for p in open_clip.list_pretrained() if "MobileCLIP" in p[0]][:20])
+          model, _, pre = open_clip.create_model_and_transforms(M, pretrained=PRE); model.eval()
+          try:
+              from timm.utils.model import reparameterize_model; model = reparameterize_model(model); print("reparameterized")
+          except Exception as e: print("no reparam", e)
+          tok = open_clip.get_tokenizer(M)
+          size = model.visual.image_size if hasattr(model.visual, "image_size") else 224
+          size = size[0] if isinstance(size, (list, tuple)) else size
+          print(pre)
+          cfg = {"model": M, "pretrained": PRE, "size": int(size)}
+          for t in pre.transforms:
+              n = type(t).__name__
+              if n == "Normalize": cfg["mean"], cfg["std"] = list(map(float, t.mean)), list(map(float, t.std))
+              if n == "Resize": cfg["resize"] = str(t.size); cfg["interp"] = str(t.interpolation)
+          class V(torch.nn.Module):
+              def __init__(s, m): super().__init__(); s.m = m
+              def forward(s, x): f = s.m.encode_image(x); return f / f.norm(dim=-1, keepdim=True)
+          x = torch.randn(2, 3, size, size)
+          torch.onnx.export(V(model), x, "out/image_encoder.onnx", input_names=["image"], output_names=["emb"],
+                            dynamic_axes={"image": {0: "b"}, "emb": {0: "b"}}, opset_version=17, dynamo=False)
+          labels = json.load(open("content/mediacat/labels.json"))
+          tmpl = ["a photo of {}.", "a picture of a {}.", "{}", "a travel photo of {}.", "a video frame showing {}."]
+          names, embs = [], []
+          with torch.no_grad():
+              for cat, items in labels.items():
+                  for lb in items:
+                      t = model.encode_text(tok([s.format(lb) for s in tmpl])); t = t / t.norm(dim=-1, keepdim=True)
+                      e = t.mean(0); e = e / e.norm(); names.append([cat, lb]); embs.append(e.numpy())
+          np.save("out/labels_emb.npy", np.stack(embs).astype("float32"))
+          cfg["logit_scale"] = float(model.logit_scale.exp()); cfg["labels"] = names
+          json.dump(cfg, open("out/model_cfg.json", "w"), indent=1)
+          import onnxruntime as ort
+          s = ort.InferenceSession("out/image_encoder.onnx"); o = s.run(None, {"image": x.numpy()})[0]
+          with torch.no_grad(): r = V(model)(x).numpy()
+          print("onnx check max diff", float(np.abs(o - r).max()), "dim", o.shape)
+          PY
+          ls -la out
+      - name: Publish release assets
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          gh release view mediacat-model >/dev/null 2>&1 || gh release create mediacat-model --title "Media catalog vision model" --notes "Offline image encoder (ONNX) + label embeddings for the media catalog."
+          gh release upload mediacat-model out/image_encoder.onnx out/labels_emb.npy out/model_cfg.json --clobber
