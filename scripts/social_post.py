@@ -52,19 +52,22 @@ def fb_reel(item, path):
     print("fb upload", up)
     if DRY: return {"dry_run": True, "video_id": vid, "status": "uploaded (not published)"}
     f = call("POST", f"{G}/{PAGE}/video_reels", data={"upload_phase": "finish", "video_id": vid, "video_state": "PUBLISHED", "description": item["caption"]})
-    st = {}
+    # From here on the reel is published: never raise (a raise would leave the item pending and re-post it next run).
+    st = {}; errs = []
     for _ in range(60):
-        st = get(vid, fields="status,permalink_url")
+        try: st = get(vid, fields="status,permalink_url")
+        except Exception as e: errs.append(str(e)[:200]); time.sleep(10); continue
         s_ = st.get("status") or {}
         if s_.get("video_status") in ("ready", "published") or (s_.get("publishing_phase") or {}).get("status") == "complete": break
-        if s_.get("video_status") == "error": raise RuntimeError(f"fb video {s_}")
+        if s_.get("video_status") == "error": errs.append(f"fb video {s_}"); break
         time.sleep(10)
-    pl = st.get("permalink_url") or ""
+    pl = st.get("permalink_url") or f"/reel/{vid}/"
     com = None
     if item.get("comment"):
         try: com = call("POST", f"{G}/{vid}/comments", data={"message": item["comment"]}); print("fb comment", com)
         except Exception as e: print("fb comment failed", e)
-    return {"video_id": vid, "finish": f, "permalink": ("https://www.facebook.com" + pl) if pl.startswith("/") else pl, "status": st.get("status"), "comment": com}
+    return {"video_id": vid, "finish": f, "permalink": ("https://www.facebook.com" + pl) if pl.startswith("/") else pl, "status": st.get("status"),
+            "comment": com, "status_errors": errs[-3:] or None}
 
 def tt_draft(item, path):
     if DRY: return {"dry_run": True, "status": "not sent"}
