@@ -1,0 +1,58 @@
+[
+ {
+  "id": "B00",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. a willow-lined creek meadow in the Big Hole valley, Montana, at dawn, August 1877, low mist over the water, pine-covered hills behind, cold blue-grey light with a pale orange sunrise, the moment before sunrise, deep blue-grey light. In the foreground on a dark wooded hillside, a line of US infantry and cavalry soldiers of 1877 in dark blue wool blouses, sky-blue trousers and black slouch hats, carrying rifles crouch and creep down through the pines, seen from behind as dark silhouettes; below them, across the willows and the misty creek, a quiet sleeping camp of conical lodges of tule mats and canvas with thin smoke from morning fires. Tense, silent, no fighting.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, faces, flames, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "R09",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. a slope of tall dark lodgepole pines and fallen logs at the base of a mountain, Yellowstone, late summer 1877, low sun shining through the trunks from behind. A file of Nez Perce riders on spotted Appaloosa, paint and bay horses in cloth shirts, blankets and broad-brimmed felt hats rides along a narrow trail through the tall pines at the foot of a big forested mountain; among them ride three tourists of 1877 in dark coats and hats, and a woman in a long dark dress; small figures, seen from the side, tense.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, rifles aimed, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "R11",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. extreme close-up at ground level. a slope of tall dark lodgepole pines and fallen logs at the base of a mountain, Yellowstone, late summer 1877, low sun shining through the trunks from behind, misty morning. A man's hand in a torn dark wool coat sleeve lies on pine needles and dry grass, and the fingers slowly curl and grip the grass; a fallen log and the misty forest soft behind. Only the hand and sleeve visible, no blood.",
+  "neg": "face, blood, gore, wound, extra fingers, extra hands, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "R12",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. a slope of tall dark lodgepole pines and fallen logs at the base of a mountain, Yellowstone, late summer 1877, low sun shining through the trunks from behind, bright late-summer day. Two US Army scouts of 1877 on horseback, in buckskin jackets, wool trousers and broad-brimmed hats, ride slowly between the trees and rein in, one pointing ahead at a small figure lying in the tall grass by a fallen log; seen from behind and the side, small figures.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, detailed faces, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "P04",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot, silhouette. a snowy creek ravine below low bare hills in the Bears Paw Mountains, Montana, at night, early October 1877, falling snow, deep blue darkness, frozen grass, first grey light of dawn, snow falling. A lone dark silhouette of a Nez Perce man wrapped in a blanket, with long braids and a plain felt hat, steps up onto the top of a low snowy bluff and looks out over the white field below; the dim ravine camp behind him. Pure silhouette, no detail.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, face, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ }
+]
