@@ -377,8 +377,11 @@ def bars(g):
             else: break
         return n
     rm = g.mean(1); rs = g.std(1); cm = g.mean(0); cs_ = g.std(0)
-    r["top"] = run_((rm < 18) & (rs < 5)); r["bottom"] = run_(((rm < 18) & (rs < 5))[::-1])
-    r["left"] = run_((cm < 18) & (cs_ < 5)); r["right"] = run_(((cm < 18) & (cs_ < 5))[::-1])
+    def edge(prof, n):                                     # a real bar ends in a hard step into the picture
+        if n == 0 or n + 6 >= len(prof): return 0
+        return n if prof[n + 2: n + 6].mean() - prof[:n].mean() > 20 else 0
+    r["top"] = edge(rm, run_((rm < 14) & (rs < 4))); r["bottom"] = edge(rm[::-1], run_(((rm < 14) & (rs < 4))[::-1]))
+    r["left"] = edge(cm, run_((cm < 14) & (cs_ < 4))); r["right"] = edge(cm[::-1], run_(((cm < 14) & (cs_ < 4))[::-1]))
     return r
 def blurfill(g):
     h_, w_ = g.shape
@@ -416,14 +419,14 @@ for jf in JPGS:
         else:
             face.setInputSize((fim.shape[1], fim.shape[0])); _, dets = face.detect(fim)
             S["faces"] = [[d[0] / fs, d[1] / fs, (d[0] + d[2]) / fs, (d[1] + d[3]) / fs, float(d[-1])] for d in (dets if dets is not None else [])]
+    SAMPLES.append(S)
     if clip is not None:
-        clip_batch.append((len(SAMPLES), clip[2](Image.fromarray(cv2.cvtColor(cv2.resize(im, (int(W0 * 288 / min(W0, H0)), int(H0 * 288 / min(W0, H0)))), cv2.COLOR_BGR2RGB)))))
+        clip_batch.append((len(SAMPLES) - 1, clip[2](Image.fromarray(cv2.cvtColor(cv2.resize(im, (int(W0 * 288 / min(W0, H0)), int(H0 * 288 / min(W0, H0)))), cv2.COLOR_BGR2RGB)))))
         if len(clip_batch) >= 32:
             with clip[0].no_grad():
                 emb = clip[1].encode_image(clip[0].stack([x[1] for x in clip_batch])); emb = emb / emb.norm(dim=-1, keepdim=True)
             for (ix, _), e_ in zip(clip_batch, emb.numpy()): SAMPLES[ix]["emb"] = e_
             clip_batch = []
-    SAMPLES.append(S)
     if si % 200 == 0: log("pass B", si, "samples")
 if clip is not None and clip_batch:
     with clip[0].no_grad():
@@ -452,7 +455,7 @@ for a, b_, s in UNITS:
     if hi > 0.20: find("Q7", tm, f"blown-out: {hi:.0%} pixels clipped white ({nm})", sev="warn")
     if mn < 28 and lo > 0.35 and not (s and s.get("ai")): find("Q7", tm, f"very dark: mean luma {mn:.0f}, {lo:.0%} crushed ({nm})", sev="warn")
     # bars
-    bb = [x["bars"] for x in ss if x["mean"] > 30]
+    bb = [x["bars"] for x in ss if x["mean"] > 30 and not x["bfill"]]
     if bb and typ not in ("card",):
         for side in ("top", "bottom", "left", "right"):
             dim = H0 if side in ("top", "bottom") else W0
@@ -793,7 +796,7 @@ if clip is not None and any("emb" in S for S in SAMPLES):
     for S in SAMPLES:
         if "emb" not in S: continue
         s = shot_at(S["t"])
-        if s and s["type"] in ("card", "map"): continue
+        if s and (s["type"] in ("card", "map", "photo") or s.get("ai")): continue   # archive stills / our AI scenes are not privacy risks
         lg = 100 * (te @ S["emb"]); pr_ = np.exp(lg - lg.max()); pr_ /= pr_.sum(); k_ = int(np.argmax(pr_))
         if k_ < len(PO) and pr_[k_] > 0.5: hits += 1; find("O2", S["t"], f"{PO[k_]}? (CLIP p {pr_[k_]:.2f})", sev="warn")
     summ("O2", f"OCR patterns (phone/e-mail/address/ID/plate) + CLIP object scan ({hits} hits) + close-up faces in source footage")
