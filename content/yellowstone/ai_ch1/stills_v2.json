@@ -1,0 +1,59 @@
+[
+ {
+  "id": "H08b",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Madison Canyon, Montana, August 1959: a deep narrow mountain canyon with steep slopes covered in dark Douglas fir and pine, bare grey rock above, the Madison River winding along the valley floor, early morning days later, soft cool grey-blue daylight: the valley floor has become a new lake - still grey-green water fills the canyon bottom and the tops of drowned dead pine trees stick up out of the water; on the left mountainside a vast bare scar of raw grey rock and brown earth where the forest slid away, its rubble piled across the far end of the valley as a natural wall of broken rock and splintered trees; low mist on the water, pale sky. Somber and quiet, no people, no buildings.",
+  "neg": "concrete dam, dam wall, spillway, tower, buildings, bridge, road, people, boats, bodies, corpses, blood, gore, injured people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ },
+ {
+  "id": "P06b",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. interior medium shot from behind. A 1980s biotechnology laboratory at night under a long fluorescent ceiling lamp: a chemist in a brown sweater and jeans, seen from behind, works at a lab bench using a hand pipette to fill a rack of tiny clear plastic tubes; beside him a chunky beige 1980s lab instrument with a metal heating block on top and plain round knobs, glass reagent bottles and flasks; a beige computer with a blank dark screen; the window behind is black with night.",
+  "neg": "face, digital display, LED readout, numbers, digits, letters, labels, modern laptop, flat screen, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ },
+ {
+  "id": "B01",
+  "seeds": [
+   5
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. very wide shot. Lamar Valley, Yellowstone, winter of 1902: a wide open snow-covered valley with rolling hills, scattered dark conifers on the slopes, a frozen creek, low grey sky with soft cold light. A tiny herd of exactly five American bison stands and grazes in deep snow in the middle of the vast empty white valley, pushing snow aside with their heads, their breath steaming; emptiness all around. No people.",
+  "neg": "people, buildings, fences, large herd, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ },
+ {
+  "id": "B02",
+  "seeds": [
+   5
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot from behind. Lamar Valley, Yellowstone, winter of 1902: a wide open snow-covered valley with rolling hills, scattered dark conifers on the slopes, a frozen creek, low grey sky with soft cold light. On a low snowy ridge in the foreground a lone park ranger in a long dark wool coat and broad-brimmed hat sits on a brown horse, seen from behind, watching a small group of four bison move slowly through the snow on the valley floor below; snow falling lightly.",
+  "neg": "face, rifle aimed, buildings, large herd, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ },
+ {
+  "id": "B03",
+  "seeds": [
+   5
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium close-up. Lamar Valley, Yellowstone, winter of 1902: a wide open snow-covered valley with rolling hills, scattered dark conifers on the slopes, a frozen creek, low grey sky with soft cold light, light snow falling. A big shaggy American bison bull stands in deep snow, frost and snow caked on his dark brown head and shoulders, breath steaming from his nostrils, swinging his head to clear snow from the grass.",
+  "neg": "people, extra horns, extra legs, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ }
+]
