@@ -1,0 +1,14 @@
+{
+ "X04b_23.jpg": {
+  "person": 3,
+  "horse": 0,
+  "expect_person": 4,
+  "person_ok": false
+ },
+ "X04b_5.jpg": {
+  "person": 3,
+  "horse": 0,
+  "expect_person": 4,
+  "person_ok": false
+ }
+}
