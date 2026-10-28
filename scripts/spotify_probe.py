@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Read-only probe: load the Spotify for Creators session (Cookie-Editor JSON in env SPOTIFY_CREATORS_SESSION),
-open creators.spotify.com headless, and report only: logged in or not, where it landed, and the show names.
+open the English show's episodes page headless, and report only: logged in or not, where it landed, and the show names.
 Never prints cookie values; takes no actions on the account. Logs are public (public repo), so output stays minimal."""
 import json, os, re, sys
 from playwright.sync_api import sync_playwright
@@ -18,22 +18,30 @@ for c in data:
     if s: k["sameSite"] = s
     if c.get("expirationDate"): k["expires"] = float(c["expirationDate"])
     cookies.append(k)
-print("cookies loaded:", len(cookies), "domains:", sorted({c["domain"] for c in cookies}))
+print("cookies loaded:", len(cookies))
+SHOWS = {"en": "5K5ZytGhBYz2xJ8Iwvf8ss"}
+def mask(u):
+    h = re.sub(r"^https?://([^/]+).*", r"\1", u); p = re.sub(r"^https?://[^/]+", "", u).split("?")[0]
+    return h + re.sub(r"/show/[A-Za-z0-9]+", "/show/<id>", re.sub(r"/episode/[A-Za-z0-9]+", "/episode/<id>", p))
 with sync_playwright() as p:
     b = p.chromium.launch()
     ctx = b.new_context(viewport={"width": 1366, "height": 900}, locale="en-US", timezone_id="America/Los_Angeles",
                         user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36")
     ctx.add_cookies(cookies)
     pg = ctx.new_page()
-    pg.goto("https://creators.spotify.com/", wait_until="domcontentloaded", timeout=90000)
-    pg.wait_for_timeout(12000)
-    url = pg.url; text = pg.inner_text("body")[:4000]
-    host = re.sub(r"^https?://([^/]+).*", r"\1", url); path = re.sub(r"^https?://[^/]+", "", url).split("?")[0]
-    print("landed:", host, re.sub(r"/show/[A-Za-z0-9]+", "/show/<id>", path))
-    login_wall = "accounts.spotify.com" in host or re.search(r"\b(Log in|Sign up|Continue with)\b", text) and "Episodes" not in text
-    challenge = re.search(r"(verify|verification|captcha|security check|confirm it.s you|enter the code)", text, re.I)
-    shows = [s for s in ["America’s National Parks", "America's National Parks", "Parques Nacionales"] if s in text]
-    print("LOGGED_IN" if not login_wall else "NOT_LOGGED_IN")
-    print("CHALLENGE_SEEN" if challenge else "no challenge text")
-    print("shows visible:", shows)
+    for name, target in [("dashboard", "https://creators.spotify.com/pod/dashboard/home"),
+                         ("episodes", f"https://creators.spotify.com/pod/show/{SHOWS['en']}/episodes")]:
+        try:
+            pg.goto(target, wait_until="domcontentloaded", timeout=90000)
+            try: pg.wait_for_load_state("networkidle", timeout=30000)
+            except Exception: pass
+            pg.wait_for_timeout(6000)
+        except Exception as e:
+            print(name, "goto error", str(e)[:120]); continue
+        text = pg.inner_text("body")[:6000]
+        on_login = "accounts.spotify.com" in pg.url or "/login" in pg.url
+        has_app = bool(re.search(r"\b(Episodes|Analytics|Monetize|Create)\b", text)) and bool(re.search(r"Settings", text))
+        challenge = re.search(r"(captcha|security check|confirm it.s you|enter the code|verify your)", text, re.I)
+        shows = [s for s in ["America’s National Parks", "America's National Parks", "Parques Nacionales", "Chiricahua"] if s in text]
+        print(f"[{name}] landed: {mask(pg.url)} | app_ui: {has_app} | login_page: {on_login} | challenge: {bool(challenge)} | seen: {shows}")
     b.close()
