@@ -32,7 +32,11 @@ jobs:
           for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
       - if: always()
         uses: actions/upload-artifact@v4
-        with: { name: studio-qa-${{ github.run_id }}, path: /tmp/ytqa, retention-days: 14, if-no-files-found: ignore }
+        with:
+          name: studio-qa-${{ github.run_id }}
+          path: /tmp/ytqa
+          retention-days: 14
+          if-no-files-found: ignore
       - if: always()
         name: Publish QA to release studio-qa
         run: |
