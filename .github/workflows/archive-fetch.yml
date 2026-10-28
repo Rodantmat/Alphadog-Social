@@ -39,11 +39,11 @@ jobs:
           find . -type f | python3 -c "import re,os,sys; [print(l.strip()) for l in sys.stdin if re.search(os.environ['PAT'], l.strip())]" > /tmp/sel.txt
           cat /tmp/sel.txt
           mkdir -p /tmp/up
-          # files over 30 MB are uploaded as 29 MiB parts (<name>.part000, ...) plus <name>.sha256 of the whole file
+          # files over 25 MB are uploaded as 25 MB parts (<name>.part000, ...) plus <name>.sha256 of the whole file
           while read p; do
             n="${PFX}$(basename "$p")"; ln -f "$p" "/tmp/up/$n" 2>/dev/null || cp "$p" "/tmp/up/$n"
-            if [ "$(stat -c %s "/tmp/up/$n")" -gt 31457280 ]; then
-              (cd /tmp/up && sha256sum "$n" > "$n.sha256" && split -b 29m -d -a 3 "$n" "$n.part" && rm "$n")
+            if [ "$(stat -c %s "/tmp/up/$n")" -gt 25000000 ]; then
+              (cd /tmp/up && sha256sum "$n" > "$n.sha256" && split -b 25000000 -d -a 3 "$n" "$n.part" && rm "$n")
               for f in /tmp/up/"$n".part* /tmp/up/"$n".sha256; do
                 for i in 1 2 3; do gh release upload archive-tmp -R "$GITHUB_REPOSITORY" "$f" --clobber && break; sleep 10; done
                 echo "UPLOADED $(basename "$f") $(stat -c %s "$f")"; rm -f "$f"
