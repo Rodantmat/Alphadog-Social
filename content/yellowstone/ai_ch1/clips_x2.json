@@ -1,0 +1,14 @@
+[
+ {
+  "name": "X04",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys1_x3/X04c_7.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 5,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the four tourists sprint to the right along the boardwalk away from the cloud, legs and arms pumping, hats bouncing, the huge steam and mud cloud behind them on the left surges upward and rolls, mud chunks fall. Camera pans right with the runners.",
+  "neg": "faces, people turning around, running backward, extra legs, people merging, lava, fire, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ }
+]
