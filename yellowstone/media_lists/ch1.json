@@ -426,6 +426,50 @@
     ]
    ],
    "safe_note": "Safe = USGS-shot Mike Poland interview, Norris B-roll, USGS maps/plots (seismic/infrasound, GPS, earthquake map, Steamboat temperature)"
+  },
+  "video/ch1_usgs_biscuit_basin_explosion_2024-07-23.mp4": {
+   "status": "PARTIAL - use only safe segments (frame-checked 2026-10-28)",
+   "exclude_segments": [
+    {
+     "start": 0.0,
+     "end": 7.0,
+     "why": "explosion clip captioned 'July 23, 2024 video courtesy of Joshua Sells' (third-party, used with permission)"
+    },
+    {
+     "start": 13.4,
+     "end": 22.1,
+     "why": "Joshua Sells courtesy explosion footage"
+    },
+    {
+     "start": 25.0,
+     "end": 37.0,
+     "why": "Joshua Sells courtesy explosion footage"
+    },
+    {
+     "start": 109.3,
+     "end": 112.2,
+     "why": "commercial satellite images of Norris (Apr 2 / Apr 21 2024), likely Maxar WorldView"
+    }
+   ],
+   "safe_segments": [
+    [
+     7.0,
+     13.4
+    ],
+    [
+     22.1,
+     25.0
+    ],
+    [
+     37.0,
+     109.3
+    ],
+    [
+     112.2,
+     177.0
+    ]
+   ],
+   "safe_note": "Safe = Mike Poland interview (USGS), USGS Biscuit Basin map (22-25s), 'NPS Video' damaged boardwalk/crater aftermath (37-~80s), Mary Bay lake + map, Norris 2024 crater photo (research permit, USGS), historic B&W/snow shots, 1890 Haynes Excelsior postcard (PD by age), USGS hazards graphic, NPS aerial/closed boardwalk. NOTE: the famous plume shots in this video are the Joshua Sells footage - NOT cleared; for the plume use animation or license from Sells."
   }
  }
 }
