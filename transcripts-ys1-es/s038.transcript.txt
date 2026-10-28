@@ -1,0 +1,5 @@
+[   0.00-   5.00] Esta es Gran Prismatic, la fuente termal más grande de Yellowstone, más ancha que el largo
+[   5.00-  11.04] de un campo de fútbol americano. Esos colores no son minerales, son tapetes vivos de microbios.
+[  11.04-  15.64] Cada color es una comunidad distinta, según la temperatura del agua. Azul pálido en el
+[  15.64-  20.24] centro, donde está más caliente, y luego amarillo, naranja y marrón a medida que
+[  20.24-  21.24] el agua se enfría.
