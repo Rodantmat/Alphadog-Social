@@ -1,0 +1,46 @@
+name: buffer-post
+# mode=channels: list Buffer channels. mode=post: take FILE from artifact NAME of run RUN, host it on release media-public,
+# and schedule it on Buffer (SERVICE, default tiktok) at DUE (UTC ISO; empty = next queue slot). mode=posts: list channel posts.
+on:
+  workflow_dispatch:
+    inputs:
+      mode: { description: "channels | post | posts", default: "channels" }
+      run: { description: "run id holding the artifact", default: "40389484496" }
+      artifact: { description: "artifact name", default: "shorts" }
+      file: { description: "file inside the artifact", default: "chiricahua_sh2.mp4" }
+      due: { description: "UTC ISO time, empty = queue", default: "" }
+      service: { description: "buffer channel service", default: "tiktok" }
+      text: { description: "post text (\\n for new lines)", default: "" }
+permissions:
+  contents: write
+  actions: read
+env:
+  GH_TOKEN: ${{ github.token }}
+  BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - if: inputs.mode == 'channels'
+        run: python3 scripts/buffer_post.py channels
+      - if: inputs.mode == 'posts'
+        run: python3 scripts/buffer_post.py posts "${{ inputs.service }}"
+      - if: inputs.mode == 'post'
+        uses: actions/download-artifact@v4
+        with: { name: "${{ inputs.artifact }}", path: /tmp/m, run-id: "${{ inputs.run }}", github-token: "${{ github.token }}" }
+      - if: inputs.mode == 'post'
+        env:
+          FILE: ${{ inputs.file }}
+          DUE: ${{ inputs.due }}
+          TEXT: ${{ inputs.text }}
+          SERVICE: ${{ inputs.service }}
+        run: |
+          gh release view media-public >/dev/null 2>&1 || gh release create media-public --title "public media" --notes "Files hosted for scheduled social posts" --prerelease
+          gh release upload media-public "/tmp/m/$FILE" --clobber
+          URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/media-public/$FILE"
+          curl -sSIL "$URL" | grep -iE "^HTTP|content-type|content-length" | tail -3
+          python3 -c "import os;open('/tmp/text.txt','w',encoding='utf-8').write(os.environ['TEXT'].replace('\\\\n','\n'))"
+          cat /tmp/text.txt
+          python3 scripts/buffer_post.py post "$SERVICE" "$URL" "$DUE" /tmp/text.txt
