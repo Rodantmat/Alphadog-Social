@@ -35,6 +35,11 @@ with sync_playwright() as p:
     if st != "ok": stop(pg, ctx, b, st, "01_studio_home_stop")
     S.pause(3, 6)
     S.goto(pg, f"https://studio.youtube.com/video/{VID}/translations", settle=8000)
+    for _ in range(6):  # Studio renders the table lazily
+        try: body = pg.inner_text("body", timeout=10000)
+        except Exception: body = ""
+        if "Add language" in body or "ADD LANGUAGE" in body or "Subtitles" in body: break
+        pg.wait_for_timeout(5000)
     st = S.status(pg); print("[languages] status:", st, "| landed:", S.mask_url(pg.url))
     if st in ("challenge", "login"): stop(pg, ctx, b, st, "02_languages_stop")
     snap(pg, "02_languages")
