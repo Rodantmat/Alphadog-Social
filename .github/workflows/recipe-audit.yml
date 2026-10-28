@@ -8,11 +8,11 @@ on:
       artifact: { description: "artifact name", default: "release" }
       files: { description: "comma-separated video file names inside the artifact", default: "chiricahua_ep1_final.mp4" }
       mode: { description: "auto | long | vertical", default: "auto" }
-      srt_prefix: { description: "SRT prefix inside the artifact (<prefix>.<lang>.srt); empty = none", default: "chiricahua_ep1" }
-      shots: { description: "shot list: 'chiricahua5' (ci/chiricahua5 packs) or a repo path to a .jsonl; empty = none", default: "chiricahua5" }
-      timeline: { description: "repo path to a timeline json (chapters/inserts); empty = none", default: "content/recipe/calib/chiricahua_ep1_timeline.json" }
+      srt_prefix: { description: "SRT prefix inside the artifact (<prefix>.<lang>.srt); 'none' = no subtitles", default: "chiricahua_ep1" }
+      shots: { description: "shot list: 'chiricahua5' (ci/chiricahua5 packs) or a repo path to a .jsonl; 'none' = no shot list", default: "chiricahua5" }
+      timeline: { description: "repo path to a timeline json (chapters/inserts); 'none' = no timeline", default: "content/recipe/calib/chiricahua_ep1_timeline.json" }
       skip: { description: "comma list of analyzers to skip: ocr,clip,whisper,faces", default: "" }
-      extra: { description: "extra analyze.py arguments", default: "" }
+      extra: { description: "extra analyze.py arguments", default: "--allow-text content/recipe/calib/chiricahua_allow.txt" }
 permissions:
   contents: write
   actions: read
@@ -46,6 +46,7 @@ jobs:
         run: |
           . /tmp/venv/bin/activate
           ls -la /tmp/in; md5sum scripts/recipe/analyze.py
+          for v in SRT SHOTS TL; do if [ "${!v}" = "none" ]; then printf -v "$v" '%s' ''; fi; done    # 'none' = no input (empty inputs fall back to defaults)
           SA=""
           if [ "$SHOTS" = "chiricahua5" ]; then python3 ci/chiricahua5/unpack5.py /tmp/r5 >/dev/null && SA="--shots /tmp/r5/chiricahua/shots_v5.jsonl --patch /tmp/r5/chiricahua/shots_patch.jsonl"
           elif [ -n "$SHOTS" ]; then SA="--shots $SHOTS"; fi
