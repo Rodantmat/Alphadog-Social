@@ -1,0 +1,3 @@
+[   0.00-   7.00] Quase 20 anos depois, um químico chamado Carey Males inventou um jeito de copiar o DN a milhões de vezes, o PCR.
+[   7.00-  14.00] Ele precisava de uma enzima que resistisse a aquecimentos repetidos. A enzima veio do micróbio de Brock. Males ganhou um Nobel.
+[  14.00-  20.00] O PCR mudou a medicina, a perícia criminal e, muito depois, tornou possíveis os testes de Covid.
