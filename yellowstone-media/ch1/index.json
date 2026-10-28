@@ -1,6 +1,6 @@
 {
  "chapter": "ch1",
- "list_sha": "a2d163d7e8e9d336",
+ "list_sha": "b3eb21c21f6d0caa",
  "files": [
   {
    "name": "ch1_nps_buffalo_ranch_14070",
@@ -1189,7 +1189,7 @@
    "shows": "YVO Dec 2024: hydrothermal explosions more common than you think (Norris Apr 2024 infrasound)",
    "license": "Public Domain with some content used with permission (USGS)",
    "credit": "USGS / Yellowstone Volcano Observatory (Video edited by Liz Westby, USGS Multimedia Gallery Access relevant media to include images, vid)",
-   "status": "EXCLUDE-pending (page says some content used with permission; frame-check before use)",
+   "status": "PARTIAL - use only safe segments (frame-checked 2026-10-28)",
    "title": "Hydrothermal Explosions \u2014 more common than you think! (Yellowstone Monthly Update - Dec 2024)",
    "page_usage": "Public Domain. Some content used with permission.",
    "page_desc": "The hydrothermal explosion in Biscuit Basin stole all the headlines. But did you know there was a smaller hydrothermal explosion in Norris Geyser Basin on April 15, 2024? That explosion was detected by a new infrasound sensor installed this past September. Watch to learn more.",
@@ -1202,7 +1202,39 @@
    "w": 1920,
    "h": 1080,
    "truncated": false,
-   "bytes": 63839761
+   "bytes": 63839761,
+   "exclude_segments": [
+    {
+     "start": 0.0,
+     "end": 4.4,
+     "why": "Biscuit Basin explosion clip captioned 'video courtesy of Joshua Sells' (third-party, used with permission)"
+    },
+    {
+     "start": 38.9,
+     "end": 50.6,
+     "why": "commercial satellite imagery (QuickBird-2 2006 / WorldView-3 2022, Maxar) of Porcelain Basin/Nuphar Lake"
+    },
+    {
+     "start": 169.5,
+     "end": 177.5,
+     "why": "uncredited Steamboat Geyser eruption phone photos (source not identified)"
+    }
+   ],
+   "safe_segments": [
+    [
+     4.4,
+     38.9
+    ],
+    [
+     50.6,
+     169.5
+    ],
+    [
+     177.5,
+     240.0
+    ]
+   ],
+   "safe_note": "Safe = USGS-shot Mike Poland interview, Norris B-roll, USGS maps/plots (seismic/infrasound, GPS, earthquake map, Steamboat temperature)"
   },
   {
    "name": "ch1_usgs_kansas_ash_mar2024",
@@ -1673,72 +1705,6 @@
    [
     "15639",
     "15639.jpg President Clinton, Superintendent Finley - New World Mine buyout; Jim Peaco; 1996 Page: 1 2 Next Page -> Photo Collection Home | Y"
-   ]
-  ],
-  "slidefile:ch1_nps_hist_wildlife_1919_45": [
-   [
-    "03005",
-    ""
-   ],
-   [
-    "03005",
-    "03005.jpg Cougar killed; Photographer unknown; Around 1927"
-   ],
-   [
-    "03006",
-    ""
-   ],
-   [
-    "03006",
-    "03006.jpg Bison feeding line in Lamar Valley; Photographer unknown; 1930"
-   ],
-   [
-    "03008",
-    ""
-   ],
-   [
-    "03008",
-    "03008.jpg Bison in the Mammoth Showpen; Photographer unknown; 1924"
-   ],
-   [
-    "03009",
-    ""
-   ],
-   [
-    "03009",
-    "03009.jpg Elk feeding in Lamar Valley; Photographer unknown; Around 1930"
-   ],
-   [
-    "10508",
-    ""
-   ],
-   [
-    "10508",
-    "10508.jpg Feeding oats to the elk & deer at Mammoth Hot Springs; Haines; No date"
-   ],
-   [
-    "10514",
-    ""
-   ],
-   [
-    "10514",
-    "10514.jpg People (with cars) viewing bison at Mammoth Showpen; Haines; No date"
-   ],
-   [
-    "14915",
-    ""
-   ],
-   [
-    "14915",
-    "14915.jpg Superintendent Toll (on left) with Homer Snow holding pet lion; Photographer unknown; 1930"
-   ],
-   [
-    "16334",
-    ""
-   ],
-   [
-    "16334",
-    "16334.jpg Ranger Ted Ogsten & Chief Ranger Sam Woodring with coyote pelts; YELL 42871; Photographer unknown; 1927 Page: 1 Next Page -> Photo"
    ]
   ]
  }
