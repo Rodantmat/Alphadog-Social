@@ -84,7 +84,7 @@
   {
    "kind": "nps_videos",
    "name": "ch3_nps_nepe",
-   "page": "https://www.nps.gov/nepe/learn/photosmultimedia/videos.htm",
+   "page": "https://www.nps.gov/nepe/learn/photosmultimedia/index.htm",
    "filter": "^(?!.*(ceremon|sacred|commemorat|memorial|prayer|burial|grave)).*",
    "max_n": 6,
    "max_sec": 600,
@@ -93,7 +93,7 @@
   {
    "kind": "nps_videos",
    "name": "ch3_nps_biho",
-   "page": "https://www.nps.gov/biho/learn/photosmultimedia/videos.htm",
+   "page": "https://www.nps.gov/biho/learn/photosmultimedia/index.htm",
    "filter": "^(?!.*(ceremon|sacred|commemorat|memorial|prayer|burial|grave)).*",
    "max_n": 4,
    "max_sec": 600,
@@ -107,6 +107,69 @@
    "max_n": 3,
    "max_sec": 600,
    "license": "Public Domain (NPS-credited, no copyright symbol)"
+  },
+  {
+   "kind": "commons",
+   "name": "ch3_commons_looking_glass_b",
+   "search": "Looking Glass Nez Perce",
+   "filter": "looking glass",
+   "max_n": 2,
+   "shows": "Looking Glass (Nez Perce leader)"
+  },
+  {
+   "kind": "commons",
+   "name": "ch3_commons_yellow_wolf",
+   "search": "Yellow Wolf Nez Perce",
+   "filter": "yellow wolf",
+   "max_n": 1,
+   "shows": "Yellow Wolf (Nez Perce warrior, later narrator of the 1877 war)"
+  },
+  {
+   "kind": "commons",
+   "name": "ch3_commons_ollokot",
+   "search": "Ollokot Nez Perce",
+   "filter": "ollokot|ollicut",
+   "max_n": 1,
+   "shows": "Ollokot, Joseph's brother"
+  },
+  {
+   "kind": "commons",
+   "name": "ch3_commons_white_bird",
+   "search": "White Bird Nez Perce chief",
+   "filter": "white bird",
+   "max_n": 1,
+   "shows": "White Bird (Nez Perce leader)"
+  },
+  {
+   "kind": "commons",
+   "name": "ch3_commons_sturgis",
+   "search": "Samuel D. Sturgis portrait",
+   "filter": "sturgis",
+   "max_n": 1,
+   "shows": "Col. Samuel D. Sturgis portrait"
+  },
+  {
+   "kind": "commons",
+   "name": "ch3_commons_cews_wood",
+   "search": "Charles Erskine Scott Wood",
+   "filter": "wood",
+   "max_n": 1,
+   "shows": "Lt. C.E.S. Wood (recorded Joseph's surrender speech)"
   }
- ]
+ ],
+ "remove": [
+  "img/ch3_nps_people_02979.jpg"
+ ],
+ "overrides": {
+  "img/ch3_loc_joseph_00650888.jpg": {
+   "status": "OK - PD by age (photo published 1877, Chas. W. Phillips, Walla Walla); LoC item shows no rights advisory - confirm on loc.gov before broadcast",
+   "shows": "'The Idaho Indian war' 1877 card photo (Chas. W. Phillips, Walla Walla) - Joseph-era portrait"
+  },
+  "img/ch3_loc_joseph_2002722462.jpg": {
+   "shows": "Joseph (Hinmat\u00f3owyalahtq\u0313it), 1903 portrait by Edward S. Curtis - NOTE taken 26 years after 1877; caption with date"
+  },
+  "img/ch3_commons_chief_joseph_1877.jpg": {
+   "status": "DUPLICATE of ch3_usgs_chief_joseph_1877.jpg (same file); use either"
+  }
+ }
 }

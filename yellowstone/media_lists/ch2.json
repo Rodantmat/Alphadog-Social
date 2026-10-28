@@ -107,9 +107,10 @@
    "kind": "nps_videos",
    "name": "ch2_nps_150yrs",
    "page": "https://www.nps.gov/yell/learn/photosmultimedia/150-years-of-yellowstone-video-series.htm",
-   "max_n": 8,
+   "max_n": 6,
    "max_sec": 600,
-   "license": "Public Domain (NPS-credited, no copyright symbol)"
+   "license": "Public Domain (NPS-credited, no copyright symbol)",
+   "note": "NPS 150-years interview series (2022): modern management topics, not Army-era; kept as optional PD interview material"
   }
  ]
 }

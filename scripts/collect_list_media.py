@@ -28,6 +28,9 @@ seen_urls = set()
 PREV = json.load(open(sys.argv[3])) if len(sys.argv) > 3 and os.path.exists(sys.argv[3]) else {"files": []}
 prev_names = {e["name"] for e in PREV.get("files", [])}
 seen_urls.update(e["src_url"] for e in PREV.get("files", []))
+EXIST_DIR = os.path.dirname(sys.argv[3]) if len(sys.argv) > 3 else ""
+def flush():
+    json.dump({"chapter": LIST.get("chapter"), "files": entries, "not_obtained": fails, "probes": probes, "partial": True}, open(f"{OUT}/index.json", "w"), indent=1)
 def already(it):
     n = it.get("name", "")
     return not it.get("redo") and (n in prev_names or any(x.startswith(n + "_") for x in prev_names))
@@ -83,6 +86,13 @@ def save(url, it, name, kind, extra):
     meta = {"name": name, "src_url": url, "source_page": extra.pop("source_page", it.get("page") or url),
             "shows": extra.pop("shows", None) or it.get("shows", ""), "license": it.get("license", ""), "credit": extra.pop("credit", None) or it.get("credit", ""),
             "status": extra.pop("status", None) or it.get("status", "OK"), **extra}
+    ext0 = ".mp4" if kind == "video" else (".png" if url.lower().split("?")[0].endswith(".png") else ".jpg")
+    rel = f"{'video' if kind == 'video' else 'img'}/{name}{ext0}"
+    if EXIST_DIR and os.path.exists(f"{EXIST_DIR}/{rel}"):   # file already on the footage branch (e.g. earlier run cut off before indexing)
+        pi = probe(f"{EXIST_DIR}/{rel}")
+        meta.update(file=rel, dur=pi.get("dur") if kind == "video" else None, w=pi.get("w"), h=pi.get("h"),
+                    bytes=os.path.getsize(f"{EXIST_DIR}/{rel}"), encode="reused file already on footage branch")
+        entries.append(meta); flush(); print("REUSED", rel); return
     tmp = f"/tmp/dl_{fid(url)}"
     if not curl(url, tmp):
         meta["err"] = "download failed"; fails.append(meta); return
@@ -125,7 +135,7 @@ def save(url, it, name, kind, extra):
         os.remove(tmp)
         if p.returncode or not os.path.exists(dst): meta["err"] = p.stderr[-300:]; fails.append(meta); return
         pi = probe(dst); meta.update(file=f"img/{name}{ext}", w=pi.get("w"), h=pi.get("h"))
-    meta["bytes"] = os.path.getsize(dst); entries.append(meta); print("OK", meta["file"], meta["bytes"])
+    meta["bytes"] = os.path.getsize(dst); entries.append(meta); flush(); print("OK", meta["file"], meta["bytes"])
 
 # ---------------- resolvers ----------------
 def usgs_rights(h):
