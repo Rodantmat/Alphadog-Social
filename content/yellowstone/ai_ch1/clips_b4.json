@@ -1,0 +1,14 @@
+[
+ {
+  "name": "H03v",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys1_v1/H03_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 3,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the splash of spilled coffee falls onto the wooden table and spreads into a puddle that drips over the edge, the tipped tin cup rolls a little, the lantern flame flickers, pine needles drift down. Static camera.",
+  "neg": "people, person, hands, arms, fingers, coffee pot changing, lantern disappearing, objects changing shape, objects morphing, objects disappearing, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ }
+]
