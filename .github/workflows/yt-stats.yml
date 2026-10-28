@@ -1,0 +1,40 @@
+name: yt-stats
+# Read-only: channel subscribers/views, per-video views, and watch time via YouTube Analytics when the token allows it.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.parse, urllib.request, urllib.error, datetime as dt
+          d = urllib.parse.urlencode({"client_id": os.environ["YT_CLIENT_ID"], "client_secret": os.environ["YT_CLIENT_SECRET"],
+                                      "refresh_token": os.environ["YT_REFRESH_TOKEN"], "grant_type": "refresh_token"}).encode()
+          t = json.loads(urllib.request.urlopen(urllib.request.Request("https://oauth2.googleapis.com/token", data=d)).read())
+          print("scopes:", t.get("scope")); H = {"Authorization": "Bearer " + t["access_token"]}
+          def get(u): return json.loads(urllib.request.urlopen(urllib.request.Request(u, headers=H)).read())
+          ch = get("https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics,contentDetails&mine=true")["items"][0]
+          print("CHANNEL", ch["snippet"]["title"], ch["snippet"].get("publishedAt"), json.dumps(ch["statistics"]))
+          up = ch["contentDetails"]["relatedPlaylists"]["uploads"]; ids = []; tok = ""
+          while True:
+              r = get(f"https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&maxResults=50&playlistId={up}" + (f"&pageToken={tok}" if tok else ""))
+              ids += [i["contentDetails"]["videoId"] for i in r["items"]]; tok = r.get("nextPageToken")
+              if not tok: break
+          for i in range(0, len(ids), 50):
+              for v in get("https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,status,contentDetails&id=" + ",".join(ids[i:i+50]))["items"]:
+                  print("VIDEO", v["id"], v["status"]["privacyStatus"], v["snippet"]["publishedAt"][:10], v["contentDetails"]["duration"], json.dumps(v["statistics"]), "|", v["snippet"]["title"][:60])
+          end = dt.date.today().isoformat(); start = (dt.date.today() - dt.timedelta(days=365)).isoformat()
+          try:
+              a = get(f"https://youtubeanalytics.googleapis.com/v2/reports?ids=channel==MINE&startDate={start}&endDate={end}&metrics=views,estimatedMinutesWatched,subscribersGained")
+              print("ANALYTICS_365", json.dumps(a.get("rows")))
+          except urllib.error.HTTPError as e:
+              print("ANALYTICS_UNAVAILABLE", e.code, e.read()[:200])
+          PY
