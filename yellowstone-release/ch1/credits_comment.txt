@@ -1,0 +1,59 @@
+Full credits for "What's Really Under Yellowstone?" (AlphaDog Studio, Yellowstone Part 1 of 3). Thank you to the USGS and the National Park Service for making their work public.
+
+OUR FOOTAGE
+• Filmed by AlphaDog Studio in Yellowstone National Park (and Mesa Falls, Idaho), October 2021. All live-action park footage not listed below is ours.
+
+INTERVIEWS
+• Mike Poland, Scientist-in-Charge, USGS Yellowstone Volcano Observatory, from the two USGS videos marked below. Public domain.
+
+VIDEO: U.S. GEOLOGICAL SURVEY (PUBLIC DOMAIN)
+• "Hydrothermal Explosion in Yellowstone's Biscuit Basin (July 23, 2024)" — USGS / Yellowstone Volcano Observatory (video editing: Liz Westby) (only the USGS/NPS-shot parts are used: Mike Poland interview and the NPS aftermath footage; the third-party plume footage in this video is NOT used) — https://www.usgs.gov/media/videos/hydrothermal-explosion-yellowstones-biscuit-basin-july-23-2024 — Public domain (U.S. Government work)
+• "Is Yellowstone's north caldera rim rising? (Yellowstone Monthly Update - July 2026)" — USGS / Yellowstone Volcano Observatory (video editing: Liz Westby and Erin Lysne) — https://www.usgs.gov/media/videos/yellowstones-north-caldera-rim-rising-yellowstone-monthly-update-july-2026 — Public domain (U.S. Government work)
+• "Black Diamond Pool (Biscuit Basin, Yellowstone National Park) eruption on May 31, 2025" — USGS / Yellowstone Volcano Observatory — https://www.usgs.gov/media/videos/black-diamond-pool-biscuit-basin-yellowstone-national-park-eruption-may-31-2025 — Public domain (U.S. Government work)
+• "Steamboat: Losing steam?" — USGS / Yellowstone Volcano Observatory (video editing: Liz Westby) — https://www.usgs.gov/media/videos/steamboat-losing-steam — Public domain (U.S. Government work)
+• "Top 5 Yellowstone geological stories of 2025 (Yellowstone monthly update - January 2026)" — USGS / Yellowstone Volcano Observatory (Mike Poland interview) — https://www.usgs.gov/media/videos/top-5-yellowstone-geological-stories-2025-yellowstone-monthly-update-january-2026 — Public domain (U.S. Government work)
+
+VIDEO: NATIONAL PARK SERVICE, YELLOWSTONE VIDEO LIBRARY (PUBLIC DOMAIN)
+• "Bison Herd with Calves" — National Park Service (NPS / Neal Herbert) — https://www.nps.gov/media/video/view.htm?id=17620874-155D-451F-67E5DDDFDD1FDC8F — Public domain (U.S. Government work)
+• "Bison along the Lamar River" — National Park Service (NPS / Neal Herbert) — https://www.nps.gov/media/video/view.htm?id=FD0F935E-155D-451F-67A73BDD6C247CCC — Public domain (U.S. Government work)
+• "Castle Geyser (with rainbow)" — National Park Service (NPS / Neal Herbert) — https://www.nps.gov/media/video/view.htm?id=797E8220-155D-451F-678680BB083DE339 — Public domain (U.S. Government work)
+• "Castle Geyser (with Old Faithful)" — National Park Service (NPS / Neal Herbert) — https://www.nps.gov/media/video/view.htm?id=7AD20D8E-155D-451F-6799DC8FF5C93BD3 — Public domain (U.S. Government work)
+• "Grand Prismatic Spring" — National Park Service (NPS / Neal Herbert) — https://www.nps.gov/media/video/view.htm?id=7E5FFF00-155D-451F-676262A83E6E19C7 — Public domain (U.S. Government work)
+
+PHOTOGRAPHS (PUBLIC DOMAIN)
+• "Original Yellowstone Institute cabins as seen from National Park Service corral (November 1983)" — National Park Service, Yellowstone photo collection (photographer unknown) — https://home.nps.gov/features/yell/slidefile/parkstructures/other/buffaloranch/Page.htm — Public domain (U.S. Government work)
+• "Bison feeding line in Lamar Valley (1930)" — National Park Service, Yellowstone photo collection (photographer unknown) — https://home.nps.gov/features/yell/slidefile/history/1919_1945/wildlifemanagement/Page.htm — Public domain (U.S. Government work)
+• "Sapphire Pool, in the Upper Geyser Basin, erupting after the 1959 Hebgen Lake earthquake" — USGS — https://www.usgs.gov/media/images/sapphire-pool-upper-geyser-basin-erupting-after-1959-hebg — Public domain (U.S. Government work)
+• "Mushroom Pool, Lower Geyser Basin, Yellowstone National Park" — USGS (photo: Lauren Harrison, 2018) — https://www.usgs.gov/media/images/mushroom-pool-lower-geyser-basin-yellowstone-national-park — Public domain (U.S. Government work)
+• "Old Faithful Geyser erupting, c.1878" — USGS — https://www.usgs.gov/media/images/old-faithful-geyser-erupting-c1878 — Public domain (U.S. Government work)
+
+MAPS, DIAGRAMS & TITLE CARDS
+• Original graphics by AlphaDog Studio. Base map data: Natural Earth (public domain), https://www.naturalearthdata.com. Terrain shading: USGS 3D Elevation Program (3DEP), public domain, https://www.usgs.gov/3d-elevation-program. Ash footprints, caldera rim and hotspot track are our own approximate drawings.
+• Facts in the graphics: USGS Yellowstone Volcano Observatory (eruption history, supervolcano FAQ, hydrothermal-explosion probabilities by Poland & Hurwitz); Bennington et al., Nature 2025; Duan & Schmandt, Nature 2025; NPS thermophile article; Nobel Prize in Chemistry 1993.
+
+ILLUSTRATED SCENES (AI-ASSISTED)
+• Illustrated animation made for this video with open-weight models (Qwen-Image and Wan 2.2, Apache-2.0): the 2024 Biscuit Basin explosion, the ancient eruptions, the 1959 Madison Canyon landslide and the Thermus aquaticus / PCR story. These are illustrations, not real footage.
+
+NARRATION, MUSIC & SOUND
+• Narration: AI-generated voice (Kokoro TTS, Apache-2.0). Script researched and written by AlphaDog Studio.
+• Music: original. Sound effects: original (synthesized). Natural sound: recorded on location by AlphaDog Studio, October 2021.
+
+KEY SOURCES
+• USGS, Is Yellowstone overdue for an eruption?: https://www.usgs.gov/faqs/yellowstone-overdue-eruption-when-will-yellowstone-erupt
+• USGS, Questions about supervolcanoes: https://www.usgs.gov/volcanoes/yellowstone/questions-about-supervolcanoes
+• USGS, Summary of Yellowstone eruption history: https://www.usgs.gov/volcanoes/yellowstone/science/summary-yellowstone-eruption-history
+• USGS Caldera Chronicles, the July 23, 2024 Biscuit Basin explosion: https://www.usgs.gov/observatories/yvo/news/july-23-2024-hydrothermal-explosion-biscuit-basin
+• USGS, Probability of hydrothermal explosions: https://www.usgs.gov/observatories/yvo/news/probability-hydrothermal-explosions-yellowstone
+• USGS, Hydrothermal explosions (Mary Bay): https://www.usgs.gov/volcanoes/yellowstone/hydrothermal-explosions
+• USGS, Uplift along the north rim of the caldera: https://www.usgs.gov/observatories/yvo/science/uplift-along-north-rim-yellowstone-caldera
+• USGS, Lava Creek eruption as a sequence of pulses: https://www.usgs.gov/observatories/yvo/news/expanded-understanding-lava-creek-tuff-eruption
+• USGS, 60 years since the 1959 M7.3 Hebgen Lake earthquake: https://www.usgs.gov/news/60-years-1959-m73-hebgen-lake-earthquake-its-history-and-effects-yellowstone-region
+• Bennington et al., Nature (2025): https://doi.org/10.1038/s41586-024-08286-z
+• Rice University on Duan & Schmandt, Nature (2025): https://news.rice.edu/news/2025/inside-yellowstones-fiery-heart-rice-researchers-map-volatile-rich-cap-offering-clues
+• SUERC, Huckleberry Ridge as two eruptions: https://www.gla.ac.uk/research/az/suerc/news/headline_263742_en.html
+• NPS, Steamboat Geyser: https://home.nps.gov/yell/learn/nature/steamboat-geyser.htm
+• NPS, Old Faithful: https://www.nps.gov/articles/old-faithful-geyser.htm
+• NPS, Grand Prismatic Spring: https://www.nps.gov/places/000/grand-prismatic-spring.htm
+• NPS, Thermophiles and Taq: https://www.nps.gov/articles/thermophile-yell.htm
+• American Bar Association, Bioprospecting in national parks (2026): https://www.americanbar.org/groups/environment_energy_resources/resources/natural-resources-environment/2026-summer/state-bioprospecting-national-parks
+• NPS, Bison: https://www.nps.gov/yell/learn/management/bison.htm
