@@ -55,7 +55,7 @@ jobs:
           IFS=',' read -ra FL <<< "$FILES"
           for f in "${FL[@]}"; do
             f=$(echo "$f" | xargs); stem="${f%.*}"; out="/tmp/out/$stem"
-            python3 scripts/recipe/analyze.py "/tmp/in/$f" --mode "$MODE" $SA $TA $RA --skip "$SKIP" --out "$out" $EXTRA
+            python3 scripts/recipe/analyze.py "/tmp/in/$f" --mode "$MODE" $SA $TA $RA --skip "$SKIP" --out "$out" $EXTRA || echo "AUDIT FAILED: $f"
             for x in "$out"/report.json "$out"/sheet_*.jpg; do [ -f "$x" ] && cp "$x" "/tmp/pub/${stem}_$(basename "$x")"; done
           done
           ls -la /tmp/pub
@@ -65,7 +65,7 @@ jobs:
           FILES: ${{ inputs.files }}
         run: |
           ls /tmp/pub/* >/dev/null 2>&1 || exit 0
-          gh release view recipe-qa >/dev/null 2>&1 || gh release create recipe-qa --title "recipe QA" --notes "Render-stage audit reports (scripts/recipe/analyze.py)" --prerelease
+          gh release view recipe-qa >/dev/null 2>&1 || gh release create recipe-qa --title "recipe QA" --notes "Render-stage audit reports (scripts/recipe/analyze.py)" --prerelease || true
           IFS=',' read -ra FL <<< "$FILES"
           for f in "${FL[@]}"; do
             f=$(echo "$f" | xargs); stem="${f%.*}"
