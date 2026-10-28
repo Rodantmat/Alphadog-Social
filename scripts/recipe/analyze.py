@@ -9,10 +9,15 @@ Checks the rules with stage=render and check auto/warn on a finished video:
   meaning : P2 frame-vs-narration CLIP similarity (lowest 5 %), A4 AI-artifact CLIP scan
   audio   : U1 loudness/true peak, U2 voice over bed (estimate when no stems), U3 dead air/clipping, U5 Spanish track
   subs    : T1 six languages present, EN drift vs actual speech (faster-whisper word timestamps)
+  owner review Yellowstone Ch1 (EDITING_RULES V15-V22, A6):
+            F1 micro-stutter (repeated frames, cadence), F2 frozen runs, F3 crop/upscale vs source + soft frames, F4 whip pans,
+            F5 first shot, F6 end card (name OCR, logo template, filled next-video slot), F7 no 'CHAPTER ONE' numbering,
+            F8 background speech (silero VAD on --stems, on the mix outside planned voice, on shot ambience files)
 Output: <out>/report.json + <out>/sheet_<rule>_<n>.jpg (flagged frames labeled with rule id + time).
 
 usage: analyze.py VIDEO [--srt-dir DIR --srt-prefix NAME] [--mode auto|long|vertical] [--shots shots.jsonl [--patch p.jsonl]]
                   [--timeline timeline.json] [--es-audio FILE] [--recipe recipe.yaml] [--out DIR] [--skip ocr,clip,whisper,faces]
+                  [--stems DIR] [--voice-mask mask.npy] [--logo logo.png] [--channel-name NAME]
 """
 import argparse, difflib, json, math, os, re, subprocess, sys, time
 import numpy as np, cv2
@@ -34,6 +39,11 @@ ap.add_argument("--skip", default="")
 ap.add_argument("--ocr-every", type=float, default=0.0, help="seconds between OCR samples (default 3 long / 0.5 vertical)")
 ap.add_argument("--max-dur", type=float, default=0.0, help="debug: analyze only the first N seconds")
 ap.add_argument("--whisper-model", default="base")
+ap.add_argument("--stems", default="", help="dir with stem_amb.wav / stem_sfx.wav of this cut (F8: any speech in them fails)")
+ap.add_argument("--voice-mask", default="", help="100 Hz .npy mask, 1 where narration/interview voice is planned (F8)")
+ap.add_argument("--logo", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../assets/brand/alphadog_studio_logo_400.png"), help="owner logo reference for F6")
+ap.add_argument("--channel-name", default="AlphaDog Studio")
+ap.add_argument("--dump-features", action="store_true", help="debug: save per-frame features to <out>/features.npz")
 A = ap.parse_args()
 SKIP = set(x for x in A.skip.split(",") if x)
 os.makedirs(A.out, exist_ok=True)
@@ -59,7 +69,8 @@ try:
     for r in yaml.safe_load(open(A.recipe))["rules"]: RULES[r["id"]] = r
 except Exception as e:
     log("recipe not loaded:", e)
-MINE = ["P2", "A4", "O2", "Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "R7", "U1", "U2", "U3", "U5", "T1", "T2", "V1", "V2", "V3"]
+MINE = ["P2", "A4", "O2", "Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "R7", "U1", "U2", "U3", "U5", "T1", "T2", "V1", "V2", "V3",
+        "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8"]
 REP = {rid: {"rule": RULES.get(rid, {}).get("rule", ""), "check": RULES.get(rid, {}).get("check", "auto"), "status": "pass", "summary": "", "findings": []} for rid in MINE}
 def find(rid, t, msg, sev="fail", t_end=None, box=None, **kw):
     f = {"t": round(float(t), 2), "tc": tc(t), "msg": msg, "sev": sev}
@@ -124,12 +135,30 @@ SFPS = 2.0 if VERT else 1.0
 JDIR = os.path.join(A.out, "_frames"); os.makedirs(JDIR, exist_ok=True)
 for f_ in os.listdir(JDIR): os.remove(os.path.join(JDIR, f_))
 # one decode: every frame at low res to the pipe + full-res samples (SFPS) as JPEG for pass B
+# + a native-resolution centre crop (1/4 x 1/4 of the frame, gray) on a second pipe: new grain/detail between real frames
+#   separates repeated frames (F1 stutter, F2 freeze) from slow real motion far better than the 320x180 picture
+import threading
+CRW, CRH = (W0 // 4) // 2 * 2, (H0 // 4) // 2 * 2
+crop_r, crop_w = os.pipe()
 cmd = ["ffmpeg", "-v", "error"] + (["-t", str(DUR)] if A.max_dur else []) + ["-i", A.video, "-an", "-sn"] + \
-      ["-filter_complex", f"[0:v]split=2[a][b];[a]scale={LW}:{LH}:flags=area[lo];[b]fps={SFPS}[hi]",
-       "-map", "[lo]", "-pix_fmt", "bgr24", "-f", "rawvideo", "pipe:1", "-map", "[hi]", "-q:v", "2", os.path.join(JDIR, "%06d.jpg")]
-p = subprocess.Popen(cmd, stdout=subprocess.PIPE, bufsize=10 ** 7)
+      ["-filter_complex", f"[0:v]split=3[a][b][c];[a]scale={LW}:{LH}:flags=area[lo];[b]fps={SFPS}[hi];"
+                          f"[c]crop={CRW}:{CRH}:{(W0 - CRW) // 2}:{(H0 - CRH) // 2},format=gray[cr]",
+       "-map", "[lo]", "-pix_fmt", "bgr24", "-f", "rawvideo", "pipe:1", "-map", "[hi]", "-q:v", "2", os.path.join(JDIR, "%06d.jpg"),
+       "-map", "[cr]", "-pix_fmt", "gray", "-f", "rawvideo", f"pipe:{crop_w}"]
+p = subprocess.Popen(cmd, stdout=subprocess.PIPE, bufsize=10 ** 7, pass_fds=(crop_w,))
+os.close(crop_w)
+DC = []                                                     # mean |diff| of consecutive native-res centre crops
+def _crop_reader():
+    fb = CRW * CRH; pv = None
+    with os.fdopen(crop_r, "rb", buffering=4 * fb) as f:
+        while True:
+            b_ = f.read(fb)
+            if len(b_) < fb: break
+            c_ = np.frombuffer(b_, np.uint8).astype(np.int16)
+            DC.append(float(np.abs(c_ - pv).mean()) if pv is not None else 0.0); pv = c_
+_crt = threading.Thread(target=_crop_reader, daemon=True); _crt.start()
 FB = LW * LH * 3
-Ym, Ys, Y99, CORR, HOV, DX, DY, RESP, DIFF, P50, P90, D16, HS = ([] for _ in range(13))
+Ym, Ys, Y99, CORR, HOV, DX, DY, RESP, DIFF, P50, P90, D16, HS, LAPL = ([] for _ in range(14))
 CW, CH = (LW // 5, LH // 5)
 corner_acc = []; acc = None; acc_n = 0
 prev = None; last_nd = None
@@ -140,6 +169,7 @@ while True:
     im = np.frombuffer(buf, np.uint8).reshape(LH, LW, 3)
     g = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
     gf = g.astype(np.float32)
+    LAPL.append(float(cv2.Laplacian(g, cv2.CV_16S).var()))
     m, sd, p99, p50, p90 = dark_stats(g); Ym.append(m); Ys.append(sd); Y99.append(p99); P50.append(p50); P90.append(p90)
     sm = cv2.resize(gf, (64, 36) if not VERT else (36, 64), interpolation=cv2.INTER_AREA)
     gn = (sm - sm.mean()) / (sm.std() + 1e-3)
@@ -151,7 +181,7 @@ while True:
     if prev is not None:
         ref = last_nd if (dark or prev[3]) and last_nd is not None else prev
         CORR.append(float((gn * ref[0]).mean())); HOV.append(float(np.minimum(h, ref[1]).sum()))
-        (dx, dy), resp = cv2.phaseCorrelate(prev[2], gf, han); DX.append(dx); DY.append(dy); RESP.append(resp)
+        (dx, dy), resp = cv2.phaseCorrelate(prev[2].copy(), gf.copy(), han); DX.append(dx); DY.append(dy); RESP.append(resp)   # copies: OpenCV 5 windows the inputs in place
         DIFF.append(float(np.abs(sm - prev[4]).mean()))
     else:
         CORR.append(1.0); HOV.append(1.0); DX.append(0.0); DY.append(0.0); RESP.append(1.0); DIFF.append(0.0)
@@ -166,12 +196,14 @@ while True:
         sc = np.sqrt(np.maximum(acc[3] / acc_n - mc * mc, 0))
         corner_acc.append((mu.astype(np.float32), sdv.astype(np.float32), float(np.median(sc))))
         acc = None; acc_n = 0
-p.wait()
-N = len(Ym); Ym, Ys, Y99, CORR, HOV, DX, DY, RESP, DIFF, P50, P90 = map(np.array, (Ym, Ys, Y99, CORR, HOV, DX, DY, RESP, DIFF, P50, P90))
+p.wait(); _crt.join(timeout=120)
+N = len(Ym); Ym, Ys, Y99, CORR, HOV, DX, DY, RESP, DIFF, P50, P90, LAPL = map(np.array, (Ym, Ys, Y99, CORR, HOV, DX, DY, RESP, DIFF, P50, P90, LAPL))
+DC = np.array((DC + [0.0] * N)[:N], np.float32)
 D16 = np.array(D16, np.float32); HS = np.array(HS, np.float32)
 DARK = (P50 < 18) & (P90 < 45)
 BLACK = (P50 < 10) & (P90 < 18)
 log("pass A", N, "frames")
+if A.dump_features: np.savez_compressed(os.path.join(A.out, "features.npz"), DC=DC, DIFF=DIFF, DX=DX, DY=DY, RESP=RESP, LAPL=LAPL, DARK=DARK, P50=P50)
 
 # ---- cut detection (fade-to-black aware)
 cuts = []
@@ -301,6 +333,139 @@ for m_ in q5: find("Q5", 0, m_)
 for a, b_, z in stutter: find("Q5", a, f"judder: {z:.0%} repeated frames in a moving shot", sev="warn", t_end=b_)
 summ("Q5", f"{FPS:.3f} fps CFR, {N} frames; {len(stutter)} shots with repeated-frame cadence")
 
+# ------------------------------------------------------------------ F1 stutter, F2 freeze, F3 crop/soft, F4 whip pan (owner review Yellowstone Ch1)
+STILL_EXT = (".jpg", ".jpeg", ".png", ".webp", ".tif", ".tiff", ".bmp", ".gif")
+def is_moving_plan(s):
+    """planned moving-picture shot: video/multi/insert footage; not maps, cards, graphics, photos or still sources"""
+    if s is None: return True
+    if s.get("type") not in ("video", "multi") or s.get("_kind") in ("card", "graphic", "photo", "map"): return False
+    if s.get("src_still") or str(s.get("src", "")).lower().endswith(STILL_EXT): return False
+    return True
+MUNITS = [(a, b_, s) for a, b_, s in ([(s["_a"], s["_b"], s) for s in SHOTS] if SHOTS else [(a, b_, None) for a, b_ in SEG]) if is_moving_plan(s)]
+def unit_name(s, a):
+    if s is None: return f"shot at {tc(a)}"
+    nm = os.path.basename(str(s.get("src", ""))) or s.get("type", "?")
+    return f"shot {s['_i']} ({'ai' if s.get('ai') else s.get('_kind', s.get('type'))} {nm})"
+def interior(a, b_, s):
+    """frame indices of a shot's interior: 3 frames off each cut, fades skipped, dark frames dropped (DC[k] = frame k vs k-1)"""
+    k0 = int(round(a * FPS)) + 3 + int(round(float((s or {}).get("fin") or 0) * FPS))
+    k1 = int(round(b_ * FPS)) - 2 - int(round(float((s or {}).get("fout") or 0) * FPS))
+    k0, k1 = max(1, k0), min(N, k1)
+    if k1 - k0 < 1: return np.array([], int)
+    idx = np.arange(k0, k1); return idx[~DARK[idx]]
+def rolling(x, half, fn):
+    if len(x) == 0: return x
+    xp = np.pad(x, half, mode="edge"); w = np.lib.stride_tricks.sliding_window_view(xp, 2 * half + 1)
+    return fn(w, axis=1)
+CAD = {5: "1 in 5 = 24->30 fps pulldown", 6: "1 in 6 = 25->30 fps", 4: "1 in 4 (~22-24 fps source)", 3: "1 in 3 (20 fps source)", 2: "1 in 2 (15 fps source)"}
+def cadence(pos):
+    if len(pos) < 4: return "too few repeats to read a cadence"
+    best = (0.0, None)
+    for per in (5, 6, 4, 3, 2):
+        conc = np.bincount(pos % per, minlength=per).max() / len(pos)
+        if conc >= (0.6 if per >= 4 else 0.75) and conc - 1 / per > best[0]: best = (conc - 1 / per, per)
+    return f"regular cadence {CAD[best[1]]}" if best[1] else "irregular (variable-frame-rate source / dropped frames)"
+F1_LIM = 0.03; F1_REF = 0.6; F1_REL = 0.4
+f1_rows = []; f1_static = 0
+f2_n = 0; f4_rows = []; soft_n = 0
+SPX = (1080.0 / min(LW, LH)) * FPS                       # low-res px/frame -> px/s at 1080p
+SPD = np.hypot(DX, DY) * SPX
+SPD_OK = np.where((RESP > 0.3) & ~DARK, SPD, np.nan)
+for a, b_, s in MUNITS:
+    idx = interior(a, b_, s)
+    if len(idx) < 24: continue
+    nm = unit_name(s, a); sev_ = "fail" if SHOTS else "warn"
+    d = DC[idx]
+    # F1: a repeated frame shows (almost) no new detail while the frames on BOTH sides of it do (a dip, then catch-up):
+    #     d[k] < 40 % of min(max d[k-3..k-1], max d[k+1..k+3]). Smooth slow-downs, static-but-live scenes and motion onsets have
+    #     no such two-sided dip, so they do not count; 24->30 pulldown, VFR duplicates and zoompan rounding holds do.
+    nb_l = np.array([d[max(0, k - 3):k].max() if k > 0 else 0.0 for k in range(len(d))])
+    nb_r = np.array([d[k + 1:k + 4].max() if k + 1 < len(d) else 0.0 for k in range(len(d))])
+    nb = np.minimum(nb_l, nb_r); valid = nb >= F1_REF; valid[:3] = False; valid[-3:] = False
+    if valid.mean() < 0.3: f1_static += 1
+    else:
+        rp = valid & (d < F1_REL * nb)
+        ratio = float(rp.sum() / max(1, valid.sum()))
+        cad = cadence(idx[rp]) if rp.sum() else ""
+        f1_rows.append({"t": round(a, 2), "shot": s["_i"] if s else None, "repeat_ratio": round(ratio, 3), "judged": round(float(valid.mean()), 2)})
+        if ratio > F1_LIM and rp.sum() >= 3:
+            fps_ = f", source {s['src_fps']:g} fps{' VFR' if s.get('src_vfr') else ''}" if s and s.get("src_fps") else ""
+            first = idx[rp][0] / FPS
+            find("F1", first, f"micro-stutter: {ratio:.0%} repeated frames in {nm}; {cad}{fps_}", sev=sev_, t_end=b_, ratio=round(ratio, 3),
+                 shot=s["_i"] if s else None, cadence=cad)
+    # F2: the picture stops abruptly and stays stopped >= 0.3 s (held last frame / stalled source): a run of frames with
+    #     < 25 % of the motion right before it, entered within 2 frames, and quieter than the shot's own quiet real frames
+    k = 0
+    while k < len(d):
+        if k < 6: k += 1; continue
+        M = float(np.median(d[max(0, k - 12):k]))
+        if M < F1_REF or d[k] >= 0.25 * M or d[k - 1] < 0.5 * M: k += 1; continue
+        e_ = k
+        while e_ < len(d) and d[e_] < 0.25 * M and idx[e_] == idx[e_ - 1] + 1: e_ += 1
+        n_ = e_ - k
+        if n_ / FPS >= 0.3:
+            outside = np.concatenate([d[:k], d[e_:]])
+            quiet = float(np.percentile(outside, 25)) if len(outside) > 10 else M
+            lvl = float(np.median(d[k:e_]))
+            if lvl < 0.5 * quiet:
+                ta, tb = (idx[k] - 1) / FPS, idx[e_ - 1] / FPS
+                tail = idx[e_ - 1] >= idx[-1] - 1
+                find("F2", ta, f"picture frozen {n_ / FPS:.2f}s inside moving {nm}" + (" - frozen tail: the shot outlasts its footage" if tail else ""),
+                     sev=sev_, t_end=tb, dur=round(n_ / FPS, 2)); f2_n += 1
+        k = max(e_, k + 1)
+    # F4: camera speed (global phase-correlation shift) above ~270 px/s at 1080p
+    sp = rolling(SPD_OK[idx], 3, np.nanmedian) if np.isfinite(SPD_OK[idx]).sum() > 10 else np.full(len(idx), np.nan)
+    fast = np.nan_to_num(sp, nan=0.0) > 270
+    runs = []; k = 0
+    while k < len(fast):
+        if not fast[k]: k += 1; continue
+        e_ = k
+        while e_ < len(fast) and fast[e_]: e_ += 1
+        if (e_ - k) / FPS >= 0.3: runs.append((k, e_))
+        k = e_
+    if runs:
+        k, e_ = max(runs, key=lambda r: np.nanmax(sp[r[0]:r[1]]))
+        pk = float(np.nanmax(sp[k:e_])); tot = sum(r[1] - r[0] for r in runs) / FPS
+        pre = sp[max(0, runs[0][0] - 15):runs[0][0]]; pre = float(np.nanmedian(pre)) if len(pre) and np.isfinite(pre).any() else None
+        sudden = pre is not None and pre < 110 and runs[0][0] > 15
+        f4_rows.append((a, pk))
+        find("F4", idx[runs[0][0]] / FPS, f"fast camera move: up to {pk:.0f} px/s (limit 270) for {tot:.1f}s in {nm}" + (f" - sudden (from {pre:.0f} px/s)" if sudden else ""),
+             sev=sev_, t_end=idx[runs[-1][1] - 1] / FPS, peak_px_s=round(pk), fast_s=round(tot, 2), t_peak=round(idx[k + int(np.nanargmax(sp[k:e_]))] / FPS, 2))
+    # F3 (warn): frames that go soft against their neighbours (focus hunting, motion blur, bad frames)
+    lp = LAPL[idx]; lref = rolling(lp, 15, np.median)
+    soft = (lp < 0.5 * lref) & (lref > 30)
+    k = 0; worst = None
+    while k < len(soft):
+        if not soft[k]: k += 1; continue
+        e_ = k
+        while e_ < len(soft) and soft[e_]: e_ += 1
+        if e_ - k >= 3:
+            r_ = float(np.median(lp[k:e_] / lref[k:e_]))
+            if worst is None or r_ < worst[0]: worst = (r_, k, e_)
+        k = e_
+    if worst:
+        soft_n += 1
+        find("F3", idx[worst[1]] / FPS, f"soft frames: sharpness drops to {worst[0]:.0%} of the neighbouring frames for {(worst[2] - worst[1]) / FPS:.2f}s in {nm}",
+             sev="warn", t_end=idx[worst[2] - 1] / FPS, kind="soft")
+# F2 (warn): an animated graphic/map that opens on a held frame right after moving footage reads as a freeze at the cut
+if SHOTS:
+    for i, s in enumerate(SHOTS):
+        if i == 0 or s.get("_kind") != "graphic" or not is_moving_plan(SHOTS[i - 1]): continue
+        k0 = int(round(s["_a"] * FPS)) + 1; k1 = min(N, int(round(s["_b"] * FPS)) - 2)
+        if k1 - k0 < FPS * 2: continue
+        st = (DIFF[k0:k1] < 0.05) & (DC[k0:k1] < 0.3)
+        n_ = 0
+        while n_ < len(st) and st[n_]: n_ += 1
+        if n_ / FPS >= 0.8 and (~st[n_:]).sum() > FPS * 0.5:
+            find("F2", s["_a"], f"graphic opens on a held frame for {n_ / FPS:.2f}s right after moving footage (reads as a freeze at the cut): {os.path.basename(str(s.get('src', '')))}",
+                 sev="warn", t_end=s["_a"] + n_ / FPS, dur=round(n_ / FPS, 2), kind="held_open")
+REP["F1"]["shots"] = f1_rows
+summ("F1", f"{len(f1_rows)} moving shots measured ({f1_static} too static to judge); repeated frame = new detail (native-res centre crop) < {F1_REL:.0%} "
+           f"of the frames on both sides; fail > {F1_LIM:.0%}; worst {max((r['repeat_ratio'] for r in f1_rows), default=0):.0%}")
+summ("F2", f"abrupt frozen runs >= 0.3 s inside moving shots: {f2_n} (+ animated graphics opening on a held frame >= 0.8 s, warn)")
+summ("F4", f"global motion (phase correlation, 0.23 s median) > 270 px/s at 1080p for >= 0.3 s: {len(f4_rows)} of {len(MUNITS)} moving shots")
+REP["F3"]["soft_shots"] = soft_n
+
 # ------------------------------------------------------------------ Q4 black
 def near_chapter(t, w=2.0): return any(abs(t - c) < w for c in CHAP)
 k = 0
@@ -426,7 +591,7 @@ for jf in JPGS:
     up = cv2.resize(small, (g.shape[1], g.shape[0]), interpolation=cv2.INTER_CUBIC)
     lf = float(cv2.Laplacian(g, cv2.CV_32F).var()); lu = float(cv2.Laplacian(up, cv2.CV_32F).var())
     S = {"t": t, "lap": lap, "up": lu / (lf + 1e-3), "lapfull": lf, "mean": float(g.mean()), "std": float(g.std()),
-         "hi": float((g > 250).mean()), "lo": float((g < 6).mean()), "hash": dhash(g), "bars": bars(g), "bfill": blurfill(g)}
+         "hi": float((g > 250).mean()), "lo": float((g < 6).mean()), "hash": dhash(g), "bars": bars(g), "bfill": blurfill(g), "jpg": os.path.join(JDIR, jf)}
     if ocr is not None and ((si - 1) % max(1, int(round(OCR_EVERY * SFPS))) == 0):
         osc = 1280 / max(W0, H0) if not VERT else 1.0
         oim = cv2.resize(im, (int(W0 * osc), int(H0 * osc)), interpolation=cv2.INTER_AREA) if osc != 1.0 else im
@@ -779,6 +944,250 @@ if not VERT and face is not None:
             fa = (fb[2] - fb[0]) * (fb[3] - fb[1]) / (W0 * H0)
             if fb[4] >= 0.85 and fa > 0.04: find("O2", S["t"], f"close-up face ({fa:.0%} of frame) in source footage - stranger?", sev="warn", box=fb[:4])
 
+# ------------------------------------------------------------------ F3 crop/upscale, F5 first shot, F6 end card, F7 card text, F8 background speech
+def ocr_img(im):
+    if ocr is None: return []
+    osc = 1280 / max(im.shape[1], im.shape[0])
+    oim = cv2.resize(im, (int(im.shape[1] * osc), int(im.shape[0] * osc)), interpolation=cv2.INTER_AREA) if osc < 1 else im
+    osc = min(osc, 1.0)
+    try: res, _ = ocr(oim)
+    except Exception: res = None
+    return [{"box": [float(min(q[0] for q in r_[0])) / osc, float(min(q[1] for q in r_[0])) / osc, float(max(q[0] for q in r_[0])) / osc, float(max(q[1] for q in r_[0])) / osc],
+             "text": r_[1], "conf": float(r_[2])} for r_ in (res or [])]
+def sample_ocr(S):
+    if "ocr" not in S and S.get("jpg") and os.path.exists(S["jpg"]):
+        im = cv2.imread(S["jpg"]); S["ocr"] = ocr_img(im) if im is not None else []
+    return S.get("ocr", [])
+# ---- F3 crop / upscale from the shot list's source geometry
+_geo = {}
+def src_dims(x):
+    if x.get("src_w") and x.get("src_h"): return int(x["src_w"]), int(x["src_h"])
+    pth = str(x.get("src", ""))
+    if not pth or not os.path.exists(pth): return None
+    if pth not in _geo:
+        try:
+            q = json.loads(subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height:stream_side_data=rotation:stream_tags=rotate",
+                                           "-of", "json", pth], capture_output=True, text=True).stdout)["streams"][0]
+            w_, h_ = int(q["width"]), int(q["height"]); rot = int(float((q.get("tags") or {}).get("rotate", 0) or 0))
+            for sd in q.get("side_data_list", []) or []:
+                if "rotation" in sd: rot = int(float(sd["rotation"]))
+            _geo[pth] = (h_, w_) if abs(rot) % 180 == 90 else (w_, h_)
+        except Exception: _geo[pth] = None
+    return _geo[pth]
+F3_LIM = 1.35; f3_known = 0; f3_unknown = 0; F3_SHOT = {}
+for s in SHOTS:
+    t_ = s.get("type")
+    if s["_a"] >= DUR: continue
+    if t_ not in ("video", "photo", "multi") or s.get("_kind") in ("card", "graphic", "map"): continue
+    parts = []
+    if t_ == "multi":
+        n_ = max(1, len(s.get("srcs", []))); pw = (W0 - 14 * (n_ + 1)) // n_; ph = H0 - 28
+        for x in s.get("srcs", []):
+            dm = src_dims(x)
+            if dm: cov = max(pw / dm[0], ph / dm[1]); con = min(pw / dm[0], ph / dm[1]); parts.append((dm, cov / con, cov))
+    else:
+        dm = src_dims(s)
+        if dm:
+            cov = max(W0 / dm[0], H0 / dm[1]); con = min(W0 / dm[0], H0 / dm[1])
+            if t_ == "video": parts.append((dm, cov / con, cov * (1 + float(s.get("drift", 0.035) or 0))))
+            elif s.get("bg", "cover") == "cover": parts.append((dm, cov / con, cov * max(float(s.get("z0", 1.0)), float(s.get("z1", 1.12)))))
+            else: parts.append((dm, 1.0, con * max(float(s.get("z0", 1.0)), float(s.get("z1", 1.12)))))
+    if not parts: f3_unknown += 1; continue
+    f3_known += 1
+    dm, crop, up = max(parts, key=lambda p_: (p_[1], p_[2]))
+    F3_SHOT[s["_i"]] = (crop, up)
+    tm = (s["_a"] + s["_b"]) / 2; nm = unit_name(s, s["_a"])
+    portrait_in_land = dm[1] > 1.05 * dm[0] and W0 > H0 and t_ != "multi"
+    msg = None; sev_ = "fail"
+    if portrait_in_land and crop > F3_LIM: msg = f"vertical {dm[0]}x{dm[1]} clip cropped to 16:9: only {1 / crop:.0%} of its frame shown, upscaled {up:.2f}x ({nm})"
+    elif crop > F3_LIM: msg = f"over-cropped: only {1 / crop:.0%} of the {dm[0]}x{dm[1]} source shown, upscaled {up:.2f}x ({nm})"
+    elif up > F3_LIM and crop > 1.1: msg = f"crop upscaled {up:.2f}x (limit {F3_LIM}) from {dm[0]}x{dm[1]} ({nm})"
+    elif up > F3_LIM: msg = f"low-res {dm[0]}x{dm[1]} source upscaled {up:.2f}x (full frame, not a crop) ({nm})"; sev_ = "warn"
+    if msg: find("F3", tm, msg, sev=sev_, t_end=s["_b"], upscale=round(up, 2), crop=round(crop, 2), src=f"{dm[0]}x{dm[1]}", shot=s["_i"])
+summ("F3", f"crop zoom (source frame cut away) / upscale vs {W0}x{H0} for {f3_known} planned shots with known source size ({f3_unknown} unknown); "
+           f"fail: crop > {F3_LIM} or cropped+upscaled > {F3_LIM}; warn: full-frame low-res upscale, soft frames ({REP['F3'].get('soft_shots', 0)} shots)")
+# ---- F5 first shot
+if SEG:
+    a0, b0 = SEG[0]; s0 = SHOTS[0] if SHOTS else None
+    if s0 is not None: b0 = max(b0, s0["_b"]) if abs(s0["_b"] - b0) < 0.3 else b0
+    why = []
+    if b0 - a0 < 4.0: why.append(f"only {b0 - a0:.1f}s on screen (>= 4 s)")
+    ss0 = [x for x in samples_in(a0, b0) if x["mean"] > 20]
+    lap_all = [float(np.median([x["lap"] for x in samples_in(a, b_)])) for a, b_, s in MUNITS if samples_in(a, b_)]
+    if ss0 and lap_all:
+        l0 = float(np.median([x["lap"] for x in ss0])); lm_ = float(np.median(lap_all))
+        if l0 < 0.6 * lm_: why.append(f"soft: sharpness {l0:.0f} vs episode median {lm_:.0f}")
+    if s0 is not None and s0["_i"] in F3_SHOT and (F3_SHOT[s0["_i"]][0] > F3_LIM or F3_SHOT[s0["_i"]][1] > F3_LIM): why.append(f"cropped/upscaled {F3_SHOT[s0['_i']][1]:.2f}x")
+    for rid_, what in (("F4", "fast camera move"), ("F1", "stutter"), ("F2", "freeze"), ("Q2", "shaky")):
+        if any(f["t"] < b0 - 0.05 and f["sev"] in ("fail", "warn") for f in REP[rid_]["findings"]): why.append(what)
+    if s0 is not None and not is_moving_plan(s0): why.append(f"opens on a {s0.get('_kind', s0.get('type'))}, not footage")
+    if why: find("F5", min(a0 + 1.0, (a0 + b0) / 2), "first shot weak: " + "; ".join(why), sev="warn", t_end=b0)
+    summ("F5", f"first shot {a0:.2f}-{b0:.2f}s ({b0 - a0:.1f}s): needs >= 4 s, sharp (>= 60 % of episode median), calm (no F4/F1/F2/Q2), not over-cropped")
+else: skip("F5", "no shots detected")
+# ---- F6 end card
+CH_N = norm(A.channel_name.replace(" ", ""))
+ws = max(0.0, DUR - 20.0)
+if SHOTS and "end" in os.path.basename(str(SHOTS[-1].get("src", ""))).lower(): ws = max(ws, SHOTS[-1]["_a"])
+es = [S for S in SAMPLES if ws <= S["t"] <= DUR - 0.3 and S["mean"] > 15 and S.get("jpg")]
+es = [es[int(round(k))] for k in np.linspace(0, len(es) - 1, min(6, len(es)))] if es else []
+LOGO = None
+if A.logo and os.path.exists(A.logo):
+    LOGO = cv2.imread(A.logo)
+def logo_score(im):
+    g_ = cv2.resize(im, (960, int(960 * H0 / W0)), interpolation=cv2.INTER_AREA); best = (-1.0, None)
+    for sz in np.geomspace(50, min(g_.shape[:2]) * 0.8, 24):
+        sz = int(sz); t_ = cv2.resize(LOGO, (sz, sz), interpolation=cv2.INTER_AREA); c_ = int(sz * 0.18); t_ = t_[c_:sz - c_, c_:sz - c_]
+        if t_.shape[0] >= g_.shape[0] or t_.shape[1] >= g_.shape[1]: continue
+        r_ = cv2.matchTemplate(g_, t_, cv2.TM_CCOEFF_NORMED); _, mx, _, loc = cv2.minMaxLoc(r_)
+        if mx > best[0]: k_ = W0 / 960; best = (float(mx), [loc[0] * k_ - c_ * k_, loc[1] * k_ - c_ * k_, (loc[0] + sz - c_) * k_, (loc[1] + sz - c_) * k_])
+    return best
+def next_box(im, oc):
+    sc_ = 960 / W0; g_ = cv2.cvtColor(cv2.resize(im, (960, int(H0 * sc_)), interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2GRAY)
+    ed = cv2.dilate(cv2.Canny(g_, 30, 90), np.ones((3, 3), np.uint8))
+    cs_, _ = cv2.findContours(ed, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE); best = None
+    for c_ in cs_:
+        x, y, w_, h_ = cv2.boundingRect(c_); fa = w_ * h_ / (g_.shape[0] * g_.shape[1])
+        if not (0.05 <= fa <= 0.5 and 1.3 <= w_ / max(1, h_) <= 2.2): continue
+        ap_ = cv2.approxPolyDP(c_, 0.02 * cv2.arcLength(c_, True), True)
+        if len(ap_) != 4 or cv2.contourArea(c_) < 0.8 * w_ * h_: continue
+        if best is None or w_ * h_ > best[2] * best[3]: best = (x, y, w_, h_)
+    if best is None: return None
+    x, y, w_, h_ = best; ix, iy = int(w_ * 0.05) + 3, int(h_ * 0.05) + 3
+    inner = g_[y + iy:y + h_ - iy, x + ix:x + w_ - ix].astype(np.float32); m_ = np.ones(inner.shape, bool); txt = []
+    for o in oc:                                              # text inside the slot does not count as an image
+        bx = [v * sc_ for v in o["box"]]
+        if bx[0] >= x and bx[2] <= x + w_ and bx[1] >= y and bx[3] <= y + h_:
+            txt.append(o["text"]); m_[max(0, int(bx[1]) - y - iy - 4):max(0, int(bx[3]) - y - iy + 4), max(0, int(bx[0]) - x - ix - 4):max(0, int(bx[2]) - x - ix + 4)] = False
+    if m_.sum() < 100: return None
+    eds = cv2.Canny(inner.astype(np.uint8), 30, 90) > 0
+    return {"box": [x / sc_, y / sc_, (x + w_) / sc_, (y + h_) / sc_], "std": float(inner[m_].std()), "edges": float(eds[m_].mean()), "text": txt}
+if not es: skip("F6", "no end-card samples")
+else:
+    name_hits = 0; lg = []; boxes = []
+    for S in es:
+        im = cv2.imread(S["jpg"])
+        if im is None: continue
+        oc = sample_ocr(S)
+        if any(CH_N in norm(o["text"].replace(" ", "")) or (len(norm(o["text"])) >= 8 and difflib.SequenceMatcher(None, norm(o["text"].replace(" ", "")), CH_N).ratio() > 0.85) for o in oc): name_hits += 1
+        if LOGO is not None: lg.append((logo_score(im), S["t"]))
+        nb = next_box(im, oc)
+        if nb: nb["t"] = S["t"]; boxes.append(nb)
+    REP["F6"]["measured"] = {"window_s": [round(ws, 1), round(DUR, 1)], "samples": len(es), "name_hits": name_hits,
+                             "logo_best": round(max((x[0][0] for x in lg), default=-1), 3) if lg else None,
+                             "next_slot": [{"t": round(b["t"], 1), "std": round(b["std"], 1), "edges": round(b["edges"], 3), "text": b["text"]} for b in boxes]}
+    if ocr is not None and name_hits == 0: find("F6", es[len(es) // 2]["t"], f"channel name '{A.channel_name}' not found on the end card (OCR)")
+    if lg:
+        (sc_, bx_), tl_ = max(lg, key=lambda x: x[0][0])
+        if sc_ < 0.55: find("F6", tl_, f"owner logo not on the end card (best template match {sc_:.2f}; want >= 0.75)")
+        elif sc_ < 0.75: find("F6", tl_, f"logo differs from the owner logo (template match {sc_:.2f}; want >= 0.75)", sev="warn", box=bx_)
+    if not boxes: find("F6", es[len(es) // 2]["t"], "no next-video frame found on the end card", sev="warn")
+    else:
+        empty = [b for b in boxes if b["std"] < 12 and b["edges"] < 0.02]
+        if len(empty) * 2 >= len(boxes):
+            b = empty[0]; ph_ = [x for x in b["text"] if "next" in x.lower()]
+            find("F6", b["t"], f"next-video slot is empty: flat box (luma std {b['std']:.1f}, edges {b['edges']:.1%})" + (f" with placeholder text '{ph_[0]}'" if ph_ else ""), box=b["box"])
+    summ("F6", f"end card {ws:.1f}-{DUR:.1f}s, {len(es)} samples: name '{A.channel_name}' read in {name_hits}; logo match "
+               f"{REP['F6']['measured']['logo_best']}; next slot found in {len(boxes)} (empty = luma std < 12 and edge density < 2 %)")
+# ---- F7 chapter cards: name only, no 'CHAPTER ONE' numbering
+NUMW = r"(?:ONE|TWO|THREE|FOUR|FIVE|SIX|SEVEN|EIGHT|NINE|TEN|ELEVEN|TWELVE|THIRTEEN|FOURTEEN|FIFTEEN|TWENTY|FIRST|SECOND|THIRD|FOURTH|FIFTH|SIXTH|SEVENTH|EIGHTH|NINTH|TENTH|LAST|\d{1,2}|X{0,2}(?:IX|IV|V?I{1,3}|V))"
+CHAP_RX = re.compile(r"CHAPTER\s*[-:.#]?\s*" + NUMW + r"\b")
+cards = [(s["_a"], s["_b"]) for s in SHOTS if s.get("_kind") == "card" or s.get("type") == "card"] + \
+        [(float(x["start"]), float(x["start"]) + float(x["dur"])) for x in TL if x.get("kind") in ("card", "title")]
+cards = sorted(set((round(a, 1), round(b_, 1)) for a, b_ in cards))
+f7_seen = 0; f7_hit = set()
+def f7_check(S, where):
+    oc = [o for o in sample_ocr(S) if o["conf"] > 0.5]
+    joined = " ".join(o["text"] for o in sorted(oc, key=lambda o: (round(o["box"][1] / 40), o["box"][0]))).upper()
+    m_ = CHAP_RX.search(joined)
+    if m_:
+        bx = next((o["box"] for o in oc if "CHAPTER" in o["text"].upper()), None)
+        key_ = round(S["t"] / 3)
+        if key_ not in f7_hit:
+            f7_hit.add(key_); find("F7", S["t"], f"chapter numbering on {where}: '{m_.group(0)}' (chapter cards show the name only)", box=bx, text=m_.group(0))
+if ocr is None: skip("F7", "OCR unavailable")
+else:
+    for a, b_ in cards:
+        for S in samples_in(a, b_, 0.3): f7_seen += 1; f7_check(S, f"card {tc(a)}")
+    for S in SAMPLES:                                         # any other on-screen text sampled for OCR
+        if "ocr" in S and not any(a - 0.3 <= S["t"] <= b_ + 0.3 for a, b_ in cards): f7_check(S, "screen text")
+    summ("F7", f"{len(cards)} card/title intervals, {f7_seen} card frames OCR'd + all OCR samples; pattern CHAPTER + number word/digit/roman")
+# ---- F8 people talking in the background
+VADM = None
+try:
+    from faster_whisper.vad import get_vad_model
+    VADM = get_vad_model()
+except Exception as e: log("silero VAD unavailable:", e)
+def load16(pth, ss=0.0, dur=None):
+    cmd_ = ["ffmpeg", "-v", "error", "-ss", f"{ss:.3f}"] + (["-t", f"{dur:.3f}"] if dur else []) + ["-i", pth, "-vn", "-ac", "1", "-ar", "16000", "-af", "highpass=f=100", "-f", "s16le", "-"]
+    return np.frombuffer(subprocess.run(cmd_, capture_output=True).stdout, np.int16).astype(np.float32) / 32768
+def speech_prob(x):
+    """per 32 ms speech probability; quiet beds are levelled per 1 s (<= +40 dB) so distant voices are not missed"""
+    if len(x) < 1600: return np.zeros(0), 0.032
+    y = x.copy()
+    for i in range(0, len(x), 16000):
+        r_ = float(np.sqrt((x[i:i + 16000] ** 2).mean()))
+        if r_ > 3e-4: y[i:i + 16000] *= min(100.0, 0.1 / r_)
+    y = np.clip(y, -1, 1)
+    if VADM is not None:
+        return np.asarray(VADM(np.pad(y, (0, 512 - len(y) % 512)))).flatten(), 0.032
+    import webrtcvad
+    v_ = webrtcvad.Vad(3); pcm = (y * 32767).astype(np.int16); n_ = len(pcm) // 480
+    return np.array([1.0 if v_.is_speech(pcm[i * 480:(i + 1) * 480].tobytes(), 16000) else 0.0 for i in range(n_)]), 0.03
+def speech_runs(pp, hop, allow=None, min_len=0.5):
+    if len(pp) == 0: return []
+    if allow is not None: pp = np.where(allow[:len(pp)], pp, 0.0)
+    th_m, th_p = (0.2, 0.45) if VADM is not None else (0.85, 1.0)   # webrtcvad fallback fires on wind/water: strict
+    w_ = np.convolve(pp, np.ones(31) / 31, "same"); on = w_ > th_m; out = []; k = 0
+    while k < len(on):
+        if not on[k]: k += 1; continue
+        e_ = k
+        while e_ < len(on) and on[e_]: e_ += 1
+        if (e_ - k) * hop >= min_len and pp[k:e_].max() >= th_p: out.append((k * hop, e_ * hop, float(pp[k:e_].max())))
+        k = e_
+    return out
+f8 = []
+vad_name = "silero" if VADM is not None else "webrtcvad (fallback)"
+sev8 = "fail" if VADM is not None else "warn"
+try:
+    if A.stems:
+        for stn in ("stem_amb.wav", "stem_sfx.wav"):
+            pth = os.path.join(A.stems, stn)
+            if not os.path.exists(pth): continue
+            pp, hop = speech_prob(load16(pth)); rr = speech_runs(pp, hop); f8.append(f"{stn}: {len(rr)} speech runs")
+            for a, b_, pk in rr:
+                s = shot_at((a + b_) / 2)
+                find("F8", a, f"people talking in {stn} {a:.1f}-{b_:.1f}s (VAD peak {pk:.2f})" + (f" - natural sound of {unit_name(s, a)}" if s else ""), sev=sev8, t_end=b_, source=stn)
+    if AS and os.path.exists(AUD):
+        x16 = load16(AUD); pp, hop = speech_prob(x16)
+        exp_ = np.zeros(len(pp), bool); how = ""
+        if A.voice_mask and os.path.exists(A.voice_mask):
+            vm = np.load(A.voice_mask).astype(bool); ti = np.clip((np.arange(len(pp)) * hop * 100).astype(int), 0, len(vm) - 1); exp_ = vm[ti]; how = "voice mask"
+        elif WORDS:
+            for a, b_, w in WORDS: exp_[max(0, int((a - 0.6) / hop)):int((b_ + 0.6) / hop)] = True
+            how = "whisper words +-0.6 s"
+        else:
+            for x in TL:
+                if x.get("kind") == "seg": exp_[max(0, int(float(x["start"]) / hop)):int((float(x["start"]) + float(x["dur"])) / hop)] = True
+            how = "timeline narration spans (coarse)"
+        for a, b_ in INSERTS: exp_[max(0, int(a / hop)):int(b_ / hop) + 1] = True
+        dil = int(0.3 / hop)
+        exp_ = np.convolve(exp_.astype(float), np.ones(2 * dil + 1), "same") > 0
+        rr = speech_runs(pp, hop, allow=~exp_); f8.append(f"final mix outside planned voice ({how}, {float((~exp_).mean()) * len(pp) * hop:.0f}s): {len(rr)} speech runs")
+        for a, b_, pk in rr: find("F8", a, f"speech in the final mix where no narration/interview is planned {a:.1f}-{b_:.1f}s (VAD peak {pk:.2f})", sev=sev8, t_end=b_, source="mix")
+    nb_ = 0
+    for s in SHOTS:                                          # natural sound files of own clips, when present (builder machine)
+        amb = s.get("amb")
+        if not amb or not os.path.exists(str(amb)) or s["_a"] >= DUR: continue
+        nb_ += 1; d_ = (s["_b"] - s["_a"]) * float(s.get("speed", 1) or 1)
+        pp, hop = speech_prob(load16(amb, 0.0, d_ + 0.1))
+        for a, b_, pk in speech_runs(pp, hop, min_len=0.4):
+            find("F8", s["_a"] + a, f"people talking in the natural sound of {unit_name(s, s['_a'])} (+{a:.1f}-{b_:.1f}s, VAD peak {pk:.2f}, gain {s.get('amb_g', 0)} dB)",
+                 sev=sev8, t_end=s["_a"] + b_, source=os.path.basename(str(amb)))
+    if nb_: f8.append(f"{nb_} shot ambience files")
+    summ("F8", f"{vad_name} VAD (levelled, 1 s mean > 0.2, peak > 0.45, >= 0.5 s): " + "; ".join(f8) + ("" if A.stems else "; no --stems: speech under narration is not detectable in the mix"))
+except Exception as e:
+    skip("F8", f"failed: {e}")
+
 # ------------------------------------------------------------------ CLIP: P2, A4, O2 objects
 if clip is not None and any("emb" in S for S in SAMPLES):
     torch, model, prep, tok = clip
@@ -849,7 +1258,7 @@ for rid, r in REP.items():
     last = {}; out = []
     for f in sorted(r["findings"], key=lambda f: f["t"]):
         k_ = (re.sub(r"[\d.,%]+", "#", f["msg"]), f["sev"])
-        if rid not in ("R7", "Q1", "P2") and k_ in last and f["t"] - last[k_][1] <= 1.6:
+        if rid not in ("R7", "Q1", "P2", "F1", "F3", "F4", "F5", "F6", "F7") and k_ in last and f["t"] - last[k_][1] <= 1.6:
             kept = last[k_][0]; kept["t_end"] = max(kept.get("t_end", kept["t"]), f.get("t_end", f["t"])); kept["n"] = kept.get("n", 1) + 1
             last[k_] = (kept, f["t"]); continue
         last[k_] = (f, f["t"]); out.append(f)
@@ -892,6 +1301,14 @@ for rid, r in REP.items():
             tiles.append(tile(f, rid, (f["t"] + f.get("t_end", f["t"])) / 2, f"{f.get('dur', '')}s"))
         elif rid == "Q3":
             tiles += [tile(f, rid, f["t"] - 0.4, "moving"), tile(f, rid, f["t"] + 0.2, "frozen")]
+        elif rid == "F2" and f.get("kind") != "held_open":
+            tiles += [tile(f, rid, f["t"] - 0.4, "moving"), tile(f, rid, f["t"] + 0.2, "frozen")]
+        elif rid == "F4":
+            tiles.append(tile(f, rid, f.get("t_peak", f["t"]), f"{f.get('peak_px_s', '')} px/s"))
+        elif rid == "F1":
+            tiles.append(tile(f, rid, f["t"], f"{f.get('ratio', 0):.0%} repeated"))
+        elif rid == "F3" and f.get("kind") != "soft":
+            tiles.append(tile(f, rid, f["t"], f"{f.get('upscale', '')}x"))
         elif rid == "Q9":
             tiles += [tile(f, rid, f["other"] + 0.5, "first"), tile(f, rid, f["t"] + 0.5, "again")]
         elif rid in ("U1", "U2", "U3", "U5", "T1", "Q5") and f["t"] == 0: continue

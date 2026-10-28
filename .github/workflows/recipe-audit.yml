@@ -1,5 +1,7 @@
 name: recipe-audit
 # Render-stage auditor (content/recipe/recipe.yaml, stage=render rules) for a finished video stored as a workflow artifact.
+# F1-F8 (owner review Yellowstone Ch1): stem_amb.wav / stem_sfx.wav / voice_mask.npy found next to the video are used automatically.
+# Shot lists: convert builder shots.json with scripts/recipe/shots_jsonl.py (adds src_w/src_h/src_fps so F1/F3 work without the sources).
 # Writes <stem>_report.json + <stem>_sheet_<rule>_<n>.jpg to the prerelease 'recipe-qa' (old assets of the same stem are replaced).
 on:
   workflow_dispatch:
@@ -29,7 +31,8 @@ jobs:
           sudo apt-get -o DPkg::Lock::Timeout=300 update -qq && sudo apt-get -o DPkg::Lock::Timeout=300 install -y -qq --no-install-recommends ffmpeg fonts-dejavu-core >/dev/null
           python3 -m venv /tmp/venv && . /tmp/venv/bin/activate
           pip install -q --index-url https://download.pytorch.org/whl/cpu torch torchvision
-          pip install -q numpy opencv-python-headless rapidocr_onnxruntime faster-whisper open_clip_torch pyyaml soundfile pillow
+          pip install -q numpy opencv-python-headless rapidocr_onnxruntime faster-whisper open_clip_torch pyyaml soundfile pillow webrtcvad-wheels
+          python3 -c "from faster_whisper.vad import get_vad_model; get_vad_model(); import webrtcvad; print('VAD ok (silero + webrtcvad)')"
           curl -sSfL -o /tmp/yunet.onnx https://github.com/opencv/opencv_zoo/raw/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx || echo "no yunet (haar fallback)"
           ls -la /tmp/yunet.onnx || true; nproc; free -g | head -2
       - uses: actions/download-artifact@v4
@@ -62,11 +65,14 @@ jobs:
           elif [ -n "$SHOTS" ]; then SA="--shots $SHOTS"; fi
           TA=""; [ -n "$TL" ] && TA="--timeline $TL"
           RA=""; [ -n "$SRT" ] && RA="--srt-dir /tmp/in --srt-prefix $SRT"
+          XA=""                                              # F8: stems / voice mask shipped next to the video (e.g. footage:<folder>)
+          [ -f /tmp/in/stem_amb.wav ] || [ -f /tmp/in/stem_sfx.wav ] && XA="$XA --stems /tmp/in"
+          [ -f /tmp/in/voice_mask.npy ] && XA="$XA --voice-mask /tmp/in/voice_mask.npy"
           mkdir -p /tmp/pub
           IFS=',' read -ra FL <<< "$FILES"
           for f in "${FL[@]}"; do
             f=$(echo "$f" | xargs); stem="${f%.*}"; out="/tmp/out/$stem"
-            python3 scripts/recipe/analyze.py "/tmp/in/$f" --mode "$MODE" $SA $TA $RA --skip "$SKIP" --out "$out" $EXTRA || echo "AUDIT FAILED: $f"
+            python3 scripts/recipe/analyze.py "/tmp/in/$f" --mode "$MODE" $SA $TA $RA --skip "$SKIP" --out "$out" $XA $EXTRA || echo "AUDIT FAILED: $f"
             for x in "$out"/report.json "$out"/sheet_*.jpg; do [ -f "$x" ] && cp "$x" "/tmp/pub/${stem}_$(basename "$x")"; done
           done
           ls -la /tmp/pub

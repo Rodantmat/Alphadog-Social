@@ -3,16 +3,16 @@ import base64, html, io, json, math, os
 import numpy as np
 
 DIMS = {
-    "structure": ["S9", "S8", "Q4", "E6", "V4", "V6"],
+    "structure": ["S9", "S8", "Q4", "E6", "V4", "V6", "F6"],
     "story_script": ["S7", "S8", "S10", "T4"],
     "imagery_relevance": ["P2", "P6", "P7", "P8", "A4"],
     "sequence_pacing": ["R7", "Q1", "Q9", "E1", "E2", "E3", "E4", "E5", "E6"],
-    "framing": ["F1", "F2", "F3", "F4", "F5", "Q8", "V5"],
-    "stabilization": ["Q2", "Q3", "Q5", "ST1", "ST2", "ST3", "ST4", "ST5", "ST6"],
+    "framing": ["F3", "F4", "F5", "Q8", "V5"],
+    "stabilization": ["F1", "F2", "Q2", "Q3", "Q5", "ST1", "ST2", "ST3", "ST4", "ST5", "ST6"],
     "technical_quality": ["Q7", "Q10", "Q11", "Q12", "Q13", "Q14", "Q15", "Q16", "Q17"],
-    "audio": ["U1", "U2", "U3", "U5", "U6", "U7", "U8", "U9", "U10", "U11", "U12"],
+    "audio": ["F8", "U1", "U2", "U3", "U5", "U6", "U7", "U8", "U9", "U10", "U11", "U12"],
     "sync": ["T1", "Y1", "Y2", "V2"],
-    "text_subtitles": ["T1", "T2", "T3", "V2"],
+    "text_subtitles": ["T1", "T2", "T3", "V2", "F7"],
     "platform_safety": ["O2", "Q6", "V1", "V3", "V4", "V6"],
 }
 DEFAULT_FLOORS = {k: 70 for k in DIMS}
