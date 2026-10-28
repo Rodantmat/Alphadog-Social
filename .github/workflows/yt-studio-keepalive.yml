@@ -1,0 +1,31 @@
+name: yt-studio-keepalive
+# Keeps the YouTube Studio web session fresh: a read-only visit to Studio twice a week, then the refreshed cookies are
+# saved encrypted (content/private/yt_studio_session.enc). If the session died or Google asks to verify, the run fails
+# (no retries) -> owner re-exports YT_STUDIO_SESSION / YT_GOOGLE_SESSION with Cookie-Editor.
+on:
+  schedule:
+    - cron: "23 18 * * 2,5"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: { group: yt-studio-session, cancel-in-progress: false }
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q playwright cryptography && python3 -m playwright install --with-deps chromium >/dev/null
+      - env:
+          YT_STUDIO_SESSION: ${{ secrets.YT_STUDIO_SESSION }}
+          YT_GOOGLE_SESSION: ${{ secrets.YT_GOOGLE_SESSION }}
+          QA_DIR: /tmp/ytqa
+        run: xvfb-run -a python3 scripts/yt_studio_session.py keepalive
+      - name: Save refreshed session
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add content/private/yt_studio_session.enc && git commit -qm "yt-studio: session refreshed" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with: { name: keepalive-qa, path: /tmp/ytqa, retention-days: 7, if-no-files-found: ignore }

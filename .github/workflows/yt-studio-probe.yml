@@ -1,0 +1,42 @@
+name: yt-studio-probe
+# Read-only: does the saved YouTube Studio session work from a runner, and what does a video's Languages page look like?
+# Screenshots (avatars/emails blurred) + redacted text go to the artifact and the public release "studio-qa".
+on:
+  workflow_dispatch:
+    inputs:
+      video_id: { description: "Video ID", default: "LfoM0KAi8Yo" }
+      menu: { description: "1 = also open (and Escape) the Add language menu", default: "1" }
+permissions:
+  contents: write
+concurrency: { group: yt-studio-session, cancel-in-progress: false }
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q playwright cryptography && python3 -m playwright install --with-deps chromium >/dev/null
+      - env:
+          YT_STUDIO_SESSION: ${{ secrets.YT_STUDIO_SESSION }}
+          YT_GOOGLE_SESSION: ${{ secrets.YT_GOOGLE_SESSION }}
+          VIDEO_ID: ${{ inputs.video_id }}
+          PROBE_MENU: ${{ inputs.menu }}
+          QA_DIR: /tmp/ytqa
+        run: xvfb-run -a python3 scripts/yt_studio_probe.py
+      - name: Save refreshed session
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add content/private/yt_studio_session.enc && git commit -qm "yt-studio: session refreshed (probe)" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with: { name: studio-qa-${{ github.run_id }}, path: /tmp/ytqa, retention-days: 14, if-no-files-found: ignore }
+      - if: always()
+        name: Publish QA to release studio-qa
+        run: |
+          [ -d /tmp/ytqa ] || exit 0
+          gh release view studio-qa >/dev/null 2>&1 || gh release create studio-qa --title "YouTube Studio QA" --notes "Automated Studio screenshots (avatars/emails blurred) and redacted text dumps." --prerelease
+          cd /tmp/ytqa && for f in *; do cp "$f" "probe_${{ github.run_id }}_$f"; done
+          gh release upload studio-qa probe_${{ github.run_id }}_* --clobber
