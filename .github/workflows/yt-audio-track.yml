@@ -86,5 +86,5 @@ jobs:
         name: Publish QA to release studio-qa
         run: |
           [ -d /tmp/ytqa ] || exit 0
-          mkdir -p /tmp/rel && for f in /tmp/ytqa/*; do cp "$f" "/tmp/rel/audio_${{ github.run_id }}_$(basename "$f")"; done; cd /tmp/rel
+          mkdir -p /tmp/rel && find /tmp/ytqa -type f | while read f; do cp "$f" "/tmp/rel/audio_${{ github.run_id }}_$(echo "${f#/tmp/ytqa/}" | tr / _)"; done; cd /tmp/rel
           gh release upload studio-qa -R "$GITHUB_REPOSITORY" audio_${{ github.run_id }}_* --clobber
