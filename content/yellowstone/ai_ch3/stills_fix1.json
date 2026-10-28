@@ -1,0 +1,71 @@
+[
+ {
+  "id": "C01b",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. extreme wide high establishing shot, the man very small in the frame. Pelican Valley, Yellowstone, March 1894: a wide remote mountain valley buried in deep snow, rolling white hills, scattered dark lodgepole pines and spruce half buried in drifts, a few thin wisps of steam rising from thermal vents in the snow, low grey overcast sky, cold diffuse light, light snow falling, a hard cold wind blowing powder across the drifts. The vast empty white valley fills the frame; in the far middle distance one tiny figure, an Army scout of the 1890s in a fur cap, a heavy belted grey wool mackinaw coat, dark wool trousers and leather mittens, a rifle slung across his back, gliding on very long narrow wooden skis of the 1890s with a single long wooden pole held in both hands, crosses it from left to right, leaving a thin double line of ski tracks behind him; wind blowing snow across the drifts. Immense cold emptiness, the man a small dark speck.",
+  "neg": "close-up, medium shot, faces, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, bodies, corpses, blood, gore, injured people, wounds, animals, two people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ },
+ {
+  "id": "C07b",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide side view, the figure small in the frame. Pelican Valley, Yellowstone, March 1894: a wide remote mountain valley buried in deep snow, rolling white hills, scattered dark lodgepole pines and spruce half buried in drifts, a few thin wisps of steam rising from thermal vents in the snow, low grey overcast sky, cold diffuse light, light snow falling, a hard cold wind blowing powder across the drifts. In a snowy clearing among pines, seen from the side and far away, a bearded poacher in a ragged dark brown wool coat and a fur cap stands beside a large dead bison lying on its side in the snow, seen as a dark shaggy brown mound partly dusted with snow, no blood with both empty hands raised high above his head in surrender; a hunting knife lies on the clean snow; no rifle near him. His face is turned away toward the right edge of the frame where the scout would be. Clean white snow.",
+  "neg": "blood, red, red snow, bodies, corpses, blood, gore, injured people, wounds, detailed face, face toward camera, rifle, gun, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ },
+ {
+  "id": "R01b",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. very wide shot, figures small in the frame. Lower Geyser Basin, Yellowstone, at dawn on a cool August morning in 1877: wide flat pale sinter ground with steaming hot pools, thick clouds of white steam drifting low over the basin, dark lodgepole pine forest behind, pale pink-gold dawn light glowing through the steam. Thick glowing white steam fills the middle of the frame; out of it a line of six riders on horseback slowly emerges as dark silhouettes, only half visible in the mist, coming toward the viewer at a walk, broad-brimmed felt hats and wool blankets, long braids; small figures, no faces visible, mysterious and calm.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, people walking in the foreground, close-up, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "R04b",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot, pure black silhouette against strong backlight. a slope of tall dark lodgepole pines and fallen logs at the base of a mountain, Yellowstone, late summer 1877, low sun shining through the trunks from behind. On the slope between the dark trunks, the solid black silhouette of an unarmed man in a coat stumbles and falls backward into the grass, arms flung out, empty hands, his hat flying off his head; the low sun blazing behind the trees. Only a silhouette, no detail, no weapon in his hands, no blood.",
+  "neg": "gun, pistol, revolver, rifle, weapon in hand, smoke, blood, red, bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, detailed face, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ },
+ {
+  "id": "X01b",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. very wide shot. a wide shallow ford of the Yellowstone River, Wyoming, late afternoon, August 1877, warm low golden sunlight, long shadows, a pale blue sky with a few clouds, dark forested hills, the water glittering in the low sun. Hundreds of Nez Perce people and a great herd of horses cross the wide shallow river together in a long curving procession from bank to bank: riders on spotted Appaloosa, paint and bay horses, families, horses dragging travois - two long thin lodgepoles tied to the horse's saddle in a V, their far ends dragging on the ground behind it, a net platform of rawhide lashed between the poles carrying bundles - a travois, with no wheels; small figures, epic scale, water splashing and glittering.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, wheels, cart, wagon, wheeled vehicle, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "X02b",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium-wide shot from the side. a wide shallow ford of the Yellowstone River, Wyoming, late afternoon, August 1877, warm low golden sunlight, long shadows, a pale blue sky with a few clouds, dark forested hills, the water glittering in the low sun. A Nez Perce woman in a long dress and shawl wades knee-deep, leading a spotted horse that drags a travois - two long thin lodgepoles tied to the horse's saddle in a V, their far ends dragging on the ground behind it, a net platform of rawhide lashed between the poles carrying bundles - a travois, with no wheels - through the water; an elder wrapped in a blanket rides another horse behind; a small child rides on a horse in front of its mother. Faces in shadow, seen from the side.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, wheels, cart, wagon, wheeled vehicle, wooden box, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ }
+]

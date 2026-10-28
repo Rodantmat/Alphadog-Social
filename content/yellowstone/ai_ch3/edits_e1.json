@@ -1,0 +1,69 @@
+[
+ {
+  "id": "C04e",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys2_v1a/C04_5.jpg",
+  "seeds": [
+   5
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "expect_person": 1,
+  "prompt": "Remove all the red blood from the snow and from the knife and the bison: the snow around the dead bison is clean white snow and the knife blade is plain grey steel. Keep everything else exactly the same: the composition, the people, their poses and clothes, the landscape, the light and the same 2D hand-painted cel-shaded illustration style.",
+  "neg": "blood, red stains, style change, photo, 3d render, blurry, extra people, text"
+ },
+ {
+  "id": "C06e",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys2_v1a/C06_23.jpg",
+  "seeds": [
+   5
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "Remove all the red blood from the snow around the dead bison in the distance: the snow there is clean white snow. Keep everything else exactly the same: the composition, the people, their poses and clothes, the landscape, the light and the same 2D hand-painted cel-shaded illustration style.",
+  "neg": "blood, red stains, style change, photo, 3d render, blurry, extra people, text"
+ },
+ {
+  "id": "S03e",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys2_v1b/S03_23.jpg",
+  "seeds": [
+   5
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "Remove the painted yellow line from the dirt road at the bottom of the picture so the road is plain unmarked dusty dirt, as an old 1908 forest road. Keep everything else exactly the same: the composition, the people, their poses and clothes, the landscape, the light and the same 2D hand-painted cel-shaded illustration style.",
+  "neg": "road markings, painted lines, asphalt, style change, photo, blurry, text"
+ },
+ {
+  "id": "R05e",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys3_v1a/R05_23.jpg",
+  "seeds": [
+   5
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "Remove the red stains from the fallen log and the grass: the log is plain grey-brown weathered wood and the grass is clean. Keep everything else exactly the same: the composition, the people, their poses and clothes, the landscape, the light and the same 2D hand-painted cel-shaded illustration style.",
+  "neg": "blood, red stains, style change, photo, 3d render, blurry, extra people, text"
+ },
+ {
+  "id": "R06e",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys3_v1a/R06_5.jpg",
+  "seeds": [
+   5
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "Remove any red stains from the man's coat, the log and the moss: plain dark wool, weathered wood and green moss. Keep everything else exactly the same: the composition, the people, their poses and clothes, the landscape, the light and the same 2D hand-painted cel-shaded illustration style.",
+  "neg": "blood, red stains, style change, photo, 3d render, blurry, extra people, text"
+ },
+ {
+  "id": "R11e",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys3_v1c/R11_5.jpg",
+  "seeds": [
+   5
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "Remove the red stain from the back of the hand: the hand is clean, only a little dirt. Keep everything else exactly the same: the composition, the people, their poses and clothes, the landscape, the light and the same 2D hand-painted cel-shaded illustration style.",
+  "neg": "blood, red stains, style change, photo, 3d render, blurry, extra people, text, extra fingers"
+ }
+]
