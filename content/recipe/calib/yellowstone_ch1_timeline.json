@@ -1,0 +1,524 @@
+[
+ {
+  "kind": "seg",
+  "id": "s001",
+  "chapter": "cold_open",
+  "start": 0.6,
+  "dur": 14.287,
+  "text": "July twenty-third, twenty twenty-four. Biscuit Basin, two miles from Old Faithful. A little before ten in the morning, people are walking the boardwalk past a hot pool called Black Diamond.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s002",
+  "chapter": "cold_open",
+  "start": 14.887,
+  "dur": 2.938,
+  "text": "Then the ground lets go.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s003",
+  "chapter": "cold_open",
+  "start": 17.825,
+  "dur": 11.941,
+  "text": "A column of steam, mud and rock blasts about six hundred feet into the air. Boulders the size of armchairs land on the boardwalk. Tourists run.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s004",
+  "chapter": "cold_open",
+  "start": 29.766,
+  "dur": 17.359,
+  "text": "Nobody was hurt. But here's the part that should make you sit up. Yellowstone is one of the most closely watched places on Earth, with seismometers, GPS stations and satellites all pointed at it. And none of those instruments saw it coming.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s005",
+  "chapter": "cold_open",
+  "start": 47.125,
+  "dur": 11.386,
+  "text": "Every year, millions of people come here expecting the \"supervolcano\" they've seen in documentaries. A countdown clock. An eruption that's \"overdue.\"",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s006",
+  "chapter": "cold_open",
+  "start": 58.511,
+  "dur": 9.381,
+  "text": "That story is mostly wrong. The truth about what's under Yellowstone is stranger, and in some ways more surprising.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s007",
+  "chapter": "cold_open",
+  "start": 67.892,
+  "dur": 16.165,
+  "text": "When we came here in October of twenty twenty-one, we filmed almost everything you'll see in this series. And standing on those boardwalks, with the ground hissing under our feet, we wanted to know one thing: what is actually down there?",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s008",
+  "chapter": "cold_open",
+  "start": 84.057,
+  "dur": 2.938,
+  "text": "This is Yellowstone.",
+  "cues": []
+ },
+ {
+  "kind": "title",
+  "start": 86.995,
+  "dur": 4.5
+ },
+ {
+  "kind": "card",
+  "id": "h01",
+  "chapter": "chapter_1",
+  "heading": "Three Eruptions That Changed a Continent",
+  "start": 91.495,
+  "dur": 4.0
+ },
+ {
+  "kind": "seg",
+  "id": "s009",
+  "chapter": "chapter_1",
+  "start": 95.495,
+  "dur": 28.239,
+  "text": "About two point one million years ago, the land where Yellowstone sits tore open. The Huckleberry Ridge eruption threw out roughly two thousand four hundred cubic kilometers of rock and ash. That's enough to bury the whole state of Rhode Island nearly half a mile deep. Its ash has been found as far away as sea-floor cores off California, part of a single ash layer traced across about three thousand kilometers.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s010",
+  "chapter": "chapter_1",
+  "start": 123.734,
+  "dur": 13.349,
+  "text": "Scientists now think even that may have been two separate eruptions, about six thousand years apart. Either way, it's one of the largest volcanic events known anywhere on Earth.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s011",
+  "chapter": "chapter_1",
+  "start": 137.083,
+  "dur": 20.602,
+  "text": "The second came about one point three million years ago, smaller but still enormous. Its ash rock has a name you can visit. This is Mesa Falls, in Idaho, just outside the park. The river here pours over layers left by that very eruption, the Mesa Falls Tuff.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s012",
+  "chapter": "chapter_1",
+  "start": 157.685,
+  "dur": 28.111,
+  "text": "The third is the one that made the park we know. About six hundred thirty-one thousand years ago, the Lava Creek eruption emptied the magma beneath Yellowstone so fast that the ground collapsed into a crater about eighty-five kilometers long. Geologists call it a caldera. New research suggests it wasn't one blast either, but a series of pulses, separated by gaps that could have been days, or years.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s013",
+  "chapter": "chapter_1",
+  "start": 185.796,
+  "dur": 19.706,
+  "text": "Much of what you drive through today sits inside that crater. It's so big that most visitors never realize they're standing in it. The yellow walls of the Grand Canyon of the Yellowstone are rock from later lava flows, softened and painted by hot water over thousands of years.",
+  "cues": []
+ },
+ {
+  "kind": "card",
+  "id": "h02",
+  "chapter": "chapter_2",
+  "heading": "The Hotspot That Moved",
+  "start": 205.502,
+  "dur": 4.0
+ },
+ {
+  "kind": "seg",
+  "id": "s014",
+  "chapter": "chapter_2",
+  "start": 209.502,
+  "dur": 5.711,
+  "text": "But here's a twist most people miss. The volcano didn't start here.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s015",
+  "chapter": "chapter_2",
+  "start": 215.213,
+  "dur": 19.578,
+  "text": "About sixteen and a half million years ago, the heat source under Yellowstone was beneath what's now northern Nevada, near the Oregon border. The heat stayed put. The continent moved, sliding southwest at about an inch a year, roughly as fast as your fingernails grow.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s016",
+  "chapter": "chapter_2",
+  "start": 234.791,
+  "dur": 16.975,
+  "text": "Again and again, as the land passed over it, new calderas punched through. The result is a five-hundred-mile trail of old volcanoes across southern Idaho. You can drive it today: it's the flat, wide Snake River Plain.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s017",
+  "chapter": "chapter_2",
+  "start": 251.767,
+  "dur": 9.466,
+  "text": "When we drove in from Idaho Falls, we were crossing that trail, one dead caldera after another, without knowing it.",
+  "cues": []
+ },
+ {
+  "kind": "card",
+  "id": "h03",
+  "chapter": "chapter_3",
+  "heading": "What's Actually Down There",
+  "start": 261.233,
+  "dur": 4.0
+ },
+ {
+  "kind": "seg",
+  "id": "s018",
+  "chapter": "chapter_3",
+  "start": 265.233,
+  "dur": 5.583,
+  "text": "So what's under Yellowstone right now? Not a giant lake of lava.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s019",
+  "chapter": "chapter_3",
+  "start": 270.816,
+  "dur": 6.778,
+  "text": "In twenty twenty-five, two studies in the journal Nature gave the clearest picture yet.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s020",
+  "chapter": "chapter_3",
+  "start": 277.594,
+  "dur": 21.029,
+  "text": "The first measured the electrical signals of the rock at more than a hundred sites. It found that the magma bodies under the caldera are only about nine to fifteen percent melted. The rest is solid crystal, like a sponge with a little liquid in its holes. That's far too little liquid to erupt.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s021",
+  "chapter": "chapter_3",
+  "start": 298.623,
+  "dur": 26.533,
+  "text": "The second study did something wonderful. To see the top of the magma, researchers drove a fifty-three-thousand-pound truck across the park that shakes the ground on purpose. More than six hundred seismometers listened to the echoes. They found a lid of magma and gas bubbles about three point eight kilometers down, venting slowly through cracks. One of the scientists called it \"steady breathing.\"",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s022",
+  "chapter": "chapter_3",
+  "start": 325.155,
+  "dur": 25.295,
+  "text": "And you can see that breathing. The ground of Yellowstone rises and falls. Near Norris, the land bulged about twelve centimeters between nineteen ninety-six and two thousand four, then sank again. In July twenty twenty-five, it started rising once more. The USGS says that doesn't mean an eruption is more likely. It's what a living volcano does.",
+  "cues": []
+ },
+ {
+  "kind": "card",
+  "id": "h04",
+  "chapter": "chapter_4",
+  "heading": "\"Overdue\" Is a Myth",
+  "start": 350.451,
+  "dur": 4.0
+ },
+ {
+  "kind": "seg",
+  "id": "s023",
+  "chapter": "chapter_4",
+  "start": 354.451,
+  "dur": 3.279,
+  "text": "So, is Yellowstone overdue?",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s024",
+  "chapter": "chapter_4",
+  "start": 357.73,
+  "dur": 11.642,
+  "text": "The idea goes like this: the big eruptions came about seven hundred thousand years apart, and it's been more than six hundred thousand years, so we're due.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s025",
+  "chapter": "chapter_4",
+  "start": 369.372,
+  "dur": 17.615,
+  "text": "The US Geological Survey says plainly: \"Yellowstone is not overdue.\" That average is built on just two gaps between three eruptions. In the USGS's word, that math is \"meaningless.\" Volcanoes don't run on schedules.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s026",
+  "chapter": "chapter_4",
+  "start": 386.987,
+  "dur": 20.645,
+  "text": "Their estimate of the odds of another super-eruption in any given year is about one in seven hundred thirty thousand. That's roughly the same as a kilometer-wide asteroid hitting Earth. And USGS scientists say they're \"not convinced\" there will ever be another eruption that big.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s027",
+  "chapter": "chapter_4",
+  "start": 407.632,
+  "dur": 20.03,
+  "text": "What about the stories of bison and elk fleeing the park? Those go around the internet every year. In twenty twenty-five, the USGS made the rumors one of its top stories of the year, because, in their words, none were true.",
+  "cues": []
+ },
+ {
+  "kind": "insert",
+  "id": "s027_ins",
+  "chapter": "chapter_4",
+  "start": 427.662,
+  "dur": 9.51,
+  "src": "/home/claude/doc/yellowstone/media/pd_ch1/video/ch1_usgs_top5_2025.mp4",
+  "ss": 29.939999999999998,
+  "label": "Mike Poland",
+  "sub": "Scientist-in-Charge, USGS Yellowstone Volcano Observatory"
+ },
+ {
+  "kind": "seg",
+  "id": "s028",
+  "chapter": "chapter_4",
+  "start": 437.172,
+  "dur": 4.986,
+  "text": "So if a super-eruption isn't the real danger, what is?",
+  "cues": []
+ },
+ {
+  "kind": "card",
+  "id": "h05",
+  "chapter": "chapter_5",
+  "heading": "The Real Danger: Steam",
+  "start": 442.158,
+  "dur": 4.0
+ },
+ {
+  "kind": "seg",
+  "id": "s029",
+  "chapter": "chapter_5",
+  "start": 446.158,
+  "dur": 5.626,
+  "text": "Go back to Biscuit Basin. That wasn't magma. It was water.",
+  "cues": []
+ },
+ {
+  "kind": "insert",
+  "id": "s029_ins",
+  "chapter": "chapter_5",
+  "start": 451.784,
+  "dur": 5.15,
+  "src": "/home/claude/doc/yellowstone/media/pd_ch1/video/ch1_usgs_biscuit_basin_explosion_2024-07-23.mp4",
+  "ss": 8.15,
+  "label": "Mike Poland",
+  "sub": "USGS Yellowstone Volcano Observatory"
+ },
+ {
+  "kind": "seg",
+  "id": "s030",
+  "chapter": "chapter_5",
+  "start": 456.934,
+  "dur": 16.506,
+  "text": "Yellowstone's hot springs are fed by water heated deep underground. Over time, minerals like silica can clog the shallow pipes. Pressure builds. And when the rock finally cracks, water flashes to steam all at once.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s031",
+  "chapter": "chapter_5",
+  "start": 473.44,
+  "dur": 22.565,
+  "text": "The USGS says blasts the size of Biscuit Basin happen roughly once every decade or few decades. Tiny ones happen every year. And under the north end of Yellowstone Lake sits Mary Bay, more than a mile and a half across. It's the largest crater from a steam explosion ever documented anywhere in the world.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s032",
+  "chapter": "chapter_5",
+  "start": 496.005,
+  "dur": 11.039,
+  "text": "If the next big headline from Yellowstone is an \"eruption,\" this is most likely what it'll be: steam, not lava.",
+  "cues": []
+ },
+ {
+  "kind": "card",
+  "id": "h06",
+  "chapter": "chapter_6",
+  "heading": "The Night the Geysers Woke Up",
+  "start": 507.044,
+  "dur": 4.0
+ },
+ {
+  "kind": "seg",
+  "id": "s033",
+  "chapter": "chapter_6",
+  "start": 511.044,
+  "dur": 15.183,
+  "text": "The land here can also shake. On the night of August seventeenth, nineteen fifty-nine, at eleven thirty-seven, a magnitude seven point three earthquake struck just west of the park, near [Hebgen](/h\u02c8\u025bb\u0261\u0259n/) Lake.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s034",
+  "chapter": "chapter_6",
+  "start": 526.227,
+  "dur": 19.535,
+  "text": "In Madison Canyon, a mountainside gave way. Around fifty million cubic yards of rock slid across the river and buried a campground. Twenty-eight people died. The slide dammed the Madison River and created a new lake that's still there today. It's called Earthquake Lake.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s035",
+  "chapter": "chapter_6",
+  "start": 545.763,
+  "dur": 14.629,
+  "text": "Inside the park, something astonishing happened. By the next day, at least two hundred eighty-nine springs had erupted as geysers. One hundred sixty of them had never been seen erupting before.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s036",
+  "chapter": "chapter_6",
+  "start": 560.391,
+  "dur": 29.349,
+  "text": "This is Steamboat Geyser, the tallest active geyser in the world. Its big eruptions shoot more than three hundred feet. It had been mostly quiet for decades. It came back to life after that earthquake. Then in twenty eighteen it woke up again, and erupted forty-eight times in twenty nineteen, a record. Last year, in twenty twenty-five, it erupted just three times. When we stood here, it was only steaming. The park calls it \"entirely unpredictable.\"",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s037",
+  "chapter": "chapter_6",
+  "start": 589.74,
+  "dur": 14.671,
+  "text": "Old Faithful is the opposite. It goes off about every hour and a half, a hundred to nearly two hundred feet high. The eighteen-seventy Washburn expedition named it for how reliable it was.",
+  "cues": []
+ },
+ {
+  "kind": "card",
+  "id": "h07",
+  "chapter": "chapter_7",
+  "heading": "The Microbe Worth Millions",
+  "start": 604.411,
+  "dur": 4.0
+ },
+ {
+  "kind": "seg",
+  "id": "s038",
+  "chapter": "chapter_7",
+  "start": 608.411,
+  "dur": 24.015,
+  "text": "This is Grand Prismatic Spring, the largest hot spring in Yellowstone, wider than a football field is long. Those colors aren't minerals. They're living mats of microbes. Each color is a different community, sorted by how hot the water is. Pale blue at the center where it's hottest, then yellow, orange and brown as the water cools.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s039",
+  "chapter": "chapter_7",
+  "start": 632.427,
+  "dur": 19.706,
+  "text": "In the nineteen-sixties, a scientist named Thomas Brock came here to study what could live in water that hot. In a small pool in the Lower Geyser Basin, he and a student found a bacterium that thrives in water hot enough to scald you. They named it Thermus aquaticus.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s040",
+  "chapter": "chapter_7",
+  "start": 652.133,
+  "dur": 26.362,
+  "text": "Nearly twenty years later, a chemist named Kary Mullis invented a way to copy DNA millions of times, called PCR. It needed an enzyme that could survive repeated heating. The enzyme came from Brock's Yellowstone microbe. Mullis won the Nobel Prize. PCR changed medicine, crime labs, and, much later, made modern COVID testing possible.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s041",
+  "chapter": "chapter_7",
+  "start": 678.495,
+  "dur": 16.25,
+  "text": "In nineteen ninety-one, the rights to that technology sold for three hundred million dollars. Yellowstone received nothing. That deal is part of why parks now have rules for sharing the benefits of research done on their land.",
+  "cues": []
+ },
+ {
+  "kind": "card",
+  "id": "h08",
+  "chapter": "chapter_8",
+  "heading": "The Last Wild Herd",
+  "start": 694.745,
+  "dur": 4.0
+ },
+ {
+  "kind": "seg",
+  "id": "s042",
+  "chapter": "chapter_8",
+  "start": 698.745,
+  "dur": 4.645,
+  "text": "One more survivor lives on top of the volcano.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s043",
+  "chapter": "chapter_8",
+  "start": 703.389,
+  "dur": 13.562,
+  "text": "By nineteen-oh-two, hunting had wiped out the great herds of the West. In Yellowstone, only twenty-three wild bison were left. They were the last wild bison in North America.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s044",
+  "chapter": "chapter_8",
+  "start": 716.951,
+  "dur": 19.407,
+  "text": "The park bought twenty-one more from private ranches, raised them at Mammoth and later at the Lamar Buffalo Ranch, and slowly mixed them with the wild herd. Today, several thousand bison roam Yellowstone. They've lived on this land for more than ten thousand years.",
+  "cues": []
+ },
+ {
+  "kind": "card",
+  "id": "h09",
+  "chapter": "close",
+  "heading": "Who Kept It Safe",
+  "start": 736.359,
+  "dur": 4.0
+ },
+ {
+  "kind": "seg",
+  "id": "s045",
+  "chapter": "close",
+  "start": 740.359,
+  "dur": 10.277,
+  "text": "So that's what's under Yellowstone. Not a ticking bomb, but a slow, breathing system that's been reshaping this land for millions of years.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s046",
+  "chapter": "close",
+  "start": 750.635,
+  "dur": 14.415,
+  "text": "But in its first years as a park, the danger to Yellowstone wasn't the volcano. It was people. Poachers, vandals, stagecoach robbers. And the government's answer was to send in the Army.",
+  "cues": []
+ },
+ {
+  "kind": "seg",
+  "id": "s047",
+  "chapter": "close",
+  "start": 765.051,
+  "dur": 3.578,
+  "text": "That's the next chapter. See you there.",
+  "cues": []
+ }
+]
