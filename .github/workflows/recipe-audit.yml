@@ -33,7 +33,17 @@ jobs:
           curl -sSfL -o /tmp/yunet.onnx https://github.com/opencv/opencv_zoo/raw/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx || echo "no yunet (haar fallback)"
           ls -la /tmp/yunet.onnx || true; nproc; free -g | head -2
       - uses: actions/download-artifact@v4
+        if: ${{ !startsWith(inputs.run_id, 'footage:') }}
         with: { name: "${{ inputs.artifact }}", path: /tmp/in, run-id: "${{ inputs.run_id }}", github-token: "${{ github.token }}" }
+      - name: Fetch from footage branch (run_id = footage:<folder>; videos stored as <name>.partNN)
+        if: ${{ startsWith(inputs.run_id, 'footage:') }}
+        env: { SRC: "${{ inputs.run_id }}" }
+        run: |
+          F="${SRC#footage:}"
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb
+          git -C /tmp/fb sparse-checkout set "$F"
+          mkdir -p /tmp/in && cp -r /tmp/fb/$F/. /tmp/in/
+          cd /tmp/in && for p in *.part00; do b="${p%.part00}"; cat "$b".part?? > "$b" && rm -f "$b".part??; done; ls -la /tmp/in
       - name: Audit
         env:
           FILES: ${{ inputs.files }}
