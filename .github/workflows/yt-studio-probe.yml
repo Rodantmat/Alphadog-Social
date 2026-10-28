@@ -44,3 +44,5 @@ jobs:
           gh release view studio-qa -R "$GITHUB_REPOSITORY" >/dev/null 2>&1 || gh release create studio-qa -R "$GITHUB_REPOSITORY" --title "YouTube Studio QA" --notes "Automated Studio screenshots (avatars/emails blurred) and redacted text dumps." --prerelease
           mkdir -p /tmp/rel && for f in /tmp/ytqa/*; do cp "$f" "/tmp/rel/probe_${{ github.run_id }}_$(basename "$f")"; done; cd /tmp/rel
           gh release upload studio-qa -R "$GITHUB_REPOSITORY" probe_${{ github.run_id }}_* --clobber
+          # never keep dashboard captures (they list subscriber names)
+          gh api "repos/$GITHUB_REPOSITORY/releases/tags/studio-qa" -q '.assets[] | select(.name | test("_01_studio_home")) | .id' | while read id; do gh api -X DELETE "repos/$GITHUB_REPOSITORY/releases/assets/$id"; done

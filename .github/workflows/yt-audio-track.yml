@@ -1,0 +1,78 @@
+name: yt-audio-track
+# Adds a dubbed audio track (multi-language audio) to an existing YouTube video via YouTube Studio's web UI
+# (the Data API can't). Uses the saved Studio session (yt_studio_session.py). Idempotent: skips if the language
+# already has audio. dry_run=1 opens the add-audio dialog and cancels. Result -> content/published/audio_tracks.json.
+on:
+  workflow_dispatch:
+    inputs:
+      video_id: { description: "YouTube video ID", required: true }
+      lang: { description: "Language code (es, pt, pt-BR, fr...) or UI label", default: "pt" }
+      audio_path: { description: "Audio file path on the footage branch (e.g. audio-tracks/VIDEOID_pt.m4a)", default: "" }
+      dry_run: { description: "1 = open the dialog and cancel, upload nothing", default: "0" }
+  workflow_call:
+    inputs:
+      video_id: { type: string, required: true }
+      lang: { type: string, default: "pt" }
+      audio_path: { type: string, default: "" }
+      dry_run: { type: string, default: "0" }
+permissions:
+  contents: write
+concurrency: { group: yt-studio-session, cancel-in-progress: false }
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  audio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q playwright cryptography && python3 -m playwright install --with-deps chromium >/dev/null
+      - name: Fetch audio from footage branch
+        if: inputs.dry_run != '1'
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb
+          cd /tmp/fb && git sparse-checkout set --no-cone "/${{ inputs.audio_path }}"
+          ls -la "/tmp/fb/${{ inputs.audio_path }}"
+          ffprobe -v error -show_entries format=duration -of csv=p=0 "/tmp/fb/${{ inputs.audio_path }}" | sed "s/^/audio duration s: /" || true
+      - name: Add audio track in Studio
+        id: run
+        env:
+          YT_STUDIO_SESSION: ${{ secrets.YT_STUDIO_SESSION }}
+          YT_GOOGLE_SESSION: ${{ secrets.YT_GOOGLE_SESSION }}
+          VIDEO_ID: ${{ inputs.video_id }}
+          AUDIO_LANG: ${{ inputs.lang }}
+          AUDIO: /tmp/fb/${{ inputs.audio_path }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          QA_DIR: /tmp/ytqa
+        run: xvfb-run -a python3 scripts/yt_studio_audio.py
+      - name: Save session + record result
+        if: always()
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          if [ -f /tmp/ytqa/result.json ] && [ "${{ inputs.dry_run }}" != "1" ]; then
+            python3 - <<'PY'
+          import json, os
+          r = json.load(open("/tmp/ytqa/result.json")); p = "content/published/audio_tracks.json"
+          d = json.load(open(p)) if os.path.exists(p) else {}
+          if r["status"] not in ("login", "challenge"):
+              d.setdefault(r["video_id"], {})[r["lang"]] = {"status": r["status"], "time": r["time"], **({"ui": r["ui"]} if r.get("ui") else {}), **({"message": r["message"]} if r.get("message") else {})}
+          json.dump(d, open(p, "w"), indent=1, ensure_ascii=False)
+          PY
+            git add content/published/audio_tracks.json
+          fi
+          git add content/private/yt_studio_session.enc
+          git commit -qm "yt-audio: ${{ inputs.video_id }} ${{ inputs.lang }}" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yt-audio-${{ github.run_id }}
+          path: /tmp/ytqa
+          retention-days: 14
+          if-no-files-found: ignore
+      - if: always()
+        name: Publish QA to release studio-qa
+        run: |
+          [ -d /tmp/ytqa ] || exit 0
+          mkdir -p /tmp/rel && for f in /tmp/ytqa/*; do cp "$f" "/tmp/rel/audio_${{ github.run_id }}_$(basename "$f")"; done; cd /tmp/rel
+          gh release upload studio-qa -R "$GITHUB_REPOSITORY" audio_${{ github.run_id }}_* --clobber

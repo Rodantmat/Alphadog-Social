@@ -31,30 +31,34 @@ with sync_playwright() as p:
     b, ctx, pg = S.open_browser(p)
     S.goto(pg, S.STUDIO)
     st = S.status(pg); print("[studio] status:", st, "| landed:", S.mask_url(pg.url))
-    snap(pg, "01_studio_home")
-    if st != "ok": stop(pg, ctx, b, st, "01_studio_home_stop")
+    if st != "ok": stop(pg, ctx, b, st, "00_stop_studio")  # dashboard is not saved on success (shows subscriber names)
     S.pause(3, 6)
     S.goto(pg, f"https://studio.youtube.com/video/{VID}/translations", settle=8000)
     for _ in range(6):  # Studio renders the table lazily
         try: body = pg.inner_text("body", timeout=10000)
         except Exception: body = ""
-        if "Add language" in body or "ADD LANGUAGE" in body or "Subtitles" in body: break
+        if pg.locator("ytgn-video-translation-row, #add-translations-button").count(): break
         pg.wait_for_timeout(5000)
     st = S.status(pg); print("[languages] status:", st, "| landed:", S.mask_url(pg.url))
     if st in ("challenge", "login"): stop(pg, ctx, b, st, "02_languages_stop")
     snap(pg, "02_languages")
     t = open(f"{OUT}/02_languages.txt").read()
     for w in ["Add language", "ADD LANGUAGE", "Spanish", "Portuguese", "Audio", "Dubbing", "Subtitles", "Title & description", "Published", "Draft"]:
-        print(f"  seen '{w}': {w in t}")
+        pass
     if os.environ.get("PROBE_MENU") == "1":
         try:
             S.pause()
-            pg.get_by_role("button", name="Add language").first.click(timeout=15000)
+            pg.locator("#add-translations-button").first.click(timeout=15000)
             pg.wait_for_timeout(3000); snap(pg, "03_add_language_menu")
             pg.keyboard.press("Escape"); pg.wait_for_timeout(2000)
         except Exception as e: print("add-language menu:", str(e)[:150])
         try:  # hover the Spanish row so per-cell action buttons show
-            row = pg.locator("text=Spanish").first; row.hover(timeout=10000); pg.wait_for_timeout(2000); snap(pg, "04_spanish_hover")
+            for i, r in enumerate(pg.locator("ytgn-video-translation-row").all()):
+                n = r.locator("button.language-display-name").first.inner_text().strip()
+                if n not in ("Spanish", "Espanhol", "Portuguese", "Português"): continue
+                c = r.locator("ytgn-video-translation-cell-audio").first; c.hover(timeout=10000); pg.wait_for_timeout(2000)
+                snap(pg, f"04_hover_audio_{i}")
+                open(f"{OUT}/04_hover_audio_{i}_cell.html", "w").write(S.redact(c.evaluate("e => e.outerHTML"))[:30000])
         except Exception as e: print("spanish hover:", str(e)[:150])
     S.pause(2, 4); S.save(ctx); b.close()
 print("PROBE_DONE")
