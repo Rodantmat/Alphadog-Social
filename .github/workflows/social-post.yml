@@ -14,7 +14,7 @@ permissions:
 concurrency: { group: social-post, cancel-in-progress: false }
 env:
   SHORTS_RUN: "40389484496"   # safe-zone captions (2026-10-26); sh1 was posted from 40251722496
-  PROMO_RUN: "40617967557"    # promo-build: spotify_promo_ep1.mp4
+  PROMO_RUN: "40643777226"    # promo-build v2 (recipe-audit clean; same build as YouTube Short l3Wsfo7k-Lo)
 jobs:
   post:
     runs-on: ubuntu-latest
