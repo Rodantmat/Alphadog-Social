@@ -46,7 +46,7 @@ def current_lang_item(pg):
 def pick_english(pg, name):
     e, t = current_lang_item(pg)
     print(f"{name}: menu language item: '{t}'")
-    if not e: snap(pg, f"{name}_no_lang_item"); return "no_lang_item", t
+    if not e: snap(pg, f"{name}_no_lang_item") if "youtube" in name else None; return "no_lang_item", t
     if re.search(r":\s*English\s*(\(US\)|\(United States\))?\s*$", t, re.I): pg.keyboard.press("Escape"); return "already", t
     S.pause(); e.click(timeout=10000); pg.wait_for_timeout(2500); snap(pg, f"{name}_lang_list")
     opts = [x for x in vis_items(pg) if re.fullmatch(r"English \(US\)", text(x))]
@@ -65,20 +65,14 @@ with sync_playwright() as p:
         S.goto(pg, S.STUDIO); guard(pg, b, ctx, "00_studio")
         st = S.status(pg); print("[studio] status:", st)
         if st != "ok": done(b, ctx, 3 if st == "challenge" else 2, status=st)
-        try: open_avatar(pg, True)
-        except Exception as e: snap(pg, "01_avatar_fail"); done(b, ctx, 4, status="error", error="studio avatar: " + str(e)[:150])
-        r, before = pick_english(pg, "02_studio"); RES["studio"] = r; RES["studio_before"] = before
-        guard(pg, b, ctx, "03_studio_after_pick")
-        if r in ("no_lang_item", "no_english_option"): done(b, ctx, 4, status="error")
-        if r == "clicked":
-            S.goto(pg, S.STUDIO); guard(pg, b, ctx, "04_studio_reload")
-        RES["studio_english"] = studio_english(pg); print("studio shows English labels:", RES["studio_english"])
+        RES["studio_english_before"] = studio_english(pg)  # Studio has no own language item; it follows YouTube's setting
         # YouTube main site
-        S.pause(3, 6); S.goto(pg, "https://www.youtube.com/"); guard(pg, b, ctx, "05_youtube")
+        S.pause(2, 4); S.goto(pg, "https://www.youtube.com/"); guard(pg, b, ctx, "05_youtube")
         try: open_avatar(pg, False)
         except Exception as e: snap(pg, "05_yt_avatar_fail"); done(b, ctx, 4, status="error", error="youtube avatar: " + str(e)[:150])
         r2, before2 = pick_english(pg, "06_youtube"); RES["youtube"] = r2; RES["youtube_before"] = before2
         guard(pg, b, ctx, "07_youtube_after_pick")
+        if r2 in ("no_lang_item", "no_english_option"): done(b, ctx, 4, status="error")
         if r2 == "clicked": S.goto(pg, "https://www.youtube.com/"); guard(pg, b, ctx, "08_youtube_reload")
         if not DRY:
             try: open_avatar(pg, False); _, now = current_lang_item(pg); RES["youtube_now"] = now; pg.keyboard.press("Escape")

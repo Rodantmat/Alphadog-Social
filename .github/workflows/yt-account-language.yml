@@ -36,4 +36,4 @@ jobs:
           [ -d /tmp/ytqa ] || exit 0
           mkdir -p /tmp/rel && for f in /tmp/ytqa/*; do cp "$f" "/tmp/rel/lang_${{ github.run_id }}_$(basename "$f")"; done; cd /tmp/rel
           gh release upload studio-qa -R "$GITHUB_REPOSITORY" lang_${{ github.run_id }}_* --clobber
-          gh api "repos/$GITHUB_REPOSITORY/releases/tags/studio-qa" -q '.assets[] | select(.name | test("_00_studio")) | .id' | while read id; do gh api -X DELETE "repos/$GITHUB_REPOSITORY/releases/assets/$id"; done
+          gh api "repos/$GITHUB_REPOSITORY/releases/tags/studio-qa" -q '.assets[] | select(.name | test("lang_[0-9]+_0[0-4]_studio")) | .id' | while read id; do gh api -X DELETE "repos/$GITHUB_REPOSITORY/releases/assets/$id"; done
