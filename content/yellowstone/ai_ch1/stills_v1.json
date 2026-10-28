@@ -1,0 +1,182 @@
+[
+ {
+  "id": "H01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide high establishing shot. Madison Canyon, Montana, August 1959: a deep narrow mountain canyon with steep slopes covered in dark Douglas fir and pine, bare grey rock above, the Madison River winding along the valley floor, moonlit night, a bright full moon, cool blue moonlight with deep shadows. A peaceful campground on the river bank in the canyon bottom: a scattering of canvas tents, two rounded 1950s cars and a small 1950s travel trailer parked among tall pines, a campfire's last embers glowing orange, the river glinting silver in the moonlight, dark forested mountainsides rising steeply on both sides. Calm and quiet, everyone asleep, no people visible.",
+  "neg": "modern cars, SUVs, modern tents, power lines, streetlights, people, bodies, corpses, blood, gore, injured people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ },
+ {
+  "id": "H02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium shot. A campsite in Madison Canyon, Montana, August 1959: a deep narrow mountain canyon with steep slopes covered in dark Douglas fir and pine, bare grey rock above, the Madison River winding along the valley floor, moonlit night, a bright full moon, cool blue moonlight with deep shadows. A canvas wall tent with its flap closed; beside it a rounded two-tone 1950s sedan; a wooden picnic table with a kerosene lantern turned down low, an enamel coffee pot and tin cups; a stone fire ring with dying orange embers and a thin curl of smoke; tall pine trunks around. Peaceful, everyone asleep, no people.",
+  "neg": "modern cars, SUVs, modern tents, power lines, streetlights, people, bodies, corpses, blood, gore, injured people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ },
+ {
+  "id": "H03",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. close-up. A wooden picnic table at a campsite at night, moonlit night, a bright full moon, cool blue moonlight with deep shadows: a kerosene lantern glowing softly, an enamel coffee pot and tin cups, at the instant the ground jolts: the lantern tilts on its base, a tin cup tips over and coffee splashes, dust jumps off the boards; a canvas tent and pine trunks soft in the background. No people.",
+  "neg": "people, hands, modern cars, SUVs, modern tents, power lines, streetlights, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ },
+ {
+  "id": "H04",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium-wide shot. The earthquake strikes a campground in Madison Canyon, Montana, August 1959: a deep narrow mountain canyon with steep slopes covered in dark Douglas fir and pine, bare grey rock above, the Madison River winding along the valley floor, moonlit night, a bright full moon, cool blue moonlight with deep shadows: the ground heaves, tall pines whip and sway violently, a canvas tent sags and collapses, a rounded 1950s car rocks on its springs, dust and pine needles shake loose into the moonlight; two small figures in pajamas, seen from behind, stumble out of a tent toward the open. Chaos and fear, no injuries.",
+  "neg": "faces, modern cars, SUVs, modern tents, power lines, streetlights, bodies, corpses, blood, gore, injured people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 2
+ },
+ {
+  "id": "H05",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. very wide shot from across the canyon. Madison Canyon, Montana, August 1959: a deep narrow mountain canyon with steep slopes covered in dark Douglas fir and pine, bare grey rock above, the Madison River winding along the valley floor, moonlit night, a bright full moon, cool blue moonlight with deep shadows. The whole steep mountainside on the far side of the valley breaks loose and slides down toward the river: a huge wall of grey rock, earth and uprooted pine trees moving as one mass, a vast cloud of pale dust boiling up into the moonlight; far below, tiny pale campground tents on the valley floor beside the silver river. Immense scale, terrifying, no people visible.",
+  "neg": "people, lava, fire, volcano, bodies, corpses, blood, gore, injured people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ },
+ {
+  "id": "H06",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Madison Canyon, Montana, August 1959: a deep narrow mountain canyon with steep slopes covered in dark Douglas fir and pine, bare grey rock above, the Madison River winding along the valley floor, moonlit night, a bright full moon, cool blue moonlight with deep shadows. A massive avalanche of broken grey rock and splintered pine trees pours across the valley floor and over the river, river water thrown up in a great spray, a rolling wall of grey dust surging forward across the canyon bottom; the opposite forested slope dim in the moonlight. No people.",
+  "neg": "people, lava, fire, bodies, corpses, blood, gore, injured people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ },
+ {
+  "id": "H07",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Madison Canyon, Montana, August 1959: a deep narrow mountain canyon with steep slopes covered in dark Douglas fir and pine, bare grey rock above, the Madison River winding along the valley floor, minutes after the landslide, night: an enormous cloud of grey dust hangs over the canyon and dims the moon to a pale disc; below it a huge new mound of rock rubble and broken trees blocks the valley from wall to wall; the river behind it has stopped and spreads into a dark still pool. Silent and somber. No people.",
+  "neg": "people, lava, fire, bodies, corpses, blood, gore, injured people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ },
+ {
+  "id": "H08",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Madison Canyon, Montana, August 1959: a deep narrow mountain canyon with steep slopes covered in dark Douglas fir and pine, bare grey rock above, the Madison River winding along the valley floor, early morning days later, soft cool grey-blue daylight: a new lake fills the canyon behind a huge dam of grey rock rubble; drowned dead pine trees stand in the still water; on the mountainside above, a vast bare scar of raw grey rock where the forest slid away; low mist on the water, pale sky. Somber and quiet, no people.",
+  "neg": "people, boats, modern cars, SUVs, modern tents, power lines, streetlights, bodies, corpses, blood, gore, injured people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ },
+ {
+  "id": "P01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot from behind. Lower Geyser Basin, Yellowstone, in the 1960s: flat white-grey sinter ground, small steaming hot pools of clear blue water, shallow runoff channels lined with bright orange and yellow microbial mats, lodgepole pines at the edge, white steam drifting, bright morning. a scientist in a light khaki short-sleeved shirt, dark slacks and work boots, with short dark hair and a young student in a plaid short-sleeved shirt and jeans walk away from the viewer along the edge of a steaming runoff channel lined with orange microbial mats across the white sinter flats; the student carries a wooden crate of empty glass jars, the scientist carries a long metal sampling pole over his shoulder; clouds of steam drift past them; a distant geyser plume. Seen from behind, faces not visible.",
+  "neg": "faces, modern cars, SUVs, modern tents, power lines, streetlights, boardwalk railings, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 2
+ },
+ {
+  "id": "P02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. close-up. Lower Geyser Basin, Yellowstone, in the 1960s: flat white-grey sinter ground, small steaming hot pools of clear blue water, shallow runoff channels lined with bright orange and yellow microbial mats, lodgepole pines at the edge, white steam drifting. The scientist, in a light khaki shirt, kneels at the rim of a small steaming hot pool of clear blue water and lowers a clear glass jar clamped to a long metal pole into the bubbling water to take a sample; bright orange and yellow microbial mats line the pool's edge; steam curls around his hands and forearms. His face is turned away, only his shoulder, arms and hands in frame.",
+  "neg": "face, extra hands, extra arms, gloves, modern equipment, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ },
+ {
+  "id": "P03",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium shot, three-quarter view from behind. Lower Geyser Basin, Yellowstone, in the 1960s: flat white-grey sinter ground, small steaming hot pools of clear blue water, shallow runoff channels lined with bright orange and yellow microbial mats, lodgepole pines at the edge, white steam drifting. a young student in a plaid short-sleeved shirt and jeans holds a glass sample jar of slightly cloudy hot-spring water up to the sunlight and studies it; next to him the scientist in the khaki shirt writes in a small field notebook; a wooden crate of capped glass jars at their feet; steam drifting behind them over the white sinter. Faces turned away from the viewer.",
+  "neg": "faces, readable writing, modern equipment, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 2
+ },
+ {
+  "id": "P04",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. interior medium shot from behind. A 1960s university laboratory, warm afternoon light from a window: a scientist in a white lab coat, seen from behind, leans over a black-and-chrome 1960s laboratory microscope on a wooden bench and turns the focus knob; beside it glass flasks, a rack of test tubes and small capped jars of cloudy hot-spring water; a green-shaded desk lamp.",
+  "neg": "face, computers, modern equipment, posters, charts, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ },
+ {
+  "id": "P05",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. view through a microscope. A circular bright microscope field surrounded by black: many tiny slender rod-shaped bacteria glowing in warm amber and orange light, some joined in short chains, floating in clear liquid with a few tiny bubbles; delicate and beautiful, scientific illustration.",
+  "neg": "scale bar, cells with nuclei, spheres only, worms, people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ },
+ {
+  "id": "P06",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. interior medium shot from behind. A 1980s biotechnology laboratory at night under a fluorescent lamp: a chemist in a sweater and jeans, seen from behind, works at a lab bench using a hand pipette to fill a rack of tiny clear plastic tubes; beside him a beige 1980s lab instrument with a metal heating block, glass reagent bottles, and a beige computer with a dark screen; the window behind is black with night.",
+  "neg": "face, readable screen, modern laptop, flat screen, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ },
+ {
+  "id": "P07",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. extreme close-up. A row of tiny clear plastic lab tubes seated in the holes of a hot aluminum heating block in a dark 1980s laboratory, the liquid inside glowing faintly amber; heat shimmer and wisps of vapor rise from the block; above the tubes, faint glowing double-helix strands of DNA made of soft golden light split and multiply into many copies in the air.",
+  "neg": "people, hands, labels on tubes, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ }
+]

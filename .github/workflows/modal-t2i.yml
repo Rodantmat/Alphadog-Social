@@ -9,6 +9,9 @@ on:
       jobs:
         description: "repo path of the jobs JSON"
         default: "content/chiricahua/qwen_A01.json"
+      modal_key:
+        description: "Modal key set: W1..W4 (weekly $30 budgets), MAIN or BACKUP (backups only if the week's key is exhausted)"
+        default: "W1"
       label:
         default: "A01qwen"
 permissions:
@@ -18,9 +21,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 120
     env:
-      MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}
-      MODAL_TOKEN_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
+      MODAL_TOKEN_ID: ${{ inputs.modal_key == 'MAIN' && secrets.MODAL_TOKEN_ID || secrets[format('MODAL_TOKEN_ID_{0}', inputs.modal_key)] }}
+      MODAL_TOKEN_SECRET: ${{ inputs.modal_key == 'MAIN' && secrets.MODAL_TOKEN_SECRET || secrets[format('MODAL_TOKEN_SECRET_{0}', inputs.modal_key)] }}
     steps:
+      - name: Check Modal key
+        run: '[ -n "$MODAL_TOKEN_ID" ] && [ -n "$MODAL_TOKEN_SECRET" ] || { echo "::error::Modal key set ${{ inputs.modal_key }} not found in secrets"; exit 1; }'
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
@@ -43,3 +48,8 @@ jobs:
           git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
           git add review && git commit -qm "review ${{ inputs.label }} (modal qwen-image)" || exit 0
           for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
+      - name: Modal spend so far this month (this key's workspace)
+        if: always()
+        run: |
+          modal billing report --for "this month" --show-resources || true
+          modal billing report --for today --resolution h --show-resources || true
