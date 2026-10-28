@@ -390,5 +390,42 @@
  "remove": [
   "img/ch1_nps_buffalo_ranch_16626.jpg",
   "img/ch1_nps_buffalo_ranch_16627.jpg"
- ]
+ ],
+ "overrides": {
+  "video/ch1_usgs_hydrothermal_explosions_more_common_dec2024.mp4": {
+   "status": "PARTIAL - use only safe segments (frame-checked 2026-10-28)",
+   "exclude_segments": [
+    {
+     "start": 0.0,
+     "end": 4.4,
+     "why": "Biscuit Basin explosion clip captioned 'video courtesy of Joshua Sells' (third-party, used with permission)"
+    },
+    {
+     "start": 38.9,
+     "end": 50.6,
+     "why": "commercial satellite imagery (QuickBird-2 2006 / WorldView-3 2022, Maxar) of Porcelain Basin/Nuphar Lake"
+    },
+    {
+     "start": 169.5,
+     "end": 177.5,
+     "why": "uncredited Steamboat Geyser eruption phone photos (source not identified)"
+    }
+   ],
+   "safe_segments": [
+    [
+     4.4,
+     38.9
+    ],
+    [
+     50.6,
+     169.5
+    ],
+    [
+     177.5,
+     240.0
+    ]
+   ],
+   "safe_note": "Safe = USGS-shot Mike Poland interview, Norris B-roll, USGS maps/plots (seismic/infrasound, GPS, earthquake map, Steamboat temperature)"
+  }
+ }
 }

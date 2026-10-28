@@ -1,0 +1,115 @@
+{
+ "chapter": "ch2",
+ "items": [
+  {
+   "kind": "direct",
+   "name": "ch2_nps_ed_howell_captured_1894_haynes",
+   "url": "https://home.nps.gov/features/yell/slidefile/history/1872_1918/military/Images/11550.jpg",
+   "shows": "Captured poacher Ed Howell with soldiers/scouts, 1894 (F. J. Haynes)",
+   "license": "Public Domain: Full Granting Rights (NPGallery)",
+   "credit": "F. J. Haynes, 1894 / NPS Yellowstone (NPGallery)",
+   "page": "https://npgallery.nps.gov/AssetDetail/c5c1626c-1dd8-b71b-0b2d-4a252747a4c6"
+  },
+  {
+   "kind": "slidefile",
+   "name": "ch2_nps_military",
+   "page": "https://home.nps.gov/features/yell/slidefile/history/1872_1918/military/Page.htm",
+   "max_n": 90,
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "slidefile",
+   "name": "ch2_nps_jackson",
+   "page": "https://home.nps.gov/features/yell/slidefile/history/jacksonphotos/Page.htm",
+   "max_n": 40,
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "slidefile",
+   "name": "ch2_nps_moran_art",
+   "page": "https://home.nps.gov/features/yell/slidefile/history/moranandotherart/Page.htm",
+   "filter": "moran|1871|1872",
+   "max_n": 25,
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "slidefile",
+   "name": "ch2_nps_transport",
+   "page": "https://home.nps.gov/features/yell/slidefile/history/1872_1918/transportation/Page.htm",
+   "filter": "stage|coach|hold|rob|wagon|tally",
+   "max_n": 15,
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "slidefile",
+   "name": "ch2_nps_people",
+   "page": "https://home.nps.gov/features/yell/slidefile/history/1872_1918/peopleevents/Page.htm",
+   "filter": "howell|anderson|burgess|hough|roosevelt|haynes|langford|hayden|norris|poach|scout|cavalry|soldier|troop|1886|1894|harris|yount|trafton|hold",
+   "max_n": 25,
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "slidefile",
+   "name": "ch2_nps_structures",
+   "page": "https://home.nps.gov/features/yell/slidefile/history/1872_1918/structures/Page.htm",
+   "filter": "fort|soldier|station|guard|army|sheridan|blockhouse|norris",
+   "max_n": 20,
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "slidefile",
+   "name": "ch2_nps_wildlife_mgmt",
+   "page": "https://home.nps.gov/features/yell/slidefile/history/1872_1918/wildlifemanagement/Page.htm",
+   "filter": "poach|howell|buffalo|bison|soldier|scout|snowshoe|ski",
+   "max_n": 15,
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "slidefile",
+   "name": "ch2_nps_visitor",
+   "page": "https://home.nps.gov/features/yell/slidefile/history/1872_1918/visitoractivities/Page.htm",
+   "filter": "stage|coach|soldier|trooper|cavalry",
+   "max_n": 10,
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "usgs_image",
+   "name": "ch2_usgs_hayden_camp_yellowstone_lake_1872",
+   "page": "https://www.usgs.gov/media/images/hayden-geological-survey-camp-along-yellowstone-lake-1872",
+   "shows": "Hayden Survey camp on Yellowstone Lake, 1872",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "commons",
+   "name": "ch2_commons_moran_grand_canyon_1872",
+   "search": "Thomas Moran Grand Canyon of the Yellowstone 1872",
+   "filter": "moran",
+   "max_n": 1,
+   "shows": "Thomas Moran, The Grand Canyon of the Yellowstone (1872), oil painting (PD by age)"
+  },
+  {
+   "kind": "commons",
+   "name": "ch2_commons_jackson_nara",
+   "search": "Grand Canyon of the Yellowstone Jackson NARA 516696",
+   "filter": "516696|jackson",
+   "max_n": 1,
+   "shows": "W.H. Jackson, Grand Canyon of the Yellowstone, 1871 (NARA 516696)"
+  },
+  {
+   "kind": "commons",
+   "name": "ch2_commons_jackson_old_faithful_nara",
+   "search": "Old Faithful Jackson NARA Hayden 1871",
+   "filter": "NARA",
+   "max_n": 2,
+   "shows": "W.H. Jackson / Hayden survey photo via NARA"
+  },
+  {
+   "kind": "nps_videos",
+   "name": "ch2_nps_150yrs",
+   "page": "https://www.nps.gov/yell/learn/photosmultimedia/150-years-of-yellowstone-video-series.htm",
+   "max_n": 8,
+   "max_sec": 600,
+   "license": "Public Domain (NPS-credited, no copyright symbol)"
+  }
+ ]
+}

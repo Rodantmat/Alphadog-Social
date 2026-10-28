@@ -1,0 +1,112 @@
+{
+ "chapter": "ch3",
+ "items": [
+  {
+   "kind": "usgs_image",
+   "name": "ch3_usgs_chief_joseph_1877",
+   "page": "https://www.usgs.gov/media/images/hinmatoowyalahtqit-chief-joseph-nez-perce-1877",
+   "shows": "Hinmat\u00f3owyalahtq\u0313it (Chief Joseph), Nov 1877 portrait",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "usgs_image",
+   "name": "ch3_usgs_route_nez_perce_1877",
+   "page": "https://www.usgs.gov/media/images/route-nez-perce-1877",
+   "shows": "Map: route of the Nez Perce through Yellowstone, 1877",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "slidefile",
+   "name": "ch3_nps_indians",
+   "page": "https://home.nps.gov/features/yell/slidefile/history/indians/Page.htm",
+   "filter": "(nez perce|joseph|1877|howard|cowan)(?!.*(ceremon|sacred|burial|grave))",
+   "max_n": 15,
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "slidefile",
+   "name": "ch3_nps_people",
+   "page": "https://home.nps.gov/features/yell/slidefile/history/1872_1918/peopleevents/Page.htm",
+   "filter": "nez perce|joseph|1877|cowan|howard|radersburg|mccartney|henderson|doane|sturgis",
+   "max_n": 15,
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "loc",
+   "name": "ch3_loc_joseph_00650888",
+   "page": "https://www.loc.gov/item/00650888/",
+   "shows": "Chief Joseph portrait (LoC)"
+  },
+  {
+   "kind": "loc",
+   "name": "ch3_loc_joseph_2002722462",
+   "page": "https://www.loc.gov/item/2002722462/",
+   "shows": "Chief Joseph portrait (LoC)"
+  },
+  {
+   "kind": "commons",
+   "name": "ch3_commons_chief_joseph_1877",
+   "title": "File:Chief Joseph-1877.jpg",
+   "shows": "Chief Joseph, Bismarck, Nov 1877 (O. S. Goff)"
+  },
+  {
+   "kind": "commons",
+   "name": "ch3_commons_oo_howard",
+   "search": "Oliver Otis Howard portrait Brady",
+   "filter": "howard",
+   "max_n": 1,
+   "shows": "Gen. Oliver Otis Howard portrait"
+  },
+  {
+   "kind": "commons",
+   "name": "ch3_commons_looking_glass",
+   "search": "Looking Glass Nez Perce chief 1871 Jackson",
+   "filter": "looking",
+   "max_n": 1,
+   "shows": "Looking Glass (Nez Perce leader), 1871 photo"
+  },
+  {
+   "kind": "commons",
+   "name": "ch3_commons_nelson_miles",
+   "search": "Nelson A. Miles portrait",
+   "filter": "miles",
+   "max_n": 1,
+   "shows": "Col. Nelson A. Miles portrait"
+  },
+  {
+   "kind": "commons",
+   "name": "ch3_commons_cowan",
+   "search": "Emma Cowan George Cowan Radersburg",
+   "filter": "cowan",
+   "max_n": 1,
+   "shows": "Cowan party (if PD)"
+  },
+  {
+   "kind": "nps_videos",
+   "name": "ch3_nps_nepe",
+   "page": "https://www.nps.gov/nepe/learn/photosmultimedia/videos.htm",
+   "filter": "^(?!.*(ceremon|sacred|commemorat|memorial|prayer|burial|grave)).*",
+   "max_n": 6,
+   "max_sec": 600,
+   "license": "Public Domain (NPS-credited, no copyright symbol)"
+  },
+  {
+   "kind": "nps_videos",
+   "name": "ch3_nps_biho",
+   "page": "https://www.nps.gov/biho/learn/photosmultimedia/videos.htm",
+   "filter": "^(?!.*(ceremon|sacred|commemorat|memorial|prayer|burial|grave)).*",
+   "max_n": 4,
+   "max_sec": 600,
+   "license": "Public Domain (NPS-credited, no copyright symbol)"
+  },
+  {
+   "kind": "nps_videos",
+   "name": "ch3_nps_yell_nezperce",
+   "page": "https://home.nps.gov/yell/learn/historyculture/flightnezperce.htm",
+   "filter": "^(?!.*(ceremon|sacred|commemorat|memorial|prayer|burial|grave)).*",
+   "max_n": 3,
+   "max_sec": 600,
+   "license": "Public Domain (NPS-credited, no copyright symbol)"
+  }
+ ]
+}
