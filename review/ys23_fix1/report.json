@@ -1,0 +1,74 @@
+{
+ "C01b_23.jpg": {
+  "person": 2,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": false
+ },
+ "C01b_5.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ },
+ "C07b_23.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ },
+ "C07b_5.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ },
+ "R01b_23.jpg": {
+  "person": 5,
+  "horse": 5,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "R01b_5.jpg": {
+  "person": 6,
+  "horse": 8,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "R04b_23.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ },
+ "R04b_5.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ },
+ "X01b_23.jpg": {
+  "person": 6,
+  "horse": 11,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "X01b_5.jpg": {
+  "person": 4,
+  "horse": 5,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "X02b_23.jpg": {
+  "person": 5,
+  "horse": 1,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "X02b_5.jpg": {
+  "person": 4,
+  "horse": 1,
+  "expect_person": null,
+  "person_ok": true
+ }
+}
