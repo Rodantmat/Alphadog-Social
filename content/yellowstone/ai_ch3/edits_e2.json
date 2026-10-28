@@ -1,0 +1,26 @@
+[
+ {
+  "id": "C07e",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys23_fix1/C07b_5.jpg",
+  "seeds": [
+   5
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "expect_person": 1,
+  "prompt": "Remove all the red blood from the snow, from the bison's head and from the knife: clean white snow, a plain grey steel knife blade. Keep everything else exactly the same: the composition, the people, their poses and clothes, the landscape, the light and the same 2D hand-painted cel-shaded illustration style.",
+  "neg": "blood, red stains, red snow, style change, photo, 3d render, blurry, extra people, text"
+ },
+ {
+  "id": "R04e",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys23_fix1/R04b_5.jpg",
+  "seeds": [
+   5
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "expect_person": 1,
+  "prompt": "Remove the red streaks from the grass at the bottom of the picture: plain green and golden grass. Keep everything else exactly the same: the composition, the people, their poses and clothes, the landscape, the light and the same 2D hand-painted cel-shaded illustration style.",
+  "neg": "blood, red stains, red snow, style change, photo, 3d render, blurry, extra people, text"
+ }
+]

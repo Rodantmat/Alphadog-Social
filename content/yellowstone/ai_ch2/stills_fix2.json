@@ -1,0 +1,13 @@
+[
+ {
+  "id": "C01c",
+  "seeds": [
+   5
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. very wide high establishing landscape shot. Pelican Valley, Yellowstone, March 1894: a wide remote mountain valley buried in deep snow, rolling white hills, scattered dark lodgepole pines and spruce half buried in drifts, a few thin wisps of steam rising from thermal vents in the snow, low grey overcast sky, cold diffuse light, light snow falling, a hard cold wind blowing powder across the drifts. The vast empty white valley fills the frame under a heavy grey sky; a single faint line of old ski tracks winds across the snow from the foreground into the far distance; the hard wind drives streamers of powder snow across the drifts; a few wisps of steam from thermal vents. No people, no animals.",
+  "neg": "people, animals, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, bodies, corpses, blood, gore, injured people, wounds, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ }
+]
