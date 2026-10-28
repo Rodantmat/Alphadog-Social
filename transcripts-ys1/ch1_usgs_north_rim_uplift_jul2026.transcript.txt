@@ -1,0 +1,33 @@
+[   1.58-   8.26] Round uplift in Yellowstone. That's right, the Norris Uplift Anomaly is back. Well, sort of.
+[   9.12-  15.52] The Norris Uplift Anomaly is an area that's just to the south of Norris Geyser Basin on the north rim of Yellowstone Caldera,
+[  15.52-  19.52] not too far from Given Falls. And ever since measurements have been made in the region,
+[  19.52-  24.52] we've seen it can rise and fall over time. In the mid 1990s to the early 2000s,
+[  24.52-  27.44] it rose by several inches and then back down a little bit.
+[  27.80-  34.80] Saw that happen again in the mid 2010s and the very early 2020s, and it began again in June or July of 2025.
+[  34.80-  41.80] It was detected by a variety of techniques. We saw it in satellite radar images that depict how the ground moves over time.
+[  41.80-  48.80] We could see it in continuous GPS data from sensors that are permanently installed here in Yellowstone to track how the ground moves.
+[  48.80-  56.30] And we even saw it in semi-permanent GPS stations, which are installed every summer to sort of get a quick idea of how certain areas are moving.
+[  56.74-  62.24] But all this uplift seems to have stopped after only about an inch or two in January of 2026.
+[  62.24-  67.08] Continuous GPS data showed that it stopped just as suddenly as it began.
+[  67.08-  72.74] What's causing this uplift? It's probably magmatic activity deep beneath the surface, about 10 miles or so.
+[  72.74-  78.38] Not a sign that Yellowstone's about to erupt, more a sign of the dynamic nature of the subsurface here in Yellowstone.
+[  78.38-  85.38] This is Yellowstone being Yellowstone. So that's the story from the Norris Uplift Anomaly, or maybe not so uplift right now.
+[  85.48-  92.48] Now let's talk about seismic activity, ground deformation in other parts of the park, and geyser activity that occurred over the course of the past month.
+[  92.48-  96.98] Seismicity in the Yellowstone region remains at the low end of normal.
+[  96.98- 102.48] During the month of July, the University of Utah Seismograph Stations located 68 earthquakes.
+[ 102.48- 110.98] The largest was a magnitude 3.3. It occurred in Hayden Valley between Canyon Village and Yellowstone Lake and was felt by some people in the park.
+[ 111.08- 117.08] There was also a swarm of about 13 earthquakes that occurred to the north of Old Faithful in the middle of July.
+[ 117.08- 121.88] Turning now to ground deformation, this is vertical deformation at a GPS station near Lake.
+[ 121.88- 126.28] The entire plot here spans two years. Each one of these blue dots is one day of data.
+[ 126.28- 130.48] Downward trends indicate subsidence and upward trends indicate uplift.
+[ 130.48- 138.08] Now since 2015, there's been an overall trend of subsidence interrupted in the summer months by uplift due to changes in groundwater conditions.
+[ 138.18- 147.18] That continued in 2025, but then that uplift, that summertime uplift in 2025, never really rolled back over into subsidence and instead just sort of flattened out.
+[ 147.18- 156.18] We may be seeing a little bit of that summertime uplift coming here towards the end of July, but we'll have to wait and see in the next month whether or not that continues.
+[ 156.18- 162.58] In terms of geyser activity in Norris Geyser Basin, Ekinus may have had one overflow, but no real eruptions.
+[ 162.58- 167.58] Steamboat is having minor eruptive activity, but still only one major eruption this year.
+[ 167.58- 175.58] In the Biscuit Basin area, Black Diamond Pool has had four or five eruptions. That's the site of the 2024 hydrothermal explosion.
+[ 175.58- 185.58] Also in Biscuit Basin, a new camera was installed to get a view not only of Black Diamond Pool, but also of the site of the June 13, 2026 hydrothermal explosion.
+[ 185.58- 189.08] Well, that's the monthly update from the Yellowstone Volcano Observatory.
+[ 189.08- 192.08] If you have any questions at all, leave us a comment or drop us an email.
+[ 192.08- 197.08] Our address is yvowebteam, all one word, at usgs.gov.
+[ 197.08- 201.58] Thanks for watching and we will see you next month. Stay safe and stay healthy. Bye-bye.

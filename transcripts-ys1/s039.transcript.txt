@@ -1,0 +1,3 @@
+[   0.05-   7.05] In the 1960s, a scientist named Thomas Brock came here to study what could live in water that hot.
+[   7.05-  16.05] In a small pool in the Lower Geyser Basin, he and a student found a bacterium that thrives in water hot enough to scald you.
+[  16.05-  19.05] They named it Thermos aquaticus.

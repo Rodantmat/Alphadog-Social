@@ -1,0 +1,5 @@
+[   0.05-   8.05] Nearly 20 years later, a chemist named Carrie Mullies invented a way to copy DNA millions of times, called PCR.
+[   8.05-  12.05] It needed an enzyme that could survive repeated heating.
+[  12.05-  16.05] The enzyme came from Brock's Yellowstone microbe.
+[  16.05-  18.05] Mullies won the Nobel Prize.
+[  18.05-  25.05] PCR changed medicine, crime labs, and much later, made modern COVID testing possible.
