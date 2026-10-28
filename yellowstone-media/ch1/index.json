@@ -1,0 +1,2228 @@
+{
+ "chapter": "ch1",
+ "list_sha": "88d2aedd897a28bd",
+ "files": [
+  {
+   "name": "ch1_nps_buffalo_ranch_14070",
+   "src_url": "https://home.nps.gov/features/yell/slidefile/parkstructures/other/buffaloranch/Images/14070.jpg",
+   "source_page": "https://home.nps.gov/features/yell/slidefile/parkstructures/other/buffaloranch/Page.htm",
+   "shows": "14070.jpg Original Yellowstone Institute cabins as seen from National Park Service corral; Photographer unknown; November 1983",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "NPS Yellowstone photo collection",
+   "status": "OK",
+   "page_usage": "NPS Yellowstone Photo Collection: 'These images are in the public domain and may be reproduced, free of charge with the proper credit line.'",
+   "file": "img/ch1_nps_buffalo_ranch_14070.jpg",
+   "w": 1975,
+   "h": 1278,
+   "bytes": 541129
+  },
+  {
+   "name": "ch1_nps_buffalo_ranch_16626",
+   "src_url": "https://home.nps.gov/features/yell/slidefile/parkstructures/other/buffaloranch/Images/16626.jpg",
+   "source_page": "https://home.nps.gov/features/yell/slidefile/parkstructures/other/buffaloranch/Page.htm",
+   "shows": "16626.jpg Buffalo Ranch generator shed; Jim Peaco; April 2000",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "NPS Yellowstone photo collection",
+   "status": "OK",
+   "page_usage": "NPS Yellowstone Photo Collection: 'These images are in the public domain and may be reproduced, free of charge with the proper credit line.'",
+   "file": "img/ch1_nps_buffalo_ranch_16626.jpg",
+   "w": 1999,
+   "h": 1366,
+   "bytes": 511725
+  },
+  {
+   "name": "ch1_nps_buffalo_ranch_16627",
+   "src_url": "https://home.nps.gov/features/yell/slidefile/parkstructures/other/buffaloranch/Images/16627.jpg",
+   "source_page": "https://home.nps.gov/features/yell/slidefile/parkstructures/other/buffaloranch/Page.htm",
+   "shows": "16627.jpg Buffalo Ranch generator shed; Jim Peaco; April 2000",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "NPS Yellowstone photo collection",
+   "status": "OK",
+   "page_usage": "NPS Yellowstone Photo Collection: 'These images are in the public domain and may be reproduced, free of charge with the proper credit line.'",
+   "file": "img/ch1_nps_buffalo_ranch_16627.jpg",
+   "w": 1969,
+   "h": 1190,
+   "bytes": 359877
+  },
+  {
+   "name": "ch1_nps_hist_thermal_1946_99_06142",
+   "src_url": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Images/06142.jpg",
+   "source_page": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Page-1.htm",
+   "shows": "06142.jpg Evening Primrose Spring; MM; 1959",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "NPS Yellowstone photo collection",
+   "status": "OK",
+   "page_usage": "NPS Yellowstone Photo Collection: 'These images are in the public domain and may be reproduced, free of charge with the proper credit line.'",
+   "file": "img/ch1_nps_hist_thermal_1946_99_06142.jpg",
+   "w": 1999,
+   "h": 1278,
+   "bytes": 541601
+  },
+  {
+   "name": "ch1_nps_hist_thermal_1946_99_06143",
+   "src_url": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Images/06143.jpg",
+   "source_page": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Page-1.htm",
+   "shows": "06143.jpg Evening Primrose Spring; Lewis; Pre 1959 earthquake",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "NPS Yellowstone photo collection",
+   "status": "OK",
+   "page_usage": "NPS Yellowstone Photo Collection: 'These images are in the public domain and may be reproduced, free of charge with the proper credit line.'",
+   "file": "img/ch1_nps_hist_thermal_1946_99_06143.jpg",
+   "w": 1999,
+   "h": 1238,
+   "bytes": 419277
+  },
+  {
+   "name": "ch1_nps_hist_thermal_1946_99_06176",
+   "src_url": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Images/06176.jpg",
+   "source_page": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Page-1.htm",
+   "shows": "06176.jpg Turquoise Pool, pre-earthquake - note bridge at left of picture; Lewis; 1957",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "NPS Yellowstone photo collection",
+   "status": "OK",
+   "page_usage": "NPS Yellowstone Photo Collection: 'These images are in the public domain and may be reproduced, free of charge with the proper credit line.'",
+   "file": "img/ch1_nps_hist_thermal_1946_99_06176.jpg",
+   "w": 2000,
+   "h": 1348,
+   "bytes": 370825
+  },
+  {
+   "name": "ch1_nps_hist_thermal_1946_99_06178",
+   "src_url": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Images/06178.jpg",
+   "source_page": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Page-1.htm",
+   "shows": "06178.jpg Turquoise Pool after the 1959 earthquake; Lewis; 1960",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "NPS Yellowstone photo collection",
+   "status": "OK",
+   "page_usage": "NPS Yellowstone Photo Collection: 'These images are in the public domain and may be reproduced, free of charge with the proper credit line.'",
+   "file": "img/ch1_nps_hist_thermal_1946_99_06178.jpg",
+   "w": 2000,
+   "h": 1348,
+   "bytes": 591989
+  },
+  {
+   "name": "ch1_nps_hist_thermal_1946_99_07799",
+   "src_url": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Images/07799.jpg",
+   "source_page": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Page-1.htm",
+   "shows": "07799.jpg Sapphire Pool in eruption after 1959 earthquake; Lewis; September 1959",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "NPS Yellowstone photo collection",
+   "status": "OK",
+   "page_usage": "NPS Yellowstone Photo Collection: 'These images are in the public domain and may be reproduced, free of charge with the proper credit line.'",
+   "file": "img/ch1_nps_hist_thermal_1946_99_07799.jpg",
+   "w": 1999,
+   "h": 1332,
+   "bytes": 341562
+  },
+  {
+   "name": "ch1_nps_hist_thermal_1946_99_07800",
+   "src_url": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Images/07800.jpg",
+   "source_page": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Page-1.htm",
+   "shows": "07800.jpg Sapphire Pool in eruption after 1959 earthquake; Lewis; Labor Day, 1959",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "NPS Yellowstone photo collection",
+   "status": "OK",
+   "page_usage": "NPS Yellowstone Photo Collection: 'These images are in the public domain and may be reproduced, free of charge with the proper credit line.'",
+   "file": "img/ch1_nps_hist_thermal_1946_99_07800.jpg",
+   "w": 1999,
+   "h": 1242,
+   "bytes": 376595
+  },
+  {
+   "name": "ch1_nps_hist_thermal_1946_99_07801",
+   "src_url": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Images/07801.jpg",
+   "source_page": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Page-1.htm",
+   "shows": "07801.jpg Sapphire Pool on eruption; McIntyre October 17, 1959",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "NPS Yellowstone photo collection",
+   "status": "OK",
+   "page_usage": "NPS Yellowstone Photo Collection: 'These images are in the public domain and may be reproduced, free of charge with the proper credit line.'",
+   "file": "img/ch1_nps_hist_thermal_1946_99_07801.jpg",
+   "w": 1999,
+   "h": 1356,
+   "bytes": 562708
+  },
+  {
+   "name": "ch1_nps_hist_thermal_1946_99_14378",
+   "src_url": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Images/14378.jpg",
+   "source_page": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Page-2.htm",
+   "shows": "14378.jpg Sapphire Pool; Photographer unknown; Pre 1959",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "NPS Yellowstone photo collection",
+   "status": "OK",
+   "page_usage": "NPS Yellowstone Photo Collection: 'These images are in the public domain and may be reproduced, free of charge with the proper credit line.'",
+   "file": "img/ch1_nps_hist_thermal_1946_99_14378.jpg",
+   "w": 1983,
+   "h": 1258,
+   "bytes": 582716
+  },
+  {
+   "name": "ch1_nps_hist_thermal_1946_99_17954",
+   "src_url": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Images/17954.jpg",
+   "source_page": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Page-2.htm",
+   "shows": "17954.jpg Mammoth Hot Springs; Mary Rutt; July 1959",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "NPS Yellowstone photo collection",
+   "status": "OK",
+   "page_usage": "NPS Yellowstone Photo Collection: 'These images are in the public domain and may be reproduced, free of charge with the proper credit line.'",
+   "file": "img/ch1_nps_hist_thermal_1946_99_17954.jpg",
+   "w": 1999,
+   "h": 1252,
+   "bytes": 433206
+  },
+  {
+   "name": "ch1_nps_hist_thermal_1946_99_17955",
+   "src_url": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Images/17955.jpg",
+   "source_page": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Page-2.htm",
+   "shows": "17955.jpg Mammoth Hot Springs; Mary Rutt; July 1959 Page: 1 2 3 Next Page -> Photo Collection Home | Yellowstone Home",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "NPS Yellowstone photo collection",
+   "status": "OK",
+   "page_usage": "NPS Yellowstone Photo Collection: 'These images are in the public domain and may be reproduced, free of charge with the proper credit line.'",
+   "file": "img/ch1_nps_hist_thermal_1946_99_17955.jpg",
+   "w": 1999,
+   "h": 1278,
+   "bytes": 527280
+  },
+  {
+   "name": "ch1_nps_hist_wildlife_03007",
+   "src_url": "https://home.nps.gov/features/yell/slidefile/history/1872_1918/wildlifemanagement/Images/03007.jpg",
+   "source_page": "https://home.nps.gov/features/yell/slidefile/history/1872_1918/wildlifemanagement/Page.htm",
+   "shows": "03007.jpg Bison corral at Mammoth Hot Springs; Photographer unknown; No date",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "NPS Yellowstone photo collection",
+   "status": "OK",
+   "page_usage": "NPS Yellowstone Photo Collection: 'These images are in the public domain and may be reproduced, free of charge with the proper credit line.'",
+   "file": "img/ch1_nps_hist_wildlife_03007.jpg",
+   "w": 1999,
+   "h": 1332,
+   "bytes": 901363
+  },
+  {
+   "name": "ch1_nps_hist_wildlife_14279",
+   "src_url": "https://home.nps.gov/features/yell/slidefile/history/1872_1918/wildlifemanagement/Images/14279.jpg",
+   "source_page": "https://home.nps.gov/features/yell/slidefile/history/1872_1918/wildlifemanagement/Page.htm",
+   "shows": "14279.jpg Bison show pen on Dot Island; Albert L Noyes; Around 1906 Page: 1 Next Page -> Photo Collection Home | Yellowstone Home",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "NPS Yellowstone photo collection",
+   "status": "OK",
+   "page_usage": "NPS Yellowstone Photo Collection: 'These images are in the public domain and may be reproduced, free of charge with the proper credit line.'",
+   "file": "img/ch1_nps_hist_wildlife_14279.jpg",
+   "w": 2000,
+   "h": 1504,
+   "bytes": 612800
+  },
+  {
+   "name": "ch1_usgs_biscuit_biscuit_basin_webcam_view",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/2025-05-23_12-45-03_image.jpg",
+   "source_page": "https://www.usgs.gov/media/images/biscuit-basin-webcam-view",
+   "shows": "",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS",
+   "status": "OK",
+   "title": "Biscuit Basin webcam view",
+   "page_usage": "Public Domain.",
+   "page_desc": "Image from the webcam installed at Biscuit Basin in Yellowstone National Park. The view is of Black Diamond Pool, where a hydrothermal explosion occurred on July 23, 2024 (many of the rocks behind and to the right of the pool were deposited during that event). The background cliff is the Summit Lake rhyolite lava flow, which is about 111,000 years old. The camera is a temporary deployment installe",
+   "file": "img/ch1_usgs_biscuit_biscuit_basin_webcam_view.jpg",
+   "w": 2688,
+   "h": 1512,
+   "bytes": 591475
+  },
+  {
+   "name": "ch1_usgs_biscuit_camera_installation_biscuit_basin_monitoring_site_yellowston",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/Biscuit_Basin_camera_configuration.jpg",
+   "source_page": "https://www.usgs.gov/media/images/camera-installation-biscuit-basin-monitoring-site-yellowstone-national-park",
+   "shows": "",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS photo by Mike Poland, July 22, 2026",
+   "status": "OK",
+   "title": "Camera installation at Biscuit Basin monitoring site, Yellowstone National Park",
+   "page_usage": "Public Domain.",
+   "page_desc": "Camera installed at the Biscuit Basin monitoring site. The camera is near the top of a small tower that holds a weather sensor and solar panel that powers nearby seismic and acoustic sensors. The solar panel that powers the camera is located on the ground at the base of the tower. USGS photo by Mike Poland, July 22, 2026.",
+   "page_credit": "USGS photo by Mike Poland, July 22, 2026",
+   "file": "img/ch1_usgs_biscuit_camera_installation_biscuit_basin_monitoring_site_yellowston.jpg",
+   "w": 2258,
+   "h": 3000,
+   "bytes": 2071937
+  },
+  {
+   "name": "ch1_usgs_biscuit_camera_view_biscuit_basin_monitoring_site_yellowstone_nation",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/Biscuit_Basin_camera_view_annotated.jpg",
+   "source_page": "https://www.usgs.gov/media/images/camera-view-biscuit-basin-monitoring-site-yellowstone-national-park",
+   "shows": "",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS",
+   "status": "OK",
+   "title": "Camera view from Biscuit Basin monitoring site, Yellowstone National Park",
+   "page_usage": "Public Domain.",
+   "page_desc": "View from a research camera installed at Biscuit Basin near the site of seismic, infrasound, and GPS monitoring. The camera has a view of Black Diamond Pool, where a hydrothermal explosion occurred on July 23, 2024, as well as of the area north of the pool where another small explosion occurred on June 13, 2026. Camera images are updated every 15 minutes at https://www.usgs.gov/media/webcams/biscu",
+   "file": "img/ch1_usgs_biscuit_camera_view_biscuit_basin_monitoring_site_yellowstone_nation.jpg",
+   "w": 3000,
+   "h": 1688,
+   "bytes": 1717828
+  },
+  {
+   "name": "ch1_usgs_biscuit_eruption_black_diamond_pool_biscuit_basin_yellowstone_nation",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/Biscuit%20May%2031%202025%20frame.jpg",
+   "source_page": "https://www.usgs.gov/media/images/eruption-black-diamond-pool-biscuit-basin-yellowstone-national-park-captured-a-webcam",
+   "shows": "",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS",
+   "status": "OK",
+   "title": "Eruption from Black Diamond Pool in Biscuit Basin, Yellowstone National Park, captured by a webcam on May 31, 2025",
+   "page_usage": "Public Domain. Contacts Yellowstone Volcano Observatory (YVO) 1300 SE Cardinal Court STE 100 Vancouver , WA 98683 United States Email yvowebteam@usgs.gov Phone",
+   "page_desc": "This frame capture of a video from a webcam shows a small eruption emanating from Black Diamond Pool in Biscuit Basin, a subbasin of Upper Geyser Basin in Yellowstone National Park, on May 31, 2025. This was the site of a hydrothermal explosion on July 23, 2024.",
+   "file": "img/ch1_usgs_biscuit_eruption_black_diamond_pool_biscuit_basin_yellowstone_nation.jpg",
+   "w": 2688,
+   "h": 1512,
+   "bytes": 624691
+  },
+  {
+   "name": "ch1_usgs_biscuit_graph_showing_explosions_recorded_black_diamond_pool_biscuit",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/Black%20Diamond%202006%20thru%202016.jpg",
+   "source_page": "https://www.usgs.gov/media/images/graph-showing-explosions-recorded-black-diamond-pool-biscuit-basin-yellowstone",
+   "shows": "",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS",
+   "status": "OK",
+   "title": "Graph showing explosions recorded at Black Diamond Pool in Biscuit Basin, Yellowstone National Park, during 2006 through 2016",
+   "page_usage": "Public Domain.",
+   "page_desc": "Graph showing explosions recorded at Black Diamond Pool in Biscuit Basin, Yellowstone National Park, during 2006 through 2016. Confirmed events refer to eruptions that were witnessed, recorded by temperature loggers, or inferred from their aftermath. Unconfirmed events refer to eruptions that were questionable or might have been misattributed to Black Diamond.",
+   "file": "img/ch1_usgs_biscuit_graph_showing_explosions_recorded_black_diamond_pool_biscuit.jpg",
+   "w": 1800,
+   "h": 1200,
+   "bytes": 195571
+  },
+  {
+   "name": "ch1_usgs_biscuit_screen_capture_showing_onset_a_small_hydrothermal_explosion_",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/June_13_2026_BB_explosion_frame_grab.jpg",
+   "source_page": "https://www.usgs.gov/media/images/screen-capture-showing-onset-a-small-hydrothermal-explosion-biscuit-basin-yellowstone",
+   "shows": "",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS",
+   "status": "OK",
+   "title": "Screen capture showing onset of a small hydrothermal explosion at Biscuit Basin, Yellowstone National Park, on June 13, 2026",
+   "page_usage": "Public Domain. Contacts Yellowstone Volcano Observatory (YVO) 1300 SE Cardinal Court STE 100 Vancouver , WA 98683 United States Email yvowebteam@usgs.gov Phone",
+   "page_desc": "Screen capture showing the view from the Biscuit Basin research and monitoring camera at 05:09:54 a.m. MDT on June 13, 2026. Black Diamond Pool is in the foreground, and a steam plume in the upper right marks the occurrence of a small hydrothermal explosion behind (to the north of) the pool.",
+   "file": "img/ch1_usgs_biscuit_screen_capture_showing_onset_a_small_hydrothermal_explosion_.jpg",
+   "w": 1619,
+   "h": 904,
+   "bytes": 179688
+  },
+  {
+   "name": "ch1_usgs_biscuit_temperature_record_black_diamond_pool_runoff_channel_may_31_",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/BDP_temperature_2025May31.jpg",
+   "source_page": "https://www.usgs.gov/media/images/temperature-record-black-diamond-pool-runoff-channel-may-31-2025",
+   "shows": "",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS",
+   "status": "OK",
+   "title": "Temperature record from Black Diamond Pool runoff channel on May 31, 2025",
+   "page_usage": "Public Domain.",
+   "page_desc": "Water temperature in a runoff channel of Black Diamond Pool in Biscuit Basin, Yellowstone National Park, measured on May 31, 2025. The spike and subsequent drop over the span of about four minutes, followed by the low temperature recorded over about the following hour, is due to a small eruption that occurred from the pool at 8:39 p.m. that day.",
+   "file": "img/ch1_usgs_biscuit_temperature_record_black_diamond_pool_runoff_channel_may_31_.jpg",
+   "w": 2106,
+   "h": 1122,
+   "bytes": 216213
+  },
+  {
+   "name": "ch1_usgs_earthquake_lake_madison_slide",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/Quake%20lake%20and%20slide%2020230627.jpg",
+   "source_page": "https://www.usgs.gov/media/images/earthquake-lake-and-madison-slide",
+   "shows": "Earthquake Lake and Madison Slide scar (2023)",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS photo by Mike Poland",
+   "status": "OK",
+   "title": "Earthquake Lake and the Madison slide",
+   "page_usage": "Public Domain.",
+   "page_desc": "Earthquake Lake, which formed when the Madison River was blocked by a landslide that occurred as a consequence of the Hebgen Lake earthquake in 1959. The lake inundated existing forest, now marked by standing dead trees in the lake water. The landslide scar is visible on the side of the mountain at the far end of the lake. USGS photo by Mike Poland, June 27, 2023.",
+   "page_credit": "USGS photo by Mike Poland, June 27, 2023",
+   "file": "img/ch1_usgs_earthquake_lake_madison_slide.jpg",
+   "w": 3000,
+   "h": 2258,
+   "bytes": 1538696
+  },
+  {
+   "name": "ch1_usgs_hebgen1959_dragline_working_lower_outlet_channel_earthquake_lake_octobe",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake3.jpg",
+   "source_page": "https://www.usgs.gov/media/images/dragline-working-lower-outlet-channel-earthquake-lake-october-18-1959",
+   "shows": "",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "Photo by Mrs",
+   "status": "OK",
+   "title": "Dragline working to lower the outlet channel of Earthquake Lake on October 18, 1959",
+   "page_usage": "Public Domain.",
+   "page_desc": "Dragline work to lower the outlet channel of Earthquake Lake on October 18, 1959. The tripod on the hill at center left is one of five lighting plants that allowed nighttime work. Note the \u201cbathtub ring\u201d of killed trees along the shoreline marking the high stand of Earthquake Lake before lowering of the outlet channel. Photo by Mrs. Steven W. Nile (Dr. Steven Nile was a physics professor at the Mo",
+   "page_credit": "Photo by Mrs",
+   "file": "img/ch1_usgs_hebgen1959_dragline_working_lower_outlet_channel_earthquake_lake_octobe.jpg",
+   "w": 3000,
+   "h": 2138,
+   "bytes": 1345402
+  },
+  {
+   "name": "ch1_usgs_hebgen1959_earthquake_damage_1959_hebgen_lake_event_yellowstone_plateau",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/vhp_img317.jpg",
+   "source_page": "https://www.usgs.gov/media/images/earthquake-damage-1959-hebgen-lake-event-yellowstone-plateau",
+   "shows": "",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS",
+   "status": "OK",
+   "title": "Earthquake damage from 1959 Hebgen Lake event in Yellowstone Plateau",
+   "page_usage": "Public Domain. Fact Sheet 2005-3024",
+   "page_desc": "This house fell into Hebgen Lake during the 1959 earthquake and floated along the shore until it came to rest here. The owner of the house, then-70-year-old Mrs. Grace Miller, escaped only after kicking out her front door and leaping a 5-foot-wide ground crack as her house dropped into the lake.",
+   "file": "img/ch1_usgs_hebgen1959_earthquake_damage_1959_hebgen_lake_event_yellowstone_plateau.jpg",
+   "w": 1400,
+   "h": 936,
+   "bytes": 604023
+  },
+  {
+   "name": "ch1_usgs_hebgen1959_view_madison_slide_august_21_1959_rapidly_filling_earthquake",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake1.jpg",
+   "source_page": "https://www.usgs.gov/media/images/view-madison-slide-august-21-1959-rapidly-filling-earthquake-lake",
+   "shows": "",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "Photo by Professor William B",
+   "status": "OK",
+   "title": "View of the Madison Slide on August 21, 1959 with rapidly filling Earthquake Lake",
+   "page_usage": "Public Domain.",
+   "page_desc": "View of the Madison Slide on August 21, 1959 with rapidly filling Earthquake Lake. Rock Creek Campground was near the flooded trees. Camping gear was left behind by survivors who sought high ground following the slide. Photo by Professor William B. Hall, Montana School of Mines Geology Department.",
+   "page_credit": "Photo by Professor William B",
+   "file": "img/ch1_usgs_hebgen1959_view_madison_slide_august_21_1959_rapidly_filling_earthquake.jpg",
+   "w": 3000,
+   "h": 2106,
+   "bytes": 916713
+  },
+  {
+   "name": "ch1_usgs_hotspot_track_map",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/Figure%201.png",
+   "source_page": "https://www.usgs.gov/media/images/structural-map-onset-yellowstone-snake-river-plain-hotspot-track",
+   "shows": "Map: onset of Yellowstone-Snake River Plain hotspot track ~16.5 Ma",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "Yellowstone Volcano Observatory, USGS (modified from Hyndman & Thomas 2020)",
+   "status": "OK",
+   "title": "Structural map of the onset of the Yellowstone-Snake River Plain hotspot track",
+   "page_usage": "Public Domain.",
+   "page_desc": "Beginning of Yellowstone-Snake River Plain hotspot track and resulting northeasterly path of the ancestral Missouri River starting about 16.5 million years ago. Modified from Hyndman D.W., and Thomas, R.C., 2020, Roadside Geology of Montana, Mountain Press Publishing, 464 p.",
+   "file": "img/ch1_usgs_hotspot_track_map.png",
+   "w": 2216,
+   "h": 1696,
+   "bytes": 347300
+  },
+  {
+   "name": "ch1_usgs_hydrothermal_crater_probability_plot",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/Yellowstone%20hydrothermal%20explosion%20recurrence.jpg",
+   "source_page": "https://www.usgs.gov/media/images/plot-size-versus-annual-probability-hydrothermal-explosion-craters-yellowstone",
+   "shows": "Plot: crater size vs annual probability of hydrothermal explosions; Biscuit Basin 2024 marked",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS (modified from Christiansen and others, 2007)",
+   "status": "OK",
+   "title": "Plot of size versus annual probability for hydrothermal explosion craters in Yellowstone National Park",
+   "page_usage": "Public Domain.",
+   "page_desc": "Plot of size versus annual probability for hydrothermal explosion craters in Yellowstone National Park. The line is a model based on the energy required to form a crater of a specific size, and it is fit to known hydrothermal explosion craters in Yellowstone National Park. Red boxes are example hydrothermal explosion craters in Yellowstone that were observed or were identified from geological stud",
+   "file": "img/ch1_usgs_hydrothermal_crater_probability_plot.jpg",
+   "w": 1999,
+   "h": 1806,
+   "bytes": 264091
+  },
+  {
+   "name": "ch1_usgs_mushroom_pool",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/MushroomPool.JPG",
+   "source_page": "https://www.usgs.gov/media/images/mushroom-pool-lower-geyser-basin-yellowstone-national-park",
+   "shows": "Mushroom Pool, Lower Geyser Basin (Thermus aquaticus source)",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS photo by Lauren Harrison, 2018",
+   "status": "OK",
+   "title": "Mushroom Pool, Lower Geyser Basin, Yellowstone National Park",
+   "page_usage": "Public Domain.",
+   "page_desc": "Mushroom Pool, Lower Geyser Basin, Yellowstone National Park. Old roads were routed very near this feature as early as 1895, when the pool was noted by the strange \u201cvegetable formation growing on it.\u201d This observation turned out to be prophetical: Mushroom Pool is famous as the location where Thermus aquaticus strain YT-1 was discovered by Dr. Thomas Brock. Eventually study of this bacterium led t",
+   "page_credit": "USGS photo by Lauren Harrison, 2018",
+   "file": "img/ch1_usgs_mushroom_pool.jpg",
+   "w": 720,
+   "h": 480,
+   "bytes": 114585
+  },
+  {
+   "name": "ch1_usgs_mushroom_pool_b",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7977.jpg",
+   "source_page": "https://www.usgs.gov/media/images/mushroom-pool-lower-geyser-basin-yellowstone-national-park-pool",
+   "shows": "Mushroom Pool, Lower Geyser Basin",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS",
+   "status": "OK",
+   "title": "Mushroom Pool, in the Lower Geyser Basin of Yellowstone National Park. The pool",
+   "page_usage": "Public Domain. Photographer Brock, Thomas Credits Explore Search Natural Hazards Kilauea 332010 hvo_multimedia previewImage-2878 Natural Hazards Mission Area Vo",
+   "page_desc": "Mushroom Pool, in the Lower Geyser Basin of Yellowstone National Park, as it looked in June 23, 1967. The sample that would be the source of Thermus aquaticus strain YT-1 came from this hot spring. Pictured is Thomas Brock standing near the edge of the pool. Image from the self-published \"A Scientist in Yellowstone National Park\" (Brock, 2017).",
+   "file": "img/ch1_usgs_mushroom_pool_b.jpg",
+   "w": 1319,
+   "h": 880,
+   "bytes": 183515
+  },
+  {
+   "name": "ch1_usgs_old_faithful_summer",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/OldFaithfulCrow_0.jpg",
+   "source_page": "https://www.usgs.gov/media/images/old-faithful-summer-eruption",
+   "shows": "Old Faithful summer eruption",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "Photo by Jacob Frank (NPS)",
+   "status": "OK",
+   "title": "Old Faithful summer eruption",
+   "page_usage": "Public Domain.",
+   "page_desc": "The Old Faithful geyser erupts in Yellowstone National Park, surrounded by a large crowd of people. Photo by Jacob Frank (NPS).Old Faithful summer eruption | NPS / Jacob W. Frank | Yellowstone National Park | Flickr",
+   "page_credit": "Photo by Jacob Frank (NPS)",
+   "file": "img/ch1_usgs_old_faithful_summer.jpg",
+   "w": 3000,
+   "h": 2000,
+   "bytes": 968800
+  },
+  {
+   "name": "ch1_nps_bison_calves_1",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/16A1C44D-155D-451F-67F024E7A70CD056/yell-Bison00704MTS_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=16A1C44D-155D-451F-67F024E7A70CD056",
+   "shows": "Bison with calves (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Bison Calf",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "47 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1920 x 10",
+   "crf": 20,
+   "file": "video/ch1_nps_bison_calves_1.mp4",
+   "orig_dur": 47.23,
+   "dur": 47.23,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 21268702
+  },
+  {
+   "name": "ch1_nps_bison_calves_2",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/17620874-155D-451F-67E5DDDFDD1FDC8F/yell-Bison00715MTS_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=17620874-155D-451F-67E5DDDFDD1FDC8F",
+   "shows": "Bison with calves (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Bison Herd with Calves",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "43 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1920 x 10",
+   "crf": 20,
+   "file": "video/ch1_nps_bison_calves_2.mp4",
+   "orig_dur": 43.16,
+   "dur": 43.16,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 10244817
+  },
+  {
+   "name": "ch1_nps_bison_calves_3",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/18124917-155D-451F-671A1621E7AACDFD/yell-Bison00772MTS_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=18124917-155D-451F-671A1621E7AACDFD",
+   "shows": "Bison with calves (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Bison Calf",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "20 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1920 x 10",
+   "crf": 20,
+   "file": "video/ch1_nps_bison_calves_3.mp4",
+   "orig_dur": 20.59,
+   "dur": 20.59,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 6150533
+  },
+  {
+   "name": "ch1_nps_bison_summer_1",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/FD0F935E-155D-451F-67A73BDD6C247CCC/yell-AA056401MXF_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=FD0F935E-155D-451F-67A73BDD6C247CCC",
+   "shows": "Bison, summer (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Bison along the Lamar River",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "20 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1920 x 10",
+   "crf": 20,
+   "file": "video/ch1_nps_bison_summer_1.mp4",
+   "orig_dur": 20.76,
+   "dur": 20.76,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 2428106
+  },
+  {
+   "name": "ch1_nps_bison_summer_2",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/FD5CDC9C-155D-451F-67CEF3254947F134/yell-341A2744MOV_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=FD5CDC9C-155D-451F-67CEF3254947F134",
+   "shows": "Bison, summer (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Bison herd",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "24 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1920 x 10",
+   "crf": 20,
+   "file": "video/ch1_nps_bison_summer_2.mp4",
+   "orig_dur": 24.53,
+   "dur": 24.53,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 3899908
+  },
+  {
+   "name": "ch1_nps_bison_summer_3",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/FDC8AC8C-155D-451F-6709D7392955B151/yell-341A2698MOV_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=FDC8AC8C-155D-451F-6709D7392955B151",
+   "shows": "Bison, summer (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Bison grazing",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "16 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1920 x 10",
+   "crf": 20,
+   "file": "video/ch1_nps_bison_summer_3.mp4",
+   "orig_dur": 16.49,
+   "dur": 16.49,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 11906449
+  },
+  {
+   "name": "ch1_nps_castle_geyser_1",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/797E8220-155D-451F-678680BB083DE339/yell-UGBasin341A4346MOV1_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=797E8220-155D-451F-678680BB083DE339",
+   "shows": "Castle Geyser eruption, Upper Geyser Basin (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Castle Geyser (with rainbow)",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "45 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1920 x 10",
+   "crf": 20,
+   "file": "video/ch1_nps_castle_geyser_1.mp4",
+   "orig_dur": 45.25,
+   "dur": 45.25,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 6204167
+  },
+  {
+   "name": "ch1_nps_castle_geyser_2",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/7AD20D8E-155D-451F-6799DC8FF5C93BD3/yell-UGBasin341A4353MOV_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=7AD20D8E-155D-451F-6799DC8FF5C93BD3",
+   "shows": "Castle Geyser eruption, Upper Geyser Basin (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Castle Geyser (with Old Faithful)",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "35 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1920 x 10",
+   "crf": 20,
+   "file": "video/ch1_nps_castle_geyser_2.mp4",
+   "orig_dur": 35.52,
+   "dur": 35.52,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 6732795
+  },
+  {
+   "name": "ch1_nps_castle_geyser_3",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/7C1B3B7B-155D-451F-67A0A46938AE547B/yell-UGBasin341A4294MOV_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=7C1B3B7B-155D-451F-67A0A46938AE547B",
+   "shows": "Castle Geyser eruption, Upper Geyser Basin (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Castle Geyser (during inversion)",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "33 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1920 x 10",
+   "crf": 20,
+   "file": "video/ch1_nps_castle_geyser_3.mp4",
+   "orig_dur": 33.53,
+   "dur": 33.53,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 5574431
+  },
+  {
+   "name": "ch1_nps_clepsydra_geyser_1",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/78AA8315-155D-451F-67E1FD5D77864E6A/yell-LGBasin00563MTS_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=78AA8315-155D-451F-67E1FD5D77864E6A",
+   "shows": "Clepsydra Geyser (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Clepsydra Geyser",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "28 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1280 x 72",
+   "crf": 20,
+   "file": "video/ch1_nps_clepsydra_geyser_1.mp4",
+   "orig_dur": 28.1,
+   "dur": 28.1,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 7165469
+  },
+  {
+   "name": "ch1_nps_fountain_geyser_1",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/FEF730F4-155D-451F-675352504BCD06D3/yell-AA140101MXF_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=FEF730F4-155D-451F-675352504BCD06D3",
+   "shows": "Fountain Geyser eruption, Lower Geyser Basin (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Fountain Geyser",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "55 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1920 x 10",
+   "crf": 20,
+   "file": "video/ch1_nps_fountain_geyser_1.mp4",
+   "orig_dur": 55.55,
+   "dur": 55.55,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 10465646
+  },
+  {
+   "name": "ch1_nps_fountain_paint_pot_1",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/793625B6-155D-451F-6765089EF7D095D1/yell-LGBasin00558MTS_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=793625B6-155D-451F-6765089EF7D095D1",
+   "shows": "Fountain Paint Pot mudpots (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Fountain Paint Pot",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "23 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1280 x 72",
+   "crf": 20,
+   "file": "video/ch1_nps_fountain_paint_pot_1.mp4",
+   "orig_dur": 23.47,
+   "dur": 23.47,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 17332880
+  },
+  {
+   "name": "ch1_nps_grand_prismatic_1",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/7E5FFF00-155D-451F-676262A83E6E19C7/yell-MGBasin00547MTS1_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=7E5FFF00-155D-451F-676262A83E6E19C7",
+   "shows": "Grand Prismatic Spring (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Grand Prismatic Spring",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "26 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1280 x 72",
+   "crf": 20,
+   "file": "video/ch1_nps_grand_prismatic_1.mp4",
+   "orig_dur": 26.26,
+   "dur": 26.26,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 5995119
+  },
+  {
+   "name": "ch1_nps_lamar_wolves_1",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/020FB2BA-155D-451F-6762706C2BD757EE/yell-AA144802MXF_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=020FB2BA-155D-451F-6762706C2BD757EE",
+   "shows": "Lamar wolf pack (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Wolves: Lamar Pack",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "29 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1920 x 10",
+   "crf": 20,
+   "file": "video/ch1_nps_lamar_wolves_1.mp4",
+   "orig_dur": 29.99,
+   "dur": 29.99,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 4314344
+  },
+  {
+   "name": "ch1_nps_lamar_wolves_2",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/026FF7F6-155D-451F-67FB22C830EBD9C2/yell-AA144802MXF-2_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=026FF7F6-155D-451F-67FB22C830EBD9C2",
+   "shows": "Lamar wolf pack (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Wolves: Lamar Pack",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "12 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1920 x 10",
+   "crf": 20,
+   "file": "video/ch1_nps_lamar_wolves_2.mp4",
+   "orig_dur": 12.61,
+   "dur": 12.61,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 2495073
+  },
+  {
+   "name": "ch1_nps_lamar_wolves_3",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/02A168C8-155D-451F-675BECFF98CACBAE/yell-AA144901MXF_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=02A168C8-155D-451F-675BECFF98CACBAE",
+   "shows": "Lamar wolf pack (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Wolves: Lamar Pack",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "22 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1920 x 10",
+   "crf": 20,
+   "file": "video/ch1_nps_lamar_wolves_3.mp4",
+   "orig_dur": 22.23,
+   "dur": 22.23,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 3384407
+  },
+  {
+   "name": "ch1_nps_lower_falls_1",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/77B87078-1DD8-B71B-0BF726FF93C0CA13/yell-IMG01622_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=77B87078-1DD8-B71B-0BF726FF93C0CA13",
+   "shows": "Lower Falls from Lookout Point, Grand Canyon of the Yellowstone (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Lower Falls",
+   "page_credit": "NPS / Jacob W. Frank",
+   "page_duration": "1 minute Credit NPS / Jacob W.",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: ?",
+   "crf": 20,
+   "file": "video/ch1_nps_lower_falls_1.mp4",
+   "orig_dur": 60.76,
+   "dur": 60.76,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 11151787
+  },
+  {
+   "name": "ch1_nps_lower_geyser_basin_steam_1",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/7FA88D51-155D-451F-679C3AC98129553F/yell-LGBasin00568MTS_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=7FA88D51-155D-451F-679C3AC98129553F",
+   "shows": "Lower Geyser Basin steam (telephoto) (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Lower Geyser Basin (sunset, telephoto)",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "19 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1280 x 72",
+   "crf": 20,
+   "file": "video/ch1_nps_lower_geyser_basin_steam_1.mp4",
+   "orig_dur": 19.09,
+   "dur": 19.09,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 6437403
+  },
+  {
+   "name": "ch1_nps_norris_steam_1",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/AE5CDB99-155D-451F-67D56CA7FFDC4C3D/yell-Norris00145MTS_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=AE5CDB99-155D-451F-67D56CA7FFDC4C3D",
+   "shows": "Norris Geyser Basin steam (telephoto) (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Norris Geyser Basin (telephoto)",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "31 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1920 x 10",
+   "crf": 20,
+   "file": "video/ch1_nps_norris_steam_1.mp4",
+   "orig_dur": 31.94,
+   "dur": 31.94,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 9987617
+  },
+  {
+   "name": "ch1_nps_sawmill_geyser_1",
+   "src_url": "https://www.nps.gov/nps-audiovideo/legacy/yell/7D9426C2-155D-451F-67C4F10DB688CCF4/yell-UGBasin341A4357MOV_1280x720.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=7D9426C2-155D-451F-67C4F10DB688CCF4",
+   "shows": "Sawmill Geyser (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Sawmill Geyser",
+   "page_credit": "NPS/Neal Herbert",
+   "page_duration": "28 seconds Credit NPS/Neal Her",
+   "page_usage": "NPS Yellowstone Video Library: 'recorded in the park and are in the public domain... may be downloaded and used without limitation' / clip page: Copyright Info: Public domain Frame: 1920 x 10",
+   "crf": 20,
+   "file": "video/ch1_nps_sawmill_geyser_1.mp4",
+   "orig_dur": 28.5,
+   "dur": 28.5,
+   "w": 1280,
+   "h": 720,
+   "truncated": false,
+   "bytes": 5911822
+  },
+  {
+   "name": "ch1_usgs_beryl_spring",
+   "src_url": "https://usgs-ocapsv2-public-input-media.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/video/Beryl%20Springs%2030s.mp4",
+   "source_page": "https://www.usgs.gov/media/videos/beryl-springs-yellowstone-national-park",
+   "shows": "Beryl Spring thermal b-roll",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS / Yellowstone Volcano Observatory",
+   "status": "OK",
+   "title": "Beryl Springs \u2014 Yellowstone National Park",
+   "page_usage": "Public Domain.",
+   "page_desc": "Beryl Spring, in the Gibbon River Canyon, is chemically complex\u2014it has a pool with a basic composition and a steam vent with an acidic composition! It\u2019s location next to the highway has caused numerous problems for the road, requiring some creative engineering solutions and a lot of geological expertise!This video and audio are from the Sounds of Yellowstone (ASMR, Sleep, Concentration) series. Su",
+   "length": "00:00:30 S",
+   "crf": 20,
+   "file": "video/ch1_usgs_beryl_spring.mp4",
+   "orig_dur": 29.5,
+   "dur": 29.5,
+   "w": 1920,
+   "h": 960,
+   "truncated": false,
+   "bytes": 27104842
+  },
+  {
+   "name": "ch1_usgs_biscuit_basin_update_oct2024",
+   "src_url": "https://usgs-ocapsv2-public-input-media.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/video/Explosion%20Yellowstone%20Biscuit%20Basin%20Update.mp4",
+   "source_page": "https://www.usgs.gov/media/videos/biscuit-basin-hydrothermal-explosion-update-yellowstone-monthly-update-october-2024",
+   "shows": "YVO monthly update Oct 2024: what was learned about the Biscuit Basin explosion",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS / Yellowstone Volcano Observatory",
+   "status": "OK",
+   "title": "Biscuit Basin Hydrothermal Explosion Update (Yellowstone Monthly Update \u2014 October 2024)",
+   "page_usage": "Public Domain.",
+   "page_desc": "Let\u2019s get you caught up on what we\u2019ve learned about the July 23, 2024, hydrothermal explosion in Biscuit Basin, in this Yellowstone Volcano Observatory Monthly Update for October 2024. Read Caldera ChroniclesVisit Yellowstone Volcano Observatory website",
+   "length": "00:03:37 S",
+   "crf": 23,
+   "file": "video/ch1_usgs_biscuit_basin_update_oct2024.mp4",
+   "orig_dur": 216.73,
+   "dur": 216.75,
+   "w": 1920,
+   "h": 1080,
+   "truncated": false,
+   "bytes": 82610303
+  },
+  {
+   "name": "ch1_usgs_cinnamon_spouter",
+   "src_url": "https://usgs-ocapsv2-public-input-media.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/video/Cinnamon%20Spouter%2030s.mp4",
+   "source_page": "https://www.usgs.gov/media/videos/cinnamon-spouter-yellowstone-national-park",
+   "shows": "Cinnamon Spouter b-roll",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS / Yellowstone Volcano Observatory",
+   "status": "OK",
+   "title": "Cinnamon Spouter \u2014 Yellowstone National Park",
+   "page_usage": "Public Domain. Geospatial Information Credits Video: Scott Horvath, USGS Multimedia Gallery Access relevant media to include images, videos, before-after images",
+   "page_desc": "Cinnamon Spouter, in Black Sand Basin, has long stretches of bubbling activity. A \u201csizziling fracture\u201d was first noticed at this location in 1933, but little more was noted until the current spouting pool developed in 1988\u20131989.This video and audio are from the Sounds of Yellowstone (ASMR, Sleep, Concentration) series. Subscribe to the series on our YouTube channel, or Apple Podcasts.",
+   "length": "00:00:31 S",
+   "crf": 20,
+   "file": "video/ch1_usgs_cinnamon_spouter.mp4",
+   "orig_dur": 31.4,
+   "dur": 31.4,
+   "w": 1920,
+   "h": 960,
+   "truncated": false,
+   "bytes": 42872885
+  },
+  {
+   "name": "ch1_usgs_congress_pool",
+   "src_url": "https://usgs-ocapsv2-public-input-media.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/video/Congress%20Pool%2030s.mp4",
+   "source_page": "https://www.usgs.gov/media/videos/congress-pool-yellowstone-national-park",
+   "shows": "Congress Pool (Norris) b-roll",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS / Yellowstone Volcano Observatory",
+   "status": "OK",
+   "title": "Congress Pool \u2014 Yellowstone National Park",
+   "page_usage": "Public Domain. Geospatial Information Credits Video: Scott Horvath, USGS Multimedia Gallery Access relevant media to include images, videos, before-after images",
+   "page_desc": "Named for a visit in 1891 by members of the Fifth International Geological Congress, the feature in Norris Geyser Basin has behaved as a quiet pool, geyser, and roiling mud pot.This video and audio are from the Sounds of Yellowstone (ASMR, Sleep, Concentration) series. Subscribe to the series on our YouTube channel, or Apple Podcasts.",
+   "length": "00:00:30 S",
+   "crf": 20,
+   "file": "video/ch1_usgs_congress_pool.mp4",
+   "orig_dur": 30.1,
+   "dur": 30.1,
+   "w": 1920,
+   "h": 960,
+   "truncated": false,
+   "bytes": 15787273
+  },
+  {
+   "name": "ch1_usgs_hydrothermal_explosions_more_common_dec2024",
+   "src_url": "https://usgs-ocapsv2-public-input-media.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/video/explosion%20yellowstone%20hydrothermal.mp4",
+   "source_page": "https://www.usgs.gov/media/videos/hydrothermal-explosions-more-common-you-think-yellowstone-monthly-update-dec-2024",
+   "shows": "YVO Dec 2024: hydrothermal explosions more common than you think (Norris Apr 2024 infrasound)",
+   "license": "Public Domain with some content used with permission (USGS)",
+   "credit": "USGS / Yellowstone Volcano Observatory (Video edited by Liz Westby, USGS Multimedia Gallery Access relevant media to include images, vid)",
+   "status": "EXCLUDE-pending (page says some content used with permission; frame-check before use)",
+   "title": "Hydrothermal Explosions \u2014 more common than you think! (Yellowstone Monthly Update - Dec 2024)",
+   "page_usage": "Public Domain. Some content used with permission.",
+   "page_desc": "The hydrothermal explosion in Biscuit Basin stole all the headlines. But did you know there was a smaller hydrothermal explosion in Norris Geyser Basin on April 15, 2024? That explosion was detected by a new infrasound sensor installed this past September. Watch to learn more.",
+   "page_credit": "Video edited by Liz Westby, USGS Multimedia Gallery Access relevant media to include images, vid",
+   "length": "00:04:00 S",
+   "crf": 23,
+   "file": "video/ch1_usgs_hydrothermal_explosions_more_common_dec2024.mp4",
+   "orig_dur": 240.0,
+   "dur": 240.0,
+   "w": 1920,
+   "h": 1080,
+   "truncated": false,
+   "bytes": 63839761
+  },
+  {
+   "name": "ch1_usgs_kansas_ash_mar2024",
+   "src_url": "https://usgs-ocapsv2-public-input-media.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/video/2024_Mar_1_YVO_Monthly_Update.mp4",
+   "source_page": "https://www.usgs.gov/media/videos/kansas-covered-ash-yellowstones-aftermath-yellowstone-volcano-update-march-2024",
+   "shows": "YVO Mar 2024: Yellowstone ash beds in Kansas (Pearlette ash)",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS / Yellowstone Volcano Observatory (Video edited by Liz Westby, USGS Multimedia Gallery Access relevant media to include images, vid)",
+   "status": "OK",
+   "title": "Kansas covered in ash? Yellowstone's aftermath (Yellowstone Volcano Update - March 2024)",
+   "page_usage": "Public Domain. Contacts Yellowstone Volcano Observatory (YVO) 1300 SE Cardinal Court STE 100 Vancouver , WA 98683 United States Email yvowebteam@usgs.gov Phone",
+   "page_desc": "Volcanic ash in Kansas? It's true there's thick deposits there, but where are the source volcanoes? Geologists began puzzling over this in the late 1800s when these deposits were first recognized.",
+   "page_credit": "Video edited by Liz Westby, USGS Multimedia Gallery Access relevant media to include images, vid",
+   "length": "00:03:37 S",
+   "crf": 20,
+   "file": "video/ch1_usgs_kansas_ash_mar2024.mp4",
+   "orig_dur": 216.6,
+   "dur": 216.62,
+   "w": 1920,
+   "h": 1080,
+   "truncated": false,
+   "bytes": 76125553
+  },
+  {
+   "name": "ch1_usgs_new_norris_hot_spring_mar2026",
+   "src_url": "https://usgs-ocapsv2-public-input-media.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/video/2026_Mar_2_YVO_Monthly_Update_CAPTIONS_0.mp4",
+   "source_page": "https://www.usgs.gov/media/videos/new-norris-hot-spring-yellowstone-monthly-update-march-2026",
+   "shows": "YVO Mar 2026: new hot spring at Norris",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS / Yellowstone Volcano Observatory",
+   "status": "OK",
+   "title": "The New Norris Hot Spring (Yellowstone Monthly Update - March 2026)",
+   "page_usage": "Public Domain. Contacts Michael Poland Scientist in Charge Yellowstone Volcano Observatory Email mpoland@usgs.gov Phone 360-993-8900 Explore Search Natural Haza",
+   "page_desc": "KABOOM! That\u2019s what Yellowstone is famous for \u2013 huge explosive volcanic eruptions. There\u2019s really nothing brewing right now, the magma chamber is mostly solid, but there have been quite a few hydrothermal eruptions and small explosions in both Biscuit Basin and Norris Geyser Basin as water in the hydrothermal system flashes to steam.A curious new blue water pool formed in Norris Geyser Basin in la",
+   "length": "00:05:03 S",
+   "crf": 23,
+   "file": "video/ch1_usgs_new_norris_hot_spring_mar2026.mp4",
+   "orig_dur": 302.77,
+   "dur": 302.78,
+   "w": 1920,
+   "h": 1080,
+   "truncated": false,
+   "bytes": 92029215
+  },
+  {
+   "name": "ch1_usgs_north_rim_uplift_jul2026",
+   "src_url": "https://usgs-ocapsv2-public-input-media.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/video/August2026_Norris_clean.mp4",
+   "source_page": "https://www.usgs.gov/media/videos/yellowstones-north-caldera-rim-rising-yellowstone-monthly-update-july-2026",
+   "shows": "YVO Jul 2026 update: Norris Uplift Anomaly on the north caldera rim (2025 uplift), Black Diamond Pool",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS / Yellowstone Volcano Observatory (video editing by Liz Westby and Erin Lysne)",
+   "status": "OK",
+   "title": "Is Yellowstone's north caldera rim rising? (Yellowstone Monthly Update - July 2026)",
+   "page_usage": "Public Domain. Contacts Michael Poland Scientist in Charge Yellowstone Volcano Observatory Email mpoland@usgs.gov Phone 360-993-8900 Credits Video editing by Li",
+   "page_desc": "Over the past few decades, an area on the north rim of Yellowstone Caldera has risen and fallen. Just last year a new period of uplift in this area began!The Norris Uplift Anomaly is an area along the north rim of Yellowstone Caldera, just south of Norris Geyser Basin and in the vicinity of Gibbon Falls. In the late 1990s to early 2000s, it was found to be uplifting at a rate of a couple of inches",
+   "length": "00:03:34 S",
+   "crf": 23,
+   "file": "video/ch1_usgs_north_rim_uplift_jul2026.mp4",
+   "orig_dur": 214.6,
+   "dur": 214.61,
+   "w": 1920,
+   "h": 1080,
+   "truncated": false,
+   "bytes": 90255564
+  },
+  {
+   "name": "ch1_usgs_oldfaithful_vid_black_diamond_pool_biscuit_basin_yellowstone_national_p",
+   "src_url": "https://usgs-ocapsv2-public-input-media.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/video/Biscuit_video.mp4",
+   "source_page": "https://www.usgs.gov/media/videos/black-diamond-pool-biscuit-basin-yellowstone-national-park-eruption-may-31-2025",
+   "shows": "",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS / Yellowstone Volcano Observatory",
+   "status": "OK",
+   "title": "Black Diamond Pool (Biscuit Basin, Yellowstone National Park) eruption on May 31, 2025",
+   "page_usage": "Public Domain.",
+   "page_desc": "This video, recorded by a webcam, shows a small eruption from Black Diamond Pool in the Biscuit Basin subbasin of Upper Geyser Basin, Yellowstone National Park, at 8:39 p.m. MDT on May 31, 2025. The pool was the site of a hydrothermal explosion on July 23, 2024. Following that event, numerous smaller eruptions occurred from the pool, although few were witnessed because the area was closed to visit",
+   "length": "00:01:00 S",
+   "crf": 20,
+   "file": "video/ch1_usgs_oldfaithful_vid_black_diamond_pool_biscuit_basin_yellowstone_national_p.mp4",
+   "orig_dur": 60.63,
+   "dur": 60.63,
+   "w": 1920,
+   "h": 1080,
+   "truncated": false,
+   "bytes": 49515682
+  },
+  {
+   "name": "ch1_usgs_oldfaithful_vid_grand_prismatic_spring_boiling_colorful_and_full_bacter",
+   "src_url": "https://usgs-ocapsv2-public-input-media.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/video/2025_July_GrandPrismatic.mp4",
+   "source_page": "https://www.usgs.gov/media/videos/grand-prismatic-spring-boiling-colorful-and-full-bacteria-yellowstone-monthly-update",
+   "shows": "",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS / Yellowstone Volcano Observatory",
+   "status": "OK",
+   "title": "Grand Prismatic Spring: Boiling, colorful, and full of bacteria! (Yellowstone Monthly Update - July 2025)",
+   "page_usage": "Public Domain. Contacts Yellowstone Volcano Observatory (YVO) 1300 SE Cardinal Court STE 100 Vancouver , WA 98683 United States Email yvowebteam@usgs.gov Phone",
+   "page_desc": "Grand Prismatic Spring is the largest hot spring in the US, and one of the largest in the world. The boiling lake was named for the spectacular array of colors along its rim. This month's Yellowstone Volcano Observatory update talks about what creates the colors, along with earthquakes, ground deformation, and hydrothermal activity that occurred in the area of Yellowstone National Park during June",
+   "length": "00:04:42 S",
+   "crf": 23,
+   "file": "video/ch1_usgs_oldfaithful_vid_grand_prismatic_spring_boiling_colorful_and_full_bacter.mp4",
+   "orig_dur": 282.2,
+   "dur": 282.22,
+   "w": 1920,
+   "h": 1080,
+   "truncated": false,
+   "bytes": 74799130
+  },
+  {
+   "name": "ch1_usgs_river_and_thermals",
+   "src_url": "https://usgs-ocapsv2-public-input-media.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/video/River%20at%20bridge%2030s.mp4",
+   "source_page": "https://www.usgs.gov/media/videos/river-and-thermals-yellowstone-national-park",
+   "shows": "River and thermal features b-roll",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS / Yellowstone Volcano Observatory",
+   "status": "OK",
+   "title": "River and Thermals \u2014 Yellowstone National Park",
+   "page_usage": "Public Domain. Geospatial Information Credits Video: Scott Horvath, USGS Multimedia Gallery Access relevant media to include images, videos, before-after images",
+   "page_desc": "The Gibbon River, named for Colonel (later General) John Gibbon, who was a member of an early exploring survey of the Yellowstone region, starts near the Center of Yellowstone National Park. All of the outflow from Norris Geyser Basin drains into the river, which merges with the Firehole River in the west part of the park to become the Madison River.This video and audio are from the Sounds of Yell",
+   "length": "00:00:30 S",
+   "crf": 20,
+   "file": "video/ch1_usgs_river_and_thermals.mp4",
+   "orig_dur": 29.65,
+   "dur": 29.65,
+   "w": 1920,
+   "h": 960,
+   "truncated": false,
+   "bytes": 46637441
+  },
+  {
+   "name": "ch1_usgs_steamboat_losing_steam",
+   "src_url": "https://usgs-ocapsv2-public-input-media.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/video/2023_Dec_1_YVO_Monthly_Update.mp4",
+   "source_page": "https://www.usgs.gov/media/videos/steamboat-losing-steam",
+   "shows": "Steamboat Geyser activity decline (Dec 2023)",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS / Yellowstone Volcano Observatory (Video edited by Liz Westby, USGS Multimedia Gallery Access relevant media to include images, vid)",
+   "status": "OK",
+   "title": "Steamboat: Losing steam?",
+   "page_usage": "Public Domain.",
+   "page_desc": "Steamboat Geyser is the tallest geyser in the world. It has been putting on a show the last few years for visitors at Yellowstone National Park with a record number of water eruptions, 48 eruptions each in 2019 and 2020. But it's only had eight eruptions in 2023. Is Steamboat losing steam?",
+   "page_credit": "Video edited by Liz Westby, USGS Multimedia Gallery Access relevant media to include images, vid",
+   "length": "00:04:22 S",
+   "crf": 23,
+   "file": "video/ch1_usgs_steamboat_losing_steam.mp4",
+   "orig_dur": 262.37,
+   "dur": 262.38,
+   "w": 1920,
+   "h": 1080,
+   "truncated": false,
+   "bytes": 71570400
+  },
+  {
+   "name": "ch1_usgs_top5_2025",
+   "src_url": "https://usgs-ocapsv2-public-input-media.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/video/2026_Jan_1_YVO_Update.mp4",
+   "source_page": "https://www.usgs.gov/media/videos/top-5-yellowstone-geological-stories-2025-yellowstone-monthly-update-january-2026",
+   "shows": "YVO Jan 2026: top 5 geologic stories of 2025 (rumors, new features, quakes/uplift, Steamboat, Black Diamond Pool)",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS / Yellowstone Volcano Observatory",
+   "status": "OK",
+   "title": "Top 5 Yellowstone geological stories of 2025 (Yellowstone monthly update - January 2026)",
+   "page_usage": "Public Domain. Contacts Michael Poland Scientist in Charge Yellowstone Volcano Observatory Email mpoland@usgs.gov Phone 360-993-8900 Credits Video editing by Li",
+   "page_desc": "Happy New Year! Let's go back and take a look at the top five geologic stories for Yellowstone in 2025.Number five: Rumors. It was a year of internet rumors, mostly related to animals fleeing the park, and none of which were true.Number four: Hydrothermal activity. Yellowstone is an incredibly dynamic place, and 2025 was no different, with several new features forming and existing features reactiv",
+   "length": "00:05:48 S",
+   "crf": 26,
+   "file": "video/ch1_usgs_top5_2025.mp4",
+   "orig_dur": 348.4,
+   "dur": 348.42,
+   "w": 1920,
+   "h": 1080,
+   "truncated": false,
+   "bytes": 85124791
+  }
+ ],
+ "not_obtained": [
+  {
+   "name": "ch1_usgs_biscuit_basin_explosion_2024-07-23",
+   "source_page": "https://www.usgs.gov/media/videos/hydrothermal-explosion-yellowstones-biscuit-basin-july-23-2024",
+   "err": "page fetch failed"
+  },
+  {
+   "name": "ch1_usgs_biscuit_update_hebgen65_aug2024",
+   "src_url": "https://usgs-ocapsv2-public-input-media.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/video/2024_Aug_YVO_Monthly_Update.mp4",
+   "source_page": "https://www.usgs.gov/media/videos/biscuit-basin-update-65th-anniversary-m73-hebgen-lake-quake-yellowstone-monthly-update",
+   "shows": "YVO Aug 2024: Biscuit Basin update + 65th anniversary of M7.3 Hebgen Lake quake",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS / Yellowstone Volcano Observatory",
+   "status": "OK",
+   "title": "Biscuit Basin Update; 65th Anniversary \u2014 M7.3 Hebgen Lake Quake (Yellowstone Monthly Update - Aug 2024)",
+   "page_usage": "Public Domain.",
+   "page_desc": "In this month's video, we update you on the Biscuit Basin explosion on July 23, 2024, and discuss the 65th anniversary of the M7.3 Hegben Lake earthquake.",
+   "length": "00:04:52 S",
+   "err": "too large after crf26"
+  },
+  {
+   "name": "ch1_nps_land_to_life_first10min",
+   "src_url": "https://www.nps.gov/nps-audiovideo/audiovideo/f229f909-0310-43b2-8f8b-f36f006a907e1080p.mp4",
+   "source_page": "https://www.nps.gov/media/video/view.htm?id=FF0ABC50-155D-451F-6705D3A15E954A98",
+   "shows": "NPS film 'Yellowstone - Land to Life' (geology), first 10 of 20:34 min",
+   "license": "Public Domain (NPS page: 'Multimedia credited to NPS without any copyright symbol are public domain'; credit: National Park Service)",
+   "credit": "National Park Service",
+   "status": "OK",
+   "title": "Yellowstone - Land to Life",
+   "page_credit": "National Park Service",
+   "page_duration": "20 minutes, 34 seconds Credit",
+   "err": "too large after crf26"
+  },
+  {
+   "name": "ch1_usgs_hebgen1959_rockslide_damage_golden_gate_area_near_mammoth_hot_springs",
+   "source_page": "https://www.usgs.gov/media/images/rockslide-damage-golden-gate-area-near-mammoth-hot-springs",
+   "title": "Rockslide damage to the Golden Gate area near Mammoth Hot Springs",
+   "page_usage": "Public Domain.",
+   "page_desc": "Rockslide damage to the Golden Gate area near Mammoth Hot Springs, Yellowstone National Park, as a result of the 1959 Hebgen Lake earthquake.",
+   "err": "no original image found"
+  },
+  {
+   "name": "ch1_usgs_hebgen1959_sapphire_pool_upper_geyser_basin_erupting_after_1959_hebg",
+   "source_page": "https://www.usgs.gov/media/images/sapphire-pool-upper-geyser-basin-erupting-after-1959-hebg",
+   "title": "Sapphire Pool, in the Upper Geyser Basin, erupting after the 1959 Hebg",
+   "page_usage": "Public Domain.",
+   "page_desc": "Sapphire Pool, in the Upper Geyser Basin, erupting after the 1959 Hebgen Lake earthquake.",
+   "err": "no original image found"
+  },
+  {
+   "name": "ch1_usgs_biscuit_black_pearl_geyser_biscuit_basin_yellowstone_national_park",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/20260922_Black_Pearl.jpg",
+   "source_page": "https://www.usgs.gov/media/images/black-pearl-geyser-biscuit-basin-yellowstone-national-park",
+   "shows": "",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS photo by Mike Poland, September 22, 2026",
+   "status": "OK",
+   "title": "Black Pearl Geyser, Biscuit Basin, Yellowstone National Park",
+   "page_usage": "Public Domain.",
+   "page_desc": "Black Pearl Geyser in Biscuit Basin, Upper Geyser Basin, Yellowstone National Park. USGS photo by Mike Poland, September 22, 2026.",
+   "page_credit": "USGS photo by Mike Poland, September 22, 2026",
+   "err": "[image2 @ 0x5642c8650340] Cannot write more than one file with the same name. Are you missing the -update option or a sequence pattern?\n[vost#0:0/mjpeg @ 0x5642c8654500] Error submitting a packet to the muxer: Invalid argument\n[out#0/image2 @ 0x5642c8650dc0] Error muxing a packet\n"
+  },
+  {
+   "name": "ch1_usgs_biscuit_northern_most_water_filled_fracture_formed_june_13_2026_near",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/IMG_0475_1.jpg",
+   "source_page": "https://www.usgs.gov/media/images/northern-most-water-filled-fracture-formed-june-13-2026-near-black-diamond-pool",
+   "shows": "",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "Photo by Jefferson Hungerford, Yellowstone National Park",
+   "status": "OK",
+   "title": "Northern-most water-filled fracture that formed on June 13, 2026, near Black Diamond Pool, Biscuit Basin, Yellowstone National Park",
+   "page_usage": "Public Domain.",
+   "page_desc": "Looking south, toward Black Diamond Pool (steaming blue area in the left middle ground) along a fissure that formed during a small hydrothermal explosion on June 13, 2026, in Biscuit Basin, Yellowstone National Park. The fissure is about 18.5 meters (61 feet) long and filled with near-boiling water.",
+   "page_credit": "Photo by Jefferson Hungerford, Yellowstone National Park",
+   "err": "[image2 @ 0x5654def4f0c0] Cannot write more than one file with the same name. Are you missing the -update option or a sequence pattern?\n[vost#0:0/mjpeg @ 0x5654def413c0] Error submitting a packet to the muxer: Invalid argument\n[out#0/image2 @ 0x5654def40dc0] Error muxing a packet\n"
+  },
+  {
+   "name": "ch1_usgs_biscuit_biscuit_basin_webcam_temporary_deployment",
+   "src_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/BB_webcam.jpg",
+   "source_page": "https://www.usgs.gov/media/images/biscuit-basin-webcam-temporary-deployment",
+   "shows": "",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS",
+   "status": "OK",
+   "title": "Biscuit Basin webcam temporary deployment",
+   "page_usage": "Public Domain.",
+   "page_desc": "Temporary webcam deployed on the boardwalk in Biscuit Basin, Yellowstone National Park. The pan/tilt/zoom camera provides a static view every 15 minutes and records video on site for later download as needed. Black Diamond Pool, site of a hydrothermal explosion on July 23, 2024, is in the background. This work was completed under Yellowstone National Park research permit YELL-2025-SCI-5842. U.S. G",
+   "err": "[image2 @ 0x555bf63a6340] Cannot write more than one file with the same name. Are you missing the -update option or a sequence pattern?\n[vost#0:0/mjpeg @ 0x555bf63aa500] Error submitting a packet to the muxer: Invalid argument\n[out#0/image2 @ 0x555bf63a6dc0] Error muxing a packet\n"
+  },
+  {
+   "name": "ch1_usgs_old_faithful_c1878",
+   "source_page": "https://www.usgs.gov/media/images/old-faithful-geyser-erupting-c1878",
+   "title": "Old Faithful Geyser erupting, c.1878",
+   "page_usage": "Public Domain. public domain USGS Photo Library",
+   "page_desc": "Old Faithful Geyser in Upper Geyser Basin. 1878(?). Yellowstone National Park, Wyoming. U.S. Geological and Geographical Survey of the Territories (Hayden Survey).",
+   "err": "no original image found"
+  }
+ ],
+ "probes": {
+  "page_fail": [
+   [
+    "https://www.usgs.gov/media/videos/hydrothermal-explosion-yellowstones-biscuit-basin-july-23-2024",
+    504
+   ]
+  ],
+  "listing:ch1_usgs_oldfaithful_vid": [
+   [
+    "Grand Prismatic Spring: Boiling, colorful, and full of bacteria! (Yellowstone Monthly Upda",
+    "https://www.usgs.gov/media/videos/grand-prismatic-spring-boiling-colorful-and-full-bacteria-yellowstone-monthly-update"
+   ],
+   [
+    "Black Diamond Pool (Biscuit Basin, Yellowstone National Park) eruption on May 31, 2025",
+    "https://www.usgs.gov/media/videos/black-diamond-pool-biscuit-basin-yellowstone-national-park-eruption-may-31-2025"
+   ]
+  ],
+  "clips:ch1_nps_castle_geyser": {
+   "ids": [
+    "797E8220-155D-451F-678680BB083DE339",
+    "7AD20D8E-155D-451F-6799DC8FF5C93BD3",
+    "7C1B3B7B-155D-451F-67A0A46938AE547B"
+   ],
+   "copyright": "Public domain Frame: 1920 x 10"
+  },
+  "clips:ch1_nps_fountain_geyser": {
+   "ids": [
+    "FEF730F4-155D-451F-675352504BCD06D3"
+   ],
+   "copyright": "Public domain Frame: 1920 x 10"
+  },
+  "clips:ch1_nps_clepsydra_geyser": {
+   "ids": [
+    "78AA8315-155D-451F-67E1FD5D77864E6A"
+   ],
+   "copyright": "Public domain Frame: 1280 x 72"
+  },
+  "clips:ch1_nps_sawmill_geyser": {
+   "ids": [
+    "7D9426C2-155D-451F-67C4F10DB688CCF4"
+   ],
+   "copyright": "Public domain Frame: 1920 x 10"
+  },
+  "clips:ch1_nps_grand_prismatic": {
+   "ids": [
+    "7E5FFF00-155D-451F-676262A83E6E19C7"
+   ],
+   "copyright": "Public domain Frame: 1280 x 72"
+  },
+  "clips:ch1_nps_lower_geyser_basin_steam": {
+   "ids": [
+    "7FA88D51-155D-451F-679C3AC98129553F"
+   ],
+   "copyright": "Public domain Frame: 1280 x 72"
+  },
+  "clips:ch1_nps_norris_steam": {
+   "ids": [
+    "AE5CDB99-155D-451F-67D56CA7FFDC4C3D"
+   ],
+   "copyright": "Public domain Frame: 1920 x 10"
+  },
+  "clips:ch1_nps_norris_porcelain_wide": {
+   "ids": [],
+   "copyright": ""
+  },
+  "clips:ch1_nps_fountain_paint_pot": {
+   "ids": [
+    "793625B6-155D-451F-6765089EF7D095D1"
+   ],
+   "copyright": "Public domain Frame: 1280 x 72"
+  },
+  "clips:ch1_nps_bison_summer": {
+   "ids": [
+    "FD0F935E-155D-451F-67A73BDD6C247CCC",
+    "FD5CDC9C-155D-451F-67CEF3254947F134",
+    "FDC8AC8C-155D-451F-6709D7392955B151",
+    "FE0B0B54-155D-451F-6723D2C9538825F8"
+   ],
+   "copyright": "Public domain Frame: 1920 x 10"
+  },
+  "clips:ch1_nps_bison_calves": {
+   "ids": [
+    "16A1C44D-155D-451F-67F024E7A70CD056",
+    "17620874-155D-451F-67E5DDDFDD1FDC8F",
+    "18124917-155D-451F-671A1621E7AACDFD"
+   ],
+   "copyright": "Public domain Frame: 1920 x 10"
+  },
+  "clips:ch1_nps_lower_falls": {
+   "ids": [
+    "77B87078-1DD8-B71B-0BF726FF93C0CA13"
+   ],
+   "copyright": ""
+  },
+  "clips:ch1_nps_lamar_wolves": {
+   "ids": [
+    "020FB2BA-155D-451F-6762706C2BD757EE",
+    "026FF7F6-155D-451F-67FB22C830EBD9C2",
+    "02A168C8-155D-451F-675BECFF98CACBAE"
+   ],
+   "copyright": "Public domain Frame: 1920 x 10"
+  },
+  "listing:ch1_usgs_hebgen1959": [
+   [
+    "Rockslide damage to the Golden Gate area near Mammoth Hot Springs",
+    "https://www.usgs.gov/media/images/rockslide-damage-golden-gate-area-near-mammoth-hot-springs"
+   ],
+   [
+    "Earthquake damage from 1959 Hebgen Lake event in Yellowstone Plateau",
+    "https://www.usgs.gov/media/images/earthquake-damage-1959-hebgen-lake-event-yellowstone-plateau"
+   ],
+   [
+    "Sapphire Pool, in the Upper Geyser Basin, erupting after the 1959 Hebg",
+    "https://www.usgs.gov/media/images/sapphire-pool-upper-geyser-basin-erupting-after-1959-hebg"
+   ],
+   [
+    "Dragline working to lower the outlet channel of Earthquake Lake on October 18, 1959",
+    "https://www.usgs.gov/media/images/dragline-working-lower-outlet-channel-earthquake-lake-october-18-1959"
+   ],
+   [
+    "View of the Madison Slide on August 21, 1959 with rapidly filling Earthquake Lake",
+    "https://www.usgs.gov/media/images/view-madison-slide-august-21-1959-rapidly-filling-earthquake-lake"
+   ]
+  ],
+  "listing:ch1_usgs_biscuit": [
+   [
+    "Black Pearl Geyser, Biscuit Basin, Yellowstone National Park",
+    "https://www.usgs.gov/media/images/black-pearl-geyser-biscuit-basin-yellowstone-national-park"
+   ],
+   [
+    "Camera view from Biscuit Basin monitoring site, Yellowstone National Park",
+    "https://www.usgs.gov/media/images/camera-view-biscuit-basin-monitoring-site-yellowstone-national-park"
+   ],
+   [
+    "Camera installation at Biscuit Basin monitoring site, Yellowstone National Park",
+    "https://www.usgs.gov/media/images/camera-installation-biscuit-basin-monitoring-site-yellowstone-national-park"
+   ],
+   [
+    "Northern-most water-filled fracture that formed on June 13, 2026, near Black Diamond Pool,",
+    "https://www.usgs.gov/media/images/northern-most-water-filled-fracture-formed-june-13-2026-near-black-diamond-pool"
+   ],
+   [
+    "Screen capture showing onset of a small hydrothermal explosion at Biscuit Basin, Yellowsto",
+    "https://www.usgs.gov/media/images/screen-capture-showing-onset-a-small-hydrothermal-explosion-biscuit-basin-yellowstone"
+   ],
+   [
+    "Temperature record from Black Diamond Pool runoff channel on May 31, 2025",
+    "https://www.usgs.gov/media/images/temperature-record-black-diamond-pool-runoff-channel-may-31-2025"
+   ],
+   [
+    "Eruption from Black Diamond Pool in Biscuit Basin, Yellowstone National Park, captured by ",
+    "https://www.usgs.gov/media/images/eruption-black-diamond-pool-biscuit-basin-yellowstone-national-park-captured-a-webcam"
+   ],
+   [
+    "Biscuit Basin webcam view",
+    "https://www.usgs.gov/media/images/biscuit-basin-webcam-view"
+   ],
+   [
+    "Biscuit Basin webcam temporary deployment",
+    "https://www.usgs.gov/media/images/biscuit-basin-webcam-temporary-deployment"
+   ],
+   [
+    "Graph showing explosions recorded at Black Diamond Pool in Biscuit Basin, Yellowstone Nati",
+    "https://www.usgs.gov/media/images/graph-showing-explosions-recorded-black-diamond-pool-biscuit-basin-yellowstone"
+   ],
+   [
+    "Largest identified boulder displaced by the July 23, 2024, explosion from Black Diamond Po",
+    "https://www.usgs.gov/media/images/largest-identified-boulder-displaced-july-23-2024-explosion-black-diamond-pool"
+   ],
+   [
+    "High-resolution Planet satellite image of Biscuit Basin, Yellowstone National Park, from J",
+    "https://www.usgs.gov/media/images/high-resolution-planet-satellite-image-biscuit-basin-yellowstone-national-park-july-24"
+   ],
+   [
+    "Aerial view of Biscuit Basin, Yellowstone National Park, showing debris deposited by the J",
+    "https://www.usgs.gov/media/images/aerial-view-biscuit-basin-yellowstone-national-park-showing-debris-deposited-july-23"
+   ],
+   [
+    "High-resolution Planet satellite image of Biscuit Basin, Yellowstone National Park, from J",
+    "https://www.usgs.gov/media/images/high-resolution-planet-satellite-image-biscuit-basin-yellowstone-national-park-july-21"
+   ],
+   [
+    "Map of major features in Biscuit Basin, Yellowstone National Park",
+    "https://www.usgs.gov/media/images/map-major-features-biscuit-basin-yellowstone-national-park"
+   ]
+  ],
+  "slidefile:ch1_nps_hist_wildlife": [
+   [
+    "02974",
+    ""
+   ],
+   [
+    "02974",
+    "02974.jpg Deer being fed at Fort Yellowstone; Photographer unknown; Pre 1909"
+   ],
+   [
+    "02975",
+    ""
+   ],
+   [
+    "02975",
+    "02975.jpg Elk feeding line in Gardiner, Montana; Photographer unknown; Pre 1909"
+   ],
+   [
+    "02976",
+    ""
+   ],
+   [
+    "02976",
+    "02976.jpg Elk feeding line near Gardiner, Montana; Photographer unknown; Pre 1909"
+   ],
+   [
+    "03007",
+    ""
+   ],
+   [
+    "03007",
+    "03007.jpg Bison corral at Mammoth Hot Springs; Photographer unknown; No date"
+   ],
+   [
+    "14278",
+    ""
+   ],
+   [
+    "14278",
+    "14278.jpg Elk show pen on Dot Island; Albert L Noyes; Around 1906"
+   ],
+   [
+    "14279",
+    ""
+   ],
+   [
+    "14279",
+    "14279.jpg Bison show pen on Dot Island; Albert L Noyes; Around 1906 Page: 1 Next Page -> Photo Collection Home | Yellowstone Home"
+   ]
+  ],
+  "slidefile:ch1_nps_buffalo_ranch": [
+   [
+    "06868",
+    ""
+   ],
+   [
+    "06868",
+    "06868.jpg Lamar Ranger Station; J Schmidt; 1977"
+   ],
+   [
+    "06955",
+    ""
+   ],
+   [
+    "06955",
+    "06955.jpg Lamar Ranger Station; J Schmidt; 1977"
+   ],
+   [
+    "06956",
+    ""
+   ],
+   [
+    "06956",
+    "06956.jpg Lamar Ranger Station; J Schmidt; 1977"
+   ],
+   [
+    "14069",
+    ""
+   ],
+   [
+    "14069",
+    "14069.jpg Yellowstone Institute building; Jack DeGolia; November 1983"
+   ],
+   [
+    "14070",
+    ""
+   ],
+   [
+    "14070",
+    "14070.jpg Original Yellowstone Institute cabins as seen from National Park Service corral; Photographer unknown; November 1983"
+   ],
+   [
+    "16626",
+    ""
+   ],
+   [
+    "16626",
+    "16626.jpg Buffalo Ranch generator shed; Jim Peaco; April 2000"
+   ],
+   [
+    "16627",
+    ""
+   ],
+   [
+    "16627",
+    "16627.jpg Buffalo Ranch generator shed; Jim Peaco; April 2000"
+   ],
+   [
+    "16628",
+    ""
+   ],
+   [
+    "16628",
+    "16628.jpg Buffalo Ranch generator shed; Jim Peaco; April 2000"
+   ],
+   [
+    "17287",
+    ""
+   ],
+   [
+    "17287",
+    "17287.jpg National Park Service corral, barn & new cabin area; Jim Peaco; July 2000 Page: 1 Next Page -> Photo Collection Home | Yellowstone"
+   ]
+  ],
+  "slidefile:ch1_nps_hist_thermal_1946_99": [
+   [
+    "04898",
+    ""
+   ],
+   [
+    "04898",
+    "04898.jpg Liberty Cap; Photographer unknown; 1964"
+   ],
+   [
+    "04922",
+    ""
+   ],
+   [
+    "04922",
+    "04922.jpg Minerva Terrace & Spring; Photographer unknown; 1963"
+   ],
+   [
+    "05075",
+    ""
+   ],
+   [
+    "05075",
+    "05075.jpg Giant geyser; Condon; 1955"
+   ],
+   [
+    "05082",
+    ""
+   ],
+   [
+    "05082",
+    "05082.jpg Daisy Geyser; Condon; 1955"
+   ],
+   [
+    "05212",
+    ""
+   ],
+   [
+    "05212",
+    "05212.jpg Old Faithful Geyser in the summer; Photographer unknown; 1958"
+   ],
+   [
+    "05233",
+    ""
+   ],
+   [
+    "05233",
+    "05233.jpg Old Faithful Geyser; William S Keller; 1966"
+   ],
+   [
+    "05427",
+    ""
+   ],
+   [
+    "05427",
+    "05427.jpg Lewis mud pot; Photographer unknown; 1964"
+   ],
+   [
+    "05807",
+    ""
+   ],
+   [
+    "05807",
+    "05807.jpg Sylvan Springs; RG Johnsson; 1964"
+   ],
+   [
+    "05812",
+    ""
+   ],
+   [
+    "05812",
+    "05812.jpg Aerial view of Riverside Geyser area; William W Dunmire; 1968"
+   ],
+   [
+    "05819",
+    ""
+   ],
+   [
+    "05819",
+    "05819.jpg Aerial view of Black Sand Basin; Photographer unknown; 1967"
+   ],
+   [
+    "05886",
+    ""
+   ],
+   [
+    "05886",
+    "05886.jpg Aerial view of Mammoth Terraces; William W Dunmire; 1968"
+   ],
+   [
+    "05887",
+    ""
+   ],
+   [
+    "05887",
+    "05887.jpg Aerial view of Mammoth Terraces; Al Mebane; 1973"
+   ],
+   [
+    "05888",
+    ""
+   ],
+   [
+    "05888",
+    "05888.jpg Aerial view of Mammoth Terraces; William W Dunmire; 1968"
+   ],
+   [
+    "05894",
+    ""
+   ],
+   [
+    "05894",
+    "05894.jpg Small steam vent at Ochre Springs; RG Johnsson; 1963"
+   ],
+   [
+    "05897",
+    ""
+   ],
+   [
+    "05897",
+    "05897.jpg Phantom Fumerole at Pitchstone Plateau; RG Johnsson; 1964"
+   ],
+   [
+    "05907",
+    ""
+   ],
+   [
+    "05907",
+    "05907.jpg Aerial view of Emerald Pool; Photographer unknown; 1967"
+   ],
+   [
+    "05908",
+    ""
+   ],
+   [
+    "05908",
+    "05908.jpg Aerial view of Emerald Pool; Al Mebane; 1973"
+   ],
+   [
+    "05940",
+    ""
+   ],
+   [
+    "05940",
+    "05940.jpg Morning Glory Pool; William S Keller; 1965"
+   ],
+   [
+    "06068",
+    ""
+   ],
+   [
+    "06068",
+    "06068.jpg Sulphur deposit in Brimstone Basin; RG Johnsson; 1963"
+   ],
+   [
+    "06141",
+    ""
+   ],
+   [
+    "06141",
+    "06141.jpg Evening Primrose Spring; RG Johnsson; 1964 Page: 1 2 3 Next Page -> Photo Collection Home | Yellowstone Home"
+   ],
+   [
+    "06142",
+    ""
+   ],
+   [
+    "06142",
+    "06142.jpg Evening Primrose Spring; MM; 1959"
+   ],
+   [
+    "06143",
+    ""
+   ],
+   [
+    "06143",
+    "06143.jpg Evening Primrose Spring; Lewis; Pre 1959 earthquake"
+   ],
+   [
+    "06160",
+    ""
+   ],
+   [
+    "06160",
+    "06160.jpg Cinder Pool; Photographer unknown; 1964"
+   ],
+   [
+    "06176",
+    ""
+   ],
+   [
+    "06176",
+    "06176.jpg Turquoise Pool, pre-earthquake - note bridge at left of picture; Lewis; 1957"
+   ],
+   [
+    "06178",
+    ""
+   ],
+   [
+    "06178",
+    "06178.jpg Turquoise Pool after the 1959 earthquake; Lewis; 1960"
+   ],
+   [
+    "07799",
+    ""
+   ],
+   [
+    "07799",
+    "07799.jpg Sapphire Pool in eruption after 1959 earthquake; Lewis; September 1959"
+   ],
+   [
+    "07800",
+    ""
+   ],
+   [
+    "07800",
+    "07800.jpg Sapphire Pool in eruption after 1959 earthquake; Lewis; Labor Day, 1959"
+   ],
+   [
+    "07801",
+    ""
+   ],
+   [
+    "07801",
+    "07801.jpg Sapphire Pool on eruption; McIntyre October 17, 1959"
+   ],
+   [
+    "08002",
+    ""
+   ],
+   [
+    "08002",
+    "08002.jpg Upper Geyser Basin as seen from Observation Point; William W Dunmire; 1968"
+   ],
+   [
+    "08004",
+    ""
+   ],
+   [
+    "08004",
+    "08004.jpg Aerial view of Castle Geyser; Al Mebane; 1973"
+   ],
+   [
+    "08005",
+    ""
+   ],
+   [
+    "08005",
+    "08005.jpg Aerial view of Upper Geyser Basin; William W Dunmire; 1968"
+   ],
+   [
+    "09373",
+    ""
+   ],
+   [
+    "09373",
+    "09373.jpg Mammoth Hot Springs area; J Schmidt; 1977"
+   ],
+   [
+    "09673",
+    ""
+   ],
+   [
+    "09673",
+    "09673.jpg Minute Geyser Norris Geyser Basin; DE White; September 1947"
+   ],
+   [
+    "09681",
+    ""
+   ],
+   [
+    "09681",
+    "09681.jpg Pinwheel Geyser erupting; DE White; September 1947"
+   ],
+   [
+    "10963",
+    ""
+   ],
+   [
+    "10963",
+    "10963.jpg Cistern Spring - a person inside for perspective; Rick Hutchinson; 1978"
+   ],
+   [
+    "10994",
+    ""
+   ],
+   [
+    "10994",
+    "10994.jpg Fishiing Cone - old style sign; R Robinson; No date"
+   ],
+   [
+    "11017",
+    ""
+   ],
+   [
+    "11017",
+    "11017.jpg People on the cone of Old Faithful Geyser as it erupts; R Robinson; 1948"
+   ],
+   [
+    "11018",
+    ""
+   ],
+   [
+    "11018",
+    "11018.jpg Old Faithful Geyser - old road with cars beside it; R Robinson; 1956"
+   ],
+   [
+    "11019",
+    ""
+   ],
+   [
+    "11019",
+    "11019.jpg Visitors at Daisy Geyser with old road visible; R Robinson; 1950"
+   ],
+   [
+    "11109",
+    ""
+   ],
+   [
+    "11109",
+    "11109.jpg Ice formation at Steamboat Geyser; William S Keller; 1979 Page: 1 2 3 Next Page -> Photo Collection Home | Yellowstone Home"
+   ],
+   [
+    "13834",
+    ""
+   ],
+   [
+    "13834",
+    "13834.jpg Cleaning Morning Glory Pool; Dan Ing; September 1975"
+   ],
+   [
+    "13835",
+    ""
+   ],
+   [
+    "13835",
+    "13835.jpg Siphon set up for cleaning Morning Glory Pool; Dan Ing; No date"
+   ],
+   [
+    "13836",
+    ""
+   ],
+   [
+    "13836",
+    "13836.jpg Rick Hutchinson cleaning Morning Glory Pool; Dan Ing; No date"
+   ],
+   [
+    "13839",
+    ""
+   ],
+   [
+    "13839",
+    "13839.jpg Rick Hutchinson cleaning Morning Glory Pool; Dan Ing; No date"
+   ],
+   [
+    "13840",
+    ""
+   ],
+   [
+    "13840",
+    "13840.jpg Siphon being used to clean Morning Glory Pool; Dan Ing; No date"
+   ],
+   [
+    "13841",
+    ""
+   ],
+   [
+    "13841",
+    "13841.jpg Siphon being used to clean Morning Glory Pool; Dan Ing; No date"
+   ],
+   [
+    "13842",
+    ""
+   ],
+   [
+    "13842",
+    "13842.jpg Siphon being used to clean Morning Glory Pool; Dan Ing; No date"
+   ],
+   [
+    "13843",
+    ""
+   ],
+   [
+    "13843",
+    "13843.jpg Siphon being used to clean Morning Glory Pool; Dan Ing; October 1975"
+   ],
+   [
+    "13844",
+    ""
+   ],
+   [
+    "13844",
+    "13844.jpg Siphon being used to clean Morning Glory Pool; Photographer unknown; October 1975"
+   ],
+   [
+    "13905",
+    ""
+   ],
+   [
+    "13905",
+    "13905.jpg Steamboat at peak of eruption; Luis Gastellum; December 25, 1962"
+   ],
+   [
+    "14378",
+    ""
+   ],
+   [
+    "14378",
+    "14378.jpg Sapphire Pool; Photographer unknown; Pre 1959"
+   ],
+   [
+    "14387",
+    ""
+   ],
+   [
+    "14387",
+    "14387.jpg Big Cub Geyser; George Marler; 1952"
+   ],
+   [
+    "17954",
+    ""
+   ],
+   [
+    "17954",
+    "17954.jpg Mammoth Hot Springs; Mary Rutt; July 1959"
+   ],
+   [
+    "17955",
+    ""
+   ],
+   [
+    "17955",
+    "17955.jpg Mammoth Hot Springs; Mary Rutt; July 1959 Page: 1 2 3 Next Page -> Photo Collection Home | Yellowstone Home"
+   ]
+  ],
+  "slidefile:ch1_nps_hist_events_1946_99": [
+   [
+    "03051",
+    ""
+   ],
+   [
+    "03051",
+    "03051.jpg Gathering of International Delegates at Madison museum for rededication ceremonies for Yellowstone centennial; Photographer unknow"
+   ],
+   [
+    "03053",
+    ""
+   ],
+   [
+    "03053",
+    "03053.jpg Old Faithful erupting behind President Gerald Ford; Cynthia Zimmerli; 1976"
+   ],
+   [
+    "03057",
+    ""
+   ],
+   [
+    "03057",
+    "03057.jpg President Gerald Ford in a crowd of people at Old Faithful; Cynthia Zimmerli; 1976"
+   ],
+   [
+    "03058",
+    ""
+   ],
+   [
+    "03058",
+    "03058.jpg President Ford at outside podium at Old Faithful; Cynthia Zimmerli; 1976"
+   ],
+   [
+    "03059",
+    ""
+   ],
+   [
+    "03059",
+    "03059.jpg President Gerald Ford & Superintendent John Townsley at Old Faithful; Cynthia Zimmerli; 1976"
+   ],
+   [
+    "10527",
+    ""
+   ],
+   [
+    "10527",
+    "10527.jpg Spectators & speaker at the Horace M Albright visitor center dedication; Photographer unknown; September 19, 1979"
+   ],
+   [
+    "10529",
+    ""
+   ],
+   [
+    "10529",
+    "10529.jpg Superintendent Townsley at the Albright Visitor Center dedication; Photographer unknown; September 19, 1979"
+   ],
+   [
+    "10536",
+    ""
+   ],
+   [
+    "10536",
+    "10536.jpg Superintendent Townsley at the Albright Visitor Center dedication; Photographer unknown; September 19, 1979"
+   ],
+   [
+    "10542",
+    ""
+   ],
+   [
+    "10542",
+    "10542.jpg Al Mebane (ranger) & Pop Scoyen (born in 1907 in Norris Blockhouse, spent his entire life in Yellowstone National Park, considered"
+   ],
+   [
+    "10546",
+    ""
+   ],
+   [
+    "10546",
+    "10546.jpg Aubrey Haines attending Albright Visitor Center dedication; Photographer unknown; September 19, 1979"
+   ],
+   [
+    "10565",
+    ""
+   ],
+   [
+    "10565",
+    "10565.jpg Al Mebane, Chief Park Naturalist & Aubrey Haines at the Albright Visitor Center dedication; Photographer unknown; September 19, 19"
+   ],
+   [
+    "10570",
+    ""
+   ],
+   [
+    "10570",
+    "10570.jpg Color guard at the Albright Visitor Center dedication Photographer unknown; September 19, 1979;"
+   ],
+   [
+    "10602",
+    ""
+   ],
+   [
+    "10602",
+    "10602.jpg Mrs Pat Nixon speaking at the West Yellowstone airport; R Robinson; September 18, 1972"
+   ],
+   [
+    "10604",
+    ""
+   ],
+   [
+    "10604",
+    "10604.jpg Horace Albright & unknown woman at the Second World Conference on National Parks; R Robinson; September 17, 1972"
+   ],
+   [
+    "13638",
+    ""
+   ],
+   [
+    "13638",
+    "13638.jpg President George Bush Sr. with secret service; Jim Peaco; June 12, 1989"
+   ],
+   [
+    "13639",
+    ""
+   ],
+   [
+    "13639",
+    "13639.jpg President George Bush Sr with his grandson & Superintendent Bob Barbee; Jim Peaco; June 12, 1989"
+   ],
+   [
+    "13642",
+    ""
+   ],
+   [
+    "13642",
+    "13642.jpg President George Bush Sr with Senator Wallop, Superintendent Bob Barbee, Senator Simpson & Secretary of the Interior Lujan; Jim Pe"
+   ],
+   [
+    "13644",
+    ""
+   ],
+   [
+    "13644",
+    "13644.jpg President George Bush Sr with Chief of Research John Varley; Jim Peaco; June 12, 1989"
+   ],
+   [
+    "13646",
+    ""
+   ],
+   [
+    "13646",
+    "13646.jpg President George Bush Sr with Superintendent Bob Barbee, Secretary of the Interior Lujan, Chief of Research John Varley & press; J"
+   ],
+   [
+    "13647",
+    ""
+   ],
+   [
+    "13647",
+    "13647.jpg President George Bush Sr with Superintendent Bob Barbee, Assistant Superintendent Ben Clary, Director of Student Conservation Asso"
+   ],
+   [
+    "13648",
+    ""
+   ],
+   [
+    "13648",
+    "13648.jpg President Bush, John Varley, Montana Governor Stevens, Wyoming Governor Sullivan; Jim Peaco; June 12, 1989"
+   ],
+   [
+    "13649",
+    ""
+   ],
+   [
+    "13649",
+    "13649.jpg President George Bush Sr with Superintendent Bob Barbee next to a marine helicoper; Jim Peaco; June 12, 1989"
+   ],
+   [
+    "15636",
+    ""
+   ],
+   [
+    "15636",
+    "15636.jpg President Bill Clinton addressing crowd at New World Mine buyout ceremony near Barronette Peak; Jim Peaco; 1996"
+   ],
+   [
+    "15637",
+    ""
+   ],
+   [
+    "15637",
+    "15637.jpg President Clinton (Superintendent Mike Finley sitting on stage); Jim Peaco; 1996"
+   ],
+   [
+    "15638",
+    ""
+   ],
+   [
+    "15638",
+    "15638.jpg President Clinton, Superintendent Finley - New World Mine buyout; Jim Peaco; 1996"
+   ],
+   [
+    "15639",
+    ""
+   ],
+   [
+    "15639",
+    "15639.jpg President Clinton, Superintendent Finley - New World Mine buyout; Jim Peaco; 1996 Page: 1 2 Next Page -> Photo Collection Home | Y"
+   ]
+  ]
+ }
+}
