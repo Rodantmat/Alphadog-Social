@@ -118,7 +118,8 @@ def narration_at(a, b):
 
 # ------------------------------------------------------------------ pass A: every frame at low res
 LW, LH = (180, 320) if VERT else (320, 180)
-def dark_stats(g): return float(g.mean()), float(g.std()), float(np.percentile(g, 99))
+def dark_stats(g):
+    q = np.percentile(g, (50, 90, 99)); return float(g.mean()), float(g.std()), float(q[2]), float(q[0]), float(q[1])
 SFPS = 2.0 if VERT else 1.0
 JDIR = os.path.join(A.out, "_frames"); os.makedirs(JDIR, exist_ok=True)
 for f_ in os.listdir(JDIR): os.remove(os.path.join(JDIR, f_))
@@ -128,7 +129,7 @@ cmd = ["ffmpeg", "-v", "error"] + (["-t", str(DUR)] if A.max_dur else []) + ["-i
        "-map", "[lo]", "-pix_fmt", "bgr24", "-f", "rawvideo", "pipe:1", "-map", "[hi]", "-q:v", "2", os.path.join(JDIR, "%06d.jpg")]
 p = subprocess.Popen(cmd, stdout=subprocess.PIPE, bufsize=10 ** 7)
 FB = LW * LH * 3
-Ym, Ys, Y99, CORR, HOV, DX, DY, RESP, DIFF = ([] for _ in range(9))
+Ym, Ys, Y99, CORR, HOV, DX, DY, RESP, DIFF, P50, P90, D16, HS = ([] for _ in range(13))
 CW, CH = (LW // 5, LH // 5)
 corner_acc = []; acc = None; acc_n = 0
 prev = None; last_nd = None
@@ -139,12 +140,14 @@ while True:
     im = np.frombuffer(buf, np.uint8).reshape(LH, LW, 3)
     g = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
     gf = g.astype(np.float32)
-    m, sd, p99 = dark_stats(g); Ym.append(m); Ys.append(sd); Y99.append(p99)
+    m, sd, p99, p50, p90 = dark_stats(g); Ym.append(m); Ys.append(sd); Y99.append(p99); P50.append(p50); P90.append(p90)
     sm = cv2.resize(gf, (64, 36) if not VERT else (36, 64), interpolation=cv2.INTER_AREA)
     gn = (sm - sm.mean()) / (sm.std() + 1e-3)
     hsv = cv2.cvtColor(cv2.resize(im, (64, 36) if not VERT else (36, 64), interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2HSV)
     h = cv2.calcHist([hsv], [0, 1], None, [16, 4], [0, 180, 0, 256]).flatten(); h /= (h.sum() + 1e-6)
-    dark = m < 22 and p99 < 60
+    dark = p50 < 18 and p90 < 45                       # median-based: burned-in captions do not hide a fade
+    s16 = cv2.resize(gf, (16, 9) if not VERT else (9, 16), interpolation=cv2.INTER_AREA).flatten(); D16.append(((s16 - s16.mean()) / (s16.std() + 1e-3)).astype(np.float16))
+    HS.append(h.astype(np.float16))
     if prev is not None:
         ref = last_nd if (dark or prev[3]) and last_nd is not None else prev
         CORR.append(float((gn * ref[0]).mean())); HOV.append(float(np.minimum(h, ref[1]).sum()))
@@ -164,9 +167,10 @@ while True:
         corner_acc.append((mu.astype(np.float32), sdv.astype(np.float32), float(np.median(sc))))
         acc = None; acc_n = 0
 p.wait()
-N = len(Ym); Ym, Ys, Y99, CORR, HOV, DX, DY, RESP, DIFF = map(np.array, (Ym, Ys, Y99, CORR, HOV, DX, DY, RESP, DIFF))
-DARK = (Ym < 22) & (Y99 < 60)
-BLACK = (Ym < 16) & (Y99 < 40)
+N = len(Ym); Ym, Ys, Y99, CORR, HOV, DX, DY, RESP, DIFF, P50, P90 = map(np.array, (Ym, Ys, Y99, CORR, HOV, DX, DY, RESP, DIFF, P50, P90))
+D16 = np.array(D16, np.float32); HS = np.array(HS, np.float32)
+DARK = (P50 < 18) & (P90 < 45)
+BLACK = (P50 < 12) & (P90 < 30)
 log("pass A", N, "frames")
 
 # ---- cut detection (fade-to-black aware)
@@ -184,15 +188,23 @@ while j < N:
     nb = [x for x in range(lo, hi) if x != j and not DARK[x]]
     mc = np.median(CORR[nb]) if nb else 1.0; mh = np.median(HOV[nb]) if nb else 1.0
     flat = Ys[j] < 5
-    if Ym[j] < 32 or Ym[j - 1] < 32 or j < FPS * 0.3 or j > N - FPS * 0.3: j += 1; continue     # dim frames: fades/cards (handled as dips)
+    if P50[j] < 25 or P50[j - 1] < 25 or j < FPS * 0.3 or j > N - FPS * 0.3: j += 1; continue     # dim frames: fades/cards (handled as dips)
     c_cut = (not flat) and CORR[j] < 0.55 and mc - CORR[j] > 0.3
     h_cut = HOV[j] < 0.5 and mh - HOV[j] > 0.3
     if c_cut or h_cut: cuts.append((j, "hard"))
     j += 1
-# merge cuts closer than 3 frames
-mc_ = []
+# fade dips that never reach black (captions/vignette on top): local luma minimum at < 50 % of both sides + content change
+for j in range(10, N - 10):
+    if DARK[j] or P50[j] > min(P50[j - 3:j + 4]): continue
+    pre, post = P50[j - 10:j - 2].max(), P50[j + 3:j + 11].max()
+    if min(pre, post) < 30 or P50[j] > 0.5 * min(pre, post): continue
+    a, b2 = j - 6, j + 6
+    c = float(D16[a] @ D16[b2]) / D16.shape[1]; hh = float(np.minimum(HS[a], HS[b2]).sum())
+    if c < 0.5 or hh < 0.6: cuts.append((j, "dip"))
+# merge cuts closer than 6 frames
+cuts.sort(); mc_ = []
 for c in cuts:
-    if mc_ and c[0] - mc_[-1][0] < 3: continue
+    if mc_ and c[0] - mc_[-1][0] < 6: continue
     mc_.append(c)
 CUTS = [c[0] / FPS for c in mc_]
 SEG = []
@@ -304,10 +316,10 @@ while k < N:
         while b2 < N - 1 and Ym[b2] < 70 and b2 - e_ < FPS * 2: b2 += 1
         if near_chapter(ta) or near_chapter(tb):
             find("Q4", ta, f"dark {d:.2f}s at a chapter boundary (allowed)", sev="info", t_end=tb)
-        elif nblack / FPS > 0.25 or d > 0.5:
-            find("Q4", ta, f"black/dark {d:.2f}s (fade-through-black {(b2 - a_) / FPS:.2f}s) inside a chapter", t_end=tb, dur=round(d, 2))
+        elif nblack / FPS > 0.25:
+            find("Q4", ta, f"black {nblack / FPS:.2f}s (fade-through-black {(b2 - a_) / FPS:.2f}s) inside a chapter", t_end=tb, dur=round(d, 2))
         else:
-            find("Q4", ta, f"dim {d:.2f}s (dark scene or slow fade)", sev="warn", t_end=tb, dur=round(d, 2))
+            find("Q4", ta, f"near-black picture {d:.2f}s (very dark scene, not a fade)", sev="warn", t_end=tb, dur=round(d, 2))
     k = e_
 summ("Q4", f"dark runs > 0.25 s outside the first 1 s / last 2.5 s and chapter boundaries; cut dips ({0.24:.2f}s fades) allowed")
 
@@ -367,7 +379,7 @@ SAMPLES = []      # dict(t, lap, up, mean, hash, bars, ocr, faces, emb)
 si = 0; clip_batch = []
 JPGS = sorted(os.listdir(JDIR))
 def dhash(g):
-    s = cv2.resize(g, (9, 8), interpolation=cv2.INTER_AREA); return int("".join("1" if v else "0" for v in (s[:, 1:] > s[:, :-1]).flatten()), 2)
+    s = cv2.resize(g, (17, 16), interpolation=cv2.INTER_AREA); return int("".join("1" if v else "0" for v in (s[:, 1:] > s[:, :-1]).flatten()), 2)
 def bars(g):
     h_, w_ = g.shape; r = {}
     def run_(arr):
@@ -383,6 +395,15 @@ def bars(g):
     r["top"] = edge(rm, run_((rm < 14) & (rs < 4))); r["bottom"] = edge(rm[::-1], run_(((rm < 14) & (rs < 4))[::-1]))
     r["left"] = edge(cm, run_((cm < 14) & (cs_ < 4))); r["right"] = edge(cm[::-1], run_(((cm < 14) & (cs_ < 4))[::-1]))
     return r
+def overlay_style(im, box):
+    """our burned-in text: white/gold fill with a dark outline, or dark text on our Spotify-green button"""
+    x0, y0, x1, y1 = [int(round(v)) for v in box]; x0, y0 = max(0, x0), max(0, y0)
+    c = im[y0:y1, x0:x1]
+    if c.size == 0: return False
+    hsv = cv2.cvtColor(c, cv2.COLOR_BGR2HSV); H_, S_, V_ = hsv[..., 0], hsv[..., 1], hsv[..., 2]
+    white = (V_ > 215) & (S_ < 45); gold = (H_ > 10) & (H_ < 25) & (S_ > 110) & (V_ > 170)
+    dark = V_ < 50; green = (H_ > 60) & (H_ < 80) & (S_ > 140) & (V_ > 150)
+    return bool(((white | gold).mean() > 0.10 and dark.mean() > 0.04) or green.mean() > 0.30)
 def blurfill(g):
     h_, w_ = g.shape
     if VERT:
@@ -411,6 +432,7 @@ for jf in JPGS:
         except Exception as e: res = None
         S["ocr"] = [{"box": [float(min(q[0] for q in r_[0])) / osc, float(min(q[1] for q in r_[0])) / osc, float(max(q[0] for q in r_[0])) / osc, float(max(q[1] for q in r_[0])) / osc],
                      "text": r_[1], "conf": float(r_[2])} for r_ in (res or [])]
+        for o in S["ocr"]: o["ov"] = overlay_style(im, o["box"])
     if face is not None and (VERT or si % 2 == 0):
         fs = 640 / max(W0, H0); fim = cv2.resize(im, (int(W0 * fs), int(H0 * fs)))
         if isinstance(face, tuple):
@@ -421,7 +443,13 @@ for jf in JPGS:
             S["faces"] = [[d[0] / fs, d[1] / fs, (d[0] + d[2]) / fs, (d[1] + d[3]) / fs, float(d[-1])] for d in (dets if dets is not None else [])]
     SAMPLES.append(S)
     if clip is not None:
-        clip_batch.append((len(SAMPLES) - 1, clip[2](Image.fromarray(cv2.cvtColor(cv2.resize(im, (int(W0 * 288 / min(W0, H0)), int(H0 * 288 / min(W0, H0)))), cv2.COLOR_BGR2RGB)))))
+        cim = im
+        if S.get("ocr"):
+            cim = im.copy(); bl = cv2.GaussianBlur(cv2.resize(im, (W0 // 8, H0 // 8)), (9, 9), 0); bl = cv2.resize(bl, (W0, H0))
+            for o in S["ocr"]:
+                x0, y0, x1, y1 = [int(v) for v in o["box"]]; x0, y0 = max(0, x0 - 12), max(0, y0 - 12); x1, y1 = x1 + 12, y1 + 12
+                cim[y0:y1, x0:x1] = bl[y0:y1, x0:x1]
+        clip_batch.append((len(SAMPLES) - 1, clip[2](Image.fromarray(cv2.cvtColor(cv2.resize(cim, (int(W0 * 288 / min(W0, H0)), int(H0 * 288 / min(W0, H0)))), cv2.COLOR_BGR2RGB)))))
         if len(clip_batch) >= 32:
             with clip[0].no_grad():
                 emb = clip[1].encode_image(clip[0].stack([x[1] for x in clip_batch])); emb = emb / emb.norm(dim=-1, keepdim=True)
@@ -473,21 +501,23 @@ units = []
 for a, b_, s in UNITS:
     ss = [x for x in samples_in(a, b_) if x["std"] > 25 and x["mean"] > 30]
     if s and s["type"] in ("card", "map"): continue
-    if ss: units.append((a, b_, s, [x["hash"] for x in ss]))
+    if ss: units.append((a, b_, s, [x["hash"] for x in ss], [x.get("emb") for x in ss]))
 dups = 0
 for i in range(len(units)):
     for j in range(i + 2, len(units)):
-        a1, b1, s1, h1 = units[i]; a2, b2, s2, h2 = units[j]
+        a1, b1, s1, h1, e1 = units[i]; a2, b2, s2, h2, e2 = units[j]
         if a2 - b1 < 3: continue
         d = min(ham(x, y) for x in h1 for y in h2)
-        if d > 4: continue
+        if d > 40: continue                                    # 256-bit gradient hash: <= 40 differing bits
+        cs_ = max((float(x @ y) for x in e1 for y in e2 if x is not None and y is not None), default=None)
+        if cs_ is not None and cs_ < 0.95: continue            # and CLIP agrees it is the same picture
         same_src = s1 and s2 and s1.get("src") == s2.get("src")
         intro = a1 < INTRO_END
         if same_src or intro:
             REP["Q9"].setdefault("planned_reuse", []).append({"a": tc(a1), "b": tc(a2), "src": os.path.basename(s1.get("src", "")) if s1 else "", "hamming": d})
             continue
         dups += 1
-        find("Q9", a2, f"looks like the shot at {tc(a1)} (hash distance {d})" + (f": {os.path.basename(s1.get('src', ''))} vs {os.path.basename(s2.get('src', ''))}" if s1 else ""), t_end=b2, other=round(a1, 2))
+        find("Q9", a2, f"looks like the shot at {tc(a1)} (hash distance {d}/256" + (f", CLIP {cs_:.3f})" if cs_ is not None else ")") + (f": {os.path.basename(s1.get('src', ''))} vs {os.path.basename(s2.get('src', ''))}" if s1 else ""), t_end=b2, other=round(a1, 2))
 summ("Q9", f"{len(units)} shots hashed; {dups} unplanned look-alike pairs; planned reuse/intro previews: {len(REP['Q9'].get('planned_reuse', []))}")
 
 # ------------------------------------------------------------------ audio
@@ -525,7 +555,9 @@ if AS:
         try:
             from faster_whisper import WhisperModel
             wm = WhisperModel(A.whisper_model, device="cpu", compute_type="int8", cpu_threads=os.cpu_count() or 2)
-            segs, info = wm.transcribe(AUD, language="en", word_timestamps=True, vad_filter=False, beam_size=1, condition_on_previous_text=False)
+            import soundfile as sf
+            a16w, _ = sf.read(AUD, dtype="float32")
+            segs, info = wm.transcribe(a16w, language="en", word_timestamps=True, vad_filter=False, beam_size=1, condition_on_previous_text=False)
             for sg in segs:
                 for w in (sg.words or []): WORDS.append((float(w.start), float(w.end), w.word.strip()))
             log("whisper", len(WORDS), "words")
@@ -651,10 +683,10 @@ for S in SAMPLES:
         txt = o["text"]
         for rx, what in PRIV:
             if re.search(rx, txt, re.I if what != "plate-like code" else 0):
-                if what == "plate-like code" and (typ in ("map", "card") or text_ours(txt, t)): continue
+                if what == "plate-like code" and (typ in ("map", "card") or text_ours(txt, t) or re.search(r"(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC|EST|NO)", txt.upper().replace("UULY", "JULY"))): continue
                 find("O2", t, f"{what} on screen: '{txt}'", sev="fail" if what != "plate-like code" else "warn", box=o["box"])
         ours = typ in ("map", "card") or text_ours(txt, t)
-        overlay = VERT and bh >= 34 and S["t"] > 0
+        overlay = VERT and bh >= 28 and o.get("ov", False)
         if VERT:
             if overlay:
                 if not (x0 >= SAFE[0] - 6 and x1 <= SAFE[2] + 6 and y0 >= SAFE[1] - 10 and y1 <= SAFE[3] + 14):
@@ -662,10 +694,15 @@ for S in SAMPLES:
                 caps.append((t, bh, txt, o["box"]))
                 if WORDS: cap_match.append((t, text_ours(txt, t)))
                 if not ours: find("Q6", t, f"text not ours (not in captions/titles): '{txt}'", sev="warn", box=o["box"])
-            elif not ours:
-                find("Q6", t, f"small scene text: '{txt}'", sev="warn", box=o["box"])
+            else:
+                edge = x1 < SAFE[0] + 40 or x0 > SAFE[2] - 40 or y1 < SAFE[1] or y0 > SAFE[3]
+                if edge and not ours: tracked.setdefault((int((x0 + x1) / 2 / (W0 / 6)), int((y0 + y1) / 2 / (H0 / 10))), []).append((t, txt, o["box"]))
+                elif not ours: find("Q6", t, f"text in the picture (sign/stamp in source?): '{txt}'", sev="warn", box=o["box"], kind="scene")
             continue
         # long form
+        own = [str(x.get(k2)) for x in SHOTS if abs(x["_a"] - t) < 15 for k2 in ("label", "title", "kicker", "sub") if x.get(k2)]
+        mine = any(len(norm(txt.replace(" ", ""))) >= 3 and (norm(txt.replace(" ", "")) in norm(w.replace(" ", "")) or difflib.SequenceMatcher(None, norm(txt.replace(" ", "")), norm(w.replace(" ", ""))).ratio() > 0.8) for w in own)
+        if ours and not mine and typ not in ("map", "card"): continue          # text in the picture that happens to match our words
         if ours:
             if s and typ not in ("map",) and bh < 26: find("T2", t, f"our text small ({bh:.0f}px): '{txt}'", sev="warn", box=o["box"])
             if typ != "map" and (x0 < 0.03 * W0 or x1 > 0.97 * W0 or y0 < 0.03 * H0 or y1 > 0.97 * H0): find("T2", t, f"our text outside title-safe: '{txt}'", box=o["box"])
@@ -673,16 +710,18 @@ for S in SAMPLES:
         edge = (x1 < 0.25 * W0 or x0 > 0.75 * W0) and (y1 < 0.22 * H0 or y0 > 0.78 * H0)
         capl = y0 > 0.70 * H0 and abs((x0 + x1) / 2 - W0 / 2) < 0.15 * W0 and bw > 0.2 * W0
         key_ = (int((x0 + x1) / 2 / (W0 / 8)), int((y0 + y1) / 2 / (H0 / 8)))
-        if capl: find("Q6", t, f"burned-in caption from a source? '{txt}'", box=o["box"], kind="caption")
+        if capl: find("Q6", t, f"burned-in caption/name strap from a source? '{txt}'", box=o["box"], kind="caption", sev="fail" if typ in ("video", "?") else "warn")
         elif edge: tracked.setdefault(key_, []).append((t, txt, o["box"]))
         else: find("Q6", t, f"text in the picture (sign/document/title in source?): '{txt}'", sev="warn", box=o["box"], kind="scene")
 for key_, L in tracked.items():                           # corner text seen in >= 2 samples of one shot = watermark/bug
     L.sort(); grp = [L[0]]
     def flush(g):
         if len(g) >= 2 or (len(g) == 1 and len(norm(g[0][1])) >= 6):
-            find("Q6", g[0][0], f"corner text {'x' + str(len(g))} (watermark/channel bug?): '{g[0][1]}'", sev="fail" if len(g) >= 2 else "warn", box=g[0][2], t_end=g[-1][0], kind="watermark")
+            s0 = shot_at(g[0][0]); bx = g[0][2]
+            hard = len(g) >= 2 and (s0 is None or s0["type"] == "video") and (bx[3] - bx[1]) < 0.06 * H0    # small persistent text on moving footage
+            find("Q6", g[0][0], f"edge text seen {len(g)}x (watermark/stamp/channel bug?): '{g[0][1]}'", sev="fail" if hard else "warn", box=bx, t_end=g[-1][0], kind="watermark")
     for x in L[1:]:
-        if x[0] - grp[-1][0] <= OCR_EVERY * 1.6 and seg_of(x[0]) == seg_of(grp[-1][0]): grp.append(x)
+        if x[0] - grp[-1][0] <= max(OCR_EVERY, 1 / SFPS) * 1.6 and seg_of(x[0]) == seg_of(grp[-1][0]): grp.append(x)
         else: flush(grp); grp = [x]
     flush(grp)
 # T2: every planned label/title read back from the picture
@@ -700,18 +739,19 @@ if VERT:
     if W0 != 1080 or H0 != 1920: find("V1", 0, f"resolution {W0}x{H0} (want 1080x1920)")
     summ("V1", f"{len(caps)} burned-in text boxes checked against x 170-910, y 400-1220")
     if DUR >= 60: find("V2", DUR, f"duration {DUR:.2f}s (YouTube Shorts need < 60 s)")
-    hs = [c[1] for c in caps]
+    # font size from OCR box height: all-caps boxes ~0.74 x font size, mixed case (ascenders/descenders) ~0.84 x
+    fe = [(c[0], c[1] / (0.74 if not re.search(r"[a-z]", c[2]) else 0.84), c[2], c[3]) for c in caps]
+    hs = [x[1] for x in fe]
     if hs:
-        med = float(np.median(hs)); REP["V2"]["caption_box_height_px"] = {"median": round(med, 1), "p10": round(float(np.percentile(hs, 10)), 1)}
-        small = [c for c in caps if c[1] < 50]
-        if med < 50: find("V2", 0, f"captions small: median OCR box height {med:.0f}px (font ~58 px gives ~55 px boxes)")
-        for c in small[:10]: find("V2", c[0], f"small caption {c[1]:.0f}px: '{c[2]}'", sev="warn", box=c[3])
+        med = float(np.median(hs)); REP["V2"]["caption_font_px_est"] = {"median": round(med, 1), "p10": round(float(np.percentile(hs, 10)), 1), "min": round(min(hs), 1)}
+        if med < 58: find("V2", 0, f"captions small: estimated font {med:.0f}px (rule >= 58 px)")
+        for c in [x for x in fe if x[1] < 52][:10]: find("V2", c[0], f"small text: est. font {c[1]:.0f}px: '{c[2]}'", sev="warn", box=c[3])
     if cap_match:
         rate = float(np.mean([m_ for _, m_ in cap_match])); REP["V2"]["captions_match_voice"] = round(rate, 3)
         if rate < 0.7: find("V2", 0, f"only {rate:.0%} of caption samples match the words spoken within +-2.5 s", sev="warn")
     hook = (WORDS and WORDS[0][0] < 1.5) or any(S["t"] < 1.5 and S.get("ocr") for S in SAMPLES)
     if not hook: find("V2", 0, "nothing said or shown as text in the first 1.5 s (hook)", sev="warn")
-    summ("V2", f"duration {DUR:.2f}s; caption height median {REP['V2'].get('caption_box_height_px', {}).get('median')}px; captions match voice {REP['V2'].get('captions_match_voice')}")
+    summ("V2", f"duration {DUR:.2f}s; caption font est. median {REP['V2'].get('caption_font_px_est', {}).get('median')}px; captions match voice {REP['V2'].get('captions_match_voice')}")
     # V3 faces vs caption boxes
     nf = 0
     for S in SAMPLES:
@@ -721,10 +761,10 @@ if VERT:
             nf += 1; fa = (fb[2] - fb[0]) * (fb[3] - fb[1])
             for o in S["ocr"]:
                 x0, y0, x1, y1 = o["box"]
-                if y1 - y0 < 34 or o["conf"] < 0.7: continue
+                if y1 - y0 < 28 or o["conf"] < 0.7 or not o.get("ov"): continue
                 iw = max(0, min(x1, fb[2]) - max(x0, fb[0])); ih = max(0, min(y1, fb[3]) - max(y0, fb[1]))
                 if fa > 0 and iw * ih / fa > 0.15:
-                    find("V3", S["t"], f"caption '{o['text']}' covers {iw * ih / fa:.0%} of a face", box=[fb[0], fb[1], fb[2], fb[3]])
+                    find("V3", S["t"], f"burned-in text covers a face: '{o['text']}' ({iw * ih / fa:.0%} of the face)", box=[fb[0], fb[1], fb[2], fb[3]])
     summ("V3", f"{nf} faces checked against caption boxes" + ("" if face is not None else " (no face detector)"))
 else:
     for rid in ("V1", "V2", "V3"): skip(rid, "long-form video (vertical rules n/a)")
@@ -750,7 +790,7 @@ if clip is not None and any("emb" in S for S in SAMPLES):
         rows = []
         for a, b_, s in UNITS:
             if s and s["type"] in ("card", "map"): continue
-            ss = [x for x in samples_in(a, b_) if "emb" in x]
+            ss = [x for x in samples_in(a, b_) if "emb" in x and x["mean"] > 25]
             txt = narration_at(a, b_)
             if not ss or not txt: continue
             S = ss[len(ss) // 2]; rows.append((S["t"], a, b_, txt, S["emb"], s))
@@ -783,12 +823,12 @@ if clip is not None and any("emb" in S for S in SAMPLES):
     for S in SAMPLES:
         if "emb" not in S: continue
         s = shot_at(S["t"])
-        if SHOTS and not (s and s.get("ai")): continue
+        if (SHOTS and not (s and s.get("ai"))) or S["mean"] < 25: continue
         lg = 100 * (te @ S["emb"]); pr_ = np.exp(lg - lg.max()); pr_ /= pr_.sum(); pa_ = float(pr_[: len(ART)].sum())
         scores.append((pa_, S["t"], ART[int(np.argmax(pr_[: len(ART)]))]))
     scores.sort(reverse=True)
-    for pa_, t, what in [x for x in scores if x[0] > 0.5][:12]: find("A4", t, f"{what} (p {pa_:.2f})", sev="warn", p=round(pa_, 2))
-    summ("A4", f"CLIP zero-shot on {len(scores)} {'AI-shot ' if SHOTS else ''}frames; p(artifact) > 0.5 listed (max 12)")
+    for pa_, t, what in [x for x in scores if x[0] > 0.8][:10]: find("A4", t, f"{what} (p {pa_:.2f})", sev="warn", p=round(pa_, 2))
+    summ("A4", f"CLIP zero-shot on {len(scores)} {'AI-shot ' if SHOTS else ''}frames (text boxes blurred out); p(artifact) > 0.8 listed (max 10)")
     # O2 objects
     PO = ["a photo of an ID card", "a driver's license", "a passport page", "a car license plate", "a computer screen showing a website", "a smartphone screen", "a paper document with printed text", "a house number and street sign"]
     NO = ["a landscape", "mountains", "a desert", "a historical photograph", "a person", "rock formations", "a forest", "a map", "a title card with text", "a old newspaper page", "a cowboy", "a horse", "a sky"]
@@ -806,11 +846,13 @@ else:
 
 # ------------------------------------------------------------------ dedupe noisy findings, statuses
 for rid, r in REP.items():
-    seen = []; out = []
+    last = {}; out = []
     for f in sorted(r["findings"], key=lambda f: f["t"]):
-        k_ = (f["msg"].split(":")[0], f["sev"])
-        if any(abs(f["t"] - t) < 1.0 and k_ == kk for t, kk in seen) and rid not in ("R7", "Q1"): continue
-        seen.append((f["t"], k_)); out.append(f)
+        k_ = (re.sub(r"[\d.,%]+", "#", f["msg"]), f["sev"])
+        if rid not in ("R7", "Q1", "P2") and k_ in last and f["t"] - last[k_][1] <= 1.6:
+            kept = last[k_][0]; kept["t_end"] = max(kept.get("t_end", kept["t"]), f.get("t_end", f["t"])); kept["n"] = kept.get("n", 1) + 1
+            last[k_] = (kept, f["t"]); continue
+        last[k_] = (f, f["t"]); out.append(f)
     r["findings"] = out
     if r["status"] == "skipped": continue
     sev = set(f["sev"] for f in out)
