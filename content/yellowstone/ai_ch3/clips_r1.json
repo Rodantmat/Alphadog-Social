@@ -1,0 +1,62 @@
+[
+ {
+  "name": "C03r",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys2_v1a/C03_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 121,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 7,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the camera glides steadily forward low over the snow following the old ski tracks, one single pair of long wooden ski tips stays fixed at the bottom of the frame and slides forward, loose powder sprays from the tips, snowflakes whip past in a hard wind, the steam plumes bend in the wind.",
+  "neg": "extra skis, third ski, four skis, hands, red, mittens, people, morphing skis, people, faces, animals, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ },
+ {
+  "name": "F02r",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys2_v1a/F02_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 121,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 7,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the standing man sweeps his arm out toward the valley and back, the seated men turn their heads toward him and nod, the campfire flames leap and crackle, bright sparks swirl upward, the river ripples and glints. Slow push-in. Sepia vintage look in every frame.",
+  "neg": "dark cloud, brown cloud, smoke cloud in the sky, flying objects, birds, explosion, color, faces, face morphing, extra arms, color, faces, face morphing, extra arms, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ },
+ {
+  "name": "T01r",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys2_v1b/T01_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 7,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: strong gusts of wind drive thick streams of snow across the plain from left to right, the frosted telegraph wires whip and swing up and down between the poles, the nearest pole sways slightly, loose snow blows off the crossarm, the camera pushes forward along the line.",
+  "neg": "people, power lines, static, frozen, people, power lines, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ },
+ {
+  "name": "B01r",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys3_v1a/B01_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 121,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 7,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: thick grey smoke billows and rolls up from the smoldering lodges and drifts sideways in a cold wind, embers glow and flare, a burned lodge cover flaps and sags, mist streams over the flowing creek, the willows and grass sway, the camera slowly glides forward along the row of lodges.",
+  "neg": "people, bodies, blood, large flames, static, frozen, people, bodies, blood, large flames, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ },
+ {
+  "name": "W01r",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys3_v1a/W01_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 121,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 7,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the mounted riders walk their horses in a slow circle around the wagon, the horses stepping, tossing their heads and swishing their tails, one rider leads a horse away from the wagon, the tourists step back and turn their heads, the wagon canvas flaps in the wind, steam plumes drift. Camera slowly pushes in.",
+  "neg": "war paint, feather headdress, blood, faces, face morphing, horses merging, extra legs, galloping, fighting, static, frozen, war paint, feather headdress, blood, gore, faces, face morphing, horses merging, extra legs, galloping, rifles aimed, fighting, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ }
+]
