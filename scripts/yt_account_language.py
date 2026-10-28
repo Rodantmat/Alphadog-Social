@@ -83,7 +83,7 @@ with sync_playwright() as p:
         if not DRY:
             try: open_avatar(pg, False); _, now = current_lang_item(pg); RES["youtube_now"] = now; pg.keyboard.press("Escape")
             except Exception: pass
-            S.goto(pg, S.STUDIO); guard(pg, b, ctx, "09_studio_final"); RES["studio_english"] = studio_english(pg); snap(pg, "09_studio_final")
+            S.goto(pg, S.STUDIO); guard(pg, b, ctx, "09_studio_final"); RES["studio_english"] = studio_english(pg)  # no dashboard snapshot (subscriber names)
         ok = DRY or (RES["studio_english"] and re.search(r"English", RES.get("youtube_now", "") or "English"))
         done(b, ctx, 0 if ok else 4, status="ok" if ok else "unverified")
     elif STEP == "google":
