@@ -1,0 +1,14 @@
+[
+ {
+  "name": "C07r",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys23_e2/C07e_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 121,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 11,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the poacher keeps both empty hands raised high above his head the whole time, his arms trembling, he takes a small step back in the snow and his shoulders heave with heavy breaths, his breath steams, his coat flaps in the hard wind, snow blows past. He stays facing right in side profile. Static camera, slight push-in.",
+  "neg": "turning around, facing the camera, lowering hands, hands together, praying, blood, red, gore, face morphing, extra arms, extra hands, blood, gore, gun in hand, face morphing, extra arms, extra hands, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ }
+]
