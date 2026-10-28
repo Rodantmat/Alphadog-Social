@@ -1,13 +1,38 @@
 {
- "_doc": "Owner's Modal budgets ($30 each, one workspace per key). Weeks rotate Mon-Sun Pacific: W1 = week of 2026-10-26, then W2, W3, W4, then back to W1. Backups only when the week's budget is exhausted: backup_1 first, then backup_2. Report spend per key.",
- "rotation_start_monday": "2026-10-26",
- "weekly": ["W1", "W2", "W3", "W4"],
+ "_doc": "Owner's Modal budgets ($30 each, one workspace per key). Budgets are per PROJECT (owner 2026-10-28): Chiricahua + Yellowstone (all chapters) = W1, the next project (e.g. Zion) = W2, then W3, W4, then back to W1. When a project's key reaches $30: backup_1 (original key) until empty, then backup_2. Report spend per key.",
  "keys": {
-  "W1": ["MODAL_TOKEN_ID_W1", "MODAL_TOKEN_SECRET_W1"],
-  "W2": ["MODAL_TOKEN_ID_W2", "MODAL_TOKEN_SECRET_W2"],
-  "W3": ["MODAL_TOKEN_ID_W3", "MODAL_TOKEN_SECRET_W3"],
-  "W4": ["MODAL_TOKEN_ID_W4", "MODAL_TOKEN_SECRET_W4"],
-  "backup_1": ["MODAL_TOKEN_ID", "MODAL_TOKEN_SECRET"],
-  "backup_2": ["MODAL_TOKEN_ID_BACKUP", "MODAL_TOKEN_SECRET_BACKUP"]
- }
+  "W1": [
+   "MODAL_TOKEN_ID_W1",
+   "MODAL_TOKEN_SECRET_W1"
+  ],
+  "W2": [
+   "MODAL_TOKEN_ID_W2",
+   "MODAL_TOKEN_SECRET_W2"
+  ],
+  "W3": [
+   "MODAL_TOKEN_ID_W3",
+   "MODAL_TOKEN_SECRET_W3"
+  ],
+  "W4": [
+   "MODAL_TOKEN_ID_W4",
+   "MODAL_TOKEN_SECRET_W4"
+  ],
+  "backup_1": [
+   "MODAL_TOKEN_ID",
+   "MODAL_TOKEN_SECRET"
+  ],
+  "backup_2": [
+   "MODAL_TOKEN_ID_BACKUP",
+   "MODAL_TOKEN_SECRET_BACKUP"
+  ]
+ },
+ "projects": {
+  "chiricahua": "W1",
+  "yellowstone": "W1",
+  "next_project": "W2"
+ },
+ "order_after_exhausted": [
+  "backup_1",
+  "backup_2"
+ ]
 }
