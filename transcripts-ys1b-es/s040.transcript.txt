@@ -1,0 +1,4 @@
+[   0.00-   6.00] Casi 20 años después, un químico llamado Kerry Mullis inventó una forma de copiar el ADN millones de veces,
+[   6.00-  10.80] llamada PCR. Necesitaba una enzima que resistiera a calentamientos repetidos.
+[  10.80-  15.28] La enzima salió del microbio de Brock en Yellowstone. Mullis ganó el premio Nobel.
+[  15.28-  22.80] La PCR transformó la medicina, los laboratorios forences y, mucho después, hizo posibles las pruebas modernas de COVID.
