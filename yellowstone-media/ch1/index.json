@@ -1,6 +1,6 @@
 {
  "chapter": "ch1",
- "list_sha": "b3eb21c21f6d0caa",
+ "list_sha": "87bddc77188c0370",
  "files": [
   {
    "name": "ch1_nps_buffalo_ranch_14070",
@@ -1086,7 +1086,7 @@
    "shows": "Biscuit Basin hydrothermal explosion Jul 23 2024 - plume, damaged boardwalk, Mike Poland explainer",
    "license": "Public Domain (USGS, US Government work)",
    "credit": "USGS / Yellowstone Volcano Observatory (video edited by Liz Westby, USGS)",
-   "status": "OK",
+   "status": "PARTIAL - use only safe segments (frame-checked 2026-10-28)",
    "page_usage": "Public Domain. (verified on page 2026-10-28)",
    "title": "Hydrothermal Explosion in Yellowstone's Biscuit Basin (July 23, 2024)",
    "encode": "x264 crf26 veryfast",
@@ -1096,7 +1096,48 @@
    "w": 1920,
    "h": 1080,
    "truncated": false,
-   "bytes": 62756274
+   "bytes": 62756274,
+   "exclude_segments": [
+    {
+     "start": 0.0,
+     "end": 7.0,
+     "why": "explosion clip captioned 'July 23, 2024 video courtesy of Joshua Sells' (third-party, used with permission)"
+    },
+    {
+     "start": 13.4,
+     "end": 22.1,
+     "why": "Joshua Sells courtesy explosion footage"
+    },
+    {
+     "start": 25.0,
+     "end": 37.0,
+     "why": "Joshua Sells courtesy explosion footage"
+    },
+    {
+     "start": 109.3,
+     "end": 112.2,
+     "why": "commercial satellite images of Norris (Apr 2 / Apr 21 2024), likely Maxar WorldView"
+    }
+   ],
+   "safe_segments": [
+    [
+     7.0,
+     13.4
+    ],
+    [
+     22.1,
+     25.0
+    ],
+    [
+     37.0,
+     109.3
+    ],
+    [
+     112.2,
+     177.0
+    ]
+   ],
+   "safe_note": "Safe = Mike Poland interview (USGS), USGS Biscuit Basin map (22-25s), 'NPS Video' damaged boardwalk/crater aftermath (37-~80s), Mary Bay lake + map, Norris 2024 crater photo (research permit, USGS), historic B&W/snow shots, 1890 Haynes Excelsior postcard (PD by age), USGS hazards graphic, NPS aerial/closed boardwalk. NOTE: the famous plume shots in this video are the Joshua Sells footage - NOT cleared; for the plume use animation or license from Sells."
   },
   {
    "name": "ch1_usgs_biscuit_basin_update_oct2024",
