@@ -73,10 +73,17 @@ def dialog_text(pg):
     d = dialog(pg)
     try: return S.redact(d.inner_text(timeout=3000)) if d else ""
     except Exception: return ""
+def _vis_text(pg, sel):
+    """Studio keeps many hidden copies of the editor in the DOM - read only the visible one(s)."""
+    out = ""
+    for e in pg.locator(sel).all():
+        try:
+            if e.evaluate("e => !!(e.offsetParent || e.getClientRects().length) && getComputedStyle(e).visibility !== 'hidden' && !!e.closest('tp-yt-paper-dialog') && getComputedStyle(e.closest('tp-yt-paper-dialog')).display !== 'none'"):
+                out = (e.inner_text(timeout=2000) or "").strip() or out
+        except Exception: pass
+    return out
 def audio_state(pg):
-    g = lambda sel: (pg.locator(sel).first.inner_text(timeout=2000).strip() if pg.locator(sel).count() else "")
-    try: return g("#language-details-source-label-audio"), g("#language-details-status-label-audio")
-    except Exception: return "", ""
+    return _vis_text(pg, "#language-details-source-label-audio"), _vis_text(pg, "#language-details-status-label-audio")
 def click_named(scope, names, timeout=5000):
     for nm in names:
         b = scope.get_by_role("button", name=nm, exact=True)
@@ -107,11 +114,11 @@ def open_editor(pg, row):
     """Clicking the language name opens that language's editor dialog (title/description, thumbnail, AUDIO, subtitles)."""
     if not dialog(pg):
         S.pause(0.8, 1.8); row.locator("button.language-display-name").first.click(timeout=10000)
-    pg.wait_for_selector("#language-details-text-button-audio, #language-details-status-label-audio", timeout=30000)
+    pg.locator("#language-details-text-button-audio:visible, #language-details-more-options-button-audio:visible").first.wait_for(timeout=30000)
     pg.wait_for_timeout(2500)
 def upload(pg):
     """Click Audio 'Add', hand the file to the chooser (or an input in a sub-dialog), wait until Studio accepts it."""
-    btn = pg.locator("#language-details-text-button-audio").first
+    btn = pg.locator("#language-details-text-button-audio:visible").first
     base = set(l.strip() for l in dialog_text(pg).splitlines())
     S.pause(1, 2.5)
     try:
