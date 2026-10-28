@@ -3,6 +3,7 @@
 Window = the Bascom tent story, located by subtitle text so it follows the final timing.
 v2 (recipe-audit fixes): face-aware caption slots (V3), title only for 3.6 s, end card inside the safe area (V1),
 flash shots < 0.5 s repaired by holding the previous frame (R7), end card starts on a cut, true peak <= -2 dBTP (U1).
+Audit feedback: env FIX_FLASH="a-b,..." (seconds) frames to hold, END_AT=seconds where the end card starts.
 Usage: spotify_promo.py EPISODE_MP4 EPISODE_EN_SRT OUT_DIR   (env FACE_MODEL = YuNet onnx, default /tmp/yunet.onnx)"""
 import re, subprocess, sys, os
 from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
@@ -89,6 +90,10 @@ mad = np.array(mad)
 # hard cut = a one-frame spike well above its neighbourhood (dissolves change gradually and are not counted)
 cuts = [i for i in range(1, len(mad)) if mad[i] > 18 and mad[i] > 3 * np.median(mad[max(0, i - 6):i + 7])]
 flashes = [(a, b) for a, b in zip(cuts, cuts[1:]) if 2 < b - a < 15]     # a shot shorter than 0.5 s
+# fixes fed back from recipe-audit (R7): FIX_FLASH="32.82-33.17,..." seconds into the promo; END_AT = cut where the end card starts
+for rng_ in filter(None, os.environ.get("FIX_FLASH", "").split(",")):
+    a_, b_ = [float(x) for x in rng_.split("-")]; flashes.append((max(1, round(a_ * 30)), round(b_ * 30)))
+flashes = sorted(set(flashes))
 print("hard cuts at", [round(c / 30, 2) for c in cuts], "flash repairs (frames):", flashes)
 if flashes:
     fg, last = [], "[0:v]"
@@ -120,6 +125,7 @@ def overlap(box, fs):
         tot += max(0, min(y1, y + h) - max(y0, y))
     return tot
 late = [c / 30 for c in cuts if ENDC - 1.2 < c / 30 < ENDC]
+if os.environ.get("END_AT"): late = [float(os.environ["END_AT"])]
 if late: ENDC = late[-1]; print("end card moved to the last cut at", round(ENDC, 2))
 placed = []
 for a, e, p in cues:
