@@ -3,7 +3,7 @@
 page, and saves (blurred) screenshots + redacted text dumps + a structural map of buttons/rows to $QA_DIR.
 With PROBE_MENU=1 it also opens the 'Add language' menu (lists entries) and presses Escape - nothing is changed.
 Stops at once on any Google sign-in / 'Verify it's you' page. Saves refreshed cookies on success."""
-import json, os, sys
+import json, os, re, sys
 from playwright.sync_api import sync_playwright
 sys.path.insert(0, os.path.dirname(__file__))
 import yt_studio_session as S
@@ -60,5 +60,25 @@ with sync_playwright() as p:
                 snap(pg, f"04_hover_audio_{i}")
                 open(f"{OUT}/04_hover_audio_{i}_cell.html", "w").write(S.redact(c.evaluate("e => e.outerHTML"))[:30000])
         except Exception as e: print("spanish hover:", str(e)[:150])
+    if os.environ.get("PROBE_LANG_CLICK") == "1":  # open each language's own editor (read-only), then close it
+        for want in ("Espanhol", "Spanish", "Português", "Portuguese"):
+            try:
+                btn = pg.locator("button.language-display-name").filter(has_text=re.compile(rf"^\s*{want}\s*$"))
+                if not btn.count(): continue
+                S.pause(); btn.first.click(timeout=10000); pg.wait_for_timeout(5000)
+                snap(pg, f"05_lang_{want}")
+                for d in pg.locator("tp-yt-paper-dialog[opened], [role=dialog]").all():
+                    try: open(f"{OUT}/05_lang_{want}_dialog.html", "a").write(S.redact(d.evaluate("e => e.outerHTML"))[:60000] + "\n\n")
+                    except Exception: pass
+                closed = False
+                for nm in ["Fechar", "Close", "Cancelar", "Cancel"]:
+                    c = pg.get_by_role("button", name=nm)
+                    if c.count():
+                        try: c.last.click(timeout=4000); closed = True; break
+                        except Exception: pass
+                if not closed: pg.keyboard.press("Escape")
+                pg.wait_for_timeout(2500)
+                if "/translations" not in pg.url: S.goto(pg, f"https://studio.youtube.com/video/{VID}/translations", settle=6000)
+            except Exception as e: print("lang click", want, str(e)[:150])
     S.pause(2, 4); S.save(ctx); b.close()
 print("PROBE_DONE")

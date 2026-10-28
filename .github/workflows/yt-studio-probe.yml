@@ -6,6 +6,7 @@ on:
     inputs:
       video_id: { description: "Video ID", default: "LfoM0KAi8Yo" }
       menu: { description: "1 = also open (and Escape) the Add language menu", default: "1" }
+      lang_click: { description: "1 = open (and close) the Spanish/Portuguese language editors", default: "0" }
 permissions:
   contents: write
 concurrency: { group: yt-studio-session, cancel-in-progress: false }
@@ -23,6 +24,7 @@ jobs:
           YT_GOOGLE_SESSION: ${{ secrets.YT_GOOGLE_SESSION }}
           VIDEO_ID: ${{ inputs.video_id }}
           PROBE_MENU: ${{ inputs.menu }}
+          PROBE_LANG_CLICK: ${{ inputs.lang_click }}
           QA_DIR: /tmp/ytqa
         run: xvfb-run -a python3 scripts/yt_studio_probe.py
       - name: Save refreshed session
