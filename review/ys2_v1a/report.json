@@ -1,0 +1,134 @@
+{
+ "C01_23.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ },
+ "C01_5.jpg": {
+  "person": 2,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": false
+ },
+ "C02_23.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ },
+ "C02_5.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ },
+ "C03_23.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 0,
+  "person_ok": false
+ },
+ "C03_5.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": 0,
+  "person_ok": true
+ },
+ "C04_23.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ },
+ "C04_5.jpg": {
+  "person": 4,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": false
+ },
+ "C05_23.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ },
+ "C05_5.jpg": {
+  "person": 2,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": false
+ },
+ "C06_23.jpg": {
+  "person": 3,
+  "horse": 0,
+  "expect_person": 2,
+  "person_ok": false
+ },
+ "C06_5.jpg": {
+  "person": 3,
+  "horse": 0,
+  "expect_person": 2,
+  "person_ok": false
+ },
+ "C07_23.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ },
+ "C07_5.jpg": {
+  "person": 3,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": false
+ },
+ "C08_23.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": 0,
+  "person_ok": true
+ },
+ "C08_5.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": 0,
+  "person_ok": true
+ },
+ "F01_23.jpg": {
+  "person": 4,
+  "horse": 1,
+  "expect_person": 5,
+  "person_ok": false
+ },
+ "F01_5.jpg": {
+  "person": 4,
+  "horse": 1,
+  "expect_person": 5,
+  "person_ok": false
+ },
+ "F02_23.jpg": {
+  "person": 6,
+  "horse": 0,
+  "expect_person": 5,
+  "person_ok": false
+ },
+ "F02_5.jpg": {
+  "person": 5,
+  "horse": 0,
+  "expect_person": 5,
+  "person_ok": true
+ },
+ "F03_23.jpg": {
+  "person": 4,
+  "horse": 0,
+  "expect_person": 5,
+  "person_ok": false
+ },
+ "F03_5.jpg": {
+  "person": 4,
+  "horse": 0,
+  "expect_person": 5,
+  "person_ok": false
+ }
+}
