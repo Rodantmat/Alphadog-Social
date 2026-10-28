@@ -1,0 +1,14 @@
+[
+ {
+  "name": "S04",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys2_v1b/S04_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 113,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the passengers drop watches, wallets and coins into the open sack one after another, the robber shakes the sack, the horses shift, dust drifts. Static camera.",
+  "neg": "faces, face morphing, muzzle flash, extra hands, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ }
+]
