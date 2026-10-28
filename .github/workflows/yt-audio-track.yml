@@ -8,12 +8,14 @@ on:
       video_id: { description: "YouTube video ID", required: true }
       lang: { description: "Language code(s), comma-separated (es,pt / pt-BR / fr...)", default: "pt" }
       audio_path: { description: "Footage-branch path; empty = audio-tracks/<video_id>_<lang>.m4a for each lang", default: "" }
-      dry_run: { description: "1 = open the dialog and cancel, upload nothing", default: "0" }
+      thumbs: { description: "Per-language thumbnail: auto = lang-thumbs/<id>_<lang>.jpg on footage if present; none; or a footage path (single lang)", default: "auto" }
+      dry_run: { description: "1 = open the dialogs and cancel, upload nothing", default: "0" }
   workflow_call:
     inputs:
       video_id: { type: string, required: true }
       lang: { type: string, default: "pt" }
       audio_path: { type: string, default: "" }
+      thumbs: { type: string, default: "auto" }
       dry_run: { type: string, default: "0" }
 permissions:
   contents: write
@@ -33,10 +35,13 @@ jobs:
           LANGS: ${{ inputs.lang }}
           VIDEO_ID: ${{ inputs.video_id }}
           AUDIO_PATH: ${{ inputs.audio_path }}
+          THUMBS: ${{ inputs.thumbs }}
         run: |
           git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb
           paths=""; for l in ${LANGS//,/ }; do p="${AUDIO_PATH:-audio-tracks/${VIDEO_ID}_${l}.m4a}"; paths="$paths /$p"; done
+          case "$THUMBS" in none|"") ;; auto) for l in ${LANGS//,/ }; do paths="$paths /lang-thumbs/${VIDEO_ID}_${l}.jpg"; done ;; *) paths="$paths /$THUMBS" ;; esac
           cd /tmp/fb && git sparse-checkout set --no-cone $paths
+          ls -la /tmp/fb/lang-thumbs 2>/dev/null || true
           for p in $paths; do ls -la "/tmp/fb$p"; ffprobe -v error -show_entries format=duration -of csv=p=0 "/tmp/fb$p" 2>/dev/null | sed "s/^/audio duration s: /" || true; done
       - name: Add audio track(s) in Studio
         env:
@@ -45,13 +50,15 @@ jobs:
           VIDEO_ID: ${{ inputs.video_id }}
           LANGS: ${{ inputs.lang }}
           AUDIO_PATH: ${{ inputs.audio_path }}
+          THUMBS: ${{ inputs.thumbs }}
           DRY_RUN: ${{ inputs.dry_run }}
         run: |
           rc=0; mkdir -p /tmp/ytqa
           for l in ${LANGS//,/ }; do
             p="${AUDIO_PATH:-audio-tracks/${VIDEO_ID}_${l}.m4a}"
-            echo "=== $VIDEO_ID $l ($p)"
-            QA_DIR=/tmp/ytqa/$l RESULT_JSON=/tmp/ytqa/result_$l.json AUDIO_LANG=$l AUDIO=/tmp/fb/$p xvfb-run -a python3 scripts/yt_studio_audio.py || { c=$?; echo "exit $c"; rc=$c; [ $c -eq 2 -o $c -eq 3 ] && break; }
+            case "$THUMBS" in none|"") t="" ;; auto) t="/tmp/fb/lang-thumbs/${VIDEO_ID}_${l}.jpg"; [ -f "$t" -o "$DRY_RUN" = "1" ] || t="" ;; *) t="/tmp/fb/$THUMBS" ;; esac
+            echo "=== $VIDEO_ID $l ($p) thumb: ${t:-none}"
+            QA_DIR=/tmp/ytqa/$l RESULT_JSON=/tmp/ytqa/result_$l.json AUDIO_LANG=$l AUDIO=/tmp/fb/$p THUMB="$t" xvfb-run -a python3 scripts/yt_studio_audio.py || { c=$?; echo "exit $c"; rc=$c; [ $c -eq 2 -o $c -eq 3 ] && break; }
             sleep $((40 + RANDOM % 40))
           done
           exit $rc
@@ -67,7 +74,7 @@ jobs:
           for f in sorted(glob.glob("/tmp/ytqa/result_*.json")):
               r = json.load(open(f))
               if r["status"] in ("login", "challenge"): continue
-              d.setdefault(r["video_id"], {})[r["lang"]] = {"status": r["status"], "time": r["time"], **{k: r[k] for k in ("ui", "message", "error") if r.get(k)}}
+              d.setdefault(r["video_id"], {})[r["lang"]] = {"status": r["status"], "time": r["time"], **{k: r[k] for k in ("ui", "thumb", "message", "error") if r.get(k)}}
           json.dump(d, open(p, "w"), indent=1, ensure_ascii=False)
           PY
             git add content/published/audio_tracks.json

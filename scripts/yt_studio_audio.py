@@ -13,6 +13,7 @@ import yt_studio_session as S
 
 VID = os.environ["VIDEO_ID"]; LANG = os.environ.get("AUDIO_LANG") or "pt"
 AUDIO = os.environ.get("AUDIO", ""); DRY = os.environ.get("DRY_RUN") == "1"
+THUMB = os.environ.get("THUMB", "")  # optional per-language thumbnail (JPG/PNG 1280x720, < 2 MB)
 OUT = os.environ.get("QA_DIR", "/tmp/ytqa"); os.makedirs(OUT, exist_ok=True)
 RES = os.environ.get("RESULT_JSON", f"{OUT}/result.json")
 # UI names per language, in the UI languages Studio may be shown in (account is in Portuguese; English kept as fallback).
@@ -168,12 +169,61 @@ def upload(pg):
             return "published", txt
     return "timeout", txt
 
+THUMB_BTN = "#language-details-text-button-localized-thumbnail"
+def thumb_state(pg):
+    """'' = no language thumbnail yet (button says Add), else the button label (e.g. Excluir/Delete) = already set."""
+    t = _vis_text(pg, THUMB_BTN)
+    return "" if re.match(r"^(Adicionar|Add|Enviar|Upload)$", t or "", re.I) else (t or "?")
+def update_enabled(pg):
+    upd = pg.get_by_role("button", name=re.compile(r"^(Atualizar|Update)$"))
+    return any(b.is_visible() and not b.is_disabled() and b.get_attribute("aria-disabled") != "true" for b in upd.all())
+def set_thumb(pg):
+    btn = pg.locator(THUMB_BTN + ":visible").first
+    S.pause(1, 2.5)
+    chooser = None
+    try:
+        with pg.expect_file_chooser(timeout=10000) as fc: btn.click(timeout=10000)
+        chooser = fc.value; print("thumbnail: file chooser opened")
+    except Exception:
+        pg.wait_for_timeout(2500); snap(pg, "20_thumb_after_click")
+        sd = None
+        for d in pg.locator("tp-yt-paper-dialog, [role=dialog], ytcp-dialog").all():
+            try:
+                if d.is_visible() and not d.locator("#language-details-source-label-audio").count(): sd = d
+            except Exception: pass
+        print("thumbnail: sub-dialog:", S.redact(sd.inner_text())[:300].replace("\n", " | ") if sd else None)
+        scope = sd or pg
+        sel = scope.get_by_role("button", name=re.compile(r"(selecionar|select|enviar|upload|escolher|choose|adicionar|add)", re.I))
+        with pg.expect_file_chooser(timeout=10000) as fc: sel.first.click(timeout=10000)
+        chooser = fc.value; print("thumbnail: file chooser opened (via sub-dialog)")
+    if DRY: return "dry"
+    chooser.set_files(THUMB); print("thumbnail: file handed to Studio")
+    for _ in range(30):
+        pg.wait_for_timeout(4000)
+        st = thumb_state(pg)
+        for nm in ["Concluído", "Done", "Salvar", "Save", "Confirmar", "Confirm"]:  # possible crop/confirm step
+            b = pg.get_by_role("button", name=nm, exact=True)
+            if b.count() and b.last.is_visible():
+                try: b.last.click(timeout=3000); print("thumbnail: clicked", nm); pg.wait_for_timeout(2500)
+                except Exception: pass
+        if st or update_enabled(pg): break
+    snap(pg, "21_thumb_set")
+    if update_enabled(pg):
+        S.pause(1, 2); click_named(pg, ["Atualizar", "Update"]); print("thumbnail: clicked Update"); pg.wait_for_timeout(7000)
+    else:
+        return "error: Update never enabled"
+    snap(pg, "22_thumb_saved")
+    return "set"
+
 def main():
-    if not DRY and not (AUDIO and os.path.exists(AUDIO)): result("error", error=f"audio file missing: {AUDIO}"); sys.exit(4)
+    if not DRY and not (AUDIO and os.path.exists(AUDIO)) and not (THUMB and os.path.exists(THUMB)):
+        result("error", error=f"no input file (audio: {AUDIO}, thumb: {THUMB})"); sys.exit(4)
+    do_audio = DRY or (AUDIO and os.path.exists(AUDIO)); do_thumb = bool(THUMB) and (DRY or os.path.exists(THUMB))
     with sync_playwright() as p:
         b, ctx, pg = S.open_browser(p)
+        out = {}
         def finish(code, status, **kw):
-            result(status, **kw); S.save(ctx); b.close(); sys.exit(code)
+            result(status, **out, **kw); S.save(ctx); b.close(); sys.exit(code)
         S.goto(pg, S.STUDIO)
         st = S.status(pg); print("[studio] status:", st)
         if st != "ok":
@@ -185,43 +235,62 @@ def main():
         if st in ("challenge", "login"): S.dump(pg, f"{OUT}/00_stop.txt"); result(st); b.close(); sys.exit(3 if st == "challenge" else 2)
         snap(pg, "01_before")
         f = find_row(pg)
-        if f and f[1] not in EMPTY:
-            print(f"'{f[0]}' already has audio: {f[1]} - nothing to do"); finish(0, "already", ui=f[1], row=f[0])
         if not f:
             if DRY: print("DRY_RUN: would add the language", WANT[0]); finish(0, "dry_run", note="language row missing")
             if not add_language(pg): snap(pg, "90_fail"); finish(4, "error", error="could not add language")
             if not dialog(pg):
                 open_languages(pg); f = find_row(pg)
                 if not f: snap(pg, "90_fail"); finish(4, "error", error="row not visible after add")
-        try: open_editor(pg, f[2] if f else None)
+        name = f[0] if f else WANT[0]; out["row"] = name
+        def editor():
+            if not dialog(pg):
+                r = find_row(pg)
+                open_editor(pg, r[2] if r else None)
+            else: open_editor(pg, None)
+        # ---- 1) per-language thumbnail ----
+        if do_thumb:
+            try:
+                editor(); ts = thumb_state(pg); print(f"thumbnail state: '{ts}'"); snap(pg, "11_editor")
+                if ts: out["thumb"] = "already"
+                else:
+                    r = set_thumb(pg); out["thumb"] = "dry_run" if r == "dry" else r
+                    if r == "set":
+                        close_dialog(pg); open_languages(pg); editor()
+                        ts2 = thumb_state(pg); print(f"thumbnail state after: '{ts2}'"); out["thumb"] = "set" if ts2 else "unverified"
+            except Exception as e: snap(pg, "90_thumb_fail"); out["thumb"] = "error: " + str(e)[:160]
+            close_dialog(pg); S.pause(2, 4)
+        # ---- 2) dubbed audio track ----
+        if not do_audio:
+            finish(0 if not str(out.get("thumb", "")).startswith("error") else 4, "thumb_only")
+        f = find_row(pg)
+        if f and f[1] not in EMPTY:
+            print(f"'{f[0]}' already has audio: {f[1]} - nothing to do"); finish(0, "already", ui=f[1])
+        try: editor()
         except Exception as e: snap(pg, "90_fail"); finish(4, "error", error="open language editor: " + str(e)[:200])
-        name = f[0] if f else WANT[0]
         src, stt = audio_state(pg); print(f"editor: {name} | audio source='{src}' status='{stt}'")
-        snap(pg, "11_editor")
-        if src or stt: close_dialog(pg); finish(0, "already", ui=stt or src, row=name)
+        if src or stt: close_dialog(pg); finish(0, "already", ui=stt or src)
         try: state, txt = upload(pg)
         except Exception as e: snap(pg, "90_fail"); close_dialog(pg); finish(4, "error", error="upload step: " + str(e)[:200])
         if state == "dry":
             pg.wait_for_timeout(1500)
             sd = audio_dialog(pg)
             if sd: click_named(sd, ["Cancelar", "Cancel"]); pg.wait_for_timeout(2000)
-            close_dialog(pg); snap(pg, "13_after_cancel"); finish(0, "dry_run", row=name, saw=txt)
+            close_dialog(pg); snap(pg, "13_after_cancel"); finish(0, "dry_run", saw=txt)
         if state == "rejected":
             sd = audio_dialog(pg)
             if sd: click_named(sd, ["Cancelar", "Cancel"])
-            close_dialog(pg); finish(5, "rejected", message=txt[:800], row=name)
+            close_dialog(pg); finish(5, "rejected", message=txt[:800])
         if state not in ("published", "closed"):
             sd = audio_dialog(pg)
             if sd: click_named(sd, ["Cancelar", "Cancel"])
             close_dialog(pg); finish(4, "error", error=f"upload {state}", message=txt[:800])
         src, stt = audio_state(pg); print(f"editor after publish: audio source='{src}' status='{stt}'"); snap(pg, "15_editor_after")
-        upd = pg.get_by_role("button", name=re.compile(r"^(Atualizar|Update)$"))
-        if any(b.is_visible() and not b.is_disabled() and b.get_attribute("aria-disabled") != "true" for b in upd.all()):
+        if update_enabled(pg):
             S.pause(1, 2); click_named(pg, ["Atualizar", "Update"]); print("clicked Update"); pg.wait_for_timeout(6000)
         close_dialog(pg)
         S.pause(3, 6); open_languages(pg); snap(pg, "16_after")
         f = find_row(pg); ui = f[1] if f else ""
         ok = bool(f) and ui not in EMPTY
-        finish(0 if ok else 4, "published" if ok else "unverified", ui=ui, row=f[0] if f else None)
+        finish(0 if ok else 4, "published" if ok else "unverified", ui=ui)
 if __name__ == "__main__":
     main()
