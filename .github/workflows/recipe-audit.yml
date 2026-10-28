@@ -1,0 +1,74 @@
+name: recipe-audit
+# Render-stage auditor (content/recipe/recipe.yaml, stage=render rules) for a finished video stored as a workflow artifact.
+# Writes <stem>_report.json + <stem>_sheet_<rule>_<n>.jpg to the prerelease 'recipe-qa' (old assets of the same stem are replaced).
+on:
+  workflow_dispatch:
+    inputs:
+      run_id: { description: "run id that holds the artifact", default: "40238390203" }
+      artifact: { description: "artifact name", default: "release" }
+      files: { description: "comma-separated video file names inside the artifact", default: "chiricahua_ep1_final.mp4" }
+      mode: { description: "auto | long | vertical", default: "auto" }
+      srt_prefix: { description: "SRT prefix inside the artifact (<prefix>.<lang>.srt); empty = none", default: "chiricahua_ep1" }
+      shots: { description: "shot list: 'chiricahua5' (ci/chiricahua5 packs) or a repo path to a .jsonl; empty = none", default: "chiricahua5" }
+      timeline: { description: "repo path to a timeline json (chapters/inserts); empty = none", default: "content/recipe/calib/chiricahua_ep1_timeline.json" }
+      skip: { description: "comma list of analyzers to skip: ocr,clip,whisper,faces", default: "" }
+      extra: { description: "extra analyze.py arguments", default: "" }
+permissions:
+  contents: write
+  actions: read
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install
+        run: |
+          sudo apt-get -o DPkg::Lock::Timeout=300 update -qq && sudo apt-get -o DPkg::Lock::Timeout=300 install -y -qq --no-install-recommends ffmpeg fonts-dejavu-core >/dev/null
+          python3 -m venv /tmp/venv && . /tmp/venv/bin/activate
+          pip install -q --index-url https://download.pytorch.org/whl/cpu torch torchvision
+          pip install -q numpy opencv-python-headless rapidocr_onnxruntime faster-whisper open_clip_torch pyyaml soundfile pillow
+          curl -sSfL -o /tmp/yunet.onnx https://github.com/opencv/opencv_zoo/raw/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx || echo "no yunet (haar fallback)"
+          ls -la /tmp/yunet.onnx || true; nproc; free -g | head -2
+      - uses: actions/download-artifact@v4
+        with: { name: "${{ inputs.artifact }}", path: /tmp/in, run-id: "${{ inputs.run_id }}", github-token: "${{ github.token }}" }
+      - name: Audit
+        env:
+          FILES: ${{ inputs.files }}
+          MODE: ${{ inputs.mode }}
+          SRT: ${{ inputs.srt_prefix }}
+          SHOTS: ${{ inputs.shots }}
+          TL: ${{ inputs.timeline }}
+          SKIP: ${{ inputs.skip }}
+          EXTRA: ${{ inputs.extra }}
+        run: |
+          . /tmp/venv/bin/activate
+          ls -la /tmp/in; md5sum scripts/recipe/analyze.py
+          SA=""
+          if [ "$SHOTS" = "chiricahua5" ]; then python3 ci/chiricahua5/unpack5.py /tmp/r5 >/dev/null && SA="--shots /tmp/r5/chiricahua/shots_v5.jsonl --patch /tmp/r5/chiricahua/shots_patch.jsonl"
+          elif [ -n "$SHOTS" ]; then SA="--shots $SHOTS"; fi
+          TA=""; [ -n "$TL" ] && TA="--timeline $TL"
+          RA=""; [ -n "$SRT" ] && RA="--srt-dir /tmp/in --srt-prefix $SRT"
+          mkdir -p /tmp/pub
+          IFS=',' read -ra FL <<< "$FILES"
+          for f in "${FL[@]}"; do
+            f=$(echo "$f" | xargs); stem="${f%.*}"; out="/tmp/out/$stem"
+            python3 scripts/recipe/analyze.py "/tmp/in/$f" --mode "$MODE" $SA $TA $RA --skip "$SKIP" --out "$out" $EXTRA
+            for x in "$out"/report.json "$out"/sheet_*.jpg; do [ -f "$x" ] && cp "$x" "/tmp/pub/${stem}_$(basename "$x")"; done
+          done
+          ls -la /tmp/pub
+      - name: Upload to release recipe-qa
+        if: always()
+        env:
+          FILES: ${{ inputs.files }}
+        run: |
+          ls /tmp/pub/* >/dev/null 2>&1 || exit 0
+          gh release view recipe-qa >/dev/null 2>&1 || gh release create recipe-qa --title "recipe QA" --notes "Render-stage audit reports (scripts/recipe/analyze.py)" --prerelease
+          IFS=',' read -ra FL <<< "$FILES"
+          for f in "${FL[@]}"; do
+            f=$(echo "$f" | xargs); stem="${f%.*}"
+            gh release view recipe-qa --json assets -q '.assets[].name' | grep "^${stem}_" | while read -r a; do gh release delete-asset recipe-qa "$a" -y; done || true
+          done
+          gh release upload recipe-qa /tmp/pub/* --clobber
