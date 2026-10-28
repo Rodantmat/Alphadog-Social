@@ -1,0 +1,42 @@
+name: archive-fetch
+# Archiving helper: download artifact NAME of run RUN, list every file in it (path + size + sha256),
+# and upload the files whose path matches PATTERN (python regex; empty = list only) to the temporary
+# prerelease "archive-tmp" so they can be copied to the owner's disk. Delete the release afterwards.
+on:
+  workflow_dispatch:
+    inputs:
+      run: { description: "run id holding the artifact", required: true }
+      artifact: { description: "artifact name", required: true }
+      pattern: { description: "regex of files to upload (empty = list only)", default: "" }
+      prefix: { description: "prefix added to uploaded asset names", default: "" }
+permissions:
+  contents: write
+  actions: read
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: README.md }
+      - uses: actions/download-artifact@v4
+        with: { name: "${{ inputs.artifact }}", path: /tmp/a, run-id: "${{ inputs.run }}", github-token: "${{ github.token }}" }
+      - name: List contents (expand tarballs)
+        run: |
+          cd /tmp/a
+          for t in $(find . -name '*.tar' -type f); do echo "TAR $t"; tar -tvf "$t" | awk '{print "  TARENTRY", $3, $6}' | head -400; mkdir -p "/tmp/x/$(basename "$t" .tar)"; tar -C "/tmp/x/$(basename "$t" .tar)" -xf "$t" && rm "$t"; done
+          mkdir -p /tmp/x; cp -al /tmp/a/. /tmp/x/ 2>/dev/null || cp -a /tmp/a/. /tmp/x/
+          cd /tmp/x && find . -type f -printf '%s\t%p\n' | sort -k2 | while IFS=$'\t' read s p; do echo "FILE $s $(sha256sum "$p" | cut -c1-64) $p"; done
+          df -h / | tail -1
+      - name: Upload matches to release archive-tmp
+        if: inputs.pattern != ''
+        env: { PAT: "${{ inputs.pattern }}", PFX: "${{ inputs.prefix }}" }
+        run: |
+          gh release view archive-tmp >/dev/null 2>&1 || gh release create archive-tmp --title "archive-tmp" --notes "Temporary: files being copied to the owner's disk. Delete after copy." --prerelease
+          cd /tmp/x
+          find . -type f | python3 -c "import re,os,sys; [print(l.strip()) for l in sys.stdin if re.search(os.environ['PAT'], l.strip())]" > /tmp/sel.txt
+          cat /tmp/sel.txt
+          mkdir -p /tmp/up
+          while read p; do n="${PFX}$(basename "$p")"; ln -f "$p" "/tmp/up/$n" 2>/dev/null || cp "$p" "/tmp/up/$n"; gh release upload archive-tmp "/tmp/up/$n" --clobber && echo "UPLOADED $n $(stat -c %s "/tmp/up/$n")"; done < /tmp/sel.txt
