@@ -1,9 +1,0 @@
-05:10:40 encoded 1 prompts in 57 s
-05:13:45 gpu0 A01_clip_free step 5/30 87s
-05:15:02 gpu0 A01_clip_free step 10/30 164s
-05:16:18 gpu0 A01_clip_free step 15/30 240s
-05:17:35 gpu0 A01_clip_free step 20/30 316s
-05:18:51 gpu0 A01_clip_free step 25/30 393s
-05:20:08 gpu0 A01_clip_free step 30/30 469s
-05:25:26 gpu0 DONE A01_clip_free 787s
-05:25:29 ALL_DONE ['A01_clip_free.mp4']

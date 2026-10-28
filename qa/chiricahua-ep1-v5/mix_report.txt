@@ -1,4 +1,0 @@
-voice-music under speech median 18.0 dB (p10 12.7)
-voice-amb under speech median 18.0 dB
-narr voice -28.1, insert voice -27.0
-music in gaps -41.0
