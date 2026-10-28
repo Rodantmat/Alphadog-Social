@@ -9,7 +9,7 @@ on:
         description: "repo path of the edit jobs JSON"
         default: "content/chiricahua/edit_A04.json"
       modal_key:
-        description: "Modal key set: W1..W4 (weekly $30 budgets), MAIN or BACKUP (backups only if the week's key is exhausted)"
+        description: "Modal key set: W1..W4 (project budgets), then backups in order MAIN, BACKUP, BACKUP2, BACKUP3 (each until empty). Secrets MODAL_TOKEN_ID_<KEY>/MODAL_TOKEN_SECRET_<KEY>; MAIN uses MODAL_TOKEN_ID/MODAL_TOKEN_SECRET"
         default: "W1"
       label:
         default: "A04edit"
