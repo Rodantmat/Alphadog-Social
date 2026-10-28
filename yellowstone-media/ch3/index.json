@@ -1,7 +1,23 @@
 {
  "chapter": "ch3",
- "list_sha": "08b0c1f87a48bfda",
+ "list_sha": "e6a2057b68892d39",
  "files": [
+  {
+   "name": "ch3_commons_cews_wood_1",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Charles_Erskine_Scott_Wood_1910.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Charles_Erskine_Scott_Wood_1910.jpg",
+   "shows": "Lt. C.E.S. Wood (recorded Joseph's surrender speech)",
+   "license": "Public domain",
+   "credit": "Colmer, Montagu, and Charles Erskine Scott Wood (1910) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Charles Erskine Scott Wood 1910.jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1910",
+   "file": "img/ch3_commons_cews_wood_1.jpg",
+   "w": 704,
+   "h": 907,
+   "bytes": 258541
+  },
   {
    "name": "ch3_commons_chief_joseph_1877",
    "src_url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Chief_Joseph-1877.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
@@ -9,7 +25,7 @@
    "shows": "Chief Joseph, Bismarck, Nov 1877 (O. S. Goff)",
    "license": "Public domain",
    "credit": "Three photographers have been credited with this photograph, but it is likely that Orlando S. Goff actually took it. (1877-11) via Wikimedia Commons, Public domain",
-   "status": "OK",
+   "status": "DUPLICATE of ch3_usgs_chief_joseph_1877.jpg (same file); use either",
    "title": "File:Chief Joseph-1877.jpg",
    "page_usage": "Wikimedia Commons licence: Public domain",
    "date": "1877-11",
@@ -17,6 +33,38 @@
    "w": 492,
    "h": 640,
    "bytes": 38173
+  },
+  {
+   "name": "ch3_commons_looking_glass_b_1",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Looking_Glass%2C_a_Nez_Perce%27_chief%2C_on_horseback_in_front_of_a_tepee%2C_1877_-_NARA_-_530914.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Looking_Glass,_a_Nez_Perce%27_chief,_on_horseback_in_front_of_a_tepee,_1877_-_NARA_-_530914.jpg",
+   "shows": "Looking Glass (Nez Perce leader)",
+   "license": "Public domain",
+   "credit": "Unknown author Unknown author or not provided (1877 date QS:P571,+1877-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Looking Glass, a Nez Perce' chief, on horseback in front of a tepee, 1877 - NARA - 530914.jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1877 date QS:P571,+1877-00-00T00:00:00Z/9",
+   "file": "img/ch3_commons_looking_glass_b_1.jpg",
+   "w": 2304,
+   "h": 3000,
+   "bytes": 1369220
+  },
+  {
+   "name": "ch3_commons_looking_glass_b_2",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Chief_Looking_Glass-Nez_Perce-1871-cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Chief_Looking_Glass-Nez_Perce-1871-cropped.jpg",
+   "shows": "Looking Glass (Nez Perce leader)",
+   "license": "Public domain",
+   "credit": "Unknown author Unknown author (2012-01-29) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Chief Looking Glass-Nez Perce-1871-cropped.jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "2012-01-29",
+   "file": "img/ch3_commons_looking_glass_b_2.jpg",
+   "w": 258,
+   "h": 352,
+   "bytes": 27111
   },
   {
    "name": "ch3_commons_nelson_miles_1",
@@ -35,6 +83,22 @@
    "bytes": 1349530
   },
   {
+   "name": "ch3_commons_ollokot_1",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Ollokot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Ollokot.jpg",
+   "shows": "Ollokot, Joseph's brother",
+   "license": "Public domain",
+   "credit": "Unknown author Unknown author () via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Ollokot.jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "",
+   "file": "img/ch3_commons_ollokot_1.jpg",
+   "w": 600,
+   "h": 872,
+   "bytes": 43606
+  },
+  {
    "name": "ch3_commons_oo_howard_1",
    "src_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/General_Oliver_Otis_Howard%2C_Union_Army_%287950782518%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
    "source_page": "https://commons.wikimedia.org/wiki/File:General_Oliver_Otis_Howard,_Union_Army_(7950782518).jpg",
@@ -51,13 +115,61 @@
    "bytes": 130770
   },
   {
+   "name": "ch3_commons_sturgis_1",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Samuel-D-Sturgis-Soldiers-All.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Samuel-D-Sturgis-Soldiers-All.jpg",
+   "shows": "Col. Samuel D. Sturgis portrait",
+   "license": "Public domain",
+   "credit": "Joseph Cummings Chase (1919) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Samuel-D-Sturgis-Soldiers-All.jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1919",
+   "file": "img/ch3_commons_sturgis_1.jpg",
+   "w": 1810,
+   "h": 2645,
+   "bytes": 630367
+  },
+  {
+   "name": "ch3_commons_white_bird_1",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Peopeo_Kiskiok_Hihih_%28%22White_Bird%22%29_of_the_Nez_Perce.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Peopeo_Kiskiok_Hihih_(%22White_Bird%22)_of_the_Nez_Perce.png",
+   "shows": "White Bird (Nez Perce leader)",
+   "license": "Public domain",
+   "credit": "Unknown author Unknown author (Unknown date) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Peopeo Kiskiok Hihih (\"White Bird\") of the Nez Perce.png",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Unknown date",
+   "file": "img/ch3_commons_white_bird_1.png",
+   "w": 340,
+   "h": 512,
+   "bytes": 212375
+  },
+  {
+   "name": "ch3_commons_yellow_wolf_1",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Him-mim-mox-mox_%28%22Yellow_Wolf%22%29%2C_a_warrior_of_the_Nez_Perce_%281877%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Him-mim-mox-mox_(%22Yellow_Wolf%22),_a_warrior_of_the_Nez_Perce_(1877).jpg",
+   "shows": "Yellow Wolf (Nez Perce warrior, later narrator of the 1877 war)",
+   "license": "Public domain",
+   "credit": "Lucullus Virgil McWhorter (1877) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Him-mim-mox-mox (\"Yellow Wolf\"), a warrior of the Nez Perce (1877).jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1877",
+   "file": "img/ch3_commons_yellow_wolf_1.jpg",
+   "w": 818,
+   "h": 1024,
+   "bytes": 92092
+  },
+  {
    "name": "ch3_loc_joseph_00650888",
    "src_url": "https://tile.loc.gov/storage-services/service/pnp/cph/3c20000/3c26000/3c26300/3c26380v.jpg",
    "source_page": "https://www.loc.gov/item/00650888/",
-   "shows": "Chief Joseph portrait (LoC)",
+   "shows": "'The Idaho Indian war' 1877 card photo (Chas. W. Phillips, Walla Walla) - Joseph-era portrait",
    "license": "",
    "credit": "Library of Congress, Prints & Photographs Division (photographer unknown)",
-   "status": "EXCLUDE-pending (LoC rights statement is not 'No known restrictions')",
+   "status": "OK - PD by age (photo published 1877, Chas. W. Phillips, Walla Walla); LoC item shows no rights advisory - confirm on loc.gov before broadcast",
    "title": "The Idaho Indian war / Chas. W. Phillips, photographer, Walla Walla.",
    "page_usage": "",
    "date": "1877-01-01",
@@ -71,7 +183,7 @@
    "name": "ch3_loc_joseph_2002722462",
    "src_url": "https://tile.loc.gov/storage-services/service/pnp/cph/3a00000/3a03000/3a03700/3a03795v.jpg",
    "source_page": "https://www.loc.gov/item/2002722462/",
-   "shows": "Chief Joseph portrait (LoC)",
+   "shows": "Joseph (Hinmat\u00f3owyalahtq\u0313it), 1903 portrait by Edward S. Curtis - NOTE taken 26 years after 1877; caption with date",
    "license": "",
    "credit": "Library of Congress, Prints & Photographs Division (Curtis, Edward S., 1868-1952, photographer)",
    "status": "OK",
@@ -225,20 +337,6 @@
    "bytes": 302222
   },
   {
-   "name": "ch3_nps_people_02979",
-   "src_url": "https://home.nps.gov/features/yell/slidefile/history/1872_1918/peopleevents/Images/02979.jpg",
-   "source_page": "https://home.nps.gov/features/yell/slidefile/history/1872_1918/peopleevents/Page-1.htm",
-   "shows": "02979.jpg President William Howard Taft (1908 - 1912); Photographer unknown; 1908 - 1912",
-   "license": "Public Domain (NPS, US Government work)",
-   "credit": "NPS Yellowstone photo collection",
-   "status": "OK",
-   "page_usage": "NPS Yellowstone Photo Collection: 'These images are in the public domain and may be reproduced, free of charge with the proper credit line.'",
-   "file": "img/ch3_nps_people_02979.jpg",
-   "w": 1328,
-   "h": 2000,
-   "bytes": 329571
-  },
-  {
    "name": "ch3_nps_people_02995",
    "src_url": "https://home.nps.gov/features/yell/slidefile/history/1872_1918/peopleevents/Images/02995.jpg",
    "source_page": "https://home.nps.gov/features/yell/slidefile/history/1872_1918/peopleevents/Page-1.htm",
@@ -315,1230 +413,544 @@
  ],
  "not_obtained": [],
  "probes": {
-  "slidefile:ch3_nps_indians": [
-   [
-    "02718",
-    ""
-   ],
-   [
-    "02718",
-    "02718.jpg Early human history (book illustration); Artist unknown; No date; History - Indians"
-   ],
-   [
-    "02719",
-    ""
-   ],
-   [
-    "02719",
-    "02719.jpg Early human history (book illustration); Artist unknown; No date; History - Indians"
-   ],
-   [
-    "02725",
-    ""
-   ],
-   [
-    "02725",
-    "02725.jpg Nez Perce camp; Photographer unknown; No date; History - Indians"
-   ],
-   [
-    "02726",
-    ""
-   ],
-   [
-    "02726",
-    "02726.jpg Washakie & his warriors; Photographer unknown; 1871; History - Indians"
-   ],
-   [
-    "02727",
-    ""
-   ],
-   [
-    "02727",
-    "02727.jpg Chief Joseph; Photographer unknown; No date; History - Indians"
-   ],
-   [
-    "02728",
-    ""
-   ],
-   [
-    "02728",
-    "02728.jpg Chief Washakie; Photographer unknown; No date; History - Indians"
-   ],
-   [
-    "02729",
-    ""
-   ],
-   [
-    "02729",
-    "02729.jpg Bannock girls in dress decorated with elk teeth; Photographer unknown; No date; History - Indians"
-   ],
-   [
-    "02730",
-    ""
-   ],
-   [
-    "02730",
-    "02730.jpg Bannock wickiup; Photographer unknown; 1871; History - Indians"
-   ],
-   [
-    "02731",
-    ""
-   ],
-   [
-    "02731",
-    "02731.jpg Bannock indian mother with baby in beaded carrier; Photographer unknown; No date; History - Indians"
-   ],
-   [
-    "02732",
-    ""
-   ],
-   [
-    "02732",
-    "02732.jpg Bannock men at dance; Photographer unknown; No date; History - Indians"
-   ],
-   [
-    "02733",
-    ""
-   ],
-   [
-    "02733",
-    "02733.jpg Bannock indians with two white women; Photographer unknown; No date; History - Indians"
-   ],
-   [
-    "02734",
-    ""
-   ],
-   [
-    "02734",
-    "02734.jpg Bannock Indains with wickiup; Photographer unknown; 1871; History - Indians"
-   ],
-   [
-    "02735",
-    ""
-   ],
-   [
-    "02735",
-    "02735.jpg Bannock Indians; Photographer unknown; No date; History - Indians"
-   ],
-   [
-    "02736",
-    ""
-   ],
-   [
-    "02736",
-    "02736.jpg Nez Perce woman working on a skin with teepee in background; Photographer unknown; 1871; History - Indians"
-   ],
-   [
-    "02737",
-    ""
-   ],
-   [
-    "02737",
-    "02737.jpg Shoshoni camp; Photographer unknown; 1871; History - Indians"
-   ],
-   [
-    "02738",
-    ""
-   ],
-   [
-    "02738",
-    "02738.jpg Indian Dick's lodge; Photographer unknown; 1870; History - Indians"
-   ],
-   [
-    "02739",
-    ""
-   ],
-   [
-    "02739",
-    "02739.jpg Indian fish trap on shore of Yellowstone Lake; Photographer unknown; 1961; History - Indians"
-   ],
-   [
-    "02740",
-    ""
-   ],
-   [
-    "02740",
-    "02740.jpg Bannock trail; John Good; 1962; History - Indians"
-   ],
-   [
-    "02741",
-    ""
-   ],
-   [
-    "02741",
-    "02741.jpg Bannock trail east of Lava Creek cammpground; Photographer unknown; 1964; History - Indians"
-   ],
-   [
-    "02742",
-    ""
-   ],
-   [
-    "02742",
-    "02742.jpg Teepee ring, rifle range; Photographer unknown ; 1965; History - Indians Page: 1 2 3 4 Next Page -> Photo Collection Home | Yellow"
-   ],
-   [
-    "02743",
-    ""
-   ],
-   [
-    "02743",
-    "02743.jpg Teepee ring, rifle range; Photographer unknown ; 1965; History - Indians"
-   ],
-   [
-    "02744",
-    ""
-   ],
-   [
-    "02744",
-    "02744.jpg Teepee ring, rifle range; Photographer unknown; 1965; History - Indians"
-   ],
-   [
-    "02745",
-    ""
-   ],
-   [
-    "02745",
-    "02745.jpg Hearthsite location on Yellowstone River; Photographer unknown ; 1965; History - Indians"
-   ],
-   [
-    "02746",
-    ""
-   ],
-   [
-    "02746",
-    "02746.jpg Indian hearth study on Yellowstone River; Replogle; 1965; History - Indians"
-   ],
-   [
-    "02747",
-    ""
-   ],
-   [
-    "02747",
-    "02747.jpg Hearth site depth; Photographer unknown; 1965; History - Indians"
-   ],
-   [
-    "02748",
-    ""
-   ],
-   [
-    "02748",
-    "02748.jpg Hearth site measurement; Photographer unknown; 1965; History - Indians"
-   ],
-   [
-    "02749",
-    ""
-   ],
-   [
-    "02749",
-    "02749.jpg Rigler site firepit on Yellowstone River; John Good; 1962; History - Indians"
-   ],
-   [
-    "02750",
-    ""
-   ],
-   [
-    "02750",
-    "02750.jpg Carbon dating; John Good; 1966; History - Indians"
-   ],
-   [
-    "02751",
-    ""
-   ],
-   [
-    "02751",
-    "02751.jpg Bannock trail in Hayden Valley; John Good; 1962; History - Indians"
-   ],
-   [
-    "02752",
-    ""
-   ],
-   [
-    "02752",
-    "02752.jpg Teepee rings on rifle range near Gardiner; Photographer unknown; 1965; History - Indians"
-   ],
-   [
-    "02753",
-    ""
-   ],
-   [
-    "02753",
-    "02753.jpg Wickiup near High bridge; Photographer unknown; 1963; History - Indians"
-   ],
-   [
-    "02754",
-    ""
-   ],
-   [
-    "02754",
-    "02754.jpg Wickiups at Wigwam Creek, now called Wickiup Creek; Photographer unknown; 1964; History - Indians"
-   ],
-   [
-    "02755",
-    ""
-   ],
-   [
-    "02755",
-    "02755.jpg Wickiups at Wigwam Creek, now called Wickiup Creek, Gallatin Mountain Range; Harlan Kredit; 1973; History - Indians"
-   ],
-   [
-    "02756",
-    ""
-   ],
-   [
-    "02756",
-    "02756.jpg Indian wickiups; Photographer unknown; No date; History - Indians"
-   ],
-   [
-    "02757",
-    ""
-   ],
-   [
-    "02757",
-    "02757.jpg Wickiups in the Gallatin Range; Photographer unknown; 1961; History - Indians"
-   ],
-   [
-    "02758",
-    ""
-   ],
-   [
-    "02758",
-    "02758.jpg Wickiups in the Gallatin Range; Photographer unknown; 1961; History - Indians"
-   ],
-   [
-    "02759",
-    ""
-   ],
-   [
-    "02759",
-    "02759.jpg Wickiup leaning near the Osprey Falls trail; Photographer unknown; 1963; History - Indians"
-   ],
-   [
-    "02760",
-    ""
-   ],
-   [
-    "02760",
-    "02760.jpg Wickiup in the Gallatins; Photographer unknown; 1961; History - Indians"
-   ],
-   [
-    "02761",
-    ""
-   ],
-   [
-    "02761",
-    "02761.jpg Wickiup at Wigwam Creek, now called Wickiup Creek; Photographer unknown; 1964; History - Indians"
-   ],
-   [
-    "02762",
-    ""
-   ],
-   [
-    "02762",
-    "02762.jpg Wigwam Creek looking west toward wickiups; Photographer unknown; 1964; History - Indians Page: 1 2 3 4 Next Page -> Photo Collecti"
-   ],
-   [
-    "02763",
-    ""
-   ],
-   [
-    "02763",
-    "02763.jpg Wickiup on Wigwam Creek, now called Wickiup Creek; Photographer unknown; 1964; History - Indians"
-   ],
-   [
-    "02764",
-    ""
-   ],
-   [
-    "02764",
-    "02764.jpg Wickiup on Wigwam Creek, now called Wickiup Creek; RG Johnsson; 1965; History - Indians"
-   ],
-   [
-    "02765",
-    ""
-   ],
-   [
-    "02765",
-    "02765.jpg Wickiup on Wigwam Creek, now called Wickiup Creek; Photographer unknown; 1964; History - Indians"
-   ],
-   [
-    "02766",
-    ""
-   ],
-   [
-    "02766",
-    "02766.jpg Wickiups frame on Wigwam Creek, now called Wickiup Creek; Photographer unknown; 1964; History - Indians"
-   ],
-   [
-    "02767",
-    ""
-   ],
-   [
-    "02767",
-    "02767.jpg Wickiups frame on Wigwam Creek, now called Wickiup Creek; William W Dunmire; 1970; History - Indians"
-   ],
-   [
-    "02768",
-    ""
-   ],
-   [
-    "02768",
-    "02768.jpg Possible indian rock shelter; Photographer unknown; 1961; History - Indians"
-   ],
-   [
-    "06423",
-    ""
-   ],
-   [
-    "06423",
-    "06423.jpg Yellowstone Lake fish weir, possibly made by indians; J Schmidt; 1977; History - Indians"
-   ],
-   [
-    "06741",
-    ""
-   ],
-   [
-    "06741",
-    "06741.jpg Wickiup; J Schmidt; 1977; History - Indians"
-   ],
-   [
-    "09181",
-    ""
-   ],
-   [
-    "09181",
-    "09181.jpg Indian wickiups at Wickiup Creek in the Gallatin Range; William W Dunmire; 1970; History - Indians"
-   ],
-   [
-    "10506",
-    ""
-   ],
-   [
-    "10506",
-    "10506.jpg \"So called\" Indian fishing ponds at low water (Yellowstone Lake to Bidge Bay); Photographer unknown; 1977; History - Indians"
-   ],
-   [
-    "11611",
-    ""
-   ],
-   [
-    "11611",
-    "11611.jpg Rock Creek Rendezvous, Utah; Andrew Langford; 1985; History - Indians"
-   ],
-   [
-    "11612",
-    ""
-   ],
-   [
-    "11612",
-    "11612.jpg Teepee near Stckton, Utah; Andrew Langford; No date; History - Indians"
-   ],
-   [
-    "11613",
-    ""
-   ],
-   [
-    "11613",
-    "11613.jpg Teepees at National Rendezvous on Gros Ventre River, east of Jackson's Hole); Andrew Langford; 1981; History - Indians"
-   ],
-   [
-    "11614",
-    ""
-   ],
-   [
-    "11614",
-    "11614.jpg Teepees at National Rendezvous in Hickerson Park, Utah; Andrew Langford; 1982; History - Indians"
-   ],
-   [
-    "11616",
-    ""
-   ],
-   [
-    "11616",
-    "11616.jpg National Rendezvous at Gros Ventre; Andrew Langford; 1981; History - Indians"
-   ],
-   [
-    "11617",
-    ""
-   ],
-   [
-    "11617",
-    "11617.jpg National Rendezvous dressed as a Crow Indian; Andrew Langford; 1981; History - Indians"
-   ],
-   [
-    "13367",
-    ""
-   ],
-   [
-    "13367",
-    "13367.jpg Fish trap in Yellowstone Lake near Bridge Bay; Jim Peaco; September 1987; History - Indians"
-   ],
-   [
-    "13985",
-    ""
-   ],
-   [
-    "13985",
-    "13985.jpg Wickiup at Wickiup Creek off of Route 191; Photographer unknown; No date; History - Indians"
-   ],
-   [
-    "15341",
-    ""
-   ],
-   [
-    "15341",
-    "15341.jpg Wickiup in the Gallatin Range; Photographer unknown; No date; History - Indians"
-   ],
-   [
-    "15670",
-    ""
-   ],
-   [
-    "15670",
-    "15670.jpg Starting a dig in Black Canyon of the Yellowstone, Wyoming/Montana border; Photographer unknown; 1997; History - Indians Page: 1 2"
-   ],
-   [
-    "15671",
-    ""
-   ],
-   [
-    "15671",
-    "15671.jpg Cooking hearths - two dig levels; upper level 1200 AD, lower level Pelican Lake culture; Photographer unknown; 1997; History - Ind"
-   ],
-   [
-    "15672",
-    ""
-   ],
-   [
-    "15672",
-    "15672.jpg Pelican Lake excavation, Wyoming/Montana border, Black Canyon of the Yellowstone; Photographer unknown; 1997; History - Indians"
-   ],
-   [
-    "15673",
-    ""
-   ],
-   [
-    "15673",
-    "15673.jpg Screening at dig site, Black Canyon of the Yellowstone on Wyoming/Montana border; Photographer unknown; 1997; History - Indians"
-   ],
-   [
-    "15674",
-    ""
-   ],
-   [
-    "15674",
-    "15674.jpg Pelican Lake culture with bone and fire, cracked rock, Black Canyon of the Yellowstone; Photographer unknown; 1997; History - Indi"
-   ],
-   [
-    "16348",
-    ""
-   ],
-   [
-    "16348",
-    "16348.jpg Lava Creek wickiup; Jim Peaco; June 1990; History - Indians"
-   ],
-   [
-    "16549",
-    ""
-   ],
-   [
-    "16549",
-    "16549.jpg Sketch of Plains indian dogs hitched to travois; Rudolph Kurz, artist; No date; History - Indians"
-   ],
-   [
-    "16569",
-    ""
-   ],
-   [
-    "16569",
-    "16569.jpg Skull of wolf (top), wolf hybrid dog (middle) recoved in Wyoming (size of sheepeater dog) & dog (lower); Larry Loendorf; No date; "
-   ],
-   [
-    "16570",
-    ""
-   ],
-   [
-    "16570",
-    "16570.jpg Wolf dog hybrid jaws from Yellowstone 500-1000 years old. Type that sheepeaters had. Filed canines for control; Larry Loendorf; No"
-   ],
-   [
-    "16571",
-    ""
-   ],
-   [
-    "16571",
-    "16571.jpg Sheepeaters winter wickiup with stabilizer pole in cave or rock overhang; Larry Loendorf; No date; History - Indians"
-   ],
-   [
-    "16572",
-    ""
-   ],
-   [
-    "16572",
-    "16572.jpg Parts to make Bighorn Sheep bow from horns and sinew; Jim Peaco; 2000; History - Indians"
-   ],
-   [
-    "16573",
-    ""
-   ],
-   [
-    "16573",
-    "16573.jpg Staves (horn is soaked & straightened); Jim Peaco; 2000; History - Indians"
-   ],
-   [
-    "16574",
-    ""
-   ],
-   [
-    "16574",
-    "16574.jpg Two pieces of horn attached with rawhide; Jim Peaco; 2000; History - Indians"
-   ],
-   [
-    "16575",
-    ""
-   ],
-   [
-    "16575",
-    "16575.jpg Completed bow, mid section (wrapped); Jim Peaco; 2000; History - Indians"
-   ],
-   [
-    "16576",
-    ""
-   ],
-   [
-    "16576",
-    "16576.jpg Holes in horn to straighten shaft of arrow; Jim Peaco; 2000; History - Indians"
-   ],
-   [
-    "17765",
-    ""
-   ],
-   [
-    "17765",
-    "17765.jpg Lucille Pocatello from the Shoshone-Bannock Tribes, Fort Hall, Idaho; Jim Peaco; March 2003; History - Indians"
-   ],
-   [
-    "18178",
-    ""
-   ],
-   [
-    "18178",
-    "18178.jpg Grant Bull Tail (Crow Indian) near Dragon's Mouth at Mud Volcano; Photographer unknown; July 2002; History - Indians"
-   ],
-   [
-    "18179",
-    ""
-   ],
-   [
-    "18179",
-    "18179.jpg Walter Nevada (Eastern Shoshone Indian); Photographer unknown; 2001; History - Indians Page: 1 2 3 4 Next Page -> Photo Collection"
-   ]
-  ],
-  "slidefile:ch3_nps_people": [
-   [
-    "02926",
-    ""
-   ],
-   [
-    "02926",
-    "02926.jpg Winter 1887 Haynes expedition, Yancey's Hole; Photographer unknown; 1887"
-   ],
-   [
-    "02927",
-    ""
-   ],
-   [
-    "02927",
-    "02927.jpg \"Forest & stream\" winter expedition, Emerson Hough & party; Photographer unknown; 1894"
-   ],
-   [
-    "02928",
-    ""
-   ],
-   [
-    "02928",
-    "02928.jpg Haynes winter expedition; Photographer unknown; 1887"
-   ],
-   [
-    "02929",
-    ""
-   ],
-   [
-    "02929",
-    "02929.jpg Henry David Thoreau; Artist unknown; No date"
-   ],
-   [
-    "02939",
-    ""
-   ],
-   [
-    "02939",
-    "02939.jpg Lieutenant GC Doane of the 1870 Washburn/Langford/Doane expedition; Photographer unknown; No date"
-   ],
-   [
-    "02940",
-    ""
-   ],
-   [
-    "02940",
-    "02940.jpg Samuel T Hauser of the 1870 Washburn/Langford/Doane expedition; Photographer unknown; No date"
-   ],
-   [
-    "02941",
-    ""
-   ],
-   [
-    "02941",
-    "02941.jpg Cornelius Hedges of the 1870 Washburn/Langford/Doane expedition; Photographer unknown; No date"
-   ],
-   [
-    "02942",
-    ""
-   ],
-   [
-    "02942",
-    "02942.jpg Warren C Gillette of the 1870 Washburn/Langford/Doane expedition; Photographer unknown; No date"
-   ],
-   [
-    "02947",
-    ""
-   ],
-   [
-    "02947",
-    "02947.jpg President Ulysses S Grant; Photographer unknown; No date"
-   ],
-   [
-    "02948",
-    ""
-   ],
-   [
-    "02948",
-    "02948.jpg Henry Bose, sketch artist; FJ Haynes; Around 1887"
-   ],
-   [
-    "02949",
-    ""
-   ],
-   [
-    "02949",
-    "02949.jpg Colonel Gardiner - took part in the Nez Perce retreat across Yellowstone National Park; Photographer unknown; Around 1877"
-   ],
-   [
-    "02957",
-    ""
-   ],
-   [
-    "02957",
-    "02957.jpg Henry D Washburn of the 1870 Washburn/Langford/Doane expedition; WH Jackson; No date"
-   ],
-   [
-    "02960",
-    ""
-   ],
-   [
-    "02960",
-    "02960.jpg General Oliver Otis Howard - pursued the Nez Perce across Yellowstone in 1877; Photographer unknown; Around 1909"
-   ],
-   [
-    "02961",
-    ""
-   ],
-   [
-    "02961",
-    "02961.jpg John James Audubon; Photographer unknown; No date"
-   ],
-   [
-    "02962",
-    ""
-   ],
-   [
-    "02962",
-    "02962.jpg Ralph Waldo Emerson Photographer unknown; No date"
-   ],
-   [
-    "02964",
-    ""
-   ],
-   [
-    "02964",
-    "02964.jpg John Muir; Photographer unknown; No date"
-   ],
-   [
-    "02965",
-    ""
-   ],
-   [
-    "02965",
-    "02965.jpg John W Powell, USGS; Photographer unknown; No date"
-   ],
-   [
-    "02966",
-    ""
-   ],
-   [
-    "02966",
-    "02966.jpg George Perkins Marsh, author of \"Man and Nature\"; Photographer unknown; No date"
-   ],
-   [
-    "02967",
-    ""
-   ],
-   [
-    "02967",
-    "02967.jpg One of Theodore Roosevelt camps; Photographer unknown; Around 1903"
-   ],
-   [
-    "02968",
-    ""
-   ],
-   [
-    "02968",
-    "02968.jpg President Theodore Roosevelt at Mammoth Hot Springs; Photographer unknown; 1903 or 1904 Page: 1 2 3 Next Page -> Photo Collection "
-   ],
-   [
-    "02969",
-    ""
-   ],
-   [
-    "02969",
-    "02969.jpg President Theodore Roosevelt in Yellowstone; Photographer unknown; 1903"
-   ],
-   [
-    "02971",
-    ""
-   ],
-   [
-    "02971",
-    "02971.jpg President Ulysses S Grant; Photographer unknown; No date"
-   ],
-   [
-    "02977",
-    ""
-   ],
-   [
-    "02977",
-    "02977.jpg President Theodore Roosevelt & John Burroughs; Photographer unknown; Around 1903"
-   ],
-   [
-    "02978",
-    ""
-   ],
-   [
-    "02978",
-    "02978.jpg President Theodore Roosevelt on a horse in Colorado; Photographer unknown; Around 1905"
-   ],
-   [
-    "02979",
-    ""
-   ],
-   [
-    "02979",
-    "02979.jpg President William Howard Taft (1908 - 1912); Photographer unknown; 1908 - 1912"
-   ],
-   [
-    "02980",
-    ""
-   ],
-   [
-    "02980",
-    "02980.jpg President Theodore Roosevelt, John Muir and others in Yosemite; Photographer unknown; Around 1903"
-   ],
-   [
-    "02981",
-    ""
-   ],
-   [
-    "02981",
-    "02981.jpg President Theodore Roosevelt; Photographer unknown; Pre 1900"
-   ],
-   [
-    "02982",
-    ""
-   ],
-   [
-    "02982",
-    "02982.jpg President Theodore Roosevelt; Photographer unknown; Around 1890"
-   ],
-   [
-    "02983",
-    ""
-   ],
-   [
-    "02983",
-    "02983.jpg President Theodore Roosevelt & 1908 Governors Conference on conservation held at the White House; Photographer unknown; 1908"
-   ],
-   [
-    "02984",
-    ""
-   ],
-   [
-    "02984",
-    "02984.jpg William Hallett Phillips, Mational Park defender, Supreme Court lawyer; Photographer unknown; 1880-1890's"
-   ],
-   [
-    "02995",
-    ""
-   ],
-   [
-    "02995",
-    "02995.jpg Howitzer scene, pursuit of Nez Perce, Big Hole Battlefield; Artist unknown; Around 1877"
-   ],
-   [
-    "03040",
-    ""
-   ],
-   [
-    "03040",
-    "03040.jpg Senator George Graham Vest; Photographer unknown; No date"
-   ],
-   [
-    "03041",
-    ""
-   ],
-   [
-    "03041",
-    "03041.jpg George Bird Grinnell, conservationist, editor of \"Forest and Stream\", co-founder of the Boone & Crockett Club; Photographer unknow"
-   ],
-   [
-    "03042",
-    ""
-   ],
-   [
-    "03042",
-    "03042.jpg Gifford Pinchot, United States Forest Service, known as the \"Father of the Forest Service\"; Photographer unknown; No date"
-   ],
-   [
-    "03043",
-    ""
-   ],
-   [
-    "03043",
-    "03043.jpg Gifford Pinchot, United States Forest Service, \"Father of the Forest Service\"; Photographer unknown; No date"
-   ],
-   [
-    "03046",
-    ""
-   ],
-   [
-    "03046",
-    "03046.jpg Jacob Ward Smith, associated with the Washburn/Langford/Doane expedition; Photographer unknown; No date"
-   ],
-   [
-    "09583",
-    ""
-   ],
-   [
-    "09583",
-    "09583.jpg Nathaniel P Langford of the 1870 Washburn/Langford/Doane expedition; Photographer unknown; No date"
-   ],
-   [
-    "09586",
-    ""
-   ],
-   [
-    "09586",
-    "09586.jpg Lamar, Secretary of the Interior; Photographer unknown; No date"
-   ],
-   [
-    "09594",
-    ""
-   ],
-   [
-    "09594",
-    "09594.jpg President CA Arthur party at Yellowstone National Park; Photographer unknown; Around 1883"
-   ],
-   [
-    "10649",
-    ""
-   ],
-   [
-    "10649",
-    "10649.jpg Haynes winter expedition; Photographer unknown; Around 1887 Page: 1 2 3 Next Page -> Photo Collection Home | Yellowstone Home"
-   ],
-   [
-    "10650",
-    ""
-   ],
-   [
-    "10650",
-    "10650.jpg Haynes winter expedition at Norris; Photographer unknown; 1887"
-   ],
-   [
-    "10651",
-    ""
-   ],
-   [
-    "10651",
-    "10651.jpg Winter 1887 Haynes expedition, Yancey's Hole; Photographer unknown; No date"
-   ],
-   [
-    "10652",
-    ""
-   ],
-   [
-    "10652",
-    "10652.jpg President Theodore Roosevelt at Cinnabar; Photographer unknown; 1903"
-   ],
-   [
-    "10655",
-    ""
-   ],
-   [
-    "10655",
-    "10655.jpg Lower Falls of the Grand Canyon of the Yellowstone sheathed in ice - Haynes expedition; F Jay Haynes; 1887"
-   ],
-   [
-    "11556",
-    ""
-   ],
-   [
-    "11556",
-    "11556.jpg President Theodore Roosevelt's camp near Calcite Springs; Photographer unknown; Around 1903"
-   ],
-   [
-    "13206",
-    ""
-   ],
-   [
-    "13206",
-    "13206.jpg Portrait of Thomas Moran; Artist unknown; No date"
-   ],
-   [
-    "13207",
-    ""
-   ],
-   [
-    "13207",
-    "13207.jpg Charcoal sketch of Thomas Moran; Ruth Moran, artist; No date"
-   ],
-   [
-    "13210",
-    ""
-   ],
-   [
-    "13210",
-    "13210.jpg Thomas Moran at easel, age 78; Photographer unknown; Around 1915"
-   ],
-   [
-    "13211",
-    ""
-   ],
-   [
-    "13211",
-    "13211.jpg Thomas Moran at easel, age 78; Photographer unknown; Around 1915"
-   ],
-   [
-    "13213",
-    ""
-   ],
-   [
-    "13213",
-    "13213.jpg Thomas Moran, age 85, posing in front of painting; Photographer unknown; Around 1922"
-   ],
-   [
-    "13214",
-    ""
-   ],
-   [
-    "13214",
-    "13214.jpg Formal portrait of Thomas Moran, seated; Photographer unknown; No date"
-   ],
-   [
-    "13215",
-    ""
-   ],
-   [
-    "13215",
-    "13215.jpg Thomas Moran, outside, carrying sketches; Photographer unknown; No date"
-   ],
-   [
-    "14322",
-    ""
-   ],
-   [
-    "14322",
-    "14322.jpg Frank J Haynes, photographer, 1887 winter expedition; Photographer unknown; Around 1887"
-   ],
-   [
-    "14514",
-    ""
-   ],
-   [
-    "14514",
-    "14514.jpg President Theodore Roosevelt & John Burroughs; Photographer unknown; Around 1903"
-   ],
-   [
-    "15073",
-    ""
-   ],
-   [
-    "15073",
-    "15073.jpg General Phillip H Sheridan; Photographer unknown; No date 18181d.jpg Portrait of Robert Reamer; Photographer unknown; No date 1818"
-   ]
-  ],
-  "commons:ch3_commons_chief_joseph_1877": [
-   [
-    "File:Chief Joseph-1877.jpg",
-    "Public domain",
-    "Three photographers have been credited with this photograph, but it is likely that Orlando S. Goff actually took it.",
-    "1877-11"
-   ]
-  ],
-  "commons:ch3_commons_oo_howard": [
-   [
-    "File:General Oliver Otis Howard, Union Army (7950782518).jpg",
-    "No restrictions",
-    "SMU Central University Libraries",
-    "1860-01-01 00:00:00"
-   ],
-   [
-    "File:O O Howard.png",
-    "Public domain",
-    "Mathew Benjamin Brady / Levin Corbin Handy",
-    "1855"
-   ],
-   [
-    "File:William Tecumseh Sherman and staff - Brady-Handy.jpg",
-    "Public domain",
-    "Mathew Benjamin Brady",
-    "between June 1, 1862 and 1865"
-   ]
-  ],
   "commons:ch3_commons_looking_glass": [],
-  "commons:ch3_commons_nelson_miles": [
-   [
-    "File:Profile portrait of General Nelson A. Miles (f4d5bff4-3eed-4ee0-9f35-8bafa4d5d3bf).jpg",
-    "Public domain",
-    "NPS photo",
-    "Taken on 3 February 2005"
-   ],
-   [
-    "File:Portrait of Nelson A. Miles.jpg",
-    "Public domain",
-    "Marceau",
-    "2013-06-23 03:08:16"
-   ],
-   [
-    "File:Nelson A. Miles by Brands Studios, 1898.jpg",
-    "Public domain",
-    "Brands Studios, Chicago",
-    "1898"
-   ],
-   [
-    "File:Portrait of Maj. Gen. (as of Oct. 21, 1865) Nelson A. Miles, officer of the Federal Army LOC cwpb.06148.jpg",
-    "Public domain",
-    "Civil War Glass Negatives",
-    "between 1860 and 1865 date QS:P,+1860-00-00T00:00:00Z/8,P131"
-   ],
-   [
-    "File:Nelson Appleton Miles, head-and-shoulders portrait, facing left LCCN96524041.jpg",
-    "Public domain",
-    "Miscellaneous Items in High Demand, PPOC, Library of Congress",
-    "1902"
-   ],
-   [
-    "File:Nelson Appleton Miles (cropped).jpg",
-    "Public domain",
-    "",
-    ""
-   ],
-   [
-    "File:Nelson Appleton Miles.jpg",
-    "Public domain",
-    "",
-    ""
-   ],
-   [
-    "File:Image-taken-from-page-10-of-personal-recollections-and-observations-of-general-nelson-a-miles-embracing-a-brief-view-of-the-civil-war--and-the-story-of-his-indian-campaigns--copiously-illustrated--by-f-remington-etc 11236649115 o.jpg",
-    "No restrictions",
-    "Unknown author Unknown author",
-    "Unknown date"
-   ],
-   [
-    "File:General Nelson Miles portrait.jpg",
-    "Public domain",
-    "Unknown author Unknown author",
-    "before 1925 date QS:P,+1925-00-00T00:00:00Z/7,P1326,+1925-00"
-   ],
-   [
-    "File:Portrait of Maj. Gen. (as of Oct. 21, 1865) Nelson A. Miles, officer of the Federal Army LOC cwpb.06148.tif",
-    "Public domain",
-    "Civil War Glass Negatives",
-    "between 1860 and 1865 date QS:P,+1860-00-00T00:00:00Z/8,P131"
-   ],
-   [
-    "File:Nelson Appleton Miles, head-and-shoulders portrait, facing left LCCN96524041.tif",
-    "Public domain",
-    "Miscellaneous Items in High Demand, PPOC, Library of Congress",
-    "1902"
-   ],
-   [
-    "File:William Miles Chick.png",
-    "Public domain",
-    "George Caleb Bingham",
-    "1870-01-01"
-   ],
-   [
-    "File:MILES, N. GENERAL LCCN2016857773.jpg",
-    "Public domain",
-    "Harris & Ewing, photographer",
-    "between 1905 and 1945 date QS:P,+1950-00-00T00:00:00Z/7,P131"
-   ],
-   [
-    "File:Genl. Miles as a major gen'l of volunteers - E. Decker, Cleveland, O. LCCN2015651529.jpg",
-    "Public domain",
-    "Decker, E. (Edgar), 1832-1905, photographer",
-    "1874"
-   ],
-   [
-    "File:Francis Nelson, head-and-shoulders portrait, right profile LCCN2007677860.jpg",
-    "Public domain",
-    "Saint-M\u00e9min, Charles Balthazar Julien Fevret de, 1770-1852, artist",
-    "1808"
-   ],
-   [
-    "File:Image-taken-from-page-159-of-personal-recollections-and-observations-of-general-nelson-a-miles-embracing-a-brief-view-of-the-civil-war--and-the-story-of-his-indian-campaigns--copiously-illustrated--by-f-remington-etc 11143879794 o.jpg",
-    "No restrictions",
-    "Unknown author Unknown author",
-    "Unknown date"
-   ],
-   [
-    "File:Miles, Shafter & Wheeler in consultation during siege of Santiago de Cuba LCCN2013651495.jpg",
-    "Public domain",
-    "Dinwiddie, William, 1867-1934, photographer",
-    "1898"
-   ],
-   [
-    "File:William Nelson, head-and-shoulders portrait, right profile LCCN2007676903.jpg",
-    "Public domain",
-    "Saint-M\u00e9min, Charles Balthazar Julien Fevret de, 1770-1852, artist",
-    "1808"
-   ],
-   [
-    "File:Francis Nelson, head-and-shoulders portrait, right profile LCCN2007677860.tif",
-    "Public domain",
-    "Saint-M\u00e9min, Charles Balthazar Julien Fevret de, 1770-1852, artist",
-    "1808"
-   ],
-   [
-    "File:Hugh Nelson, head-and-shoulders portrait, right profile LCCN2007676923.jpg",
-    "Public domain",
-    "Saint-M\u00e9min, Charles Balthazar Julien Fevret de, 1770-1852, artist",
-    "1808"
-   ]
-  ],
   "commons:ch3_commons_cowan": [],
-  "page_fail": [
-   [
-    "https://www.nps.gov/nepe/learn/photosmultimedia/videos.htm",
-    404
-   ],
-   [
-    "https://www.nps.gov/biho/learn/photosmultimedia/videos.htm",
-    404
-   ]
-  ],
   "npsvideos:ch3_nps_nepe": [],
   "npsvideos:ch3_nps_biho": [],
-  "npsvideos:ch3_nps_yell_nezperce": []
+  "npsvideos:ch3_nps_yell_nezperce": [],
+  "commons:ch3_commons_looking_glass_b": [
+   [
+    "File:Looking Glass, a Nez Perce' chief, on horseback in front of a tepee, 1877 - NARA - 530914.jpg",
+    "Public domain",
+    "Unknown author Unknown author or not provided",
+    "1877 date QS:P571,+1877-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Chief Looking Glass-Nez Perce-1871-cropped.jpg",
+    "Public domain",
+    "Unknown author Unknown author",
+    "2012-01-29"
+   ],
+   [
+    "File:Looking-glass-camp-august-2010-roger-peterson (5623157526).jpg",
+    "Public domain",
+    "Forest Service Northern Region from Missoula, MT, USA",
+    "2010-08-04 04:06"
+   ],
+   [
+    "File:Looking Glass, a Nez Perce' chief, on horseback in front of a tepee - NARA - 530914.gif",
+    "Public domain",
+    "Unknown author Unknown author or not provided",
+    "1877 date QS:P571,+1877-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Looking Glass, a Nez Perce' chief, on horseback in front of a tepee, 1877 - NARA - 530914.tif",
+    "Public domain",
+    "Unknown author Unknown author or not provided",
+    "1877 date QS:P571,+1877-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Looking-glass-camp-august-2010-roger-peterson-001 (5623157516).jpg",
+    "Public domain",
+    "Forest Service Northern Region from Missoula, MT, USA",
+    "2010-08-04 04:08"
+   ],
+   [
+    "File:Looking-glass-village-site-near-kamiah-ID-april-2011-roger-peterson-004 (5688567820).jpg",
+    "Public domain",
+    "Forest Service Northern Region from Missoula, MT, USA",
+    "2011-04-26 21:52"
+   ],
+   [
+    "File:Looking-glass-village-site-near-kamiah-ID-april-2011-roger-peterson-001 (5688477312).jpg",
+    "Public domain",
+    "Forest Service Northern Region from Missoula, MT, USA",
+    "2011-04-25 00:31"
+   ],
+   [
+    "File:Looking glass.jpg",
+    "Public domain",
+    "\u2014 Walden69 20:00, 2 January 2006 (UTC)",
+    "1877"
+   ],
+   [
+    "File:Begonia 'Looking Glass' Leaves.JPG",
+    "GFDL 1.2",
+    "Photo by and (c)2014 Derek Ramsey ( Ram-Man )",
+    "2014-06-01 12:10:37"
+   ],
+   [
+    "File:Northwest Passage Scenic Byway - Looking Glass Camp, Kooskia - NARA - 7720731.jpg",
+    "Public domain",
+    "Unknown author Unknown author or not provided",
+    "Taken on 15 October 2004, 17:12 (according to Exif data)"
+   ],
+   [
+    "File:NezPerce Tomahawk.jpg",
+    "Public domain",
+    "Nez Perce",
+    ""
+   ],
+   [
+    "File:Looking Glass Falls.jpg",
+    "Public domain",
+    "MyWikiBiz at English Wikipedia",
+    "19 September 2006 (original upload date)"
+   ],
+   [
+    "File:Brunnera macrophylla Looking Glass 1zz.jpg",
+    "CC BY-SA 4.0",
+    "Photo by David J. Stang",
+    "2006-04-27"
+   ],
+   [
+    "File:Brunnera macrophylla Looking Glass 0zz.jpg",
+    "CC BY-SA 4.0",
+    "Photo by David J. Stang",
+    "2006-04-12"
+   ],
+   [
+    "File:Looking Glass Falls in Autumn.jpg",
+    "CC BY-SA 4.0",
+    "LTreadwell",
+    "2019-10-24 11:12:27"
+   ],
+   [
+    "File:Brunnera macrophylla Looking Glass 2zz.jpg",
+    "CC BY-SA 4.0",
+    "Photo by David J. Stang",
+    "2006-04-27"
+   ],
+   [
+    "File:Brunnera macrophylla Looking Glass 3zz.jpg",
+    "CC BY-SA 4.0",
+    "Photo by David J. Stang",
+    "2007-06-06"
+   ],
+   [
+    "File:Brunnera macrophylla Looking Glass 4zz.jpg",
+    "CC BY-SA 4.0",
+    "Photo by David J. Stang",
+    "2007-04-23"
+   ],
+   [
+    "File:Looking glass falls flood.jpg",
+    "CC BY-SA 3.0",
+    "Wncoutdoors",
+    ""
+   ]
+  ],
+  "commons:ch3_commons_yellow_wolf": [
+   [
+    "File:Him-mim-mox-mox (\"Yellow Wolf\"), a warrior of the Nez Perce (1877).jpg",
+    "Public domain",
+    "Lucullus Virgil McWhorter",
+    "1877"
+   ],
+   [
+    "File:Nez Perce Warriors, War 1877-Him-mim-mox-mox or Yellow Wolf LCCN98519395.tif",
+    "Public domain",
+    "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+    "1909"
+   ],
+   [
+    "File:Nez Perce Warriors, War 1877-Him-mim-mox-mox or Yellow Wolf LCCN98519395.jpg",
+    "Public domain",
+    "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+    "1909"
+   ],
+   [
+    "File:Yellow Wolf at LOC.jpg",
+    "Public domain",
+    "Lucullus Virgil McWhorter",
+    "1909-12-30"
+   ],
+   [
+    "File:Yellow Wolf, Nez Perc\u00e9 warrior, half-length portrait, facing left LCCN91481172.jpg",
+    "Public domain",
+    "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+    "1909"
+   ],
+   [
+    "File:Yellow Wolf LCCN2016653230.jpg",
+    "Public domain",
+    "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+    "1903"
+   ],
+   [
+    "File:Yellow Wolf.jpg",
+    "Public domain",
+    "Unknown author Unknown author",
+    "Unknown date"
+   ],
+   [
+    "File:US-Army-Sgt. Jeff Jackson-Nez Perce.jpg",
+    "Public domain",
+    "Kevin Dougherty-Stars and Stripes",
+    "2012-02-01"
+   ],
+   [
+    "File:Yellow Wolf (O-Cum-Who-Wast).jpg",
+    "Public domain",
+    "James W. Albert",
+    "1848"
+   ],
+   [
+    "File:O-Cum-Who-Wust (Yellow Wolf) Chief of the Cheyenne.jpg",
+    "Public domain",
+    "James W. Albert",
+    "1846"
+   ],
+   [
+    "File:NEPE-HI-3332 (9018770077).jpg",
+    "CC BY 2.0",
+    "Fort Vancouver National Historic Site",
+    "2005-12-02 11:06"
+   ],
+   [
+    "File:NEPE-HI-1370 (600dpi) (9021006558).jpg",
+    "CC BY 2.0",
+    "Fort Vancouver National Historic Site",
+    "2013-06-10 13:56"
+   ],
+   [
+    "File:Nez Perce War - Foster's Gravesite, Idaho Historical Marker No. 500, Cottonwood, Idaho (31499232447).jpg",
+    "CC BY-SA 2.0",
+    "Ken Lund from Reno, Nevada, USA",
+    "2018-12-22 12:29"
+   ],
+   [
+    "File:Yellow Wolf LCCN2016653230.tif",
+    "Public domain",
+    "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+    "1903"
+   ],
+   [
+    "File:Yellow Wolf, Round Up - DPLA - 2776aef73c77e6b566561061040fe86a.jpg",
+    "Public domain",
+    "",
+    "1891"
+   ],
+   [
+    "File:FemmeEnfant.jpg",
+    "Public domain",
+    "C. Annie (Bowman) McWhorter [ 1 ]",
+    "circa 1909 date QS:P,+1909-00-00T00:00:00Z/9,P1480,Q5727902"
+   ],
+   [
+    "File:Che-Ki-Wat-Te-Wa (Yellow Wolf) a Moqui. Sept. 8th. E.M. Kern delt. P.S. Duval's Lith. Steam Press. Philada. (to accompany) Reports of (IA dr che-ki-wat-te-wa-yellow-wolf-a-moqui-sept-8th-em-kern-delt-ps-duv-0380054).jpg",
+    "Public domain",
+    "Johnston, Joseph E. Marcy, R. B. Simpson. James H. Whiting, W.H.C. Kern, Edward M.",
+    ""
+   ],
+   [
+    "File:SNAC page for Yellow Wolf.png",
+    "CC0",
+    "SNAC",
+    "2018-06-26"
+   ],
+   [
+    "File:O-Cum-Who-Wust.jpg",
+    "Public domain",
+    "James W. Albert",
+    "circa 1846 date QS:P,+1846-00-00T00:00:00Z/9,P1480,Q5727902"
+   ],
+   [
+    "File:Notes of a military reconnoissance, from Fort Leavenworth, in Missouri, to San Diego, in California, including part of the Arkansas, Del Norte, and Gila rivers BHL31808291.jpg",
+    "Public domain",
+    "Abert, J. W.; Cooke, Philip St. George; Emory, William H.; Johnston, Abraham Robinson; United States.; United States.",
+    "1848"
+   ]
+  ],
+  "commons:ch3_commons_ollokot": [
+   [
+    "File:Ollokot.jpg",
+    "Public domain",
+    "Unknown author Unknown author",
+    ""
+   ],
+   [
+    "File:Nez Perce-19th century photograph.gif",
+    "Public domain",
+    "",
+    ""
+   ],
+   [
+    "File:The Idaho Indian war - Chas. W. Phillips, photographer, Walla Walla. LCCN00650888.jpg",
+    "Public domain",
+    "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+    "1877"
+   ],
+   [
+    "File:The Idaho Indian war - Chas. W. Phillips, photographer, Walla Walla. LCCN00650888.tif",
+    "Public domain",
+    "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+    "1877"
+   ],
+   [
+    "File:Chief Ollikut.jpg",
+    "Public domain",
+    "Unknown author Unknown author",
+    "Unknown date"
+   ],
+   [
+    "File:Ollikut site NPS.jpg",
+    "Public domain",
+    "",
+    "2010-09-14"
+   ],
+   [
+    "File:Mcgraw swart odfw (15439058876).jpg",
+    "CC BY-SA 2.0",
+    "Oregon Department of Fish & Wildlife",
+    "2011-09-29 12:21"
+   ]
+  ],
+  "commons:ch3_commons_white_bird": [
+   [
+    "File:Peopeo Kiskiok Hihih (\"White Bird\") of the Nez Perce.png",
+    "Public domain",
+    "Unknown author Unknown author",
+    "Unknown date"
+   ],
+   [
+    "File:White Bird, Idaho full.jpg",
+    "CC BY-SA 2.0",
+    "Ken Lund",
+    "Taken on 22 December 2018, 11:53:56"
+   ],
+   [
+    "File:White Bird, Idaho - 45526087075.jpg",
+    "CC BY-SA 2.0",
+    "Ken Lund",
+    "Taken on 22 December 2018, 11:53:53"
+   ],
+   [
+    "File:The Columbia River (1918) (14780409751).jpg",
+    "No restrictions",
+    "Internet Archive Book Images",
+    "1918"
+   ],
+   [
+    "File:Chief.Joseph.Band.1877.jpg",
+    "Public domain",
+    "Photographs",
+    "1877"
+   ],
+   [
+    "File:Campbell's new revised third edition complete guide and descriptive book of the Yellowstone Park (1916) (14591002337).jpg",
+    "No restrictions",
+    "Internet Archive Book Images",
+    "1916"
+   ],
+   [
+    "File:Reminiscences of an old timer- a recital of the actual events, incidents, trials, hardships, vicissitudes, adventures, perils, and escapes of a pioneer, hunter, miner and scout of the Pacific (14595685200).jpg",
+    "No restrictions",
+    "Internet Archive Book Images",
+    "1887"
+   ]
+  ],
+  "commons:ch3_commons_sturgis": [
+   [
+    "File:Samuel-D-Sturgis-Soldiers-All.jpg",
+    "Public domain",
+    "Joseph Cummings Chase",
+    "1919"
+   ],
+   [
+    "File:Portrait of Brig. Gen. Samuel D. Sturgis, officer of the Federal Army LOC cwpb.04696.jpg",
+    "Public domain",
+    "Civil War Glass Negatives",
+    "between 1860 and 1865 date QS:P,+1860-00-00T00:00:00Z/8,P131"
+   ],
+   [
+    "File:Samuel D. Sturgis - Brady-Handy.jpg",
+    "Public domain",
+    "Mathew Benjamin Brady",
+    "between 1855 and 1865 date QS:P,+1850-00-00T00:00:00Z/7,P131"
+   ],
+   [
+    "File:Samuel Davis Sturgis III (1897\u20131964) at West Point in 1918.png",
+    "Public domain",
+    "Unknown author Unknown author",
+    "1919-01-01"
+   ],
+   [
+    "File:Samuel D. Sturgis - Brady-Handy (cropped).jpg",
+    "Public domain",
+    "Mathew Benjamin Brady",
+    "between 1855 and 1865 date QS:P,+1850-00-00T00:00:00Z/7,P131"
+   ],
+   [
+    "File:Sturgis SD LtGen.jpg",
+    "Public domain",
+    "U.S. Army",
+    "1950s date QS:P,+1950-00-00T00:00:00Z/8"
+   ],
+   [
+    "File:Portrait of Brig. Gen. Samuel D. Sturgis, officer of the Federal Army LOC cwpb.04696.tif",
+    "Public domain",
+    "Civil War Glass Negatives",
+    "between 1860 and 1865 date QS:P,+1860-00-00T00:00:00Z/8,P131"
+   ],
+   [
+    "File:The Union army; a history of military affairs in the loyal states, 1861-65 - records of the regiments in the Union army - cyclopedia of battles - memoirs of commanders and soldiers (1908) (14762720555).jpg",
+    "No restrictions",
+    "Internet Archive Book Images",
+    "1908"
+   ],
+   [
+    "File:Carl W. Dasch - Soldiers all; portraits and sketches of the men of the A. E. F. (1920) (14595629580).jpg",
+    "No restrictions",
+    "Internet Archive Book Images",
+    "1920"
+   ],
+   [
+    "File:The defenders of our Union 109 Commanders of the Union Army - - Photographed and published by C.F. May, 519 8th Avenue, New York. LCCN2013647323.jpg",
+    "Public domain",
+    "May, C. F. (Charles F.), photographer",
+    "1862"
+   ],
+   [
+    "File:NPG-NPG 81 M1468.jpg",
+    "CC0",
+    "Mathew Brady Studio, active 1844 - 1894",
+    "between circa 1860 and circa 1870 date QS:P571,+1850-00-00T0"
+   ],
+   [
+    "File:The Monticola (1906) (14761801346).jpg",
+    "No restrictions",
+    "Internet Archive Book Images",
+    "1906"
+   ],
+   [
+    "File:The defenders of our Union 109 Commanders of the Union Army - - Photographed and published by C.F. May, 519 8th Avenue, New York. LCCN2013647323.tif",
+    "Public domain",
+    "May, C. F. (Charles F.), photographer",
+    "1862"
+   ]
+  ],
+  "commons:ch3_commons_cews_wood": [
+   [
+    "File:Charles Erskine Scott Wood 1910.jpg",
+    "Public domain",
+    "Colmer, Montagu, and Charles Erskine Scott Wood",
+    "1910"
+   ],
+   [
+    "File:Charles Erskine Scott Wood SAAM-1974.88.43 2.jpg",
+    "CC0",
+    "Olin Levi Warner",
+    "1891 date QS:P571,+1891-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Charles Erskine Scott Wood SAAM-1974.88.38 1.jpg",
+    "CC0",
+    "Olin Levi Warner",
+    "1888 date QS:P571,+1888-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Untitled (Harney Desert, Harney County, Oregon), by Charles Erskine Scott Wood, c. 1908, oil on canvas - Portland Art Museum - Portland, Oregon - DSC08722.jpg",
+    "Public domain",
+    "Daderot",
+    "2017-11-02 15:04:18"
+   ],
+   [
+    "File:Colonel C. E. S. Wood MET 270533.jpg",
+    "CC0",
+    "Olin Levi Warner",
+    "1891, cast 1897\u201398"
+   ],
+   [
+    "File:Hassam - summer-porch-at-mr-and-mrs-c-e-s-wood-s.jpg",
+    "Public domain",
+    "Childe Hassam",
+    "before 1935 date QS:P571,+1935-00-00T00:00:00Z/7,P1326,+1935"
+   ],
+   [
+    "File:Nanny Moale Smith Wood (Mrs. Charles Erskine Scott Wood) SAAM-1974.88.39 1.jpg",
+    "CC0",
+    "Olin Levi Warner",
+    "1873 date QS:P571,+1873-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:\u0427\u0430\u0440\u043b\u044c\u0437 \u0415\u0440\u0441\u043a\u0456\u043d \u0421\u043a\u043e\u0442\u0442 \u0412\u0443\u0434 (Charles Erskine Scott Wood).jpg",
+    "Public domain",
+    "File:\u041a\u0443\u043b\u0438\u043a \u0406\u0432\u0430\u043d. \u0410\u043d\u0442\u043e\u043b\u043e\u0433\u0456\u044f \u0430\u043c\u0435\u0440\u0438\u043a\u0430\u043d\u0441\u044c\u043a\u043e\u0457 \u043f\u043e\u0435\u0437\u0456\u0457. 1928.pdf",
+    "1928"
+   ],
+   [
+    "File:C.E.S. Wood by Julian Alden Weir, 1901, oil on canvas - Portland Art Museum - Portland, Oregon - DSC08727.jpg",
+    "Public domain",
+    "Daderot",
+    "2017-11-02 15:05:05"
+   ],
+   [
+    "File:Los Gatos gate.jpg",
+    "CC BY-SA 2.5",
+    "Matthew A. Voorsanger",
+    "2006-03-09"
+   ],
+   [
+    "File:Autobiography of Oliver Otis Howard, major general, United States Army (1907) (14762693025).jpg",
+    "No restrictions",
+    "Internet Archive Book Images",
+    "1907"
+   ],
+   [
+    "File:Charles Wood (composer).jpg",
+    "Public domain",
+    "Unknown photographer",
+    "circa 1910 date QS:P,+1910-00-00T00:00:00Z/9,P1480,Q5727902"
+   ],
+   [
+    "File:Lieutenant Thomas Charles Wood, war artist.jpg",
+    "CC BY 2.0",
+    "BiblioArchives / LibraryArchives",
+    "2012-03-20"
+   ],
+   [
+    "File:Charles Lindley Wood Viscount Halifax bookplate.jpg",
+    "Public domain",
+    "Engraver Charles William Sherborn",
+    "1891"
+   ],
+   [
+    "File:Charles Wood, Vanity Fair, 1870-08-06.jpg",
+    "Public domain",
+    "Carlo Pellegrini",
+    "1870-08-06"
+   ],
+   [
+    "File:Charles Wood, 2nd Earl of Halifax COA.png",
+    "CC BY-SA 4.0",
+    "The Hon Joshua Wood",
+    "2015-07-25"
+   ],
+   [
+    "File:Charles Lindley Wood (1839\u20131934), Viscount Halifax, in Mansion House, Doncaster.jpg",
+    "Public domain",
+    "Ren\u00e9 le Brun Comte de L'H\u00f4pital (1877\u20131929)",
+    "before 1929 date QS:P,+1929-00-00T00:00:00Z/7,P1326,+1929-00"
+   ],
+   [
+    "File:Charles Wood, 2nd Viscount Halifax COA.png",
+    "CC BY-SA 4.0",
+    "Joshua Wood",
+    "2015-07-26"
+   ],
+   [
+    "File:Henry Charles Woods (1881\u20131939).png",
+    "Public domain",
+    "Unknown author Unknown author",
+    "1908-09-01"
+   ],
+   [
+    "File:Thomas Charles Wood war artist.jpg",
+    "CC BY 2.0",
+    "Gerald Phipps Boydell Murison",
+    "1945-02-02"
+   ]
+  ]
  }
 }
