@@ -103,7 +103,7 @@ def goto(pg, url, settle=6000):
 CHALLENGE = re.compile(r"(verify it.s you|confirm it.s you|this extra step shows|unusual activity|couldn.t sign you in|"
                        r"2-step verification|enter the code|captcha|try another way|suspicious)", re.I)
 def mask_url(u): return re.sub(r"[?#].*$", "", u)
-def status(pg):
+def status(pg, need_channel=True):
     """'ok' | 'login' | 'challenge' | 'wrong_channel' | 'unknown'"""
     u = pg.url
     try: t = pg.inner_text("body", timeout=15000)[:20000]
@@ -112,6 +112,7 @@ def status(pg):
         return "challenge" if ("challenge" in u or CHALLENGE.search(t)) else "login"
     if CHALLENGE.search(t[:3000]): return "challenge"
     if "studio.youtube.com" not in u: return "unknown"
+    if not need_channel: return "ok"
     if CHANNEL.lower() in t.lower(): return "ok"
     try:  # channel name is in the left drawer; give it a moment
         pg.wait_for_selector(f"text={CHANNEL}", timeout=15000); return "ok"

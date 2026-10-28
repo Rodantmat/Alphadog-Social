@@ -1095,19 +1095,19 @@ cards = [(s["_a"], s["_b"]) for s in SHOTS if s.get("_kind") == "card" or s.get(
         [(float(x["start"]), float(x["start"]) + float(x["dur"])) for x in TL if x.get("kind") in ("card", "title")]
 cards = sorted(set((round(a, 1), round(b_, 1)) for a, b_ in cards))
 f7_seen = 0; f7_hit = set()
-def f7_check(S, where):
+def f7_check(S, where, key_=None):
     oc = [o for o in sample_ocr(S) if o["conf"] > 0.5]
     joined = " ".join(o["text"] for o in sorted(oc, key=lambda o: (round(o["box"][1] / 40), o["box"][0]))).upper()
     m_ = CHAP_RX.search(joined)
     if m_:
         bx = next((o["box"] for o in oc if "CHAPTER" in o["text"].upper()), None)
-        key_ = round(S["t"] / 3)
+        key_ = key_ if key_ is not None else round(S["t"] / 3)
         if key_ not in f7_hit:
             f7_hit.add(key_); find("F7", S["t"], f"chapter numbering on {where}: '{m_.group(0)}' (chapter cards show the name only)", box=bx, text=m_.group(0))
 if ocr is None: skip("F7", "OCR unavailable")
 else:
     for a, b_ in cards:
-        for S in samples_in(a, b_, 0.3): f7_seen += 1; f7_check(S, f"card {tc(a)}")
+        for S in samples_in(a, b_, 0.3): f7_seen += 1; f7_check(S, f"card {tc(a)}", ("card", round(a)))
     for S in SAMPLES:                                         # any other on-screen text sampled for OCR
         if "ocr" in S and not any(a - 0.3 <= S["t"] <= b_ + 0.3 for a, b_ in cards): f7_check(S, "screen text")
     summ("F7", f"{len(cards)} card/title intervals, {f7_seen} card frames OCR'd + all OCR samples; pattern CHAPTER + number word/digit/roman")
