@@ -405,7 +405,7 @@ def overlay_style(im, box):
     hsv = cv2.cvtColor(c, cv2.COLOR_BGR2HSV); H_, S_, V_ = hsv[..., 0], hsv[..., 1], hsv[..., 2]
     white = (V_ > 215) & (S_ < 45); gold = (H_ > 10) & (H_ < 25) & (S_ > 110) & (V_ > 170)
     dark = V_ < 50; green = (H_ > 60) & (H_ < 80) & (S_ > 140) & (V_ > 150)
-    return bool(((white | gold).mean() > 0.10 and dark.mean() > 0.04) or green.mean() > 0.30)
+    return bool(((white | gold).mean() > 0.10 and dark.mean() > 0.04 and (y1 - y0) >= 38) or green.mean() > 0.30)
 def blurfill(g):
     h_, w_ = g.shape
     if VERT:
@@ -415,7 +415,7 @@ def blurfill(g):
     l = lambda x: cv2.Laplacian(x, cv2.CV_32F).var()
     lc = l(c_); return lc > 30 and l(a_) < 0.08 * lc and l(b_) < 0.08 * lc
 for jf in JPGS:
-    t = si / SFPS; si += 1
+    t = (si + 0.5) / SFPS - 1 / FPS; si += 1               # ffmpeg fps=N emits, for tick k, the last source frame before (k + 0.5) / N
     im = cv2.imread(os.path.join(JDIR, jf))
     if im is None or im.shape[:2] != (H0, W0): continue
     g = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
@@ -427,7 +427,7 @@ for jf in JPGS:
     lf = float(cv2.Laplacian(g, cv2.CV_32F).var()); lu = float(cv2.Laplacian(up, cv2.CV_32F).var())
     S = {"t": t, "lap": lap, "up": lu / (lf + 1e-3), "lapfull": lf, "mean": float(g.mean()), "std": float(g.std()),
          "hi": float((g > 250).mean()), "lo": float((g < 6).mean()), "hash": dhash(g), "bars": bars(g), "bfill": blurfill(g)}
-    if ocr is not None and (abs((t / OCR_EVERY) - round(t / OCR_EVERY)) < 1e-6 or OCR_EVERY <= 1 / SFPS):
+    if ocr is not None and ((si - 1) % max(1, int(round(OCR_EVERY * SFPS))) == 0):
         osc = 1280 / max(W0, H0) if not VERT else 1.0
         oim = cv2.resize(im, (int(W0 * osc), int(H0 * osc)), interpolation=cv2.INTER_AREA) if osc != 1.0 else im
         try: res, _ = ocr(oim)
@@ -699,7 +699,7 @@ for S in SAMPLES:
             continue
         # long form
         own = [str(x.get(k2)) for x in SHOTS if x["_a"] - 0.5 <= t < x["_b"] + 0.5 for k2 in ("label", "title", "kicker", "sub") if x.get(k2)]
-        mine = (typ == "card" or y0 > 0.80 * H0) and any(len(norm(txt.replace(" ", ""))) >= 3 and (norm(txt.replace(" ", "")) in norm(w.replace(" ", "")) or difflib.SequenceMatcher(None, norm(txt.replace(" ", "")), norm(w.replace(" ", ""))).ratio() > 0.8) for w in own)
+        mine = (typ == "card" or (y0 > 0.82 * H0 and x0 < 0.12 * W0)) and any(len(norm(txt.replace(" ", ""))) >= 3 and (norm(txt.replace(" ", "")) in norm(w.replace(" ", "")) or difflib.SequenceMatcher(None, norm(txt.replace(" ", "")), norm(w.replace(" ", ""))).ratio() > 0.8) for w in own)
         if ours and not mine and typ not in ("map", "card"): continue          # text in the picture that happens to match our words
         if ours:
             if s and typ not in ("map",) and bh < 26: find("T2", t, f"our text small ({bh:.0f}px): '{txt}'", sev="warn", box=o["box"])
@@ -831,7 +831,7 @@ if clip is not None and any("emb" in S for S in SAMPLES):
     summ("A4", f"CLIP zero-shot on {len(scores)} {'AI-shot ' if SHOTS else ''}frames (text boxes blurred out); p(artifact) > 0.8 listed (max 10)")
     # O2 objects
     PO = ["a photo of an ID card", "a driver's license", "a passport page", "a car license plate", "a computer screen showing a website", "a smartphone screen", "a paper document with printed text", "a house number and street sign"]
-    NO = ["a landscape", "mountains", "a desert", "a historical photograph", "a person", "rock formations", "a forest", "a map", "a title card with text", "a old newspaper page", "a cowboy", "a horse", "a sky"]
+    NO = ["a landscape", "mountains", "a desert", "a historical photograph", "a person", "rock formations", "a forest", "a map", "a title card with text", "a old newspaper page", "a cowboy", "a horse", "a sky", "a gravestone", "a sign on an old wooden building", "a historic town street"]
     te = tenc(PO + NO); hits = 0
     for S in SAMPLES:
         if "emb" not in S: continue
