@@ -1,0 +1,27 @@
+name: release-tidy
+# Delete release assets (space-separated names in ASSETS) from release TAG, or the whole release when ASSETS is "ALL".
+# Used after archiving to the owner's disk (e.g. the temporary archive-tmp release).
+on:
+  workflow_dispatch:
+    inputs:
+      tag: { description: "release tag", required: true }
+      assets: { description: "asset names separated by spaces, or ALL to delete the release", required: true }
+permissions:
+  contents: write
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - env: { TAG: "${{ inputs.tag }}", ASSETS: "${{ inputs.assets }}" }
+        run: |
+          R="$GITHUB_REPOSITORY"
+          gh release view "$TAG" -R "$R" --json assets --jq '.assets[] | "\(.name) \(.size)"' | sed 's/^/BEFORE /'
+          if [ "$ASSETS" = "ALL" ]; then
+            gh release delete "$TAG" -R "$R" --yes --cleanup-tag && echo "DELETED release $TAG"
+          else
+            for a in $ASSETS; do gh release delete-asset "$TAG" "$a" -R "$R" --yes && echo "DELETED $a"; done
+            gh release view "$TAG" -R "$R" --json assets --jq '.assets[] | "\(.name) \(.size)"' | sed 's/^/AFTER /'
+          fi
