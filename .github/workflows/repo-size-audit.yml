@@ -1,0 +1,29 @@
+name: repo-size-audit
+# Read-only: measures how much of the repository's stored size an orphan rebuild of the footage branch would free
+# (keeping only the files at the current footage tip + all of main's history). Changes nothing.
+on:
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - run: |
+          git clone -q --mirror "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" /tmp/m
+          cd /tmp/m
+          echo "BRANCHES"; git for-each-ref --format='%(refname) %(objectname:short)' refs/heads refs/tags | head -50
+          git count-objects -vH | sed 's/^/COUNT /'
+          sum() { awk '{s+=$1} END {printf "%.1f MB\n", s/1e6}'; }
+          echo "ALL objects (disk, compressed): $(git cat-file --batch-all-objects --batch-check='%(objectsize:disk)' | sum)"
+          echo "ALL objects (raw): $(git cat-file --batch-all-objects --batch-check='%(objectsize)' | sum)"
+          git rev-list --objects refs/heads/main | cut -d' ' -f1 > /tmp/keep.txt
+          git ls-tree -r -t refs/heads/footage | awk '{print $3}' >> /tmp/keep.txt
+          git rev-parse refs/heads/footage^{tree} >> /tmp/keep.txt
+          sort -u /tmp/keep.txt -o /tmp/keep.txt
+          echo "KEEP main history + footage tip (raw): $(git cat-file --batch-check='%(objectsize)' < /tmp/keep.txt | sum)"
+          echo "KEEP main history + footage tip (disk): $(git cat-file --batch-check='%(objectsize:disk)' < /tmp/keep.txt | sum)"
+          echo "footage tip files only (raw): $(git ls-tree -r -l refs/heads/footage | awk '{s+=$4} END {printf "%.1f MB\n", s/1e6}')"
+          echo "main history only (raw): $(git rev-list --objects refs/heads/main | cut -d' ' -f1 | git cat-file --batch-check='%(objectsize)' | sum)"
+          echo "footage commits: $(git rev-list --count refs/heads/footage)  main commits: $(git rev-list --count refs/heads/main)"
