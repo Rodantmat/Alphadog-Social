@@ -170,7 +170,7 @@ p.wait()
 N = len(Ym); Ym, Ys, Y99, CORR, HOV, DX, DY, RESP, DIFF, P50, P90 = map(np.array, (Ym, Ys, Y99, CORR, HOV, DX, DY, RESP, DIFF, P50, P90))
 D16 = np.array(D16, np.float32); HS = np.array(HS, np.float32)
 DARK = (P50 < 18) & (P90 < 45)
-BLACK = (P50 < 12) & (P90 < 30)
+BLACK = (P50 < 10) & (P90 < 18)
 log("pass A", N, "frames")
 
 # ---- cut detection (fade-to-black aware)
@@ -191,7 +191,8 @@ while j < N:
     if P50[j] < 25 or P50[j - 1] < 25 or j < FPS * 0.3 or j > N - FPS * 0.3: j += 1; continue     # dim frames: fades/cards (handled as dips)
     c_cut = (not flat) and CORR[j] < 0.55 and mc - CORR[j] > 0.3
     h_cut = HOV[j] < 0.5 and mh - HOV[j] > 0.3
-    if c_cut or h_cut: cuts.append((j, "hard"))
+    dim = P50[j] < 45 or P50[j - 1] < 45                 # low-light scenes: noise/flicker - require both signals
+    if (c_cut and h_cut) if dim else (c_cut or h_cut): cuts.append((j, "hard"))
     j += 1
 # fade dips that never reach black (captions/vignette on top): local luma minimum at < 50 % of both sides + content change
 for j in range(10, N - 10):
@@ -245,6 +246,7 @@ for a, b_ in SEG:
     d = b_ - a
     pl = shot_at((a + b_) / 2)
     if pl is not None and pl["type"] in ("card", "map") and pl["_a"] - 0.3 <= a and b_ <= pl["_b"] + 0.3: continue   # fades inside our cards/maps
+    if np.median(P50[int(a * FPS):max(int(a * FPS) + 1, int(b_ * FPS))]) < 25: continue                 # a dark fade remnant, not a visible flash
     if a < 0.05 or b_ > N / FPS - 0.05:
         if d < 0.6: continue                                # fade-in/out remnants at the very start/end
     if d < 1.2: find("R7", a, f"shot on screen {d:.2f}s (< 1.2 s)", t_end=b_, dur=round(d, 2))
@@ -565,33 +567,27 @@ if AS:
 else:
     for rid in ("U1", "U2", "U3"): skip(rid, "no audio stream")
 
-# U2 voice over bed
+# U2 voice over bed (no stems): inside speech regions the loud frames are voice, the troughs between words are the bed.
+# p90 - p10 of 20 ms levels in speech regions; calibrated on Episode 1 stems (true voice-music median 18.0 dB -> estimate 19.6 dB)
 if WORDS and AS:
     import soundfile as sf
     a16, sr16 = sf.read(AUD, dtype="float32")
-    hop = sr16 // 20; n = len(a16) // hop
+    hop = sr16 // 50; n = len(a16) // hop
     db = 20 * np.log10(np.sqrt((a16[: n * hop].reshape(n, hop) ** 2).mean(1)) + 1e-7)
-    sp = np.zeros(n, bool); pa = np.zeros(n, bool)
-    for k_, (a, b_, w) in enumerate(WORDS):
-        sp[int(a * 20): int(b_ * 20) + 1] = True
-        if k_ + 1 < len(WORDS):
-            g0, g1 = b_, WORDS[k_ + 1][0]
-            if 0.35 <= g1 - g0 <= 1.4: pa[int(g0 * 20) + 2: int(g1 * 20) - 1] = True
-    for a, b_ in INSERTS: sp[int(a * 20): int(b_ * 20)] = False; pa[int(a * 20): int(b_ * 20)] = False
-    pa &= ~sp
-    if sp.sum() > 20 and pa.sum() > 10:
-        v = float(np.percentile(db[sp], 60)); bed = float(np.median(db[pa])); gap = v - bed
-        REP["U2"]["measured"] = {"voice_db": round(v, 1), "bed_in_pauses_db": round(bed, 1), "voice_over_bed_db": round(gap, 1), "method": "estimate (no stems): speech frames vs short pauses between words"}
-        if gap < 15: find("U2", 0, f"voice only {gap:.1f} dB over the music/ambience bed in pauses (target >= 18; estimate)", sev="warn")
-        # local check per 30 s window
+    reg = np.zeros(n, bool)
+    for a, b_, w in WORDS: reg[max(0, int(a * 50) - 20): int(b_ * 50) + 21] = True
+    for a, b_ in INSERTS: reg[int(a * 50): int(b_ * 50)] = False
+    if reg.sum() > 100:
+        v = float(np.percentile(db[reg], 90)); bed = float(np.percentile(db[reg], 10)); gap = v - bed
+        REP["U2"]["measured"] = {"voice_p90_db": round(v, 1), "bed_p10_db": round(bed, 1), "voice_over_bed_db": round(gap, 1), "method": "estimate (no stems): p90 - p10 of 20 ms levels inside speech regions"}
+        if gap < 15: find("U2", 0, f"voice only ~{gap:.1f} dB over the music/ambience bed (target 18; estimate)", sev="warn")
         for w0 in range(0, int(DUR), 30):
-            a_, b2 = w0 * 20, (w0 + 30) * 20
-            s_, p_ = sp[a_:b2], pa[a_:b2]
-            if s_.sum() > 40 and p_.sum() > 8:
-                gg = float(np.percentile(db[a_:b2][s_], 60) - np.median(db[a_:b2][p_]))
-                if gg < 10: find("U2", w0, f"voice {gg:.1f} dB over bed in {tc(w0)}-{tc(w0 + 30)} (estimate)", sev="warn", t_end=w0 + 30)
-        summ("U2", f"estimated voice-over-bed {gap:.1f} dB (no stems; speech vs short pauses)")
-    else: skip("U2", "not enough speech/pauses to estimate")
+            a_, b2 = w0 * 50, (w0 + 30) * 50; r_ = reg[a_:b2]
+            if r_.sum() > 500:
+                gg = float(np.percentile(db[a_:b2][r_], 90) - np.percentile(db[a_:b2][r_], 10))
+                if gg < 12: find("U2", w0, f"voice ~{gg:.1f} dB over bed in {tc(w0)}-{tc(w0 + 30)} (estimate)", sev="warn", t_end=w0 + 30)
+        summ("U2", f"estimated voice-over-bed {gap:.1f} dB (no stems; p90-p10 inside speech; Ep1 stems: estimate 19.6 vs true 18.0)")
+    else: skip("U2", "not enough speech to estimate")
 elif AS: skip("U2", "no stems and no transcript")
 # U5 Spanish track
 es_streams = [s for s in AS if (s.get("tags", {}) or {}).get("language", "") in ("spa", "es")]
@@ -639,13 +635,14 @@ else:
             d_ = np.array([x[1] for x in drift]); ad = np.abs(d_)
             REP["T1"]["drift"] = {"cues_matched": len(drift), "cues": len(EN), "median_abs_s": round(float(np.median(ad)), 3), "p95_abs_s": round(float(np.percentile(ad, 95)), 3),
                                   "median_signed_s": round(float(np.median(d_)), 3), "note": "positive = subtitle appears after the word is spoken"}
-            if np.median(ad) > 0.3: find("T1", 0, f"EN drift median {np.median(ad):.2f}s (> 0.3)")
+            if abs(np.median(d_)) > 0.3: find("T1", 0, f"EN subtitles systematically {np.median(d_):+.2f}s off the voice (limit 0.3)")
+            if np.percentile(ad, 95) > 1.0: find("T1", 0, f"EN cue-start error p95 {np.percentile(ad, 95):.2f}s (> 1.0)", sev="warn")
             # local drift: rolling median over 15 cues
             dd = sorted(drift)
             for k_ in range(0, len(dd) - 15, 15):
                 w_ = np.array([x[1] for x in dd[k_:k_ + 15]])
                 if abs(np.median(w_)) > 0.5: find("T1", dd[k_][0], f"EN subtitles {np.median(w_):+.2f}s off the voice around here", sev="fail", t_end=dd[k_ + 14][0])
-            summ("T1", f"{len(SRT)}/6 languages; EN drift median {np.median(ad):.2f}s, p95 {np.percentile(ad, 95):.2f}s over {len(drift)}/{len(EN)} cues")
+            summ("T1", f"{len(SRT)}/6 languages; EN offset (signed median) {np.median(d_):+.2f}s, |error| median {np.median(ad):.2f}s / p95 {np.percentile(ad, 95):.2f}s over {len(drift)}/{len(EN)} cues (whisper word timing ~0.1-0.3 s itself)")
         else: summ("T1", f"{len(SRT)}/6 languages; drift not measurable")
     else: summ("T1", f"{len(SRT)}/6 languages; drift not measured (no transcript)")
 
@@ -659,13 +656,14 @@ for s in SHOTS:
 ALLOW_N = [norm(x.replace(" ", "")) for x in ALLOW]
 SPOKEN = " ".join(t for _, _, t in EN).lower()
 def text_ours(txt, t):
-    n = norm(txt.replace(" ", ""))
+    n = norm(txt.replace(" ", "")).replace("'", "")
     if len(n) < 3: return True
     for a in ALLOW_N:
+        a = a.replace("'", "")
         if n in a or (len(a) > 3 and difflib.SequenceMatcher(None, n, a).ratio() > 0.8): return True
     if VERT and WORDS:                                         # captions = the words being spoken
-        near = norm("".join(w for a, b_, w in WORDS if t - 2.5 <= a <= t + 2.5))
-        if n in near or difflib.SequenceMatcher(None, n, near).find_longest_match(0, len(n), 0, len(near)).size >= 0.7 * len(n): return True
+        near = norm("".join(w for a, b_, w in WORDS if t - 4 <= a <= t + 4)).replace("'", "")
+        if n in near or difflib.SequenceMatcher(None, n, near).find_longest_match(0, len(n), 0, len(near)).size >= 0.6 * len(n): return True
     return False
 PRIV = [(r"\b\d{3}[-. ]\d{3}[-. ]\d{4}\b", "phone number"), (r"[\w.]+@[\w-]+\.\w+", "e-mail"), (r"\b(driver'?s? licen[cs]e|passport|social security|date of birth|\bdob\b|id card)\b", "ID document"),
         (r"\b\d{2,5}\s+\w+\s+(street|st|avenue|ave|road|rd|drive|dr|lane|ln|blvd|boulevard)\b", "street address"), (r"^(?=.*\d)(?=.*[A-Z])[A-Z0-9]{2,4}[- ]?[A-Z0-9]{3,4}$", "plate-like code")]
@@ -700,8 +698,8 @@ for S in SAMPLES:
                 elif not ours: find("Q6", t, f"text in the picture (sign/stamp in source?): '{txt}'", sev="warn", box=o["box"], kind="scene")
             continue
         # long form
-        own = [str(x.get(k2)) for x in SHOTS if abs(x["_a"] - t) < 15 for k2 in ("label", "title", "kicker", "sub") if x.get(k2)]
-        mine = any(len(norm(txt.replace(" ", ""))) >= 3 and (norm(txt.replace(" ", "")) in norm(w.replace(" ", "")) or difflib.SequenceMatcher(None, norm(txt.replace(" ", "")), norm(w.replace(" ", ""))).ratio() > 0.8) for w in own)
+        own = [str(x.get(k2)) for x in SHOTS if x["_a"] - 0.5 <= t < x["_b"] + 0.5 for k2 in ("label", "title", "kicker", "sub") if x.get(k2)]
+        mine = (typ == "card" or y0 > 0.80 * H0) and any(len(norm(txt.replace(" ", ""))) >= 3 and (norm(txt.replace(" ", "")) in norm(w.replace(" ", "")) or difflib.SequenceMatcher(None, norm(txt.replace(" ", "")), norm(w.replace(" ", ""))).ratio() > 0.8) for w in own)
         if ours and not mine and typ not in ("map", "card"): continue          # text in the picture that happens to match our words
         if ours:
             if s and typ not in ("map",) and bh < 26: find("T2", t, f"our text small ({bh:.0f}px): '{txt}'", sev="warn", box=o["box"])
@@ -718,7 +716,9 @@ for key_, L in tracked.items():                           # corner text seen in 
     def flush(g):
         if len(g) >= 2 or (len(g) == 1 and len(norm(g[0][1])) >= 6):
             s0 = shot_at(g[0][0]); bx = g[0][2]
-            hard = len(g) >= 2 and (s0 is None or s0["type"] == "video") and (bx[3] - bx[1]) < 0.06 * H0    # small persistent text on moving footage
+            cx = [(x[2][0] + x[2][2]) / 2 for x in g]; cy = [(x[2][1] + x[2][3]) / 2 for x in g]
+            still = max(cx) - min(cx) < 0.015 * W0 and max(cy) - min(cy) < 0.015 * H0                       # a watermark does not move with the picture
+            hard = len(g) >= 2 and still and (s0 is None or s0["type"] == "video") and (bx[3] - bx[1]) < 0.06 * H0
             find("Q6", g[0][0], f"edge text seen {len(g)}x (watermark/stamp/channel bug?): '{g[0][1]}'", sev="fail" if hard else "warn", box=bx, t_end=g[-1][0], kind="watermark")
     for x in L[1:]:
         if x[0] - grp[-1][0] <= max(OCR_EVERY, 1 / SFPS) * 1.6 and seg_of(x[0]) == seg_of(grp[-1][0]): grp.append(x)
