@@ -1,0 +1,14 @@
+[
+ {
+  "id": "X04c",
+  "seeds": [
+   7,
+   31
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide side-on shot, camera at boardwalk height, perpendicular to the boardwalk. Biscuit Basin, Yellowstone, a summer morning with clear blue sky and bright sunlight: a wide flat basin of pale grey-white sinter crust, a large steaming hot pool of milky blue-grey water, a raised wooden boardwalk with simple wooden railings running past the pool, low forested hills with dark lodgepole pines in the distance, wisps of steam rising from small vents. A straight wooden boardwalk with railings crosses the whole frame horizontally from right to left in the foreground. Four small tourists in shorts, t-shirts and sun hats sprint along it from right to left, all in side profile facing the left edge of the frame, mid-stride. Far behind them on the right, beyond the boardwalk, a huge grey cloud of steam and mud billows up from the pool and chunks of mud fall. The runners are fleeing away from the cloud toward the left.",
+  "neg": "detailed faces, people facing the camera, people running toward the cloud, people running into the distance, bodies, corpses, blood, gore, injured people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 4
+ }
+]
