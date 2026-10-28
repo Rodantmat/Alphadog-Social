@@ -34,9 +34,22 @@ jobs:
         if: inputs.pattern != ''
         env: { PAT: "${{ inputs.pattern }}", PFX: "${{ inputs.prefix }}" }
         run: |
-          gh release view archive-tmp >/dev/null 2>&1 || gh release create archive-tmp --title "archive-tmp" --notes "Temporary: files being copied to the owner's disk. Delete after copy." --prerelease
+          gh release view archive-tmp -R "$GITHUB_REPOSITORY" >/dev/null 2>&1 || gh release create archive-tmp -R "$GITHUB_REPOSITORY" --title "archive-tmp" --notes "Temporary: files being copied to the owner's disk. Delete after copy." --prerelease
           cd /tmp/x
           find . -type f | python3 -c "import re,os,sys; [print(l.strip()) for l in sys.stdin if re.search(os.environ['PAT'], l.strip())]" > /tmp/sel.txt
           cat /tmp/sel.txt
           mkdir -p /tmp/up
-          while read p; do n="${PFX}$(basename "$p")"; ln -f "$p" "/tmp/up/$n" 2>/dev/null || cp "$p" "/tmp/up/$n"; gh release upload archive-tmp "/tmp/up/$n" --clobber && echo "UPLOADED $n $(stat -c %s "/tmp/up/$n")"; done < /tmp/sel.txt
+          # files over 30 MB are uploaded as 29 MiB parts (<name>.part000, ...) plus <name>.sha256 of the whole file
+          while read p; do
+            n="${PFX}$(basename "$p")"; ln -f "$p" "/tmp/up/$n" 2>/dev/null || cp "$p" "/tmp/up/$n"
+            if [ "$(stat -c %s "/tmp/up/$n")" -gt 31457280 ]; then
+              (cd /tmp/up && sha256sum "$n" > "$n.sha256" && split -b 29m -d -a 3 "$n" "$n.part" && rm "$n")
+              for f in /tmp/up/"$n".part* /tmp/up/"$n".sha256; do
+                for i in 1 2 3; do gh release upload archive-tmp -R "$GITHUB_REPOSITORY" "$f" --clobber && break; sleep 10; done
+                echo "UPLOADED $(basename "$f") $(stat -c %s "$f")"; rm -f "$f"
+              done
+            else
+              for i in 1 2 3; do gh release upload archive-tmp -R "$GITHUB_REPOSITORY" "/tmp/up/$n" --clobber && break; sleep 10; done
+              echo "UPLOADED $n $(stat -c %s "/tmp/up/$n")"
+            fi
+          done < /tmp/sel.txt
