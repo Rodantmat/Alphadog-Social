@@ -14,6 +14,7 @@ permissions:
 concurrency: { group: social-post, cancel-in-progress: false }
 env:
   SHORTS_RUN: "40389484496"   # safe-zone captions (2026-10-26); sh1 was posted from 40251722496
+  PROMO_RUN: "40617967557"    # promo-build: spotify_promo_ep1.mp4
 jobs:
   post:
     runs-on: ubuntu-latest
@@ -33,6 +34,10 @@ jobs:
       - if: steps.due.outputs.due == 'yes'
         uses: actions/download-artifact@v4
         with: { name: shorts, path: media, run-id: "${{ env.SHORTS_RUN }}", github-token: "${{ github.token }}" }
+      - if: steps.due.outputs.due == 'yes'
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with: { name: promo, path: media, run-id: "${{ env.PROMO_RUN }}", github-token: "${{ github.token }}" }
       - if: steps.due.outputs.due == 'yes'
         name: Post
         env:
