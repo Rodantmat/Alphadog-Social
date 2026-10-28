@@ -1,0 +1,26 @@
+[
+ {
+  "name": "X02b",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys1_x/X02_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 17,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the explosion keeps blasting; the column of steam, mud and rock shoots rapidly upward and grows taller and wider, billowing and churning violently, dark rocks fly up out of it and arc down to the ground, mud rains onto the white sinter, steam rolls outward across the basin. Static camera.",
+  "neg": "people, lava, fire, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ },
+ {
+  "name": "X03b",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys1_x/X03_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 17,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: big grey rocks and clumps of mud fall from the sky and smash onto the wooden boardwalk one after another, planks crack and fly up as splinters, mud splashes outward, the railing breaks and shakes, steam drifts across. Static camera.",
+  "neg": "people, armchair, furniture, lava, fire, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ }
+]
