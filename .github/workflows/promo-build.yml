@@ -1,12 +1,14 @@
 name: promo-build
 # Build the Spotify promo (vertical, phone-safe) from the published Episode 1 release artifact (chiricahua-v5 run).
 # Artifact 'promo' feeds social-post (PROMO_RUN); a QA copy goes to release 'promo-qa'. publish=true also uploads the YouTube Short (scheduled).
+# replace=true: a previously scheduled promo Short is set back to private (never goes public) and the new build is uploaded in its place.
 on:
   workflow_dispatch:
     inputs:
       release_run: { description: "chiricahua-v5 run id with the 'release' artifact", default: "40238390203" }
       publish: { description: "true = upload the YouTube Short scheduled at publish_at", default: "false" }
       publish_at: { description: "UTC publish time for YouTube", default: "2026-10-30T00:30:00Z" }
+      replace: { description: "true = replace an already scheduled promo Short", default: "false" }
 permissions:
   contents: write
   actions: read
@@ -20,7 +22,8 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           sudo apt-get -o DPkg::Lock::Timeout=300 update -qq && sudo apt-get -o DPkg::Lock::Timeout=300 install -y -qq --no-install-recommends ffmpeg fonts-inter >/dev/null
-          pip install -q pillow; ls /usr/share/fonts/opentype/inter | head
+          pip install -q pillow numpy opencv-python-headless
+          curl -sSfL -o /tmp/yunet.onnx https://github.com/opencv/opencv_zoo/raw/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx || echo "no yunet"
       - uses: actions/download-artifact@v4
         with: { name: release, path: /tmp/rel, run-id: "${{ inputs.release_run }}", github-token: "${{ github.token }}" }
       - name: Build promo
@@ -41,10 +44,11 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           PUBLISH_AT: ${{ inputs.publish_at }}
+          REPLACE: ${{ inputs.replace }}
         run: |
           LOG="$GITHUB_WORKSPACE/content/published/chiricahua_ep1.json"
           done_id=$(python3 -c "import json;print(json.load(open('$LOG')).get('spotify_promo',''))")
-          if [ -n "$done_id" ]; then echo "already uploaded: $done_id"; exit 0; fi
+          if [ -n "$done_id" ] && [ "$REPLACE" != "true" ]; then echo "already uploaded: $done_id"; exit 0; fi
           cd /tmp/promo
           cat > desc.txt <<'TXT'
           In 1861 the Army blamed Cochise for a kidnapping he likely had nothing to do with. Inside an Army tent, he was told he would be held until the boy came back. He drew a knife, cut through the tent and escaped. What happened next started 11 years of war.
@@ -65,7 +69,19 @@ jobs:
           PY
           python3 "$GITHUB_WORKSPACE/scripts/yt_upload.py" meta_promo.json 2>&1 | tee up.log
           vid=$(grep -oP '^VIDEO_ID=\K[\w-]{11}' up.log | head -1); [ -n "$vid" ] || { echo "upload failed"; exit 1; }
-          python3 -c "import json;p='$LOG';d=json.load(open(p));d['spotify_promo']='$vid';json.dump(d,open(p,'w'),indent=1)"
+          if [ -n "$done_id" ] && [ "$done_id" != "$vid" ]; then
+            python3 - "$done_id" <<'PY'
+          import json, os, sys, urllib.parse, urllib.request
+          d = urllib.parse.urlencode({"client_id": os.environ["YT_CLIENT_ID"], "client_secret": os.environ["YT_CLIENT_SECRET"],
+                                      "refresh_token": os.environ["YT_REFRESH_TOKEN"], "grant_type": "refresh_token"}).encode()
+          tok = json.loads(urllib.request.urlopen(urllib.request.Request("https://oauth2.googleapis.com/token", data=d)).read())["access_token"]
+          body = {"id": sys.argv[1], "status": {"privacyStatus": "private", "selfDeclaredMadeForKids": False, "embeddable": True, "license": "youtube"}}
+          r = urllib.request.Request("https://www.googleapis.com/youtube/v3/videos?part=status", data=json.dumps(body).encode(), method="PUT",
+                                     headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json"})
+          print("unscheduled old promo", sys.argv[1], json.loads(urllib.request.urlopen(r).read())["status"])
+          PY
+          fi
+          python3 -c "import json;p='$LOG';d=json.load(open(p));d['spotify_promo_old_unscheduled']='$done_id' if '$done_id' else d.get('spotify_promo_old_unscheduled','');d['spotify_promo']='$vid';json.dump(d,open(p,'w'),indent=1)"
           cat "$LOG"
       - name: Record video ID
         if: always() && inputs.publish == 'true'
