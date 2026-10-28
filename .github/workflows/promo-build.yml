@@ -1,0 +1,75 @@
+name: promo-build
+# Build the Spotify promo (vertical, phone-safe) from the published Episode 1 release artifact (chiricahua-v5 run).
+# Artifact 'promo' feeds social-post (PROMO_RUN); a QA copy goes to release 'promo-qa'. publish=true also uploads the YouTube Short (scheduled).
+on:
+  workflow_dispatch:
+    inputs:
+      release_run: { description: "chiricahua-v5 run id with the 'release' artifact", default: "40238390203" }
+      publish: { description: "true = upload the YouTube Short scheduled at publish_at", default: "false" }
+      publish_at: { description: "UTC publish time for YouTube", default: "2026-10-30T00:30:00Z" }
+permissions:
+  contents: write
+  actions: read
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          sudo apt-get -o DPkg::Lock::Timeout=300 update -qq && sudo apt-get -o DPkg::Lock::Timeout=300 install -y -qq --no-install-recommends ffmpeg fonts-inter >/dev/null
+          pip install -q pillow; ls /usr/share/fonts/opentype/inter | head
+      - uses: actions/download-artifact@v4
+        with: { name: release, path: /tmp/rel, run-id: "${{ inputs.release_run }}", github-token: "${{ github.token }}" }
+      - name: Build promo
+        run: |
+          ls -la /tmp/rel
+          python3 scripts/spotify_promo.py /tmp/rel/chiricahua_ep1_final.mp4 /tmp/rel/chiricahua_ep1.en.srt /tmp/promo
+          rm -f /tmp/rel/chiricahua_ep1_final.mp4
+      - uses: actions/upload-artifact@v4
+        with: { name: promo, path: /tmp/promo/spotify_promo_ep1.mp4, retention-days: 14, compression-level: 0 }
+      - name: QA copy to release promo-qa
+        run: |
+          gh release view promo-qa >/dev/null 2>&1 || gh release create promo-qa --title "promo QA" --notes "QA copies of promos" --prerelease
+          gh release upload promo-qa /tmp/promo/spotify_promo_ep1.mp4 /tmp/promo/qa_sheet.jpg --clobber
+      - name: Upload YouTube Short (scheduled)
+        if: inputs.publish == 'true'
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          PUBLISH_AT: ${{ inputs.publish_at }}
+        run: |
+          LOG="$GITHUB_WORKSPACE/content/published/chiricahua_ep1.json"
+          done_id=$(python3 -c "import json;print(json.load(open('$LOG')).get('spotify_promo',''))")
+          if [ -n "$done_id" ]; then echo "already uploaded: $done_id"; exit 0; fi
+          cd /tmp/promo
+          cat > desc.txt <<'TXT'
+          In 1861 the Army blamed Cochise for a kidnapping he likely had nothing to do with. Inside an Army tent, he was told he would be held until the boy came back. He drew a knife, cut through the tent and escaped. What happened next started 11 years of war.
+
+          🎧 Full episode on Spotify: https://open.spotify.com/episode/2DriFk8VhHyGnMJMuewzrH
+          🍎 Apple Podcasts: https://podcasts.apple.com/us/podcast/americas-national-parks-the-hidden-history/id6827800067
+          🎬 Full documentary: https://youtu.be/LfoM0KAi8Yo
+
+          #Cochise #Apache #History #Arizona #Podcast #Shorts
+          TXT
+          sed -i 's/^          //' desc.txt
+          python3 - <<'PY'
+          import json, os
+          json.dump({"file": "spotify_promo_ep1.mp4", "title": "Cochise Cut His Way Out of an Army Tent", "description_file": "desc.txt",
+                     "tags": ["cochise", "apache", "bascom affair", "apache wars", "arizona history", "chiricahua", "podcast", "history"],
+                     "category": "27", "privacy": "private", "publish_at": os.environ["PUBLISH_AT"], "made_for_kids": False, "synthetic": False,
+                     "language": "en", "playlist_title": "America's National Parks: The Hidden History"}, open("meta_promo.json", "w"), ensure_ascii=False, indent=1)
+          PY
+          python3 "$GITHUB_WORKSPACE/scripts/yt_upload.py" meta_promo.json 2>&1 | tee up.log
+          vid=$(grep -oP '^VIDEO_ID=\K[\w-]{11}' up.log | head -1); [ -n "$vid" ] || { echo "upload failed"; exit 1; }
+          python3 -c "import json;p='$LOG';d=json.load(open(p));d['spotify_promo']='$vid';json.dump(d,open(p,'w'),indent=1)"
+          cat "$LOG"
+      - name: Record video ID
+        if: always() && inputs.publish == 'true'
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add content/published && git commit -qm "published: spotify promo short" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
