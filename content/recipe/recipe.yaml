@@ -1,0 +1,69 @@
+# AlphaDog Studio - production recipe (standing rules). Every owner critique becomes a rule here.
+# stage: plan (shot list/script before render) | render (frames/audio of the output) | publish (metadata/posting)
+# check: auto (script, fails the build) | warn (script, reported) | review (Claude reviews contact sheets / report)
+version: 1
+sources: [owner reviews Oct 22-27 2026 (Chiricahua ep1 v2-v5, Shorts, memorial), qa4/review_notes.md, check_rules.py R1-R6, channel strategy research Oct 27]
+rules:
+  # ---------- story & structure ----------
+  - {id: S1, stage: plan, check: review, rule: "Strongest story = first chapter; second-strongest = last chapter; rest strong->weak, grounded in audience research"}
+  - {id: S2, stage: plan, check: review, rule: "Intro/teaser opens with the best story and uses the most specific matching imagery per highlight - never random scenery"}
+  - {id: S3, stage: plan, check: review, rule: "Facts researched and sourced; sources listed in the description; no speculation presented as fact"}
+  - {id: S4, stage: plan, check: auto, rule: "Respect: no identifying/speculating about burial, ceremonial or sacred sites; note on screen/description when relevant"}
+  - {id: S5, stage: plan, check: auto, rule: "Historic people shown only with verified photos of that person; if none exists (e.g. Cochise) say so and show the land, never a mislabeled face"}
+  - {id: S6, stage: plan, check: review, rule: "Series chapters (10-15 min) each stand alone, searchable title, end screen to next chapter + full cut; full cut 30-45 min one week later"}
+  # ---------- picture matches words ----------
+  - {id: P1, stage: plan, check: auto, rule: "Every shot has a 'why' tied to the narration phrase it starts on; shot starts on that phrase (timeline-synced)"}
+  - {id: P2, stage: render, check: warn, rule: "Semantic match: frame-vs-narration similarity (CLIP) above floor; lowest 5% listed for review"}
+  - {id: P3, stage: plan, check: review, rule: "When narration names something visible (a landmark, an animal, 'the face in the mountain') the picture clearly shows it"}
+  - {id: P4, stage: plan, check: warn, rule: "Little generic scenery (skies, sunsets) - chapter-specific imagery; generic shots <= 10% of runtime"}
+  - {id: P5, stage: plan, check: auto, rule: "Reenactments/gunfights only when the words speak of one"}
+  # ---------- shot mix & timing (check_rules R1-R6 + owner notes) ----------
+  - {id: R1, stage: plan, check: auto, rule: "No asset twice inside intro or inside one chapter; intro preview may return once in its chapter; other reuse >= 10 min apart, non-overlapping range; reused <= 3% of shots"}
+  - {id: R2, stage: plan, check: auto, rule: "Stills <= 15% runtime (<= 25% per chapter), <= 3 in a row, each 4-9 s; low still-to-clip ratio; no heavy Ken Burns"}
+  - {id: R3, stage: plan, check: auto, rule: "Maps 4-12 s and finish their animation; never two maps in a row; title/chapter cards <= 4.5 s"}
+  - {id: R4, stage: plan, check: auto, rule: "No shot > 12 s (except interviews/AI passages); no 5 consecutive shots within +-0.5 s (no metronome)"}
+  - {id: R5, stage: plan, check: auto, rule: "No two consecutive shots from the same source"}
+  - {id: R6, stage: plan, check: auto, rule: "Same source footage cut into different pieces may not overlap in absolute source time"}
+  - {id: R7, stage: render, check: auto, rule: "No flash shots: every shot >= 1.2 s on screen (scenery >= 2 s)"}
+  - {id: R8, stage: plan, check: auto, rule: "Interviews/news inserts play long enough to be understood (>= 4 s), lip-synced (speed 1, start == timeline), cut away before the source's own cut"}
+  - {id: R9, stage: plan, check: auto, rule: "Drone/FPV slowed to a calm pace (speed 0.6-0.85); never sped up"}
+  # ---------- AI story passages ----------
+  - {id: A1, stage: plan, check: auto, rule: "AI clips grouped into continuous passages (>= 20 s), never intercut one-by-one with real footage"}
+  - {id: A2, stage: plan, check: auto, rule: "AI clips are real motion video (no still + camera move), played at real-time speed (speed 1.0; slow-mo is re-rendered, not sped up)"}
+  - {id: A3, stage: plan, check: review, rule: "Cheap still first, checked against script/scene, before generating the clip"}
+  - {id: A4, stage: render, check: warn, rule: "AI artifact scan: garbled text, deformed hands/faces, extra limbs, morphing objects - flagged frames reviewed"}
+  - {id: A5, stage: plan, check: auto, rule: "Style: illustrated stills animated into motion (flat 2D true-crime look allowed); consistent identity per episode; AI used only where no real footage/photo exists"}
+  # ---------- own footage (from Yellowstone on) ----------
+  - {id: O1, stage: plan, check: auto, rule: "Prefer own footage when it matches; own footage share reported per episode"}
+  - {id: O2, stage: render, check: auto, rule: "Privacy screen: no IDs/cards/documents/screens/license plates/addresses, no close-up faces of strangers; owners (Rodo, Jessi, dog) allowed"}
+  - {id: O3, stage: plan, check: auto, rule: "Shaky handheld stabilized (vidstab) or rejected; vertical clips in long videos only with blurred-fill and only when worth it"}
+  # ---------- render quality (qa_shots + more) ----------
+  - {id: Q1, stage: render, check: auto, rule: "CUT: no scene from another source bleeding into a shot (scene-change inside a shot)"}
+  - {id: Q2, stage: render, check: auto, rule: "SHAKE: jitter <= 1.8 px after stabilization"}
+  - {id: Q3, stage: render, check: auto, rule: "FREEZE: no frozen tail > 0.6 s (except intentional holds on maps/cards)"}
+  - {id: Q4, stage: render, check: auto, rule: "No black/blank frames > 0.25 s outside fades; no fade-through-black inside a chapter"}
+  - {id: Q5, stage: render, check: auto, rule: "Frame-rate correct: 24/25/60 fps sources resampled by timestamp (engine regression: frame 24 at t=1.0)"}
+  - {id: Q6, stage: render, check: auto, rule: "No foreign watermarks/logos/burned-in captions/channel bugs from sources (OCR + logo scan); our own captions only"}
+  - {id: Q7, stage: render, check: warn, rule: "Sharpness/exposure: blurry (Laplacian) or blown-out/too-dark shots flagged; no upscaled tiny sources (< 720p) in long videos"}
+  - {id: Q8, stage: render, check: auto, rule: "No letterbox/pillarbox bars except deliberate blurred-fill"}
+  - {id: Q9, stage: render, check: auto, rule: "No duplicate frames across the episode beyond allowed reuse (perceptual hash)"}
+  # ---------- audio ----------
+  - {id: U1, stage: render, check: auto, rule: "Loudness -14 LUFS integrated (+-1), true peak <= -1.5 dBTP"}
+  - {id: U2, stage: render, check: auto, rule: "Voice always on top; music/ambience ducked under voice (music <= -18 dB under narration)"}
+  - {id: U3, stage: render, check: auto, rule: "No dead air > 1.5 s outside intentional beats; no clipping"}
+  - {id: U4, stage: publish, check: auto, rule: "Music never repeats across posts/reels/stories/shorts (fingerprint vs post log); original/licensed only"}
+  - {id: U5, stage: render, check: auto, rule: "Spanish track same length as video, aligned at chapter marks"}
+  # ---------- text / subtitles ----------
+  - {id: T1, stage: render, check: auto, rule: "Selectable subtitles EN, ES, FR, PT, ZH, JA; regenerated from the final timeline; drift <= 0.3 s vs narration"}
+  - {id: T2, stage: render, check: auto, rule: "On-screen text spelled right (OCR vs intended), readable size, inside safe area"}
+  # ---------- shorts / reels / tiktok / stories ----------
+  - {id: V1, stage: render, check: auto, rule: "Vertical 1080x1920; burned-in text only inside x 170-910, y 400-1220; nothing important under platform UI"}
+  - {id: V2, stage: render, check: auto, rule: "Shorts < 60 s for YouTube; first 1.5 s is a hook; captions big (>= 58 px) and timed to voice"}
+  - {id: V3, stage: render, check: auto, rule: "Faces not covered by captions (face boxes vs caption boxes)"}
+  # ---------- publishing ----------
+  - {id: M1, stage: publish, check: auto, rule: "AI disclosure set wherever AI voice/realistic AI scenes are used; credits comment with every CC/PD source + license"}
+  - {id: M2, stage: publish, check: auto, rule: "Only allowed licenses: own, PD, CC0, CC BY, CC BY-SA, Pixabay, Coverr, NPS/USGS/NARA/LoC (verified PD)"}
+  - {id: M3, stage: publish, check: auto, rule: "Every post logged (platform, id, permalink, music); no double posting; captions per platform (links: FB first comment, IG link in bio)"}
+  - {id: M4, stage: publish, check: auto, rule: "YouTube auto-dub off; podcast episodes as video (EN + ES shows)"}
+  # ---------- final critique ----------
+  - {id: C1, stage: render, check: review, rule: "Multi-audience critique (young, older, history buff, critic, casual) scored on history, imagery, coherence, script, context, audio, pacing, excitement; fixes applied before final"}
