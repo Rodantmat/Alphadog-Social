@@ -2,6 +2,7 @@ name: promo-build
 # Build the Spotify promo (vertical, phone-safe) from the published Episode 1 release artifact (chiricahua-v5 run).
 # Artifact 'promo' feeds social-post (PROMO_RUN); a QA copy goes to release 'promo-qa'. publish=true also uploads the YouTube Short (scheduled).
 # replace=true: a previously scheduled promo Short is set back to private (never goes public) and the new build is uploaded in its place.
+# fix_flash / end_at: findings fed back from recipe-audit (R7) - frames to hold, and the cut where the end card starts.
 on:
   workflow_dispatch:
     inputs:
@@ -9,6 +10,8 @@ on:
       publish: { description: "true = upload the YouTube Short scheduled at publish_at", default: "false" }
       publish_at: { description: "UTC publish time for YouTube", default: "2026-10-30T00:30:00Z" }
       replace: { description: "true = replace an already scheduled promo Short", default: "false" }
+      fix_flash: { description: "audit R7 flash ranges to hold, e.g. 32.82-33.17 (none = no extra)", default: "none" }
+      end_at: { description: "seconds where the end card starts (none = automatic)", default: "none" }
 permissions:
   contents: write
   actions: read
@@ -27,8 +30,12 @@ jobs:
       - uses: actions/download-artifact@v4
         with: { name: release, path: /tmp/rel, run-id: "${{ inputs.release_run }}", github-token: "${{ github.token }}" }
       - name: Build promo
+        env:
+          FF: ${{ inputs.fix_flash }}
+          EA: ${{ inputs.end_at }}
         run: |
           ls -la /tmp/rel
+          [ "$FF" != "none" ] && export FIX_FLASH="$FF"; [ "$EA" != "none" ] && export END_AT="$EA"
           python3 scripts/spotify_promo.py /tmp/rel/chiricahua_ep1_final.mp4 /tmp/rel/chiricahua_ep1.en.srt /tmp/promo
           rm -f /tmp/rel/chiricahua_ep1_final.mp4
       - uses: actions/upload-artifact@v4
