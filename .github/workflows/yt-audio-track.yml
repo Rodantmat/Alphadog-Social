@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
     inputs:
       video_id: { description: "YouTube video ID", required: true }
-      lang: { description: "Language code (es, pt, pt-BR, fr...) or UI label", default: "pt" }
-      audio_path: { description: "Audio file path on the footage branch (e.g. audio-tracks/VIDEOID_pt.m4a)", default: "" }
+      lang: { description: "Language code(s), comma-separated (es,pt / pt-BR / fr...)", default: "pt" }
+      audio_path: { description: "Footage-branch path; empty = audio-tracks/<video_id>_<lang>.m4a for each lang", default: "" }
       dry_run: { description: "1 = open the dialog and cancel, upload nothing", default: "0" }
   workflow_call:
     inputs:
@@ -29,33 +29,45 @@ jobs:
       - run: pip install -q playwright cryptography && python3 -m playwright install --with-deps chromium >/dev/null
       - name: Fetch audio from footage branch
         if: inputs.dry_run != '1'
+        env:
+          LANGS: ${{ inputs.lang }}
+          VIDEO_ID: ${{ inputs.video_id }}
+          AUDIO_PATH: ${{ inputs.audio_path }}
         run: |
           git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb
-          cd /tmp/fb && git sparse-checkout set --no-cone "/${{ inputs.audio_path }}"
-          ls -la "/tmp/fb/${{ inputs.audio_path }}"
-          ffprobe -v error -show_entries format=duration -of csv=p=0 "/tmp/fb/${{ inputs.audio_path }}" | sed "s/^/audio duration s: /" || true
-      - name: Add audio track in Studio
-        id: run
+          paths=""; for l in ${LANGS//,/ }; do p="${AUDIO_PATH:-audio-tracks/${VIDEO_ID}_${l}.m4a}"; paths="$paths /$p"; done
+          cd /tmp/fb && git sparse-checkout set --no-cone $paths
+          for p in $paths; do ls -la "/tmp/fb$p"; ffprobe -v error -show_entries format=duration -of csv=p=0 "/tmp/fb$p" 2>/dev/null | sed "s/^/audio duration s: /" || true; done
+      - name: Add audio track(s) in Studio
         env:
           YT_STUDIO_SESSION: ${{ secrets.YT_STUDIO_SESSION }}
           YT_GOOGLE_SESSION: ${{ secrets.YT_GOOGLE_SESSION }}
           VIDEO_ID: ${{ inputs.video_id }}
-          AUDIO_LANG: ${{ inputs.lang }}
-          AUDIO: /tmp/fb/${{ inputs.audio_path }}
+          LANGS: ${{ inputs.lang }}
+          AUDIO_PATH: ${{ inputs.audio_path }}
           DRY_RUN: ${{ inputs.dry_run }}
-          QA_DIR: /tmp/ytqa
-        run: xvfb-run -a python3 scripts/yt_studio_audio.py
+        run: |
+          rc=0; mkdir -p /tmp/ytqa
+          for l in ${LANGS//,/ }; do
+            p="${AUDIO_PATH:-audio-tracks/${VIDEO_ID}_${l}.m4a}"
+            echo "=== $VIDEO_ID $l ($p)"
+            QA_DIR=/tmp/ytqa/$l RESULT_JSON=/tmp/ytqa/result_$l.json AUDIO_LANG=$l AUDIO=/tmp/fb/$p xvfb-run -a python3 scripts/yt_studio_audio.py || { c=$?; echo "exit $c"; rc=$c; [ $c -eq 2 -o $c -eq 3 ] && break; }
+            sleep $((40 + RANDOM % 40))
+          done
+          exit $rc
       - name: Save session + record result
         if: always()
         run: |
           git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
-          if [ -f /tmp/ytqa/result.json ] && [ "${{ inputs.dry_run }}" != "1" ]; then
+          if [ "${{ inputs.dry_run }}" != "1" ] && ls /tmp/ytqa/result_*.json >/dev/null 2>&1; then
             python3 - <<'PY'
-          import json, os
-          r = json.load(open("/tmp/ytqa/result.json")); p = "content/published/audio_tracks.json"
+          import glob, json, os
+          p = "content/published/audio_tracks.json"
           d = json.load(open(p)) if os.path.exists(p) else {}
-          if r["status"] not in ("login", "challenge"):
-              d.setdefault(r["video_id"], {})[r["lang"]] = {"status": r["status"], "time": r["time"], **({"ui": r["ui"]} if r.get("ui") else {}), **({"message": r["message"]} if r.get("message") else {})}
+          for f in sorted(glob.glob("/tmp/ytqa/result_*.json")):
+              r = json.load(open(f))
+              if r["status"] in ("login", "challenge"): continue
+              d.setdefault(r["video_id"], {})[r["lang"]] = {"status": r["status"], "time": r["time"], **{k: r[k] for k in ("ui", "message", "error") if r.get(k)}}
           json.dump(d, open(p, "w"), indent=1, ensure_ascii=False)
           PY
             git add content/published/audio_tracks.json
