@@ -25,6 +25,12 @@ S = cr.Session(impersonate="chrome")
 BUA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 entries, fails, probes = [], [], {}
 seen_urls = set()
+PREV = json.load(open(sys.argv[3])) if len(sys.argv) > 3 and os.path.exists(sys.argv[3]) else {"files": []}
+prev_names = {e["name"] for e in PREV.get("files", [])}
+seen_urls.update(e["src_url"] for e in PREV.get("files", []))
+def already(it):
+    n = it.get("name", "")
+    return not it.get("redo") and (n in prev_names or any(x.startswith(n + "_") for x in prev_names))
 
 def page(url):
     for _ in range(3):
@@ -57,11 +63,14 @@ def head_ok(url):
     return p.stdout.strip().endswith("200")
 
 def probe(f):
-    p = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "stream=codec_type,width,height:format=duration", "-of", "json", f], capture_output=True, text=True)
+    p = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "stream=codec_type,codec_name,pix_fmt,width,height:format=duration", "-of", "json", f], capture_output=True, text=True)
     try: j = json.loads(p.stdout)
     except Exception: return {}
     vs = [s for s in j.get("streams", []) if s.get("codec_type") == "video" and s.get("width")]
+    au = [s for s in j.get("streams", []) if s.get("codec_type") == "audio"]
     return {"w": vs[0]["width"] if vs else None, "h": vs[0]["height"] if vs else None,
+            "vcodec": vs[0].get("codec_name") if vs else None, "pix": vs[0].get("pix_fmt") if vs else None,
+            "acodec": au[0].get("codec_name") if au else None,
             "dur": round(float(j.get("format", {}).get("duration") or 0), 2),
             "audio": any(s.get("codec_type") == "audio" for s in j.get("streams", []))}
 
@@ -80,15 +89,28 @@ def save(url, it, name, kind, extra):
     if kind == "video":
         dst = f"{OUT}/video/{name}.mp4"; info = probe(tmp)
         tlim = str(it.get("max_sec", 600))
-        for crf in ("20", "23", "26"):
+        # already-compliant H.264 (<=1080p, yuv420p, < 95 MB) -> remux only (saves Actions minutes)
+        if info.get("vcodec") == "h264" and info.get("pix") == "yuv420p" and (info.get("w") or 9999) <= 1920 and (info.get("h") or 9999) <= 1080 \
+                and os.path.getsize(tmp) < 95 * 1024 * 1024:
+            acodec = ["-c:a", "copy"] if info.get("acodec") == "aac" else (["-c:a", "aac", "-b:a", "160k"] if info.get("audio") else ["-an"])
+            p = subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", tmp, "-t", tlim, "-map", "0:v:0", "-map", "0:a:0?", "-c:v", "copy"] + acodec +
+                               ["-movflags", "+faststart", dst], capture_output=True, text=True)
+            if p.returncode == 0: meta["encode"] = "remux (source already H.264 yuv420p <=1080p)"
+        for crf in ([] if meta.get("encode") else ("20", "23", "26")):
             cmd = ["ffmpeg", "-y", "-v", "error", "-i", tmp, "-t", tlim, "-vf", SCALE_V + ",format=yuv420p", "-c:v", "libx264", "-crf", crf,
                    "-preset", "veryfast", "-pix_fmt", "yuv420p"]
             cmd += (["-c:a", "aac", "-b:a", "160k"] if info.get("audio") else ["-an"])
             p = subprocess.run(cmd + ["-movflags", "+faststart", dst], capture_output=True, text=True)
             if p.returncode: meta["err"] = p.stderr[-300:]; break
-            if os.path.getsize(dst) < 95 * 1024 * 1024: meta["crf"] = int(crf); break
-        else:
-            meta["err"] = "too large after crf26"
+            if os.path.getsize(dst) < 95 * 1024 * 1024: meta["encode"] = f"x264 crf{crf} veryfast"; break
+        if not meta.get("encode") and not meta.get("err"):
+            dur = min(float(tlim), info.get("dur") or float(tlim)); vb = int((88 * 8 * 1024 * 1024 / dur - 170_000) / 1000)
+            cmd = ["ffmpeg", "-y", "-v", "error", "-i", tmp, "-t", tlim, "-vf", SCALE_V + ",format=yuv420p", "-c:v", "libx264", "-b:v", f"{vb}k",
+                   "-maxrate", f"{vb}k", "-bufsize", f"{2*vb}k", "-preset", "veryfast", "-pix_fmt", "yuv420p"]
+            cmd += (["-c:a", "aac", "-b:a", "160k"] if info.get("audio") else ["-an"])
+            p = subprocess.run(cmd + ["-movflags", "+faststart", dst], capture_output=True, text=True)
+            if p.returncode == 0 and os.path.getsize(dst) < 95 * 1024 * 1024: meta["encode"] = f"x264 capped {vb} kbps veryfast (CRF20-26 exceeded 95 MB)"
+            else: meta["err"] = "too large after crf26 and bitrate cap"
         os.remove(tmp)
         if meta.get("err"):
             if os.path.exists(dst): os.remove(dst)
@@ -98,7 +120,7 @@ def save(url, it, name, kind, extra):
     else:
         ext = ".png" if url.lower().split("?")[0].endswith(".png") else ".jpg"
         dst = f"{OUT}/img/{name}{ext}"
-        p = subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", tmp, "-vf", SCALE_I] + (["-q:v", "2"] if ext == ".jpg" else []) + [dst],
+        p = subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", tmp, "-vf", SCALE_I] + (["-q:v", "2"] if ext == ".jpg" else []) + ["-frames:v", "1", "-update", "1", dst],
                            capture_output=True, text=True)
         os.remove(tmp)
         if p.returncode or not os.path.exists(dst): meta["err"] = p.stderr[-300:]; fails.append(meta); return
@@ -131,8 +153,9 @@ def do_usgs(it, kind, pg=None, name=None):
         extra["credit"] = it.get("credit") or ("USGS / Yellowstone Volcano Observatory" + (f" ({extra['page_credit']})" if extra.get("page_credit") else ""))
         save(mp4[0], it, name, "video", extra)
     else:
-        imgs = re.findall(r'https://d9-wret\.s3[^"\'\s<>]+?/s3fs-public/(?!styles/)(?!geodata/)[^"\'\s<>]+?\.(?:jpe?g|png|tiff?|gif)', h, re.I)
-        imgs = [u for u in dict.fromkeys(imgs) if "thumbnail" not in u.lower()]
+        orig = re.findall(r'href="(https://[a-z0-9-]+-wret[^"]+)"[^>]*>\s*(?:<[^>]+>\s*)*Original', h)
+        imgs = orig + re.findall(r'https://[a-z0-9-]+-wret\.s3[^"\'\s<>]+?/s3fs-public/(?!styles/)(?!geodata/)[^"\'\s<>]+?\.(?:jpe?g|png|tiff?|gif)', h, re.I)
+        imgs = [H.unescape(u) for u in dict.fromkeys(imgs) if "geodata/" not in u and "/styles/" not in u]
         if not imgs: extra["err"] = "no original image found"; fails.append({"name": name, **extra}); return
         extra["credit"] = it.get("credit") or extra.get("page_credit") or "USGS"
         save(imgs[0], it, name, "image", extra)
@@ -247,8 +270,9 @@ def do_commons(it):
 
 for it in LIST["items"]:
     k = it["kind"]; print("==", k, it.get("name"), flush=True)
+    if already(it): print("   already collected, skip"); continue
     try:
-        if k == "direct": save(it["url"], it, it["name"], "video" if it["url"].lower().split("?")[0].endswith((".mp4", ".mov", ".m4v")) else "image", {})
+        if k == "direct": save(it["url"], it, it["name"], "video" if it["url"].lower().split("?")[0].endswith((".mp4", ".mov", ".m4v")) else "image", {k: it[k] for k in ("page_usage", "title") if k in it})
         elif k == "usgs_video": do_usgs(it, "video")
         elif k == "usgs_image": do_usgs(it, "image")
         elif k == "usgs_listing": do_usgs_listing(it)
@@ -260,6 +284,7 @@ for it in LIST["items"]:
         elif k == "commons": do_commons(it)
     except Exception as e:
         fails.append({"name": it.get("name"), "err": f"exception {e!r}"[:300]})
+    json.dump({"chapter": LIST.get("chapter"), "files": entries, "not_obtained": fails, "probes": probes, "partial": True}, open(f"{OUT}/index.json", "w"), indent=1)
 
 json.dump({"chapter": LIST.get("chapter"), "files": entries, "not_obtained": fails, "probes": probes}, open(f"{OUT}/index.json", "w"), indent=1)
 print(json.dumps({"ok": len(entries), "fail": len(fails)}))

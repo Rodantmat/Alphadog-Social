@@ -2,12 +2,15 @@
  "chapter": "ch1",
  "items": [
   {
-   "kind": "usgs_video",
+   "kind": "direct",
    "name": "ch1_usgs_biscuit_basin_explosion_2024-07-23",
    "page": "https://www.usgs.gov/media/videos/hydrothermal-explosion-yellowstones-biscuit-basin-july-23-2024",
    "shows": "Biscuit Basin hydrothermal explosion Jul 23 2024 - plume, damaged boardwalk, Mike Poland explainer",
    "license": "Public Domain (USGS, US Government work)",
-   "credit": "USGS / Yellowstone Volcano Observatory (video edited by Liz Westby, USGS)"
+   "credit": "USGS / Yellowstone Volcano Observatory (video edited by Liz Westby, USGS)",
+   "url": "https://usgs-ocapsv2-public-input-media.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/video/2024_Jul_24_Hydrothermal_Explosion_Biscuit_Basin.mp4",
+   "page_usage": "Public Domain. (verified on page 2026-10-28)",
+   "title": "Hydrothermal Explosion in Yellowstone's Biscuit Basin (July 23, 2024)"
   },
   {
    "kind": "usgs_video",
@@ -273,7 +276,8 @@
    ],
    "filter": "1959|hebgen|madison slide|earthquake lake|sapphire pool|dragline|rockslide",
    "max_n": 12,
-   "license": "Public Domain (USGS, US Government work)"
+   "license": "Public Domain (USGS, US Government work)",
+   "redo": true
   },
   {
    "kind": "usgs_listing",
@@ -297,7 +301,8 @@
    ],
    "filter": "biscuit basin|black diamond",
    "max_n": 10,
-   "license": "Public Domain (USGS, US Government work)"
+   "license": "Public Domain (USGS, US Government work)",
+   "redo": true
   },
   {
    "kind": "usgs_image",
@@ -358,6 +363,32 @@
    "filter": "1959|earthquake|quake|brock",
    "max_n": 12,
    "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "usgs_image",
+   "name": "ch1_usgs_old_faithful_eruption_ugb",
+   "page": "https://www.usgs.gov/media/images/old-faithful-geyser-eruption-ynps-upper-geyser-basin",
+   "shows": "Old Faithful eruption, Upper Geyser Basin",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "usgs_image",
+   "name": "ch1_usgs_eruption_old_faithful",
+   "page": "https://www.usgs.gov/media/images/eruption-old-faithful-geyser",
+   "shows": "Old Faithful eruption",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "slidefile",
+   "name": "ch1_nps_hist_wildlife_1919_45",
+   "page": "https://home.nps.gov/features/yell/slidefile/history/1919_1945/wildlifemanagement/Page.htm",
+   "filter": "buffalo|bison",
+   "max_n": 15,
+   "license": "Public Domain (NPS, US Government work)"
   }
+ ],
+ "remove": [
+  "img/ch1_nps_buffalo_ranch_16626.jpg",
+  "img/ch1_nps_buffalo_ranch_16627.jpg"
  ]
 }

@@ -23,7 +23,7 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 100
     steps:
       - uses: actions/checkout@v4
         with:
@@ -52,7 +52,7 @@ jobs:
             OLD=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1])).get('list_sha',''))" /tmp/fb/yellowstone-media/$c/index.json 2>/dev/null || true)
             if [ "$SHA" = "$OLD" ] && [ "$FORCE" != "yes" ]; then echo "$c unchanged, skip"; continue; fi
             rm -rf /tmp/out && mkdir -p /tmp/out
-            python3 -I scripts/collect_list_media.py "$L" /tmp/out
+            timeout 80m python3 -I scripts/collect_list_media.py "$L" /tmp/out /tmp/fb/yellowstone-media/$c/index.json || echo "collector exit $? (partial results kept)"
             D=/tmp/fb/yellowstone-media/$c; mkdir -p "$D"
             # files listed in "remove" are deleted from the folder
             python3 - "$L" "$D" "$SHA" <<'EOF'
