@@ -1,0 +1,50 @@
+[
+ {
+  "id": "X01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Biscuit Basin, Yellowstone, a summer morning with clear blue sky and bright sunlight: a wide flat basin of pale grey-white sinter crust, a large steaming hot pool of milky blue-grey water, a raised wooden boardwalk with simple wooden railings running past the pool, low forested hills with dark lodgepole pines in the distance, wisps of steam rising from small vents. At the center of the hot pool a sudden violent explosion: a dark burst of grey steam, black mud and flying rock fragments blasts upward and outward from the water surface, spray and stones flung in all directions, the boardwalk in the foreground still empty.",
+  "neg": "people, lava, fire, flames, volcano cone, bodies, corpses, blood, gore, injured people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ },
+ {
+  "id": "X02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. very wide shot from a distance. Biscuit Basin, Yellowstone, a summer morning with clear blue sky and bright sunlight: a wide flat basin of pale grey-white sinter crust, a large steaming hot pool of milky blue-grey water, a raised wooden boardwalk with simple wooden railings running past the pool, low forested hills with dark lodgepole pines in the distance, wisps of steam rising from small vents. A towering column of grey-white steam, dark mud and rock rises hundreds of feet high above the flat basin, billowing and churning, dark debris arcing outward and falling back down like rain around it; the wooden boardwalk tiny in the foreground; blue sky above.",
+  "neg": "people, lava, fire, flames, volcano cone, mushroom cloud, bodies, corpses, blood, gore, injured people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ },
+ {
+  "id": "X03",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. low medium shot. Biscuit Basin, Yellowstone, a summer morning with clear blue sky and bright sunlight: a wide flat basin of pale grey-white sinter crust, a large steaming hot pool of milky blue-grey water, a raised wooden boardwalk with simple wooden railings running past the pool, low forested hills with dark lodgepole pines in the distance, wisps of steam rising from small vents. On the wooden boardwalk, large grey rocks the size of armchairs and clumps of wet mud crash down onto the planks, boards splintering and snapping, the railing broken, grey mud splattered everywhere, steam drifting across. No people.",
+  "neg": "people, lava, fire, bodies, corpses, blood, gore, injured people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ },
+ {
+  "id": "X04",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium-wide shot from behind. Biscuit Basin, Yellowstone, a summer morning with clear blue sky and bright sunlight: a wide flat basin of pale grey-white sinter crust, a large steaming hot pool of milky blue-grey water, a raised wooden boardwalk with simple wooden railings running past the pool, low forested hills with dark lodgepole pines in the distance, wisps of steam rising from small vents. Four small tourists in summer clothes, shorts, t-shirts and sun hats, seen from behind, run away from the camera along the wooden boardwalk toward the parking area, one looking down, a huge grey steam and mud cloud rolling behind and above them, small bits of mud falling. Faces not visible.",
+  "neg": "faces, people facing the camera, bodies, corpses, blood, gore, injured people, cars, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 4
+ }
+]
