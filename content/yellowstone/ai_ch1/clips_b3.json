@@ -1,0 +1,26 @@
+[
+ {
+  "name": "H03r",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys1_v1/H03_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 7,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: an earthquake shakes the campsite; the picnic table vibrates hard, the lantern rattles and rocks a little on its base while its flame flickers, the tin cups rattle, the spilled coffee spreads across the boards, pine needles and dust fall from above, the tent canvas trembles. Handheld camera shaking with the quake.",
+  "neg": "people, hands, coffee pot changing, lantern disappearing, lantern falling, objects changing shape, objects morphing into other objects, objects disappearing, objects flying, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ },
+ {
+  "name": "H04r",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys1_v1/H04_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 11,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: during a violent earthquake the two people in pajamas keep running to the left across the campground on their feet, the tall pines thrash back and forth, the tent shakes and sags, the car bounces on its springs, dust swirls up from the ground. Handheld camera shaking with the quake.",
+  "neg": "falling, people falling down, lying on the ground, people disappearing, people vanishing, faces, blood, car driving away, objects changing shape, objects morphing into other objects, objects disappearing, objects flying, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ }
+]
