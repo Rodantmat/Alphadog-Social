@@ -1,0 +1,62 @@
+[
+ {
+  "name": "P02",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys1_v1/P02_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the hands lower the glass jar on the pole into the bubbling pool, the jar fills with water and bubbles, steam swirls around the arms, the pool surface boils and ripples, then the jar lifts out dripping. Steady close camera.",
+  "neg": "face, extra hands, jar breaking, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ },
+ {
+  "name": "P03",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys1_v1/P03_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 121,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the student turns the glass jar in the sunlight and the cloudy water swirls inside; the scientist writes in his notebook, his pencil moving; steam drifts behind them. Slow push-in.",
+  "neg": "faces, turning around, readable text, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ },
+ {
+  "name": "P04",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys1_v1/P04_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 81,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the scientist turns the microscope focus knob and leans closer to the eyepiece, dust motes float in the window light. Slow push-in.",
+  "neg": "face, turning around, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ },
+ {
+  "name": "P05",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys1_v1/P05_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 121,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the glowing rod-shaped bacteria drift, wriggle and tumble in the liquid, one splits in two, tiny bubbles rise, the amber light pulses softly. Slow gentle push-in.",
+  "neg": "people, text, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ },
+ {
+  "name": "P07",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/ys1_v1/P07_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 121,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: heat shimmer rises from the block, wisps of vapor curl upward, the liquid in the tubes glows brighter and dimmer, the golden DNA helices split and copy into more and more helices that drift upward. Slow push-in.",
+  "neg": "people, hands, text, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ }
+]
