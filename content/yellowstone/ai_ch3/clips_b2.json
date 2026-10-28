@@ -56,7 +56,7 @@
   "steps": 40,
   "cfg": 5.0,
   "seed": 42,
-  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the long procession wades across the wide river, horses stepping through the water, travois poles trailing, water splashing and rippling with the sunset reflections, the loose herd crossing behind. Slow pan.",
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the long procession wades across the wide river, horses stepping through the water, travois poles trailing, water splashing and glittering in the low golden sun, the loose herd crossing behind. Slow pan.",
   "neg": "war paint, feather headdress, blood, gore, faces, face morphing, horses merging, extra legs, galloping, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
  },
  {
@@ -80,7 +80,7 @@
   "steps": 40,
   "cfg": 5.0,
   "seed": 42,
-  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the herd of horses wades and splashes through the shallow river at a trot, spray flying and glowing in the sunset light, the two riders driving them from behind. Slow pan.",
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the herd of horses wades and splashes through the shallow river at a trot, spray flying and glittering in the low golden sun, the two riders driving them from behind. Slow pan.",
   "neg": "war paint, feather headdress, blood, gore, faces, face morphing, horses merging, extra legs, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
  },
  {
