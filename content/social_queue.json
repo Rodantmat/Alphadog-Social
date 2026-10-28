@@ -127,5 +127,28 @@
   "platform": "tiktok_draft",
   "file": "chiricahua_sh2.mp4",
   "at": "2026-10-29T01:15:00Z"
+ },
+ {
+  "id": "promo_ig",
+  "platform": "instagram",
+  "file": "spotify_promo_ep1.mp4",
+  "at": "2026-10-30T00:30:00Z",
+  "thumb_ms": 1500,
+  "music": "episode 1 original score, chapter 3 (Bascom) - not used in any other post",
+  "caption": "1861. A 12-year-old boy is kidnapped in Arizona, and the Army blames Cochise, though he likely had nothing to do with it.\n\nInside an Army tent, he's told he will be held until the boy comes back. Cochise draws a knife, cuts through the tent and escapes. What happened next started 11 years of war.\n\n🎧 The full episode is now a podcast on Spotify and Apple Podcasts. Link in bio.\n\n#Cochise #Apache #History #Arizona #Chiricahua #Podcast #TrueStory #NationalParks"
+ },
+ {
+  "id": "promo_fb",
+  "platform": "facebook",
+  "file": "spotify_promo_ep1.mp4",
+  "at": "2026-10-30T00:30:00Z",
+  "caption": "1861. A 12-year-old boy is kidnapped in Arizona, and the Army blames Cochise, though he likely had nothing to do with it.\n\nInside an Army tent, he's told he will be held until the boy comes back. Cochise draws a knife, cuts through the tent and escapes. What happened next started 11 years of war.\n\n🎧 The full episode is now a podcast. Listen free on Spotify or Apple Podcasts, links in the first comment 👇\n\n#Cochise #Apache #History #Arizona #Chiricahua #Podcast #TrueStory #NationalParks",
+  "comment": "🎧 Spotify: https://open.spotify.com/episode/2DriFk8VhHyGnMJMuewzrH\n🍎 Apple Podcasts: https://podcasts.apple.com/us/podcast/americas-national-parks-the-hidden-history/id6827800067\n🎬 Full documentary on YouTube: https://youtu.be/LfoM0KAi8Yo"
+ },
+ {
+  "id": "promo_tt",
+  "platform": "tiktok_draft",
+  "file": "spotify_promo_ep1.mp4",
+  "at": "2026-10-30T00:15:00Z"
  }
 ]
