@@ -1,0 +1,35 @@
+name: modal-keys-check
+# Read-only: confirm every Modal key authenticates and show which workspace it belongs to. Runs no compute.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - run: pip install -q modal
+      - env:
+          W1_ID: ${{ secrets.MODAL_TOKEN_ID_W1 }}
+          W1_SECRET: ${{ secrets.MODAL_TOKEN_SECRET_W1 }}
+          W2_ID: ${{ secrets.MODAL_TOKEN_ID_W2 }}
+          W2_SECRET: ${{ secrets.MODAL_TOKEN_SECRET_W2 }}
+          W3_ID: ${{ secrets.MODAL_TOKEN_ID_W3 }}
+          W3_SECRET: ${{ secrets.MODAL_TOKEN_SECRET_W3 }}
+          W4_ID: ${{ secrets.MODAL_TOKEN_ID_W4 }}
+          W4_SECRET: ${{ secrets.MODAL_TOKEN_SECRET_W4 }}
+          B1_ID: ${{ secrets.MODAL_TOKEN_ID }}
+          B1_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
+          B2_ID: ${{ secrets.MODAL_TOKEN_ID_BACKUP }}
+          B2_SECRET: ${{ secrets.MODAL_TOKEN_SECRET_BACKUP }}
+        run: |
+          for k in W1 W2 W3 W4 B1 B2; do
+            id_var="${k}_ID"; sec_var="${k}_SECRET"
+            export MODAL_TOKEN_ID="${!id_var}" MODAL_TOKEN_SECRET="${!sec_var}"
+            if [ -z "$MODAL_TOKEN_ID" ]; then echo "$k: MISSING"; continue; fi
+            ws=$(modal profile current 2>/dev/null || true)
+            out=$(python3 -c "import modal; c=modal.Client.from_env(); print('auth ok')" 2>&1 | tail -1)
+            apps=$(modal app list --json 2>/dev/null | python3 -c "import sys,json; print(len(json.load(sys.stdin)))" 2>/dev/null || echo "?")
+            echo "$k: $out | workspace: ${ws:-?} | apps: $apps"
+          done
