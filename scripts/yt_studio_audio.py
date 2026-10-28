@@ -33,9 +33,6 @@ BASE = KEY.split("-")[0]
 WANT = NAMES.get(KEY, [LANG])                       # exact names
 ALT = NAMES.get(BASE, []) if BASE != KEY else []    # e.g. pt-BR may live in an existing plain "Portuguese" row
 EMPTY = {"", "–", "-", "—"}
-PUBLISH = re.compile(r"^\s*(Publish|Publicar)\s*$", re.I)
-ADD = re.compile(r"^\s*(Add|Adicionar|Upload|Enviar)\s*$", re.I)
-DONE_WORDS = re.compile(r"(Published|Publicado|Processing|Processando|Em processamento|Draft|Rascunho)", re.I)
 
 def result(status, **kw):
     d = {"video_id": VID, "lang": KEY, "status": status, "time": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), **kw}
@@ -65,103 +62,99 @@ def open_languages(pg):
         pg.wait_for_timeout(4000)
     pg.wait_for_timeout(2500)
 def dialog(pg):
-    """The topmost open Studio dialog."""
-    for sel in ["tp-yt-paper-dialog[opened]", "ytcp-dialog[opened] tp-yt-paper-dialog", "[role=dialog]:visible", "tp-yt-paper-dialog:visible"]:
+    """The language editor dialog (or topmost open Studio dialog)."""
+    for sel in ["tp-yt-paper-dialog:has(#language-details-source-label-audio)", "tp-yt-paper-dialog[opened]", "[role=dialog]:visible"]:
         loc = pg.locator(sel)
-        if loc.count(): return loc.last
+        try:
+            if loc.count() and loc.last.is_visible(): return loc.last
+        except Exception: pass
     return None
 def dialog_text(pg):
     d = dialog(pg)
     try: return S.redact(d.inner_text(timeout=3000)) if d else ""
     except Exception: return ""
+def audio_state(pg):
+    g = lambda sel: (pg.locator(sel).first.inner_text(timeout=2000).strip() if pg.locator(sel).count() else "")
+    try: return g("#language-details-source-label-audio"), g("#language-details-status-label-audio")
+    except Exception: return "", ""
+def click_named(scope, names, timeout=5000):
+    for nm in names:
+        b = scope.get_by_role("button", name=nm, exact=True)
+        if b.count():
+            try: b.last.click(timeout=timeout); return nm
+            except Exception: pass
+    return None
 def close_dialog(pg):
-    d = dialog(pg)
-    if d:
-        for name in ["Cancel", "Cancelar", "Close", "Fechar", "Discard", "Descartar"]:
-            b = d.get_by_role("button", name=name)
-            if b.count():
-                try: b.first.click(timeout=4000); pg.wait_for_timeout(2000); break
-                except Exception: pass
-        else:
-            pg.keyboard.press("Escape"); pg.wait_for_timeout(2000)
-    # a "discard changes?" confirmation may follow
-    d = dialog(pg)
-    if d:
-        for name in ["Discard", "Descartar", "Close", "Fechar", "Sair"]:
-            b = d.get_by_role("button", name=name)
-            if b.count():
-                try: b.first.click(timeout=4000); pg.wait_for_timeout(1500); break
-                except Exception: pass
+    for _ in range(3):
+        if not dialog(pg): return
+        if not click_named(pg, ["Fechar", "Close", "Cancelar", "Cancel"]): pg.keyboard.press("Escape")
+        pg.wait_for_timeout(2000)
+        click_named(pg, ["Descartar", "Discard", "Sair", "Leave", "Descartar alterações"], 3000); pg.wait_for_timeout(1500)
 
 def add_language(pg):
     print("language row missing - adding it via 'Add language'")
     pg.locator("#add-translations-button").first.click(timeout=15000); pg.wait_for_timeout(2500)
     snap(pg, "10_add_language_menu")
+    items = pg.locator("tp-yt-paper-item:visible, [role=option]:visible, [role=menuitem]:visible")
     for name in WANT:
-        it = pg.locator("tp-yt-paper-item, ytcp-text-menu tp-yt-paper-item, [role=option], [role=menuitem]").filter(has_text=re.compile(rf"^\s*{re.escape(name)}\s*$"))
+        it = items.filter(has_text=re.compile(rf"^\s*{re.escape(name)}\s*$"))
         if it.count():
-            it.first.scroll_into_view_if_needed(); S.pause(0.8, 1.6); it.first.click(timeout=8000); pg.wait_for_timeout(4000); return True
-    # menu may have a search box
-    sb = pg.locator("input[type=text]:visible, input:not([type]):visible")
-    if sb.count():
-        sb.first.type(WANT[-1] if len(WANT) > 1 else WANT[0], delay=120); pg.wait_for_timeout(2000)
-        it = pg.locator("tp-yt-paper-item:visible, [role=option]:visible").first
-        if it.count(): it.click(timeout=8000); pg.wait_for_timeout(4000); return True
+            it.first.scroll_into_view_if_needed(); S.pause(0.8, 1.6); it.first.click(timeout=8000); pg.wait_for_timeout(5000)
+            snap(pg, "10b_after_add_language"); return True
     pg.keyboard.press("Escape"); return False
 
-def open_add_audio(pg, row):
-    cell = row.locator("ytgn-video-translation-cell-audio").first
-    cell.scroll_into_view_if_needed(); cell.hover(); pg.wait_for_timeout(1800)
-    snap(pg, "11_audio_cell_hover")
-    btns = cell.locator("button, ytcp-button, [role=button]")
-    print("audio cell buttons:", [S.redact((b.get_attribute("aria-label") or "") + "|" + (b.inner_text() or "").strip()) for b in btns.all()][:8])
-    target = None
-    for b in btns.all():
-        t = (b.inner_text() or "").strip(); a = b.get_attribute("aria-label") or ""
-        if ADD.match(t) or ADD.match(a) or re.search(r"(add|adicionar)", a, re.I): target = b; break
-    if target is None and btns.count(): target = btns.first
-    if target is None: target = cell
-    S.pause(0.8, 1.8); target.click(timeout=10000); pg.wait_for_timeout(3500)
-    # the click may open a small menu (e.g. "Upload file" / "Enviar arquivo")
-    menu = pg.locator("tp-yt-paper-item:visible, [role=menuitem]:visible")
-    if menu.count() and not dialog(pg):
-        print("audio menu:", [m.inner_text().strip()[:40] for m in menu.all()][:8])
-        pick = menu.filter(has_text=re.compile(r"(upload|enviar|arquivo|file)", re.I))
-        (pick.first if pick.count() else menu.first).click(timeout=8000); pg.wait_for_timeout(3500)
-    snap(pg, "12_add_audio_dialog"); print("dialog text:", dialog_text(pg)[:800].replace("\n", " | "))
-
+def open_editor(pg, row):
+    """Clicking the language name opens that language's editor dialog (title/description, thumbnail, AUDIO, subtitles)."""
+    if not dialog(pg):
+        S.pause(0.8, 1.8); row.locator("button.language-display-name").first.click(timeout=10000)
+    pg.wait_for_selector("#language-details-text-button-audio, #language-details-status-label-audio", timeout=30000)
+    pg.wait_for_timeout(2500)
 def upload(pg):
-    d = dialog(pg) or pg
-    inp = d.locator("input[type=file]")
-    if not inp.count(): inp = pg.locator("input[type=file]:not(#captions-file-loader)")
-    if inp.count():
-        inp.last.set_input_files(AUDIO); print("file set via input")
+    """Click Audio 'Add', hand the file to the chooser (or an input in a sub-dialog), wait until Studio accepts it."""
+    btn = pg.locator("#language-details-text-button-audio").first
+    base = set(l.strip() for l in dialog_text(pg).splitlines())
+    S.pause(1, 2.5)
+    try:
+        with pg.expect_file_chooser(timeout=15000) as fc: btn.click(timeout=10000)
+        chooser = fc.value; print("file chooser opened")
+    except Exception:
+        chooser = None; pg.wait_for_timeout(3000); snap(pg, "12_after_add_click")
+        print("no direct file chooser; dialog:", dialog_text(pg)[:500].replace("\n", " | "))
+    if DRY:
+        return "dry", "file chooser" if chooser else dialog_text(pg)[:300]
+    if chooser: chooser.set_files(AUDIO)
     else:
-        btn = d.get_by_role("button", name=re.compile(r"(select|selecionar|upload|enviar|choose|escolher)", re.I))
-        with pg.expect_file_chooser(timeout=15000) as fc: btn.first.click()
-        fc.value.set_files(AUDIO); print("file set via chooser")
-    # wait for the upload to go through and Publish to become enabled, or an error
-    t0 = time.time(); last = ""
-    while time.time() - t0 < 1500:
-        pg.wait_for_timeout(10000)
-        txt = dialog_text(pg);
-        if txt != last: print(f"[{int(time.time()-t0)}s] dialog:", txt[:400].replace("\n", " | ")); last = txt
-        if re.search(r"(error|erro|n[aã]o (foi|é) poss|must match|precisa|duration|dura[cç][aã]o|too (long|short)|muito (longo|curto)|couldn.t|failed|falh)", txt, re.I) \
-           and not re.search(r"(enviando|uploading|\d+ ?%)", txt, re.I):
-            return "rejected", txt
-        d = dialog(pg)
-        if d:
-            pb = d.get_by_role("button", name=PUBLISH)
-            if pb.count() and pb.first.is_enabled() and (pb.first.get_attribute("aria-disabled") or "false") != "true":
-                if not re.search(r"(uploading|enviando|\d+ ?%)", txt, re.I): return "ready", txt
+        inp = pg.locator("input[type=file]:not(#captions-file-loader)")
+        if inp.count(): inp.last.set_input_files(AUDIO)
         else:
-            return "closed", txt
-    return "timeout", last
+            sel = pg.get_by_role("button", name=re.compile(r"(select|selecionar|escolher|choose|upload|enviar)", re.I))
+            with pg.expect_file_chooser(timeout=15000) as fc: sel.last.click()
+            fc.value.set_files(AUDIO)
+    print("file handed to Studio")
+    t0 = time.time(); last = None
+    while time.time() - t0 < 1800:
+        pg.wait_for_timeout(10000)
+        src, stt = audio_state(pg)
+        toast = " ".join(t.inner_text().strip() for t in pg.locator("tp-yt-paper-toast:visible, ytcp-toast:visible, [role=alert]:visible").all() if t.inner_text().strip())
+        txt = "\n".join(l for l in dialog_text(pg).splitlines() if l.strip() and l.strip() not in base) + ("\nTOAST: " + S.redact(toast) if toast else "")
+        cur = (src, stt, txt[-300:])
+        if cur != last: print(f"[{int(time.time()-t0)}s] audio source='{src}' status='{stt}' | dialog tail: {txt[-300:]!r}".replace("\n", " | ")); last = cur
+        if re.search(r"(n[aã]o (foi|é) poss[ií]vel|must (match|be)|precisa ter|dura[cç][aã]o|duration|too (long|short)|muito (longo|curto)|couldn.t|failed|falh|erro|error|inv[aá]lid)", txt, re.I) \
+           and not re.search(r"(enviando|uploading|carregando|\d+ ?%)", txt, re.I):
+            return "rejected", txt
+        upd = pg.get_by_role("button", name=re.compile(r"^(Atualizar|Update|Publicar|Publish|Salvar|Save)$"))
+        ready = any(b.is_visible() and b.get_attribute("aria-disabled") != "true" and not b.is_disabled() for b in upd.all())
+        if ready and not re.search(r"(enviando|uploading|carregando|\d+ ?%)", (stt + " " + src + " " + txt), re.I):
+            return "ready", txt
+        if not dialog(pg): return "closed", txt
+    return "timeout", txt
 
 def main():
     if not DRY and not (AUDIO and os.path.exists(AUDIO)): result("error", error=f"audio file missing: {AUDIO}"); sys.exit(4)
     with sync_playwright() as p:
         b, ctx, pg = S.open_browser(p)
+        def finish(code, status, **kw):
+            result(status, **kw); S.save(ctx); b.close(); sys.exit(code)
         S.goto(pg, S.STUDIO)
         st = S.status(pg); print("[studio] status:", st)
         if st != "ok":
@@ -174,28 +167,39 @@ def main():
         snap(pg, "01_before")
         f = find_row(pg)
         if f and f[1] not in EMPTY:
-            print(f"'{f[0]}' already has audio: {f[1]} - nothing to do"); result("already", ui=f[1], row=f[0]); S.save(ctx); b.close(); return
+            print(f"'{f[0]}' already has audio: {f[1]} - nothing to do"); finish(0, "already", ui=f[1], row=f[0])
         if not f:
-            if DRY: print("DRY_RUN: would add the language row", WANT[0]); result("dry_run", note="language row missing"); S.save(ctx); b.close(); return
-            if not add_language(pg): snap(pg, "90_fail"); result("error", error="could not add language"); S.save(ctx); b.close(); sys.exit(4)
-            f = find_row(pg)
-            if not f: snap(pg, "90_fail"); result("error", error="row not visible after add"); S.save(ctx); b.close(); sys.exit(4)
-        name, audio, row = f; print(f"row: {name} | audio: {audio or '-'}")
-        try: open_add_audio(pg, row)
-        except Exception as e: snap(pg, "90_fail"); result("error", error="open add-audio: " + str(e)[:200]); S.save(ctx); b.close(); sys.exit(4)
-        if DRY:
-            close_dialog(pg); snap(pg, "13_after_cancel"); result("dry_run", row=name, dialog=dialog_text(pg)[:300]); S.save(ctx); b.close(); return
-        S.pause(1.5, 3)
-        state, txt = upload(pg); snap(pg, "14_after_upload")
-        if state == "rejected": result("rejected", message=txt[:600], row=name); close_dialog(pg); S.save(ctx); b.close(); sys.exit(5)
-        if state not in ("ready", "closed"): result("error", error=f"upload {state}", message=txt[:600]); close_dialog(pg); S.save(ctx); b.close(); sys.exit(4)
+            if DRY: print("DRY_RUN: would add the language", WANT[0]); finish(0, "dry_run", note="language row missing")
+            if not add_language(pg): snap(pg, "90_fail"); finish(4, "error", error="could not add language")
+            if not dialog(pg):
+                open_languages(pg); f = find_row(pg)
+                if not f: snap(pg, "90_fail"); finish(4, "error", error="row not visible after add")
+        try: open_editor(pg, f[2] if f else None)
+        except Exception as e: snap(pg, "90_fail"); finish(4, "error", error="open language editor: " + str(e)[:200])
+        name = f[0] if f else WANT[0]
+        src, stt = audio_state(pg); print(f"editor: {name} | audio source='{src}' status='{stt}'")
+        snap(pg, "11_editor")
+        if src or stt: close_dialog(pg); finish(0, "already", ui=stt or src, row=name)
+        try: state, txt = upload(pg)
+        except Exception as e: snap(pg, "90_fail"); close_dialog(pg); finish(4, "error", error="upload step: " + str(e)[:200])
+        if state == "dry":
+            pg.wait_for_timeout(1500); close_dialog(pg); snap(pg, "13_after_cancel"); finish(0, "dry_run", row=name, saw=txt)
+        snap(pg, "14_after_upload")
+        if state == "rejected": close_dialog(pg); finish(5, "rejected", message=txt[:800], row=name)
+        if state not in ("ready", "closed"): close_dialog(pg); finish(4, "error", error=f"upload {state}", message=txt[:800])
         if state == "ready":
-            S.pause(1.5, 3); dialog(pg).get_by_role("button", name=PUBLISH).first.click(timeout=10000); pg.wait_for_timeout(8000)
-            snap(pg, "15_after_publish")
-            if dialog(pg): print("dialog still open:", dialog_text(pg)[:400].replace("\n", " | "))
+            S.pause(1.5, 3)
+            nm = click_named(pg, ["Atualizar", "Update", "Publicar", "Publish", "Salvar", "Save"], 10000); print("clicked:", nm)
+            pg.wait_for_timeout(8000); snap(pg, "15_after_publish")
+            if dialog(pg):
+                print("dialog still open:", dialog_text(pg)[:400].replace("\n", " | "))
+                # a confirmation step may follow
+                nm2 = click_named(pg, ["Publicar", "Publish", "Confirmar", "Confirm", "Atualizar", "Update"], 5000)
+                if nm2: print("clicked:", nm2); pg.wait_for_timeout(8000)
+            close_dialog(pg)
         S.pause(3, 6); open_languages(pg); snap(pg, "16_after")
         f = find_row(pg); ui = f[1] if f else ""
         ok = bool(f) and ui not in EMPTY
-        result("published" if ok else "unverified", ui=ui, row=f[0] if f else None)
-        S.save(ctx); b.close(); sys.exit(0 if ok else 4)
-main()
+        finish(0 if ok else 4, "published" if ok else "unverified", ui=ui, row=f[0] if f else None)
+if __name__ == "__main__":
+    main()
