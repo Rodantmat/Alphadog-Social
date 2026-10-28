@@ -1,0 +1,134 @@
+[
+ {
+  "id": "C01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. very wide high establishing shot. Pelican Valley, Yellowstone, March 1894: a wide remote mountain valley buried in deep snow, rolling white hills, scattered dark lodgepole pines and spruce half buried in drifts, a few thin wisps of steam rising from thermal vents in the snow, low grey overcast sky, cold diffuse light, light snow falling. Far below, a single tiny figure, an Army scout of the 1890s in a fur cap, a heavy belted grey wool mackinaw coat, dark wool trousers and leather mittens, a rifle slung across his back, gliding on very long narrow wooden skis of the 1890s with a single long wooden pole held in both hands, crosses the vast white valley, leaving a long double line of ski tracks behind him; ahead of him a faint older trail of tracks leads toward a distant stand of pines. Immense cold emptiness.",
+  "neg": "faces, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, bodies, corpses, blood, gore, injured people, wounds, animals, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ },
+ {
+  "id": "C02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium-wide shot from behind. Pelican Valley, Yellowstone, March 1894: a wide remote mountain valley buried in deep snow, rolling white hills, scattered dark lodgepole pines and spruce half buried in drifts, a few thin wisps of steam rising from thermal vents in the snow, low grey overcast sky, cold diffuse light, light snow falling. an Army scout of the 1890s in a fur cap, a heavy belted grey wool mackinaw coat, dark wool trousers and leather mittens, a rifle slung across his back, gliding on very long narrow wooden skis of the 1890s with a single long wooden pole held in both hands, seen from behind, glides away from the viewer along a trail of old ski tracks between snow-laden spruce trees, leaning forward, pushing with the long pole; snow is shoulder-high on both sides of the trail; his breath steams. Face not visible.",
+  "neg": "face, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, bodies, corpses, blood, gore, injured people, wounds, two poles, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ },
+ {
+  "id": "C03",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. low close-up at snow level. Pelican Valley, Yellowstone, March 1894: a wide remote mountain valley buried in deep snow, rolling white hills, scattered dark lodgepole pines and spruce half buried in drifts, a few thin wisps of steam rising from thermal vents in the snow, low grey overcast sky, cold diffuse light, light snow falling. A trail of old ski tracks and pole marks running away into the distance across deep fresh snow, snowflakes falling; the tips of a pair of long wooden skis enter the bottom of the frame and follow the trail. No people visible, no faces.",
+  "neg": "people, faces, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, footprints of animals, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ },
+ {
+  "id": "C04",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Pelican Valley, Yellowstone, March 1894: a wide remote mountain valley buried in deep snow, rolling white hills, scattered dark lodgepole pines and spruce half buried in drifts, a few thin wisps of steam rising from thermal vents in the snow, low grey overcast sky, cold diffuse light, light snow falling. A small snowy clearing among pines: a bearded poacher in a ragged dark brown wool coat and a fur cap kneels bent over a large dead bison lying on its side in the snow, seen as a dark shaggy brown mound partly dusted with snow, no blood, a hunting knife in his hand, his back half turned to the viewer; a pair of long wooden skis stuck upright in the snow beside him; his rifle leans against a pine trunk far away at the edge of the clearing, well out of his reach. Quiet, grey, snow falling.",
+  "neg": "bodies, corpses, blood, gore, injured people, wounds, face, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, living bison, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ },
+ {
+  "id": "C05",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium shot, rifle in the foreground. Pelican Valley, Yellowstone, March 1894: a wide remote mountain valley buried in deep snow, rolling white hills, scattered dark lodgepole pines and spruce half buried in drifts, a few thin wisps of steam rising from thermal vents in the snow, low grey overcast sky, cold diffuse light, light snow falling. In the foreground a long 1890s lever-action rifle leans against a snowy pine trunk, sharp and close; in the middle distance, small and soft, a bearded poacher in a ragged dark brown wool coat and a fur cap kneels with his back to us, bent over a large dead bison lying on its side in the snow, seen as a dark shaggy brown mound partly dusted with snow, no blood, busy, unaware. Snow falling between them.",
+  "neg": "bodies, corpses, blood, gore, injured people, wounds, face, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, hands on the rifle, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ },
+ {
+  "id": "C06",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. over-the-shoulder shot from behind the scout. Pelican Valley, Yellowstone, March 1894: a wide remote mountain valley buried in deep snow, rolling white hills, scattered dark lodgepole pines and spruce half buried in drifts, a few thin wisps of steam rising from thermal vents in the snow, low grey overcast sky, cold diffuse light, light snow falling. In the right foreground, seen from behind, an Army scout of the 1890s in a fur cap, a heavy belted grey wool mackinaw coat, dark wool trousers and leather mittens, a rifle slung across his back, gliding on very long narrow wooden skis of the 1890s with a single long wooden pole held in both hands has stopped at the edge of the pines and raises his rifle to his shoulder; far ahead in the clearing, small, a bearded poacher in a ragged dark brown wool coat and a fur cap kneels over a large dead bison lying on its side in the snow, seen as a dark shaggy brown mound partly dusted with snow, no blood and starts to look up. Tense and still, snow falling.",
+  "neg": "faces, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, bodies, corpses, blood, gore, injured people, wounds, muzzle flash, smoke, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 2
+ },
+ {
+  "id": "C07",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium-wide side view. Pelican Valley, Yellowstone, March 1894: a wide remote mountain valley buried in deep snow, rolling white hills, scattered dark lodgepole pines and spruce half buried in drifts, a few thin wisps of steam rising from thermal vents in the snow, low grey overcast sky, cold diffuse light, light snow falling. In a snowy clearing, a bearded poacher in a ragged dark brown wool coat and a fur cap stands up beside a large dead bison lying on its side in the snow, seen as a dark shaggy brown mound partly dusted with snow, no blood and raises both empty hands high above his head in surrender, a knife lying in the snow at his feet, seen in side profile, face small and in shadow under the fur cap; his rifle leans against a pine far behind him.",
+  "neg": "bodies, corpses, blood, gore, injured people, wounds, detailed face, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, gun in hand, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ },
+ {
+  "id": "C08",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Pelican Valley, Yellowstone, March 1894: a wide remote mountain valley buried in deep snow, rolling white hills, scattered dark lodgepole pines and spruce half buried in drifts, a few thin wisps of steam rising from thermal vents in the snow, low grey overcast sky, cold diffuse light, light snow falling. A tiny herd of six shaggy American bison stand in deep snow on an open slope, pushing snow aside with their great heads to reach the grass, breath steaming, snow caked on their backs; the empty white valley around them. No people.",
+  "neg": "people, buildings, fences, large herd, extra legs, extra horns, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ },
+ {
+  "id": "F01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. The whole picture rendered as a faded sepia-toned vintage storybook illustration, warm brown and amber monochrome, aged paper texture, soft vignette at the edges, a dreamlike remembered legend. the meeting of two small rivers in a broad grassy mountain valley, Yellowstone, September 1870, at dusk, a low warm sky, forested ridges and a tall rocky cliff behind. On the river bank, five explorers of 1870 in broad-brimmed felt hats, wool frock coats, flannel shirts, suspenders, high boots and a few fringed buckskin jackets sit and stand around a crackling campfire, small figures, sparks rising into the dusk; saddled horses hobbled nearby, a canvas tent, packs and saddles on the grass; the two rivers glinting as they join. Peaceful.",
+  "neg": "faces, close-up faces, color photograph, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, bodies, corpses, blood, gore, injured people, wounds, guns pointed, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 5
+ },
+ {
+  "id": "F02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium shot from behind the circle. The whole picture rendered as a faded sepia-toned vintage storybook illustration, warm brown and amber monochrome, aged paper texture, soft vignette at the edges, a dreamlike remembered legend. the meeting of two small rivers in a broad grassy mountain valley, Yellowstone, September 1870, at dusk, a low warm sky, forested ridges and a tall rocky cliff behind. Around a crackling campfire, five explorers of 1870 in broad-brimmed felt hats, wool frock coats, flannel shirts, suspenders, high boots and a few fringed buckskin jackets seen from behind and in side profile; one man stands and sweeps his arm out toward the darkening valley and the rivers as if proposing an idea, the others listening; firelight on their coats, sparks drifting up.",
+  "neg": "faces, detailed faces, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, bodies, corpses, blood, gore, injured people, wounds, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 5
+ },
+ {
+  "id": "F03",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot, still image. The whole picture rendered as a faded sepia-toned vintage storybook illustration, warm brown and amber monochrome, aged paper texture, soft vignette at the edges, a dreamlike remembered legend, the picture itself pale and fading at the edges like an old memory. the meeting of two small rivers in a broad grassy mountain valley, Yellowstone, September 1870, at dusk, a low warm sky, forested ridges and a tall rocky cliff behind. five explorers of 1870 in broad-brimmed felt hats, wool frock coats, flannel shirts, suspenders, high boots and a few fringed buckskin jackets sit around a small campfire on the river bank, tiny dark silhouettes against the glow; the rivers and the cliff behind.",
+  "neg": "faces, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, bodies, corpses, blood, gore, injured people, wounds, stamp, seal, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 5
+ }
+]

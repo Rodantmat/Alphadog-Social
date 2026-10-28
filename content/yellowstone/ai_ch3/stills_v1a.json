@@ -1,0 +1,129 @@
+[
+ {
+  "id": "R01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Lower Geyser Basin, Yellowstone, at dawn on a cool August morning in 1877: wide flat pale sinter ground with steaming hot pools, thick clouds of white steam drifting low over the basin, dark lodgepole pine forest behind, pale pink-gold dawn light glowing through the steam. Out of the thick steam a line of riders on spotted Appaloosa, paint and bay horses appears at a slow walk, dark silhouettes taking shape in the glowing mist, Nez Perce people of 1877 in everyday Plateau clothing: men in loose cloth trade shirts, wool blankets and capotes, fringed buckskin leggings and moccasins, long dark hair in two braids, some wearing plain broad-brimmed felt hats; women in long dark cloth dresses with wide belts and shawls, some wearing woven brimless basket hats; the steam swirls around the horses' legs. Small figures, faces not visible, calm and quiet.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "R02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium shot, side view. Lower Geyser Basin, Yellowstone, at dawn on a cool August morning in 1877: wide flat pale sinter ground with steaming hot pools, thick clouds of white steam drifting low over the basin, dark lodgepole pine forest behind, pale pink-gold dawn light glowing through the steam. Two riders of the Nez Perce on spotted Appaloosa, paint and bay horses walk out of a wall of white steam from right to left, seen in side profile, Nez Perce people of 1877 in everyday Plateau clothing: men in loose cloth trade shirts, wool blankets and capotes, fringed buckskin leggings and moccasins, long dark hair in two braids, some wearing plain broad-brimmed felt hats; women in long dark cloth dresses with wide belts and shawls, some wearing woven brimless basket hats; wool blankets over their shoulders, rifles held upright resting on their thighs, steam curling around them; the riders are calm and watchful, faces in shadow.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, rifles aimed, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 2
+ },
+ {
+  "id": "R03",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. very wide shot. A broad meadow beside the Firehole River, Yellowstone, morning, steam rising from the geyser basin in the distance. A long caravan of hundreds of Nez Perce families crosses the meadow from left to right: Nez Perce people of 1877 in everyday Plateau clothing: men in loose cloth trade shirts, wool blankets and capotes, fringed buckskin leggings and moccasins, long dark hair in two braids, some wearing plain broad-brimmed felt hats; women in long dark cloth dresses with wide belts and shawls, some wearing woven brimless basket hats, elders and children riding, women leading horses with travois of two long lodgepoles dragging behind horses, loaded with bundled tule mats, rawhide parfleche bags and rolled hides, a great loose herd of horses spread out behind them raising thin dust. Small figures, epic scale.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "R04",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot, strong backlight. a slope of tall dark lodgepole pines and fallen logs at the base of a mountain, Yellowstone, late summer 1877, low sun shining through the trunks from behind. On the slope a lone dark silhouette of a man of 1877 in a dark wool coat, vest, trousers and a broad-brimmed hat staggers and falls backward into the tall grass between the trunks, his hat flying off, seen against the bright low sun, a pale puff of gunsmoke drifting among distant trees. Pure silhouette, no detail, no blood.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, detailed face, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ },
+ {
+  "id": "R05",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. low wide shot from the side. a slope of tall dark lodgepole pines and fallen logs at the base of a mountain, Yellowstone, late summer 1877, low sun shining through the trunks from behind, early morning mist. A lone small figure, a man of 1877 in a dark wool coat, vest, trousers and a broad-brimmed hat without his hat, crawls slowly on his elbows and knees through tall dry grass toward a big fallen log, dragging one leg, seen from the side and a little behind, face hidden; the empty forest all around. No blood.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, detailed face, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ },
+ {
+  "id": "R06",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. low close shot from behind. a slope of tall dark lodgepole pines and fallen logs at the base of a mountain, Yellowstone, late summer 1877, low sun shining through the trunks from behind, hazy afternoon. Seen from behind at ground level, a lone exhausted man in a torn dark wool coat pulls himself forward over a moss-covered fallen log with his forearms, tall grass and pine needles around him, a long empty forest stretching ahead. Face not visible, no blood.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, face, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ },
+ {
+  "id": "B01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. a willow-lined creek meadow in the Big Hole valley, Montana, at dawn, August 1877, low mist over the water, pine-covered hills behind, cold blue-grey light with a pale orange sunrise. The aftermath of an attack on a camp: a row of collapsed and half-burned conical lodges of tule mats and canvas, their poles fallen askew, thin grey smoke rising from smoldering coverings into the mist; scattered belongings in the grass. Empty, silent, mournful. No people.",
+  "neg": "people, bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, fire flames large, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ },
+ {
+  "id": "B02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium shot. a willow-lined creek meadow in the Big Hole valley, Montana, at dawn, August 1877, low mist over the water, pine-covered hills behind, cold blue-grey light with a pale orange sunrise. Close to the ground in an abandoned burned camp: an overturned copper kettle, a fallen woven basket and a dropped wool blanket in the wet grass, a fallen lodge pole, smoke drifting across; in the background a riderless spotted horse stands by the creek in the mist. No people.",
+  "neg": "people, bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ },
+ {
+  "id": "B03",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Rolling sagebrush hills south of the Big Hole, Montana, sunrise, long shadows. A long line of Nez Perce survivors moves away over a ridge toward the south-east: Nez Perce people of 1877 in everyday Plateau clothing: men in loose cloth trade shirts, wool blankets and capotes, fringed buckskin leggings and moccasins, long dark hair in two braids, some wearing plain broad-brimmed felt hats; women in long dark cloth dresses with wide belts and shawls, some wearing woven brimless basket hats, families on horseback, women leading horses with travois of two long lodgepoles dragging behind horses, loaded with bundled tule mats, rawhide parfleche bags and rolled hides, a loose herd of horses; small figures, seen from behind, a weary determined procession.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "W01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. a grassy meadow in the Lower Geyser Basin, Yellowstone, August 1877, morning, steam rising from hot springs in the distance, dark lodgepole pine forest around. A single canvas-covered 1870s farm wagon and a two-wheeled cart stand in the meadow, surrounded by a ring of mounted Nez Perce riders on spotted Appaloosa, paint and bay horses, Nez Perce people of 1877 in everyday Plateau clothing: men in loose cloth trade shirts, wool blankets and capotes, fringed buckskin leggings and moccasins, long dark hair in two braids, some wearing plain broad-brimmed felt hats; women in long dark cloth dresses with wide belts and shawls, some wearing woven brimless basket hats; beside the wagon a small group of tourists of 1877, men in dark coats and hats and two women in long dresses and bonnets, stand close together, uneasy. Small figures, faces not visible, tense but no fighting.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, rifles aimed, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "W02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium-wide shot. Dense lodgepole pine forest beside a small creek, Yellowstone, August 1877. A canvas-covered 1870s wagon stands abandoned and tilted among fallen trees, one wheel broken, its canvas torn; in the background Nez Perce riders lead the tourists' saddled horses away along the creek, small figures.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ }
+]

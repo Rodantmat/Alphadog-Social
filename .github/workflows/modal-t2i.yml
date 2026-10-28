@@ -51,5 +51,6 @@ jobs:
       - name: Modal spend so far this month (this key's workspace)
         if: always()
         run: |
-          modal billing report --for "this month" --show-resources || true
+          modal billing report --for "this month" --show-resources | tee /tmp/bill.txt || true
+          python3 -c "import re;t=open('/tmp/bill.txt').read();v=[float(x) for x in re.findall(r'│\s*([0-9.]+(?:E-?[0-9]+)?)\s*│\s*$',t,re.M)];print('MODAL_MONTH_TOTAL_USD',round(sum(v),4))" || true
           modal billing report --for today --resolution h --show-resources || true

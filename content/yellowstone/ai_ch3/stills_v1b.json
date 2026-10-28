@@ -1,0 +1,136 @@
+[
+ {
+  "id": "E01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. the broad grassy valley of the Yellowstone River near Mud Volcano, August 1877, late afternoon golden light, steam rising from bubbling mud springs on a hillside, the wide calm river beyond. A small group rides at a walk toward the river: three 1870s civilians on horseback: a young woman in a long dark riding dress and bonnet, a teenage girl in a long dress and a young man in a coat and hat, escorted by two Nez Perce riders on spotted Appaloosa, paint and bay horses in cloth shirts and broad-brimmed felt hats; the lead rider points ahead toward the river. Small figures seen from the side, faces not visible, calm.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, rifles aimed, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 5
+ },
+ {
+  "id": "E02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium-wide shot from behind. the broad grassy valley of the Yellowstone River near Mud Volcano, August 1877, late afternoon golden light, steam rising from bubbling mud springs on a hillside, the wide calm river beyond. On the riverbank a Nez Perce rider in a cloth shirt, wool blanket and broad-brimmed felt hat sits on a spotted horse seen from behind, his arm raised pointing across the river, while three 1870s civilians on horseback: a young woman in a long dark riding dress and bonnet, a teenage girl in a long dress and a young man in a coat and hat ride away from him along the far bank toward the setting sun. Faces not visible.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 4
+ },
+ {
+  "id": "X01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. very wide shot. a wide shallow ford of the Yellowstone River, Wyoming, at dusk, August 1877, the sky glowing orange and violet, dark forested hills, the water reflecting the sunset. Hundreds of Nez Perce people and nearly two thousand horses cross the wide river together: a long dark procession of riders, spotted Appaloosa, paint and bay horses, families, travois of two long lodgepoles dragging behind horses, loaded with bundled tule mats, rawhide parfleche bags and rolled hides, wading through the shimmering water from one bank to the other, a huge loose herd of horses splashing behind; small silhouettes, epic scale.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "X02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium shot. a wide shallow ford of the Yellowstone River, Wyoming, at dusk, August 1877, the sky glowing orange and violet, dark forested hills, the water reflecting the sunset. A Nez Perce family crosses the river: a woman in a long dress and shawl leads a spotted horse pulling a travois through knee-deep water; an elder rides behind wrapped in a blanket, a small child sits on a horse in front of its mother; water splashing, sunset light on the wet hides. Seen from the side, faces in shadow.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "X03",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. a wide shallow ford of the Yellowstone River, Wyoming, at dusk, August 1877, the sky glowing orange and violet, dark forested hills, the water reflecting the sunset. A big loose herd of horses, spotted Appaloosas, paints and bays, splash through the shallow river toward the far bank, spray glowing in the sunset; two riders drive them from behind. Small figures.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "G01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. very wide shot. the Absaroka mountains at the north-east edge of Yellowstone, September 1877, steep rocky slopes and sparse pines, clear late-summer light. In a broad open valley a band of Nez Perce riders drives a large herd of horses up the valley away from the viewer, raising a long trail of dust that hangs in the air; small figures, the valley curving off to the right.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "G02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide high shot. the Absaroka mountains at the north-east edge of Yellowstone, September 1877, steep rocky slopes and sparse pines, clear late-summer light. Far below on the valley floor, a column of US Cavalry troopers of the 1870s in dark blue wool blouses, sky-blue trousers and black slouch campaign hats on bay horses, a small swallow-tailed guidon flag without lettering follows the long dust trail up the open valley at a trot, small figures; the dust trail ahead of them curves away to the right.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, text on flag, letters, stars and stripes, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "G03",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. the Absaroka mountains at the north-east edge of Yellowstone, September 1877, steep rocky slopes and sparse pines, clear late-summer light. A narrow rock gorge splits the mountain: towering sheer grey cliffs, a strip of sky above, a creek at the bottom; a line of Nez Perce riders and families leading spotted Appaloosa, paint and bay horses and travois of two long lodgepoles dragging behind horses, loaded with bundled tule mats, rawhide parfleche bags and rolled hides file quietly into the narrow opening one by one, small figures, seen from behind.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "G04",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium-wide shot from behind. Deep inside a very narrow canyon gorge, sheer rock walls rising high on both sides only just wider than two horses, a shallow creek over stones underfoot. Seen from behind, two Nez Perce riders side by side on spotted Appaloosa, paint and bay horses walk forward up the gorge, blankets over their shoulders, more riders following; shafts of light from far above.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "P01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. a snowy creek ravine below low bare hills in the Bears Paw Mountains, Montana, at night, early October 1877, falling snow, deep blue darkness, frozen grass. A besieged camp dug into the ravine: shallow rifle pits and earth hollows along the creek banks, small low campfires glowing orange in them, Nez Perce people wrapped in blankets huddled together around the fires, seen from a distance as small dark shapes; snow falling through the firelight; the dark ridge above. Cold, quiet, enduring.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, tents of the army, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "P02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium close shot. a snowy creek ravine below low bare hills in the Bears Paw Mountains, Montana, at night, early October 1877, falling snow, deep blue darkness, frozen grass. Inside a shallow snow-covered earth pit, a small fire of sticks; two pairs of hands reach toward the flames, wool blankets and a buffalo robe around a mother holding a small child under the blanket, seen from behind and in shadow; snowflakes melting in the firelight.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, war paint, face paint, feather war bonnet, Plains feather headdress, eagle feather headdress, tomahawk, scalps, totem pole, painted tipis, ceremonial regalia, dance, drum, bare chests, loincloth, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, detailed faces, close-up faces, extra hands, extra fingers, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "P03",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. very wide shot. a snowy creek ravine below low bare hills in the Bears Paw Mountains, Montana, at night, early October 1877, falling snow, deep blue darkness, frozen grass. Across the snowy dark hills, on a far ridge, a line of tiny orange army campfires and the dark shapes of canvas army tents and a small cannon; in the foreground the dim glow of the besieged camp's fires in the ravine; heavy snow drifting across.",
+  "neg": "bodies, corpses, dead people, blood, gore, wounds, injured people, weapons fired, muzzle flash, modern clothing, cars, roads, power lines, boardwalk, fences, buildings, people close, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ }
+]

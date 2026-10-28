@@ -1,0 +1,93 @@
+[
+ {
+  "id": "T01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide low-angle shot. a snowy Montana and Wyoming landscape of 1894, grey winter sky: a long line of weathered wooden telegraph poles with glass insulators and sagging wires runs across the snowy plain toward the horizon, wind blowing snow across the ground, the wires heavy with frost. No people.",
+  "neg": "people, power lines, modern poles, transformers, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 0
+ },
+ {
+  "id": "T02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. close-up. Inside a small 1890s railroad telegraph office: a brass telegraph key and a brass sounder on a worn wooden desk, an operator's hand in a white shirt cuff pressing the key, a brass oil lamp glowing, a frosted window behind with snow outside. Only the hand and cuff visible.",
+  "neg": "face, extra fingers, extra hands, computer, keyboard, phone, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "T03",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium-wide shot. An 1890s New York magazine printing room: a large black cast-iron flatbed printing press with big spoked wheels, rollers and leather belts running from an overhead shaft, white printed sheets sliding out of the press onto a growing stack; gas lamps; a pressman in a cap and apron seen from behind feeding paper. Ink smell, motion.",
+  "neg": "face, readable text, letters, headlines, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, computers, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ },
+ {
+  "id": "T04",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. close-up. An 1890s printing shop: freshly printed folded magazines and newspapers drop one after another onto a tall growing stack on a wooden table, the pages blank grey columns of tiny unreadable print and small engraved pictures of a bison; a boy's hands tie a bundle with string. Gas light.",
+  "neg": "readable text, letters, words, headlines, logo, face, modern, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "S01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. the Grand Loop stage road near Kepler Cascades, Yellowstone, August 1908: a narrow dirt road curving through a dense forest of tall straight lodgepole pines, golden afternoon light slanting through, dust hanging in the air. A long line of yellow-and-red wooden Yellowstone touring stagecoaches of 1908, open-sided with canvas roofs, each pulled by four horses, a driver in a duster coat and hat on the high front seat, passengers in 1900s dress: men in suits and straw boater hats, women in long white dresses and wide hats rounds a bend in the road one behind another, raising a golden cloud of dust between the pine trunks; small figures, peaceful summer tour.",
+  "neg": "faces, close-up faces, cars, automobiles, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, bodies, corpses, blood, gore, injured people, wounds, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "S02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium-wide shot. the Grand Loop stage road near Kepler Cascades, Yellowstone, August 1908: a narrow dirt road curving through a dense forest of tall straight lodgepole pines, golden afternoon light slanting through, dust hanging in the air. a lone masked robber in a long dark coat and a black slouch hat, a dark bandana tied over his nose and mouth steps out from behind the pine trunks onto the edge of the road, a rifle held across his body, seen in three-quarter view from behind, facing the bend where dust rises from an approaching coach.",
+  "neg": "detailed face, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, bodies, corpses, blood, gore, injured people, wounds, muzzle flash, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts",
+  "expect_person": 1
+ },
+ {
+  "id": "S03",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. the Grand Loop stage road near Kepler Cascades, Yellowstone, August 1908: a narrow dirt road curving through a dense forest of tall straight lodgepole pines, golden afternoon light slanting through, dust hanging in the air. The lead stagecoach of four horses pulls up hard and stops on the road, the driver hauling back on the reins, dust billowing; just behind it a second and a third coach come around the bend and slow down; a lone masked robber in a long dark coat and a black slouch hat, a dark bandana tied over his nose and mouth stands small in the middle of the road ahead of the horses, rifle raised, seen from behind.",
+  "neg": "detailed faces, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, bodies, corpses, blood, gore, injured people, wounds, muzzle flash, cars, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "S04",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium shot from behind the robber. the Grand Loop stage road near Kepler Cascades, Yellowstone, August 1908: a narrow dirt road curving through a dense forest of tall straight lodgepole pines, golden afternoon light slanting through, dust hanging in the air. In the foreground, seen from behind, a lone masked robber in a long dark coat and a black slouch hat, a dark bandana tied over his nose and mouth holds out an open cloth sack; beside a stopped open-sided yellow stagecoach, passengers in 1900s dress, men in suits and straw boaters and women in long white dresses and wide hats, reach into pockets and purses and drop watches, wallets and coins into the sack, hands raised nervously.",
+  "neg": "detailed faces, modern clothing, modern cars, power lines, asphalt, plastic, modern skis, ski boots, snowmobile, bodies, corpses, blood, gore, injured people, wounds, muzzle flash, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ }
+]
