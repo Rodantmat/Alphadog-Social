@@ -1,0 +1,134 @@
+{
+ "B01_23.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": 0,
+  "person_ok": true
+ },
+ "B01_5.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": 0,
+  "person_ok": true
+ },
+ "B02_23.jpg": {
+  "person": 1,
+  "horse": 1,
+  "expect_person": 0,
+  "person_ok": false
+ },
+ "B02_5.jpg": {
+  "person": 1,
+  "horse": 1,
+  "expect_person": 0,
+  "person_ok": false
+ },
+ "B03_23.jpg": {
+  "person": 6,
+  "horse": 8,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "B03_5.jpg": {
+  "person": 6,
+  "horse": 8,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "R01_23.jpg": {
+  "person": 3,
+  "horse": 4,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "R01_5.jpg": {
+  "person": 5,
+  "horse": 5,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "R02_23.jpg": {
+  "person": 0,
+  "horse": 2,
+  "expect_person": 2,
+  "person_ok": false
+ },
+ "R02_5.jpg": {
+  "person": 3,
+  "horse": 1,
+  "expect_person": 2,
+  "person_ok": false
+ },
+ "R03_23.jpg": {
+  "person": 7,
+  "horse": 7,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "R03_5.jpg": {
+  "person": 8,
+  "horse": 6,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "R04_23.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ },
+ "R04_5.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ },
+ "R05_23.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": false
+ },
+ "R05_5.jpg": {
+  "person": 2,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": false
+ },
+ "R06_23.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ },
+ "R06_5.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ },
+ "W01_23.jpg": {
+  "person": 6,
+  "horse": 4,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "W01_5.jpg": {
+  "person": 7,
+  "horse": 3,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "W02_23.jpg": {
+  "person": 5,
+  "horse": 2,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "W02_5.jpg": {
+  "person": 7,
+  "horse": 2,
+  "expect_person": null,
+  "person_ok": true
+ }
+}
