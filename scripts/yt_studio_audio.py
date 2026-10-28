@@ -16,7 +16,7 @@ AUDIO = os.environ.get("AUDIO", ""); DRY = os.environ.get("DRY_RUN") == "1"
 THUMB = os.environ.get("THUMB", "")  # optional per-language thumbnail (JPG/PNG 1280x720, < 2 MB)
 OUT = os.environ.get("QA_DIR", "/tmp/ytqa"); os.makedirs(OUT, exist_ok=True)
 RES = os.environ.get("RESULT_JSON", f"{OUT}/result.json")
-# UI names per language, in the UI languages Studio may be shown in (account is in Portuguese; English kept as fallback).
+# UI names per language. The account UI is English (US) since 2026-10-28; Portuguese labels are kept as a fallback.
 NAMES = {
     "es": ["Spanish", "Espanhol", "Español"], "es-419": ["Spanish (Latin America)", "Espanhol (América Latina)"],
     "es-ES": ["Spanish (Spain)", "Espanhol (Espanha)"], "es-MX": ["Spanish (Mexico)", "Espanhol (México)"],
@@ -95,9 +95,9 @@ def click_named(scope, names, timeout=5000):
 def close_dialog(pg):
     for _ in range(3):
         if not dialog(pg): return
-        if not click_named(pg, ["Fechar", "Close", "Cancelar", "Cancel"]): pg.keyboard.press("Escape")
+        if not click_named(pg, ["Close", "Cancel", "Fechar", "Cancelar"]): pg.keyboard.press("Escape")
         pg.wait_for_timeout(2000)
-        click_named(pg, ["Descartar", "Discard", "Sair", "Leave", "Descartar alterações"], 3000); pg.wait_for_timeout(1500)
+        click_named(pg, ["Discard", "Leave", "Discard changes", "Descartar", "Sair", "Descartar alterações"], 3000); pg.wait_for_timeout(1500)
 
 def add_language(pg):
     print("language row missing - adding it via 'Add language'")
@@ -117,8 +117,8 @@ def open_editor(pg, row):
         S.pause(0.8, 1.8); row.locator("button.language-display-name").first.click(timeout=10000)
     pg.locator("#language-details-text-button-audio:visible, #language-details-more-options-button-audio:visible").first.wait_for(timeout=30000)
     pg.wait_for_timeout(2500)
-SELECT = re.compile(r"^(Selecionar arquivo|Select file|Escolher arquivo|Choose file)$", re.I)
-PUBLISH = re.compile(r"^(Publicar|Publish)$", re.I)
+SELECT = re.compile(r"^(Select file|Choose file|Selecionar arquivo|Escolher arquivo)$", re.I)
+PUBLISH = re.compile(r"^(Publish|Publicar)$", re.I)
 BUSY = re.compile(r"(enviando|uploading|carregando|processando|processing|verificando|checking|\d+ ?%)", re.I)
 BAD = re.compile(r"(n[aã]o (foi|é) poss[ií]vel enviar|must (match|be)|precisa (ter|corresponder)|n[aã]o corresponde|doesn.t match|"
                  r"too (long|short)|muito (longo|curto)|couldn.t|failed|falhou|falha|erro|error|inv[aá]lid|unsupported|n[aã]o compat[ií]vel)", re.I)
@@ -173,9 +173,9 @@ THUMB_BTN = "#language-details-text-button-localized-thumbnail"
 def thumb_state(pg):
     """'' = no language thumbnail yet (button says Add), else the button label (e.g. Excluir/Delete) = already set."""
     t = _vis_text(pg, THUMB_BTN)
-    return "" if re.match(r"^(Adicionar|Add|Enviar|Upload)$", t or "", re.I) else (t or "?")
+    return "" if re.match(r"^(Add|Upload|Adicionar|Enviar)$", t or "", re.I) else (t or "?")
 def update_enabled(pg):
-    upd = pg.get_by_role("button", name=re.compile(r"^(Atualizar|Update)$"))
+    upd = pg.get_by_role("button", name=re.compile(r"^(Update|Atualizar)$"))
     return any(b.is_visible() and not b.is_disabled() and b.get_attribute("aria-disabled") != "true" for b in upd.all())
 def set_thumb(pg):
     btn = pg.locator(THUMB_BTN + ":visible").first
@@ -201,7 +201,7 @@ def set_thumb(pg):
     for _ in range(30):
         pg.wait_for_timeout(4000)
         st = thumb_state(pg)
-        for nm in ["Concluído", "Done", "Salvar", "Save", "Confirmar", "Confirm"]:  # possible crop/confirm step
+        for nm in ["Done", "Save", "Confirm", "Concluído", "Salvar", "Confirmar"]:  # possible crop/confirm step
             b = pg.get_by_role("button", name=nm, exact=True)
             if b.count() and b.last.is_visible():
                 try: b.last.click(timeout=3000); print("thumbnail: clicked", nm); pg.wait_for_timeout(2500)
@@ -209,7 +209,7 @@ def set_thumb(pg):
         if st or update_enabled(pg): break
     snap(pg, "21_thumb_set")
     if update_enabled(pg):
-        S.pause(1, 2); click_named(pg, ["Atualizar", "Update"]); print("thumbnail: clicked Update"); pg.wait_for_timeout(7000)
+        S.pause(1, 2); click_named(pg, ["Update", "Atualizar"]); print("thumbnail: clicked Update"); pg.wait_for_timeout(7000)
     else:
         return "error: Update never enabled"
     snap(pg, "22_thumb_saved")
@@ -274,19 +274,19 @@ def main():
         if state == "dry":
             pg.wait_for_timeout(1500)
             sd = audio_dialog(pg)
-            if sd: click_named(sd, ["Cancelar", "Cancel"]); pg.wait_for_timeout(2000)
+            if sd: click_named(sd, ["Cancel", "Cancelar"]); pg.wait_for_timeout(2000)
             close_dialog(pg); snap(pg, "13_after_cancel"); finish(0, "dry_run", saw=txt)
         if state == "rejected":
             sd = audio_dialog(pg)
-            if sd: click_named(sd, ["Cancelar", "Cancel"])
+            if sd: click_named(sd, ["Cancel", "Cancelar"])
             close_dialog(pg); finish(5, "rejected", message=txt[:800])
         if state not in ("published", "closed"):
             sd = audio_dialog(pg)
-            if sd: click_named(sd, ["Cancelar", "Cancel"])
+            if sd: click_named(sd, ["Cancel", "Cancelar"])
             close_dialog(pg); finish(4, "error", error=f"upload {state}", message=txt[:800])
         src, stt = audio_state(pg); print(f"editor after publish: audio source='{src}' status='{stt}'"); snap(pg, "15_editor_after")
         if update_enabled(pg):
-            S.pause(1, 2); click_named(pg, ["Atualizar", "Update"]); print("clicked Update"); pg.wait_for_timeout(6000)
+            S.pause(1, 2); click_named(pg, ["Update", "Atualizar"]); print("clicked Update"); pg.wait_for_timeout(6000)
         close_dialog(pg)
         S.pause(3, 6); open_languages(pg); snap(pg, "16_after")
         f = find_row(pg); ui = f[1] if f else ""
