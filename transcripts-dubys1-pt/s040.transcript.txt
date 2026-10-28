@@ -1,0 +1,4 @@
+[   0.00-   6.54] Quase 20 anos depois, um químico chamado Kerry Males inventou um jeito de copiar o DN a milhões de vezes, o PCR.
+[   6.54-  10.30] Ele precisava de uma enzima que resistisse a aquecimentos repetidos.
+[  10.30-  13.66] A enzima veio do micróbio de Brock. Males ganhou um Nobel.
+[  13.66-  19.70] O PCR mudou a medicina, a perícia criminal e, muito depois, tornou possíveis os testes de Covid.
