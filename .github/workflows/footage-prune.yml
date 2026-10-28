@@ -1,0 +1,51 @@
+name: footage-prune
+# Remove whole folders from the TIP of the footage branch in one commit (Git Data API: no blob download, no force push,
+# history untouched). DIRS = space-separated folder paths. dry_run=1 only prints what would be removed (sizes).
+on:
+  workflow_dispatch:
+    inputs:
+      dirs: { description: "space-separated folder paths on the footage branch", required: true }
+      message: { description: "commit message", default: "footage: remove finished-project folders from the branch tip" }
+      dry_run: { description: "1 = list only", default: "1" }
+permissions:
+  contents: write
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - env: { DIRS: "${{ inputs.dirs }}", MSG: "${{ inputs.message }}", DRY: "${{ inputs.dry_run }}" }
+        run: |
+          python3 - <<'EOF'
+          import json, os, subprocess, sys, time
+          R = os.environ["GITHUB_REPOSITORY"]
+          def api(path, method="GET", body=None):
+              cmd = ["gh", "api", "-X", method, f"repos/{R}/{path}"]
+              if body is not None: cmd += ["--input", "-"]
+              p = subprocess.run(cmd, input=json.dumps(body) if body is not None else None, capture_output=True, text=True)
+              if p.returncode: raise SystemExit(f"API {method} {path} failed: {p.stderr or p.stdout}")
+              return json.loads(p.stdout)
+          dirs = os.environ["DIRS"].split()
+          for attempt in range(4):
+              tip = api("git/ref/heads/footage")["object"]["sha"]; tree = api(f"git/commits/{tip}")["tree"]["sha"]
+              full = api(f"git/trees/{tree}?recursive=1")
+              assert not full.get("truncated"), "tree listing truncated"
+              tot = 0
+              for d in dirs:
+                  ents = [e for e in full["tree"] if e["type"] == "blob" and (e["path"] + "/").startswith(d.rstrip("/") + "/")]
+                  s = sum(e["size"] for e in ents); tot += s
+                  print(f"{'WOULD REMOVE' if os.environ['DRY']=='1' else 'REMOVE'} {d}: {len(ents)} files {s/1e6:.1f} MB")
+                  if not ents: raise SystemExit(f"{d} not found on footage tip")
+              print(f"TOTAL {tot/1e6:.1f} MB from tip {tip}")
+              if os.environ["DRY"] == "1": sys.exit(0)
+              nt = api("git/trees", "POST", {"base_tree": tree, "tree": [{"path": d.rstrip('/'), "mode": "040000", "type": "tree", "sha": None} for d in dirs]})["sha"]
+              nc = api("git/commits", "POST", {"message": os.environ["MSG"], "tree": nt, "parents": [tip]})["sha"]
+              try:
+                  api("git/refs/heads/footage", "PATCH", {"sha": nc, "force": False}); print("PUSHED", nc, "parent", tip); break
+              except SystemExit as e:
+                  print("ref update failed, retrying:", e); time.sleep(5)
+          else:
+              raise SystemExit("could not update footage")
+          EOF
