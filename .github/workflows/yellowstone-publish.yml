@@ -1,0 +1,99 @@
+name: yellowstone-publish
+# Publish one Yellowstone chapter from the footage branch folder yellowstone-release/<chapter>/ (meta_0_long.json, desc_long.txt,
+# credits_comment.txt, 6 SRTs, thumb.jpg, and the video split in <95 MB parts <file>.part00, .part01, ...).
+# Long video + 6 subtitle tracks + localized titles/descriptions + thumbnail + series playlist + location; the credits comment is
+# posted directly, or queued for yt-followup when the video is still private (scheduled). Idempotent per chapter.
+on:
+  workflow_dispatch:
+    inputs:
+      chapter:
+        description: "chapter folder under yellowstone-release/ (ch1, ch2, ch3)"
+        default: "ch1"
+        required: true
+      publish_at:
+        description: "optional premiere time, UTC (e.g. 2026-10-30T15:00:00Z); empty keeps the release metadata"
+        default: ""
+      resume_video_id:
+        description: "optional: video already uploaded - skip the upload and finish playlist, captions, localizations, comment"
+        default: ""
+permissions:
+  contents: write
+concurrency:
+  group: yellowstone-publish-${{ inputs.chapter }}
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      CH: ${{ inputs.chapter }}
+      REL: ${{ github.workspace }}/../yrel
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch the release folder from the footage branch
+        run: |
+          set -euo pipefail
+          case "$CH" in ch[0-9]|ch[0-9][0-9]) ;; *) echo "bad chapter '$CH'"; exit 1;; esac
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb
+          git -C /tmp/fb sparse-checkout set "yellowstone-release/$CH"
+          test -f "/tmp/fb/yellowstone-release/$CH/meta_0_long.json" || { echo "no release folder yellowstone-release/$CH on footage"; exit 1; }
+          mkdir -p "$REL"; cp -a "/tmp/fb/yellowstone-release/$CH/." "$REL/"; rm -rf /tmp/fb
+          ls -la "$REL"
+      - name: Reassemble the video from its parts
+        if: inputs.resume_video_id == ''
+        run: |
+          set -euo pipefail
+          cd "$REL"; F=$(python3 -c "import json;print(json.load(open('meta_0_long.json'))['file'])")
+          if [ ! -f "$F" ]; then
+            ls "$F".part* >/dev/null 2>&1 || { echo "no $F.part* files in the release folder"; exit 1; }
+            ls "$F".part* | sort | xargs cat > "$F"; rm -f "$F".part*
+          fi
+          if [ -f "$F.sha256" ]; then echo "$(cat "$F.sha256" | awk '{print $1}')  $F" | sha256sum -c -; fi
+          ffprobe -v error -show_entries format=duration,size -of default=nw=1 "$F" || { echo "reassembled video is not readable"; exit 1; }
+      - name: Set the schedule (publish_at must still be >= 1 h ahead, else go public now)
+        env:
+          AT: ${{ inputs.publish_at }}
+        run: |
+          python3 - <<'PY'
+          import json, os, datetime as d
+          p = os.path.join(os.environ["REL"], "meta_0_long.json"); m = json.load(open(p))
+          if os.environ.get("AT"): m["publish_at"] = os.environ["AT"]; m["privacy"] = "private"
+          a = m.get("publish_at")
+          if a and d.datetime.fromisoformat(a.replace("Z", "+00:00")) - d.datetime.now(d.timezone.utc) < d.timedelta(hours=1):
+              m.pop("publish_at"); m["privacy"] = "public"
+          json.dump(m, open(p, "w"), ensure_ascii=False, indent=1); print(m.get("privacy"), m.get("publish_at"))
+          PY
+      - name: Publish to YouTube
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          RESUME_VIDEO_ID: ${{ inputs.resume_video_id }}
+        run: |
+          set -euo pipefail
+          WS="$GITHUB_WORKSPACE"; LOG="$WS/content/published/yellowstone_$CH.json"
+          mkdir -p "$WS/content/published" "$WS/content/pending"; [ -f "$LOG" ] || echo '{}' > "$LOG"
+          cd "$REL"
+          done_id=$(python3 -c "import json;print(json.load(open('$LOG')).get('meta_0_long',''))")
+          if [ -n "$done_id" ] && [ -z "${RESUME_VIDEO_ID:-}" ]; then echo "already uploaded: $done_id (use resume_video_id to finish steps)"; exit 0; fi
+          python3 "$WS/scripts/yt_upload.py" meta_0_long.json 2>&1 | tee up_long.log
+          vid=$(grep -oP '^VIDEO_ID=\K[\w-]{11}' up_long.log | head -1 || true); [ -n "$vid" ] || { echo "upload failed"; exit 1; }
+          python3 - "$LOG" "$vid" <<'PY'
+          import json, sys, datetime as d
+          p, v = sys.argv[1:]; x = json.load(open(p)); x["meta_0_long"] = v
+          x["published_at_run"] = d.datetime.now(d.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"); json.dump(x, open(p, "w"), indent=1)
+          PY
+          if ! grep -q "^comment 200" up_long.log; then
+            after=$(python3 -c "import json,datetime as t;m=json.load(open('meta_0_long.json'));a=m.get('publish_at');print((t.datetime.fromisoformat(a.replace('Z','+00:00'))+t.timedelta(minutes=5)).strftime('%Y-%m-%dT%H:%M:%SZ') if a else t.datetime.now(t.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))")
+            cp credits_comment.txt "$WS/content/pending/credits_yellowstone_$CH.txt"
+            python3 -c "import json;json.dump({'video_id':'$vid','after':'$after','text_file':'content/pending/credits_yellowstone_$CH.txt'},open('$WS/content/pending/comment_$vid.json','w'))"
+            echo "credits comment queued for $after"
+          fi
+          cat "$LOG"
+      - name: Record video ID / queued comment in repo
+        if: always()
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add content/published content/pending 2>/dev/null || true
+          git commit -qm "published: yellowstone $CH" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
