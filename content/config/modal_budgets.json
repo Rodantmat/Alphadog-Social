@@ -1,5 +1,5 @@
 {
- "_doc": "Owner's Modal budgets ($30 each, one workspace per key). Budgets are per PROJECT (owner 2026-10-28): Chiricahua + Yellowstone (all chapters) = W1, the next project (e.g. Zion) = W2, then W3, W4, then back to W1. When a project's key reaches $30: backup_1 (original key) until empty, then backup_2. Report spend per key.",
+ "_doc": "Owner's Modal budgets ($30 each, one workspace per key). Budgets are per PROJECT (owner 2026-10-28): Chiricahua + Yellowstone (all chapters) = W1, the next project (e.g. Zion) = W2, then W3, W4, then back to W1. When a project's key reaches $30: backup_1 (original key) until empty, then backup_2, backup_3, backup_4 in order (each until empty). Report spend per key.",
  "keys": {
   "W1": [
    "MODAL_TOKEN_ID_W1",
@@ -24,6 +24,14 @@
   "backup_2": [
    "MODAL_TOKEN_ID_BACKUP",
    "MODAL_TOKEN_SECRET_BACKUP"
+  ],
+  "backup_3": [
+   "MODAL_TOKEN_ID_BACKUP2",
+   "MODAL_TOKEN_SECRET_BACKUP2"
+  ],
+  "backup_4": [
+   "MODAL_TOKEN_ID_BACKUP3",
+   "MODAL_TOKEN_SECRET_BACKUP3"
   ]
  },
  "projects": {
@@ -33,6 +41,8 @@
  },
  "order_after_exhausted": [
   "backup_1",
-  "backup_2"
+  "backup_2",
+  "backup_3",
+  "backup_4"
  ]
 }
