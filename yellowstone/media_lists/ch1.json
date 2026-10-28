@@ -1,0 +1,363 @@
+{
+ "chapter": "ch1",
+ "items": [
+  {
+   "kind": "usgs_video",
+   "name": "ch1_usgs_biscuit_basin_explosion_2024-07-23",
+   "page": "https://www.usgs.gov/media/videos/hydrothermal-explosion-yellowstones-biscuit-basin-july-23-2024",
+   "shows": "Biscuit Basin hydrothermal explosion Jul 23 2024 - plume, damaged boardwalk, Mike Poland explainer",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS / Yellowstone Volcano Observatory (video edited by Liz Westby, USGS)"
+  },
+  {
+   "kind": "usgs_video",
+   "name": "ch1_usgs_biscuit_basin_update_oct2024",
+   "page": "https://www.usgs.gov/media/videos/biscuit-basin-hydrothermal-explosion-update-yellowstone-monthly-update-october-2024",
+   "shows": "YVO monthly update Oct 2024: what was learned about the Biscuit Basin explosion",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "usgs_video",
+   "name": "ch1_usgs_biscuit_update_hebgen65_aug2024",
+   "page": "https://www.usgs.gov/media/videos/biscuit-basin-update-65th-anniversary-m73-hebgen-lake-quake-yellowstone-monthly-update",
+   "shows": "YVO Aug 2024: Biscuit Basin update + 65th anniversary of M7.3 Hebgen Lake quake",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "usgs_video",
+   "name": "ch1_usgs_hydrothermal_explosions_more_common_dec2024",
+   "page": "https://www.usgs.gov/media/videos/hydrothermal-explosions-more-common-you-think-yellowstone-monthly-update-dec-2024",
+   "shows": "YVO Dec 2024: hydrothermal explosions more common than you think (Norris Apr 2024 infrasound)",
+   "license": "Public Domain with some content used with permission (USGS)"
+  },
+  {
+   "kind": "usgs_video",
+   "name": "ch1_usgs_top5_2025",
+   "page": "https://www.usgs.gov/media/videos/top-5-yellowstone-geological-stories-2025-yellowstone-monthly-update-january-2026",
+   "shows": "YVO Jan 2026: top 5 geologic stories of 2025 (rumors, new features, quakes/uplift, Steamboat, Black Diamond Pool)",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "usgs_video",
+   "name": "ch1_usgs_kansas_ash_mar2024",
+   "page": "https://www.usgs.gov/media/videos/kansas-covered-ash-yellowstones-aftermath-yellowstone-volcano-update-march-2024",
+   "shows": "YVO Mar 2024: Yellowstone ash beds in Kansas (Pearlette ash)",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "usgs_video",
+   "name": "ch1_usgs_steamboat_losing_steam",
+   "page": "https://www.usgs.gov/media/videos/steamboat-losing-steam",
+   "shows": "Steamboat Geyser activity decline (Dec 2023)",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "usgs_video",
+   "name": "ch1_usgs_north_rim_uplift_jul2026",
+   "page": "https://www.usgs.gov/media/videos/yellowstones-north-caldera-rim-rising-yellowstone-monthly-update-july-2026",
+   "shows": "YVO Jul 2026 update: Norris Uplift Anomaly on the north caldera rim (2025 uplift), Black Diamond Pool",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS / Yellowstone Volcano Observatory (video editing by Liz Westby and Erin Lysne)"
+  },
+  {
+   "kind": "usgs_video",
+   "name": "ch1_usgs_new_norris_hot_spring_mar2026",
+   "page": "https://www.usgs.gov/media/videos/new-norris-hot-spring-yellowstone-monthly-update-march-2026",
+   "shows": "YVO Mar 2026: new hot spring at Norris",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "usgs_video",
+   "name": "ch1_usgs_beryl_spring",
+   "page": "https://www.usgs.gov/media/videos/beryl-springs-yellowstone-national-park",
+   "shows": "Beryl Spring thermal b-roll",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "usgs_video",
+   "name": "ch1_usgs_cinnamon_spouter",
+   "page": "https://www.usgs.gov/media/videos/cinnamon-spouter-yellowstone-national-park",
+   "shows": "Cinnamon Spouter b-roll",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "usgs_video",
+   "name": "ch1_usgs_congress_pool",
+   "page": "https://www.usgs.gov/media/videos/congress-pool-yellowstone-national-park",
+   "shows": "Congress Pool (Norris) b-roll",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "usgs_video",
+   "name": "ch1_usgs_river_and_thermals",
+   "page": "https://www.usgs.gov/media/videos/river-and-thermals-yellowstone-national-park",
+   "shows": "River and thermal features b-roll",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "usgs_listing",
+   "name": "ch1_usgs_oldfaithful_vid",
+   "sub": "videos",
+   "pages": [
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/videos?page=0",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/videos?page=1",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/videos?page=2",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/videos?page=3",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/videos?page=4",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/videos?page=5",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/videos?page=6"
+   ],
+   "filter": "old faithful|castle geyser|grand prismatic|steamboat.*erupt|black diamond",
+   "max_n": 4,
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "nps_clips",
+   "name": "ch1_nps_castle_geyser",
+   "page": "https://home.nps.gov/yell/learn/photosmultimedia/vl_castlegeyser.htm",
+   "max_n": 3,
+   "shows": "Castle Geyser eruption, Upper Geyser Basin (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service"
+  },
+  {
+   "kind": "nps_clips",
+   "name": "ch1_nps_fountain_geyser",
+   "page": "https://home.nps.gov/yell/learn/photosmultimedia/vl_fountaingeyser.htm",
+   "max_n": 3,
+   "shows": "Fountain Geyser eruption, Lower Geyser Basin (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service"
+  },
+  {
+   "kind": "nps_clips",
+   "name": "ch1_nps_clepsydra_geyser",
+   "page": "https://home.nps.gov/yell/learn/photosmultimedia/vl_clepsydra.htm",
+   "max_n": 2,
+   "shows": "Clepsydra Geyser (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service"
+  },
+  {
+   "kind": "nps_clips",
+   "name": "ch1_nps_sawmill_geyser",
+   "page": "https://home.nps.gov/yell/learn/photosmultimedia/vl_sawmillgeyser.htm",
+   "max_n": 2,
+   "shows": "Sawmill Geyser (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service"
+  },
+  {
+   "kind": "nps_clips",
+   "name": "ch1_nps_grand_prismatic",
+   "page": "https://home.nps.gov/yell/learn/photosmultimedia/vl_grandprismatic.htm",
+   "max_n": 3,
+   "shows": "Grand Prismatic Spring (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service"
+  },
+  {
+   "kind": "nps_clips",
+   "name": "ch1_nps_lower_geyser_basin_steam",
+   "page": "https://home.nps.gov/yell/learn/photosmultimedia/vl_lowergeyserbasin.htm",
+   "max_n": 2,
+   "shows": "Lower Geyser Basin steam (telephoto) (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service"
+  },
+  {
+   "kind": "nps_clips",
+   "name": "ch1_nps_norris_steam",
+   "page": "https://home.nps.gov/yell/learn/photosmultimedia/vl_norris1.htm",
+   "max_n": 2,
+   "shows": "Norris Geyser Basin steam (telephoto) (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service"
+  },
+  {
+   "kind": "nps_clips",
+   "name": "ch1_nps_norris_porcelain_wide",
+   "page": "https://home.nps.gov/yell/learn/photosmultimedia/vl_norris3.htm",
+   "max_n": 2,
+   "shows": "Norris Porcelain Basin wide (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service"
+  },
+  {
+   "kind": "nps_clips",
+   "name": "ch1_nps_fountain_paint_pot",
+   "page": "https://home.nps.gov/yell/learn/photosmultimedia/vl_mudpots.htm",
+   "max_n": 2,
+   "shows": "Fountain Paint Pot mudpots (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service"
+  },
+  {
+   "kind": "nps_clips",
+   "name": "ch1_nps_bison_summer",
+   "page": "https://home.nps.gov/yell/learn/photosmultimedia/vl_bisonsummer.htm",
+   "max_n": 3,
+   "shows": "Bison, summer (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service"
+  },
+  {
+   "kind": "nps_clips",
+   "name": "ch1_nps_bison_calves",
+   "page": "https://home.nps.gov/yell/learn/photosmultimedia/vl_bisoncalves.htm",
+   "max_n": 3,
+   "shows": "Bison with calves (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service"
+  },
+  {
+   "kind": "nps_clips",
+   "name": "ch1_nps_lower_falls",
+   "page": "https://home.nps.gov/yell/learn/photosmultimedia/vl_lowerfalls.htm",
+   "max_n": 3,
+   "shows": "Lower Falls from Lookout Point, Grand Canyon of the Yellowstone (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service"
+  },
+  {
+   "kind": "nps_clips",
+   "name": "ch1_nps_lamar_wolves",
+   "page": "https://home.nps.gov/yell/learn/photosmultimedia/vl_wolfpack.htm",
+   "max_n": 3,
+   "shows": "Lamar wolf pack (NPS Yellowstone Video Library)",
+   "license": "Public Domain (NPS, US Government work)",
+   "credit": "National Park Service"
+  },
+  {
+   "kind": "nps_view",
+   "name": "ch1_nps_land_to_life_first10min",
+   "page": "https://www.nps.gov/media/video/view.htm?id=FF0ABC50-155D-451F-6705D3A15E954A98",
+   "max_sec": 600,
+   "shows": "NPS film 'Yellowstone - Land to Life' (geology), first 10 of 20:34 min",
+   "license": "Public Domain (NPS page: 'Multimedia credited to NPS without any copyright symbol are public domain'; credit: National Park Service)"
+  },
+  {
+   "kind": "usgs_image",
+   "name": "ch1_usgs_hotspot_track_map",
+   "page": "https://www.usgs.gov/media/images/structural-map-onset-yellowstone-snake-river-plain-hotspot-track",
+   "shows": "Map: onset of Yellowstone-Snake River Plain hotspot track ~16.5 Ma",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "Yellowstone Volcano Observatory, USGS (modified from Hyndman & Thomas 2020)"
+  },
+  {
+   "kind": "usgs_image",
+   "name": "ch1_usgs_hydrothermal_crater_probability_plot",
+   "page": "https://www.usgs.gov/media/images/plot-size-versus-annual-probability-hydrothermal-explosion-craters-yellowstone",
+   "shows": "Plot: crater size vs annual probability of hydrothermal explosions; Biscuit Basin 2024 marked",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS (modified from Christiansen and others, 2007)"
+  },
+  {
+   "kind": "usgs_image",
+   "name": "ch1_usgs_earthquake_lake_madison_slide",
+   "page": "https://www.usgs.gov/media/images/earthquake-lake-and-madison-slide",
+   "shows": "Earthquake Lake and Madison Slide scar (2023)",
+   "license": "Public Domain (USGS, US Government work)",
+   "credit": "USGS photo by Mike Poland"
+  },
+  {
+   "kind": "usgs_listing",
+   "name": "ch1_usgs_hebgen1959",
+   "sub": "images",
+   "pages": [
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=29",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=30",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=31",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=32",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=33"
+   ],
+   "filter": "1959|hebgen|madison slide|earthquake lake|sapphire pool|dragline|rockslide",
+   "max_n": 12,
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "usgs_listing",
+   "name": "ch1_usgs_biscuit",
+   "sub": "images",
+   "pages": [
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=0",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=1",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=2",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=3",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=4",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=5",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=6",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=7",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=8",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=9",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=10",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=11",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=12",
+    "https://www.usgs.gov/volcanoes/yellowstone/multimedia/images?page=13"
+   ],
+   "filter": "biscuit basin|black diamond",
+   "max_n": 10,
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "usgs_image",
+   "name": "ch1_usgs_mushroom_pool",
+   "page": "https://www.usgs.gov/media/images/mushroom-pool-lower-geyser-basin-yellowstone-national-park",
+   "shows": "Mushroom Pool, Lower Geyser Basin (Thermus aquaticus source)",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "usgs_image",
+   "name": "ch1_usgs_mushroom_pool_b",
+   "page": "https://www.usgs.gov/media/images/mushroom-pool-lower-geyser-basin-yellowstone-national-park-pool",
+   "shows": "Mushroom Pool, Lower Geyser Basin",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "usgs_image",
+   "name": "ch1_usgs_old_faithful_c1878",
+   "page": "https://www.usgs.gov/media/images/old-faithful-geyser-erupting-c1878",
+   "shows": "Old Faithful erupting, c.1878 historic photo",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "usgs_image",
+   "name": "ch1_usgs_old_faithful_summer",
+   "page": "https://www.usgs.gov/media/images/old-faithful-summer-eruption",
+   "shows": "Old Faithful summer eruption",
+   "license": "Public Domain (USGS, US Government work)"
+  },
+  {
+   "kind": "slidefile",
+   "name": "ch1_nps_hist_wildlife",
+   "page": "https://home.nps.gov/features/yell/slidefile/history/1872_1918/wildlifemanagement/Page.htm",
+   "filter": "buffalo|bison",
+   "max_n": 20,
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "slidefile",
+   "name": "ch1_nps_buffalo_ranch",
+   "page": "https://home.nps.gov/features/yell/slidefile/parkstructures/other/buffaloranch/Page.htm",
+   "filter": "corral|barn|ranch",
+   "max_n": 3,
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "slidefile",
+   "name": "ch1_nps_hist_thermal_1946_99",
+   "page": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/thermalfeatures/Page.htm",
+   "filter": "1959|earthquake|quake|sapphire|brock|mushroom",
+   "max_n": 12,
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "slidefile",
+   "name": "ch1_nps_hist_events_1946_99",
+   "page": "https://home.nps.gov/features/yell/slidefile/history/1946_1999/peopleevents/Page.htm",
+   "filter": "1959|earthquake|quake|brock",
+   "max_n": 12,
+   "license": "Public Domain (NPS, US Government work)"
+  }
+ ]
+}

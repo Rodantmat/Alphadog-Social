@@ -1,0 +1,85 @@
+name: yellowstone-media
+# Downloads curated PD / openly-licensed media for the Yellowstone chapters and pushes them to
+# footage branch folder yellowstone-media/<chapter> with index.json (license, credit, source per file).
+on:
+  workflow_dispatch:
+    inputs:
+      chapter:
+        description: "ch1 | ch2 | ch3 | all (all = only lists changed since last collection)"
+        required: true
+        default: all
+      force:
+        description: "re-collect even if the list is unchanged (yes/no)"
+        required: false
+        default: "no"
+  push:
+    branches: [main]
+    paths: ["yellowstone/media_lists/*.json"]
+permissions:
+  contents: write
+concurrency:
+  group: yellowstone-media
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            scripts
+            yellowstone/media_lists
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -y -qq && sudo apt-get install -y -qq ffmpeg >/dev/null && pip install -q -U curl-cffi
+      - name: Sparse clone footage branch
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" /tmp/fb
+          cd /tmp/fb && git sparse-checkout set yellowstone-media
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+      - name: Collect and push per chapter
+        env:
+          CH: ${{ inputs.chapter || 'all' }}
+          FORCE: ${{ inputs.force || 'no' }}
+        run: |
+          set -u
+          if [ "$CH" = "all" ]; then CHS="ch1 ch2 ch3"; else CHS="$CH"; fi
+          for c in $CHS; do
+            L="yellowstone/media_lists/$c.json"; [ -f "$L" ] || { echo "no list $c"; continue; }
+            SHA=$(sha256sum "$L" | cut -c1-16)
+            OLD=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1])).get('list_sha',''))" /tmp/fb/yellowstone-media/$c/index.json 2>/dev/null || true)
+            if [ "$SHA" = "$OLD" ] && [ "$FORCE" != "yes" ]; then echo "$c unchanged, skip"; continue; fi
+            rm -rf /tmp/out && mkdir -p /tmp/out
+            python3 -I scripts/collect_list_media.py "$L" /tmp/out
+            D=/tmp/fb/yellowstone-media/$c; mkdir -p "$D"
+            # files listed in "remove" are deleted from the folder
+            python3 - "$L" "$D" "$SHA" <<'EOF'
+          import json, os, shutil, sys
+          L, D, SHA = sys.argv[1:]
+          lst = json.load(open(L)); new = json.load(open("/tmp/out/index.json"))
+          old = json.load(open(f"{D}/index.json")) if os.path.exists(f"{D}/index.json") else {"files": []}
+          for sub in ("video", "img"):
+              os.makedirs(f"{D}/{sub}", exist_ok=True)
+              for f in os.listdir(f"/tmp/out/{sub}"): shutil.copy(f"/tmp/out/{sub}/{f}", f"{D}/{sub}/{f}")
+          files = {e["file"]: e for e in old.get("files", [])}
+          files.update({e["file"]: e for e in new["files"]})
+          for r in lst.get("remove", []):
+              files.pop(r, None)
+              if os.path.exists(f"{D}/{r}"): os.remove(f"{D}/{r}")
+          for k, e in lst.get("overrides", {}).items():
+              if k in files: files[k].update(e)
+          got = {e["name"] for e in files.values()}
+          miss = [m for m in new["not_obtained"] if m.get("name") not in got]
+          out = {"chapter": new["chapter"], "list_sha": SHA, "files": sorted(files.values(), key=lambda e: e["file"]),
+                 "not_obtained": miss, "probes": new["probes"]}
+          json.dump(out, open(f"{D}/index.json", "w"), indent=1)
+          print("index files:", len(out["files"]), "not obtained:", len(miss))
+          EOF
+            find "$D" -type f -size +95M -print -delete
+            du -sh "$D"
+            cd /tmp/fb && git add -A yellowstone-media/$c && git commit -q -m "yellowstone media: $c" || echo "nothing to commit"
+            for i in 1 2 3 4; do git pull -q --rebase origin footage && git push -q origin HEAD:footage && break; sleep 5; done
+            cd "$GITHUB_WORKSPACE"
+          done
