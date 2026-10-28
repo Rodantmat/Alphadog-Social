@@ -1,0 +1,14 @@
+{
+ "C07e_5.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ },
+ "R04e_5.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": 1,
+  "person_ok": true
+ }
+}
