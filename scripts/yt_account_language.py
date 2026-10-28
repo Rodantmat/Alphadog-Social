@@ -11,7 +11,7 @@ import yt_studio_session as S
 OUT = os.environ.get("QA_DIR", "/tmp/ytqa"); os.makedirs(OUT, exist_ok=True)
 STEP = os.environ.get("STEP", "youtube"); DRY = os.environ.get("DRY_RUN") == "1"
 RES = {"step": STEP, "dry_run": DRY}
-LANG_ITEM = re.compile(r"^\s*(Idioma|Language)\s*:", re.I)
+LANG_ITEM = re.compile(r"^\s*(Idioma( de exibição)?|Language|Display language)\s*:", re.I)
 def snap(pg, n): S.shot(pg, f"{OUT}/{n}.png"); S.dump(pg, f"{OUT}/{n}.txt")
 def done(b, ctx, code, **kw):
     RES.update(kw); print("RESULT", json.dumps(RES, ensure_ascii=False)); open(f"{OUT}/result.json", "w").write(json.dumps(RES, indent=1, ensure_ascii=False))
