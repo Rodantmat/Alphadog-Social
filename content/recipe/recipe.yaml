@@ -2,7 +2,7 @@
 # stage: plan (shot list/script before render) | render (frames/audio of the output) | publish (metadata/posting)
 # check: auto (script, fails the build) | warn (script, reported) | review (Claude reviews contact sheets / report)
 version: 1
-sources: [owner reviews Oct 22-27 2026 (Chiricahua ep1 v2-v5, Shorts, memorial), qa4/review_notes.md, check_rules.py R1-R6, channel strategy research Oct 27]
+sources: [owner reviews Oct 22-27 2026 (Chiricahua ep1 v2-v5, Shorts, memorial), owner review Yellowstone Ch1 Oct 28 2026, qa4/review_notes.md, check_rules.py R1-R6, channel strategy research Oct 27]
 rules:
   # ---------- story & structure ----------
   - {id: S1, stage: plan, check: review, rule: "Strongest story = first chapter; second-strongest = last chapter; rest strong->weak, grounded in audience research"}
@@ -65,5 +65,14 @@ rules:
   - {id: M2, stage: publish, check: auto, rule: "Only allowed licenses: own, PD, CC0, CC BY, CC BY-SA, Pixabay, Coverr, NPS/USGS/NARA/LoC (verified PD)"}
   - {id: M3, stage: publish, check: auto, rule: "Every post logged (platform, id, permalink, music); no double posting; captions per platform (links: FB first comment, IG link in bio)"}
   - {id: M4, stage: publish, check: auto, rule: "YouTube auto-dub off; podcast episodes as video (EN + ES shows)"}
+  # ---------- motion / framing / end screen (owner review Yellowstone Ch1, 2026-10-28; EDITING_RULES V15-V22, A6) ----------
+  - {id: F1, stage: render, check: auto, rule: "Smooth motion: no moving shot with > 3% repeated frames (VFR phone clips, 24->30 pulldown, zoompan holds) - interpolate to true 30 fps (V15)"}
+  - {id: F2, stage: render, check: auto, rule: "No freeze: no abrupt frozen run >= 0.3 s inside a moving shot (held last frame = shot longer than its footage) (V16)"}
+  - {id: F3, stage: render, check: auto, rule: "No over-zoomed crops: crop/upscale vs source <= 1.35x, vertical clips never cropped to 16:9; soft frames flagged (V17)"}
+  - {id: F4, stage: render, check: auto, rule: "Calm camera: no whip pans or sudden fast moves > ~270 px/s at 1080p inside a shot (V18)"}
+  - {id: F5, stage: render, check: warn, rule: "Strong first shot: >= 4 s, sharp, calm, not over-cropped - the best image for the first line (V19)"}
+  - {id: F6, stage: render, check: auto, rule: "End card shows the AlphaDog Studio name + real logo and a filled next-video slot (never an empty NEXT box) (V21)"}
+  - {id: F7, stage: render, check: auto, rule: "Chapter cards show the chapter name only - no 'CHAPTER ONE'/'Chapter 2' numbering (V22)"}
+  - {id: F8, stage: render, check: auto, rule: "No people talking in the background: no speech in ambience/SFX stems or outside narration/interviews (VAD) (A6)"}
   # ---------- final critique ----------
   - {id: C1, stage: render, check: review, rule: "Multi-audience critique (young, older, history buff, critic, casual) scored on history, imagery, coherence, script, context, audio, pacing, excitement; fixes applied before final"}
