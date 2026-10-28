@@ -1,0 +1,38 @@
+name: yt-desc-add
+# Insert a text block after the first paragraph of a YouTube video's description (skips if already present).
+on:
+  workflow_dispatch:
+    inputs:
+      video_id: { description: "YouTube video id", required: true }
+      block: { description: "text to insert (use \\n for new lines)", required: true }
+permissions:
+  contents: read
+jobs:
+  edit:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          VID: ${{ inputs.video_id }}
+          BLOCK: ${{ inputs.block }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.parse, urllib.request
+          d = urllib.parse.urlencode({"client_id": os.environ["YT_CLIENT_ID"], "client_secret": os.environ["YT_CLIENT_SECRET"],
+                                      "refresh_token": os.environ["YT_REFRESH_TOKEN"], "grant_type": "refresh_token"}).encode()
+          tok = json.loads(urllib.request.urlopen(urllib.request.Request("https://oauth2.googleapis.com/token", data=d)).read())["access_token"]
+          H = {"Authorization": f"Bearer {tok}"}; vid = os.environ["VID"]; block = os.environ["BLOCK"].replace("\\n", "\n").strip()
+          it = json.loads(urllib.request.urlopen(urllib.request.Request(f"https://www.googleapis.com/youtube/v3/videos?part=snippet&id={vid}", headers=H)).read())["items"][0]
+          sn = it["snippet"]; desc = sn.get("description", "")
+          if block.splitlines()[0] in desc: print("already present"); raise SystemExit
+          parts = desc.split("\n\n", 1)
+          new = parts[0] + "\n\n" + block + ("\n\n" + parts[1] if len(parts) > 1 else "")
+          assert len(new) <= 5000, len(new)
+          body = {"id": vid, "snippet": {k: sn[k] for k in ("title", "categoryId", "tags", "defaultLanguage", "defaultAudioLanguage") if k in sn}}
+          body["snippet"]["description"] = new
+          r = urllib.request.Request("https://www.googleapis.com/youtube/v3/videos?part=snippet", data=json.dumps(body).encode(), method="PUT",
+                                     headers={**H, "Content-Type": "application/json"})
+          out = json.loads(urllib.request.urlopen(r).read()); print(out["snippet"]["description"][:700])
+          PY
