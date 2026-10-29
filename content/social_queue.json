@@ -90,7 +90,10 @@
   "file": "chiricahua_sh2.mp4",
   "at": "2026-10-29T01:30:00Z",
   "thumb_ms": 1200,
-  "caption": "1886. The Army loaded nearly every Chiricahua Apache onto prison trains, even the scouts who had served it.\n\nSomewhere in Missouri, one man jumped. Alone, in country he had never seen, Massai walked hundreds of miles back to the mountains, traveling only at night. Today the highest viewpoint in America's newest national park carries his name.\n\n🎬 The full 25-minute documentary is on our YouTube channel. Link in bio.\n\n#Apache #History #NativeAmericanHistory #Arizona #Chiricahua #TrueStory #NationalParks"
+  "caption": "1886. The Army loaded nearly every Chiricahua Apache onto prison trains, even the scouts who had served it.\n\nSomewhere in Missouri, one man jumped. Alone, in country he had never seen, Massai walked hundreds of miles back to the mountains, traveling only at night. Today the highest viewpoint in America's newest national park carries his name.\n\n🎬 The full 25-minute documentary is on our YouTube channel. Link in bio.\n\n#Apache #History #NativeAmericanHistory #Arizona #Chiricahua #TrueStory #NationalParks",
+  "errors": [
+   "2026-10-29T01:55Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055217156805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}"
+  ]
  },
  {
   "id": "sh2_fb",
@@ -98,7 +101,42 @@
   "file": "chiricahua_sh2.mp4",
   "at": "2026-10-29T01:30:00Z",
   "caption": "1886. The Army loaded nearly every Chiricahua Apache onto prison trains, even the scouts who had served it.\n\nSomewhere in Missouri, one man jumped. Alone, in country he had never seen, Massai walked hundreds of miles back to the mountains, traveling only at night. Today the highest viewpoint in America's newest national park carries his name.\n\n🎬 The full 25-minute documentary is on YouTube. Link in the first comment 👇\n\n#Apache #History #NativeAmericanHistory #Arizona #Chiricahua #TrueStory #NationalParks",
-  "comment": "Watch the full documentary on YouTube 👉 https://youtu.be/LfoM0KAi8Yo"
+  "comment": "Watch the full documentary on YouTube 👉 https://youtu.be/LfoM0KAi8Yo",
+  "done": {
+   "video_id": "1617495313446017",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1101181026014223"
+   },
+   "permalink": "https://www.facebook.com/reel/1617495313446017/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 42790609
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-10-29T01:56:13+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1617495313446017_888883937645584"
+   },
+   "status_errors": [
+    "HTTP 400 https://graph.facebook.com/v26.0/1617495313446017: {\"error\":{\"message\":\"Unsupported get request. Object with ID '1617495313446017' does not exist, cannot be loaded due to missing permissions,"
+   ],
+   "at": "2026-10-29T01:55:33Z"
+  }
  },
  {
   "id": "sh1_tt",
@@ -126,7 +164,11 @@
   "id": "sh2_tt",
   "platform": "tiktok_draft",
   "file": "chiricahua_sh2.mp4",
-  "at": "2026-10-29T01:15:00Z"
+  "at": "2026-10-29T01:15:00Z",
+  "done": {
+   "status": "SEND_TO_USER_INBOX",
+   "at": "2026-10-29T01:55:33Z"
+  }
  },
  {
   "id": "promo_ig",
