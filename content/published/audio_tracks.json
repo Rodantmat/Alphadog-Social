@@ -12,5 +12,19 @@
    "ui": "Publicado",
    "thumb": "already"
   }
+ },
+ "gPm718i3QkM": {
+  "es": {
+   "status": "published",
+   "time": "2026-10-29T18:42:48Z",
+   "ui": "Processando…",
+   "thumb": "set"
+  },
+  "pt": {
+   "status": "published",
+   "time": "2026-10-29T18:45:54Z",
+   "ui": "Processando…",
+   "thumb": "set"
+  }
  }
 }
