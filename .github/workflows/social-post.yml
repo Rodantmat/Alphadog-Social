@@ -39,10 +39,12 @@ jobs:
         continue-on-error: true
         with: { name: promo, path: media, run-id: "${{ env.PROMO_RUN }}", github-token: "${{ github.token }}" }
       - if: steps.due.outputs.due == 'yes'
-        name: Yellowstone Shorts (release assets)
+        name: Yellowstone Shorts (footage branch)
         continue-on-error: true
         env: { GH_TOKEN: "${{ github.token }}" }
-        run: gh release download ys-shorts -R "${{ github.repository }}" -D media --clobber || true
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
+          cd /tmp/fbs && git sparse-checkout set --no-cone /yellowstone-shorts && mkdir -p "$GITHUB_WORKSPACE/media" && cp -r yellowstone-shorts/*/*.mp4 "$GITHUB_WORKSPACE/media/" && ls "$GITHUB_WORKSPACE/media" | head -30
       - if: steps.due.outputs.due == 'yes'
         name: Post
         env:

@@ -3,10 +3,13 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: "GitHub release tag holding the media + meta_*.json files"
-        required: true
+        description: "GitHub release tag holding the media + meta_*.json files (ignored when footage_dir is set)"
+        default: ""
       only:
         description: "optional: a single meta file name to run (e.g. meta_long.json)"
+        default: ""
+      footage_dir:
+        description: "optional: folder on the footage branch holding media + metas (used instead of the release), e.g. yellowstone-shorts/ch1"
         default: ""
 permissions:
   contents: write
@@ -24,7 +27,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p /tmp/rel && cd /tmp/rel
-          gh release download "${{ inputs.tag }}" -R "${{ github.repository }}" -D /tmp/rel
+          if [ -n "${{ inputs.footage_dir }}" ]; then
+            git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
+            (cd /tmp/fbs && git sparse-checkout set --no-cone "/${{ inputs.footage_dir }}") && cp /tmp/fbs/${{ inputs.footage_dir }}/* /tmp/rel/
+          else
+            gh release download "${{ inputs.tag }}" -R "${{ github.repository }}" -D /tmp/rel
+          fi
           ls -la /tmp/rel
       - name: Upload to YouTube (long video, captions, localizations, thumbnail, playlist, credits; scheduled Shorts)
         env:

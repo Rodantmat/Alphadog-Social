@@ -88,5 +88,106 @@
    }
   }
  ],
- "planned": []
+ "planned": [
+  {
+   "id": "short-yellowstone-ch1-y1",
+   "platform": "youtube/instagram/facebook/tiktok",
+   "type": "short",
+   "at": "2026-10-30T18:00:00Z",
+   "file": "yellowstone_ch1_y1.mp4",
+   "title": "A steam explosion at Yellowstone nobody saw coming",
+   "music": "Yellowstone Ch1 score bed span_00_cold_open (own episode music, each Short a different bed)",
+   "tiktok": "Buffer"
+  },
+  {
+   "id": "short-yellowstone-ch1-y2",
+   "platform": "youtube/instagram/facebook/tiktok",
+   "type": "short",
+   "at": "2026-10-31T01:30:00Z",
+   "file": "yellowstone_ch1_y2.mp4",
+   "title": "Is Yellowstone overdue for an eruption? The USGS says no",
+   "music": "Yellowstone Ch1 score bed span_01_chapter_1 (own episode music, each Short a different bed)",
+   "tiktok": "Buffer"
+  },
+  {
+   "id": "short-yellowstone-ch1-y3",
+   "platform": "youtube/instagram/facebook/tiktok",
+   "type": "short",
+   "at": "2026-10-31T18:00:00Z",
+   "file": "yellowstone_ch1_y3.mp4",
+   "title": "The 1959 earthquake that woke Yellowstone's geysers",
+   "music": "Yellowstone Ch1 score bed span_02_chapter_2 (own episode music, each Short a different bed)",
+   "tiktok": "Buffer"
+  },
+  {
+   "id": "short-yellowstone-ch1-y4",
+   "platform": "youtube/instagram/facebook/tiktok",
+   "type": "short",
+   "at": "2026-11-01T01:30:00Z",
+   "file": "yellowstone_ch1_y4.mp4",
+   "title": "The Yellowstone microbe behind modern DNA testing",
+   "music": "Yellowstone Ch1 score bed span_03_chapter_3 (own episode music, each Short a different bed)",
+   "tiktok": "Buffer"
+  },
+  {
+   "id": "short-yellowstone-ch1-y5",
+   "platform": "youtube/instagram/facebook/tiktok",
+   "type": "short",
+   "at": "2026-11-01T19:00:00Z",
+   "file": "yellowstone_ch1_y5.mp4",
+   "title": "Only 23 wild bison were left",
+   "music": "Yellowstone Ch1 score bed span_04_chapter_4 (own episode music, each Short a different bed)",
+   "tiktok": "Buffer"
+  },
+  {
+   "id": "short-yellowstone-ch1-y6",
+   "platform": "youtube/instagram/facebook/tiktok",
+   "type": "short",
+   "at": "2026-11-02T02:30:00Z",
+   "file": "yellowstone_ch1_y6.mp4",
+   "title": "Yellowstone's real danger isn't lava. It's water.",
+   "music": "Yellowstone Ch1 score bed span_05_chapter_5 (own episode music, each Short a different bed)",
+   "tiktok": "Buffer"
+  },
+  {
+   "id": "short-yellowstone-ch1-y7",
+   "platform": "youtube/instagram/facebook/tiktok",
+   "type": "short",
+   "at": "2026-11-02T19:00:00Z",
+   "file": "yellowstone_ch1_y7.mp4",
+   "title": "Steamboat vs Old Faithful",
+   "music": "Yellowstone Ch1 score bed span_06_chapter_6 (own episode music, each Short a different bed)",
+   "tiktok": "Buffer"
+  },
+  {
+   "id": "short-yellowstone-ch1-y8",
+   "platform": "youtube/instagram/facebook/tiktok",
+   "type": "short",
+   "at": "2026-11-03T02:30:00Z",
+   "file": "yellowstone_ch1_y8.mp4",
+   "title": "What's really under Yellowstone (2025 studies)",
+   "music": "Yellowstone Ch1 score bed span_07_chapter_7 (own episode music, each Short a different bed)",
+   "tiktok": "Buffer"
+  },
+  {
+   "id": "short-yellowstone-ch1-y9",
+   "platform": "youtube/instagram/facebook/tiktok",
+   "type": "short",
+   "at": "2026-11-03T19:00:00Z",
+   "file": "yellowstone_ch1_y9.mp4",
+   "title": "Yellowstone's first giant eruption",
+   "music": "Yellowstone Ch1 score bed span_08_chapter_8 (own episode music, each Short a different bed)",
+   "tiktok": "Buffer"
+  },
+  {
+   "id": "short-yellowstone-ch1-y10",
+   "platform": "youtube/instagram/facebook/tiktok",
+   "type": "short",
+   "at": "2026-11-04T02:30:00Z",
+   "file": "yellowstone_ch1_y10.mp4",
+   "title": "Why Grand Prismatic Spring has those colors",
+   "music": "Yellowstone Ch1 score bed span_09_close (own episode music, each Short a different bed)",
+   "tiktok": "Buffer"
+  }
+ ]
 }
