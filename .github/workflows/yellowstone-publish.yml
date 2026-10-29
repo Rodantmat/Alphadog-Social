@@ -39,6 +39,8 @@ jobs:
           test -f "/tmp/fb/yellowstone-release/$CH/meta_0_long.json" || { echo "no release folder yellowstone-release/$CH on footage"; exit 1; }
           mkdir -p "$REL"; cp -a "/tmp/fb/yellowstone-release/$CH/." "$REL/"; rm -rf /tmp/fb
           ls -la "$REL"
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - name: Reassemble the video from its parts
         if: inputs.resume_video_id == ''
         run: |
