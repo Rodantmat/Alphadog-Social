@@ -226,6 +226,9 @@ def main():
             result(status, **out, **kw); S.save(ctx); b.close(); sys.exit(code)
         S.goto(pg, S.STUDIO)
         st = S.status(pg); print("[studio] status:", st)
+        if st == "login" and not os.environ.get("YT_NO_ROLLING"):   # rolling copy went stale: retry once from the secrets
+            print("[studio] rolling copy rejected - retrying from the secrets"); b.close(); os.environ["YT_NO_ROLLING"] = "1"
+            b, ctx, pg = S.open_browser(p); S.goto(pg, S.STUDIO); st = S.status(pg); print("[studio] status (secrets):", st)
         if st != "ok":
             S.dump(pg, f"{OUT}/00_stop.txt")
             if st == "challenge": S.shot(pg, f"{OUT}/00_challenge.png")

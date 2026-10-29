@@ -49,7 +49,7 @@ def _merge(*lists):
 def load():
     a, g = _secrets()
     base = _merge(_from_export(g, ".google.com"), _from_export(a, ".youtube.com"))
-    if os.path.exists(ENC):
+    if os.path.exists(ENC) and not os.environ.get("YT_NO_ROLLING"):
         try:
             st = json.loads(_fernet(a, g).decrypt(open(ENC, "rb").read()))
             print(f"session: rolling copy from {time.strftime('%Y-%m-%d %H:%M', time.gmtime(st['saved']))} UTC ({len(st['cookies'])} cookies)")
