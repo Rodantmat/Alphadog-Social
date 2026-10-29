@@ -38,8 +38,8 @@ jobs:
           THUMBS: ${{ inputs.thumbs }}
         run: |
           git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb
-          paths=""; for l in ${LANGS//,/ }; do p="${AUDIO_PATH:-audio-tracks/${VIDEO_ID}_${l}.m4a}"; paths="$paths /$p"; done
-          case "$THUMBS" in none|"") ;; auto) for l in ${LANGS//,/ }; do paths="$paths /lang-thumbs/${VIDEO_ID}_${l}.jpg"; done ;; *) paths="$paths /$THUMBS" ;; esac
+          paths=""; for V in ${VIDEO_ID//,/ }; do for l in ${LANGS//,/ }; do p="${AUDIO_PATH:-audio-tracks/${V}_${l}.m4a}"; paths="$paths /$p"; done
+          case "$THUMBS" in none|"") ;; auto) for l in ${LANGS//,/ }; do paths="$paths /lang-thumbs/${V}_${l}.jpg"; done ;; *) paths="$paths /$THUMBS" ;; esac; done
           cd /tmp/fb && git sparse-checkout set --no-cone $paths
           ls -la /tmp/fb/lang-thumbs 2>/dev/null || true
           for p in $paths; do ls -la "/tmp/fb$p"; ffprobe -v error -show_entries format=duration -of csv=p=0 "/tmp/fb$p" 2>/dev/null | sed "s/^/audio duration s: /" || true; done
@@ -53,13 +53,15 @@ jobs:
           THUMBS: ${{ inputs.thumbs }}
           DRY_RUN: ${{ inputs.dry_run }}
         run: |
-          rc=0; mkdir -p /tmp/ytqa
+          rc=0; mkdir -p /tmp/ytqa; ALL="$VIDEO_ID"
+          for VIDEO_ID in ${ALL//,/ }; do
           for l in ${LANGS//,/ }; do
             p="${AUDIO_PATH:-audio-tracks/${VIDEO_ID}_${l}.m4a}"
             case "$THUMBS" in none|"") t="" ;; auto) t="/tmp/fb/lang-thumbs/${VIDEO_ID}_${l}.jpg"; [ -f "$t" -o "$DRY_RUN" = "1" ] || t="" ;; *) t="/tmp/fb/$THUMBS" ;; esac
             echo "=== $VIDEO_ID $l ($p) thumb: ${t:-none}"
-            QA_DIR=/tmp/ytqa/$l RESULT_JSON=/tmp/ytqa/result_$l.json AUDIO_LANG=$l AUDIO=/tmp/fb/$p THUMB="$t" xvfb-run -a python3 scripts/yt_studio_audio.py || { c=$?; echo "exit $c"; rc=$c; [ $c -eq 2 -o $c -eq 3 ] && break; }
+            VIDEO_ID=$VIDEO_ID QA_DIR=/tmp/ytqa/${VIDEO_ID}_$l RESULT_JSON=/tmp/ytqa/result_${VIDEO_ID}_$l.json AUDIO_LANG=$l AUDIO=/tmp/fb/$p THUMB="$t" xvfb-run -a python3 scripts/yt_studio_audio.py || { c=$?; echo "exit $c"; rc=$c; [ $c -eq 2 -o $c -eq 3 ] && break 2; }
             sleep $((40 + RANDOM % 40))
+          done
           done
           exit $rc
       - name: Save session + record result
