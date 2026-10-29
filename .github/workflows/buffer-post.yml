@@ -32,7 +32,7 @@ jobs:
         run: |
           mkdir -p /tmp/m
           git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
-          cd /tmp/fbs && git sparse-checkout set --no-cone "/yellowstone-shorts/${{ inputs.file }}" && cp yellowstone-shorts/*/"${{ inputs.file }}" /tmp/m/
+          cd /tmp/fbs && git sparse-checkout set --no-cone "/yellowstone-shorts/*/${{ inputs.file }}" && cp yellowstone-shorts/*/"${{ inputs.file }}" /tmp/m/
       - if: inputs.mode == 'post' && inputs.artifact != 'release:ys-shorts'
         uses: actions/download-artifact@v4
         with: { name: "${{ inputs.artifact }}", path: /tmp/m, run-id: "${{ inputs.run }}", github-token: "${{ github.token }}" }
