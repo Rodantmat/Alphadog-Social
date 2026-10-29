@@ -4,7 +4,7 @@ name: yt-studio-keepalive
 # (no retries) -> owner re-exports YT_STUDIO_SESSION / YT_GOOGLE_SESSION with Cookie-Editor.
 on:
   schedule:
-    - cron: "23 18 * * 2,5"
+    - cron: "23 */8 * * *"
   workflow_dispatch:
 permissions:
   contents: write
