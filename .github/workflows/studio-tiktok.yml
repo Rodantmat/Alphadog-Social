@@ -3,7 +3,7 @@ name: studio-tiktok
 on:
   workflow_dispatch:
     inputs:
-      action: { description: "connect_page | exchange | info | post | draft", default: "info" }
+      action: { description: "connect_page | exchange | info | videos | post | draft", default: "info" }
       file: { description: "post/draft: video file name from the shorts artifact", default: "chiricahua_sh1.mp4" }
       privacy: { description: "post: SELF_ONLY (private) or PUBLIC_TO_EVERYONE", default: "SELF_ONLY" }
       caption: { description: "post: caption", default: "" }

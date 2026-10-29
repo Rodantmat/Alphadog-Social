@@ -3,6 +3,7 @@
 Actions (argv[1]):
   connect_page  write docs/studio/connect.html (Connect-with-TikTok button; the client key is public by design in OAuth URLs)
   exchange      trade STUDIO_TIKTOK_AUTH_CODE for tokens; store them encrypted (AES-256, key = client secret) in content/tiktok_studio_token.enc
+  videos        list the account's latest public videos (video.list; read only)
   info          refresh the token, print the connected profile + creator info (read only)
   post FILE     direct-post FILE (env PRIVACY, default SELF_ONLY; CAPTION) and poll until published (needs audit, or a private account)
   draft FILE    send FILE to the creator's TikTok inbox/drafts (video.upload) to finish and post in the app
@@ -62,6 +63,13 @@ elif act == "info":
     print("== user info: HTTP", st); print(json.dumps(r.get("data", r) if isinstance(r, dict) else r, indent=1)[:1200])
     st, r = http("POST", f"{API}/post/publish/creator_info/query/", js={}, token=tok)
     print("== creator info: HTTP", st); print(json.dumps(r.get("data", r) if isinstance(r, dict) else r, indent=1)[:1200])
+elif act == "videos":
+    t = fresh(); tok = t["access_token"]
+    st, r = http("POST", f"{API}/video/list/?fields=id,title,create_time,share_url,duration", js={"max_count": 20}, token=tok)
+    print("== video list: HTTP", st)
+    for v in ((r.get("data") or {}).get("videos") or []) if isinstance(r, dict) else []:
+        print(dt.datetime.utcfromtimestamp(v.get("create_time", 0)).isoformat() + "Z", v.get("share_url"), (v.get("title") or "")[:90].replace("\n", " "))
+    if isinstance(r, dict) and r.get("error", {}).get("code") not in (None, "ok"): print(r["error"])
 elif act in ("post", "draft"):
     t = fresh(); tok = t["access_token"]; f = sys.argv[2]; n = os.path.getsize(f)
     st, ci = http("POST", f"{API}/post/publish/creator_info/query/", js={}, token=tok); print("creator info", st, json.dumps(ci.get("data", {}) if isinstance(ci, dict) else ci)[:600])
