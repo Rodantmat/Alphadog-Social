@@ -39,6 +39,11 @@ jobs:
         continue-on-error: true
         with: { name: promo, path: media, run-id: "${{ env.PROMO_RUN }}", github-token: "${{ github.token }}" }
       - if: steps.due.outputs.due == 'yes'
+        name: Yellowstone Shorts (release assets)
+        continue-on-error: true
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh release download ys-shorts -R "${{ github.repository }}" -D media --clobber || true
+      - if: steps.due.outputs.due == 'yes'
         name: Post
         env:
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}

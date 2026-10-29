@@ -27,7 +27,10 @@ jobs:
         run: python3 scripts/buffer_post.py channels
       - if: inputs.mode == 'posts'
         run: python3 scripts/buffer_post.py posts "${{ inputs.service }}"
-      - if: inputs.mode == 'post'
+      - if: inputs.mode == 'post' && inputs.artifact == 'release:ys-shorts'
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: mkdir -p /tmp/m && gh release download ys-shorts -R "${{ github.repository }}" -p "${{ inputs.file }}" -D /tmp/m
+      - if: inputs.mode == 'post' && inputs.artifact != 'release:ys-shorts'
         uses: actions/download-artifact@v4
         with: { name: "${{ inputs.artifact }}", path: /tmp/m, run-id: "${{ inputs.run }}", github-token: "${{ github.token }}" }
       - if: inputs.mode == 'post'

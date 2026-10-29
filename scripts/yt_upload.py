@@ -115,4 +115,10 @@ if vid and (M.get("location") or M.get("recording_date")):
     try:
         st, _, _ = api("PUT", "https://www.googleapis.com/youtube/v3/videos?part=recordingDetails", tok, body={"id": vid, "recordingDetails": rd}); print("recordingDetails", st)
     except Exception as e: print("recordingDetails failed", str(e)[:300])
+if vid and M.get("queue_comment"):      # posted by yt-followup once the scheduled video is public
+    qc = M["queue_comment"]; ws = os.environ.get("GITHUB_WORKSPACE", ".")
+    os.makedirs(f"{ws}/content/pending", exist_ok=True)
+    open(f"{ws}/content/pending/ctext_{vid}.txt", "w", encoding="utf-8").write(qc["text"])
+    json.dump({"video_id": vid, "after": qc["after"], "text_file": f"content/pending/ctext_{vid}.txt"}, open(f"{ws}/content/pending/comment_{vid}.json", "w"))
+    print("comment queued", vid, qc["after"])
 print("DONE", vid)

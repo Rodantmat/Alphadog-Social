@@ -37,3 +37,9 @@ jobs:
             if [ -n "${{ inputs.only }}" ] && [ "$m" != "${{ inputs.only }}" ]; then continue; fi
             echo "=== $m"; python $GITHUB_WORKSPACE/scripts/yt_upload.py "$m"
           done
+      - name: Save queued comments
+        if: always()
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add content/pending 2>/dev/null; git commit -qm "yt-publish: queued comments" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
