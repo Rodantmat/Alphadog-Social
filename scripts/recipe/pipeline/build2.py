@@ -86,7 +86,7 @@ if __name__ == "__main__":
     def avail(s):
         if s["type"] == "map" and s.get("_kind") == "graphic":   # pre-rendered graphic: never hold its last frame
             import subprocess as _sp
-            return float(_sp.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", s["src"]], capture_output=True, text=True).stdout) - s.get("ss", 0) - 0.05
+            return float(_sp.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", s["src"]], capture_output=True, text=True).stdout) - s.get("ss", 0) + 2.5   # an animated graphic may rest on its final state <= 2.5 s
         if s["type"] in ("map", "card", "photo"): return 1e9
         if s.get("speed"): return 1e9   # already stretched to fit
         mem = s.get("_members") or [s]
@@ -128,7 +128,7 @@ if __name__ == "__main__":
                 p = P[s["_key"]]; e.update(src=f"{D}/prep/{s['_key']}.mp4", ss=s.get("_off", 0), drift=0.0)
                 if p.get("amb"): e.update(amb=p["amb"], amb_g=-10)          # natural sound kept low (owner: quiet or none)
                 if s["_kind"] == "ai": e["ai"] = True
-                if s["_kind"] == "ai" and p.get("dup", 0) > 0.4: e["drift"] = 0.04   # near-static AI clip: gentle push-in so it never reads as frozen
+                if s["_kind"] == "ai" and p.get("dup", 0) > 0.4 and os.environ.get("AI_DRIFT"): e["drift"] = float(os.environ["AI_DRIFT"])   # near-static AI clip: gentle push-in so it never reads as frozen
                 if s.get("speed"): e["speed"] = s["speed"]
         elif s["type"] == "multi":
             e["srcs"] = [{"src": f"{D}/prep/{m['_key']}.mp4", "ss": 0} for m in s["_members"]]

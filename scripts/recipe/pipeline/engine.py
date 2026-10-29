@@ -121,7 +121,7 @@ def render_shot(shot, out):
             fc.append(f"[{prev}][p{k}]overlay={x0 + k * (pw + gap)}:{gap}:shortest=0[o{k}]"); prev = f"o{k}"
         fc.append(f"[{prev}]{','.join(vf_tail + ([fade] if fade else []))}[v]")
         cmd = ["ffmpeg", "-v", "error", "-y"] + inp + ["-filter_complex", ";".join(fc), "-map", "[v]", "-frames:v", str(frames), "-an",
-               "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-r", str(FPS), out]
+               "-c:v", "libx264", "-preset", "veryfast", "-crf", "14", "-r", str(FPS), out]
         run(cmd); return out
     elif t == "photo":
         z0, z1 = shot.get("z0", 1.0), shot.get("z1", 1.12)
@@ -155,7 +155,7 @@ def render_shot(shot, out):
         cmd = ["ffmpeg", "-v", "error", "-y"] + inp + ["-loop", "1", "-i", ov, "-filter_complex", fc, "-map", "[v]"]
     else:
         cmd = ["ffmpeg", "-v", "error", "-y"] + inp + ["-vf", chain]
-    cmd += ["-frames:v", str(frames), "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-r", str(FPS), out]
+    cmd += ["-frames:v", str(frames), "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "14", "-r", str(FPS), out]
     run(cmd)
     return out
 
@@ -181,5 +181,5 @@ def mix_audio(narr_wav, music, out, music_db=-20, duck=True):
 
 def final(concat_list, audio, out):
     run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", concat_list, "-i", audio,
-         "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
+         "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "medium", "-crf", "15", "-pix_fmt", "yuv420p",
          "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", "-map_metadata", "-1", out])

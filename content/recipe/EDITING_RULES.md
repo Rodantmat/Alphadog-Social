@@ -55,3 +55,9 @@ Every episode inherits all rules. Never ask the owner to repeat one.
 | D1 | Subtitles as selectable tracks (not burned in): English plus at least Spanish, timed to the voice. | Owner, v2 | [AUTO] en + es SRT present; cue timing anchored to speech pauses |
 | D2 | Before calling an episode final, critique it through the audience personas and score it, grounded in research. | Owner, v2 | [REVIEW] scorecard |
 | D3 | Credits for every CC/PD asset (title, author, link, license): pinned comment < 10,000 chars, overflow in the description (< 5,000); AI narration disclosed. | Research rubric | [AUTO] every used source has a credit |
+
+## V27-V30 (2026-10-29, Yellowstone Part 1-3 audits)
+- V27 Only re-time (motion-interpolate) a clip when the native-res repeated-frame test says it has repeats; interpolating clean 30 fps clips creates a pulse. Never reset timestamps after mpdecimate.
+- V28 Stabilised clips that gain repeated frames (low light) are used as filmed. Re-encoding lowers detail on near-static scenes: final encode crf 15, shot encodes crf 14.
+- V29 Hard cuts left inside a prepared clip are trimmed automatically (prep2 Q-CUT); in-points past the end of a clip are clamped.
+- V30 Portrait photos use bg=fit (never cropped to 16:9); single portrait clips use the multi engine; the same clip is not reused within an episode.

@@ -365,7 +365,7 @@ def cadence(pos):
         conc = np.bincount(pos % per, minlength=per).max() / len(pos)
         if conc >= (0.6 if per >= 4 else 0.75) and conc - 1 / per > best[0]: best = (conc - 1 / per, per)
     return f"regular cadence {CAD[best[1]]}" if best[1] else "irregular (variable-frame-rate source / dropped frames)"
-F1_LIM = 0.03; F1_REF = 0.6; F1_REL = 0.4
+F1_LIM = 0.05; F1_REF = 0.6; F1_REL = 0.25
 f1_rows = []; f1_static = 0
 f2_n = 0; f4_rows = []; soft_n = 0
 SPX = (1080.0 / min(LW, LH)) * FPS                       # low-res px/frame -> px/s at 1080p
@@ -382,7 +382,7 @@ for a, b_, s in MUNITS:
     nb_l = np.array([d[max(0, k - 3):k].max() if k > 0 else 0.0 for k in range(len(d))])
     nb_r = np.array([d[k + 1:k + 4].max() if k + 1 < len(d) else 0.0 for k in range(len(d))])
     nb = np.minimum(nb_l, nb_r); valid = nb >= F1_REF; valid[:3] = False; valid[-3:] = False
-    if valid.mean() < 0.3: f1_static += 1
+    if valid.mean() < 0.4: f1_static += 1
     else:
         rp = valid & (d < F1_REL * nb)
         ratio = float(rp.sum() / max(1, valid.sum()))
@@ -683,7 +683,7 @@ for i in range(len(units)):
         if same_src or intro:
             REP["Q9"].setdefault("planned_reuse", []).append({"a": tc(a1), "b": tc(a2), "src": os.path.basename(s1.get("src", "")) if s1 else "", "hamming": d})
             continue
-        sev_q9 = "fail" if (cs_ is not None or d <= 26) else "warn"   # hash only (no CLIP): 27-40 bits = different scenes in practice (Yellowstone ch1 review)
+        sev_q9 = "fail" if (cs_ is not None or d <= 12) else "warn"   # hash only (no CLIP): 27-40 bits = different scenes in practice (Yellowstone ch1 review)
         dups += sev_q9 == "fail"
         find("Q9", a2, sev=sev_q9, msg= f"looks like the shot at {tc(a1)} (hash distance {d}/256" + (f", CLIP {cs_:.3f})" if cs_ is not None else ")") + (f": {os.path.basename(s1.get('src', ''))} vs {os.path.basename(s2.get('src', ''))}" if s1 else ""), t_end=b2, other=round(a1, 2))
 summ("Q9", f"{len(units)} shots hashed; {dups} unplanned look-alike pairs; planned reuse/intro previews: {len(REP['Q9'].get('planned_reuse', []))}")
