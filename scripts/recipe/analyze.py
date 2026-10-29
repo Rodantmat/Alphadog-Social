@@ -683,8 +683,9 @@ for i in range(len(units)):
         if same_src or intro:
             REP["Q9"].setdefault("planned_reuse", []).append({"a": tc(a1), "b": tc(a2), "src": os.path.basename(s1.get("src", "")) if s1 else "", "hamming": d})
             continue
-        dups += 1
-        find("Q9", a2, f"looks like the shot at {tc(a1)} (hash distance {d}/256" + (f", CLIP {cs_:.3f})" if cs_ is not None else ")") + (f": {os.path.basename(s1.get('src', ''))} vs {os.path.basename(s2.get('src', ''))}" if s1 else ""), t_end=b2, other=round(a1, 2))
+        sev_q9 = "fail" if (cs_ is not None or d <= 26) else "warn"   # hash only (no CLIP): 27-40 bits = different scenes in practice (Yellowstone ch1 review)
+        dups += sev_q9 == "fail"
+        find("Q9", a2, sev=sev_q9, msg= f"looks like the shot at {tc(a1)} (hash distance {d}/256" + (f", CLIP {cs_:.3f})" if cs_ is not None else ")") + (f": {os.path.basename(s1.get('src', ''))} vs {os.path.basename(s2.get('src', ''))}" if s1 else ""), t_end=b2, other=round(a1, 2))
 summ("Q9", f"{len(units)} shots hashed; {dups} unplanned look-alike pairs; planned reuse/intro previews: {len(REP['Q9'].get('planned_reuse', []))}")
 
 # ------------------------------------------------------------------ audio
@@ -981,7 +982,8 @@ for s in SHOTS:
     if t_ not in ("video", "photo", "multi") or s.get("_kind") in ("card", "graphic", "map"): continue
     parts = []
     if t_ == "multi":
-        n_ = max(1, len(s.get("srcs", []))); pw = (W0 - 14 * (n_ + 1)) // n_; ph = H0 - 28
+        n_ = max(1, len(s.get("srcs", []))); ph = H0 - 28
+        pw = min((W0 - 14 * (n_ + 1)) // n_, int(ph * 9 / 16) // 2 * 2)   # engine geometry: panels never wider than 9:16
         for x in s.get("srcs", []):
             dm = src_dims(x)
             if dm: cov = max(pw / dm[0], ph / dm[1]); con = min(pw / dm[0], ph / dm[1]); parts.append((dm, cov / con, cov))
@@ -989,7 +991,8 @@ for s in SHOTS:
         dm = src_dims(s)
         if dm:
             cov = max(W0 / dm[0], H0 / dm[1]); con = min(W0 / dm[0], H0 / dm[1])
-            if t_ == "video": parts.append((dm, cov / con, cov * (1 + float(s.get("drift", 0.035) or 0))))
+            zm_ = float(s.get("zoom", 1.0) or 1.0)   # static framing zoom: crops away (1 - 1/zoom) of the frame
+            if t_ == "video": parts.append((dm, cov / con * zm_, cov * zm_ * (1 + float(s.get("drift", 0.035) or 0))))
             elif s.get("bg", "cover") == "cover": parts.append((dm, cov / con, cov * max(float(s.get("z0", 1.0)), float(s.get("z1", 1.12)))))
             else: parts.append((dm, 1.0, con * max(float(s.get("z0", 1.0)), float(s.get("z1", 1.12)))))
     if not parts: f3_unknown += 1; continue

@@ -30,6 +30,10 @@ Every episode inherits all rules. Never ask the owner to repeat one.
 | V20 | **"Us" moments are short and varied:** 2–6 quick clips of the owner, Jessi and family, mixed places, each ~2.5–3.5 s; never one long single clip of one person. | Owner, Yellowstone Ch1 review | [REVIEW] |
 | V21 | **End screen uses the real AlphaDog Studio logo and real imagery** (our footage behind, the next episode's real image in the next-video slot). Never an invented logo or an empty "NEXT" box. | Owner, Yellowstone Ch1 review | [AUTO] end_card.py is the only end-card source; analyzer F6 OCR/logo check |
 | V22 | **Chapter cards show the chapter NAME only** — no "Chapter One/Two" numbering (numbering makes standalone parts feel incomplete). | Owner, Yellowstone Ch1 review | [AUTO] analyzer F7 OCR: no "CHAPTER <number>" text |
+| V23 | **Clean 30 fps phone video is used as filmed** — motion interpolation is only for real frame-rate problems (avg < 29.5 fps or measured repeated frames); re-timing a clean clip produced a visible 4-frame pulse. | Ch1 v3 audit (F1) | [AUTO] prep2 Q-FPS; analyzer F1 |
+| V24 | **No frozen stretches inside a moving shot** — source holds/stalls (webcam stalls, slideshow holds) are measured relative to the clip's own motion and excluded when picking the in-point; near-static AI clips get a gentle 4 % push-in. | Ch1 v3 audit (Q3/F2, Steamboat webcam) | [AUTO] prep2 Q-FREEZE; build2; analyzer Q3/F2 |
+| V25 | **Every shot is frame-exact and never outlasts its footage** — merged AI continuations are re-checked and slowed (≥ 0.88) if needed; a short shot shifts every later cut and the picture drifts from the voice. | Ch1 v3 audit (Q1, 9 frames short) | [AUTO] build2 + engine; analyzer Q1 |
+| V26 | **No burned-in source stamps** (e.g. "NPS Video / USGS" bug) — reframe with a static zoom (≤ 1.25) to crop it out, or pick another window. | Ch1 v3 audit (Q6) | [AUTO] analyzer Q6 |
 | V12 | No stereotyped "Native" imagery (Plains headdress stock, sham-battle films), no AI images of real people/events. | Research rubric | [REVIEW] banned-source list |
 
 ## Sound
