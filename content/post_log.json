@@ -13,19 +13,6 @@
    "song": "What You Waiting For?",
    "artist": "Gwen Stefani",
    "used_on": "reel-2026-10-21-pick-rui-under-reb"
-  },
-  {
-   "id": "short-2026-10-28-chiricahua-sh2-massai",
-   "platform": "youtube/instagram/facebook/tiktok",
-   "type": "short",
-   "posted": "2026-10-28 18:30-18:59 PT",
-   "file": "chiricahua_sh2.mp4",
-   "music": "original video audio only (no added song); TikTok via Buffer",
-   "links": {
-    "instagram": "https://www.instagram.com/reel/DfD4b-zD6U4/",
-    "facebook": "https://www.facebook.com/reel/1617495313446017/",
-    "tiktok": "https://www.tiktok.com/@alphadogstudio/video/7701896019289591053"
-   }
   }
  ],
  "posts": [
@@ -86,6 +73,19 @@
    "music": "original audio (none added)",
    "topic": "De'Aaron Fox postgame on his flagrant foul on Chet",
    "credit": "@bleacherreport (video via Cory_Mose/X)"
+  },
+  {
+   "id": "short-2026-10-28-chiricahua-sh2-massai",
+   "platform": "youtube/instagram/facebook/tiktok",
+   "type": "short",
+   "posted": "2026-10-28 18:30-18:59 PT",
+   "file": "chiricahua_sh2.mp4",
+   "music": "original video audio only (no added song); TikTok via Buffer",
+   "links": {
+    "instagram": "https://www.instagram.com/reel/DfD4b-zD6U4/",
+    "facebook": "https://www.facebook.com/reel/1617495313446017/",
+    "tiktok": "https://www.tiktok.com/@alphadogstudio/video/7701896019289591053"
+   }
   }
  ],
  "planned": []
