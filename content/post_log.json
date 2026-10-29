@@ -1,25 +1,92 @@
 {
-  "rules": {
-    "no_repeat_music": "Never reuse a song across any post, reel or story. Check music_used before suggesting a track.",
-    "timezone": "America/Los_Angeles"
+ "rules": {
+  "no_repeat_music": "Never reuse a song across any post, reel or story. Check music_used before suggesting a track.",
+  "timezone": "America/Los_Angeles"
+ },
+ "music_used": [
+  {
+   "song": "STORM II",
+   "artist": "Gener8ion & Yung Lean",
+   "used_on": "reel-2026-10-21-opening-night-top5"
   },
-  "music_used": [
-    {"song": "STORM II", "artist": "Gener8ion & Yung Lean", "used_on": "reel-2026-10-21-opening-night-top5"},
-    {"song": "What You Waiting For?", "artist": "Gwen Stefani", "used_on": "reel-2026-10-21-pick-rui-under-reb"}
-  ],
-  "posts": [
-    {"id": "reel-2026-10-21-opening-night-top5", "platform": "instagram", "type": "reel", "posted": "2026-10-21 ~13:40 PT",
-     "file": "opening_night_top5_v3.mp4", "music": "STORM II - Gener8ion & Yung Lean",
-     "url": "https://www.instagram.com/reel/DexSD4gSenE/", "topic": "Opening night top 5 plays (Thompson, LeBron, Wemby, Maxey, SGA)"},
-    {"id": "story-2026-10-21-castle-one-shoe", "platform": "instagram", "type": "story", "posted": "2026-10-21 ~15:55 PT",
-     "file": "story1_castle_one_shoe_v7.mp4", "music": "original audio (none added)", "topic": "Stephon Castle lost his shoe, kept guarding", "credit": "@nba"},
-    {"id": "reel-2026-10-21-pick-rui-under-reb", "platform": "instagram", "type": "reel", "posted": "2026-10-21 ~16:20 PT",
-     "file": "pick_rui_under_reb.mp4", "music": "What You Waiting For? - Gwen Stefani",
-     "topic": "Pick of the day: Rui Hachimura UNDER 5.5 rebounds, LAC vs SAC", "pick": {"player": "Rui Hachimura", "prop": "rebounds", "line": 5.5, "side": "Under", "book": "PrizePicks standard", "alphadog_final_hp": 0.886, "result": null}},
-    {"id": "story-2026-10-21-jwill-vs-wemby", "platform": "instagram", "type": "story", "posted": "2026-10-21 ~17:05 PT",
-     "file": "story2_jwill_vs_wemby_v2.mp4", "music": "original audio (none added)", "topic": "OKC-SAS scuffle: wide scrum (3 Williamses circled) + JWill face-off, 4 techs", "credit": "@houseofhighlights"},
-    {"id": "story-2026-10-21-fox-postgame", "platform": "instagram", "type": "story", "posted": "pending (~18:30-19:00 PT)",
-     "file": "story3_fox_postgame.mp4", "music": "original audio (none added)", "topic": "De'Aaron Fox postgame on his flagrant foul on Chet", "credit": "@bleacherreport (video via Cory_Mose/X)"}
-  ],
-  "planned": []
+  {
+   "song": "What You Waiting For?",
+   "artist": "Gwen Stefani",
+   "used_on": "reel-2026-10-21-pick-rui-under-reb"
+  },
+  {
+   "id": "short-2026-10-28-chiricahua-sh2-massai",
+   "platform": "youtube/instagram/facebook/tiktok",
+   "type": "short",
+   "posted": "2026-10-28 18:30-18:59 PT",
+   "file": "chiricahua_sh2.mp4",
+   "music": "original video audio only (no added song); TikTok via Buffer",
+   "links": {
+    "instagram": "https://www.instagram.com/reel/DfD4b-zD6U4/",
+    "facebook": "https://www.facebook.com/reel/1617495313446017/",
+    "tiktok": "https://www.tiktok.com/@alphadogstudio/video/7701896019289591053"
+   }
+  }
+ ],
+ "posts": [
+  {
+   "id": "reel-2026-10-21-opening-night-top5",
+   "platform": "instagram",
+   "type": "reel",
+   "posted": "2026-10-21 ~13:40 PT",
+   "file": "opening_night_top5_v3.mp4",
+   "music": "STORM II - Gener8ion & Yung Lean",
+   "url": "https://www.instagram.com/reel/DexSD4gSenE/",
+   "topic": "Opening night top 5 plays (Thompson, LeBron, Wemby, Maxey, SGA)"
+  },
+  {
+   "id": "story-2026-10-21-castle-one-shoe",
+   "platform": "instagram",
+   "type": "story",
+   "posted": "2026-10-21 ~15:55 PT",
+   "file": "story1_castle_one_shoe_v7.mp4",
+   "music": "original audio (none added)",
+   "topic": "Stephon Castle lost his shoe, kept guarding",
+   "credit": "@nba"
+  },
+  {
+   "id": "reel-2026-10-21-pick-rui-under-reb",
+   "platform": "instagram",
+   "type": "reel",
+   "posted": "2026-10-21 ~16:20 PT",
+   "file": "pick_rui_under_reb.mp4",
+   "music": "What You Waiting For? - Gwen Stefani",
+   "topic": "Pick of the day: Rui Hachimura UNDER 5.5 rebounds, LAC vs SAC",
+   "pick": {
+    "player": "Rui Hachimura",
+    "prop": "rebounds",
+    "line": 5.5,
+    "side": "Under",
+    "book": "PrizePicks standard",
+    "alphadog_final_hp": 0.886,
+    "result": null
+   }
+  },
+  {
+   "id": "story-2026-10-21-jwill-vs-wemby",
+   "platform": "instagram",
+   "type": "story",
+   "posted": "2026-10-21 ~17:05 PT",
+   "file": "story2_jwill_vs_wemby_v2.mp4",
+   "music": "original audio (none added)",
+   "topic": "OKC-SAS scuffle: wide scrum (3 Williamses circled) + JWill face-off, 4 techs",
+   "credit": "@houseofhighlights"
+  },
+  {
+   "id": "story-2026-10-21-fox-postgame",
+   "platform": "instagram",
+   "type": "story",
+   "posted": "pending (~18:30-19:00 PT)",
+   "file": "story3_fox_postgame.mp4",
+   "music": "original audio (none added)",
+   "topic": "De'Aaron Fox postgame on his flagrant foul on Chet",
+   "credit": "@bleacherreport (video via Cory_Mose/X)"
+  }
+ ],
+ "planned": []
 }

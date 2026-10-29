@@ -197,6 +197,9 @@
   "id": "promo_tt",
   "platform": "tiktok_draft",
   "file": "spotify_promo_ep1.mp4",
-  "at": "2026-10-30T00:15:00Z"
+  "at": "2026-10-30T00:15:00Z",
+  "done": {
+   "skipped": "owner 2026-10-28: TikTok goes through Buffer, no more inbox drafts"
+  }
  }
 ]
