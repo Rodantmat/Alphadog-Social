@@ -97,7 +97,12 @@ with sync_playwright() as p:
         print("PANELAFTER", json.dumps(pg.evaluate("() => (document.querySelector('ytve-endscreen-editor-options-panel')||document.body).innerText.slice(0,600)"), ensure_ascii=False))
         print("TOPTXT", json.dumps(pg.evaluate("() => [...document.querySelectorAll('ytve-endscreen-editor-preview-overlay .ytp-ce-element')].map(e=>e.innerText.slice(0,80))"), ensure_ascii=False))
         sv = pg.get_by_role("button", name="Salvar").first
+        for _ in range(15):
+            if sv.get_attribute("aria-disabled") != "true": break
+            pg.wait_for_timeout(1000)
         print("SAVEDIS", sv.get_attribute("aria-disabled"))
+        print("ERRTXT", json.dumps(pg.evaluate("() => (document.body.innerText.match(/[^\\n]*(erro|inválid|sobrepo|não é possível|Não foi)[^\\n]*/gi)||[]).slice(0,10)"), ensure_ascii=False))
+        print("TLTXT", json.dumps(pg.evaluate("() => (document.querySelector('ytve-endscreen-editor-timeline')||document.body).innerText.slice(0,300)"), ensure_ascii=False))
         sv.click(timeout=8000); pg.wait_for_timeout(5000); snap(pg, "13_saved")
         print("SAVED")
     b.close()
