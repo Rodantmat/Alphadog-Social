@@ -2,8 +2,8 @@
 """Shorts/Reels/Stories gate - fail-closed technical check for every vertical clip before it is queued or uploaded.
 usage: shorts_gate.py <dir or files...>
 S1 1080x1920 portrait (phone-safe canvas)  S2 H.264 yuv420p, <= 60 fps  S3 AAC audio present, sample rate <= 48 kHz
-   (Instagram Reels rejects 96 kHz with 'ProcessingFailedError' - happened 2026-10-30)  S4 Shorts/Reels <= 59.5 s, Stories <= 60 s
-S5 size <= 100 MB  S6 +faststart (moov atom before mdat)
+   (48 kHz is only a recommendation: 96 kHz files posted fine; the real Instagram failure was file size)  S4 Shorts/Reels <= 59.5 s, Stories <= 60 s
+S5 size <= 100 MB; Instagram Reel uploads (_ig copies) must be <= 20 MB - 25 MB files failed with ProcessingFailedError 2026-10-30  S6 +faststart (moov atom before mdat)
 Exit 1 if anything fails."""
 import json, os, subprocess, sys, glob
 files = []
@@ -16,9 +16,10 @@ for f in files:
     if (v.get("width"), v.get("height")) != (1080, 1920): e.append(f"S1 size {v.get('width')}x{v.get('height')}")
     if v.get("codec_name") != "h264" or v.get("pix_fmt") != "yuv420p": e.append(f"S2 {v.get('codec_name')}/{v.get('pix_fmt')}")
     if not a: e.append("S3 no audio")
-    elif a.get("codec_name") != "aac" or int(a.get("sample_rate", 0)) > 48000: e.append(f"S3 audio {a.get('codec_name')} {a.get('sample_rate')} Hz")
+    elif a.get("codec_name") != "aac": e.append(f"S3 audio {a.get('codec_name')}")
     if d > 59.5: e.append(f"S4 {d:.1f}s")
     if sz > 100e6: e.append(f"S5 {sz/1e6:.0f} MB")
+    if f.endswith("_ig.mp4") and sz > 20e6: e.append(f"S5 Instagram copy {sz/1e6:.0f} MB > 20 MB")
     head = open(f, "rb").read(4096)
     if b"moov" not in head: e.append("S6 moov not at start (no faststart)")
     if e: bad += 1; print("FAIL", os.path.basename(f), "; ".join(e))
