@@ -189,7 +189,13 @@
    "2026-10-30T07:36Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055447040805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}",
    "2026-10-30T14:53Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055494422805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}",
    "2026-10-30T19:20Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055530044805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}"
-  ]
+  ],
+  "done": {
+   "media_id": "18120625834937839",
+   "permalink": "https://www.instagram.com/reel/DfIYKHZDlFR/",
+   "posted": "2026-10-30T19:53:21+0000",
+   "at": "2026-10-30T19:52:53Z"
+  }
  },
  {
   "id": "promo_fb",
