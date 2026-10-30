@@ -55,4 +55,12 @@ with sync_playwright() as p:
         print("DIALOG", json.dumps(dl, ensure_ascii=False))
         for n in ["Escolher vídeo específico","Escolha um vídeo"]:
             print("has", n, pg.get_by_text(n).count())
+    if MODE == "explore4":
+        pg.get_by_role("button", name="Adicionar elemento").first.click(); pg.wait_for_timeout(2000)
+        pg.get_by_text("Vídeo", exact=True).first.click(); pg.wait_for_timeout(2500)
+        pg.get_by_text("Escolher um vídeo específico").first.click(); pg.wait_for_timeout(4000); snap(pg, "06_picker")
+        dl = pg.evaluate("() => [...document.querySelectorAll('ytcp-video-pick-dialog, ytcp-dialog, tp-yt-paper-dialog, [role=dialog]')].map(d=>(d.tagName+': '+(d.innerText||'')).replace(/\\s+/g,' ').slice(0,1500)).filter(t=>t.length>40)")
+        print("PICKER", json.dumps(dl, ensure_ascii=False))
+        inp = pg.evaluate("() => [...document.querySelectorAll('input')].map(i=>[i.placeholder,i.type,i.getAttribute('aria-label')])")
+        print("INPUTS", json.dumps(inp, ensure_ascii=False))
     b.close()
