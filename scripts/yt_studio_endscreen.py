@@ -46,4 +46,13 @@ with sync_playwright() as p:
         # do not save
         click = pg.get_by_role("button", name="Descartar alterações")
         if click.count(): click.first.click(); pg.wait_for_timeout(1500)
+    if MODE == "explore3":
+        pg.get_by_role("button", name="Adicionar elemento").first.click(); pg.wait_for_timeout(2000)
+        pg.get_by_text("Vídeo", exact=True).first.click(); pg.wait_for_timeout(3000); snap(pg, "05_video_dialog")
+        txt = pg.evaluate("() => (document.querySelector('ytve-endscreen-editor-options-panel')||document.body).innerText.slice(0,1500)")
+        print("PANEL", json.dumps(txt, ensure_ascii=False))
+        dl = pg.evaluate("() => [...document.querySelectorAll('tp-yt-paper-dialog, ytcp-dialog, [role=dialog]')].map(d=>(d.innerText||'').slice(0,800))")
+        print("DIALOG", json.dumps(dl, ensure_ascii=False))
+        for n in ["Escolher vídeo específico","Escolha um vídeo"]:
+            print("has", n, pg.get_by_text(n).count())
     b.close()
