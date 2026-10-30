@@ -252,7 +252,8 @@
   "caption": "July 23, 2024. The ground at Biscuit Basin lets go. Steam, mud and rock blast 600 feet into the air, boulders land on the boardwalk, and not one instrument saw it coming.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 1 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Volcano #Geology #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/-vkXqMrSljM",
   "errors": [
-   "2026-10-30T19:20Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055530257805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}"
+   "2026-10-30T19:20Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055530257805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}",
+   "2026-10-30T19:30Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055531301805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}"
   ]
  },
  {
