@@ -1,0 +1,35 @@
+name: comment-sweep
+# Three times a day: read new comments on our recent Instagram + Facebook posts and answer them in the owner's voice (Gemini).
+# Manual: dry_run=1 prints the replies it WOULD send without posting. State/log -> content/comment_state.json, content/comment_log.json.
+on:
+  schedule:
+    - cron: "45 15 * * *"   # ~8:45 AM PT
+    - cron: "45 21 * * *"   # ~2:45 PM PT
+    - cron: "45 3 * * *"    # ~8:45 PM PT
+  workflow_dispatch:
+    inputs:
+      dry_run: { description: "1 = print only, post nothing", default: "0" }
+      max_replies: { description: "max replies this run", default: "12" }
+permissions:
+  contents: write
+concurrency: { group: comment-sweep, cancel-in-progress: false }
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sweep
+        env:
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          MAX_REPLIES: ${{ inputs.max_replies }}
+        run: python3 scripts/comment_sweep.py
+      - name: Save state
+        if: always()
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add content/comment_state.json content/comment_log.json 2>/dev/null; git commit -qm "comment-sweep: state/log" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
