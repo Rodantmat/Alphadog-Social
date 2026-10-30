@@ -1,0 +1,30 @@
+name: yt-endscreen
+# Add end-screen elements to a video in YouTube Studio (explore = look only).
+on:
+  workflow_dispatch:
+    inputs:
+      video_id: { description: "video id", required: true }
+      next_video: { description: "video id for the Video element", default: "" }
+      mode: { description: "explore | apply", default: "explore" }
+permissions:
+  contents: write
+concurrency: { group: yt-studio-session, cancel-in-progress: false }
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q playwright cryptography && python3 -m playwright install --with-deps chromium >/dev/null
+      - name: Run
+        env:
+          YT_STUDIO_SESSION: ${{ secrets.YT_STUDIO_SESSION }}
+          YT_GOOGLE_SESSION: ${{ secrets.YT_GOOGLE_SESSION }}
+          VIDEO_ID: ${{ inputs.video_id }}
+          NEXT_VIDEO: ${{ inputs.next_video }}
+          MODE: ${{ inputs.mode }}
+          YT_NO_ROLLING: "1"
+        run: xvfb-run -a python3 scripts/yt_studio_endscreen.py
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with: { name: endscreen-${{ github.run_id }}, path: /tmp/ytqa, retention-days: 7, if-no-files-found: ignore }
