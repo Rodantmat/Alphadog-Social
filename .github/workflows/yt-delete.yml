@@ -1,0 +1,37 @@
+name: yt-delete
+# mode=list: print the channel's recent uploads (id, privacy, publish time, title). mode=delete: delete ONE video by id (owner-approved only).
+on:
+  workflow_dispatch:
+    inputs:
+      mode: { description: "list | delete", default: "list" }
+      video_id: { description: "video id to delete (mode=delete)", default: "" }
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          MODE: ${{ inputs.mode }}
+          VID: ${{ inputs.video_id }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, urllib.parse
+          d = urllib.parse.urlencode({"client_id": os.environ["YT_CLIENT_ID"], "client_secret": os.environ["YT_CLIENT_SECRET"],
+                                      "refresh_token": os.environ["YT_REFRESH_TOKEN"], "grant_type": "refresh_token"}).encode()
+          tok = json.loads(urllib.request.urlopen(urllib.request.Request("https://oauth2.googleapis.com/token", data=d)).read())["access_token"]
+          def api(method, url):
+              req = urllib.request.Request(url, method=method, headers={"Authorization": f"Bearer {tok}"})
+              return json.loads(urllib.request.urlopen(req).read() or b"{}")
+          if os.environ["MODE"] == "delete":
+              v = os.environ["VID"].strip(); assert v
+              api("DELETE", f"https://www.googleapis.com/youtube/v3/videos?id={v}"); print("DELETED", v)
+          else:
+              ch = api("GET", "https://www.googleapis.com/youtube/v3/channels?part=contentDetails&mine=true")["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"]
+              items = api("GET", f"https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId={ch}&maxResults=50")["items"]
+              ids = ",".join(i["contentDetails"]["videoId"] for i in items)
+              for v in api("GET", f"https://www.googleapis.com/youtube/v3/videos?part=snippet,status,contentDetails&id={ids}")["items"]:
+                  print("VIDEO", v["id"], v["status"]["privacyStatus"], v["snippet"]["publishedAt"], v["contentDetails"]["duration"], v["snippet"]["title"][:80], "| publishAt", v["status"].get("publishAt"))
+          PY
