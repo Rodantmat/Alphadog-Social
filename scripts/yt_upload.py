@@ -22,8 +22,11 @@ def api(method, url, tok, body=None, headers=None, raw=None):
     data = raw if raw is not None else (json.dumps(body).encode() if body is not None else None)
     if body is not None and raw is None: h["Content-Type"] = "application/json; charset=UTF-8"
     req = urllib.request.Request(url, data=data, headers=h, method=method)
-    with urllib.request.urlopen(req, timeout=600) as r:
-        return r.status, dict(r.headers), r.read()
+    try:
+        with urllib.request.urlopen(req, timeout=600) as r:
+            return r.status, dict(r.headers), r.read()
+    except urllib.error.HTTPError as e:
+        print("YT_HTTP_ERROR", e.code, e.read().decode(errors="replace")[:600]); raise
 
 M = json.load(open(sys.argv[1])); tok = access_token()
 desc = open(M["description_file"]).read() if M.get("description_file") else M.get("description", "")
