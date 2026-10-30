@@ -44,5 +44,11 @@ elif cmd == "post":
     print("BUFFER_POST_ID=" + r["post"]["id"])
 elif cmd == "posts":
     cid = chan(sys.argv[2])
-    q = """query($c: ChannelId!) { posts(input: { channelIds: [$c] }, first: 20) { edges { node { id status dueAt text error { message } } } } }"""
+    q = """query($c: ChannelId!) { posts(input: { channelIds: [$c] }, first: 50) { edges { node { id status dueAt text error { message } } } } }"""
     print(json.dumps(gql(q, {"c": cid}), indent=1)[:4000])
+
+elif cmd == "delete":
+    d = gql("mutation($i: DeletePostInput!) { deletePost(input: $i) { ... on PostActionSuccess { post { id } } ... on MutationError { message } } }", {"i": {"id": sys.argv[2]}})
+    print("DELETE", json.dumps(d))
+elif cmd == "types":
+    d = gql('{ __type(name: "Mutation") { fields { name } } }'); print(json.dumps(d))
