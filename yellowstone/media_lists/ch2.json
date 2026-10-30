@@ -111,6 +111,33 @@
    "max_sec": 600,
    "license": "Public Domain (NPS-credited, no copyright symbol)",
    "note": "NPS 150-years interview series (2022): modern management topics, not Army-era; kept as optional PD interview material"
+  },
+  {
+   "kind": "direct",
+   "name": "ch2_commons_bison_skull_pile_1892",
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bison_skull_pile-restored.jpg?width=2400",
+   "shows": "Pile of American bison skulls at the Michigan Carbon Works, Rogers Park, Detroit, 1892 (restored)",
+   "license": "Public domain (photograph, 1892)",
+   "credit": "Detroit Public Library, Burton Historical Collection, 1892",
+   "page": "https://commons.wikimedia.org/wiki/File:Bison_skull_pile-restored.jpg"
+  },
+  {
+   "kind": "direct",
+   "name": "ch2_ia_forest_and_stream_vol42_p372",
+   "url": "https://archive.org/download/Foreststream42/page/n372_w1600.jpg",
+   "shows": "Forest and Stream, vol. 42 (1894), page scan",
+   "license": "Public domain (published 1894)",
+   "credit": "Forest and Stream Publishing Co., 1894 / Internet Archive",
+   "page": "https://archive.org/details/Foreststream42/page/372/"
+  },
+  {
+   "kind": "direct",
+   "name": "ch2_ia_forest_and_stream_vol42_cover",
+   "url": "https://archive.org/download/Foreststream42/page/n3_w1600.jpg",
+   "shows": "Forest and Stream, vol. 42 (1894), title page scan",
+   "license": "Public domain (published 1894)",
+   "credit": "Forest and Stream Publishing Co., 1894 / Internet Archive",
+   "page": "https://archive.org/details/Foreststream42"
   }
  ]
 }
