@@ -96,7 +96,7 @@ with sync_playwright() as p:
         snap(pg, "12_placed"); print("BOXES2", json.dumps(boxes()))
         print("PANELAFTER", json.dumps(pg.evaluate("() => (document.querySelector('ytve-endscreen-editor-options-panel')||document.body).innerText.slice(0,600)"), ensure_ascii=False))
         print("TOPTXT", json.dumps(pg.evaluate("() => [...document.querySelectorAll('ytve-endscreen-editor-preview-overlay .ytp-ce-element')].map(e=>e.innerText.slice(0,80))"), ensure_ascii=False))
-        sv = pg.get_by_role("button", name="Salvar").first
+        sv = pg.get_by_role("button", name="Salvar").last
         for _ in range(15):
             if sv.get_attribute("aria-disabled") != "true": break
             pg.wait_for_timeout(1000)
