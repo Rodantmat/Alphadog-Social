@@ -1,0 +1,37 @@
+name: yt-reschedule
+# Move the scheduled publish time of private scheduled videos. pairs = "VIDEOID=2026-10-30T17:30:00Z,VIDEOID=..."
+on:
+  workflow_dispatch:
+    inputs:
+      pairs: { description: "comma-separated id=ISOUTC", required: true }
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          PAIRS: ${{ inputs.pairs }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.parse, urllib.request, urllib.error
+          d = urllib.parse.urlencode({"client_id": os.environ["YT_CLIENT_ID"], "client_secret": os.environ["YT_CLIENT_SECRET"],
+                                      "refresh_token": os.environ["YT_REFRESH_TOKEN"], "grant_type": "refresh_token"}).encode()
+          tok = json.loads(urllib.request.urlopen(urllib.request.Request("https://oauth2.googleapis.com/token", data=d)).read())["access_token"]
+          def api(method, url, body=None):
+              r = urllib.request.Request(url, data=json.dumps(body).encode() if body is not None else None, method=method,
+                                         headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json"})
+              try:
+                  with urllib.request.urlopen(r) as x: b = x.read(); return x.status, (json.loads(b) if b else {})
+              except urllib.error.HTTPError as e: return e.code, e.read().decode()[:400]
+          for p in os.environ["PAIRS"].split(","):
+              v, at = p.strip().split("=", 1)
+              st, o = api("GET", f"https://www.googleapis.com/youtube/v3/videos?part=status&id={v}")
+              s = o["items"][0]["status"] if st == 200 and o.get("items") else None
+              if not s: print(v, "NOT FOUND", st, o); continue
+              body = {"id": v, "status": {"privacyStatus": "private", "publishAt": at, "selfDeclaredMadeForKids": s.get("selfDeclaredMadeForKids", False),
+                                          "embeddable": s.get("embeddable", True), "license": s.get("license", "youtube")}}
+              print(v, "was", s.get("privacyStatus"), s.get("publishAt"), "->", at, api("PUT", "https://www.googleapis.com/youtube/v3/videos?part=status", body)[0])
+          PY
