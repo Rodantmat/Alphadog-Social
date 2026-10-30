@@ -25,6 +25,11 @@ jobs:
       - uses: actions/checkout@v4
       - if: inputs.mode == 'channels'
         run: python3 scripts/buffer_post.py channels
+      - if: inputs.mode == 'edit'
+        env: { DUE: "${{ inputs.due }}", TEXT: "${{ inputs.text }}" }
+        run: |
+          python3 -c "import os;open('/tmp/text.txt','w',encoding='utf-8').write(os.environ['TEXT'].split('|',1)[1].replace('\\\\n','\\n')) if '|' in os.environ['TEXT'] else None"
+          ID="${TEXT%%|*}"; if [ -f /tmp/text.txt ]; then python3 scripts/buffer_post.py edit "$ID" "$DUE" /tmp/text.txt; else python3 scripts/buffer_post.py edit "$ID" "$DUE"; fi
       - if: inputs.mode == 'delete'
         run: python3 scripts/buffer_post.py delete "${{ inputs.text }}"
       - if: inputs.mode == 'types'

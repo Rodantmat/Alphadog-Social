@@ -43,10 +43,17 @@ elif cmd == "post":
     if not r.get("post"): raise SystemExit("BUFFER_POST_FAILED " + json.dumps(r))
     print("BUFFER_POST_ID=" + r["post"]["id"])
 elif cmd == "posts":
-    cid = chan(sys.argv[2])
-    q = """query($c: ChannelId!) { posts(input: { channelIds: [$c] }, first: 50) { edges { node { id status dueAt text error { message } } } } }"""
-    print(json.dumps(gql(q, {"c": cid}), indent=1)[:4000])
-
+    cid = chan(sys.argv[2]); org = gql("query { account { organizations { id } } }")["account"]["organizations"][0]["id"]
+    q = """query($o: OrganizationId!, $c: ChannelId!) { posts(input: { organizationId: $o, filter: { channelIds: [$c] } }, first: 100) { edges { node { id status dueAt text assets { source } } } } }"""
+    d = gql(q, {"o": org, "c": cid})
+    for e in ((d.get("posts") or {}).get("edges") or []):
+        n = e["node"]; print("POST", n["id"], n["status"], n["dueAt"], repr((n["text"] or "")[:70]), [a.get("source", "")[-40:] for a in n.get("assets") or []])
+elif cmd == "edit":
+    inp = {"id": sys.argv[2]}
+    if len(sys.argv) > 3 and sys.argv[3]: inp["dueAt"] = sys.argv[3]; inp["mode"] = "customScheduled"
+    if len(sys.argv) > 4: inp["text"] = open(sys.argv[4], encoding="utf-8").read().strip()
+    d = gql("mutation($i: EditPostInput!) { editPost(input: $i) { ... on PostActionSuccess { post { id dueAt status } } ... on MutationError { message } } }", {"i": inp})
+    print("EDIT", json.dumps(d))
 elif cmd == "delete":
     d = gql("mutation($i: DeletePostInput!) { deletePost(input: $i) { ... on PostActionSuccess { post { id } } ... on MutationError { message } } }", {"i": {"id": sys.argv[2]}})
     print("DELETE", json.dumps(d))
