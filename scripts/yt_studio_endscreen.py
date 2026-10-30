@@ -29,4 +29,21 @@ with sync_playwright() as p:
     # list every button/menu label visible, to learn the UI
     labels = pg.evaluate("() => [...document.querySelectorAll('button, [role=button], [role=menuitem], tp-yt-paper-item')].map(e => (e.innerText||e.getAttribute('aria-label')||'').trim()).filter(Boolean).slice(0,120)")
     print("LABELS", json.dumps(labels, ensure_ascii=False))
+    if MODE == "explore2":
+        pg.get_by_role("button", name="Adicionar elemento").first.click(); pg.wait_for_timeout(2500); snap(pg, "03_menu")
+        items = pg.evaluate("() => [...document.querySelectorAll('[role=menuitem], tp-yt-paper-item, ytcp-text-menu *')].map(e => (e.innerText||'').trim()).filter(Boolean).slice(0,40)")
+        print("MENU", json.dumps(items, ensure_ascii=False))
+        for nm in ["Inscrever-se", "Inscrição"]:
+            it = pg.get_by_text(nm, exact=True)
+            if it.count():
+                it.first.click(); print("added", nm); pg.wait_for_timeout(3000); break
+        snap(pg, "04_after_subscribe")
+        # report geometry of the preview player and any element boxes
+        geo = pg.evaluate("""() => { const r=[]; document.querySelectorAll('[class*=endscreen], [class*=element], ytve-endscreen-element, ytve-endscreen-editor *').forEach(e=>{const b=e.getBoundingClientRect(); if(b.width>20&&b.height>20&&b.width<900) r.push([e.tagName, (e.className||'').toString().slice(0,60), Math.round(b.x),Math.round(b.y),Math.round(b.width),Math.round(b.height)])}); return r.slice(0,60);}""")
+        print("GEO", json.dumps(geo))
+        tl = pg.evaluate("() => [...document.querySelectorAll('[class*=timeline] *')].map(e=>(e.innerText||'').trim()).filter(t=>/\d+:\d+/.test(t)).slice(0,20)")
+        print("TIMES", json.dumps(tl))
+        # do not save
+        click = pg.get_by_role("button", name="Descartar alterações")
+        if click.count(): click.first.click(); pg.wait_for_timeout(1500)
     b.close()
