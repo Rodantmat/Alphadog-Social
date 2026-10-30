@@ -1,0 +1,21 @@
+name: yt-captions
+on:
+  workflow_dispatch:
+    inputs:
+      video_ids: { description: "comma separated", default: "-vkXqMrSljM" }
+      dl: { description: "languages to download a sample of, comma separated", default: "es,pt" }
+permissions:
+  contents: read
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          DL: ${{ inputs.dl }}
+          IDS: ${{ inputs.video_ids }}
+        run: python3 scripts/yt_captions_check.py "$IDS"
