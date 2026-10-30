@@ -80,7 +80,9 @@ with sync_playwright() as p:
             dlg = pg.locator("ytcp-video-pick-dialog")
             try: dlg.get_by_placeholder("Pesquise nos seus vídeos").fill(TITLE[:25]); pg.wait_for_timeout(2000)
             except Exception as e: print("search skip", e)
+            print("DLGTXT", json.dumps(dlg.inner_text()[:500], ensure_ascii=False))
             dlg.get_by_text(TITLE, exact=False).first.click(); pg.wait_for_timeout(2500)
+            print("DLGBTN", json.dumps(pg.evaluate("() => [...document.querySelectorAll('ytcp-video-pick-dialog button, ytcp-video-pick-dialog ytcp-button')].map(b=>[(b.innerText||b.getAttribute('aria-label')||'').trim(), b.disabled||b.getAttribute('aria-disabled')])"), ensure_ascii=False))
             for lab in ["Selecionar", "Concluído", "Escolher", "OK"]:
                 bt = dlg.get_by_role("button", name=lab)
                 if bt.count() and bt.first.is_visible(): bt.first.click(); print("picked via", lab); pg.wait_for_timeout(1500); break
@@ -92,6 +94,10 @@ with sync_playwright() as p:
         for b_ in bx:
             if "video" in b_[0] or "playlist" in b_[0]: drag(b_, 1059, 398)
         snap(pg, "12_placed"); print("BOXES2", json.dumps(boxes()))
-        pg.get_by_role("button", name="Salvar").first.click(); pg.wait_for_timeout(5000); snap(pg, "13_saved")
+        print("PANELAFTER", json.dumps(pg.evaluate("() => (document.querySelector('ytve-endscreen-editor-options-panel')||document.body).innerText.slice(0,600)"), ensure_ascii=False))
+        print("TOPTXT", json.dumps(pg.evaluate("() => [...document.querySelectorAll('ytve-endscreen-editor-preview-overlay .ytp-ce-element')].map(e=>e.innerText.slice(0,80))"), ensure_ascii=False))
+        sv = pg.get_by_role("button", name="Salvar").first
+        print("SAVEDIS", sv.get_attribute("aria-disabled"))
+        sv.click(timeout=8000); pg.wait_for_timeout(5000); snap(pg, "13_saved")
         print("SAVED")
     b.close()
