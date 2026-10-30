@@ -1,7 +1,20 @@
 {
  "chapter": "ch2",
- "list_sha": "206ac79d8366459d",
+ "list_sha": "25e2665a9386399e",
  "files": [
+  {
+   "name": "ch2_commons_bison_skull_pile_1892",
+   "src_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bison_skull_pile-restored.jpg?width=2400",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Bison_skull_pile-restored.jpg",
+   "shows": "Pile of American bison skulls at the Michigan Carbon Works, Rogers Park, Detroit, 1892 (restored)",
+   "license": "Public domain (photograph, 1892)",
+   "credit": "Detroit Public Library, Burton Historical Collection, 1892",
+   "status": "OK",
+   "file": "img/ch2_commons_bison_skull_pile_1892.jpg",
+   "w": 3000,
+   "h": 2346,
+   "bytes": 1403417
+  },
   {
    "name": "ch2_commons_jackson_nara_1",
    "src_url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Grand_Canyon_of_the_Yellowstone_-_NARA_-_516696.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
@@ -33,6 +46,32 @@
    "w": 1555,
    "h": 896,
    "bytes": 330533
+  },
+  {
+   "name": "ch2_ia_forest_and_stream_vol42_cover",
+   "src_url": "https://archive.org/download/Foreststream42/page/n3_w1600.jpg",
+   "source_page": "https://archive.org/details/Foreststream42",
+   "shows": "Forest and Stream, vol. 42 (1894), title page scan",
+   "license": "Public domain (published 1894)",
+   "credit": "Forest and Stream Publishing Co., 1894 / Internet Archive",
+   "status": "OK",
+   "file": "img/ch2_ia_forest_and_stream_vol42_cover.jpg",
+   "w": 1962,
+   "h": 2931,
+   "bytes": 567739
+  },
+  {
+   "name": "ch2_ia_forest_and_stream_vol42_p372",
+   "src_url": "https://archive.org/download/Foreststream42/page/n372_w1600.jpg",
+   "source_page": "https://archive.org/details/Foreststream42/page/372/",
+   "shows": "Forest and Stream, vol. 42 (1894), page scan",
+   "license": "Public domain (published 1894)",
+   "credit": "Forest and Stream Publishing Co., 1894 / Internet Archive",
+   "status": "OK",
+   "file": "img/ch2_ia_forest_and_stream_vol42_p372.jpg",
+   "w": 1940,
+   "h": 2950,
+   "bytes": 2186521
   },
   {
    "name": "ch2_nps_ed_howell_captured_1894_haynes",
@@ -2856,24 +2895,6 @@
   }
  ],
  "probes": {
-  "commons:ch2_commons_jackson_old_faithful_nara": [],
-  "npsvideos:ch2_nps_150yrs": [
-   "B7930152-3351-41BB-A622-5D1A3C33714C",
-   "58C1A6E8-71CA-4CEF-807F-686EE06CE618",
-   "59D09ACB-7619-41E7-A842-263FDB72C621",
-   "40E078AF-8750-447D-96C1-29E59898A5B6",
-   "41B95B47-226E-44B5-A8E8-B258DD930E84",
-   "D84641AA-F945-400C-BD15-B97D63F9AE75",
-   "E0D05112-63A6-4BE2-85FB-B1B3391B0AE2",
-   "71A0E0C0-7C35-427B-956C-590CB634D970",
-   "BF2DBBD0-1E62-42AE-AA63-8EA254057F84",
-   "2B78530B-BE74-4587-AF12-4D23DBE4E41C",
-   "BE17D404-1F72-42E2-9C55-A8024AE5F623",
-   "02A94974-42CE-4C9B-B064-9C8212418216",
-   "831AD20C-6202-4B02-88A9-9A67C45D2B05",
-   "0A65A153-D86D-41E8-8F29-678CDD03F9A4",
-   "8E9B4D9D-4A3C-4D34-94FE-BAF9D7C6808A",
-   "26AB5DA0-FF6E-43DB-A918-2A064E1A3262"
-  ]
+  "commons:ch2_commons_jackson_old_faithful_nara": []
  }
 }
