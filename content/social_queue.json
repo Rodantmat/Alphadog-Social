@@ -379,7 +379,13 @@
   "at": "2026-10-30T22:30:00Z",
   "thumb_ms": 1200,
   "caption": "August 17, 1959. A magnitude 7.3 earthquake strikes just west of Yellowstone. By the next day, at least 289 springs had erupted as geysers, 160 of them never seen erupting before.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 1 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Volcano #Geology #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/-vkXqMrSljM"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/-vkXqMrSljM",
+  "done": {
+   "media_id": "17995102248051733",
+   "permalink": "https://www.instagram.com/reel/DfIsB5nkfsk/",
+   "posted": "2026-10-30T22:46:58+0000",
+   "at": "2026-10-30T22:46:31Z"
+  }
  },
  {
   "id": "y3_fb",
@@ -387,7 +393,40 @@
   "file": "yellowstone_ch1_y3.mp4",
   "at": "2026-10-30T22:30:00Z",
   "caption": "August 17, 1959. A magnitude 7.3 earthquake strikes just west of Yellowstone. By the next day, at least 289 springs had erupted as geysers, 160 of them never seen erupting before.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 1 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Volcano #Geology #Shorts",
-  "comment": "▶ Full documentary on YouTube 👉 https://youtu.be/-vkXqMrSljM"
+  "comment": "▶ Full documentary on YouTube 👉 https://youtu.be/-vkXqMrSljM",
+  "done": {
+   "video_id": "1730347788060397",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1103061952492797"
+   },
+   "permalink": "https://www.facebook.com/reel/1730347788060397/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 16572377
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-10-30T22:47:07+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1730347788060397_2312017172697686"
+   },
+   "status_errors": null,
+   "at": "2026-10-30T22:46:31Z"
+  }
  },
  {
   "id": "y4_ig",
