@@ -107,6 +107,7 @@ for item in q:
     due = dt.datetime.fromisoformat(item["at"].replace("Z", "+00:00")) <= now
     if ONLY: due = item["id"] == ONLY and not (item.get("done") and not item["done"].get("dry_run"))
     if not due: continue
+    if "{LINK}" in json.dumps(item): print(f"== {item['id']} SKIPPED: link placeholder not filled yet", flush=True); continue
     path = os.path.join(MEDIA, item["file"]); print(f"== {item['id']} ({item['platform']}) {path} {os.path.getsize(path)} bytes", flush=True)
     try:
         res = {"instagram": ig_reel, "facebook": fb_reel, "instagram_story": ig_story, "facebook_story": fb_story, "tiktok_draft": tt_draft}[item["platform"]](item, path)
