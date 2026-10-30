@@ -54,6 +54,7 @@ jobs:
           STUDIO_TIKTOK_CLIENT_SECRET: ${{ secrets.STUDIO_TIKTOK_CLIENT_SECRET }}
           ONLY: ${{ inputs.only }}
           DRY_RUN: ${{ inputs.dry_run }}
+          GH_TOKEN: ${{ github.token }}
         run: ls -la media && python3 scripts/social_post.py
       - if: always() && steps.due.outputs.due == 'yes'
         name: Save post log

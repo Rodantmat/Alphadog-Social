@@ -45,6 +45,28 @@ def ig_reel(item, path):
         except Exception as e: print("ig comment failed", e)
     return {"media_id": m["id"], "permalink": info.get("permalink"), "posted": info.get("timestamp")}
 
+def ig_reel_url(item, path):
+    """Fallback when the resumable upload keeps failing: host the file on the public media-public release and let Instagram fetch it."""
+    ig = get(PAGE, fields="instagram_business_account")["instagram_business_account"]["id"]
+    name = os.path.basename(path); repo = os.environ.get("GITHUB_REPOSITORY", "Rodantmat/Alphadog-Social")
+    subprocess.run(["gh", "release", "view", "media-public"], capture_output=True) .returncode or None
+    up = subprocess.run(["gh", "release", "upload", "media-public", path, "--clobber"], capture_output=True, text=True); print("release upload", up.returncode, up.stderr[-200:])
+    url = f"https://github.com/{repo}/releases/download/media-public/{name}"
+    c = call("POST", f"{G}/{ig}/media", data={"media_type": "REELS", "video_url": url, "caption": item["caption"], "share_to_feed": "true", "thumb_offset": str(item.get("thumb_ms", 1200))})
+    cid = c["id"]
+    for _ in range(80):
+        st = get(cid, fields="status_code,status")
+        if st.get("status_code") == "FINISHED": break
+        if st.get("status_code") in ("ERROR", "EXPIRED"): raise RuntimeError(f"ig url container {st}")
+        time.sleep(10)
+    else: raise RuntimeError("ig url container not ready")
+    if DRY: return {"dry_run": True, "container": cid, "status": "FINISHED (not published)"}
+    m = call("POST", f"{G}/{ig}/media_publish", data={"creation_id": cid}); info = get(m["id"], fields="permalink,timestamp")
+    if item.get("comment"):
+        try: print("ig comment", call("POST", f"{G}/{m['id']}/comments", data={"message": item["comment"]}))
+        except Exception as e: print("ig comment failed", e)
+    return {"media_id": m["id"], "permalink": info.get("permalink"), "posted": info.get("timestamp"), "via": "video_url"}
+
 def fb_reel(item, path):
     s = call("POST", f"{G}/{PAGE}/video_reels", data={"upload_phase": "start"})
     vid = s["video_id"]; url = s.get("upload_url") or f"https://rupload.facebook.com/video-upload/v26.0/{vid}"; n = os.path.getsize(path)
@@ -116,8 +138,12 @@ for item in q:
         for attempt in range(1, 5 if item["platform"].startswith("instagram") else 2):
             try: res = fn(item, path); break
             except Exception as e:
-                if attempt >= 4 or "ProcessingFailedError" not in str(e): raise
-                print(f"retry {item['id']} after ProcessingFailedError (attempt {attempt})", flush=True); time.sleep(60 * attempt)
+                if "ProcessingFailedError" not in str(e): raise
+                print(f"{item['id']}: ProcessingFailedError (attempt {attempt})", flush=True)
+                if attempt >= 2 and item["platform"] == "instagram":
+                    print("falling back to Instagram video_url (public release) upload", flush=True); res = ig_reel_url(item, path); break
+                if attempt >= 4: raise
+                time.sleep(45 * attempt)
         item["done"] = dict(res, at=now.strftime("%Y-%m-%dT%H:%M:%SZ")); print("OK", item["id"], res, flush=True)
     except Exception as e:
         item.setdefault("errors", []).append(f"{now:%Y-%m-%dT%H:%MZ} {str(e)[:300]}"); print("FAIL", item["id"], e, flush=True)
