@@ -322,7 +322,14 @@
   "errors": [
    "2026-10-30T20:24Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055536686805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}",
    "2026-10-30T20:27Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055538711805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}"
-  ]
+  ],
+  "done": {
+   "media_id": "18132658555759331",
+   "permalink": "https://www.instagram.com/reel/DfIdjX5CWO6/",
+   "posted": "2026-10-30T20:40:37+0000",
+   "via": "video_url",
+   "at": "2026-10-30T20:38:07Z"
+  }
  },
  {
   "id": "y2_fb",
