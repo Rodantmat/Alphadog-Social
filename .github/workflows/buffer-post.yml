@@ -28,7 +28,7 @@ jobs:
       - if: inputs.mode == 'delete'
         run: python3 scripts/buffer_post.py delete "${{ inputs.text }}"
       - if: inputs.mode == 'types'
-        run: python3 scripts/buffer_post.py types
+        run: python3 scripts/buffer_post.py types ${{ inputs.text }}
       - if: inputs.mode == 'posts'
         run: python3 scripts/buffer_post.py posts "${{ inputs.service }}"
       - if: inputs.mode == 'post' && inputs.artifact == 'release:ys-shorts'

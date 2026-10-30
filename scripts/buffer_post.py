@@ -51,4 +51,5 @@ elif cmd == "delete":
     d = gql("mutation($i: DeletePostInput!) { deletePost(input: $i) { ... on PostActionSuccess { post { id } } ... on MutationError { message } } }", {"i": {"id": sys.argv[2]}})
     print("DELETE", json.dumps(d))
 elif cmd == "types":
-    d = gql('{ __type(name: "Mutation") { fields { name } } }'); print(json.dumps(d))
+    for n in (sys.argv[2:] or ["Mutation"]):
+        d = gql('query($n:String!){ __type(name:$n){ fields{ name args{ name type{ name kind ofType{ name kind } } } } inputFields{ name type{ name kind ofType{ name kind ofType{name kind} } } } } }', {"n": n}); print("TYPE", n, json.dumps(d))
