@@ -23,7 +23,6 @@ jobs:
           VIDEO_ID: ${{ inputs.video_id }}
           NEXT_VIDEO: ${{ inputs.next_video }}
           MODE: ${{ inputs.mode }}
-          YT_NO_ROLLING: "1"
         run: xvfb-run -a python3 scripts/yt_studio_endscreen.py
       - if: always()
         uses: actions/upload-artifact@v4
