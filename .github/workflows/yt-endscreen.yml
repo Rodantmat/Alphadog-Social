@@ -27,4 +27,8 @@ jobs:
         run: xvfb-run -a python3 scripts/yt_studio_endscreen.py
       - if: always()
         uses: actions/upload-artifact@v4
-        with: { name: endscreen-${{ github.run_id }}, path: /tmp/ytqa, retention-days: 7, if-no-files-found: ignore }
+        with:
+          name: endscreen-${{ github.run_id }}
+          path: /tmp/ytqa
+          retention-days: 7
+          if-no-files-found: ignore
