@@ -318,7 +318,10 @@
   "at": "2026-10-30T20:00:00Z",
   "thumb_ms": 1200,
   "caption": "Is Yellowstone \"overdue\" for a super-eruption? The USGS says plainly: no. The famous 700,000-year average is built on just two gaps between three eruptions.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 1 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Volcano #Geology #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/-vkXqMrSljM"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/-vkXqMrSljM",
+  "errors": [
+   "2026-10-30T20:24Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055536686805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}"
+  ]
  },
  {
   "id": "y2_fb",
@@ -326,7 +329,40 @@
   "file": "yellowstone_ch1_y2.mp4",
   "at": "2026-10-30T20:00:00Z",
   "caption": "Is Yellowstone \"overdue\" for a super-eruption? The USGS says plainly: no. The famous 700,000-year average is built on just two gaps between three eruptions.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 1 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Volcano #Geology #Shorts",
-  "comment": "▶ Full documentary on YouTube 👉 https://youtu.be/-vkXqMrSljM"
+  "comment": "▶ Full documentary on YouTube 👉 https://youtu.be/-vkXqMrSljM",
+  "done": {
+   "video_id": "1453559290219735",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1102977669167892"
+   },
+   "permalink": "https://www.facebook.com/reel/1453559290219735/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 24003299
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-10-30T20:24:45+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1453559290219735_1706017470909907"
+   },
+   "status_errors": null,
+   "at": "2026-10-30T20:24:12Z"
+  }
  },
  {
   "id": "y3_ig",
