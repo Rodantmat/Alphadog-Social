@@ -4,7 +4,7 @@ usage: episode_gate.py <ep dir> <VER> [--other ch2 ...]
 Every item below is a mistake that already happened once; each one is now a hard FAIL so it cannot repeat:
  G1 render log: SKIP_MISSING (an image/clip the plan names is not on disk), Traceback, ffmpeg errors
  G2 final mp4: opens, has video + audio, duration matches the timeline (a disk-full write leaves a file with no moov atom)
- G3 plan hygiene: every I:/O:/M: source exists; no PD image or own clip used twice in one episode; reuse from earlier episodes is listed
+ G3 plan hygiene: every source exists; low-repetition rule (picture <=2x, important <=3x, <=3 repeating pictures per video, cross-video reuse only if listed)
  G4 N2 own-footage dedupe (same clip, same location panels, same subject within 75 s)
  G5 N1 AI-boundary continuity  - FAILS until every boundary is signed off after looking at the sheet
  G6 N3 script/picture match    - FAILS until every shot is signed off against its narration line
@@ -41,24 +41,37 @@ def plan_rows(path):
         p = [x.strip() for x in ln.split("|")]
         yield p[0], p[1]
 roots = [f"/home/claude/doc/yellowstone/media/pd_{N}/img", f"/home/claude/doc/yellowstone/media/pd_{N}"]
-seen_img = {}; seen_clip = {}
+# Owner rule 2026-10-30 (low repetition): a picture may appear at most 2 times in a video; an extremely important historical picture
+# (listed in <ep>/repeat_ok.json {"important": [...], "cross_ok": [...]}) up to 3; at most 3 different pictures may repeat in one video.
+# Own video clips never repeat (N2). A picture/clip reused from another episode must be an extremely high-quality or extremely important
+# historical item listed in cross_ok; otherwise it fails. Episodes already released (Ch2, Ch3 as of 2026-10-30) are left as is.
+ok_path = f"{ep}/repeat_ok.json"; RO = json.load(open(ok_path)) if os.path.exists(ok_path) else {}
+important = set(RO.get("important", [])); cross_ok = set(RO.get("cross_ok", []))
+img_uses = {}
 for seg, src in plan_rows(f"{ep}/plan2.txt"):
     m = re.match(r"([IOMGA]):(.+)", src)
     if not m: continue
     k, v = m.groups()
     if k == "I":
         if not any(os.path.exists(f"{r}/{v}") for r in roots): fails.append(f"G3 {seg}: image {v} is not in pd_{N}/img (copy any ch2_* image into pd_{N}/img)")
-        if v in seen_img: fails.append(f"G3 {seg}: image {v} already used in {seen_img[v]} of this episode")
-        seen_img[v] = seg
+        img_uses.setdefault(v, []).append(seg)
     elif k in "OM":
         for c in v.split(","):
             if not os.path.exists(f"/home/claude/doc/yellowstone/own/{c}.mov"): fails.append(f"G3 {seg}: own clip {c} is not in own/")
+rep = {v: u for v, u in img_uses.items() if len(u) > 1}
+for v, u in rep.items():
+    lim = 3 if v in important else 2
+    if len(u) > lim: fails.append(f"G3 image {v} appears {len(u)} times ({', '.join(u)}); limit {lim}" + ("" if v in important else " (3 only if listed as extremely important in repeat_ok.json)"))
+if len(rep) > 3: fails.append(f"G3 {len(rep)} different pictures repeat in this video (limit 3): {', '.join(rep)}")
+elif rep: warns.append(f"G3 repeated pictures ({len(rep)} of 3 allowed): " + ", ".join(f"{v} x{len(u)}" for v, u in rep.items()))
+seen_img = {v: u[0] for v, u in img_uses.items()}
 for o in others:
     po = f"{os.path.dirname(ep)}/{o}/plan2.txt"
     if os.path.exists(po):
         for seg, src in plan_rows(po):
             m = re.match(r"I:(.+)", src)
-            if m and m.group(1) in seen_img: warns.append(f"G3 image {m.group(1)} also used in {o}:{seg} (episode {N}:{seen_img[m.group(1)]}) - confirm it is a different moment")
+            if m and m.group(1) in seen_img and m.group(1) not in cross_ok:
+                fails.append(f"G3 image {m.group(1)} was already used in {o}:{seg}; reuse across videos only for extremely high-quality / extremely important historical items (list in repeat_ok.json cross_ok)")
 # G4 N2
 a = run(["python3", f"{R}/dedupe_plan.py", ep, "/home/claude/doc/yellowstone/sheets"] + (["--other"] + others if others else []))
 open(f"{OUT}/N2.txt", "w").write(a.stdout)
