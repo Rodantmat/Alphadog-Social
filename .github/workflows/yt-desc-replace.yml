@@ -1,0 +1,40 @@
+name: yt-desc-replace
+# Replace a text snippet in the description of one or more videos. video_ids comma-separated.
+on:
+  workflow_dispatch:
+    inputs:
+      video_ids: { description: "comma-separated ids", required: true }
+      old: { description: "text to replace", required: true }
+      new: { description: "replacement", required: true }
+jobs:
+  edit:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          IDS: ${{ inputs.video_ids }}
+          OLD: ${{ inputs.old }}
+          NEW: ${{ inputs.new }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.parse, urllib.request, urllib.error
+          d = urllib.parse.urlencode({"client_id": os.environ["YT_CLIENT_ID"], "client_secret": os.environ["YT_CLIENT_SECRET"],
+                                      "refresh_token": os.environ["YT_REFRESH_TOKEN"], "grant_type": "refresh_token"}).encode()
+          tok = json.loads(urllib.request.urlopen(urllib.request.Request("https://oauth2.googleapis.com/token", data=d)).read())["access_token"]
+          def api(method, url, body=None):
+              r = urllib.request.Request(url, data=json.dumps(body).encode() if body is not None else None, method=method,
+                                         headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json"})
+              try:
+                  with urllib.request.urlopen(r) as x: return x.status, json.loads(x.read() or b"{}")
+              except urllib.error.HTTPError as e: return e.code, e.read().decode()[:400]
+          for v in os.environ["IDS"].split(","):
+              st, o = api("GET", f"https://www.googleapis.com/youtube/v3/videos?part=snippet&id={v}")
+              sn = o["items"][0]["snippet"]
+              if os.environ["OLD"] not in sn["description"]: print(v, "old text not found"); continue
+              sn["description"] = sn["description"].replace(os.environ["OLD"], os.environ["NEW"])
+              body = {"id": v, "snippet": {k: sn[k] for k in ("title", "description", "categoryId") if k in sn}}
+              if "tags" in sn: body["snippet"]["tags"] = sn["tags"]
+              print(v, "updated", api("PUT", "https://www.googleapis.com/youtube/v3/videos?part=snippet", body)[0])
+          PY
