@@ -69,6 +69,31 @@ def fb_reel(item, path):
     return {"video_id": vid, "finish": f, "permalink": ("https://www.facebook.com" + pl) if pl.startswith("/") else pl, "status": st.get("status"),
             "comment": com, "status_errors": errs[-3:] or None}
 
+def ig_story(item, path):
+    ig = get(PAGE, fields="instagram_business_account")["instagram_business_account"]["id"]
+    c = call("POST", f"{G}/{ig}/media", data={"media_type": "STORIES", "upload_type": "resumable"})
+    cid, uri = c["id"], c["uri"]; n = os.path.getsize(path)
+    up = call("POST", uri, raw=open(path, "rb").read(), headers={"Authorization": f"OAuth {T}", "offset": "0", "file_size": str(n)}, timeout=900)
+    print("ig story upload", up)
+    for _ in range(80):
+        st = get(cid, fields="status_code,status")
+        if st.get("status_code") == "FINISHED": break
+        if st.get("status_code") in ("ERROR", "EXPIRED"): raise RuntimeError(f"ig story container {st}")
+        time.sleep(10)
+    else: raise RuntimeError("ig story container not ready after ~13 min")
+    if DRY: return {"dry_run": True, "container": cid, "status": "FINISHED (not published)"}
+    m = call("POST", f"{G}/{ig}/media_publish", data={"creation_id": cid})
+    return {"media_id": m["id"], "story": True}
+
+def fb_story(item, path):
+    s = call("POST", f"{G}/{PAGE}/video_stories", data={"upload_phase": "start"})
+    vid = s["video_id"]; url = s.get("upload_url") or f"https://rupload.facebook.com/video-upload/v26.0/{vid}"; n = os.path.getsize(path)
+    up = call("POST", url, raw=open(path, "rb").read(), headers={"Authorization": f"OAuth {T}", "offset": "0", "file_size": str(n)}, timeout=900)
+    print("fb story upload", up)
+    if DRY: return {"dry_run": True, "video_id": vid, "status": "uploaded (not published)"}
+    f = call("POST", f"{G}/{PAGE}/video_stories", data={"upload_phase": "finish", "video_id": vid})
+    return {"video_id": vid, "finish": f, "story": True}
+
 def tt_draft(item, path):
     if DRY: return {"dry_run": True, "status": "not sent"}
     r = subprocess.run(["python3", "scripts/tiktok_studio.py", "draft", path], capture_output=True, text=True)
@@ -84,7 +109,7 @@ for item in q:
     if not due: continue
     path = os.path.join(MEDIA, item["file"]); print(f"== {item['id']} ({item['platform']}) {path} {os.path.getsize(path)} bytes", flush=True)
     try:
-        res = {"instagram": ig_reel, "facebook": fb_reel, "tiktok_draft": tt_draft}[item["platform"]](item, path)
+        res = {"instagram": ig_reel, "facebook": fb_reel, "instagram_story": ig_story, "facebook_story": fb_story, "tiktok_draft": tt_draft}[item["platform"]](item, path)
         item["done"] = dict(res, at=now.strftime("%Y-%m-%dT%H:%M:%SZ")); print("OK", item["id"], res, flush=True)
     except Exception as e:
         item.setdefault("errors", []).append(f"{now:%Y-%m-%dT%H:%MZ} {str(e)[:300]}"); print("FAIL", item["id"], e, flush=True)
