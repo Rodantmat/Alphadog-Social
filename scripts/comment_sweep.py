@@ -64,9 +64,9 @@ try:
 except Exception as e: print("ig error", str(e)[:200])
 try:
     vids = {}
-    for edge in ("videos", "published_posts"):
+    for edge in ("videos", "posts"):
         try:
-            for v in get(f"{PAGE}/{edge}", fields="id,description,message,created_time", limit=25).get("data", []): vids[v["id"]] = v
+            for v in get(f"{PAGE}/{edge}", fields=("id,created_time,description" if edge == "videos" else "id,created_time,message"), limit=25).get("data", []): vids[v["id"]] = v
         except Exception as e: print("fb", edge, str(e)[:120])
     for vid, v in vids.items():
         if not recent(v.get("created_time", "")): continue
