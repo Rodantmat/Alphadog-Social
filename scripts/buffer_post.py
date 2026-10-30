@@ -49,7 +49,13 @@ elif cmd == "posts":
     for e in ((d.get("posts") or {}).get("edges") or []):
         n = e["node"]; print("POST", n["id"], n["status"], n["dueAt"], repr((n["text"] or "")[:70]), [a.get("source", "")[-40:] for a in n.get("assets") or []])
 elif cmd == "edit":
-    inp = {"id": sys.argv[2]}
+    # re-send the existing text + video with a new due time (Buffer requires text/media on every edit). argv: edit ID DUE [TEXTFILE|"-"] 
+    org = gql("query { account { organizations { id } } }")["account"]["organizations"][0]["id"]
+    q = """query($o: OrganizationId!) { posts(input: { organizationId: $o, filter: { status: [scheduled] } }, first: 100) { edges { node { id text assets { source } } } } }"""
+    nodes = [e["node"] for e in ((gql(q, {"o": org}).get("posts") or {}).get("edges") or [])]
+    cur = next((n for n in nodes if n["id"] == sys.argv[2]), None)
+    if not cur: raise SystemExit("post not found among scheduled: " + sys.argv[2])
+    inp = {"id": sys.argv[2], "text": cur["text"], "assets": [{"video": {"url": a["source"], "metadata": {"thumbnailOffset": 1200}}} for a in cur["assets"]]}
     if len(sys.argv) > 3 and sys.argv[3]: inp["dueAt"] = sys.argv[3]; inp["mode"] = "customScheduled"
     if len(sys.argv) > 4: inp["text"] = open(sys.argv[4], encoding="utf-8").read().strip()
     d = gql("mutation($i: EditPostInput!) { editPost(input: $i) { ... on PostActionSuccess { post { id dueAt status } } ... on MutationError { message } } }", {"i": inp})
