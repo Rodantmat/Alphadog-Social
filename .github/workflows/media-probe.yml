@@ -1,0 +1,31 @@
+name: media-probe
+# Prints ffprobe details of known-good Instagram Reels (chiricahua_sh*.mp4 from the shorts artifact) next to a Yellowstone short, to find what Instagram rejects.
+on:
+  workflow_dispatch:
+    inputs:
+      run: { description: "run id holding the artifact", default: "40389484496" }
+      artifact: { description: "artifact name", default: "shorts" }
+      ys: { description: "footage-branch file", default: "yellowstone_ch1_y1.mp4" }
+permissions: { contents: read, actions: read }
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { name: "${{ inputs.artifact }}", path: /tmp/good, run-id: "${{ inputs.run }}", github-token: "${{ github.token }}" }
+      - env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
+          cd /tmp/fbs && git sparse-checkout set --no-cone "/yellowstone-shorts/*/${{ inputs.ys }}" && cp yellowstone-shorts/*/"${{ inputs.ys }}" /tmp/good/
+          cd /tmp/good; for f in chiricahua_sh1.mp4 chiricahua_sh3.mp4 "${{ inputs.ys }}"; do echo "=== $f"; ls -l $f
+            ffprobe -v error -show_entries stream=index,codec_type,codec_name,profile,level,pix_fmt,width,height,r_frame_rate,avg_frame_rate,color_space,color_range,color_primaries,color_transfer,bit_rate,sample_rate,channels,channel_layout,time_base,start_time,duration,has_b_frames,refs,field_order,sample_aspect_ratio,display_aspect_ratio:stream_tags=handler_name,language,encoder:format=format_name,duration,bit_rate:format_tags -of default=nw=1 $f
+            python3 - "$f" <<'PY'
+          import sys,struct
+          d=open(sys.argv[1],'rb').read(); i=0; out=[]
+          while i<len(d)-8:
+              sz,t=struct.unpack('>I4s',d[i:i+8]); out.append((t.decode('latin1'),sz))
+              if sz<8: break
+              i+=sz
+          print('top-level boxes:',out[:8])
+          PY
+          done
