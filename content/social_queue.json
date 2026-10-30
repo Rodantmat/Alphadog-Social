@@ -254,7 +254,8 @@
   "errors": [
    "2026-10-30T19:20Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055530257805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}",
    "2026-10-30T19:30Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055531301805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}",
-   "2026-10-30T19:32Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055531634805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}"
+   "2026-10-30T19:32Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055531634805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}",
+   "2026-10-30T19:36Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055531838805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}"
   ]
  },
  {
