@@ -110,7 +110,14 @@ for item in q:
     if "{LINK}" in json.dumps(item): print(f"== {item['id']} SKIPPED: link placeholder not filled yet", flush=True); continue
     path = os.path.join(MEDIA, item["file"]); print(f"== {item['id']} ({item['platform']}) {path} {os.path.getsize(path)} bytes", flush=True)
     try:
-        res = {"instagram": ig_reel, "facebook": fb_reel, "instagram_story": ig_story, "facebook_story": fb_story, "tiktok_draft": tt_draft}[item["platform"]](item, path)
+        fn = {"instagram": ig_reel, "facebook": fb_reel, "instagram_story": ig_story, "facebook_story": fb_story, "tiktok_draft": tt_draft}[item["platform"]]
+        # Instagram's upload endpoint fails intermittently with 'ProcessingFailedError' (2026-10-30: same file failed 4x, then posted untouched).
+        # The failure always happens BEFORE media_publish, so retrying with a fresh container is safe.
+        for attempt in range(1, 5 if item["platform"].startswith("instagram") else 2):
+            try: res = fn(item, path); break
+            except Exception as e:
+                if attempt >= 4 or "ProcessingFailedError" not in str(e): raise
+                print(f"retry {item['id']} after ProcessingFailedError (attempt {attempt})", flush=True); time.sleep(60 * attempt)
         item["done"] = dict(res, at=now.strftime("%Y-%m-%dT%H:%M:%SZ")); print("OK", item["id"], res, flush=True)
     except Exception as e:
         item.setdefault("errors", []).append(f"{now:%Y-%m-%dT%H:%MZ} {str(e)[:300]}"); print("FAIL", item["id"], e, flush=True)
