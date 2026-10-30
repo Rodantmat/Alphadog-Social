@@ -34,7 +34,7 @@ for seg, items in groups.items():
         cv2.putText(tile, f"#{i} {s['dur']:.1f}s {st}", (3, im.shape[0] + 16), cv2.FONT_HERSHEY_SIMPLEX, .45, (0, 0, 255) if st != "ok" else (0, 170, 0), 1)
         cv2.putText(tile, (s.get("label") or name)[:38], (3, im.shape[0] + 36), cv2.FONT_HERSHEY_SIMPLEX, .38, (230, 230, 230), 1); tiles.append(tile)
     H = max(t.shape[0] for t in tiles); row = np.hstack([np.pad(t, ((0, H - t.shape[0]), (0, 0), (0, 0))) for t in tiles[:7]])
-    W = max(row.shape[1], 1200); head = np.zeros((70, W, 3), np.uint8)
+    W = 1680; head = np.zeros((70, W, 3), np.uint8)
     for n, ln in enumerate(textwrap.wrap(f"{seg} @{clock[seg]:.0f}s  {TL[seg]['text']}", 150)[:3]): cv2.putText(head, ln, (6, 18 + 20 * n), cv2.FONT_HERSHEY_SIMPLEX, .5, (255, 255, 255), 1)
     cur.append(np.vstack([head, np.pad(row, ((0, 0), (0, W - row.shape[1]), (0, 0)))]))
     if len(cur) == 4: sheets.append(np.vstack(cur)); cur = []
