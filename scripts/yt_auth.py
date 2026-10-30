@@ -36,6 +36,7 @@ if mode == "url":
     q = {"client_id": CID, "redirect_uri": REDIRECT, "response_type": "code", "scope": " ".join(SCOPES),
          "access_type": "offline", "prompt": "consent", "include_granted_scopes": "true"}
     print("AUTH_URL=" + "https://accounts.google.com/o/oauth2/v2/auth?" + urllib.parse.urlencode(q))
+    print("CID_SPACED=" + " ".join(CID))   # the client id is public (it is in the consent URL); spaced so Actions log masking does not hide it
     sys.exit(0)
 
 if mode == "exchange":
