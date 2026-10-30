@@ -183,7 +183,10 @@
   "at": "2026-10-30T00:30:00Z",
   "thumb_ms": 1500,
   "music": "episode 1 original score, chapter 3 (Bascom) - not used in any other post",
-  "caption": "1861. A 12-year-old boy is kidnapped in Arizona, and the Army blames Cochise, though he likely had nothing to do with it.\n\nInside an Army tent, he's told he will be held until the boy comes back. Cochise draws a knife, cuts through the tent and escapes. What happened next started 11 years of war.\n\n🎧 The full episode is now a podcast on Spotify and Apple Podcasts. Link in bio.\n\n#Cochise #Apache #History #Arizona #Chiricahua #Podcast #TrueStory #NationalParks"
+  "caption": "1861. A 12-year-old boy is kidnapped in Arizona, and the Army blames Cochise, though he likely had nothing to do with it.\n\nInside an Army tent, he's told he will be held until the boy comes back. Cochise draws a knife, cuts through the tent and escapes. What happened next started 11 years of war.\n\n🎧 The full episode is now a podcast on Spotify and Apple Podcasts. Link in bio.\n\n#Cochise #Apache #History #Arizona #Chiricahua #Podcast #TrueStory #NationalParks",
+  "errors": [
+   "2026-10-30T01:16Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055413941805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}"
+  ]
  },
  {
   "id": "promo_fb",
@@ -191,7 +194,42 @@
   "file": "spotify_promo_ep1.mp4",
   "at": "2026-10-30T00:30:00Z",
   "caption": "1861. A 12-year-old boy is kidnapped in Arizona, and the Army blames Cochise, though he likely had nothing to do with it.\n\nInside an Army tent, he's told he will be held until the boy comes back. Cochise draws a knife, cuts through the tent and escapes. What happened next started 11 years of war.\n\n🎧 The full episode is now a podcast. Listen free on Spotify or Apple Podcasts, links in the first comment 👇\n\n#Cochise #Apache #History #Arizona #Chiricahua #Podcast #TrueStory #NationalParks",
-  "comment": "🎧 Spotify: https://open.spotify.com/episode/2DriFk8VhHyGnMJMuewzrH\n🍎 Apple Podcasts: https://podcasts.apple.com/us/podcast/americas-national-parks-the-hidden-history/id6827800067\n🎬 Full documentary on YouTube: https://youtu.be/LfoM0KAi8Yo"
+  "comment": "🎧 Spotify: https://open.spotify.com/episode/2DriFk8VhHyGnMJMuewzrH\n🍎 Apple Podcasts: https://podcasts.apple.com/us/podcast/americas-national-parks-the-hidden-history/id6827800067\n🎬 Full documentary on YouTube: https://youtu.be/LfoM0KAi8Yo",
+  "done": {
+   "video_id": "2370162673746278",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1102166762582316"
+   },
+   "permalink": "https://www.facebook.com/reel/2370162673746278/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 29473350
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-10-30T01:17:14+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "2370162673746278_1656152002844776"
+   },
+   "status_errors": [
+    "HTTP 400 https://graph.facebook.com/v26.0/2370162673746278: {\"error\":{\"message\":\"Unsupported get request. Object with ID '2370162673746278' does not exist, cannot be loaded due to missing permissions,"
+   ],
+   "at": "2026-10-30T01:16:41Z"
+  }
  },
  {
   "id": "promo_tt",
