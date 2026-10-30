@@ -320,7 +320,8 @@
   "caption": "Is Yellowstone \"overdue\" for a super-eruption? The USGS says plainly: no. The famous 700,000-year average is built on just two gaps between three eruptions.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 1 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Volcano #Geology #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/-vkXqMrSljM",
   "errors": [
-   "2026-10-30T20:24Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055536686805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}"
+   "2026-10-30T20:24Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055536686805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}",
+   "2026-10-30T20:27Z HTTP 400 https://rupload.facebook.com/ig-api-upload/v26.0/18055538711805492: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}"
   ]
  },
  {
