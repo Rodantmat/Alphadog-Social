@@ -547,7 +547,13 @@
   "at": "2026-10-31T16:30:00Z",
   "thumb_ms": 1200,
   "caption": "Yellowstone's most likely \"eruption\" is steam, not lava. Clogged underground pipes crack, water flashes to steam, and blasts like Biscuit Basin happen every decade or few decades.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 1 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Volcano #Geology #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/-vkXqMrSljM"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/-vkXqMrSljM",
+  "done": {
+   "media_id": "18480467539114616",
+   "permalink": "https://www.instagram.com/reel/DfK6SuQFt_2/",
+   "posted": "2026-10-31T19:30:10+0000",
+   "at": "2026-10-31T19:29:38Z"
+  }
  },
  {
   "id": "y6_fb",
@@ -555,7 +561,39 @@
   "file": "yellowstone_ch1_y6.mp4",
   "at": "2026-10-31T16:30:00Z",
   "caption": "Yellowstone's most likely \"eruption\" is steam, not lava. Clogged underground pipes crack, water flashes to steam, and blasts like Biscuit Basin happen every decade or few decades.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 1 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Volcano #Geology #Shorts",
-  "comment": "▶ Full documentary on YouTube 👉 https://youtu.be/-vkXqMrSljM"
+  "comment": "▶ Full documentary on YouTube 👉 https://youtu.be/-vkXqMrSljM",
+  "done": {
+   "video_id": "1001930895526390",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1103971822401810"
+   },
+   "permalink": "https://www.facebook.com/reel/1001930895526390/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 8792672
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-10-31T19:30:23+0000"
+    },
+    "copyright_check_status": {
+     "status": "in_progress"
+    }
+   },
+   "comment": {
+    "id": "1001930895526390_1111517858330621"
+   },
+   "status_errors": null,
+   "at": "2026-10-31T19:29:38Z"
+  }
  },
  {
   "id": "y7_ig",
@@ -564,7 +602,13 @@
   "at": "2026-10-31T19:00:00Z",
   "thumb_ms": 1200,
   "caption": "Steamboat, the tallest active geyser in the world, is \"entirely unpredictable.\" Old Faithful goes off about every hour and a half. Same park, opposite personalities.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 1 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Volcano #Geology #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/-vkXqMrSljM"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/-vkXqMrSljM",
+  "done": {
+   "media_id": "17885314107523107",
+   "permalink": "https://www.instagram.com/reel/DfK6cYmjUCX/",
+   "posted": "2026-10-31T19:31:26+0000",
+   "at": "2026-10-31T19:29:38Z"
+  }
  },
  {
   "id": "y7_fb",
@@ -572,7 +616,40 @@
   "file": "yellowstone_ch1_y7.mp4",
   "at": "2026-10-31T19:00:00Z",
   "caption": "Steamboat, the tallest active geyser in the world, is \"entirely unpredictable.\" Old Faithful goes off about every hour and a half. Same park, opposite personalities.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 1 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Volcano #Geology #Shorts",
-  "comment": "▶ Full documentary on YouTube 👉 https://youtu.be/-vkXqMrSljM"
+  "comment": "▶ Full documentary on YouTube 👉 https://youtu.be/-vkXqMrSljM",
+  "done": {
+   "video_id": "1164334449452804",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1103972702401722"
+   },
+   "permalink": "https://www.facebook.com/reel/1164334449452804/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 20940845
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-10-31T19:31:36+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1164334449452804_1688824255946664"
+   },
+   "status_errors": null,
+   "at": "2026-10-31T19:29:38Z"
+  }
  },
  {
   "id": "y8_ig",
@@ -764,13 +841,28 @@
   "id": "s6_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch1_s6.mp4",
-  "at": "2026-10-31T18:00:00Z"
+  "at": "2026-10-31T18:00:00Z",
+  "done": {
+   "media_id": "17914668972516531",
+   "story": true,
+   "at": "2026-10-31T19:29:38Z"
+  }
  },
  {
   "id": "s6_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch1_s6.mp4",
-  "at": "2026-10-31T18:00:00Z"
+  "at": "2026-10-31T18:00:00Z",
+  "done": {
+   "video_id": "1846580716388659",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "1737669907750105"
+   },
+   "story": true,
+   "at": "2026-10-31T19:29:38Z"
+  }
  },
  {
   "id": "s7_ig",
