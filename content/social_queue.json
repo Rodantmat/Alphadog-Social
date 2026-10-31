@@ -671,13 +671,28 @@
   "id": "s4_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch1_s4.mp4",
-  "at": "2026-10-31T02:30:00Z"
+  "at": "2026-10-31T02:30:00Z",
+  "done": {
+   "media_id": "18395136859163119",
+   "story": true,
+   "at": "2026-10-31T02:41:34Z"
+  }
  },
  {
   "id": "s4_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch1_s4.mp4",
-  "at": "2026-10-31T02:30:00Z"
+  "at": "2026-10-31T02:30:00Z",
+  "done": {
+   "video_id": "2255977408306251",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "1157111323529631"
+   },
+   "story": true,
+   "at": "2026-10-31T02:41:34Z"
+  }
  },
  {
   "id": "s5_ig",
