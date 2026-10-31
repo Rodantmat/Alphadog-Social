@@ -491,7 +491,13 @@
   "at": "2026-10-31T03:00:00Z",
   "thumb_ms": 1200,
   "caption": "By 1902 only 23 wild bison remained in Yellowstone, the last wild bison in North America. Today several thousand roam the park.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 1 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Volcano #Geology #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/-vkXqMrSljM"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/-vkXqMrSljM",
+  "done": {
+   "media_id": "18118286653974895",
+   "permalink": "https://www.instagram.com/reel/DfJP12ZjB07/",
+   "posted": "2026-10-31T03:59:56+0000",
+   "at": "2026-10-31T03:59:27Z"
+  }
  },
  {
   "id": "y5_fb",
@@ -499,7 +505,40 @@
   "file": "yellowstone_ch1_y5.mp4",
   "at": "2026-10-31T03:00:00Z",
   "caption": "By 1902 only 23 wild bison remained in Yellowstone, the last wild bison in North America. Today several thousand roam the park.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 1 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Volcano #Geology #Shorts",
-  "comment": "▶ Full documentary on YouTube 👉 https://youtu.be/-vkXqMrSljM"
+  "comment": "▶ Full documentary on YouTube 👉 https://youtu.be/-vkXqMrSljM",
+  "done": {
+   "video_id": "1615420762918568",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1103265689139090"
+   },
+   "permalink": "https://www.facebook.com/reel/1615420762918568/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 29116788
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-10-31T04:00:07+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1615420762918568_1158298779861598"
+   },
+   "status_errors": null,
+   "at": "2026-10-31T03:59:27Z"
+  }
  },
  {
   "id": "y6_ig",
