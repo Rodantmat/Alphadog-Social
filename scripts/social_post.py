@@ -129,6 +129,7 @@ for item in q:
     due = dt.datetime.fromisoformat(item["at"].replace("Z", "+00:00")) <= now
     if ONLY: due = item["id"] == ONLY and not (item.get("done") and not item["done"].get("dry_run"))
     if not due: continue
+    if item.get("hold"): print(f"== {item['id']} HELD: {item['hold']}", flush=True); continue
     if "{LINK}" in json.dumps(item): print(f"== {item['id']} SKIPPED: link placeholder not filled yet", flush=True); continue
     path = os.path.join(MEDIA, item["file"]); print(f"== {item['id']} ({item['platform']}) {path} {os.path.getsize(path)} bytes", flush=True)
     try:
