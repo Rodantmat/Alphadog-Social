@@ -1,0 +1,25 @@
+name: shorts-frames
+# Builds a contact sheet (8 frames every ~N s) of chosen short(s) from an artifact and pushes it to footage:qa/ - so the editing can be compared with another short.
+on:
+  workflow_dispatch:
+    inputs:
+      run: { description: "run id holding the artifact", default: "40389484496" }
+      artifact: { description: "artifact name", default: "shorts" }
+      files: { description: "space-separated mp4 names", default: "chiricahua_sh1.mp4 chiricahua_sh3.mp4" }
+permissions: { contents: write, actions: read }
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg imagemagick
+      - uses: actions/download-artifact@v4
+        with: { name: "${{ inputs.artifact }}", path: /tmp/a, run-id: "${{ inputs.run }}", github-token: "${{ github.token }}" }
+      - env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          mkdir -p /tmp/o; cd /tmp/a
+          for f in ${{ inputs.files }}; do d=$(ffprobe -v error -show_entries format=duration -of csv=p=0 $f); b=${f%.mp4}
+            for i in 0 1 2 3 4 5 6 7; do t=$(python3 -c "print(round($d*($i+0.5)/8,2))"); ffmpeg -v error -y -ss $t -i $f -frames:v 1 -vf scale=270:480 /tmp/o/${b}_$i.png; done
+            montage /tmp/o/${b}_[0-7].png -tile 8x1 -geometry +2+2 -background black /tmp/o/${b}_sheet.jpg
+          done
+          git clone -q --depth 1 --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb
+          mkdir -p /tmp/fb/qa && cp /tmp/o/*_sheet.jpg /tmp/fb/qa/ && cd /tmp/fb && git config user.name bot && git config user.email bot@users.noreply.github.com && git add qa && git commit -qm "qa: short contact sheets" && git pull -q --rebase origin footage && git push -q origin HEAD:footage
