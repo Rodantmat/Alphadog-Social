@@ -934,37 +934,43 @@
   "id": "s8_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch1_s8.mp4",
-  "at": "2026-11-11T19:00:00Z"
+  "at": "2026-11-11T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "s8_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch1_s8.mp4",
-  "at": "2026-11-11T19:00:00Z"
+  "at": "2026-11-11T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "s9_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch1_s9.mp4",
-  "at": "2026-11-12T02:00:00Z"
+  "at": "2026-11-12T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "s9_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch1_s9.mp4",
-  "at": "2026-11-12T02:00:00Z"
+  "at": "2026-11-12T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "s10_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch1_s10.mp4",
-  "at": "2026-11-12T19:00:00Z"
+  "at": "2026-11-12T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "s10_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch1_s10.mp4",
-  "at": "2026-11-12T19:00:00Z"
+  "at": "2026-11-12T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2y1_ig",
@@ -1140,121 +1146,141 @@
   "id": "ch2s1_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch2_s1.mp4",
-  "at": "2026-11-01T19:00:00Z"
+  "at": "2026-11-01T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s1_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch2_s1.mp4",
-  "at": "2026-11-01T19:00:00Z"
+  "at": "2026-11-01T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s2_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch2_s2.mp4",
-  "at": "2026-11-02T02:00:00Z"
+  "at": "2026-11-02T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s2_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch2_s2.mp4",
-  "at": "2026-11-02T02:00:00Z"
+  "at": "2026-11-02T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s3_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch2_s3.mp4",
-  "at": "2026-11-02T19:00:00Z"
+  "at": "2026-11-02T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s3_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch2_s3.mp4",
-  "at": "2026-11-02T19:00:00Z"
+  "at": "2026-11-02T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s4_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch2_s4.mp4",
-  "at": "2026-11-03T02:00:00Z"
+  "at": "2026-11-03T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s4_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch2_s4.mp4",
-  "at": "2026-11-03T02:00:00Z"
+  "at": "2026-11-03T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s5_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch2_s5.mp4",
-  "at": "2026-11-05T19:00:00Z"
+  "at": "2026-11-05T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s5_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch2_s5.mp4",
-  "at": "2026-11-05T19:00:00Z"
+  "at": "2026-11-05T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s6_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch2_s6.mp4",
-  "at": "2026-11-06T02:00:00Z"
+  "at": "2026-11-06T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s6_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch2_s6.mp4",
-  "at": "2026-11-06T02:00:00Z"
+  "at": "2026-11-06T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s7_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch2_s7.mp4",
-  "at": "2026-11-06T19:00:00Z"
+  "at": "2026-11-06T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s7_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch2_s7.mp4",
-  "at": "2026-11-06T19:00:00Z"
+  "at": "2026-11-06T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s8_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch2_s8.mp4",
-  "at": "2026-11-07T02:00:00Z"
+  "at": "2026-11-07T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s8_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch2_s8.mp4",
-  "at": "2026-11-07T02:00:00Z"
+  "at": "2026-11-07T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s9_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch2_s9.mp4",
-  "at": "2026-11-07T19:00:00Z"
+  "at": "2026-11-07T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s9_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch2_s9.mp4",
-  "at": "2026-11-07T19:00:00Z"
+  "at": "2026-11-07T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s10_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch2_s10.mp4",
-  "at": "2026-11-08T02:00:00Z"
+  "at": "2026-11-08T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch2s10_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch2_s10.mp4",
-  "at": "2026-11-08T02:00:00Z"
+  "at": "2026-11-08T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3y1_ig",
@@ -1430,120 +1456,140 @@
   "id": "ch3s1_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch3_s1.mp4",
-  "at": "2026-11-03T19:00:00Z"
+  "at": "2026-11-03T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s1_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch3_s1.mp4",
-  "at": "2026-11-03T19:00:00Z"
+  "at": "2026-11-03T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s2_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch3_s2.mp4",
-  "at": "2026-11-04T02:00:00Z"
+  "at": "2026-11-04T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s2_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch3_s2.mp4",
-  "at": "2026-11-04T02:00:00Z"
+  "at": "2026-11-04T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s3_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch3_s3.mp4",
-  "at": "2026-11-04T19:00:00Z"
+  "at": "2026-11-04T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s3_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch3_s3.mp4",
-  "at": "2026-11-04T19:00:00Z"
+  "at": "2026-11-04T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s4_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch3_s4.mp4",
-  "at": "2026-11-05T02:00:00Z"
+  "at": "2026-11-05T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s4_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch3_s4.mp4",
-  "at": "2026-11-05T02:00:00Z"
+  "at": "2026-11-05T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s5_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch3_s5.mp4",
-  "at": "2026-11-08T19:00:00Z"
+  "at": "2026-11-08T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s5_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch3_s5.mp4",
-  "at": "2026-11-08T19:00:00Z"
+  "at": "2026-11-08T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s6_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch3_s6.mp4",
-  "at": "2026-11-09T02:00:00Z"
+  "at": "2026-11-09T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s6_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch3_s6.mp4",
-  "at": "2026-11-09T02:00:00Z"
+  "at": "2026-11-09T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s7_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch3_s7.mp4",
-  "at": "2026-11-09T19:00:00Z"
+  "at": "2026-11-09T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s7_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch3_s7.mp4",
-  "at": "2026-11-09T19:00:00Z"
+  "at": "2026-11-09T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s8_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch3_s8.mp4",
-  "at": "2026-11-10T02:00:00Z"
+  "at": "2026-11-10T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s8_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch3_s8.mp4",
-  "at": "2026-11-10T02:00:00Z"
+  "at": "2026-11-10T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s9_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch3_s9.mp4",
-  "at": "2026-11-10T19:00:00Z"
+  "at": "2026-11-10T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s9_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch3_s9.mp4",
-  "at": "2026-11-10T19:00:00Z"
+  "at": "2026-11-10T19:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s10_ig",
   "platform": "instagram_story",
   "file": "yellowstone_ch3_s10.mp4",
-  "at": "2026-11-11T02:00:00Z"
+  "at": "2026-11-11T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  },
  {
   "id": "ch3s10_fb",
   "platform": "facebook_story",
   "file": "yellowstone_ch3_s10.mp4",
-  "at": "2026-11-11T02:00:00Z"
+  "at": "2026-11-11T02:00:00Z",
+  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
  }
 ]
