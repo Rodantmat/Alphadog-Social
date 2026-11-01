@@ -93,6 +93,21 @@ with sync_playwright() as p:
         def drag(box, tx, ty):
             cx, cy = box[1]+box[3]/2, box[2]+box[4]/2
             pg.mouse.move(cx, cy); pg.mouse.down(); pg.mouse.move(cx+(tx-cx)/2, cy+(ty-cy)/2, steps=8); pg.mouse.move(tx, ty, steps=8); pg.mouse.up(); pg.wait_for_timeout(800)
+        def boxes0():
+            return pg.evaluate("() => [...document.querySelectorAll('.ytp-ce-element')].map(e=>{const b=e.getBoundingClientRect(); return [e.className.toString().slice(0,50), Math.round(b.x),Math.round(b.y),Math.round(b.width),Math.round(b.height)]})")
+        # remove video elements that already exist (they may point at a superseded video); keep exactly the one we add below
+        if NEXT:
+            for _ in range(4):
+                vids = [b_ for b_ in boxes0() if "ytp-ce-video" in b_[0]]
+                if not vids: break
+                v = vids[0]; pg.mouse.click(v[1] + v[3] / 2, v[2] + v[4] / 2); pg.wait_for_timeout(1200)
+                pg.get_by_role("button", name="Excluir elemento").first.click(); pg.wait_for_timeout(1500)
+                dlg_txt = pg.evaluate("() => [...document.querySelectorAll('tp-yt-paper-dialog, ytcp-dialog, [role=dialog]')].filter(d=>d.offsetParent!==null).map(d=>(d.innerText||'').replace(/\\s+/g,' ').slice(0,300))")
+                print("DELETE_DIALOG", json.dumps(dlg_txt, ensure_ascii=False))
+                for lab in ["Excluir", "Confirmar", "OK", "Sim"]:
+                    cb = pg.locator("tp-yt-paper-dialog, ytcp-dialog, [role=dialog]").get_by_role("button", name=lab)
+                    if cb.count() and cb.first.is_visible(): cb.first.click(); pg.wait_for_timeout(1500); print("confirmed delete via", lab); break
+            print("VIDEO_BOXES_AFTER_PREDELETE", json.dumps([b_ for b_ in boxes0() if "ytp-ce-video" in b_[0]]))
         if "Inscreva-se:" in pg.evaluate("() => document.body.innerText"): print("subscribe element already present, not adding another")
         else: add("Inscrever-se")
         snap(pg, "10_sub")
@@ -109,7 +124,6 @@ with sync_playwright() as p:
                 bt = dlg.get_by_role("button", name=lab)
                 if bt.count() and bt.first.is_visible(): bt.first.click(); print("picked via", lab); pg.wait_for_timeout(1500); break
         snap(pg, "11_added"); bx = boxes(); print("BOXES", json.dumps(bx))
-        dump(pg, "after_add_video")
         # preview 721,264 480x270 (scale .25): logo circle ~ (828,398); video slot centre ~ (1059,398)
         for b_ in bx:
             if "channel" in b_[0]: drag(b_, 828, 398)
@@ -120,7 +134,7 @@ with sync_playwright() as p:
         print("PANELAFTER", json.dumps(pg.evaluate("() => (document.querySelector('ytve-endscreen-editor-options-panel')||document.body).innerText.slice(0,600)"), ensure_ascii=False))
         print("TOPTXT", json.dumps(pg.evaluate("() => [...document.querySelectorAll('ytve-endscreen-editor-preview-overlay .ytp-ce-element')].map(e=>e.innerText.slice(0,80))"), ensure_ascii=False))
         if MODE == "inspect":
-            dump(pg, "before_save"); b.close(); sys.exit(0)
+            b.close(); sys.exit(0)
         sv = pg.get_by_role("button", name="Salvar").last
         for _ in range(15):
             if sv.get_attribute("aria-disabled") != "true": break
