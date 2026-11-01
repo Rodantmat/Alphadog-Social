@@ -979,7 +979,13 @@
   "at": "2026-11-01T18:00:00Z",
   "thumb_ms": 1200,
   "caption": "March 1894. An Army scout follows snowshoe tracks through Pelican Valley and finds Ed Howell, the most notorious poacher in Yellowstone, bent over a dead bison.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 2 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Army #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw",
+  "done": {
+   "media_id": "18094438412191750",
+   "permalink": "https://www.instagram.com/reel/DfNlAeiCJHz/",
+   "posted": "2026-11-01T20:21:58+0000",
+   "at": "2026-11-01T20:20:01Z"
+  }
  },
  {
   "id": "ch2y1_fb",
@@ -987,7 +993,42 @@
   "file": "yellowstone_ch2_y1.mp4",
   "at": "2026-11-01T18:00:00Z",
   "caption": "March 1894. An Army scout follows snowshoe tracks through Pelican Valley and finds Ed Howell, the most notorious poacher in Yellowstone, bent over a dead bison.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 2 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Army #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw",
+  "done": {
+   "video_id": "1140681951745773",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1105077235624602"
+   },
+   "permalink": "https://www.facebook.com/reel/1140681951745773/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 14770406
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-01T20:22:12+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1140681951745773_2726962664424506"
+   },
+   "status_errors": [
+    "HTTP 400 https://graph.facebook.com/v26.0/1140681951745773: {\"error\":{\"message\":\"Unsupported get request. Object with ID '1140681951745773' does not exist, cannot be loaded due to missing permissions,"
+   ],
+   "at": "2026-11-01T20:20:01Z"
+  }
  },
  {
   "id": "ch2y2_ig",
