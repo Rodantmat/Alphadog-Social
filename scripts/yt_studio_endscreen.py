@@ -99,14 +99,22 @@ with sync_playwright() as p:
         # remove video elements that already exist (they may point at a superseded video); keep exactly the one we add below
         if NEXT:
             for _ in range(4):
-                vids = [b_ for b_ in boxes0() if "ytp-ce-video" in b_[0]]
-                if not vids: break
-                v = vids[0]; pg.mouse.click(v[1] + v[3] / 2, v[2] + v[4] / 2); pg.wait_for_timeout(1200)
-                pg.get_by_role("button", name="Excluir elemento").first.click(); pg.wait_for_timeout(1500)
-                dlg_txt = pg.evaluate("() => [...document.querySelectorAll('tp-yt-paper-dialog, ytcp-dialog, [role=dialog]')].filter(d=>d.offsetParent!==null).map(d=>(d.innerText||'').replace(/\\s+/g,' ').slice(0,300))")
+                n = pg.evaluate("() => document.querySelectorAll('.ytp-ce-video').length")
+                if not n: break
+                # select the video element itself (not whatever overlaps its centre) and check what the side panel says is selected
+                pg.evaluate("() => { const e=document.querySelector('.ytp-ce-video'); for (const t of ['mousedown','mouseup','click']) e.dispatchEvent(new MouseEvent(t,{bubbles:true,cancelable:true,view:window})); }")
+                pg.wait_for_timeout(1200)
+                panel = pg.evaluate("() => (document.body.innerText.match(/Elemento:[^\\n]*/g)||[]).join(' | ')")
+                print("SELECTED_PANEL", json.dumps(panel, ensure_ascii=False))
+                if "inscri" in panel.lower() and "v" + chr(237) + "deo" not in panel.lower():
+                    print("selection hit the subscribe element, not deleting"); break
+                btn = pg.get_by_role("button", name="Excluir elemento")
+                if not btn.count(): print("no delete button visible"); break
+                btn.first.click(timeout=5000); pg.wait_for_timeout(1500)
+                dlg_txt = pg.evaluate("() => [...document.querySelectorAll('tp-yt-paper-dialog, ytcp-dialog, [role=dialog]')].filter(d=>d.offsetParent!==null).map(d=>(d.innerText||'').replace(/\\s+/g,' ').slice(0,200))")
                 print("DELETE_DIALOG", json.dumps(dlg_txt, ensure_ascii=False))
-                for lab in ["Excluir", "Confirmar", "OK", "Sim"]:
-                    cb = pg.locator("tp-yt-paper-dialog, ytcp-dialog, [role=dialog]").get_by_role("button", name=lab)
+                for lab in ["Confirmar", "OK", "Sim"]:
+                    cb = pg.locator("tp-yt-paper-dialog, ytcp-dialog, [role=dialog]").get_by_role("button", name=lab, exact=True)
                     if cb.count() and cb.first.is_visible(): cb.first.click(); pg.wait_for_timeout(1500); print("confirmed delete via", lab); break
             print("VIDEO_BOXES_AFTER_PREDELETE", json.dumps([b_ for b_ in boxes0() if "ytp-ce-video" in b_[0]]))
         if "Inscreva-se:" in pg.evaluate("() => document.body.innerText"): print("subscribe element already present, not adding another")
