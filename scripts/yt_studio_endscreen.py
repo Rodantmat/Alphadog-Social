@@ -98,6 +98,15 @@ with sync_playwright() as p:
                 bt = dlg.get_by_role("button", name=lab)
                 if bt.count() and bt.first.is_visible(): bt.first.click(); print("picked via", lab); pg.wait_for_timeout(1500); break
         snap(pg, "11_added"); bx = boxes(); print("BOXES", json.dumps(bx))
+        # exactly one video element must exist: delete extras (overlapping elements make Studio refuse to save)
+        for _ in range(4):
+            vids = [b_ for b_ in boxes() if "ytp-ce-video" in b_[0]]
+            if len(vids) <= 1: break
+            ex = vids[-1]; pg.mouse.click(ex[1] + ex[3] / 2, ex[2] + ex[4] / 2); pg.wait_for_timeout(1200)
+            dl = pg.get_by_role("button", name="Excluir elemento")
+            if dl.count(): dl.first.click(); pg.wait_for_timeout(1500); print("deleted an extra video element")
+            else: print("no delete button found"); break
+        bx = boxes(); print("BOXES_AFTER_DEDUP", json.dumps(bx))
         # preview 721,264 480x270 (scale .25): logo circle ~ (828,398); video slot centre ~ (1059,398)
         for b_ in bx:
             if "channel" in b_[0]: drag(b_, 828, 398)
