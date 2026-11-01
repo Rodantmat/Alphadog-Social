@@ -1,0 +1,20 @@
+name: yt-retitle
+# Prefix titles of superseded PRIVATE videos so Studio pickers cannot confuse them with the live ones. Refuses non-private videos.
+on:
+  workflow_dispatch:
+    inputs:
+      ids: { description: "comma list of video ids", required: true }
+      prefix: { description: "title prefix", default: "[OLD private] " }
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          IDS: ${{ inputs.ids }}
+          PREFIX: ${{ inputs.prefix }}
+        run: python3 scripts/yt_retitle.py
