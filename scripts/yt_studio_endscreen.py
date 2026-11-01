@@ -75,7 +75,8 @@ with sync_playwright() as p:
         inp = pg.evaluate("() => [...document.querySelectorAll('input')].map(i=>[i.placeholder,i.type,i.getAttribute('aria-label')])")
         print("INPUTS", json.dumps(inp, ensure_ascii=False))
     if MODE in ("apply", "inspect"):
-        TITLE = os.environ.get("NEXT_TITLE", "When the Cavalry Guarded the Geysers")
+        TITLE = os.environ.get("NEXT_TITLE") or ""
+        if NEXT and not TITLE: raise SystemExit("NEXT_TITLE is required when NEXT_VIDEO is set (picker matches by title)")
         def add(kind):
             # a menu left open by a previous (possibly disabled) menu item intercepts the next click: close it first
             for _ in range(3):

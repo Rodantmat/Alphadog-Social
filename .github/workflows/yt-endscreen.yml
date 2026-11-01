@@ -5,7 +5,8 @@ on:
     inputs:
       video_id: { description: "video id", required: true }
       next_video: { description: "video id for the Video element", default: "" }
-      mode: { description: "explore | apply", default: "explore" }
+      next_title: { description: "exact title of the next video (picker search)", default: "" }
+      mode: { description: "explore | apply | inspect", default: "explore" }
 permissions:
   contents: write
 concurrency: { group: yt-studio-session, cancel-in-progress: false }
@@ -22,6 +23,7 @@ jobs:
           YT_GOOGLE_SESSION: ${{ secrets.YT_GOOGLE_SESSION }}
           VIDEO_ID: ${{ inputs.video_id }}
           NEXT_VIDEO: ${{ inputs.next_video }}
+          NEXT_TITLE: ${{ inputs.next_title }}
           MODE: ${{ inputs.mode }}
         run: xvfb-run -a python3 scripts/yt_studio_endscreen.py
       - if: always()
