@@ -2,12 +2,23 @@
 """Add end-screen elements (Subscribe + a Video element) to a video through YouTube Studio's end-screen editor.
 env: VIDEO_ID, NEXT_VIDEO (video id for the 'Video' element; empty = skip), MODE=explore|apply, QA_DIR.
 explore: open the editor and screenshot/dump each step, change nothing. Uses the saved Studio session (yt_studio_session)."""
-import json, os, re, sys, time
+import sys, json, os, re, sys, time
 from playwright.sync_api import sync_playwright
 sys.path.insert(0, os.path.dirname(__file__))
 import yt_studio_session as S
 VID = os.environ["VIDEO_ID"]; NEXT = os.environ.get("NEXT_VIDEO", ""); MODE = os.environ.get("MODE", "explore")
 OUT = os.environ.get("QA_DIR", "/tmp/ytqa"); os.makedirs(OUT, exist_ok=True)
+def dump(pg, label):
+    """print a small JPEG of the page as base64 lines so it can be read back from the run log"""
+    import base64
+    try:
+        raw = pg.screenshot(type="jpeg", quality=35)
+        b = base64.b64encode(raw).decode()
+        print("IMGSTART", label, len(b))
+        for k in range(0, len(b), 3000): print("IMG", b[k:k+3000])
+        print("IMGEND", label)
+    except Exception as e: print("dump failed", e)
+
 def snap(pg, n): S.shot(pg, f"{OUT}/{n}.png"); S.dump(pg, f"{OUT}/{n}.txt")
 def click_text(pg, names, timeout=4000):
     for n in names:
@@ -63,7 +74,7 @@ with sync_playwright() as p:
         print("PICKER", json.dumps(dl, ensure_ascii=False))
         inp = pg.evaluate("() => [...document.querySelectorAll('input')].map(i=>[i.placeholder,i.type,i.getAttribute('aria-label')])")
         print("INPUTS", json.dumps(inp, ensure_ascii=False))
-    if MODE == "apply":
+    if MODE in ("apply", "inspect"):
         TITLE = os.environ.get("NEXT_TITLE", "When the Cavalry Guarded the Geysers")
         def add(kind):
             # a menu left open by a previous (possibly disabled) menu item intercepts the next click: close it first
@@ -98,15 +109,7 @@ with sync_playwright() as p:
                 bt = dlg.get_by_role("button", name=lab)
                 if bt.count() and bt.first.is_visible(): bt.first.click(); print("picked via", lab); pg.wait_for_timeout(1500); break
         snap(pg, "11_added"); bx = boxes(); print("BOXES", json.dumps(bx))
-        # exactly one video element must exist: delete extras (overlapping elements make Studio refuse to save)
-        for _ in range(4):
-            vids = [b_ for b_ in boxes() if "ytp-ce-video" in b_[0]]
-            if len(vids) <= 1: break
-            ex = vids[-1]; pg.mouse.click(ex[1] + ex[3] / 2, ex[2] + ex[4] / 2); pg.wait_for_timeout(1200)
-            dl = pg.get_by_role("button", name="Excluir elemento")
-            if dl.count(): dl.first.click(); pg.wait_for_timeout(1500); print("deleted an extra video element")
-            else: print("no delete button found"); break
-        bx = boxes(); print("BOXES_AFTER_DEDUP", json.dumps(bx))
+        dump(pg, "after_add_video")
         # preview 721,264 480x270 (scale .25): logo circle ~ (828,398); video slot centre ~ (1059,398)
         for b_ in bx:
             if "channel" in b_[0]: drag(b_, 828, 398)
@@ -116,6 +119,8 @@ with sync_playwright() as p:
         snap(pg, "12_placed"); print("BOXES2", json.dumps(boxes()))
         print("PANELAFTER", json.dumps(pg.evaluate("() => (document.querySelector('ytve-endscreen-editor-options-panel')||document.body).innerText.slice(0,600)"), ensure_ascii=False))
         print("TOPTXT", json.dumps(pg.evaluate("() => [...document.querySelectorAll('ytve-endscreen-editor-preview-overlay .ytp-ce-element')].map(e=>e.innerText.slice(0,80))"), ensure_ascii=False))
+        if MODE == "inspect":
+            dump(pg, "before_save"); b.close(); sys.exit(0)
         sv = pg.get_by_role("button", name="Salvar").last
         for _ in range(15):
             if sv.get_attribute("aria-disabled") != "true": break
