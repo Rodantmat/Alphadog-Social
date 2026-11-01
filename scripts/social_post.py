@@ -9,7 +9,7 @@ TikTok (until the app passes TikTok's audit): the clip goes to the creator's Tik
 Every result is written back to the queue (post log)."""
 import json, os, sys, time, subprocess, datetime as dt, urllib.request, urllib.error, urllib.parse
 G = "https://graph.facebook.com/v26.0"; T = os.environ["FB_PAGE_TOKEN"].strip(); PAGE = os.environ["FB_PAGE_ID"].strip()
-DRY = os.environ.get("DRY_RUN") == "1"; ONLY = os.environ.get("ONLY", "").strip()
+DRY = os.environ.get("DRY_RUN", "").strip().lower() in ("1", "true", "yes"); ONLY = os.environ.get("ONLY", "").strip()
 Q = "content/social_queue.json"; MEDIA = "media"
 
 def call(method, url, data=None, headers=None, raw=None, timeout=300):
