@@ -66,14 +66,25 @@ with sync_playwright() as p:
     if MODE == "apply":
         TITLE = os.environ.get("NEXT_TITLE", "When the Cavalry Guarded the Geysers")
         def add(kind):
-            pg.get_by_role("button", name="Adicionar elemento").first.click(); pg.wait_for_timeout(1500)
-            pg.get_by_text(kind, exact=True).first.click(); pg.wait_for_timeout(2500)
+            # a menu left open by a previous (possibly disabled) menu item intercepts the next click: close it first
+            for _ in range(3):
+                if pg.locator("ytcp-text-menu tp-yt-paper-item").first.is_visible():
+                    pg.keyboard.press("Escape"); pg.wait_for_timeout(600)
+                else: break
+            pg.get_by_role("button", name="Adicionar elemento").first.click(timeout=15000); pg.wait_for_timeout(1500)
+            it = pg.get_by_text(kind, exact=True).first
+            dis = it.evaluate("e => { const p = e.closest('tp-yt-paper-item'); return !!p && (p.getAttribute('aria-disabled')==='true' || p.hasAttribute('disabled')); }")
+            if dis:
+                print("menu item disabled (element of this kind already exists):", kind); pg.keyboard.press("Escape"); pg.wait_for_timeout(800); return False
+            it.click(); pg.wait_for_timeout(2500); return True
         def boxes():
             return pg.evaluate("() => [...document.querySelectorAll('.ytp-ce-element')].map(e=>{const b=e.getBoundingClientRect(); return [e.className.toString().slice(0,50), Math.round(b.x),Math.round(b.y),Math.round(b.width),Math.round(b.height)]})")
         def drag(box, tx, ty):
             cx, cy = box[1]+box[3]/2, box[2]+box[4]/2
             pg.mouse.move(cx, cy); pg.mouse.down(); pg.mouse.move(cx+(tx-cx)/2, cy+(ty-cy)/2, steps=8); pg.mouse.move(tx, ty, steps=8); pg.mouse.up(); pg.wait_for_timeout(800)
-        add("Inscrever-se"); snap(pg, "10_sub")
+        if "Inscreva-se:" in pg.evaluate("() => document.body.innerText"): print("subscribe element already present, not adding another")
+        else: add("Inscrever-se")
+        snap(pg, "10_sub")
         if NEXT:
             add("Vídeo")
             pg.get_by_text("Escolher um vídeo específico").first.click(); pg.wait_for_timeout(3000)
