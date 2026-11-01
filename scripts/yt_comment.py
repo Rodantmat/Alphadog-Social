@@ -12,10 +12,23 @@ for f in sorted(glob.glob("content/pending/comment_*.json")):
     q = json.load(open(f))
     if now < datetime.datetime.fromisoformat(q["after"].replace("Z", "+00:00")): print("not yet", f); continue
     tok = tok or token()
-    body = {"snippet": {"videoId": q["video_id"], "topLevelComment": {"snippet": {"textOriginal": open(q["text_file"]).read()[:9900]}}}}
-    req = urllib.request.Request("https://www.googleapis.com/youtube/v3/commentThreads?part=snippet", data=json.dumps(body).encode(), method="POST",
-                                 headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json; charset=UTF-8"})
+    text = open(q["text_file"]).read()
+    # long credits: first part as the top-level comment, the rest as replies under it (each chunk <= 8500 bytes, split on line breaks)
+    chunks, cur = [], ""
+    for ln in text.splitlines(keepends=True):
+        if cur and len((cur + ln).encode()) > 8500: chunks.append(cur.rstrip()); cur = ""
+        cur += ln
+    if cur.strip(): chunks.append(cur.rstrip())
+    def post(url, body):
+        req = urllib.request.Request(url, data=json.dumps(body).encode(), method="POST",
+                                     headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json; charset=UTF-8"})
+        with urllib.request.urlopen(req, timeout=60) as r: return json.loads(r.read())
     try:
-        with urllib.request.urlopen(req, timeout=60) as r: print("comment posted", q["video_id"], r.status)
+        th = post("https://www.googleapis.com/youtube/v3/commentThreads?part=snippet",
+                  {"snippet": {"videoId": q["video_id"], "topLevelComment": {"snippet": {"textOriginal": chunks[0]}}}})
+        print("comment posted", q["video_id"], len(chunks[0]), "chars")
+        for extra in chunks[1:]:
+            post("https://www.googleapis.com/youtube/v3/comments?part=snippet", {"snippet": {"parentId": th["id"], "textOriginal": extra}})
+            print("reply posted", q["video_id"], len(extra), "chars")
         os.remove(f)
-    except urllib.error.HTTPError as e: print("comment failed", q["video_id"], e.code, e.read()[:300])
+    except urllib.error.HTTPError as e: print("comment failed", q["video_id"], e.code, e.read()[:600])
