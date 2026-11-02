@@ -1051,7 +1051,40 @@
   "file": "yellowstone_ch2_y2_v2.mp4",
   "at": "2026-11-02T01:00:00Z",
   "caption": "In 1871 a photographer and a painter went to Yellowstone with a government survey. William Henry Jackson developed his glass plates on the spot, and Thomas Moran painted the canyon. Their pictures helped create the first national park.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 2 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Army #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw",
+  "done": {
+   "video_id": "2308538393414931",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1105236955608630"
+   },
+   "permalink": "https://www.facebook.com/reel/2308538393414931/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 24540051
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-02T01:06:44+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "2308538393414931_1950194749291231"
+   },
+   "status_errors": null,
+   "at": "2026-11-02T01:06:44Z"
+  }
  },
  {
   "id": "ch2y3_ig",
