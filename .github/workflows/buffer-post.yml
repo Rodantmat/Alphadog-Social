@@ -4,7 +4,7 @@ name: buffer-post
 on:
   workflow_dispatch:
     inputs:
-      mode: { description: "channels | post | posts", default: "channels" }
+      mode: { description: "channels | post | posts | refresh (re-host footage files on media-public, comma list in file)", default: "channels" }
       run: { description: "run id holding the artifact", default: "40389484496" }
       artifact: { description: "artifact name", default: "shorts" }
       file: { description: "file inside the artifact", default: "chiricahua_sh2.mp4" }
@@ -36,6 +36,15 @@ jobs:
         run: python3 scripts/buffer_post.py types ${{ inputs.text }}
       - if: inputs.mode == 'posts'
         run: python3 scripts/buffer_post.py posts "${{ inputs.service }}"
+      - if: inputs.mode == 'refresh'
+        env: { FILES: "${{ inputs.file }}" }
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
+          cd /tmp/fbs && git sparse-checkout set --no-cone /yellowstone-shorts
+          for f in ${FILES//,/ }; do
+            src=$(ls yellowstone-shorts/*/"$f" | head -1); [ -n "$src" ] || { echo "MISSING $f"; exit 1; }
+            gh release upload media-public "$src" --clobber -R "$GITHUB_REPOSITORY" && echo "REFRESHED $f $(stat -c%s "$src") bytes $(sha256sum "$src" | cut -c1-12)"
+          done
       - if: inputs.mode == 'post' && inputs.artifact == 'release:ys-shorts'
         env: { GH_TOKEN: "${{ github.token }}" }
         run: |
