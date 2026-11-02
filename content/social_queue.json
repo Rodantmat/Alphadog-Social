@@ -1093,7 +1093,13 @@
   "at": "2026-11-02T18:00:00Z",
   "thumb_ms": 1200,
   "caption": "In one winter hunters killed some 3,000 elk in and around early Yellowstone, just for their hides, while tourists broke off geyser cones as souvenirs.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 2 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Army #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw",
+  "done": {
+   "media_id": "18341429083257129",
+   "permalink": "https://www.instagram.com/reel/DfP7WIMADac/",
+   "posted": "2026-11-02T18:15:34+0000",
+   "at": "2026-11-02T18:15:00Z"
+  }
  },
  {
   "id": "ch2y3_fb",
@@ -1101,7 +1107,41 @@
   "file": "yellowstone_ch2_y3.mp4",
   "at": "2026-11-02T18:00:00Z",
   "caption": "In one winter hunters killed some 3,000 elk in and around early Yellowstone, just for their hides, while tourists broke off geyser cones as souvenirs.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 2 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Army #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw",
+  "done": {
+   "video_id": "1867454974408298",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1105971875535138"
+   },
+   "permalink": "https://www.facebook.com/reel/1867454974408298/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 46252089
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-02T18:15:43+0000"
+    },
+    "copyright_check_status": {
+     "status": "in_progress"
+    }
+   },
+   "comment": {
+    "id": "1867454974408298_3710372329120982"
+   },
+   "status_errors": [
+    "HTTP 400 https://graph.facebook.com/v26.0/1867454974408298: {\"error\":{\"message\":\"Unsupported get request. Object with ID '1867454974408298' does not exist, cannot be loaded due to missing permissions,"
+   ],
+   "at": "2026-11-02T18:15:00Z"
+  }
  },
  {
   "id": "ch2y4_ig",
