@@ -1,0 +1,56 @@
+name: yt-film
+# Complete Yellowstone film (Part 1 + Part 2 + Part 3) from the released episode finals on the footage branch.
+# mode=preview: reassemble finals, verify sha256, print codecs/durations, commit end-of-episode frames to footage review/film/
+# mode=build: cut each part at its trim (seconds, 0 = full), concat (re-encode, uniform), merge subtitles + ES/PT audio tracks
+#             with the same offsets, write chapters, and commit the result to footage yellowstone-release/film/ (95 MB parts)
+on:
+  workflow_dispatch:
+    inputs:
+      mode: { description: "preview | build", default: "preview" }
+      trims: { description: "seconds to keep per part, comma list (0 = full)", default: "0,0,0" }
+permissions:
+  contents: write
+jobs:
+  film:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch finals, subtitles, audio tracks
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          sudo apt-get -qq update >/dev/null && sudo apt-get -qq install -y ffmpeg >/dev/null
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
+          cd /tmp/fbs && git sparse-checkout set --no-cone /yellowstone-release/ch1 /yellowstone-release/ch2 /yellowstone-release/ch3 /audio-tracks
+          mkdir -p /tmp/w && cd /tmp/w
+          for c in 1 2 3; do
+            cat /tmp/fbs/yellowstone-release/ch$c/yellowstone_ch${c}_final.mp4.part* > p$c.mp4
+            want=$(cut -d' ' -f1 /tmp/fbs/yellowstone-release/ch$c/yellowstone_ch${c}_final.mp4.sha256); got=$(sha256sum p$c.mp4 | cut -d' ' -f1)
+            [ "$want" = "$got" ] && echo "SHA OK ch$c" || { echo "SHA MISMATCH ch$c"; exit 1; }
+            ffprobe -v error -show_entries format=duration:stream=codec_type,codec_name,width,height,r_frame_rate,sample_rate,channels -of compact p$c.mp4
+          done
+          ls -la /tmp/fbs/audio-tracks | grep -E "vkXqMrSljM|P99Gu3GCZVw|jbZbPS173wc"
+      - name: Preview episode endings
+        if: inputs.mode == 'preview'
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          cd /tmp/w && mkdir -p /tmp/fbs/review/film && rm -f /tmp/fbs/review/film/*
+          for c in 1 2 3; do
+            d=$(ffprobe -v error -show_entries format=duration -of csv=p=0 p$c.mp4)
+            for k in 24 20 16 13 10 8 6 4 2 1; do
+              t=$(python3 -c "print(max(0,$d-$k))"); ffmpeg -v error -y -ss $t -i p$c.mp4 -frames:v 1 -vf scale=480:-2 /tmp/fbs/review/film/ch${c}_end-$(printf %02d $k).jpg
+            done
+            ffmpeg -v error -y -ss 1 -i p$c.mp4 -frames:v 1 -vf scale=480:-2 /tmp/fbs/review/film/ch${c}_start.jpg
+          done
+          cd /tmp/fbs && git config user.name alphadog-bot && git config user.email bot@users.noreply.github.com
+          git sparse-checkout add /review/film && git add review/film && git commit -qm "film: preview frames" && git push -q origin HEAD:footage
+      - name: Build film
+        if: inputs.mode == 'build'
+        env: { TRIMS: "${{ inputs.trims }}", GH_TOKEN: "${{ github.token }}" }
+        run: |
+          cd /tmp/w && python3 $GITHUB_WORKSPACE/scripts/yt_film_build.py "$TRIMS" /tmp/fbs
+          mkdir -p /tmp/fbs/yellowstone-release/film && cd /tmp/fbs/yellowstone-release/film && rm -f *
+          split -b 95m -d -a 2 /tmp/w/film.mp4 yellowstone_film_final.mp4.part && sha256sum /tmp/w/film.mp4 | sed 's#/tmp/w/film.mp4#yellowstone_film_final.mp4#' > yellowstone_film_final.mp4.sha256
+          cp /tmp/w/out/* . && ls -la
+          cd /tmp/fbs && git config user.name alphadog-bot && git config user.email bot@users.noreply.github.com
+          git sparse-checkout add /yellowstone-release/film && git add yellowstone-release/film && git commit -qm "film: complete Yellowstone cut" && git push -q origin HEAD:footage
