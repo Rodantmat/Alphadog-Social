@@ -1295,14 +1295,29 @@
   "platform": "instagram_story",
   "file": "yellowstone_story_ch2s3.mp4",
   "at": "2026-11-02T19:00:00Z",
-  "story_v2": "Firehole River · Midway Geyser Basin | photo:ph_20211004160015.jpg"
+  "story_v2": "Firehole River · Midway Geyser Basin | photo:ph_20211004160015.jpg",
+  "done": {
+   "media_id": "18131680585887525",
+   "story": true,
+   "at": "2026-11-02T19:07:47Z"
+  }
  },
  {
   "id": "ch2s3_fb",
   "platform": "facebook_story",
   "file": "yellowstone_story_ch2s3.mp4",
   "at": "2026-11-02T19:00:00Z",
-  "story_v2": "Firehole River · Midway Geyser Basin | photo:ph_20211004160015.jpg"
+  "story_v2": "Firehole River · Midway Geyser Basin | photo:ph_20211004160015.jpg",
+  "done": {
+   "video_id": "1473780987976634",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "1091065910603277"
+   },
+   "story": true,
+   "at": "2026-11-02T19:07:47Z"
+  }
  },
  {
   "id": "ch2s4_ig",
