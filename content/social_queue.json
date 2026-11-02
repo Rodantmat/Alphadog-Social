@@ -933,44 +933,44 @@
  {
   "id": "s8_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch1_s8.mp4",
+  "file": "yellowstone_story_s8.mp4",
   "at": "2026-11-11T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Midway Geyser Basin | own:1f68ebde50c5"
  },
  {
   "id": "s8_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch1_s8.mp4",
+  "file": "yellowstone_story_s8.mp4",
   "at": "2026-11-11T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Midway Geyser Basin | own:1f68ebde50c5"
  },
  {
   "id": "s9_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch1_s9.mp4",
+  "file": "yellowstone_story_s9.mp4",
   "at": "2026-11-12T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Norris Geyser Basin | own:8f12081adbf9"
  },
  {
   "id": "s9_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch1_s9.mp4",
+  "file": "yellowstone_story_s9.mp4",
   "at": "2026-11-12T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Norris Geyser Basin | own:8f12081adbf9"
  },
  {
   "id": "s10_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch1_s10.mp4",
+  "file": "yellowstone_story_s10.mp4",
   "at": "2026-11-12T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Firehole River | photo:ph_20211004155746.jpg"
  },
  {
   "id": "s10_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch1_s10.mp4",
+  "file": "yellowstone_story_s10.mp4",
   "at": "2026-11-12T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Firehole River | photo:ph_20211004155746.jpg"
  },
  {
   "id": "ch2y1_ig",
@@ -1225,142 +1225,142 @@
  {
   "id": "ch2s1_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch2_s1.mp4",
-  "at": "2026-11-01T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "file": "yellowstone_story_ch2s1.mp4",
+  "at": "2026-11-13T02:00:00Z",
+  "story_v2": "Norris Geyser Basin | own:ef337afa44b4"
  },
  {
   "id": "ch2s1_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch2_s1.mp4",
-  "at": "2026-11-01T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "file": "yellowstone_story_ch2s1.mp4",
+  "at": "2026-11-13T02:00:00Z",
+  "story_v2": "Norris Geyser Basin | own:ef337afa44b4"
  },
  {
   "id": "ch2s2_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch2_s2.mp4",
-  "at": "2026-11-02T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "file": "yellowstone_story_ch2s2.mp4",
+  "at": "2026-11-13T19:00:00Z",
+  "story_v2": "Grand Canyon of the Yellowstone | own:0ff8927bd254"
  },
  {
   "id": "ch2s2_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch2_s2.mp4",
-  "at": "2026-11-02T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "file": "yellowstone_story_ch2s2.mp4",
+  "at": "2026-11-13T19:00:00Z",
+  "story_v2": "Grand Canyon of the Yellowstone | own:0ff8927bd254"
  },
  {
   "id": "ch2s3_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch2_s3.mp4",
+  "file": "yellowstone_story_ch2s3.mp4",
   "at": "2026-11-02T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Firehole River · Midway Geyser Basin | photo:ph_20211004160015.jpg"
  },
  {
   "id": "ch2s3_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch2_s3.mp4",
+  "file": "yellowstone_story_ch2s3.mp4",
   "at": "2026-11-02T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Firehole River · Midway Geyser Basin | photo:ph_20211004160015.jpg"
  },
  {
   "id": "ch2s4_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch2_s4.mp4",
+  "file": "yellowstone_story_ch2s4.mp4",
   "at": "2026-11-03T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Norris Geyser Basin | own:e3f343a3a6f5"
  },
  {
   "id": "ch2s4_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch2_s4.mp4",
+  "file": "yellowstone_story_ch2s4.mp4",
   "at": "2026-11-03T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Norris Geyser Basin | own:e3f343a3a6f5"
  },
  {
   "id": "ch2s5_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch2_s5.mp4",
+  "file": "yellowstone_story_ch2s5.mp4",
   "at": "2026-11-05T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Excelsior Geyser · Firehole River | own:89ef66b84215"
  },
  {
   "id": "ch2s5_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch2_s5.mp4",
+  "file": "yellowstone_story_ch2s5.mp4",
   "at": "2026-11-05T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Excelsior Geyser · Firehole River | own:89ef66b84215"
  },
  {
   "id": "ch2s6_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch2_s6.mp4",
+  "file": "yellowstone_story_ch2s6.mp4",
   "at": "2026-11-06T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Norris Geyser Basin | own:2e50f9ca01e3"
  },
  {
   "id": "ch2s6_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch2_s6.mp4",
+  "file": "yellowstone_story_ch2s6.mp4",
   "at": "2026-11-06T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Norris Geyser Basin | own:2e50f9ca01e3"
  },
  {
   "id": "ch2s7_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch2_s7.mp4",
+  "file": "yellowstone_story_ch2s7.mp4",
   "at": "2026-11-06T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Yellowstone hot spring | photo:ph_20211004163150.jpg"
  },
  {
   "id": "ch2s7_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch2_s7.mp4",
+  "file": "yellowstone_story_ch2s7.mp4",
   "at": "2026-11-06T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Yellowstone hot spring | photo:ph_20211004163150.jpg"
  },
  {
   "id": "ch2s8_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch2_s8.mp4",
+  "file": "yellowstone_story_ch2s8.mp4",
   "at": "2026-11-07T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Grand Canyon of the Yellowstone | own:1dbeeb3ce73b"
  },
  {
   "id": "ch2s8_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch2_s8.mp4",
+  "file": "yellowstone_story_ch2s8.mp4",
   "at": "2026-11-07T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Grand Canyon of the Yellowstone | own:1dbeeb3ce73b"
  },
  {
   "id": "ch2s9_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch2_s9.mp4",
+  "file": "yellowstone_story_ch2s9.mp4",
   "at": "2026-11-07T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Cave Falls · Bechler region | own:25b8f9963249"
  },
  {
   "id": "ch2s9_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch2_s9.mp4",
+  "file": "yellowstone_story_ch2s9.mp4",
   "at": "2026-11-07T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Cave Falls · Bechler region | own:25b8f9963249"
  },
  {
   "id": "ch2s10_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch2_s10.mp4",
+  "file": "yellowstone_story_ch2s10.mp4",
   "at": "2026-11-08T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Mud Volcano | own:7ff1d6ed3645"
  },
  {
   "id": "ch2s10_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch2_s10.mp4",
+  "file": "yellowstone_story_ch2s10.mp4",
   "at": "2026-11-08T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Mud Volcano | own:7ff1d6ed3645"
  },
  {
   "id": "ch3y1_ig",
@@ -1535,141 +1535,141 @@
  {
   "id": "ch3s1_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch3_s1.mp4",
+  "file": "yellowstone_story_ch3s1.mp4",
   "at": "2026-11-03T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Lower Geyser Basin | own:6d977f1d93e0"
  },
  {
   "id": "ch3s1_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch3_s1.mp4",
+  "file": "yellowstone_story_ch3s1.mp4",
   "at": "2026-11-03T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Lower Geyser Basin | own:6d977f1d93e0"
  },
  {
   "id": "ch3s2_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch3_s2.mp4",
+  "file": "yellowstone_story_ch3s2.mp4",
   "at": "2026-11-04T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Mud Volcano | own:0e043e52f46d"
  },
  {
   "id": "ch3s2_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch3_s2.mp4",
+  "file": "yellowstone_story_ch3s2.mp4",
   "at": "2026-11-04T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Mud Volcano | own:0e043e52f46d"
  },
  {
   "id": "ch3s3_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch3_s3.mp4",
+  "file": "yellowstone_story_ch3s3.mp4",
   "at": "2026-11-04T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Lower Falls of the Yellowstone | own:226a5ba1ccf0"
  },
  {
   "id": "ch3s3_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch3_s3.mp4",
+  "file": "yellowstone_story_ch3s3.mp4",
   "at": "2026-11-04T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Lower Falls of the Yellowstone | own:226a5ba1ccf0"
  },
  {
   "id": "ch3s4_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch3_s4.mp4",
+  "file": "yellowstone_story_ch3s4.mp4",
   "at": "2026-11-05T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "West Thumb Geyser Basin | own:0adb41126380"
  },
  {
   "id": "ch3s4_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch3_s4.mp4",
+  "file": "yellowstone_story_ch3s4.mp4",
   "at": "2026-11-05T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "West Thumb Geyser Basin | own:0adb41126380"
  },
  {
   "id": "ch3s5_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch3_s5.mp4",
+  "file": "yellowstone_story_ch3s5.mp4",
   "at": "2026-11-08T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Firehole River · Midway Geyser Basin | own:bcc0b2c372b1"
  },
  {
   "id": "ch3s5_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch3_s5.mp4",
+  "file": "yellowstone_story_ch3s5.mp4",
   "at": "2026-11-08T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Firehole River · Midway Geyser Basin | own:bcc0b2c372b1"
  },
  {
   "id": "ch3s6_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch3_s6.mp4",
+  "file": "yellowstone_story_ch3s6.mp4",
   "at": "2026-11-09T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Fountain Paint Pot | own:aae11f69f4f7"
  },
  {
   "id": "ch3s6_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch3_s6.mp4",
+  "file": "yellowstone_story_ch3s6.mp4",
   "at": "2026-11-09T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Fountain Paint Pot | own:aae11f69f4f7"
  },
  {
   "id": "ch3s7_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch3_s7.mp4",
+  "file": "yellowstone_story_ch3s7.mp4",
   "at": "2026-11-09T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Midway Geyser Basin | photo:ph_IMG_2777.jpg"
  },
  {
   "id": "ch3s7_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch3_s7.mp4",
+  "file": "yellowstone_story_ch3s7.mp4",
   "at": "2026-11-09T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Midway Geyser Basin | photo:ph_IMG_2777.jpg"
  },
  {
   "id": "ch3s8_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch3_s8.mp4",
+  "file": "yellowstone_story_ch3s8.mp4",
   "at": "2026-11-10T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Norris Geyser Basin | own:1768238c93f0"
  },
  {
   "id": "ch3s8_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch3_s8.mp4",
+  "file": "yellowstone_story_ch3s8.mp4",
   "at": "2026-11-10T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Norris Geyser Basin | own:1768238c93f0"
  },
  {
   "id": "ch3s9_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch3_s9.mp4",
+  "file": "yellowstone_story_ch3s9.mp4",
   "at": "2026-11-10T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Grand Canyon of the Yellowstone | own:f38a5b1fdcbf"
  },
  {
   "id": "ch3s9_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch3_s9.mp4",
+  "file": "yellowstone_story_ch3s9.mp4",
   "at": "2026-11-10T19:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "Grand Canyon of the Yellowstone | own:f38a5b1fdcbf"
  },
  {
   "id": "ch3s10_ig",
   "platform": "instagram_story",
-  "file": "yellowstone_ch3_s10.mp4",
+  "file": "yellowstone_story_ch3s10.mp4",
   "at": "2026-11-11T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "West Thumb · Yellowstone Lake | own:863584e6333b"
  },
  {
   "id": "ch3s10_fb",
   "platform": "facebook_story",
-  "file": "yellowstone_ch3_s10.mp4",
+  "file": "yellowstone_story_ch3s10.mp4",
   "at": "2026-11-11T02:00:00Z",
-  "hold": "rebuild: stories must be different material from the reels (cool photos/clips, full-screen vertical); old cuts of the long video held"
+  "story_v2": "West Thumb · Yellowstone Lake | own:863584e6333b"
  }
 ]
