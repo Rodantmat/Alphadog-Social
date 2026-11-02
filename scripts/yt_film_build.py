@@ -22,10 +22,15 @@ for i in range(3):
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"p{i+1}.mp4", "-t", f"{k:.3f}", "-vf", vf, "-af", af, "-c:v", "libx264", "-preset", "medium",
                     "-crf", "18", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart", o], check=True)
     parts.append(o)
+EC = f"{FB}/yellowstone-release/film_endcard.mp4"; ECD = 0.0
+if os.path.exists(EC):   # film end card (logo + subscribe + video-element slot) replaces Part 3's podcast sign-off
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", EC, "-vf", "scale=1920:1080,fps=30,format=yuv420p,fade=t=in:st=0:d=0.4", "-af", "aresample=48000,aformat=channel_layouts=stereo",
+                    "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart", "c4.mp4"], check=True)
+    parts.append("c4.mp4"); ECD = dur("c4.mp4")
 open("list.txt", "w").write("".join(f"file '{p}'\n" for p in parts))
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", "list.txt", "-c", "copy", "-movflags", "+faststart", "film.mp4"], check=True)
 print("film", dur("film.mp4"), "expected", sum(K))
-assert abs(dur("film.mp4") - sum(K)) < 1.0
+assert abs(dur("film.mp4") - sum(K) - ECD) < 1.0
 # subtitles
 def ts(s):
     h, m, r = s.split(":"); sec, ms = r.split(","); return int(h) * 3600 + int(m) * 60 + int(sec) + int(ms) / 1000
@@ -50,7 +55,10 @@ for L in ("es", "pt"):
     for i in range(3):
         ins += ["-i", f"{FB}/audio-tracks/{IDS[i]}_{L}.m4a"]
         fc.append(f"[{i}:a]atrim=0:{K[i]:.3f},asetpts=PTS-STARTPTS,aresample=48000,aformat=channel_layouts=stereo,apad=whole_dur={K[i]:.3f}[a{i}]")
-    fc.append("[a0][a1][a2]concat=n=3:v=0:a=1[a]")
+    n = 3
+    if ECD:
+        ins += ["-i", "c4.mp4"]; fc.append(f"[3:a]aresample=48000,aformat=channel_layouts=stereo[a3]"); n = 4
+    fc.append("".join(f"[a{i}]" for i in range(n)) + f"concat=n={n}:v=0:a=1[a]")
     subprocess.run(["ffmpeg", "-v", "error", "-y"] + ins + ["-filter_complex", ";".join(fc), "-map", "[a]", "-c:a", "aac", "-b:a", "192k", f"out/film_{L}.m4a"], check=True)
     print("dub", L, dur(f"out/film_{L}.m4a"))
 # chapters from each part's description
@@ -69,4 +77,4 @@ for i, name in enumerate(["Part 1: What's Really Under Yellowstone?", "Part 2: W
         lines.append(f"{mmss(t)} {name.split(':')[0]} · {title}" if k else f"{mmss(t)} {name}")
 open("out/chapters.txt", "w", encoding="utf-8").write("\n".join(lines) + "\n")
 print(open("out/chapters.txt").read())
-json.dump({"durations": D, "kept": K, "offsets": OFF}, open("out/film_cuts.json", "w"))
+json.dump({"durations": D, "kept": K, "offsets": OFF, "endcard": ECD}, open("out/film_cuts.json", "w"))

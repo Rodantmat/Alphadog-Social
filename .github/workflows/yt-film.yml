@@ -21,7 +21,7 @@ jobs:
         run: |
           sudo apt-get -qq update >/dev/null && sudo apt-get -qq install -y ffmpeg >/dev/null
           git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
-          cd /tmp/fbs && git sparse-checkout set --no-cone /yellowstone-release/ch1 /yellowstone-release/ch2 /yellowstone-release/ch3 /audio-tracks
+          cd /tmp/fbs && git sparse-checkout set --no-cone /yellowstone-release/ch1 /yellowstone-release/ch2 /yellowstone-release/ch3 /yellowstone-release/film_endcard.mp4 /audio-tracks
           mkdir -p /tmp/w && cd /tmp/w
           for c in 1 2 3; do
             cat /tmp/fbs/yellowstone-release/ch$c/yellowstone_ch${c}_final.mp4.part* > p$c.mp4
