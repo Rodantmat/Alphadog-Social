@@ -61,3 +61,13 @@ Every episode inherits all rules. Never ask the owner to repeat one.
 - V28 Stabilised clips that gain repeated frames (low light) are used as filmed. Re-encoding lowers detail on near-static scenes: final encode crf 15, shot encodes crf 14.
 - V29 Hard cuts left inside a prepared clip are trimmed automatically (prep2 Q-CUT); in-points past the end of a clip are clamped.
 - V30 Portrait photos use bg=fit (never cropped to 16:9); single portrait clips use the multi engine; the same clip is not reused within an episode.
+
+## V31-V38 (2026-11-01/02, owner review of Shorts/Reels/TikTok + Stories)
+- V31 Cover = first shot = our own full-screen real footage (never archival, AI or a card); it is the frame IG/TikTok show in the grid. Enforced in make_reels_v2.py.
+- V32 One post = one file on every platform (IG, FB, TikTok, YT Shorts). Replacing a cut means overwriting the same file name on footage AND refreshing media-public (buffer-post mode=refresh) so TikTok/Buffer fetch the same file.
+- V33 Already-published posts stay as they are; only unpublished items are re-cut.
+- V34 Shots never outrun their source (AI story clips are 4-5 s): split the shot; video track length must equal narration (asserted).
+- V35 Picture must match the line being spoken (no portrait of officers on "the man is Ed Howell"; unlabeled portraits are never used as a named person).
+- V36 Reject: tilted horizons (Q10 + eye check on every contact sheet), sun glare openers, car hood / dashboard in frame, foreground posts, traffic cones / parked trucks as a "place" shot.
+- V37 Stories: different material from the reels (own clips/photos never used in a reel), place label, one sourced fact, documentary pointer; silent (no music to repeat); same clip never twice in the story set.
+- V38 Episode-end lines that point elsewhere ("see you there", "coming to our podcast") are cut when parts are joined into the complete film; the film gets its own end card.

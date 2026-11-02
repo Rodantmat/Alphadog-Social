@@ -3,7 +3,7 @@
 
 Checks the rules with stage=render and check auto/warn on a finished video:
   picture : Q1 cut inside shot, R7 flash shots, Q2 shake, Q3 freeze, Q4 black/fade-through-black, Q5 frame rate,
-            Q7 sharpness/exposure/upscale, Q8 bars, Q9 duplicate shots
+            Q7 sharpness/exposure/upscale, Q8 bars, Q9 duplicate shots, Q10 horizon tilt
   text    : Q6 foreign text/logos, T2 our text spelled right / size / safe area, O2 privacy, V1 vertical safe area,
             V2 shorts length + caption size + captions timed to voice, V3 faces under captions
   meaning : P2 frame-vs-narration CLIP similarity (lowest 5 %), A4 AI-artifact CLIP scan
@@ -69,7 +69,7 @@ try:
     for r in yaml.safe_load(open(A.recipe))["rules"]: RULES[r["id"]] = r
 except Exception as e:
     log("recipe not loaded:", e)
-MINE = ["P2", "A4", "O2", "Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "R7", "U1", "U2", "U3", "U5", "T1", "T2", "V1", "V2", "V3",
+MINE = ["P2", "A4", "O2", "Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10", "R7", "U1", "U2", "U3", "U5", "T1", "T2", "V1", "V2", "V3",
         "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8"]
 REP = {rid: {"rule": RULES.get(rid, {}).get("rule", ""), "check": RULES.get(rid, {}).get("check", "auto"), "status": "pass", "summary": "", "findings": []} for rid in MINE}
 def find(rid, t, msg, sev="fail", t_end=None, box=None, **kw):
@@ -687,6 +687,34 @@ for i in range(len(units)):
         dups += sev_q9 == "fail"
         find("Q9", a2, sev=sev_q9, msg= f"looks like the shot at {tc(a1)} (hash distance {d}/256" + (f", CLIP {cs_:.3f})" if cs_ is not None else ")") + (f": {os.path.basename(s1.get('src', ''))} vs {os.path.basename(s2.get('src', ''))}" if s1 else ""), t_end=b2, other=round(a1, 2))
 summ("Q9", f"{len(units)} shots hashed; {dups} unplanned look-alike pairs; planned reuse/intro previews: {len(REP['Q9'].get('planned_reuse', []))}")
+
+# ------------------------------------------------------------------ Q10 horizon tilt (owner 2026-11-01: Madison clips were filmed tilted and nothing caught it)
+def tilt_line(img, min_len=0.5, max_deg=35):
+    # angle of the longest straight edge within +-35 deg of horizontal (horizon, waterline, railing, roofline); + = right side lower
+    g = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY); h_, w_ = g.shape; g = cv2.resize(g, (540, int(h_ * 540 / w_)))
+    ed = cv2.Canny(cv2.GaussianBlur(g, (5, 5), 0), 40, 120)
+    ls = cv2.HoughLinesP(ed, 1, np.pi / 720, 80, minLineLength=int(540 * min_len), maxLineGap=8)
+    if ls is None: return None
+    best = None
+    for x1, y1, x2, y2 in ls.reshape(-1, 4):
+        a_ = (math.degrees(math.atan2(y2 - y1, x2 - x1)) + 90) % 180 - 90; L = math.hypot(x2 - x1, y2 - y1)
+        if abs(a_) <= max_deg and (best is None or L > best[1]): best = (a_, L)
+    return None if best is None else best[0]
+cap_ = cv2.VideoCapture(A.video); tilted = 0; checked = 0
+for a, b_, s in UNITS:
+    if s and s.get("type") in ("card", "map", "photo", "graphic", "title"): continue
+    if b_ - a < 1.0: continue
+    v_ = []
+    for fr_ in (0.3, 0.5, 0.7):
+        cap_.set(cv2.CAP_PROP_POS_MSEC, (a + (b_ - a) * fr_) * 1000); ok_, im_ = cap_.read()
+        if ok_:
+            t_ = tilt_line(im_)
+            if t_ is not None: v_.append(t_)
+    checked += 1
+    if len(v_) >= 2 and abs(np.median(v_)) >= 2.0 and max(v_) - min(v_) <= 4:
+        tilted += 1; find("Q10", a, sev="warn", t_end=b_, msg=f"possible tilted horizon {np.median(v_):+.1f} deg (longest straight edge, consistent on {len(v_)} frames) - look at the tile" + (f": {os.path.basename(s.get('src', ''))}" if s else ""))
+cap_.release()
+summ("Q10", f"{checked} footage shots checked; {tilted} flagged for review (straight edge tilted 2-35 deg, consistent across the shot). Heuristic: natural slopes can trip it and some tilts have no straight edge, so every QA contact sheet is also checked by eye for tilt.")
 
 # ------------------------------------------------------------------ audio
 AUD = os.path.join(A.out, "_a16.wav")

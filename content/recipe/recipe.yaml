@@ -47,6 +47,7 @@ rules:
   - {id: Q7, stage: render, check: warn, rule: "Sharpness/exposure: blurry (Laplacian) or blown-out/too-dark shots flagged; no upscaled tiny sources (< 720p) in long videos"}
   - {id: Q8, stage: render, check: auto, rule: "No letterbox/pillarbox bars except deliberate blurred-fill"}
   - {id: Q9, stage: render, check: auto, rule: "No duplicate frames across the episode beyond allowed reuse (perceptual hash)"}
+  - {id: Q10, stage: render, check: auto, rule: "No tilted horizons: footage whose long straight edges agree on a 2-15 deg tilt is rejected (owner 2026-11-01, Madison clips)"}
   # ---------- audio ----------
   - {id: U1, stage: render, check: auto, rule: "Loudness -14 LUFS integrated (+-1), true peak <= -1.5 dBTP"}
   - {id: U2, stage: render, check: auto, rule: "Voice always on top; music/ambience ducked under voice (music <= -18 dB under narration)"}
