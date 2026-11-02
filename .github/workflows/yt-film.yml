@@ -37,7 +37,7 @@ jobs:
           PY
           ffmpeg -v error -i /tmp/film.mp4 -af ebur128 -f null - 2>&1 | tail -12 || true
           cd /tmp/fbs && git config user.name alphadog-bot && git config user.email bot@users.noreply.github.com
-          git add review/film && git commit -qm "film: QA join frames" && git push -q origin HEAD:footage
+          git add review/film && git commit -qm "film: QA join frames" && for i in 1 2 3 4 5; do git pull -q --rebase origin footage && git push -q origin HEAD:footage && break; sleep $((i*5)); done
       - name: Fetch finals, subtitles, audio tracks
         if: inputs.mode != 'qa'
         env: { GH_TOKEN: "${{ github.token }}" }
