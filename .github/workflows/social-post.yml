@@ -21,6 +21,21 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+      - name: TikTok backlog -> Buffer (items due within 4 days)
+        continue-on-error: true
+        env: { GH_TOKEN: "${{ github.token }}", BUFFER_API_KEY: "${{ secrets.BUFFER_API_KEY }}" }
+        run: |
+          FILES=$(python3 -c "
+          import json,datetime as d
+          now=d.datetime.now(d.timezone.utc)
+          print(' '.join('/yellowstone-shorts/*/'+x['file'] for x in json.load(open('content/tiktok_backlog.json')) if not x.get('scheduled') and d.datetime.fromisoformat(x['due'].replace('Z','+00:00'))-now<d.timedelta(days=4)))")
+          if [ -z "$FILES" ]; then echo "nothing to feed"; exit 0; fi
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbt
+          (cd /tmp/fbt && git sparse-checkout set --no-cone $FILES)
+          FBS=/tmp/fbt/yellowstone-shorts python3 scripts/tiktok_backlog.py
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add content/tiktok_backlog.json && git commit -qm "tiktok backlog -> buffer" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done
       - name: Anything due?
         id: due
         env: { ONLY: "${{ inputs.only }}" }
