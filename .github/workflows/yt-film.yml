@@ -6,7 +6,7 @@ name: yt-film
 on:
   workflow_dispatch:
     inputs:
-      mode: { description: "preview | build", default: "preview" }
+      mode: { description: "preview | build | qa", default: "preview" }
       trims: { description: "seconds to keep per part, comma list (0 = full)", default: "0,0,0" }
 permissions:
   contents: write
@@ -16,7 +16,30 @@ jobs:
     timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
+      - name: QA the built film (frames around each join + end card, loudness per part)
+        if: inputs.mode == 'qa'
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          sudo apt-get -qq update >/dev/null && sudo apt-get -qq install -y ffmpeg >/dev/null
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
+          cd /tmp/fbs && git sparse-checkout set --no-cone /yellowstone-release/film /review/film
+          cd yellowstone-release/film && cat yellowstone_film_final.mp4.part* > /tmp/film.mp4 && sha256sum -c yellowstone_film_final.mp4.sha256 --ignore-missing || (cd /tmp && sed 's#yellowstone_film_final.mp4#film.mp4#' /tmp/fbs/yellowstone-release/film/yellowstone_film_final.mp4.sha256 | sha256sum -c -)
+          cat film_cuts.json; ffprobe -v error -show_entries format=duration:stream=codec_type,width,height,r_frame_rate -of compact /tmp/film.mp4
+          mkdir -p /tmp/fbs/review/film && rm -f /tmp/fbs/review/film/*
+          python3 - <<'PY'
+          import json, subprocess
+          c = json.load(open("film_cuts.json")); joins = [c["offsets"][1], c["offsets"][2], c["offsets"][2] + c["kept"][2]]
+          for j, t0 in enumerate(joins):
+              for d in (-3, -1, -0.3, 0.3, 1, 3):
+                  subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{t0 + d:.2f}", "-i", "/tmp/film.mp4", "-frames:v", "1", "-vf", "scale=480:-2", f"/tmp/fbs/review/film/join{j+1}_{d:+.1f}.jpg"])
+              r = subprocess.run(["ffmpeg", "-hide_banner", "-ss", f"{t0 - 4:.2f}", "-t", "8", "-i", "/tmp/film.mp4", "-af", "astats=metadata=1:reset=1,ametadata=print:key=lavfi.astats.Overall.RMS_level", "-f", "null", "-"], capture_output=True, text=True).stderr
+              print("join", j + 1, "rms per 0.5s:", [l.split("=")[-1][:6] for l in r.splitlines() if "RMS_level" in l][::12])
+          PY
+          ffmpeg -v error -i /tmp/film.mp4 -af ebur128 -f null - 2>&1 | tail -12 || true
+          cd /tmp/fbs && git config user.name alphadog-bot && git config user.email bot@users.noreply.github.com
+          git add review/film && git commit -qm "film: QA join frames" && git push -q origin HEAD:footage
       - name: Fetch finals, subtitles, audio tracks
+        if: inputs.mode != 'qa'
         env: { GH_TOKEN: "${{ github.token }}" }
         run: |
           sudo apt-get -qq update >/dev/null && sudo apt-get -qq install -y ffmpeg >/dev/null
