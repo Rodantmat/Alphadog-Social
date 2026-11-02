@@ -1,0 +1,259 @@
+CREDITS FOR THE COMPLETE FILM (all three parts)
+
+===== PART 1: What's Really Under Yellowstone? (Not What You Think) =====
+Full credits for "What's Really Under Yellowstone?" (AlphaDog Studio, Yellowstone Part 1 of 3). Thank you to the USGS and the National Park Service for making their work public.
+
+OUR FOOTAGE
+• Filmed by AlphaDog Studio in Yellowstone National Park (and Mesa Falls, Idaho), October 2021. All live-action park footage not listed below is ours.
+
+INTERVIEWS
+• Mike Poland, Scientist-in-Charge, USGS Yellowstone Volcano Observatory, from the two USGS videos marked below. Public domain.
+
+VIDEO: U.S. GEOLOGICAL SURVEY (PUBLIC DOMAIN)
+• "Hydrothermal Explosion in Yellowstone's Biscuit Basin (July 23, 2024)" — USGS / Yellowstone Volcano Observatory (video editing: Liz Westby) (only the USGS/NPS-shot parts are used: Mike Poland interview and the NPS aftermath footage; the third-party plume footage in this video is NOT used) — https://www.usgs.gov/media/videos/hydrothermal-explosion-yellowstones-biscuit-basin-july-23-2024 — Public domain (U.S. Government work)
+• "Is Yellowstone's north caldera rim rising? (Yellowstone Monthly Update - July 2026)" — USGS / Yellowstone Volcano Observatory (video editing: Liz Westby and Erin Lysne) — https://www.usgs.gov/media/videos/yellowstones-north-caldera-rim-rising-yellowstone-monthly-update-july-2026 — Public domain (U.S. Government work)
+• "Black Diamond Pool (Biscuit Basin, Yellowstone National Park) eruption on May 31, 2025" — USGS / Yellowstone Volcano Observatory — https://www.usgs.gov/media/videos/black-diamond-pool-biscuit-basin-yellowstone-national-park-eruption-may-31-2025 — Public domain (U.S. Government work)
+• "Steamboat: Losing steam?" — USGS / Yellowstone Volcano Observatory (video editing: Liz Westby) — https://www.usgs.gov/media/videos/steamboat-losing-steam — Public domain (U.S. Government work)
+• "Top 5 Yellowstone geological stories of 2025 (Yellowstone monthly update - January 2026)" — USGS / Yellowstone Volcano Observatory (Mike Poland interview) — https://www.usgs.gov/media/videos/top-5-yellowstone-geological-stories-2025-yellowstone-monthly-update-january-2026 — Public domain (U.S. Government work)
+
+VIDEO: NATIONAL PARK SERVICE, YELLOWSTONE VIDEO LIBRARY (PUBLIC DOMAIN)
+• "Bison Herd with Calves" — National Park Service (NPS / Neal Herbert) — https://www.nps.gov/media/video/view.htm?id=17620874-155D-451F-67E5DDDFDD1FDC8F — Public domain (U.S. Government work)
+• "Bison along the Lamar River" — National Park Service (NPS / Neal Herbert) — https://www.nps.gov/media/video/view.htm?id=FD0F935E-155D-451F-67A73BDD6C247CCC — Public domain (U.S. Government work)
+• "Castle Geyser (with rainbow)" — National Park Service (NPS / Neal Herbert) — https://www.nps.gov/media/video/view.htm?id=797E8220-155D-451F-678680BB083DE339 — Public domain (U.S. Government work)
+• "Castle Geyser (with Old Faithful)" — National Park Service (NPS / Neal Herbert) — https://www.nps.gov/media/video/view.htm?id=7AD20D8E-155D-451F-6799DC8FF5C93BD3 — Public domain (U.S. Government work)
+• "Grand Prismatic Spring" — National Park Service (NPS / Neal Herbert) — https://www.nps.gov/media/video/view.htm?id=7E5FFF00-155D-451F-676262A83E6E19C7 — Public domain (U.S. Government work)
+
+PHOTOGRAPHS (PUBLIC DOMAIN)
+• "Original Yellowstone Institute cabins as seen from National Park Service corral (November 1983)" — National Park Service, Yellowstone photo collection (photographer unknown) — https://home.nps.gov/features/yell/slidefile/parkstructures/other/buffaloranch/Page.htm — Public domain (U.S. Government work)
+• "Bison feeding line in Lamar Valley (1930)" — National Park Service, Yellowstone photo collection (photographer unknown) — https://home.nps.gov/features/yell/slidefile/history/1919_1945/wildlifemanagement/Page.htm — Public domain (U.S. Government work)
+• "Sapphire Pool, in the Upper Geyser Basin, erupting after the 1959 Hebgen Lake earthquake" — USGS — https://www.usgs.gov/media/images/sapphire-pool-upper-geyser-basin-erupting-after-1959-hebg — Public domain (U.S. Government work)
+• "Mushroom Pool, Lower Geyser Basin, Yellowstone National Park" — USGS (photo: Lauren Harrison, 2018) — https://www.usgs.gov/media/images/mushroom-pool-lower-geyser-basin-yellowstone-national-park — Public domain (U.S. Government work)
+• "Old Faithful Geyser erupting, c.1878" — USGS — https://www.usgs.gov/media/images/old-faithful-geyser-erupting-c1878 — Public domain (U.S. Government work)
+
+MAPS, DIAGRAMS & TITLE CARDS
+• Original graphics by AlphaDog Studio. Base map data: Natural Earth (public domain), https://www.naturalearthdata.com. Terrain shading: USGS 3D Elevation Program (3DEP), public domain, https://www.usgs.gov/3d-elevation-program. Ash footprints, caldera rim and hotspot track are our own approximate drawings.
+• Facts in the graphics: USGS Yellowstone Volcano Observatory (eruption history, supervolcano FAQ, hydrothermal-explosion probabilities by Poland & Hurwitz); Bennington et al., Nature 2025; Duan & Schmandt, Nature 2025; NPS thermophile article; Nobel Prize in Chemistry 1993.
+
+ILLUSTRATED SCENES (AI-ASSISTED)
+• Illustrated animation made for this video with open-weight models (Qwen-Image and Wan 2.2, Apache-2.0): the 2024 Biscuit Basin explosion, the ancient eruptions, the 1959 Madison Canyon landslide and the Thermus aquaticus / PCR story. These are illustrations, not real footage.
+
+NARRATION, MUSIC & SOUND
+• Narration: AI-generated voice (Kokoro TTS, Apache-2.0). Script researched and written by AlphaDog Studio.
+• Music: original. Sound effects: original (synthesized). Natural sound: recorded on location by AlphaDog Studio, October 2021.
+
+KEY SOURCES
+• USGS, Is Yellowstone overdue for an eruption?: https://www.usgs.gov/faqs/yellowstone-overdue-eruption-when-will-yellowstone-erupt
+• USGS, Questions about supervolcanoes: https://www.usgs.gov/volcanoes/yellowstone/questions-about-supervolcanoes
+• USGS, Summary of Yellowstone eruption history: https://www.usgs.gov/volcanoes/yellowstone/science/summary-yellowstone-eruption-history
+• USGS Caldera Chronicles, the July 23, 2024 Biscuit Basin explosion: https://www.usgs.gov/observatories/yvo/news/july-23-2024-hydrothermal-explosion-biscuit-basin
+• USGS, Probability of hydrothermal explosions: https://www.usgs.gov/observatories/yvo/news/probability-hydrothermal-explosions-yellowstone
+• USGS, Hydrothermal explosions (Mary Bay): https://www.usgs.gov/volcanoes/yellowstone/hydrothermal-explosions
+• USGS, Uplift along the north rim of the caldera: https://www.usgs.gov/observatories/yvo/science/uplift-along-north-rim-yellowstone-caldera
+• USGS, Lava Creek eruption as a sequence of pulses: https://www.usgs.gov/observatories/yvo/news/expanded-understanding-lava-creek-tuff-eruption
+• USGS, 60 years since the 1959 M7.3 Hebgen Lake earthquake: https://www.usgs.gov/news/60-years-1959-m73-hebgen-lake-earthquake-its-history-and-effects-yellowstone-region
+• Bennington et al., Nature (2025): https://doi.org/10.1038/s41586-024-08286-z
+• Rice University on Duan & Schmandt, Nature (2025): https://news.rice.edu/news/2025/inside-yellowstones-fiery-heart-rice-researchers-map-volatile-rich-cap-offering-clues
+• SUERC, Huckleberry Ridge as two eruptions: https://www.gla.ac.uk/research/az/suerc/news/headline_263742_en.html
+• NPS, Steamboat Geyser: https://home.nps.gov/yell/learn/nature/steamboat-geyser.htm
+• NPS, Old Faithful: https://www.nps.gov/articles/old-faithful-geyser.htm
+• NPS, Grand Prismatic Spring: https://www.nps.gov/places/000/grand-prismatic-spring.htm
+• NPS, Thermophiles and Taq: https://www.nps.gov/articles/thermophile-yell.htm
+• American Bar Association, Bioprospecting in national parks (2026): https://www.americanbar.org/groups/environment_energy_resources/resources/natural-resources-environment/2026-summer/state-bioprospecting-national-parks
+• NPS, Bison: https://www.nps.gov/yell/learn/management/bison.htm
+
+===== PART 2: When the Cavalry Guarded the Geysers =====
+Full credits for "When the Cavalry Guarded the Geysers" (AlphaDog Studio, Yellowstone Part 2 of 3). Thank you to the National Park Service for making its archives public.
+
+OUR FOOTAGE
+• Filmed by AlphaDog Studio in Yellowstone National Park, October 2021. All live-action park footage is ours.
+
+PHOTOGRAPHS: NATIONAL PARK SERVICE, YELLOWSTONE PHOTO COLLECTION (PUBLIC DOMAIN, U.S. GOVERNMENT WORK)
+Catalogue no., NPS caption, photographer if known, date; grouped by page.
+https://home.nps.gov/features/yell/slidefile/history/1872_1918/military/Page-1.htm
+• 02989 Mounted cavalry drill on Parade Ground, Fort Yellowstone
+• 02958 Superintendent (4/18/1877-3/31/1882) Philetus Walter Norris
+• 02951 Harry Yount, Gamekeeper from June 1880-resignation in 1881 (1880)
+• 02959 Superintendent (4/18/1877-3/31/1882) Philetus Walter Norris
+• 09192 Guard mount at Fort Yellowstone
+• 02993 Camp Sheridan (Mammoth) (c. 1900)
+• 02997 Camp Sheridan (Mammoth) (c. 1900)
+• 02970 Hiram M Chittendon
+• 09193 Guard duty (c. 1903)
+• 03000 Old Faithful Geyser
+• 09191 Fort Yellowstone (c. 1910)
+• 09183 Six horse stagecoach at the Mammoth Hotel
+• 02992 Machine gun platoon at Fort Yellowstone
+https://home.nps.gov/features/yell/slidefile/history/1872_1918/military/Page-2.htm
+• 09587 Line of Cavalry in Lamar Valley
+• 10653 Superintendent Norris & road builders (Haynes, c. 1878)
+• 09603 Trooper talking to visitor in Geyser Basin (c. 1903)
+• 14509 Soldiers at President Theodore Roosevelt's camp near Tower Fall (April 1903)
+• 14316 Herbert Angelo, 13th Cavalry, Fort Yellowstone (c. 1902)
+https://home.nps.gov/features/yell/slidefile/history/1872_1918/military/Page-3.htm
+• 16058 Heads of poached bison seized by military, probably confiscated from Ed Howell (c. 1894)
+• 17057 Army bicyclists on Mammoth Hot Springs Terraces (c. 1896)
+• 15338 Guard House at Fort Yellowstone built in 1891
+• 14513 Soldiers with machine guns (c. 1915)
+• 16782 US Cavalry insignia pin & hat #7
+https://home.nps.gov/features/yell/slidefile/history/1872_1918/military/Page.htm
+• 02938 Superintendent Nathaniel P Langford, superintendent from 1872-1877
+• 02946 Superintendent Norris with first wagon into the Upper Geyser Basin (1878)
+• 02855 Old Faithful soldier station & Giantess geyser, Geyser Hill in background (Detroit Photographic Co., 1902 copy)
+• 02802 War Department Station at Old Faithful (Haynes, c. 1917)
+https://home.nps.gov/features/yell/slidefile/history/1872_1918/peopleevents/Page-1.htm
+• 02982 President Theodore Roosevelt (c. 1890)
+• 02969 President Theodore Roosevelt in Yellowstone (1903)
+https://home.nps.gov/features/yell/slidefile/history/1872_1918/peopleevents/Page-2.htm
+• 10652 President Theodore Roosevelt at Cinnabar (1903)
+https://home.nps.gov/features/yell/slidefile/history/1872_1918/peopleevents/Page.htm
+• 02941 Cornelius Hedges of the 1870 Washburn/Langford/Doane expedition
+• 02927 "Forest & stream" winter expedition, Emerson Hough & party (1894)
+• 02968 President Theodore Roosevelt at Mammoth Hot Springs (1903 or 1904)
+https://home.nps.gov/features/yell/slidefile/history/1872_1918/structures/Page-1.htm
+• 02791 Cabin (poacher's?) on north slope of Bunsen Peak, discovered by DeSanto, Naturalist at Norris during 60's (1964)
+https://home.nps.gov/features/yell/slidefile/history/1872_1918/structures/Page-2.htm
+• 02994 Norris blockhouse, Headquarters (1879)
+• 02999 Soldier station at Upper Geyser Basin, Geyser Hill in background, Old Faithful (1912)
+https://home.nps.gov/features/yell/slidefile/history/1872_1918/structures/Page-3.htm
+• 09591 Norris blockhouse & pre-army buildings
+• 10645 Fort Yellowstone, 1916
+https://home.nps.gov/features/yell/slidefile/history/1872_1918/structures/Page-4.htm
+• 16688 Queen's laundry bathhouse, building began under Norris in 1881, never finished (Jim Peaco, August 1995)
+https://home.nps.gov/features/yell/slidefile/history/1872_1918/structures/Page.htm
+• 02788 Cabin (poacher's?) on north slope of Bunsen Peak discovered by DeSanto, Norris Naturalist in the 60's (1964)
+https://home.nps.gov/features/yell/slidefile/history/1872_1918/transportation/Page-1.htm
+• 09184 Wylie coach in front of camp (1910)
+https://home.nps.gov/features/yell/slidefile/history/1872_1918/transportation/Page.htm
+• 02832 Tourists in stagecoaches
+• 02837 Six-horse stagecoach with Mt Everts in the background (Haynes)
+• 02839 Stage coach going through Lamar River
+• 02834 Four horse stagecoach #43 (Haynes)
+https://home.nps.gov/features/yell/slidefile/history/1872_1918/visitoractivities/Page.htm
+• 02815 Wylie camp - tourists & horse drawn coaches (JP Clum Lantern slide)
+https://home.nps.gov/features/yell/slidefile/history/1872_1918/wildlifemanagement/Page.htm
+• 03007 Bison corral at Mammoth Hot Springs
+• 14279 Bison show pen on Dot Island (Albert L Noyes, c. 1906)
+https://home.nps.gov/features/yell/slidefile/history/jacksonphotos/Page-1.htm
+• 14827 Hayden expedition in camp (W. H. Jackson, 1872)
+• 14834 Dr Ferdinand V Hayden (W. H. Jackson, 1871)
+• 09581 Thomas Moran on Mammoth Hot Spring (W. H. Jackson, 1871)
+• 14835 Grand Canyon of the Yellowstone from brink of Lower Falls (W. H. Jackson, 1871)
+• 14825 Upper Firehole, from Old Faithful crater (W. H. Jackson, 1872)
+• 14833 NP Langford on a horse (W. H. Jackson, 1871)
+• 14831 Mammoth Hot Springs with Langford on formation (W. H. Jackson, 1872)
+• 14832 Crater of Castle Geyser (W. H. Jackson, 1872)
+• 14826 Jackson photo of Shoshone Indians (W. H. Jackson, 1871)
+• 14838 Mary's Bay, Yellowstone Lake (W. H. Jackson, 1871)
+https://home.nps.gov/features/yell/slidefile/history/jacksonphotos/Page.htm
+• 02932 WH Jackson on 1872 Yellowstone Expedition (1872)
+• 03123 Photographing in High Places (W. H. Jackson, 1871)
+• 03119 Jupiter Terrace at Mammoth Hot Springs (W. H. Jackson, 1871)
+• 03118 Groto Geyser (W. H. Jackson, 1871)
+https://home.nps.gov/features/yell/slidefile/history/moranandotherart/Page-1.htm
+• 03081 Great Springs of the Firehole River (Thomas Moran, 1871)
+https://home.nps.gov/features/yell/slidefile/history/moranandotherart/Page.htm
+• 03060 Tower Falls field sketch (Thomas Moran, 1871)
+
+OTHER PHOTOGRAPHS AND ART (PUBLIC DOMAIN)
+• "Captured poacher Ed Howell with soldiers and scouts, 1894" — F. Jay Haynes / National Park Service (NPGallery) — https://npgallery.nps.gov/AssetDetail/c5c1626c-1dd8-b71b-0b2d-4a252747a4c6 — Public domain
+• "The Grand Canyon of the Yellowstone (1872), oil on canvas" — Thomas Moran, via Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Thomas_Moran_-_Grand_Canyon_of_the_Yellowstone.jpg — Public domain
+
+MAPS, DIAGRAMS & TITLE CARDS
+• Original graphics by AlphaDog Studio (Army-era timeline, soldier-station map, 1894 law card, 1908 hold-up map). Base map data: Natural Earth (public domain), https://www.naturalearthdata.com. Terrain shading: USGS 3D Elevation Program (3DEP), public domain, https://www.usgs.gov/3d-elevation-program. Station positions and the hold-up site are approximate.
+• Facts in the graphics: the NPS pages, the 1894 Act and the HMDB marker listed under KEY SOURCES.
+
+ILLUSTRATED SCENES (AI-ASSISTED)
+• Illustrated animation made for this video with open-weight models (Qwen-Image and Wan 2.2, Apache-2.0): Howell's capture in Pelican Valley, the 1870 campfire legend, the news reaching Forest and Stream, and the 1908 stagecoach hold-up. These are illustrations, not real footage.
+
+NARRATION, MUSIC & SOUND
+• Narration: AI-generated voice (Kokoro TTS, Apache-2.0). Script researched and written by AlphaDog Studio.
+• Music: original. Sound effects: original (synthesized). Natural sound: recorded on location by AlphaDog Studio, October 2021.
+
+KEY SOURCES
+• NPS, establishment: https://home.nps.gov/yell/learn/historyculture/yellowstoneestablishment.htm
+• NPS, expeditions: https://home.nps.gov/yell/learn/historyculture/expeditions.htm
+• National Parks Traveler, creation myth: https://www.nationalparkstraveler.org/parks/yellowstone-national-park/yellowstones-creation-myth
+• National Archives (DocsTeach): https://www.docsteach.org/documents/document/grand-canyon-of-the-yellowstone
+• WyoHistory, W. H. Jackson: https://www.wyohistory.org/encyclopedia/william-henry-jackson-foremost-photographer-american-west
+• NPS History, Clary: https://npshistory.com/handbooks/historical/yell/clary/sec6.htm
+• NPS History, Cramton: https://www.npshistory.com/publications/yell/cramton/sec8.htm
+• NPS, Captain Moses Harris: https://www.nps.gov/yell/blogs/the-superintendents-captain-moses-harris.htm
+• NPS, The Immortal 15: https://www.nps.gov/yell/blogs/The-Immortal-15-Fort-Yellowstone-and-Buffalo-Soldiers-Part-1-of-2.htm
+• NPS, Fort Yellowstone: https://www.nps.gov/yell/learn/historyculture/fort-yellowstone.htm
+• NPS, Army-era finding aid: https://home.nps.gov/yell/learn/historyculture/upload/RG00Army_2025.pdf
+• NPS, Winter operations: https://home.nps.gov/subjects/yellowstonetravelexhibit/winter-operations.htm
+• Forest and Stream (1894), Howell's capture: https://www.nps.gov/yell/planyourvisit/upload/Forest-Steam_-The-Capture-of-Howell-508c.pdf
+• Smithsonian Libraries (2021): https://blog.library.si.edu/blog/2021/07/07/how-yellowstone-was-saved-by-a-teddy-roosevelt-dinner-party-and-a-fake-photo-in-a-gun-magazine
+• The 1894 Act (NPS copy): https://www.nps.gov/yell/planyourvisit/upload/lacey_act.pdf
+• HMDB, Anderson quote: https://www.hmdb.org/m.asp?m=123157
+• NPS, stagecoach robberies: https://www.nps.gov/yell/blogs/stagecoach-robberies-yellowstone-s-archival-records-to-tell-an-alternative-history.htm
+• HMDB, 1908 hold-up: https://www.hmdb.org/m.asp?m=123146
+• Jackson Hole News&Guide (1914 hold-up): https://www.jhnewsandguide.com/the_hole_scroll/today-in-history-the-last-of-the-stagecoach-robbers/article_07f2f090-efd9-5749-8d06-6e64aadae347.html
+• R. Bryce Workman, NPS Uniforms (NPS, 1994): https://www.npshistory.com/publications/nps-uniforms/5/sec1.htm
+
+===== PART 3: 13 Days in Yellowstone: The Nez Perce, 1877 =====
+Full credits for "13 Days in Yellowstone: The Nez Perce, 1877" (AlphaDog Studio, Yellowstone Part 3 of 3). Thank you to the National Park Service, the USGS and the Library of Congress for making their collections public.
+
+OUR FOOTAGE
+• Filmed by AlphaDog Studio in Yellowstone National Park and at Henrys Lake, Idaho, October 2021. All live-action footage is ours.
+
+PHOTOGRAPHS & ART: NATIONAL PARK SERVICE, YELLOWSTONE PHOTO COLLECTION (PUBLIC DOMAIN, U.S. GOVERNMENT WORK)
+Catalogue no., NPS caption, photographer or artist if known, date; grouped by page.
+https://home.nps.gov/features/yell/slidefile/history/1872_1918/peopleevents/Page-1.htm
+• 02995 Howitzer scene, pursuit of Nez Perce, Big Hole Battlefield (c. 1877)
+https://home.nps.gov/features/yell/slidefile/history/1872_1918/peopleevents/Page.htm
+• 02960 General Oliver Otis Howard - pursued the Nez Perce across Yellowstone in 1877 (c. 1909)
+• 02949 Colonel Gardiner - took part in the Nez Perce retreat across Yellowstone National Park (c. 1877)
+https://home.nps.gov/features/yell/slidefile/history/indians/Page.htm
+• 02736 Nez Perce woman working on a skin with teepee in background (1871)
+• 02727 Chief Joseph
+• 02725 Nez Perce camp
+https://home.nps.gov/features/yell/slidefile/history/jacksonphotos/Page-1.htm
+• 14830 Mammoth Hot Springs (W. H. Jackson, 1871)
+• 14836 Baronett's bridge across Yellowstone River (W. H. Jackson, 1871)
+• 14828 Soda Butte (W. H. Jackson, 1871)
+https://home.nps.gov/features/yell/slidefile/history/moranandotherart/Page-1.htm
+• 03080 Yellowstone Range from near Fort Ellis (Thomas Moran)
+
+OTHER PHOTOGRAPHS, PORTRAITS AND MAPS
+• "Route of the Nez Perce in 1877" — USGS — https://www.usgs.gov/media/images/route-nez-perce-1877 — Public domain (U.S. Government work)
+• "Him-mim-mox-mox ('Yellow Wolf'), a warrior of the Nez Perce" — L. V. McWhorter, via Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Him-mim-mox-mox_(%22Yellow_Wolf%22),_a_warrior_of_the_Nez_Perce_(1877).jpg — Public domain
+• "Ollokot" — photographer unknown, via Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Ollokot.jpg — Public domain
+• "Looking Glass, a Nez Perce chief, on horseback in front of a tepee, 1877" — National Archives (NARA 530914), via Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Looking_Glass,_a_Nez_Perce%27_chief,_on_horseback_in_front_of_a_tepee,_1877_-_NARA_-_530914.jpg — Public domain
+• "The Idaho Indian war (1877 card photograph)" — Chas. W. Phillips, Walla Walla; Library of Congress, Prints & Photographs Division — https://www.loc.gov/item/00650888/ — Public domain (published 1877)
+• "General Oliver Otis Howard, Union Army" — SMU Central University Libraries, via Wikimedia Commons — https://commons.wikimedia.org/wiki/File:General_Oliver_Otis_Howard,_Union_Army_(7950782518).jpg — No known restrictions (public domain)
+• "Chief Looking Glass, Nez Perce, 1871 (cropped)" — photographer unknown, via Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Chief_Looking_Glass-Nez_Perce-1871-cropped.jpg — Public domain
+• "Peopeo Kiskiok Hihih ('White Bird') of the Nez Perce" — photographer unknown, via Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Peopeo_Kiskiok_Hihih_(%22White_Bird%22)_of_the_Nez_Perce.png — Public domain
+• "Samuel D. Sturgis" — Joseph Cummings Chase (1919), via Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Samuel-D-Sturgis-Soldiers-All.jpg — Public domain
+• "Profile portrait of General Nelson A. Miles" — National Park Service, via Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Profile_portrait_of_General_Nelson_A._Miles_(f4d5bff4-3eed-4ee0-9f35-8bafa4d5d3bf).jpg — Public domain
+• "Hinmatóowyalahtq̓it (Chief Joseph) of the Nez Perce in 1877" — USGS (photo: O. S. Goff, Bismarck, November 1877) — https://www.usgs.gov/media/images/hinmatoowyalahtqit-chief-joseph-nez-perce-1877 — Public domain
+• "Charles Erskine Scott Wood, 1910" — Montagu Colmer, via Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Charles_Erskine_Scott_Wood_1910.jpg — Public domain
+• "Chief Joseph, 1877" — attributed to Orlando S. Goff, Bismarck, November 1877, via Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Chief_Joseph-1877.jpg — Public domain
+• "Joseph--Nez Percé" — Edward S. Curtis, 1903; Library of Congress, Prints & Photographs Division — https://www.loc.gov/item/2002722462/ — Public domain (published 1903)
+
+MAPS, DIAGRAMS & TITLE CARDS
+• Original graphics by AlphaDog Studio (route maps of the flight and of the route through the park, Bear Paw map, surrender-quote card, exile maps). Routes are approximate, drawn after the NPS, the USFS Nez Perce (Nee-Me-Poo) National Historic Trail and Jerome A. Greene (2000). Base map data: Natural Earth (public domain), https://www.naturalearthdata.com. Terrain shading: USGS 3D Elevation Program (3DEP), public domain, https://www.usgs.gov/3d-elevation-program.
+
+ILLUSTRATED SCENES (AI-ASSISTED)
+• Illustrated animation made for this video with open-weight models (Qwen-Image and Wan 2.2, Apache-2.0): riders in the Lower Geyser Basin, the Big Hole, the captured tourists and George Cowan's ordeal, the release of the captives, the river crossing, the feint and escape past Sturgis, and the siege at Bear Paw. These are illustrations, not real footage.
+
+NARRATION, MUSIC & SOUND
+• Narration: AI-generated voice (Kokoro TTS, Apache-2.0). Script researched and written by AlphaDog Studio.
+• Music: original. Sound effects: original (synthesized). Natural sound: recorded on location by AlphaDog Studio, October 2021.
+
+KEY SOURCES
+• NPS Yellowstone, Flight of the Nez Perce: https://home.nps.gov/yell/learn/historyculture/flightnezperce.htm
+• Jerome A. Greene, Nez Perce Summer 1877 (Montana Historical Society Press, 2000), NPS History edition: https://npshistory.com/publications/nepe/greene/chap8a.htm , https://npshistory.com/publications/nepe/greene/chap8b.htm , https://npshistory.com/publications/nepe/greene/chap8c.htm
+• NPS, Camas Meadows: https://www.nps.gov/nepe/learn/historyculture/camas-meadows.htm
+• NPS, Bear Paw battlefield history: https://home.nps.gov/nepe/learn/historyculture/bear-paw-battlefield-history.htm
+• NPS, 1877 aftermath: https://www.nps.gov/nepe/learn/historyculture/1877-aftermath.htm
+• NPS Lake Roosevelt, Chief Joseph: https://www.nps.gov/laro/learn/historyculture/chief-joseph.htm
+• BLM, The flight of the Nez Perce: https://blm.gov/blog/2021-04-12/flight-nez-perce
+• USGS Caldera Chronicles, Flight of the Nez Perce: https://usgs.gov/observatories/yvo/news/flight-nez-perce
+• USGS, Hinmatóowyalahtq̓it (Chief Joseph), 1877: https://www.usgs.gov/media/images/hinmatoowyalahtqit-chief-joseph-nez-perce-1877
+• Wikipedia, Nez Perce flight through Yellowstone (citing Haines, Brown, Beal): https://en.wikipedia.org/wiki/Nez_Perce_flight_through_Yellowstone
+• George Venn, Oregon Historical Quarterly (2005): https://ochcom.org/wp-content/uploads/2026/01/Wood-Venn.pdf
+• Elliott West, OUP blog (2013): https://blog.oup.com/2013/10/nez-perce-surrender-chief-joseph/
+• Oregon Encyclopedia, Chief Joseph: https://oregonencyclopedia.org/articles/chief_joseph_heinmot_tooyalakekt_1840_1904_/pdf
+• Native Nations Institute, Rebecca Miles: https://nnigovernance.arizona.edu/people/rebecca-miles
+• USFS, Nez Perce (Nee-Me-Poo) National Historic Trail: https://www.fs.usda.gov/trails/nez-perce-nht/about-trail/faqs
