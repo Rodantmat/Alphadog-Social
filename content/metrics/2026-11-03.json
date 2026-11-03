@@ -1,5 +1,5 @@
 {
- "at": "2026-11-03T06:44:14Z",
+ "at": "2026-11-03T07:43:13Z",
  "youtube": {
   "channel": {
    "viewCount": "1870",
@@ -24,7 +24,7 @@
     "published": "2026-11-02T18:00:18Z",
     "privacy": "public",
     "duration": "PT52S",
-    "views": 841,
+    "views": 891,
     "likes": 24,
     "comments": 1
    },
@@ -54,8 +54,8 @@
     "published": "2026-11-02T01:00:09Z",
     "privacy": "public",
     "duration": "PT44S",
-    "views": 130,
-    "likes": 5,
+    "views": 142,
+    "likes": 6,
     "comments": 1
    },
    {
@@ -214,7 +214,7 @@
     "published": "2026-10-30T15:00:38Z",
     "privacy": "public",
     "duration": "PT12M58S",
-    "views": 3,
+    "views": 4,
     "likes": 0,
     "comments": 1
    },
@@ -319,7 +319,268 @@
     "comments": 1
    }
   ],
-  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.force-ssl"
+  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/yt-analytics.readonly",
+  "analytics_by_video": {
+   "columns": [
+    "video",
+    "views",
+    "estimatedMinutesWatched",
+    "averageViewDuration",
+    "averageViewPercentage",
+    "likes",
+    "comments",
+    "shares",
+    "subscribersGained"
+   ],
+   "rows": [
+    [
+     "RWwPTGQF82o",
+     466,
+     50,
+     15,
+     54.76,
+     5,
+     0,
+     0,
+     0
+    ],
+    [
+     "50XkGgJ5nNQ",
+     397,
+     83,
+     24,
+     59.25,
+     13,
+     0,
+     0,
+     1
+    ],
+    [
+     "nWccTvDItMk",
+     229,
+     49,
+     30,
+     64.18,
+     10,
+     0,
+     0,
+     0
+    ],
+    [
+     "l3Wsfo7k-Lo",
+     21,
+     2,
+     21,
+     40.5,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "eNV_qLTs2Js",
+     17,
+     2,
+     20,
+     66.15,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "4X1O7pEr_FQ",
+     13,
+     1,
+     25,
+     80.82,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "G03Sxe_dD9k",
+     9,
+     0,
+     11,
+     34.51,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "LfoM0KAi8Yo",
+     6,
+     27,
+     307,
+     20.31,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "bWSnXlwtW04",
+     4,
+     0,
+     24,
+     54.13,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "uTzcrqnoa4I",
+     3,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "-vkXqMrSljM",
+     1,
+     0,
+     31,
+     4.1,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "W1ytO_kbww0",
+     1,
+     0,
+     5,
+     7.31,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "yMqRsiwMhhA",
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "av9mIcktn6A",
+     1,
+     0,
+     55,
+     96.45,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "M7G6z5k_mm0",
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "4RE4SDBiuJc",
+     1,
+     11,
+     710,
+     102.60000000000001,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "ShKXhJameWs",
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "7TWuloRJytw",
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "E-izx81EvAE",
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  "traffic_sources": [
+   [
+    "NO_LINK_OTHER",
+    2,
+    25
+   ],
+   [
+    "SUBSCRIBER",
+    5,
+    14
+   ],
+   [
+    "YT_CHANNEL",
+    3,
+    0
+   ],
+   [
+    "YT_SEARCH",
+    58,
+    9
+   ],
+   [
+    "YT_OTHER_PAGE",
+    15,
+    4
+   ],
+   [
+    "NOTIFICATION",
+    1,
+    0
+   ],
+   [
+    "SHORTS",
+    1090,
+    178
+   ]
+  ]
  },
  "instagram": {
   "profile": {
@@ -333,14 +594,14 @@
     "id": "18138266653647107",
     "at": "2026-11-03T04:13:48+0000",
     "caption": "August 17, 1886. Captain Moses Harris rode into Mammoth with fifty men of the Fi",
-    "likes": 1,
+    "likes": 2,
     "comments": 1,
-    "views": 127,
-    "reach": 115,
+    "views": 132,
+    "reach": 120,
     "saved": 0,
     "shares": 0,
-    "total_interactions": 2,
-    "ig_reels_avg_watch_time": 7116
+    "total_interactions": 3,
+    "ig_reels_avg_watch_time": 7246
    },
    {
     "id": "18341429083257129",
@@ -348,12 +609,12 @@
     "caption": "In one winter hunters killed some 3,000 elk in and around early Yellowstone, jus",
     "likes": 35,
     "comments": 1,
-    "views": 1697,
-    "reach": 1505,
+    "views": 1713,
+    "reach": 1517,
     "saved": 6,
     "shares": 0,
     "total_interactions": 44,
-    "ig_reels_avg_watch_time": 18990
+    "ig_reels_avg_watch_time": 18952
    },
    {
     "id": "18094438412191750",
@@ -418,7 +679,7 @@
     "saved": 0,
     "shares": 0,
     "total_interactions": 3,
-    "ig_reels_avg_watch_time": 13053
+    "ig_reels_avg_watch_time": 12997
    },
    {
     "id": "18118286653974895",
@@ -444,7 +705,7 @@
     "saved": 6,
     "shares": 0,
     "total_interactions": 43,
-    "ig_reels_avg_watch_time": 17047
+    "ig_reels_avg_watch_time": 17038
    },
    {
     "id": "17995102248051733",
@@ -550,7 +811,7 @@
     "id": "103210859154410_1106350362163956",
     "at": "2026-11-03T04:14:24+0000",
     "text": "August 17, 1886. Captain Moses Harris rode into Mammoth with fifty men of the Fi",
-    "reactions": 0,
+    "reactions": 1,
     "comments": 1,
     "shares": 0
    },
@@ -558,7 +819,7 @@
     "id": "103210859154410_1105971875535138",
     "at": "2026-11-02T18:16:19+0000",
     "text": "In one winter hunters killed some 3,000 elk in and around early Yellowstone, jus",
-    "reactions": 0,
+    "reactions": 1,
     "comments": 1,
     "shares": 0
    },
@@ -574,7 +835,7 @@
     "id": "103210859154410_1105077235624602",
     "at": "2026-11-01T20:22:52+0000",
     "text": "March 1894. An Army scout follows snowshoe tracks through Pelican Valley and fin",
-    "reactions": 0,
+    "reactions": 1,
     "comments": 1,
     "shares": 0
    },
@@ -832,18 +1093,18 @@
     "id": "1149138364129293",
     "at": "2026-11-03T04:13:55+0000",
     "text": "August 17, 1886. Captain Moses Harris rode into Mammoth with fifty men of the Fi",
-    "fb_reels_total_plays": 0,
-    "blue_reels_play_count": 0,
-    "post_video_avg_time_watched": 0,
+    "fb_reels_total_plays": 4,
+    "blue_reels_play_count": 2,
+    "post_video_avg_time_watched": 7361,
     "post_video_followers": 0
    },
    {
     "id": "1867454974408298",
     "at": "2026-11-02T18:15:43+0000",
     "text": "In one winter hunters killed some 3,000 elk in and around early Yellowstone, jus",
-    "fb_reels_total_plays": 0,
-    "blue_reels_play_count": 0,
-    "post_video_avg_time_watched": 0,
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 21362,
     "post_video_followers": 0
    },
    {
@@ -859,8 +1120,8 @@
     "id": "1140681951745773",
     "at": "2026-11-01T20:22:12+0000",
     "text": "March 1894. An Army scout follows snowshoe tracks through Pelican Valley and fin",
-    "fb_reels_total_plays": 0,
-    "blue_reels_play_count": 0,
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
     "post_video_avg_time_watched": 0,
     "post_video_followers": 0
    },
@@ -1171,7 +1432,7 @@
     "at": "2026-11-03T01:01:39Z",
     "title": "August 17, 1886. Captain Moses Harris rode into Mammoth with fifty me...",
     "duration": 39,
-    "views": 125,
+    "views": 130,
     "likes": 2,
     "comments": 0,
     "shares": 0
@@ -1181,7 +1442,7 @@
     "at": "2026-11-02T18:07:30Z",
     "title": "In one winter hunters killed some 3,000 elk in and around early Yello...",
     "duration": 51,
-    "views": 164,
+    "views": 166,
     "likes": 9,
     "comments": 0,
     "shares": 0
@@ -1321,7 +1582,7 @@
     "at": "2026-10-26T04:10:00Z",
     "title": "Found dead under an oak in 1882. Revolver in hand, boots gone. The ju...",
     "duration": 30,
-    "views": 1057,
+    "views": 1058,
     "likes": 56,
     "comments": 2,
     "shares": 1
