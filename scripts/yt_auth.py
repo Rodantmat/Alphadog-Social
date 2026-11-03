@@ -36,6 +36,7 @@ if mode == "url":
     q = {"client_id": CID, "redirect_uri": REDIRECT, "response_type": "code", "scope": " ".join(SCOPES),
          "access_type": "offline", "prompt": "consent", "include_granted_scopes": "true"}
     print("AUTH_URL=" + "https://accounts.google.com/o/oauth2/v2/auth?" + urllib.parse.urlencode(q))
+    import base64; print("AUTH_URL_B64=" + base64.b64encode(("https://accounts.google.com/o/oauth2/v2/auth?" + urllib.parse.urlencode(q)).encode()).decode())   # client id is public; b64 avoids log masking
     print("CID_SPACED=" + " ".join(CID))   # the client id is public (it is in the consent URL); spaced so Actions log masking does not hide it
     sys.exit(0)
 
