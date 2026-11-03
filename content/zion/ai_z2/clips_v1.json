@@ -1,0 +1,98 @@
+[
+ {
+  "name": "S02",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn2_v1a/S02_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 121,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the avalanche of rock surges across the canyon floor, boulders tumbling, the dust cloud rolling and growing toward the camera.",
+  "neg": "people, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ },
+ {
+  "name": "S03",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn2_v1a/S03_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: dust drifts slowly over the still rubble field, settling, light shifting through the haze.",
+  "neg": "people, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ },
+ {
+  "name": "S06",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn2_v1a/S06_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the water pours over the crest and rushes down the new channel, foam and spray, the channel deepening.",
+  "neg": "people, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ },
+ {
+  "name": "S07",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn2_v1a/S07_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 121,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the shallow water glints and slowly retreats, reeds sway in the wind, the river winds through the flats. Slow aerial drift.",
+  "neg": "people, slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ },
+ {
+  "name": "S08",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn2_v1a/S08_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the geologist taps the chisel with the hammer, small rock chips fly, he lifts the sample.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ },
+ {
+  "name": "F01",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn2_v1b/F01_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: water trickles into the crack, frost spreads across the rock, ice crystals grow inside the crack.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ },
+ {
+  "name": "H01",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn2_v1b/H01_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the canvas tents ripple in the breeze, cottonwood leaves move, a small figure walks along the road.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ },
+ {
+  "name": "H02",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn2_v1b/H02_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 121,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the steam locomotive slowly rolls into the station, steam and smoke billowing, the figures turn to watch.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ }
+]

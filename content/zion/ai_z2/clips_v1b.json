@@ -1,0 +1,62 @@
+[
+ {
+  "name": "H05",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn2_v1b/H05_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the crane slowly lifts the wall panel into place, workers guide it, dust drifts.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ },
+ {
+  "name": "R01",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn2_v1b/R01_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the slope slowly creeps downhill, small rocks roll onto the road, a crack in the asphalt widens.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ },
+ {
+  "name": "R02",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn2_v1b/R02_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 121,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: soil and rocks slide into the river, the muddy water churns and backs up behind the debris.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ },
+ {
+  "name": "R03",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn2_v1b/R03_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the excavator arm scoops and dumps rock, the bulldozer pushes forward, dust swirls in the floodlights.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry, camera shake"
+ },
+ {
+  "name": "R04",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn2_v1b/R04_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the fast muddy water rushes past, chunks of road edge crack and fall into the current.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ }
+]
