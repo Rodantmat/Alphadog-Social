@@ -1,0 +1,98 @@
+{
+ "S01_23.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "S01_5.jpg": {
+  "person": 2,
+  "horse": 0,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "S02_23.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "S02_5.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "S03_23.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "S03_5.jpg": {
+  "person": 1,
+  "horse": 0,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "S04_23.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "S04_5.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "S05_23.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "S05_5.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "S06_23.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "S06_5.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "S07_23.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "S07_5.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "S08_23.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": null,
+  "person_ok": true
+ },
+ "S08_5.jpg": {
+  "person": 0,
+  "horse": 0,
+  "expect_person": null,
+  "person_ok": true
+ }
+}
