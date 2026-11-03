@@ -1,0 +1,109 @@
+# Zion Part 2 shot plan: SEG | SRC | ss | weight | options   (O own horizontal, M own vertical, I photo, A AI passage, G graphic)
+s001 | M:137e3a27283d | 3 | 1 | label="Zion Lodge"
+s001 | I:own_al_1110172455.jpg | - | 1 | label="Zion Canyon from Angels Landing, November 2021" z1=1.03
+s002 | A:s002 | - | - |
+s003 | A:s003 | - | - |
+s004 | A:s004 | - | - |
+s004 | I:z2_npg_sentinel_slide_color_1.jpg | - | 1 | label="The Sentinel slide · Courtesy Zion National Park" bg=fit z1=1.03
+s004 | I:z2_npg_sentinel_slide_color_5.jpg | - | 1 | bg=fit z1=1.03
+s005 | I:z2_usgs_down_canyon_1925.jpg | - | 1 | label="Zion Canyon, 1925 · USGS" bg=fit z1=1.03
+s005 | I:own_al_1110174654.jpg | - | 1 | bg=fit z1=1.03
+s006 | M:93952cead405 | 2 | 1 |
+s007 | A:s007 | - | - |
+s007 | I:own_al_1110175926.jpg | - | 1 | bg=fit z1=1.03
+s008 | I:own_al_1110175048.jpg | - | 1 | bg=fit z1=1.03
+s009 | I:z2_npg_canyon_floor_patriarchs_1928.jpg | - | 1 | label="Zion Canyon, 1928 · Courtesy Zion National Park" z1=1.04
+s009 | M:facb99876af2 | 0 | 1 | label="Angels Landing"
+s010 | A:s010 | - | - |
+s010 | I:z2_npg_scenic_drive_1941.jpg | - | 1 | label="The canyon road, 1941 · Courtesy Zion National Park" bg=fit z1=1.03
+s011 | M:4a56def9f77b | 4 | 1 |
+s011 | I:own_nar_1103162324.jpg | - | 1 | bg=fit z1=1.03
+s011 | I:z2_npg_rubble_birch_creek.jpg | - | 1 | label="Rockfall rubble, Zion · Courtesy Zion National Park" bg=fit z1=1.03
+s012 | M:e8be12a459c7 | 4 | 1 |
+s012 | G:zc2_stat_hoover.mp4 | 0 | 0.9 |
+s013 | I:z2_npg_gateway_narrows_rockslide.jpg | - | 1 | label="A rockslide at the gateway to the Narrows · Courtesy Zion National Park" bg=fit z1=1.03
+s014 | M:b85b026e5212 | 0 | 0.6 |
+s014 | I:z2_npg_kolob_rockslide_hist.jpg | - | 1 | label="A historic rockslide, Kolob Canyons · Courtesy Zion National Park" bg=fit z1=1.03
+s015 | A:s015 | - | - |
+s015 | I:z2_npg_slide_area_wall_1942.jpg | - | 1 | label="The Sentinel slide area, 1942 · Courtesy Zion National Park" bg=fit z1=1.03
+s016 | A:s016 | - | - |
+s016 | M:ff90f11838d6 | 9 | 1 |
+s017 | I:own_al_1110172905.jpg | - | 1 | label="Zion Canyon from Angels Landing, November 2021" z1=1.03
+s017 | I:own_al_1110165344.jpg | - | 1 | bg=fit z1=1.03
+s018 | A:s018 | - | - |
+s018 | I:z2_npg_sinawava_area_1963.jpg | - | 1 | label="The Temple of Sinawava area, 1963 · Courtesy Zion National Park" bg=fit z1=1.03
+s019 | A:s019 | - | - |
+s019 | I:z2_npg_beaver_cottonwoods_1957.jpg | - | 1 | label="The Virgin River, 1957 · Courtesy Zion National Park" bg=fit z1=1.03
+s020 | I:own_nar_1104120120.jpg | - | 1 | bg=fit z1=1.03
+s020 | M:89c5add8541c | 0 | 1 |
+s021 | M:2fe1309ede17 | 11 | 1 |
+s021 | M:10ab2d0141c6 | 3 | 1 |
+s021 | I:z2_usgs_narrows_1910.jpg | - | 1 | label="Zion Canyon, 1910 · USGS" bg=fit z1=1.03
+s022 | I:z2_npg_flood_damage_wall_1963.jpg | - | 1 | label="Flood damage along the river, 1963 · Courtesy Zion National Park" bg=fit z1=1.03
+s022 | M:ed325557e613 | 7 | 1 |
+s023 | M:b02df977cda3 | 15 | 1 |
+s024 | A:s024 | - | - |
+s024 | I:z2_npg_road_construction_boulder.jpg | - | 1 | label="Building the canyon road · Courtesy Zion National Park" bg=fit z1=1.03
+s025 | A:s025 | - | - |
+s025 | I:z2_npg_utah_parks_bus_1950.jpg | - | 1 | label="A Utah Parks Company bus, about 1950 · Courtesy Zion National Park" bg=fit z1=1.02
+s025 | I:z2_npg_lodge_rededication_1990_b.jpg | - | 1 | label="Zion Lodge, restored to Underwood's design · Courtesy Zion National Park" bg=fit z1=1.03
+s026 | I:z2_usgs_cable_lumber_wall_1910.jpg | - | 1 | label="Lumber coming down the cable, 1910 · USGS" bg=fit z1=1.03
+s026 | I:z2_npg_cableworks_stereograph.jpg | - | 1 | label="Cable Mountain Draw Works · Courtesy Zion National Park" bg=fit z1=1.03
+s026 | I:z2_npg_cable_headworks_1963.jpg | - | 1 | label="What was left of the headworks, 1963 · Courtesy Zion National Park" bg=fit z1=1.03
+s027 | I:z2_nps_cable_mtn_before_2015.jpg | - | 1 | label="Cable Mountain · NPS" z1=1.03
+s028 | A:s028 | - | - |
+s028 | I:z2_npg_lodge_main_building_1975.jpg | - | 1 | bg=fit z1=1.03
+s029 | I:z2_npg_lodge_rebuilding_1966.jpg | - | 1 | label="Rebuilding the lodge, March 1966 · Courtesy Zion National Park" bg=fit z1=1.03
+s029 | A:s029 | - | - |
+s030 | I:z2_npg_lodge_rededication_1990_a.jpg | - | 1 | label="Rededication of the restored lodge, 1990 · Courtesy Zion National Park" bg=fit z1=1.03
+s030 | I:z2_npg_lodge_main_building_1975.jpg | - | 1 | label="Zion Lodge, 1975 · Courtesy Zion National Park" bg=fit z1=1.03
+s031 | M:6e1d7e5f4d43 | 0 | 1 |
+s032 | A:s032 | - | - |
+s032 | I:z2_npg_sentinel_slide_color_1.jpg | - | 1 | bg=fit z1=1.03
+s033 | I:z2_npg_sentinel_slide_color_2.jpg | - | 1 | label="The Sentinel slide · Courtesy Zion National Park" bg=fit z1=1.03
+s033 | A:s033 | - | - |
+s033 | M:f9b64747a90d | 11 | 1 |
+s034 | G:zc2_stat_island.mp4 | 0 | 1 |
+s034 | I:own_al_1109144848.jpg | - | 1 | z1=1.03
+s035 | A:s035 | - | - |
+s035 | I:z2_nps_scenic_drive_repair_2023.jpg | - | 1 | label="Road crews at work in Zion, 2023 · NPS" z1=1.03
+s036 | I:z2_npg_storm_damage_road_1932.jpg | - | 1 | label="Storm damage to the canyon road, 1932 · Courtesy Zion National Park" bg=fit z1=1.03
+s036 | I:z2_npg_road_rockslide_1979_b.jpg | - | 1 | label="A slide on the canyon road, 1979 · Courtesy Zion National Park" bg=fit z1=1.03
+s037 | M:1ce27985c1cb | 9 | 1 |
+s038 | I:z2_nps_scenic_drive_rockfall_2023.jpg | - | 1 | label="Rockfall on the Scenic Drive, March 2023 · NPS" bg=fit z1=1.03
+s038 | I:own_nar_1103143433.jpg | - | 1 | bg=fit z1=1.03
+s039 | A:s039 | - | - |
+s039 | I:z2_nps_emerald_pools_rockfall_2023.jpg | - | 1 | label="Rockfall near Emerald Pools, 2023 · NPS" z1=1.03
+s039 | M:e04023e3df6d | 0 | 1 |
+s040 | I:z2_npg_narrows_trail_rockslide.jpg | - | 1 | label="Rockslide on the trail to the Narrows · Courtesy Zion National Park" bg=fit z1=1.03
+s040 | I:z2_npg_weeping_rock_1952.jpg | - | 1 | label="Weeping Rock, 1952 · Courtesy Zion National Park" bg=fit z1=1.03
+s041 | I:z2_npg_cable_mtn_east_rim_1963.jpg | - | 1 | label="Cable Mountain, 1963 · Courtesy Zion National Park" bg=fit z1=1.03
+s041 | I:z2_nps_cable_mtn_rockfall_2023.jpg | - | 1 | label="Cable Mountain, rockfall scar · NPS" z1=1.03
+s042 | I:z2_nps_weeping_rock_rockfall_2019.jpg | - | 1 | label="Weeping Rock after the August 2019 rockfall · NPS photo" bg=fit z1=1.02
+s042 | M:4512fe47671e | 3 | 1 |
+s043 | I:z2_nps_weeping_rock_dust_2023.jpg | - | 1 | label="Rockfall dust near Weeping Rock, November 2023 · NPS" z1=1.03
+s043 | M:b25a57460139 | 0 | 1 |
+s044 | I:z2_nps_kolob_road_collapse_2023.png | - | 1 | label="Kolob Canyons Road collapse, March 2023 · NPS" z1=1.03
+s044 | I:z2_nps_kolob_road_damage_2023.jpg | - | 1 | z1=1.03
+s045 | G:zc2_stat_zero.mp4 | 0 | 1 |
+s045 | M:0b19548bf834 | 16.6 | 1 |
+s046 | M:3aecad02bed0 | 2 | 1 |
+s046 | I:z2_npg_deer_south_of_lodge_1959.jpg | - | 1 | label="Mule deer near the lodge, 1959 · Courtesy Zion National Park" z1=1.03
+s047 | I:own_al_1109152158.jpg | - | 1 | bg=fit z1=1.03
+s047 | M:7fbc669a7bc8 | 4 | 1 |
+s047 | I:z2_npg_deer_visitor_center_1966.jpg | - | 1 | label="Mule deer, 1966 · Courtesy Zion National Park" z1=1.03
+s048 | I:z2_npg_deer_lion_trap_1950.jpg | - | 1 | label="Zion, 1950 · Courtesy Zion National Park" bg=fit z1=1.03
+s048 | M:4ec0463298de | 7 | 1 |
+s048 | M:2fe1309ede17 | 36 | 1 |
+s049 | I:z2_npg_beaver_cut_cottonwoods.jpg | - | 1 | label="Cottonwoods by the Virgin River · Courtesy Zion National Park" bg=fit z1=1.03
+s049 | M:10ab2d0141c6 | 19 | 1 |
+s049 | I:own_nar_1103163325.jpg | - | 1 | bg=fit z1=1.03
+s050 | I:own_nar_1103163951.jpg | - | 1 | bg=fit z1=1.03
+s051 | M:137e3a27283d | 16 | 1 |
+s051 | I:own_al_1110175048.jpg | - | 1 | bg=fit z1=1.03
+s052 | M:c19350b7a064 | 8 | 1 |
+s052 | I:z2_npg_organ_from_cable_mtn_1962.jpg | - | 1 | label="Zion Canyon from Cable Mountain, 1962 · Courtesy Zion National Park" bg=fit z1=1.03
+s053 | I:z2_npg_rockfall_residence_1969.jpg | - | 1 | bg=fit z1=1.03
+s053 | I:z2_npg_road_rockslide_1979_a.jpg | - | 1 | label="Rock on the canyon road, 1979 · Courtesy Zion National Park" bg=fit z1=1.03
+s054 | I:z2_npg_cable_headworks_rim_1963.jpg | - | 3.6 | span=END bg=fit
+s054 | G:yc2_end_card.mp4 | 0 | 12 |

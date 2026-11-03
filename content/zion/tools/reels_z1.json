@@ -1,0 +1,432 @@
+{
+ "thumb": "ch1/release/thumb.jpg",
+ "line1": "Zion's Deadliest Day",
+ "line2": "Full documentary on YouTube",
+ "reels": [
+  {
+   "id": "z1",
+   "title": "15 minutes to flood a canyon",
+   "music": "ch1/music/span_00_cold_open.wav",
+   "names": [
+    "Keyhole",
+    "Canyon.",
+    "Zion"
+   ],
+   "shots": [
+    {
+     "src": "own:4381e2d874cc",
+     "ss": 0
+    },
+    {
+     "at": "That's how long it",
+     "src": "ai:K01",
+     "fx": 0.42
+    },
+    {
+     "at": "in Zion to carry",
+     "src": "ai:K02",
+     "fx": 0.5
+    },
+    {
+     "at": "September fourteenth,",
+     "src": "ai:K03",
+     "fx": 0.5
+    },
+    {
+     "at": "seven canyoneers were inside",
+     "src": "ai:K04",
+     "fx": 0.5
+    },
+    {
+     "at": "None came out.",
+     "src": "own:f3211e8eefcd",
+     "ss": 12
+    },
+    {
+     "at": "in Zion's Deadliest Day,",
+     "src": "own_nar_1103153036",
+     "z1": 1.06
+    }
+   ]
+  },
+  {
+   "id": "z2",
+   "title": "Why Zion floods so fast",
+   "music": "ch1/music/span_01_chapter_1.wav",
+   "names": [
+    "Virgin",
+    "River",
+    "Mississippi"
+   ],
+   "shots": [
+    {
+     "src": "own:93952cead405",
+     "ss": 0
+    },
+    {
+     "at": "Virgin River drops through",
+     "src": "own_nar_1103143433",
+     "y0": 0.4,
+     "y1": 0.55
+    },
+    {
+     "at": "The Mississippi drops about",
+     "src": "own_nar_1104120120",
+     "z1": 1.05
+    },
+    {
+     "at": "And these walls are",
+     "src": "own_nar_1103162324",
+     "z1": 1.07
+    },
+    {
+     "at": "so a sudden storm",
+     "src": "ai:K01",
+     "fx": 0.45
+    },
+    {
+     "at": "It runs off,",
+     "src": "ai:K02",
+     "fx": 0.5
+    },
+    {
+     "at": "This small river carries",
+     "src": "own:f3211e8eefcd",
+     "ss": 12
+    },
+    {
+     "at": "of rock and sand",
+     "src": "ai:N01",
+     "fx": 0.4
+    },
+    {
+     "at": "most of it during",
+     "src": "z1_nps_river_2019_b",
+     "bg": "fit"
+    },
+    {
+     "at": "The floods aren't an",
+     "src": "own:8f7830ef5bc0",
+     "ss": 0
+    },
+    {
+     "at": "Full documentary:",
+     "src": "own:627a4ca0b953",
+     "ss": 0
+    }
+   ]
+  },
+  {
+   "id": "z3",
+   "title": "The trail is the river",
+   "music": "ch1/music/span_02_chapter_2.wav",
+   "names": [
+    "Narrows,",
+    "Narrows"
+   ],
+   "shots": [
+    {
+     "src": "own:0b19548bf834",
+     "ss": 16.6
+    },
+    {
+     "at": "We hiked it top",
+     "src": "own_nar_1103132641",
+     "y0": 0.35,
+     "y1": 0.55
+    },
+    {
+     "at": "Walls a thousand feet",
+     "src": "own_nar_1103161443",
+     "y0": 0.6,
+     "y1": 0.35
+    },
+    {
+     "at": "only twenty to thirty",
+     "src": "own_nar_1104131350",
+     "z1": 1.06
+    },
+    {
+     "at": "When the water rises",
+     "src": "own:00c7d3d15639",
+     "ss": 7
+    },
+    {
+     "at": "there's often nowhere to",
+     "src": "own_nar_1104121131",
+     "z1": 1.06
+    },
+    {
+     "at": "Watch Zion's Deadliest Day",
+     "src": "own:b25a57460139",
+     "ss": 0
+    }
+   ]
+  },
+  {
+   "id": "z4",
+   "title": "Four nights on a ledge",
+   "music": "ch1/music/span_04_chapter_4.wav",
+   "names": [
+    "Kolob",
+    "Creek"
+   ],
+   "shots": [
+    {
+     "src": "own:fae943f846f5",
+     "ss": 4.5
+    },
+    {
+     "at": "July nineteen ninety-three:",
+     "src": "ai:L01",
+     "fx": 0.5
+    },
+    {
+     "at": "set out to descend",
+     "src": "ai:N01",
+     "fx": 0.55
+    },
+    {
+     "at": "The water was far",
+     "src": "ai:L02",
+     "fx": 0.5
+    },
+    {
+     "at": "The last adult and",
+     "src": "ai:L03",
+     "fx": 0.45
+    },
+    {
+     "at": "and waited.",
+     "src": "ai:L04",
+     "fx": 0.55
+    },
+    {
+     "at": "Rescuers finally winched them",
+     "src": "ai:L05",
+     "fx": 0.55
+    },
+    {
+     "at": "out, almost fifteen hundred",
+     "src": "ai:L06",
+     "fx": 0.5
+    },
+    {
+     "at": "The full story is",
+     "src": "own_nar_1104115847",
+     "z1": 1.05
+    }
+   ]
+  },
+  {
+   "id": "z5",
+   "title": "Never let your dog drink here",
+   "music": "ch1/music/span_05_chapter_5.wav",
+   "names": [
+    "Virgin",
+    "River."
+   ],
+   "shots": [
+    {
+     "src": "own:1ce27985c1cb",
+     "ss": 9.5
+    },
+    {
+     "at": "Fourth of July,",
+     "src": "z1_nps_cyano_river_side",
+     "z1": 1.05
+    },
+    {
+     "at": "Park scientists found a",
+     "src": "z1_nps_cyano_mat",
+     "z1": 1.06
+    },
+    {
+     "at": "making a nerve toxin,",
+     "src": "z1_nps_cyano_rock",
+     "z1": 1.06
+    },
+    {
+     "at": "Never let your dog",
+     "src": "own_nar_1103163325",
+     "z1": 1.05
+    },
+    {
+     "at": "Full documentary:",
+     "src": "own_nar_1104133238",
+     "z1": 1.05
+    }
+   ]
+  },
+  {
+   "id": "z6",
+   "title": "17 deaths on one trail",
+   "music": "ch1/music/span_06_chapter_6.wav",
+   "names": [
+    "Angels",
+    "Landing,"
+   ],
+   "shots": [
+    {
+     "src": "own:facb99876af2",
+     "ss": 0
+    },
+    {
+     "at": "The last half mile",
+     "src": "own_al_1110175504",
+     "y0": 0.6,
+     "y1": 0.45
+    },
+    {
+     "at": "and for much of",
+     "src": "own_al_1110182354",
+     "z1": 1.07
+    },
+    {
+     "at": "We climbed it in",
+     "src": "own_al_1110175048",
+     "y0": 0.4,
+     "y1": 0.55
+    },
+    {
+     "at": "Here's the strange part:",
+     "src": "own_al_1110165344",
+     "z1": 1.05
+    },
+    {
+     "at": "They happened where people",
+     "src": "own_al_1110184230",
+     "z1": 1.05
+    },
+    {
+     "at": "Watch Zion's Deadliest Day",
+     "src": "own_al_1110174654",
+     "z1": 1.05
+    }
+   ]
+  },
+  {
+   "id": "z7",
+   "title": "8% odds to climb Angels Landing",
+   "music": "ch1/music/span_03_chapter_3.wav",
+   "names": [
+    "Angels",
+    "Landing."
+   ],
+   "shots": [
+    {
+     "src": "own:facb99876af2",
+     "ss": 10.5
+    },
+    {
+     "at": "those were your odds",
+     "src": "own_al_1110175926",
+     "z1": 1.06
+    },
+    {
+     "at": "Since twenty twenty-two the",
+     "src": "own_al_1110172905",
+     "z1": 1.05
+    },
+    {
+     "at": "nearly four hundred thousand",
+     "src": "own_al_1110172455",
+     "z1": 1.05
+    },
+    {
+     "at": "Full story:",
+     "src": "own_al_1109144848",
+     "z1": 1.05
+    }
+   ]
+  },
+  {
+   "id": "z8",
+   "title": "5 tons below the chains",
+   "music": "ch1/music/span_01_chapter_1.wav",
+   "names": [
+    "Scout",
+    "Lookout,",
+    "Angels",
+    "Landing"
+   ],
+   "shots": [
+    {
+     "src": "own:e04023e3df6d",
+     "ss": 0
+    },
+    {
+     "at": "That's what park crews",
+     "src": "own_al_1110183130",
+     "z1": 1.06
+    },
+    {
+     "at": "at Scout Lookout,",
+     "src": "z1_npg_angels_east_rim_1969",
+     "z1": 1.05
+    },
+    {
+     "at": "in twenty twenty-one.",
+     "src": "own:10ab2d0141c6",
+     "ss": 3
+    },
+    {
+     "at": "Watch Zion's Deadliest Day",
+     "src": "own_al_1109152158",
+     "z1": 1.05
+    }
+   ]
+  },
+  {
+   "id": "z9",
+   "title": "4,000 visitors became 5 million",
+   "music": "ch1/music/span_02_chapter_2.wav",
+   "names": [
+    "Zion",
+    "Zion."
+   ],
+   "shots": [
+    {
+     "src": "own:e1326a94d3ac",
+     "ss": 0
+    },
+    {
+     "at": "In nineteen twenty,",
+     "src": "z1_commons_zion_1920s_1",
+     "y0": 0.4,
+     "y1": 0.55
+    },
+    {
+     "at": "In twenty twenty-one,",
+     "src": "own:137e3a27283d",
+     "ss": 3
+    },
+    {
+     "at": "Most leave with nothing",
+     "src": "own_nar_1103164913",
+     "z1": 1.05
+    },
+    {
+     "at": "But rangers here answer",
+     "src": "z1_npg_sinawava_1949",
+     "bg": "fit"
+    },
+    {
+     "at": "because the things that",
+     "src": "own:2ff60173c1c6",
+     "ss": 14
+    },
+    {
+     "at": "the water and the",
+     "src": "own:872b4415ce88",
+     "ss": 0
+    },
+    {
+     "at": "The full story is",
+     "src": "own_nar_1103160150",
+     "z1": 1.05
+    }
+   ]
+  }
+ ]
+}

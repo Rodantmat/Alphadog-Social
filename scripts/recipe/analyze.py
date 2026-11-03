@@ -290,7 +290,16 @@ summ("R7", f"{len(SEG)} on-screen shots, shortest {min((b_ - a for a, b_ in SEG)
 
 # ------------------------------------------------------------------ Q3 freeze, Q2 shake, Q5 cadence
 jit = []; stutter = []
-for a, b_ in SEG:
+# a planned cut the detector missed (e.g. two similar fitted photos) must not merge two shots: one shot's start would be
+# measured as "shake" against the other's end (false Q2 fail 2026-11-03, Zion P1 v3 8:16). Split at planned boundaries.
+SEGQ = SEG
+if SHOTS:
+    PB = sorted(s["_a"] for s in SHOTS)
+    SEGQ = []
+    for a, b_ in SEG:
+        cuts = [a] + [x for x in PB if a + 0.5 < x < b_ - 0.5] + [b_]
+        SEGQ += [(cuts[k] + (0.15 if k else 0), cuts[k + 1] - (0.15 if k + 2 < len(cuts) else 0)) for k in range(len(cuts) - 1)]
+for a, b_ in SEGQ:
     i0, i1 = int(round(a * FPS)), int(round(b_ * FPS))
     if i1 - i0 < FPS * 0.8: continue
     s = shot_at((a + b_) / 2)

@@ -1,0 +1,101 @@
+# Zion Part 1 "Zion's Deadliest Day" visual plan v1. SEG | SOURCE | ss | weight | options
+# O/M = own Nov 2021 clips (M = vertical phone panels), I = photo (own_* = our photos, z1_* = PD), A = AI story passage, G = graphic
+# Labels only where certain. No people's faces in the death stories. Our dog never appears in the poison chapter.
+s000 | I:own_nar_1104115759.jpg | - | 1.3 | z0=1.0 z1=1.04
+s000 | O:3d9808f61f74 | 0 | 0.6 |
+s001 | I:own_nar_1103151209.jpg | - | 1.10 | label="The Narrows, Zion National Park" bg=fit
+s001 | I:own_nar_1104131604.jpg | - | 1.10 | bg=fit
+s002 | A:s002 | - | - |
+s002 | M:1ce27985c1cb | 0 | 1 |
+s003 | A:s003 | - | - |
+s003 | I:z1_nps_river_2019_b.jpg | - | 1 | label="The Virgin River in flood, Zion Canyon · NPS / Anne Winters" bg=fit
+s004 | M:1ce27985c1cb | 9 | 1 |
+s005 | M:626e3bf0851b | 4 | 1.00 |
+s005 | M:d20e7c4997eb | 60 | 1.00 |
+s006 | I:z1_nps_river_2019_a.jpg | - | 1 | label="The same river on a normal day · NPS / Anne Winters" bg=fit
+s006 | M:210759a38d30 | 25 | 1 |
+s007 | M:ff90f11838d6 | 30 | 1 |
+s008 | I:own_nar_1103163951.jpg | - | 1 | bg=fit z0=1.0 z1=1.05
+s009 | M:facb99876af2 | 0 | 1 | label="Angels Landing"
+s009 | I:own_nar_1103160150.jpg | - | 1 |
+s010 | I:own_nar_1103152827.jpg | - | 1 | bg=fit
+s011 | I:own_nar_1103150458.jpg | - | 1 | bg=fit label="Navajo Sandstone: the lines are the slopes of ancient dunes"
+s011 | I:own_nar_1103143433.jpg | - | 1 | bg=fit
+s011 | I:own_nar_1103163325.jpg | - | 1 | bg=fit
+s012 | M:f3211e8eefcd | 3 | 1 | label="Flood debris jammed in a side canyon"
+s012 | I:own_nar_1103153036.jpg | - | 1 | bg=fit
+s013 | M:627a4ca0b953 | 0 | 1.15 | label="Mystery Falls, where Mystery Canyon drops into the Narrows"
+s013 | I:own_nar_1104115847.jpg | - | 1 | bg=fit
+s014 | I:own_nar_1103154558.jpg | - | 1 | bg=fit
+s014 | M:4381e2d874cc | 0 | 1 |
+s015 | I:own_nar_1103161443.jpg | - | 1 | bg=fit
+s015 | I:own_nar_1104131240.jpg | - | 1 |
+s016 | M:d20e7c4997eb | 167 | 1 |
+s016 | I:z1_commons_gk_gilbert_1.jpg | - | 1 | label="Grove Karl Gilbert, geologist" bg=fit
+s016 | I:z1_commons_wheeler_survey_2.jpg | - | 1 | label="A Wheeler Survey photograph, 1872 · William Bell" bg=fit
+s016 | M:ff90f11838d6 | 46 | 1.2 | label="The Narrows"
+s017 | I:own_nar_1103114426.jpg | - | 1 | label="Our permit for the top-down Narrows, November 2021" bg=fit
+s017 | I:own_nar_1103165635.jpg | - | 1 | bg=fit
+s018 | I:own_nar_1103155822.jpg | - | 1 | bg=fit
+s018 | M:4c4a6e310ccb | 0 | 1 |
+s019 | I:own_nar_1104121131.jpg | - | 1 | bg=fit
+s019 | M:d20e7c4997eb | 20 | 1 |
+s020 | A:s020 | - | - |
+s020 | I:own_nar_1104123445.jpg | - | 1 | bg=fit
+s021 | M:d20e7c4997eb | 140 | 1 |
+s021 | I:own_nar_1104125309.jpg | - | 1 | bg=fit
+s021 | I:own_nar_1104131350.jpg | - | 1 | bg=fit
+s022 | M:2ff60173c1c6 | 5 | 1.10 | label="The Subway, Left Fork of North Creek"
+s022 | M:872b4415ce88 | 5 | 1.10 |
+s023 | A:s023 | - | - |
+s023 | M:8aec6b1943ed | 0 | 1 |
+s024 | A:s024 | - | - |
+s024 | M:872b4415ce88 | 20 | 1.00 |
+s024 | M:bb8801078aaf | 20 | 1.00 |
+s025 | A:s025 | - | - |
+s026 | A:s026 | - | - | span=s027
+s026 | M:89c5add8541c | 0 | 1 |
+s026 | I:own_nar_1103162324.jpg | - | 1 | bg=fit
+s026 | I:own_nar_1103162537.jpg | - | 1 | bg=fit
+s028 | M:ed325557e613 | 0 | 1 |
+s029 | I:z1_nps_cyano_river_side.jpg | - | 1 | label="Cyanobacteria on the riverbank, Zion · NPS" bg=fit
+s029 | I:z1_nps_cyano_mat.jpg | - | 1 | bg=fit
+s030 | I:z1_nps_cyano_pearls.jpg | - | 1 | label="Cyanobacteria colonies on a river rock · NPS" bg=fit
+s030 | I:z1_nps_cyano_rock.jpg | - | 1 | bg=fit
+s031 | O:c1d73f7931f3 | 0 | 1.3 | label="Big Spring, the Narrows"
+s031 | M:b25a57460139 | 0 | 1 |
+s031 | I:z1_nps_cyano_plants.jpg | - | 1 | bg=fit
+s031 | M:626e3bf0851b | 16 | 1 |
+s032 | I:own_nar_1103134331.jpg | - | 1 | bg=fit
+s032 | I:own_nar_1103141248.jpg | - | 1 | bg=fit
+s032 | I:own_nar_1103132641.jpg | - | 1 | bg=fit
+s033 | M:facb99876af2 | 8 | 1 | label="Angels Landing"
+s034 | I:z1_npg_angels_east_rim_1969.jpg | - | 1 | label="Angels Landing from the East Rim, 1969 · Courtesy Zion National Park, A. J. Malmquist" bg=fit
+s034 | I:own_al_1110172455.jpg | - | 1 |
+s035 | A:s035 | - | - |
+s035 | I:own_al_1110184230.jpg | - | 1 | label="Walter's Wiggles, from above" bg=fit
+s036 | I:own_al_1110182354.jpg | - | 1 | label="The chains, Angels Landing, November 2021" bg=fit
+s036 | I:own_al_1110175504.jpg | - | 1 | bg=fit z1=1.0
+s037 | I:own_al_1110175048.jpg | - | 1 | label="From the top of Angels Landing" bg=fit z1=1.0
+s037 | I:own_al_1110174654.jpg | - | 1 | bg=fit z1=1.0
+s038 | I:own_al_1110175926.jpg | - | 1 | bg=fit
+s038 | I:z1_npg_angels_1969b.jpg | - | 1 | label="Angels Landing, 1969 · Courtesy Zion National Park, A. J. Malmquist" bg=fit
+s039 | I:own_al_1109152158.jpg | - | 1 | bg=fit
+s039 | G:zc1_stat_deaths.mp4 | 0 | 0.8 |
+s040 | I:own_al_1110172905.jpg | - | 1 | bg=fit
+s040 | I:own_al_1110165344.jpg | - | 1 | bg=fit
+s041 | I:own_al_1110183130.jpg | - | 0.7 | label="Refrigerator Canyon, on the way up" bg=fit
+s041 | M:10ab2d0141c6 | 0 | 1 |
+s041 | G:zc1_stat_odds.mp4 | 0 | 0.6 |
+s042 | M:e04023e3df6d | 3 | 1.00 |
+s042 | M:10ab2d0141c6 | 15 | 1.00 |
+s043 | I:z1_npg_sinawava_1949.jpg | - | 1 | label="Visitors at the Temple of Sinawava, 1949 · Courtesy Zion National Park, N. N. Dodge" bg=fit
+s043 | M:e1326a94d3ac | 0 | 0.8 | label="South entrance, Springdale"
+s043 | I:own_nar_1104120532.jpg | - | 1 | bg=fit
+s044 | I:own_nar_1104121227.jpg | - | 1 | bg=fit
+s044 | M:89c5add8541c | 0 | 1 |
+s044 | I:own_nar_1104133238.jpg | - | 1 | bg=fit 
+s045 | M:137e3a27283d | 0 | 1 | label="Zion Lodge"
+s045 | M:93952cead405 | 0 | 0.8 |
+s046 | I:own_al_1109144848.jpg | - | 3.6 | span=END
+s046 | G:yc1_end_card.mp4 | 0 | 12 |
