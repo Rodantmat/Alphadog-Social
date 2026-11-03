@@ -44,6 +44,29 @@ def youtube():
                 "ids": "channel==MINE", "startDate": start, "endDate": end, "dimensions": "insightTrafficSourceType", "metrics": "views,estimatedMinutesWatched"}))
             res["traffic_sources"] = a.get("rows", [])
         except urllib.error.HTTPError as e: res["analytics_error"] = f"{e.code} {e.read().decode()[:300]}"
+        # Reporting API: impressions + impressions CTR per video (daily CSV reports; the job is created once, first data ~2 days later)
+        try:
+            R = "https://youtubereporting.googleapis.com/v1"
+            jobs = g(f"{R}/jobs").get("jobs", [])
+            job = next((j for j in jobs if j["reportTypeId"] == "channel_reach_basic_a1"), None)
+            if not job:
+                job = http(f"{R}/jobs", data=json.dumps({"reportTypeId": "channel_reach_basic_a1", "name": "alphadog reach"}).encode(),
+                           headers={**H, "Content-Type": "application/json"}); res["reach_job"] = "created"
+            reps = sorted(g(f"{R}/jobs/{job['id']}/reports").get("reports", []), key=lambda r: r["startTime"])[-14:]
+            agg = {}
+            for rp in reps:
+                with urllib.request.urlopen(urllib.request.Request(rp["downloadUrl"], headers=H), timeout=60) as r: rows = r.read().decode().splitlines()
+                hd = rows[0].split(",")
+                for ln in rows[1:]:
+                    d = dict(zip(hd, ln.split(","))); v = d.get("video_id")
+                    if not v: continue
+                    a_ = agg.setdefault(v, {"impressions": 0, "ctr_x_impr": 0.0})
+                    im = int(float(d.get("video_thumbnail_impressions") or 0)); a_["impressions"] += im
+                    a_["ctr_x_impr"] += im * float(d.get("video_thumbnail_impressions_ctr") or 0)
+            for v, a_ in agg.items(): a_["ctr"] = round(a_["ctr_x_impr"] / a_["impressions"], 4) if a_["impressions"] else None; a_.pop("ctr_x_impr")
+            res["reach_14d"] = {"reports": len(reps), "by_video": agg}
+        except urllib.error.HTTPError as e: res["reach_error"] = f"{e.code} {e.read().decode()[:300]}"
+        except Exception as e: res["reach_error"] = str(e)[:300]
     return res
 
 def instagram():
