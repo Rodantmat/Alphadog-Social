@@ -9,7 +9,7 @@ import base64, json, os, sys, urllib.parse, urllib.request, urllib.error
 CID = os.environ.get("YT_CLIENT_ID", "").strip(); CSEC = os.environ.get("YT_CLIENT_SECRET", "").strip()
 REDIRECT = "http://localhost"
 SCOPES = ["https://www.googleapis.com/auth/youtube.upload", "https://www.googleapis.com/auth/youtube",
-          "https://www.googleapis.com/auth/youtube.force-ssl"]
+          "https://www.googleapis.com/auth/youtube.force-ssl", "https://www.googleapis.com/auth/yt-analytics.readonly"]
 
 def call(url, data=None, headers=None, method=None):
     req = urllib.request.Request(url, data=data, headers=headers or {}, method=method or ("POST" if data else "GET"))
