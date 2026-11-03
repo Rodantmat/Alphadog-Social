@@ -123,6 +123,28 @@ def fb_story(item, path):
     f = call("POST", f"{G}/{PAGE}/video_stories", data={"upload_phase": "finish", "video_id": vid})
     return {"video_id": vid, "finish": f, "story": True}
 
+def fb_album(item, path):
+    """Facebook photo post (research 2026-11-02: albums/carousels beat Reels on small Pages). item["files"]: photo file names in media/;
+    each is uploaded unpublished, then one feed post carries them all; the link goes in the first comment."""
+    ids = []
+    for f in item["files"]:
+        p = os.path.join(MEDIA, f)
+        if DRY: ids.append(f); continue
+        if True:
+            import mimetypes, uuid
+            bnd = uuid.uuid4().hex; body = (f"--{bnd}\r\nContent-Disposition: form-data; name=\"published\"\r\n\r\nfalse\r\n--{bnd}\r\nContent-Disposition: form-data; name=\"access_token\"\r\n\r\n{T}\r\n"
+                    f"--{bnd}\r\nContent-Disposition: form-data; name=\"source\"; filename=\"{f}\"\r\nContent-Type: {mimetypes.guess_type(f)[0] or 'image/jpeg'}\r\n\r\n").encode() + open(p, "rb").read() + f"\r\n--{bnd}--\r\n".encode()
+            r = call("POST", f"{G}/{PAGE}/photos", raw=body, headers={"Content-Type": f"multipart/form-data; boundary={bnd}"})
+        ids.append(r["id"])
+    if DRY: return {"dry_run": True, "photos": ids}
+    data = {"message": item["caption"]}
+    for k, i in enumerate(ids): data[f"attached_media[{k}]"] = json.dumps({"media_fbid": i})
+    post = call("POST", f"{G}/{PAGE}/feed", data=data)
+    if item.get("comment"):
+        try: call("POST", f"{G}/{post['id']}/comments", data={"message": item["comment"]})
+        except Exception as e: print("fb album comment failed", e)
+    return {"post_id": post["id"], "photos": len(ids)}
+
 def tt_draft(item, path):
     if DRY: return {"dry_run": True, "status": "not sent"}
     r = subprocess.run(["python3", "scripts/tiktok_studio.py", "draft", path], capture_output=True, text=True)
@@ -138,9 +160,9 @@ for item in q:
     if not due: continue
     if item.get("hold"): print(f"== {item['id']} HELD: {item['hold']}", flush=True); continue
     if "{LINK}" in json.dumps(item): print(f"== {item['id']} SKIPPED: link placeholder not filled yet", flush=True); continue
-    path = os.path.join(MEDIA, item["file"]); print(f"== {item['id']} ({item['platform']}) {path} {os.path.getsize(path)} bytes", flush=True)
+    path = os.path.join(MEDIA, item.get("file") or item["files"][0]); print(f"== {item['id']} ({item['platform']}) {path} {os.path.getsize(path)} bytes", flush=True)
     try:
-        fn = {"instagram": ig_reel, "facebook": fb_reel, "instagram_story": ig_story, "facebook_story": fb_story, "tiktok_draft": tt_draft}[item["platform"]]
+        fn = {"instagram": ig_reel, "facebook": fb_reel, "instagram_story": ig_story, "facebook_story": fb_story, "facebook_album": fb_album, "tiktok_draft": tt_draft}[item["platform"]]
         # Instagram's upload endpoint fails intermittently with 'ProcessingFailedError' (2026-10-30: same file failed 4x, then posted untouched).
         # The failure always happens BEFORE media_publish, so retrying with a fresh container is safe.
         for attempt in range(1, 5 if item["platform"].startswith("instagram") else 2):

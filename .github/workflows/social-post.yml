@@ -60,7 +60,7 @@ jobs:
         env: { GH_TOKEN: "${{ github.token }}" }
         run: |
           git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
-          cd /tmp/fbs && git sparse-checkout set --no-cone /yellowstone-shorts && mkdir -p "$GITHUB_WORKSPACE/media" && cp -r yellowstone-shorts/*/*.mp4 "$GITHUB_WORKSPACE/media/" && ls "$GITHUB_WORKSPACE/media" | head -30
+          cd /tmp/fbs && git sparse-checkout set --no-cone /yellowstone-shorts && mkdir -p "$GITHUB_WORKSPACE/media" && cp -r yellowstone-shorts/*/*.mp4 "$GITHUB_WORKSPACE/media/" && (cp yellowstone-shorts/*/*.jpg "$GITHUB_WORKSPACE/media/" 2>/dev/null || true) && ls "$GITHUB_WORKSPACE/media" | head -30
       - if: steps.due.outputs.due == 'yes'
         name: Post
         env:
