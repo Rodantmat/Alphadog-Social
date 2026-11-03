@@ -60,6 +60,7 @@ rules:
   # ---------- shorts / reels / tiktok / stories ----------
   - {id: V1, stage: render, check: auto, rule: "Vertical 1080x1920; burned-in text only inside x 170-910, y 400-1220; nothing important under platform UI"}
   - {id: V2, stage: render, check: auto, rule: "Shorts < 60 s for YouTube; first 1.5 s is a hook; captions big (>= 58 px) and timed to voice"}
+  - {id: V39, stage: render, check: auto, rule: "Shorts/Reels open with a number or a contrast in the first 3 s of narration (metrics 2026-11-02: every breakout did; explain/question openers got 0-5 views)"}
   - {id: V3, stage: render, check: auto, rule: "Faces not covered by captions (face boxes vs caption boxes)"}
   # ---------- publishing ----------
   - {id: M1, stage: publish, check: auto, rule: "AI disclosure set wherever AI voice/realistic AI scenes are used; credits comment with every CC/PD source + license"}

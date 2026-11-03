@@ -71,3 +71,9 @@ Every episode inherits all rules. Never ask the owner to repeat one.
 - V36 Reject: tilted horizons (Q10 + eye check on every contact sheet), sun glare openers, car hood / dashboard in frame, foreground posts, traffic cones / parked trucks as a "place" shot.
 - V37 Stories: different material from the reels (own clips/photos never used in a reel), place label, one sourced fact, documentary pointer; silent (no music to repeat); same clip never twice in the story set.
 - V38 Episode-end lines that point elsewhere ("see you there", "coming to our podcast") are cut when parts are joined into the complete film; the film gets its own end card.
+
+## V39-V42 (2026-11-02, first platform metrics: YouTube, Instagram, TikTok, Facebook)
+- V39 Shorts/Reels hook: a number or a contrast in the first 3 s, spoken and on screen ("3,000 elk", "only 23 bison", "X vs Y", "found dead..."). Openers that explain or ask got 0-5 YouTube views. Checked by analyze.py V39.
+- V40 Never upload more than 2 Shorts a day (>= 6 h apart, different topics); never delete and re-upload a Short (counted as spam).
+- V41 Each Short names its full documentary aloud (exact title) and links it in the description and first comment.
+- V42 No templated sameness: rotate intro lines, end cards and layouts across Shorts/Reels; never the same narration opener twice.

@@ -69,7 +69,7 @@ try:
     for r in yaml.safe_load(open(A.recipe))["rules"]: RULES[r["id"]] = r
 except Exception as e:
     log("recipe not loaded:", e)
-MINE = ["P2", "A4", "O2", "Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10", "R7", "U1", "U2", "U3", "U5", "T1", "T2", "V1", "V2", "V3",
+MINE = ["P2", "A4", "O2", "Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10", "R7", "U1", "U2", "U3", "U5", "T1", "T2", "V1", "V2", "V3", "V39",
         "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8"]
 REP = {rid: {"rule": RULES.get(rid, {}).get("rule", ""), "check": RULES.get(rid, {}).get("check", "auto"), "status": "pass", "summary": "", "findings": []} for rid in MINE}
 def find(rid, t, msg, sev="fail", t_end=None, box=None, **kw):
@@ -945,6 +945,16 @@ if VERT:
         if rate < 0.7: find("V2", 0, f"only {rate:.0%} of caption samples match the words spoken within +-2.5 s", sev="warn")
     hook = (WORDS and WORDS[0][0] < 1.5) or any(S["t"] < 1.5 and S.get("ocr") for S in SAMPLES)
     if not hook: find("V2", 0, "nothing said or shown as text in the first 1.5 s (hook)", sev="warn")
+    # V39 (metrics 2026-11-02): every Short/Reel that broke out opened with a number or a contrast ("3,000 elk", "only 23 bison",
+    # "Steamboat vs Old Faithful", "Found dead under an oak"); openers that explain or ask got 0-5 YouTube views
+    if WORDS:
+        first = " ".join(w for a_, b_, w in WORDS if a_ < 3.0).lower()
+        NUMW = r"\b(\d[\d,.]*|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fifteen|twenty|thirty|forty|fifty|hundred|thousand|million|billion|first|last|only)\b"
+        CONTR = r"\b(vs|versus|but|not|never|nobody|no one|dead|died|killed|deadliest|biggest|tallest|largest|worst|secret|wrong)\b"
+        import re as _re
+        if not (_re.search(NUMW, first) or _re.search(CONTR, first)):
+            find("V39", 0, f"weak hook: first 3 s have no number or contrast ('{first[:70]}')")
+        REP["V39"]["first_3s"] = first[:120]
     summ("V2", f"duration {DUR:.2f}s; caption font est. median {REP['V2'].get('caption_font_px_est', {}).get('median')}px; captions match voice {REP['V2'].get('captions_match_voice')}")
     # V3 faces vs caption boxes
     nf = 0
@@ -961,7 +971,7 @@ if VERT:
                     find("V3", S["t"], f"burned-in text covers a face: '{o['text']}' ({iw * ih / fa:.0%} of the face)", box=[fb[0], fb[1], fb[2], fb[3]])
     summ("V3", f"{nf} faces checked against caption boxes" + ("" if face is not None else " (no face detector)"))
 else:
-    for rid in ("V1", "V2", "V3"): skip(rid, "long-form video (vertical rules n/a)")
+    for rid in ("V1", "V2", "V3", "V39"): skip(rid, "long-form video (vertical rules n/a)")
     summ("Q6", f"OCR every {OCR_EVERY:g}s; corner logo scan every 1 s")
     summ("T2", "our labels/titles read back and checked for size (>= 26 px) and title-safe area")
 # O2 close-up faces in real footage (long form)
