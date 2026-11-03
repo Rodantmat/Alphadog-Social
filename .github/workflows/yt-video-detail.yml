@@ -1,0 +1,36 @@
+name: yt-video-detail
+# Read-only: full status/contentDetails/processing/suggestions of our 2026 uploads, to explain why some Shorts get no impressions.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  detail:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.parse, urllib.request
+          d = urllib.parse.urlencode({"client_id": os.environ["YT_CLIENT_ID"], "client_secret": os.environ["YT_CLIENT_SECRET"],
+                                      "refresh_token": os.environ["YT_REFRESH_TOKEN"], "grant_type": "refresh_token"}).encode()
+          t = json.loads(urllib.request.urlopen(urllib.request.Request("https://oauth2.googleapis.com/token", data=d)).read())
+          H = {"Authorization": "Bearer " + t["access_token"]}
+          g = lambda u: json.loads(urllib.request.urlopen(urllib.request.Request(u, headers=H)).read())
+          up = g("https://www.googleapis.com/youtube/v3/channels?part=contentDetails,status,brandingSettings&mine=true")["items"][0]
+          print("CHANNEL status", json.dumps(up.get("status")), "| defaultLanguage", up.get("brandingSettings", {}).get("channel", {}).get("defaultLanguage"))
+          r = g(f"https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&maxResults=50&playlistId={up['contentDetails']['relatedPlaylists']['uploads']}")
+          ids = [i["contentDetails"]["videoId"] for i in r["items"]]
+          for v in g("https://www.googleapis.com/youtube/v3/videos?part=snippet,status,contentDetails,statistics,topicDetails,processingDetails,recordingDetails,localizations&id=" + ",".join(ids))["items"]:
+              if v["snippet"]["publishedAt"] < "2026-01-01" or v["status"]["privacyStatus"] != "public": continue
+              s = v["snippet"]; st = v["status"]; cd = v["contentDetails"]
+              print(f"\n{v['id']} {s['publishedAt']} views={v['statistics'].get('viewCount')} | {s['title'][:60]}")
+              print("  status:", json.dumps({k: st.get(k) for k in ("uploadStatus", "license", "embeddable", "publicStatsViewable", "madeForKids", "selfDeclaredMadeForKids", "containsSyntheticMedia", "publishAt")}))
+              print("  content:", json.dumps({k: cd.get(k) for k in ("duration", "dimension", "definition", "caption", "licensedContent", "contentRating", "regionRestriction")}))
+              print("  snippet:", json.dumps({"lang": s.get("defaultLanguage"), "audioLang": s.get("defaultAudioLanguage"), "cat": s.get("categoryId"), "tags": len(s.get("tags", [])), "desc_len": len(s.get("description", "")), "loc": list((v.get("localizations") or {}).keys())}))
+              print("  topics:", (v.get("topicDetails") or {}).get("topicCategories"), "| processing:", (v.get("processingDetails") or {}).get("processingStatus"))
+          PY
