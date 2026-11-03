@@ -33,7 +33,7 @@ jobs:
       - name: Fetch the release folder from the footage branch
         run: |
           set -euo pipefail
-          case "$CH" in ch[0-9]|ch[0-9][0-9]|film) ;; *) echo "bad chapter '$CH'"; exit 1;; esac
+          case "$CH" in ch[0-9]|ch[0-9][0-9]|film|zion[0-9]|zfilm) ;; *) echo "bad chapter '$CH'"; exit 1;; esac
           git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb
           git -C /tmp/fb sparse-checkout set "yellowstone-release/$CH"
           test -f "/tmp/fb/yellowstone-release/$CH/meta_0_long.json" || { echo "no release folder yellowstone-release/$CH on footage"; exit 1; }
