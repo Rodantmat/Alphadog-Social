@@ -1,0 +1,112 @@
+[
+ {
+  "id": "H01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Zion Canyon, Utah: a wide flat-floored canyon between towering sheer cliffs of red, orange and cream Navajo sandstone with diagonal cross-bedded layers and dark desert varnish streaks, summer 1917. On the canyon floor among cottonwoods a small row of white canvas tent cabins on wooden platforms, a dirt wagon road, a few small figures in 1910s clothes, faces not detailed.",
+  "neg": "cars, modern buildings, paved road, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "H02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Southern Utah high desert, 1923: a black steam locomotive with passenger cars pulls into a small wooden railway station, red cliffs and juniper hills behind, a few small figures in 1920s clothes on the platform, faces not detailed.",
+  "neg": "modern cars, modern buildings, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "H03",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. very wide shot. Zion Canyon, Utah: a wide flat-floored canyon between towering sheer cliffs of red, orange and cream Navajo sandstone with diagonal cross-bedded layers and dark desert varnish streaks, 1920s. A single long steel cable runs from the top of a sheer 2,000-foot cliff down to the canyon floor; a bundle of sawn lumber slides down the wire high above the canyon, a small wooden frame structure on the cliff top.",
+  "neg": "people close up, modern buildings, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "H04",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Zion Canyon, Utah: a wide flat-floored canyon between towering sheer cliffs of red, orange and cream Navajo sandstone with diagonal cross-bedded layers and dark desert varnish streaks at night, winter 1966. A large rustic stone-and-timber lodge building is on fire, orange flames and sparks rising into the dark, smoke against the moonlit cliffs, small dark silhouettes watching from a distance, faces not visible.",
+  "neg": "bodies, injured people, gore, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "H05",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Zion Canyon, Utah: a wide flat-floored canyon between towering sheer cliffs of red, orange and cream Navajo sandstone with diagonal cross-bedded layers and dark desert varnish streaks, spring 1966. A work crew in hard hats raises a plain low boxy prefabricated building on a cleared site among cottonwoods, a small crane lifting a wall panel, stacked panels on the ground, faces not detailed.",
+  "neg": "modern cars, smartphones, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "R01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Zion Canyon, Utah: a wide flat-floored canyon between towering sheer cliffs of red, orange and cream Navajo sandstone with diagonal cross-bedded layers and dark desert varnish streaks at night, April 1995. A two-lane road runs along the river at the foot of a steep slope of loose broken rock and soil; the slope has begun to slump, cracks opening in the road, moonlight, no people.",
+  "neg": "people, cars, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "R02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Zion Canyon, Utah: a wide flat-floored canyon between towering sheer cliffs of red, orange and cream Navajo sandstone with diagonal cross-bedded layers and dark desert varnish streaks at night. Earth and rock slide down the slope into the river, blocking it, muddy water pooling and swirling behind the debris, the edge of the road breaking away.",
+  "neg": "people, cars, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "R03",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Zion Canyon, Utah: a wide flat-floored canyon between towering sheer cliffs of red, orange and cream Navajo sandstone with diagonal cross-bedded layers and dark desert varnish streaks at night. Floodlights on tall stands light a bulldozer and an excavator cutting a narrow rough track into the base of the canyon wall, dust in the white light, small workers in hard hats, faces not detailed.",
+  "neg": "crowd, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "R04",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium shot. Zion Canyon, Utah: a wide flat-floored canyon between towering sheer cliffs of red, orange and cream Navajo sandstone with diagonal cross-bedded layers and dark desert varnish streaks, daytime, overcast. Fast muddy brown floodwater tears at the edge of a paved road, chunks of asphalt breaking off and falling into the current.",
+  "neg": "people, cars, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "F01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. extreme close-up. A narrow crack in a cliff of orange Navajo sandstone in Zion: water trickles into the crack, ice crystals form inside it, frost on the rock face, winter light.",
+  "neg": "people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ }
+]
