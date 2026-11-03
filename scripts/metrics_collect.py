@@ -68,8 +68,13 @@ def facebook():
                              "comments": x.get("comments", {}).get("summary", {}).get("total_count", 0), "shares": x.get("shares", {}).get("count", 0)})
     try:
         for x in q(f"{P}/video_reels", fields="id,created_time,description", limit="50").get("data", []):
-            try: v = {d["name"]: d["values"][0]["value"] for d in q(f"{x['id']}/video_insights", metric="blue_reels_play_count,post_impressions_unique,post_video_avg_time_watched").get("data", [])}
-            except Exception as e: v = {"error": str(e)[:120]}
+            v = {}
+            for met in ("fb_reels_total_plays", "blue_reels_play_count", "post_impressions_unique", "post_video_avg_time_watched", "post_video_followers"):
+                try: v.update({d["name"]: d["values"][0]["value"] for d in q(f"{x['id']}/video_insights", metric=met).get("data", [])})
+                except Exception: pass
+            if not v:
+                try: v = {d["name"]: d["values"][0]["value"] for d in q(f"{x['id']}/video_insights").get("data", []) if d.get("values")}
+                except urllib.error.HTTPError as e: v = {"error": e.read().decode()[:160]}
             res["reels"].append({"id": x["id"], "at": x["created_time"], "text": (x.get("description") or "")[:80], **v})
     except Exception as e: res["reels_error"] = str(e)[:200]
     return res
