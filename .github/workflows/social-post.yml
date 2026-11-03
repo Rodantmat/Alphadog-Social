@@ -48,6 +48,7 @@ jobs:
           PY
       - if: steps.due.outputs.due == 'yes'
         uses: actions/download-artifact@v4
+        continue-on-error: true   # Chiricahua shorts artifact (all posted) expired 2026-11-02; must never block Yellowstone posts
         with: { name: shorts, path: media, run-id: "${{ env.SHORTS_RUN }}", github-token: "${{ github.token }}" }
       - if: steps.due.outputs.due == 'yes'
         uses: actions/download-artifact@v4
