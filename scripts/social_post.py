@@ -26,8 +26,11 @@ def get(path, **q): q["access_token"] = T; return call("GET", f"{G}/{path}?" + u
 
 def ig_reel(item, path):
     ig = get(PAGE, fields="instagram_business_account")["instagram_business_account"]["id"]
-    c = call("POST", f"{G}/{ig}/media", data={"media_type": "REELS", "upload_type": "resumable", "caption": item["caption"],
-                                             "share_to_feed": "true", "thumb_offset": str(item.get("thumb_ms", 1200))})
+    d = {"media_type": "REELS", "upload_type": "resumable", "caption": item["caption"], "share_to_feed": "true", "thumb_offset": str(item.get("thumb_ms", 1200))}
+    if item.get("trial"):   # Instagram trial reel: shown to non-followers first, graduates to followers automatically if it performs
+        try: c = call("POST", f"{G}/{ig}/media", data={**d, "trial_params": json.dumps({"graduation_strategy": "SS_PERFORMANCE"})})
+        except RuntimeError as e: print("trial reel not accepted, posting as a normal reel:", e); item["trial"] = False; c = call("POST", f"{G}/{ig}/media", data=d)
+    else: c = call("POST", f"{G}/{ig}/media", data=d)
     cid, uri = c["id"], c["uri"]; n = os.path.getsize(path)
     up = call("POST", uri, raw=open(path, "rb").read(), headers={"Authorization": f"OAuth {T}", "offset": "0", "file_size": str(n)}, timeout=900)
     print("ig upload", up)
@@ -52,7 +55,11 @@ def ig_reel_url(item, path):
     subprocess.run(["gh", "release", "view", "media-public"], capture_output=True) .returncode or None
     up = subprocess.run(["gh", "release", "upload", "media-public", path, "--clobber"], capture_output=True, text=True); print("release upload", up.returncode, up.stderr[-200:])
     url = f"https://github.com/{repo}/releases/download/media-public/{name}"
-    c = call("POST", f"{G}/{ig}/media", data={"media_type": "REELS", "video_url": url, "caption": item["caption"], "share_to_feed": "true", "thumb_offset": str(item.get("thumb_ms", 1200))})
+    d = {"media_type": "REELS", "video_url": url, "caption": item["caption"], "share_to_feed": "true", "thumb_offset": str(item.get("thumb_ms", 1200))}
+    if item.get("trial"):
+        try: c = call("POST", f"{G}/{ig}/media", data={**d, "trial_params": json.dumps({"graduation_strategy": "SS_PERFORMANCE"})})
+        except RuntimeError as e: print("trial reel not accepted, posting as a normal reel:", e); item["trial"] = False; c = call("POST", f"{G}/{ig}/media", data=d)
+    else: c = call("POST", f"{G}/{ig}/media", data=d)
     cid = c["id"]
     for _ in range(80):
         st = get(cid, fields="status_code,status")
