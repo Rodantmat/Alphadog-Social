@@ -1,0 +1,109 @@
+{
+ "chapter": "zion1",
+ "items": [
+  {
+   "kind": "direct",
+   "name": "z1_nps_cyano_river_side",
+   "url": "https://www.nps.gov/zion/planyourvisit/images/070920_DOG_1.jpg",
+   "shows": "Cyanobacteria attached to the side of the river (Zion, 2020)",
+   "credit": "NPS Photo",
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "direct",
+   "name": "z1_nps_cyano_pearls",
+   "url": "https://www.nps.gov/common/uploads/image_group/zion/F42F471D-0534-365D-52E03F2A6B7908E0.jpg",
+   "shows": "Cyanobacteria on a rock near the water surface",
+   "credit": "NPS Photo",
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "direct",
+   "name": "z1_nps_cyano_mat",
+   "url": "https://www.nps.gov/common/uploads/image_group/zion/F47CB44F-DE44-D2D8-A7BED54AB3B63653.jpg",
+   "shows": "Cyanobacteria mat along the river's edge in Zion",
+   "credit": "NPS Photo",
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "direct",
+   "name": "z1_nps_cyano_rock",
+   "url": "https://www.nps.gov/common/uploads/image_group/zion/F1CB2584-D5A8-DE71-4101E817191A08FD.jpg",
+   "shows": "Cyanobacteria covering a rock on the river bottom",
+   "credit": "NPS Photo",
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "direct",
+   "name": "z1_nps_cyano_plants",
+   "url": "https://www.nps.gov/common/uploads/image_group/zion/F16687D0-C040-C981-CA0CC74DF1EB980E.jpg",
+   "shows": "Cyanobacteria on plants along the river edge",
+   "credit": "NPS Photo",
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "direct",
+   "name": "z1_nps_river_2019_a",
+   "url": "https://www.nps.gov/common/upload/imr/park/zion/B87AADED-AD7F-C08A-5F3048D8088F54BA/B87AADED-AD7F-C08A-5F3048D8088F54BA.jpg",
+   "shows": "Virgin River in Zion Canyon, March 2019 (before)",
+   "credit": "NPS Photo / Anne Winters",
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "direct",
+   "name": "z1_nps_river_2019_b",
+   "url": "https://www.nps.gov/common/upload/imr/park/zion/B87CE29D-0D75-8579-6BAEDA71E1722E00/B87CE29D-0D75-8579-6BAEDA71E1722E00.jpg",
+   "shows": "Virgin River in Zion Canyon, March 2019 (high water)",
+   "credit": "NPS Photo / Anne Winters",
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "direct",
+   "name": "z1_npg_angels_east_rim_1969",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/9de34922d8c64c1eae6113e2f3ef6a85/original.jpg",
+   "shows": "Angels Landing and the Virgin River from East Rim, 1969",
+   "credit": "Courtesy Zion National Park, Photographer Allen J. Malmquist, Museum Catalog Number ZION 15933",
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "direct",
+   "name": "z1_npg_angels_1969b",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/0ba9d05ac2f44cf0bfec58810b7d57c1/original.jpg",
+   "shows": "Angels Landing from East Rim, 1969",
+   "credit": "Courtesy Zion National Park, Photographer Allen J. Malmquist, Museum Catalog Number ZION 15933",
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "direct",
+   "name": "z1_npg_sinawava_1949",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/23b94f7b39e242b881562581c2538b5f/compressed.jpg",
+   "shows": "Visitors at the Temple of Sinawava wayside, 1949",
+   "credit": "Courtesy Zion National Park, Photographer Natt N. Dodge, Museum Catalog Number ZION 13429",
+   "license": "Public Domain (NPS, US Government work)"
+  },
+  {
+   "kind": "commons",
+   "name": "z1_commons_gk_gilbert",
+   "search": "Grove Karl Gilbert portrait",
+   "filter": "gilbert",
+   "max_n": 1,
+   "shows": "Grove Karl Gilbert, geologist (USGS)"
+  },
+  {
+   "kind": "commons",
+   "name": "z1_commons_wheeler_survey",
+   "search": "Wheeler Survey 1872 Utah photograph",
+   "filter": "wheeler|bell|o.sullivan",
+   "max_n": 3,
+   "shows": "Wheeler Survey photographs, 1870s"
+  },
+  {
+   "kind": "commons",
+   "name": "z1_commons_zion_1920s",
+   "search": "Zion National Park 1920s photograph",
+   "filter": "zion",
+   "max_n": 4,
+   "shows": "Zion in the 1920s (if PD)"
+  }
+ ]
+}
