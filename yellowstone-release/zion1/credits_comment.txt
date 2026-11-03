@@ -1,0 +1,34 @@
+Full credits for "Zion's Deadliest Day: The Flash Flood That Took Seven Canyoneers" (AlphaDog Studio, Zion Part 1 of 3). Thank you to the National Park Service and Zion National Park for making their photos public.
+
+OUR FOOTAGE & PHOTOS
+• Filmed and photographed by AlphaDog Studio in Zion National Park, November 2021 (the Narrows top-down, Big Spring, Mystery Falls, Angels Landing). All live-action footage is ours.
+
+ARCHIVAL & PARK PHOTOS
+• Virgin River in Zion Canyon, March 2019 (high water) — NPS Photo / Anne Winters — https://www.nps.gov/common/upload/imr/park/zion/B87CE29D-0D75-8579-6BAEDA71E1722E00/B87CE29D-0D75-8579-6BAEDA71E1722E00.jpg — Public Domain (NPS, US Government work)
+• Virgin River in Zion Canyon, March 2019 (before) — NPS Photo / Anne Winters — https://www.nps.gov/common/upload/imr/park/zion/B87AADED-AD7F-C08A-5F3048D8088F54BA/B87AADED-AD7F-C08A-5F3048D8088F54BA.jpg — Public Domain (NPS, US Government work)
+• Grove Karl Gilbert, geologist (USGS) — Unknown author Unknown author (1891) via Wikimedia Commons, Public domain — https://commons.wikimedia.org/wiki/File:Grove_Karl_Gilbert_(1843%E2%80%931918).jpg — Public domain
+• Wheeler Survey photographs, 1870s — William Bell (1872 date QS:P571,+1872-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain — https://commons.wikimedia.org/wiki/File:RAIN_SCULPTURE_OR_SPIRES,_SALT_CREEK_CANYON,_UTAH_-_NARA_-_524143.jpg — Public domain
+• Cyanobacteria attached to the side of the river (Zion, 2020) — NPS Photo — https://www.nps.gov/zion/planyourvisit/images/070920_DOG_1.jpg — Public Domain (NPS, US Government work)
+• Cyanobacteria mat along the river's edge in Zion — NPS Photo — https://www.nps.gov/common/uploads/image_group/zion/F47CB44F-DE44-D2D8-A7BED54AB3B63653.jpg — Public Domain (NPS, US Government work)
+• Cyanobacteria on a rock near the water surface — NPS Photo — https://www.nps.gov/common/uploads/image_group/zion/F42F471D-0534-365D-52E03F2A6B7908E0.jpg — Public Domain (NPS, US Government work)
+• Cyanobacteria covering a rock on the river bottom — NPS Photo — https://www.nps.gov/common/uploads/image_group/zion/F1CB2584-D5A8-DE71-4101E817191A08FD.jpg — Public Domain (NPS, US Government work)
+• Cyanobacteria on plants along the river edge — NPS Photo — https://www.nps.gov/common/uploads/image_group/zion/F16687D0-C040-C981-CA0CC74DF1EB980E.jpg — Public Domain (NPS, US Government work)
+• Angels Landing and the Virgin River from East Rim, 1969 — Courtesy Zion National Park, Photographer Allen J. Malmquist, Museum Catalog Number ZION 15933 — https://npgallery.nps.gov/ZION/GetAsset/9de34922d8c64c1eae6113e2f3ef6a85/original.jpg — Public Domain (NPS, US Government work)
+• Angels Landing from East Rim, 1969 — Courtesy Zion National Park, Photographer Allen J. Malmquist, Museum Catalog Number ZION 15933 — https://npgallery.nps.gov/ZION/GetAsset/0ba9d05ac2f44cf0bfec58810b7d57c1/original.jpg — Public Domain (NPS, US Government work)
+• Visitors at the Temple of Sinawava wayside, 1949 — Courtesy Zion National Park, Photographer Natt N. Dodge, Museum Catalog Number ZION 13429 — https://npgallery.nps.gov/ZION/GetAsset/23b94f7b39e242b881562581c2538b5f/compressed.jpg — Public Domain (NPS, US Government work)
+
+ILLUSTRATED SCENES (AI-ASSISTED)
+• Illustrated animation made for this video with open-weight models (Qwen-Image and Wan 2.2, Apache-2.0): the storm and the flash flood in a slot canyon, a storm far upstream, the Kolob Creek waterfall, ledge and helicopter rescue (generic figures, no likenesses), and the 1926 trail crew. These are illustrations, not real footage.
+
+NARRATION, MUSIC & SOUND
+• Narration: AI-generated voice (Kokoro TTS, Apache-2.0). Script researched and written by AlphaDog Studio.
+• Music: original. Sound effects: original (synthesized). Natural sound: recorded on location by AlphaDog Studio, November 2021.
+
+KEY SOURCES
+• NPS Zion, Flash floods: https://www.nps.gov/zion/planyourvisit/flash-flood.htm
+• NPS Zion, Toxic cyanobacteria: https://www.nps.gov/zion/planyourvisit/toxic-cyanobacteria-bloom-in-the-virgin-river-and-the-streams-of-zion-national-park.htm
+• NPS, Benthic harmful cyanobacteria: https://www.nps.gov/articles/000/benthic-harmful-cyanobacteria-bloom.htm
+• NPS Zion, Angels Landing permits: https://www.nps.gov/zion/planyourvisit/angels-landing-hiking-permits.htm
+• NPS Zion, The Narrows: https://www.nps.gov/zion/planyourvisit/thenarrows.htm
+• NPS Classified Structure Field Inventory (West Rim / Angels Landing trails), 1984: https://npgallery.nps.gov/NRHP/GetAsset/NRHP/86003707_text
+• NPS Visitor Use Statistics: https://irma.nps.gov/Stats/
