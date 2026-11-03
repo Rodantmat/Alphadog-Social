@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Comment sweep for Instagram + Facebook (AlphaDog Studio): read new comments on our recent posts and answer them in the owner's voice
+"""Comment sweep for Instagram + Facebook + YouTube (AlphaDog Studio): read new comments on our recent posts and answer them in the owner's voice
 (friendly, engaging, informative) with Gemini. State: content/comment_state.json (replied ids), log: content/comment_log.json.
 Env: FB_PAGE_TOKEN, FB_PAGE_ID, GEMINI_API_KEY; DRY_RUN=1 (print only), MAX_REPLIES (default 12), LOOKBACK_DAYS (default 6).
 Safety: never replies to our own comments, spam/abuse/link-drops/hot-button politics are skipped (logged), no invented facts, max N replies per run,
@@ -78,6 +78,25 @@ try:
             jobs.append(("facebook", v.get("description") or v.get("message") or "", c["id"], c.get("message") or "", (c.get("from") or {}).get("name", "someone"), answered or own, c.get("created_time", "")))
 except Exception as e: print("fb error", str(e)[:200])
 
+YTH = None
+try:   # YouTube: top-level comments on our videos (needs YT_* secrets with the youtube.force-ssl scope)
+    if os.environ.get("YT_REFRESH_TOKEN"):
+        tok = json.loads(urllib.request.urlopen(urllib.request.Request("https://oauth2.googleapis.com/token", data=urllib.parse.urlencode({
+            "client_id": os.environ["YT_CLIENT_ID"], "client_secret": os.environ["YT_CLIENT_SECRET"], "refresh_token": os.environ["YT_REFRESH_TOKEN"],
+            "grant_type": "refresh_token"}).encode())).read())
+        YTH = {"Authorization": "Bearer " + tok["access_token"]}
+        yg = lambda u: json.loads(urllib.request.urlopen(urllib.request.Request("https://www.googleapis.com/youtube/v3/" + u, headers=YTH), timeout=60).read())
+        me = yg("channels?part=id&mine=true")["items"][0]["id"]; vinfo = {}
+        for th in yg(f"commentThreads?part=snippet,replies&allThreadsRelatedToChannelId={me}&maxResults=100&order=time").get("items", []):
+            top = th["snippet"]["topLevelComment"]; sn = top["snippet"]; vid = th["snippet"].get("videoId")
+            if not recent(sn.get("publishedAt", "")) or not vid: continue
+            if vid not in vinfo:
+                it = yg(f"videos?part=snippet&id={vid}").get("items", []); vinfo[vid] = (it[0]["snippet"]["title"] + "\n" + it[0]["snippet"]["description"]) if it else ""
+            own = (sn.get("authorChannelId") or {}).get("value") == me
+            answered = any(((r["snippet"].get("authorChannelId") or {}).get("value") == me) for r in (th.get("replies") or {}).get("comments", []))
+            jobs.append(("youtube", vinfo[vid], top["id"], sn.get("textOriginal") or "", sn.get("authorDisplayName", "someone").lstrip("@"), answered or own, sn.get("publishedAt", "")))
+except Exception as e: print("yt error", str(e)[:200])
+
 print(f"found {len(jobs)} comments; replied so far in state: {len(state['replied'])}")
 sent = 0
 for plat, ptxt, cid, text, user, answered, ts in sorted(jobs, key=lambda j: j[6]):
@@ -90,7 +109,10 @@ for plat, ptxt, cid, text, user, answered, ts in sorted(jobs, key=lambda j: j[6]
     entry["reply"] = rep
     if DRY: print("DRY", plat, f"@{user}:", text[:80], "->", rep); entry["action"] = "dry"; log.append(entry); continue
     try:
-        post(f"{cid}/replies" if plat == "instagram" else f"{cid}/comments", message=rep)
+        if plat == "youtube":
+            urllib.request.urlopen(urllib.request.Request("https://www.googleapis.com/youtube/v3/comments?part=snippet", method="POST",
+                data=json.dumps({"snippet": {"parentId": cid, "textOriginal": rep}}).encode(), headers={**YTH, "Content-Type": "application/json"}), timeout=60).read()
+        else: post(f"{cid}/replies" if plat == "instagram" else f"{cid}/comments", message=rep)
         state["replied"][cid] = entry["t"]; sent += 1; print("REPLIED", plat, user, "->", rep)
     except Exception as e: entry["action"] = "error"; entry["reason"] = str(e)[:160]; print("ERROR", plat, str(e)[:160])
     log.append(entry); time.sleep(random.uniform(20, 55))
