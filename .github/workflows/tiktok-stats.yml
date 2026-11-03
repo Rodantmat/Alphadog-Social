@@ -1,0 +1,52 @@
+name: tiktok-stats
+# Read-only: public stats of the TikTok account (views, likes, comments, shares per video) via yt-dlp on the public profile,
+# plus whatever post metrics Buffer's API exposes. Nothing is changed on any account.
+on:
+  workflow_dispatch:
+    inputs:
+      handle: { default: "alphadogstudio" }
+permissions:
+  contents: read
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q -U yt-dlp curl-cffi
+      - name: Public profile via yt-dlp
+        env: { H: "${{ inputs.handle }}" }
+        run: |
+          set +e
+          yt-dlp --impersonate chrome -J --flat-playlist "https://www.tiktok.com/@$H" > flat.json 2> flat.err; echo "flat exit $?"; tail -3 flat.err
+          python3 - <<'PY'
+          import json, subprocess
+          try: d = json.load(open("flat.json"))
+          except Exception as e: print("no flat json", e); d = {"entries": []}
+          ents = d.get("entries") or []; print("videos listed:", len(ents))
+          tot = {"views": 0, "likes": 0, "comments": 0, "shares": 0}
+          for e in ents[:80]:
+              u = e.get("url") or e.get("webpage_url")
+              v = e if e.get("view_count") is not None else None
+              if v is None:
+                  r = subprocess.run(["yt-dlp", "--impersonate", "chrome", "-J", "--skip-download", u], capture_output=True, text=True)
+                  try: v = json.loads(r.stdout)
+                  except Exception: print("FAIL", u, r.stderr[-200:]); continue
+              row = {k: v.get(k) or 0 for k in ("view_count", "like_count", "comment_count", "repost_count")}
+              tot["views"] += row["view_count"]; tot["likes"] += row["like_count"]; tot["comments"] += row["comment_count"]; tot["shares"] += row["repost_count"]
+              ts = v.get("timestamp"); import datetime as dt
+              when = dt.datetime.utcfromtimestamp(ts).strftime("%Y-%m-%d %H:%M") if ts else "?"
+              print(f"TT {when} views={row['view_count']:>6} likes={row['like_count']:>4} comments={row['comment_count']:>3} shares={row['repost_count']:>3} dur={v.get('duration')} | {(v.get('title') or v.get('description') or '')[:60]}")
+          print("TT TOTAL", tot)
+          PY
+      - name: Buffer post metrics (if the API exposes them)
+        env: { BUFFER_API_KEY: "${{ secrets.BUFFER_API_KEY }}" }
+        run: |
+          set +e
+          python3 - <<'PY'
+          import sys; sys.path.insert(0, "scripts")
+          import buffer_post as B
+          for q in ['{ __type(name: "Post") { fields { name } } }', '{ __type(name: "PostStatistics") { fields { name } } }', '{ __type(name: "Query") { fields { name } } }']:
+              try: print(q[:40], B.gql(q))
+              except Exception as e: print("ERR", q[:40], str(e)[:300])
+          PY
