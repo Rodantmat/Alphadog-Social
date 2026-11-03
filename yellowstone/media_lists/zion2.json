@@ -1,0 +1,525 @@
+{
+ "chapter": "zion2",
+ "items": [
+  {
+   "kind": "direct",
+   "name": "z2_npg_cableworks_stereograph",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/9629886feda341298679ab7395b86f62/original.jpg",
+   "shows": "Stereograph 'Zion Cableworks' - William L. Crawford and children at the Cable Mountain draw works on the east rim (early 1900s, 'Views by W.L. Crawford')",
+   "credit": "Courtesy Zion National Park, Museum Catalog Number ZION 12422.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/ZION/AssetDetail/9629886feda341298679ab7395b86f62",
+   "use_for": "ANIM lumber gliding down the wire / Cable Mountain Draw Works"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_usgs_cable_lumber_wall_1910",
+   "url": "https://www.sciencebase.gov/catalog/file/get/5b4cf6f8e4b06a6dd17c58ba?name=anr00245.jpg",
+   "shows": "Sheer east wall of Zion Canyon, 1910 - a cable hangs from the cliff top, used to lower lumber from the plateau (Cable Mountain draw works)",
+   "credit": "U.S. Geological Survey, Denver Library Photographic Collection (R. Anderson Collection, anr00245)",
+   "license": "Public Domain (USGS: 'considered to be in the U.S. public domain')",
+   "page": "https://www.sciencebase.gov/catalog/item/5b4cf6f8e4b06a6dd17c58ba",
+   "use_for": "ANIM lumber gliding down the wire / Cable Mountain"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_cable_headworks_1963",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/97cb0990501b438698500d169ae761b8/original.jpg",
+   "shows": "Cable Mountain headworks and remains of the cable device, June 1963",
+   "credit": "Courtesy Zion National Park, Photographer Carl E. Jepson, Museum Catalog Number ZION 9188.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/ZION/AssetDetail/97cb0990501b438698500d169ae761b8",
+   "use_for": "Cable Mountain Draw Works"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_cable_headworks_rim_1963",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/9ca27f959f2543c186ade12528058e25/original.jpg",
+   "shows": "Cable Mountain headworks and remains of cable device on Cable Mountain (East Rim Trail), June 1963",
+   "credit": "Courtesy Zion National Park, Photographer Carl E. Jepson, Museum Catalog Number ZION 14698.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/ZION/AssetDetail/9ca27f959f2543c186ade12528058e25",
+   "use_for": "Cable Mountain Draw Works"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_cable_works_remnants",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/3eee2393b0cf41acbd7898fee40afa94/original.jpg",
+   "shows": "Remnants of the Cable Works at the top of Cable Mountain (undated)",
+   "credit": "Courtesy Zion National Park, Museum Catalog Number ZION 15933.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/ZION/AssetDetail/3eee2393b0cf41acbd7898fee40afa94",
+   "use_for": "Cable Mountain Draw Works / 'hold on to that name'"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_cable_mtn_east_rim_1963",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/5f92e45deb904b1ca6691b9dab306658/original.jpg",
+   "shows": "Cable Mountain and switchbacks on the East Rim Trail, June 1963",
+   "credit": "Courtesy Zion National Park, Photographer Carl E. Jepson, Museum Catalog Number ZION 9187.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/ZION/AssetDetail/5f92e45deb904b1ca6691b9dab306658",
+   "use_for": "Cable Mountain callback (2019 rockfall chapter) / East Rim Trail"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_organ_from_cable_mtn_1962",
+   "url": "https://npgallery.nps.gov/GetAsset/b0223d1383dd41ebbbcb38603a31fcaa/original.jpg",
+   "shows": "Weeping Rock area and the Organ seen from the top of Cable Mountain, July 1962",
+   "credit": "Courtesy Zion National Park, Photographer Frank R. Oberhansley, Museum Catalog Number ZION 8926.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/AssetDetail/b0223d1383dd41ebbbcb38603a31fcaa",
+   "use_for": "Cable Mountain ~3,000 ft above Weeping Rock (2019 rockfall)"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_lodge_rebuilding_1966",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/f2b37e4b0e7f4e7385862879ae566649/original.jpg",
+   "shows": "Rebuilding Zion Lodge after the fire of January 1966 (photo dated 21 March 1966)",
+   "credit": "Courtesy Zion National Park, Photographer Carl E. Jepson, Museum Catalog Number ZION 10118.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/ZION/AssetDetail/f2b37e4b0e7f4e7385862879ae566649",
+   "use_for": "ANIM workers raising a prefabricated building (108-day rebuild)"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_lodge_main_building_1975",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/3e0b8720b2814a1cb548e2f31081f64c/original.tif",
+   "shows": "Main building at Zion Lodge in 1975 - the post-1966 prefabricated replacement lodge (photographed for the 1975 EIS)",
+   "credit": "Courtesy Zion National Park, Photographer Jasper L. Crawford, Museum Catalog Number ZION 14971.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/ZION/AssetDetail/3e0b8720b2814a1cb548e2f31081f64c",
+   "use_for": "Rebuilt prefab lodge (before 1990 restoration)"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_lodge_rededication_1990_a",
+   "url": "https://npgallery.nps.gov/GetAsset/42d3351f687645579c1cfd6a718d015e/original.jpg",
+   "shows": "Zion Lodge rededication ceremony, November 1990 (after restoration toward Underwood's design)",
+   "credit": "Courtesy Zion National Park, Museum Catalog Number ZION 15933.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/AssetDetail/42d3351f687645579c1cfd6a718d015e",
+   "use_for": "1990 restoration of the lodge"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_lodge_rededication_1990_b",
+   "url": "https://npgallery.nps.gov/GetAsset/7d5625d93a9c45de9e161cb5b23a289c/original.jpg",
+   "shows": "Zion Lodge rededication ceremony, November 1990 (second view)",
+   "credit": "Courtesy Zion National Park, Museum Catalog Number ZION 15933.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/AssetDetail/7d5625d93a9c45de9e161cb5b23a289c",
+   "use_for": "1990 restoration of the lodge"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_utah_parks_bus_1950",
+   "url": "https://npgallery.nps.gov/GetAsset/37494A1D-1DD8-B71B-0BC296BCADBF6E0F/original.jpg",
+   "shows": "Utah Parks Company touring bus, c. 1950 (NPGallery title 'UtahParkBus1950'; low-res 620x465)",
+   "credit": "National Park Service (NPGallery)",
+   "license": "Public Domain (NPGallery constraint: 'Public domain')",
+   "page": "https://npgallery.nps.gov/AssetDetail/37494A1D-1DD8-B71B-0BC296BCADBF6E0F",
+   "use_for": "Utah Parks Company / Union Pacific era (low-res; use small or with motion)"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_canyon_floor_patriarchs_1928",
+   "url": "https://npgallery.nps.gov/GetAsset/0c47703dc6fa430ca2471e31b7a8642f/original.tif",
+   "shows": "The Virgin River and the Court of the Patriarchs from the canyon floor, 1928",
+   "credit": "Courtesy Zion National Park, Photographer Eivind T. Scoyen, Museum Catalog Number ZION 13424.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/AssetDetail/0c47703dc6fa430ca2471e31b7a8642f",
+   "use_for": "Old lakebed / canyon floor in the lodge era (1917-1925 setting)"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_scenic_drive_1941",
+   "url": "https://npgallery.nps.gov/GetAsset/c77dcb8529fa442faa4a892820b81d1b/original.jpg",
+   "shows": "Zion Canyon scenic drive, 1941",
+   "credit": "Courtesy Zion National Park, Museum Catalog Number ZION 14869.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/AssetDetail/c77dcb8529fa442faa4a892820b81d1b",
+   "use_for": "Canyon road on the old lakebed / road through the slide area"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_road_construction_boulder",
+   "url": "https://npgallery.nps.gov/GetAsset/5eac1c4afc06439cb1f719015e4ffc45/original.jpg",
+   "shows": "Road construction looking toward Red Point on the Zion Canyon road; large boulder above the road in background (undated, early road era)",
+   "credit": "Courtesy Zion National Park, Photographer Parker, Museum Catalog Number ZION 13659.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/AssetDetail/5eac1c4afc06439cb1f719015e4ffc45",
+   "use_for": "1917-1920s canyon road / ANIM dirt road"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_sentinel_slide_color_1",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/56c4b42c81e047f6b0858e28fd4bdb29/original.jpg",
+   "shows": "Color photo of the Sentinel rock slide (ZION archive series 107.06, undated)",
+   "credit": "Courtesy Zion National Park, Museum Catalog Number ZION 15933.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/ZION/AssetDetail/56c4b42c81e047f6b0858e28fd4bdb29",
+   "use_for": "Sentinel slide / 1995 slide chapter"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_sentinel_slide_color_2",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/b57129be5a6340ea8e830a46cf845c97/original.jpg",
+   "shows": "Color photo of the Sentinel rock slide (series 107.06, undated)",
+   "credit": "Courtesy Zion National Park, Museum Catalog Number ZION 15933.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/ZION/AssetDetail/b57129be5a6340ea8e830a46cf845c97",
+   "use_for": "Sentinel slide / 1995 slide chapter"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_sentinel_slide_color_3",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/54f176dfec7f484f943da51a9f927774/original.jpg",
+   "shows": "Color photo of the Sentinel rock slide (series 107.06, undated)",
+   "credit": "Courtesy Zion National Park, Museum Catalog Number ZION 15933.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/ZION/AssetDetail/54f176dfec7f484f943da51a9f927774",
+   "use_for": "Sentinel slide / 1995 slide chapter"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_sentinel_slide_color_5",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/15ac2476be74459b931594691435a6ab/original.jpg",
+   "shows": "Color photo of the Sentinel rock slide (series 107.06, undated)",
+   "credit": "Courtesy Zion National Park, Museum Catalog Number ZION 15933.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/ZION/AssetDetail/15ac2476be74459b931594691435a6ab",
+   "use_for": "Sentinel slide / 1995 slide chapter"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_slide_area_wall_1942",
+   "url": "https://npgallery.nps.gov/GetAsset/3a590d2e5de043d681ad3edd555e736f/original.jpg",
+   "shows": "Virgin River and the rock retaining wall alongside the road at the slide area in Zion Canyon, 29 Jan 1942 (after the May 1941 slide that blocked river and road)",
+   "credit": "Courtesy Zion National Park, Photographer Russell K. Grater, Museum Catalog Number ZION 13290.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/AssetDetail/3a590d2e5de043d681ad3edd555e736f",
+   "use_for": "Sentinel slide reactivations / river vs. road at the slide"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_flood_damage_wall_1963",
+   "url": "https://npgallery.nps.gov/GetAsset/0ed98710ed824bb990bf059c123f4c03/original.jpg",
+   "shows": "Flood damage to rock wall on the Virgin River, a quarter mile south of Court of the Patriarchs, 20 Oct 1963",
+   "credit": "Courtesy Zion National Park, Photographer Carl E. Jepson, Museum Catalog Number ZION 8603.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/AssetDetail/0ed98710ed824bb990bf059c123f4c03",
+   "use_for": "ANIM muddy floodwater tearing at a road edge (1998 flood stand-in)"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_storm_damage_road_1932",
+   "url": "https://npgallery.nps.gov/GetAsset/4e97d6726cf5490fb5b2f5fdc3c82ec2/original.jpg",
+   "shows": "Storm damage: mud and debris on the highway, workers clearing the road, 1932",
+   "credit": "Courtesy Zion National Park, Museum Catalog Number ZION 7211.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/AssetDetail/4e97d6726cf5490fb5b2f5fdc3c82ec2",
+   "use_for": "Road destroyed / crews clearing (1995 detour, 1998 flood stand-in)"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_road_rockslide_1979_a",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/93bccd9cdacc464ab6efdfaee7443e7e/original.jpg",
+   "shows": "Color photo of a rock slide along the road, 1979",
+   "credit": "Courtesy Zion National Park, Museum Catalog Number ZION 15933.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/ZION/AssetDetail/93bccd9cdacc464ab6efdfaee7443e7e",
+   "use_for": "Slides hitting the canyon road"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_road_rockslide_1979_b",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/ecda2fcfcb6c407b9d1d5128e986b643/original.jpg",
+   "shows": "Color photo of a rock slide along the road, 1979 (another view)",
+   "credit": "Courtesy Zion National Park, Museum Catalog Number ZION 15933.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/ZION/AssetDetail/ecda2fcfcb6c407b9d1d5128e986b643",
+   "use_for": "Slides hitting the canyon road"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_nps_weeping_rock_rockfall_2019",
+   "url": "https://www.nps.gov/zion/learn/news/images/WpRk-rockfall2_900.jpg",
+   "shows": "Debris from the 24 Aug 2019 Cable Mountain rockfall covering part of the East Rim Trail near the Weeping Rock shuttle stop (900 px wide)",
+   "credit": "NPS photo",
+   "license": "Public Domain (NPS, US Government work)",
+   "page": "https://home.nps.gov/zion/learn/news/substantial-rockfall-near-weeping-rock-shuttle-stop.htm",
+   "use_for": "PD - NPS photo of the 2019 Cable Mountain rockfall and debris at Weeping Rock"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_nps_cable_mtn_before_2015",
+   "url": "https://www.nps.gov/common/uploads/imr/park/zion/5935EA44-B447-9FBC-5FE5A51FF49DB63F/5935EA44-B447-9FBC-5FE5A51FF49DB63F.jpg",
+   "shows": "Cable Mountain in 2015, prior to the rockfalls",
+   "credit": "NPS",
+   "license": "Public Domain (NPS, US Government work)",
+   "page": "https://www.nps.gov/zion/learn/nature/rockfall-in-zion-national-park.htm",
+   "use_for": "Cable Mountain before/after (2019 & 2023 falls)"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_nps_cable_mtn_rockfall_2023",
+   "url": "https://www.nps.gov/common/uploads/imr/park/zion/58DB1C0D-9597-A7C8-00D6EFD7943D983A/58DB1C0D-9597-A7C8-00D6EFD7943D983A.jpg",
+   "shows": "Dust and debris on Cable Mountain after the November 2023 rockfall; scar visible as white patch top right",
+   "credit": "NPS / Ally O'Rullian",
+   "license": "Public Domain (NPS, US Government work)",
+   "page": "https://www.nps.gov/zion/learn/nature/rockfall-in-zion-national-park.htm",
+   "use_for": "'A year later, another slab fell near the same spot' (2023)"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_nps_weeping_rock_dust_2023",
+   "url": "https://www.nps.gov/zion/learn/news/images/Weeping-rock-rockfall_11142023_7.jpg",
+   "shows": "Weeping Rock parking area covered in white dust after the rockfall on the cliff above, 14 Nov 2023",
+   "credit": "NPS / Ally O'Rullian",
+   "license": "Public Domain (NPS, US Government work)",
+   "page": "https://nps.gov/zion/learn/news/rockfall-near-weeping-rock-temporarily-stops-traffic-on-zion-canyon-scenic-drive.htm",
+   "use_for": "2023 second slab at Weeping Rock / Bradybaugh quote"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_nps_scenic_drive_rockfall_2023",
+   "url": "https://www.nps.gov/zion/learn/news/images/Rockfall-on-Zion-Canyon-Scenic-Drive-March-22-2023.jpg",
+   "shows": "Large rock in the road beside a hole, road flares at night - rockfall damage on Zion Canyon Scenic Drive, late 21 Mar 2023",
+   "credit": "NPS / Sam Harvey",
+   "license": "Public Domain (NPS, US Government work)",
+   "page": "https://www.nps.gov/zion/learn/news/zion-national-park-maintenance-staff-respond-to-road-damage.htm",
+   "use_for": "A canyon still falling - 2023 Scenic Drive damage"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_nps_scenic_drive_repair_2023",
+   "url": "https://www.nps.gov/zion/learn/news/images/RockfallNearCanyonJunction_03222022-13.jpg",
+   "shows": "NPS and utility employees repairing rockfall damage on Zion Canyon Scenic Drive, March 2023",
+   "credit": "NPS / Ally O'Rullian",
+   "license": "Public Domain (NPS, US Government work)",
+   "page": "https://www.nps.gov/zion/learn/news/zion-national-park-maintenance-staff-respond-to-road-damage.htm",
+   "use_for": "2023 Scenic Drive damage / crews at work"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_nps_kolob_road_collapse_2023",
+   "url": "https://www.nps.gov/zion/learn/news/images/Kolob-Canyons-Road-Zion-National-park.png",
+   "shows": "Engineers and maintenance staff measuring the collapsed section of Kolob Canyons Road, March 2023",
+   "credit": "NPS / Juan Galindo",
+   "license": "Public Domain (NPS, US Government work)",
+   "page": "https://www.nps.gov/zion/learn/news/zion-national-park-maintenance-staff-respond-to-road-damage.htm",
+   "use_for": "Kolob Canyons road collapse 2023 / landslide damage"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_nps_kolob_road_damage_2023",
+   "url": "https://www.nps.gov/zion/learn/news/images/KolobCanyonsRoadDamage_07142023_2.jpg",
+   "shows": "Large landslide hole cutting into Kolob Canyons Road, sandstone cliffs behind, July 2023",
+   "credit": "NPS Photo / Brett Loitz",
+   "license": "Public Domain (NPS, US Government work)",
+   "page": "https://www.nps.gov/zion/learn/news/kolob-canyons-road-construction.htm",
+   "use_for": "Kolob Canyons road collapse 2023"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_nps_emerald_pools_rockfall_2023",
+   "url": "https://www.nps.gov/zion/learn/nature/images/Rockfall-at-Lower-Emerald-Pools20230725_57.jpg",
+   "shows": "Zion maintenance worker drilling a fallen rock at Lower Emerald Pools, 25 Jul 2023",
+   "credit": "NPS / Ally O'Rullian",
+   "license": "Public Domain (NPS, US Government work)",
+   "page": "https://www.nps.gov/zion/learn/nature/rockfall-in-zion-national-park.htm",
+   "use_for": "'Rocks fall, frequently' - rockfall debris"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_nps_historic_rockfall_dust",
+   "url": "https://www.nps.gov/zion/learn/nature/images/old-rockfall.JPG",
+   "shows": "Black-and-white photo of a dust cloud from a historic rockfall in Zion (undated)",
+   "credit": "NPS",
+   "license": "Public Domain (NPS, US Government work)",
+   "page": "https://www.nps.gov/zion/learn/nature/rockfall-in-zion-national-park.htm",
+   "use_for": "Rockfall has always been part of Zion / ANIM collapse dust reference"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_nps_switchback_rockfall",
+   "url": "https://www.nps.gov/zion/learn/nature/images/Switchback-Rockfall_sharpen.jpg",
+   "shows": "Rockfall on trail switchbacks in Zion",
+   "credit": "NPS/Mike Large",
+   "license": "Public Domain (NPS, US Government work)",
+   "page": "https://www.nps.gov/zion/learn/nature/geology.htm",
+   "use_for": "Rockfall debris on trails"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_rockfall_residence_1969",
+   "url": "https://npgallery.nps.gov/GetAsset/61200de380c944078453e34e85c145dd/original.tif",
+   "shows": "Rock fall behind Chief Ranger Fred Brueck's residence, 29 Oct 1969",
+   "credit": "Courtesy Zion National Park, Photographer Dale L. Smith, Museum Catalog Number ZION 8565.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/AssetDetail/61200de380c944078453e34e85c145dd",
+   "use_for": "Historic rockfalls (late 1960s)"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_gateway_narrows_rockslide",
+   "url": "https://npgallery.nps.gov/GetAsset/f0daf2b2bb4e44a39dbb3c4d09fabf00/original.jpg",
+   "shows": "B&W photo of a rock slide at the gateway to the Narrows (end of Riverside Walk), undated - possibly the 1 Aug 1968 fall but date not stated",
+   "credit": "Courtesy Zion National Park, Museum Catalog Number ZION 15933.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/AssetDetail/f0daf2b2bb4e44a39dbb3c4d09fabf00",
+   "use_for": "1968 rockfall at the end of the trail to the Narrows"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_narrows_trail_rockslide",
+   "url": "https://npgallery.nps.gov/GetAsset/a50310249ef147d18761957eef6d310f/original.jpg",
+   "shows": "B&W photo of a rock slide along the Narrows Trail (Riverside Walk), undated",
+   "credit": "Courtesy Zion National Park, Museum Catalog Number ZION 15933.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/AssetDetail/a50310249ef147d18761957eef6d310f",
+   "use_for": "1968 rockfall at the end of the trail to the Narrows"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_rubble_birch_creek",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/253641eb477f4bd496e006c8c8c813b2/original.jpg",
+   "shows": "Rubble pile at the base of the canyon wall after a rock slide, Birch Creek (near Zion Lodge), undated",
+   "credit": "Courtesy Zion National Park, Museum Catalog Number ZION 15933.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/ZION/AssetDetail/253641eb477f4bd496e006c8c8c813b2",
+   "use_for": "Rockfall debris on the canyon floor"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_kolob_rockslide_hist",
+   "url": "https://npgallery.nps.gov/GetAsset/c9e12000efe141e39bca3e62b7b37ede/original.jpg",
+   "shows": "B&W photo of rock slides in Kolob Canyons, undated",
+   "credit": "Courtesy Zion National Park, Museum Catalog Number ZION 15933.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/AssetDetail/c9e12000efe141e39bca3e62b7b37ede",
+   "use_for": "Kolob Canyons landslides (historic)"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_weeping_rock_1952",
+   "url": "https://npgallery.nps.gov/GetAsset/aa765393b2174f739ca5a643668b5193/original.jpg",
+   "shows": "Waterfalls at Weeping Rock, 16 Apr 1952",
+   "credit": "Courtesy Zion National Park, Photographer Glenn Haynes, Museum Catalog Number ZION 9197.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/AssetDetail/aa765393b2174f739ca5a643668b5193",
+   "use_for": "Weeping Rock before the 2019/2023 falls"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_usgs_down_canyon_1925",
+   "url": "https://www.sciencebase.gov/catalog/file/get/51dc1e21e4b0f81004b78569?name=bwh00118.jpg",
+   "shows": "View down Zion Canyon from just below the Narrows, 10 June 1925",
+   "credit": "U.S. Geological Survey, Denver Library Photographic Collection (W.H. Bradley Collection, bwh00118)",
+   "license": "Public Domain (USGS: 'considered to be in the U.S. public domain')",
+   "page": "https://www.sciencebase.gov/catalog/item/51dc1e21e4b0f81004b78569",
+   "use_for": "Zion Canyon floor in the year the lodge opened"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_usgs_narrows_1910",
+   "url": "https://www.sciencebase.gov/catalog/file/get/5b4d0182e4b06a6dd17c58f1?name=anr00251.jpg",
+   "shows": "Narrows of Zion Canyon about 11 miles above the Virgin River, looking northeast, 1910",
+   "credit": "U.S. Geological Survey, Denver Library Photographic Collection (R. Anderson Collection, anr00251)",
+   "license": "Public Domain (USGS: 'considered to be in the U.S. public domain')",
+   "page": "https://www.sciencebase.gov/catalog/item/5b4d0182e4b06a6dd17c58f1",
+   "use_for": "Virgin River / Narrows historic"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_usgs_temple_of_aeolus_1870s",
+   "url": "https://www.sciencebase.gov/catalog/file/get/51dc86c1e4b097e4d3839584?name=hjk00617.jpg",
+   "shows": "Stereo view 'Temple of Aeolus, Virgin River, North Fork, Little Zion' by John K. Hillers, Powell Survey, c. 1872",
+   "credit": "U.S. Geological Survey, Denver Library Photographic Collection (J.K. Hillers, hjk00617)",
+   "license": "Public Domain (USGS: 'considered to be in the U.S. public domain')",
+   "page": "https://www.sciencebase.gov/catalog/item/51dc86c1e4b097e4d3839584",
+   "use_for": "Earliest photos of the canyon and river"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_sinawava_area_1963",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/f726dacae8d048e1bca873e541424436/original.jpg",
+   "shows": "Temple of Sinawava area, 23 Sep 1963",
+   "credit": "Courtesy Zion National Park, Photographer Roland H. Wauer, Museum Catalog Number ZION 8855.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/ZION/AssetDetail/f726dacae8d048e1bca873e541424436",
+   "use_for": "Temple of Sinawava / end of the canyon road (1968 rockfall location)"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_deer_south_of_lodge_1959",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/1a4da021d9664e44856edfac0f78ffc2/original.tif",
+   "shows": "A buck and his harem of mule deer one mile south of Zion Lodge, 30 Nov 1959",
+   "credit": "Courtesy Zion National Park, Photographer Charles H. McCurdy, Museum Catalog Number ZION 8848.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/ZION/AssetDetail/1a4da021d9664e44856edfac0f78ffc2",
+   "use_for": "Mule deer on the old lakebed / deer boom"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_deer_visitor_center_1966",
+   "url": "https://npgallery.nps.gov/GetAsset/05076077cf2d467d8d30d51e27b579f5/original.tif",
+   "shows": "Mule deer browsing near the Visitor Center lobby, February 1966",
+   "credit": "Courtesy Zion National Park, Photographer Carl E. Jepson, Museum Catalog Number ZION 8395.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/AssetDetail/05076077cf2d467d8d30d51e27b579f5",
+   "use_for": "Deer in Zion Canyon / browsing pressure"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_deer_lion_trap_1950",
+   "url": "https://npgallery.nps.gov/ZION/GetAsset/6f0da96f09774b7f99bdead1b4e356c6/original.jpg",
+   "shows": "Deer caught in a mountain-lion trap set by Utah State Trapper; J.L. Crawford, ranger in charge, August 1950",
+   "credit": "Courtesy Zion National Park, Photographer Jasper L. Crawford, Museum Catalog Number ZION 7127.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/ZION/AssetDetail/6f0da96f09774b7f99bdead1b4e356c6",
+   "use_for": "Cougar removal era / predators and deer"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_beaver_cottonwoods_1957",
+   "url": "https://npgallery.nps.gov/GetAsset/2e748fdef2aa471ca0b5c31d7856056f/original.jpg",
+   "shows": "Fremont cottonwoods along the Virgin River near Weeping Rock, southeast of Angels Landing, with beaver work, December 1957",
+   "credit": "Courtesy Zion National Park, Photographer Carl E. Jepson, Museum Catalog Number ZION 8837.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/AssetDetail/2e748fdef2aa471ca0b5c31d7856056f",
+   "use_for": "Cottonwoods on the Virgin River"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_npg_beaver_cut_cottonwoods",
+   "url": "https://npgallery.nps.gov/GetAsset/d86d8ffab21747a18f6d428a3132e2fa/original.jpg",
+   "shows": "Beaver-cut Fremont cottonwoods (museum exhibit photo 30-P-3), undated",
+   "credit": "Courtesy Zion National Park, Museum Catalog Number ZION 14905.",
+   "license": "Public Domain (NPGallery: 'This digital asset is in the public domain'; credit line required)",
+   "page": "https://npgallery.nps.gov/AssetDetail/d86d8ffab21747a18f6d428a3132e2fa",
+   "use_for": "Cottonwoods / riverbank change"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_nps_mountain_lion_wash",
+   "url": "https://www.nps.gov/zion/learn/nature/images/mtnlion_ZionNPSfb_400w.jpg",
+   "shows": "Mountain lion walking in a dry desert wash, motion-activated camera in Zion wilderness (LOW-RES ~400 px)",
+   "credit": "NPS photo",
+   "license": "Public Domain (NPS, US Government work)",
+   "page": "https://www.nps.gov/zion/learn/nature/mountain-lion.htm",
+   "use_for": "Cougars in Zion (small inset only)"
+  },
+  {
+   "kind": "direct",
+   "name": "z2_nps_mountain_lion_night",
+   "url": "https://www.nps.gov/zion/learn/nature/images/Mountain-Lion_ZionFB_350w.jpg",
+   "shows": "Mountain lion triggering a motion-activated camera at night in Zion (LOW-RES ~350 px)",
+   "credit": "NPS photo",
+   "license": "Public Domain (NPS, US Government work)",
+   "page": "https://www.nps.gov/zion/learn/nature/mountain-lion.htm",
+   "use_for": "Cougars in Zion (small inset only)"
+  }
+ ]
+}
