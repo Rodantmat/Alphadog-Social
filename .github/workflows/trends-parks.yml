@@ -1,0 +1,47 @@
+name: trends-parks
+# Read-only: Google Trends 5-year monthly interest (US) for national parks, to order the next parks and time releases
+# 4-8 weeks before each park's search peak. Writes content/metrics/trends_parks.json.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "41 14 1 * *"     # monthly refresh
+permissions:
+  contents: write
+jobs:
+  trends:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q pytrends "urllib3<2"
+      - name: Pull trends
+        run: |
+          python3 - <<'PY'
+          import json, time, os
+          from pytrends.request import TrendReq
+          parks = ["Zion National Park", "Grand Canyon", "Yosemite", "Glacier National Park", "Arches National Park", "Great Smoky Mountains",
+                   "Death Valley", "Joshua Tree", "Bryce Canyon", "Rocky Mountain National Park", "Grand Teton", "Acadia National Park",
+                   "Olympic National Park", "Sequoia National Park", "Mesa Verde", "Everglades", "Mount Rainier", "Canyonlands", "Big Bend", "Yellowstone"]
+          pt = TrendReq(hl="en-US", tz=480, retries=3, backoff_factor=2); out = {}
+          anchor = "Yellowstone"
+          for i in range(0, len(parks), 4):
+              grp = [p for p in parks[i:i + 4] if p != anchor] + [anchor]
+              for attempt in range(4):
+                  try:
+                      pt.build_payload(grp, timeframe="today 5-y", geo="US"); df = pt.interest_over_time(); break
+                  except Exception as e:
+                      print("retry", grp, e); time.sleep(30 * (attempt + 1)); df = None
+              if df is None or df.empty: continue
+              m = df.drop(columns=["isPartial"], errors="ignore").groupby(df.index.month).mean()
+              for p in grp:
+                  rel = (m[p] / max(m[anchor].mean(), 1e-6)).round(3).tolist()        # monthly profile, scaled to Yellowstone's mean
+                  out[p] = {"monthly_vs_yellowstone": rel, "peak_month": int(m[p].idxmax()), "mean_vs_yellowstone": round(float(m[p].mean() / max(m[anchor].mean(), 1e-6)), 3)}
+              time.sleep(20)
+          os.makedirs("content/metrics", exist_ok=True); json.dump(out, open("content/metrics/trends_parks.json", "w"), indent=1)
+          for p, v in sorted(out.items(), key=lambda kv: -kv[1]["mean_vs_yellowstone"]): print(f"{p:32} mean {v['mean_vs_yellowstone']:.2f}  peak month {v['peak_month']}")
+          PY
+      - name: Commit
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add content/metrics/trends_parks.json && git commit -qm "trends: national parks seasonality" || exit 0
+          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
