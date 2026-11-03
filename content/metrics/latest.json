@@ -1,5 +1,5 @@
 {
- "at": "2026-11-03T06:43:19Z",
+ "at": "2026-11-03T06:44:14Z",
  "youtube": {
   "channel": {
    "viewCount": "1870",
@@ -54,7 +54,7 @@
     "published": "2026-11-02T01:00:09Z",
     "privacy": "public",
     "duration": "PT44S",
-    "views": 128,
+    "views": 130,
     "likes": 5,
     "comments": 1
    },
@@ -104,7 +104,7 @@
     "published": "2026-11-01T02:30:31Z",
     "privacy": "public",
     "duration": "PT28S",
-    "views": 558,
+    "views": 559,
     "likes": 9,
     "comments": 1
    },
@@ -340,7 +340,7 @@
     "saved": 0,
     "shares": 0,
     "total_interactions": 2,
-    "ig_reels_avg_watch_time": 6817
+    "ig_reels_avg_watch_time": 7116
    },
    {
     "id": "18341429083257129",
@@ -349,7 +349,7 @@
     "likes": 35,
     "comments": 1,
     "views": 1697,
-    "reach": 1503,
+    "reach": 1505,
     "saved": 6,
     "shares": 0,
     "total_interactions": 44,
@@ -379,7 +379,7 @@
     "saved": 0,
     "shares": 1,
     "total_interactions": 9,
-    "ig_reels_avg_watch_time": 10508
+    "ig_reels_avg_watch_time": 10472
    },
    {
     "id": "18604683067064648",
@@ -832,223 +832,334 @@
     "id": "1149138364129293",
     "at": "2026-11-03T04:13:55+0000",
     "text": "August 17, 1886. Captain Moses Harris rode into Mammoth with fifty men of the Fi",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 0,
+    "blue_reels_play_count": 0,
+    "post_video_avg_time_watched": 0,
+    "post_video_followers": 0
    },
    {
     "id": "1867454974408298",
     "at": "2026-11-02T18:15:43+0000",
     "text": "In one winter hunters killed some 3,000 elk in and around early Yellowstone, jus",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 0,
+    "blue_reels_play_count": 0,
+    "post_video_avg_time_watched": 0,
+    "post_video_followers": 0
    },
    {
     "id": "2308538393414931",
     "at": "2026-11-02T01:06:44+0000",
     "text": "In 1871 a photographer and a painter went to Yellowstone with a government surve",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 18348,
+    "post_video_followers": 0
    },
    {
     "id": "1140681951745773",
     "at": "2026-11-01T20:22:12+0000",
     "text": "March 1894. An Army scout follows snowshoe tracks through Pelican Valley and fin",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 0,
+    "blue_reels_play_count": 0,
+    "post_video_avg_time_watched": 0,
+    "post_video_followers": 0
    },
    {
     "id": "1483511650288711",
     "at": "2026-10-31T22:44:38+0000",
     "text": "Two 2025 studies in Nature show the magma under Yellowstone is only about 9 to 1",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 15244,
+    "post_video_followers": 0
    },
    {
     "id": "1164334449452804",
     "at": "2026-10-31T19:31:36+0000",
     "text": "Steamboat, the tallest active geyser in the world, is \"entirely unpredictable.\" ",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 2599,
+    "post_video_followers": 0
    },
    {
     "id": "1001930895526390",
     "at": "2026-10-31T19:30:23+0000",
     "text": "Yellowstone's most likely \"eruption\" is steam, not lava. Clogged underground pip",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 1568,
+    "post_video_followers": 0
    },
    {
     "id": "1615420762918568",
     "at": "2026-10-31T04:00:07+0000",
     "text": "By 1902 only 23 wild bison remained in Yellowstone, the last wild bison in North",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 2,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 41815,
+    "post_video_followers": 0
    },
    {
     "id": "1172408145140494",
     "at": "2026-10-31T02:15:15+0000",
     "text": "A bacterium from a Yellowstone hot spring gave science the enzyme behind PCR, th",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 3784,
+    "post_video_followers": 0
    },
    {
     "id": "1730347788060397",
     "at": "2026-10-30T22:47:07+0000",
     "text": "August 17, 1959. A magnitude 7.3 earthquake strikes just west of Yellowstone. By",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 4,
+    "blue_reels_play_count": 2,
+    "post_video_avg_time_watched": 10151,
+    "post_video_followers": 0
    },
    {
     "id": "1453559290219735",
     "at": "2026-10-30T20:24:45+0000",
     "text": "Is Yellowstone \"overdue\" for a super-eruption? The USGS says plainly: no. The fa",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 26018,
+    "post_video_followers": 0
    },
    {
     "id": "2549929715474661",
     "at": "2026-10-30T19:22:07+0000",
     "text": "July 23, 2024. The ground at Biscuit Basin lets go. Steam, mud and rock blast 60",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 11502,
+    "post_video_followers": 0
    },
    {
     "id": "2370162673746278",
     "at": "2026-10-30T01:17:14+0000",
     "text": "1861. A 12-year-old boy is kidnapped in Arizona, and the Army blames Cochise, th",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 2,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 3605,
+    "post_video_followers": 0
    },
    {
     "id": "1617495313446017",
     "at": "2026-10-29T01:56:13+0000",
     "text": "1886. The Army loaded nearly every Chiricahua Apache onto prison trains, even th",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 2,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 6345,
+    "post_video_followers": 0
    },
    {
     "id": "1367441375278212",
     "at": "2026-10-27T23:34:04+0000",
     "text": "America just got its 64th national park, and most people have never heard of it.",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 5,
+    "blue_reels_play_count": 3,
+    "post_video_avg_time_watched": 13605,
+    "post_video_followers": 0
    },
    {
     "id": "1464836312261086",
     "at": "2026-10-26T19:07:45+0000",
     "text": "In 1882, a man was found dead under an oak tree in Arizona. Revolver in his hand",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 7,
+    "blue_reels_play_count": 4,
+    "post_video_avg_time_watched": 8443,
+    "post_video_followers": 0
    },
    {
     "id": "1657304688068122",
     "at": "2023-03-09T20:45:04+0000",
     "text": "🔐 Ribbon Falls is a hard to get to amazing #Waterfall thousands of people #Hike ",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 1453,
+    "blue_reels_play_count": 1453,
+    "post_video_avg_time_watched": 8077,
+    "post_video_followers": 0
    },
    {
     "id": "1222885954948926",
     "at": "2022-08-27T15:39:01+0000",
     "text": "Each place has its beauty, but the solitude and peace this landscape brings is j",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 272,
+    "blue_reels_play_count": 272,
+    "post_video_avg_time_watched": 6681,
+    "post_video_followers": 0
    },
    {
     "id": "482234329939385",
     "at": "2022-08-19T19:22:14+0000",
     "text": "🔐 This place is a super #SecretSpot , I have to #TubaCity few times before and I",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 5404,
+    "blue_reels_play_count": 5404,
+    "post_video_avg_time_watched": 14585,
+    "post_video_followers": 0
    },
    {
     "id": "1038577240159889",
     "at": "2022-08-16T17:58:02+0000",
     "text": "🔒#BuckskinGulch is not a super #SecretSpot anymore, but depending on the time of",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 410,
+    "blue_reels_play_count": 410,
+    "post_video_avg_time_watched": 14477,
+    "post_video_followers": 0
    },
    {
     "id": "591934815911247",
     "at": "2022-08-14T00:02:03+0000",
     "text": "🔓#AntelopeCanyon is not a #SecretSpot anymore, the #Secrets are on these walls, ",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 1327,
+    "blue_reels_play_count": 1327,
+    "post_video_avg_time_watched": 14524,
+    "post_video_followers": 0
    },
    {
     "id": "784237332700500",
     "at": "2022-08-12T02:05:21+0000",
     "text": "",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 61,
+    "blue_reels_play_count": 61,
+    "post_video_avg_time_watched": 13326,
+    "post_video_followers": 0
    },
    {
     "id": "514434970350978",
     "at": "2022-08-10T17:14:12+0000",
     "text": "🔒 Despite this #hike is well known, it is still out of the most touristic spots,",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 510,
+    "blue_reels_play_count": 510,
+    "post_video_avg_time_watched": 13506,
+    "post_video_followers": 0
    },
    {
     "id": "1702835740093304",
     "at": "2022-08-10T00:32:08+0000",
     "text": "#Zion #NationalPark is a #magic place for sure, specially if you get to #hike so",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 24,
+    "blue_reels_play_count": 24,
+    "post_video_avg_time_watched": 7199,
+    "post_video_followers": 0
    },
    {
     "id": "616317900089384",
     "at": "2022-08-08T20:27:39+0000",
     "text": "#Zion #NationalPark has so much to offer, it doesn’t matter which time of the ye",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 18,
+    "blue_reels_play_count": 18,
+    "post_video_avg_time_watched": 5198,
+    "post_video_followers": 0
    },
    {
     "id": "459048386079105",
     "at": "2022-08-07T23:43:24+0000",
     "text": "Keeping the #SecreSpots spree, this is #kanarrafalls #trail \nAmazing little #hik",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 318,
+    "blue_reels_play_count": 318,
+    "post_video_avg_time_watched": 11816,
+    "post_video_followers": 0
    },
    {
     "id": "592953512371279",
     "at": "2022-08-06T17:42:43+0000",
     "text": "Another #secretspot, Babylon Arch in #Utah. \nThis place is so much #fun and some",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 18,
+    "blue_reels_play_count": 18,
+    "post_video_avg_time_watched": 4194,
+    "post_video_followers": 0
    },
    {
     "id": "342867967925850",
     "at": "2022-08-06T00:12:59+0000",
     "text": "Back with the #secretspots still in #arizona \nThis place got few different names",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 2212,
+    "blue_reels_play_count": 2212,
+    "post_video_avg_time_watched": 13862,
+    "post_video_followers": 0
    },
    {
     "id": "1093815187923697",
     "at": "2022-08-05T01:11:18+0000",
     "text": "#Jerome itself is already an amazing #town and still a very good #keptsecret , #",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 309,
+    "blue_reels_play_count": 309,
+    "post_video_avg_time_watched": 9266,
+    "post_video_followers": 0
    },
    {
     "id": "1503586143431733",
     "at": "2022-08-03T18:57:20+0000",
     "text": "#MerryGoRound in #Sedona \nA #SecretSpot found by @iesyme \nWell, people get marri",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 347,
+    "blue_reels_play_count": 347,
+    "post_video_avg_time_watched": 5419,
+    "post_video_followers": 0
    },
    {
     "id": "757984902113306",
     "at": "2022-08-02T16:13:59+0000",
     "text": "The #secret of the secrets in #Sedona #KachinaTreeCave\nYou don’t see many guides",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 42,
+    "blue_reels_play_count": 42,
+    "post_video_avg_time_watched": 4194,
+    "post_video_followers": 1
    },
    {
     "id": "1379338539564893",
     "at": "2022-08-01T20:27:54+0000",
     "text": "This is one just happened to be on our way! We have never heard about it but the",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 44,
+    "blue_reels_play_count": 44,
+    "post_video_avg_time_watched": 19762,
+    "post_video_followers": 0
    },
    {
     "id": "1838275873189269",
     "at": "2022-07-31T16:33:09+0000",
     "text": "Better than a #waterfall is a #frozenwaterfall \n#Sycamore #Falls is beautiful\nTh",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 241,
+    "blue_reels_play_count": 241,
+    "post_video_avg_time_watched": 6979,
+    "post_video_followers": 0
    },
    {
     "id": "770822744069214",
     "at": "2022-07-30T16:17:56+0000",
     "text": "#WatsonLake is #HiddenGem in #Prescott #AZ \nWe were there in the begin of winter",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 223,
+    "blue_reels_play_count": 223,
+    "post_video_avg_time_watched": 4853,
+    "post_video_followers": 0
    },
    {
     "id": "427354519341304",
     "at": "2022-07-29T23:37:23+0000",
     "text": "This is the #soldierpass #hike definitely not a so #secretgem but still an amazi",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 280,
+    "blue_reels_play_count": 280,
+    "post_video_avg_time_watched": 6737,
+    "post_video_followers": 0
    },
    {
     "id": "3247537788849218",
     "at": "2022-07-28T15:34:25+0000",
     "text": "#TontoNaturalBridge is a super underrated #Gem in #Arizona. The park is beautifu",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 25,
+    "blue_reels_play_count": 25,
+    "post_video_avg_time_watched": 8754,
+    "post_video_followers": 0
    },
    {
     "id": "624410728832385",
     "at": "2022-07-27T23:39:25+0000",
     "text": "Super rewarding #SubwayHike It is considered a #SecretGem but it already has a d",
-    "error": "HTTP Error 400: Bad Request"
+    "fb_reels_total_plays": 153,
+    "blue_reels_play_count": 153,
+    "post_video_avg_time_watched": 6764,
+    "post_video_followers": 0
    }
   ]
  },
