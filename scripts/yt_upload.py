@@ -31,7 +31,7 @@ def api(method, url, tok, body=None, headers=None, raw=None):
 M = json.load(open(sys.argv[1])); tok = access_token()
 desc = open(M["description_file"]).read() if M.get("description_file") else M.get("description", "")
 status = {"privacyStatus": M.get("privacy", "private"), "selfDeclaredMadeForKids": bool(M.get("made_for_kids", False)),
-          "containsSyntheticMedia": bool(M.get("synthetic", True)), "embeddable": True, "license": "youtube"}
+          "containsSyntheticMedia": bool(M.get("synthetic", True)), "embeddable": True, "publicStatsViewable": True, "license": "youtube"}
 if M.get("publish_at"): status["privacyStatus"] = "private"; status["publishAt"] = M["publish_at"]
 meta = {"snippet": {"title": M["title"][:100], "description": desc[:4900], "tags": M.get("tags", [])[:30],
                     "categoryId": M.get("category", "27"), "defaultLanguage": M.get("language", "en"),

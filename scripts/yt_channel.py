@@ -67,6 +67,18 @@ elif mode == "privatize":
         print("PRIVATIZE", v["id"], st, "" if st == 200 else r.get("_error", "")[:300]); n += st == 200
     print("PRIVATIZED_TOTAL", n)
 
+elif mode == "showstats":
+    # public 2026 uploads whose view/like counts are hidden -> show them (social proof); nothing else changes
+    n = 0
+    for v in uploads(ch):
+        s = v["status"]
+        if s["privacyStatus"] != "public" or s.get("publicStatsViewable", True): continue
+        body = {"id": v["id"], "status": {"privacyStatus": "public", "embeddable": s.get("embeddable", True), "license": s.get("license", "youtube"),
+                "publicStatsViewable": True, "selfDeclaredMadeForKids": s.get("madeForKids", False)}}
+        st, r = http(API + "videos?part=status", json.dumps(body).encode(), {**AUTH, "Content-Type": "application/json"}, "PUT")
+        print("SHOWSTATS", v["id"], st, "" if st == 200 else r.get("_error", "")[:300]); n += st == 200
+    print("SHOWSTATS_TOTAL", n)
+
 elif mode == "branding":
     cfg = json.load(open(sys.argv[2]))
     bs = ch.get("brandingSettings", {}); c = bs.setdefault("channel", {})

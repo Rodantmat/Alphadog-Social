@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "url | exchange | check | inspect | privatize | branding"
+        description: "url | exchange | check | inspect | privatize | showstats | branding"
         default: "url"
       code:
         description: "Redirect URL or one-time code (exchange mode)"
@@ -34,7 +34,7 @@ jobs:
           case "$MODE" in
             exchange) python scripts/yt_auth.py exchange "$CODE" ;;
             url|check) python scripts/yt_auth.py "$MODE" ;;
-            inspect|privatize) python scripts/yt_channel.py "$MODE" ;;
+            inspect|privatize|showstats) python scripts/yt_channel.py "$MODE" ;;
             branding) mkdir -p out && ls /usr/share/fonts/opentype/inter/ 2>/dev/null | head -3; python scripts/yt_banner.py assets/brand/logo300.png out/banner.jpg && python scripts/yt_channel.py branding content/channel/channel.json ;;
             *) echo "unknown mode $MODE"; exit 1 ;;
           esac
