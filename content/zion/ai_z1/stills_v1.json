@@ -1,0 +1,145 @@
+[
+ {
+  "id": "K01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. very wide shot. Zion National Park, Utah: towering sheer cliffs of red, orange and cream Navajo sandstone with diagonal cross-bedded layers, dark desert varnish streaks, green cottonwoods far below, a September afternoon. Over the cliff tops a huge dark thunderstorm builds, towering anvil clouds turning grey-black, curtains of rain falling on the plateau in the distance, the sandstone still lit by a last shaft of warm sun. Ominous and quiet, no people.",
+  "neg": "people, buildings, houses, cars, roads, power lines, signs, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "K02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot from the canyon floor looking up. Zion National Park, Utah: towering sheer cliffs of red, orange and cream Navajo sandstone with diagonal cross-bedded layers, dark desert varnish streaks, green cottonwoods far below. Heavy rain pours over the rim of the cliffs, dozens of thin new waterfalls of muddy red-brown water spill off the bare rock and fall hundreds of feet, dark storm sky above.",
+  "neg": "people, buildings, houses, cars, roads, power lines, signs, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "K03",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. low wide shot looking up the slot. a deep narrow slot canyon in Zion, Utah: smooth curved sandstone walls of orange and red only a few meters apart, rising high overhead, a thin strip of sky far above, dim storm light. A churning wall of thick muddy red-brown floodwater full of logs, branches and foam surges around the bend of the slot toward the camera, filling the canyon from wall to wall. Powerful and terrifying, no people.",
+  "neg": "bodies, corpses, dead people, drowning people, people in the water, blood, gore, injured people, people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "K04",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium shot. a deep narrow slot canyon in Zion, Utah: smooth curved sandstone walls of orange and red only a few meters apart, rising high overhead, a thin strip of sky far above. Fast brown floodwater rushes through the narrow slot, waves breaking against the curved walls, tree branches tumbling in the current, spray in the air, the water line high on the sandstone. No people.",
+  "neg": "bodies, corpses, dead people, drowning people, people in the water, blood, gore, injured people, people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "N01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. very wide aerial view. Zion National Park, Utah: towering sheer cliffs of red, orange and cream Navajo sandstone with diagonal cross-bedded layers, dark desert varnish streaks, green cottonwoods far below, a summer afternoon. In the foreground the narrow canyon of the Virgin River lies under a clear blue sky in bright sun; far away on the horizon, behind the plateau, a single dark thunderstorm with grey rain shafts pours down on the high country. Contrast of calm sunny canyon and distant storm. No people.",
+  "neg": "people, buildings, houses, cars, roads, power lines, signs, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "L01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot from behind. a deep narrow slot canyon in Zion, Utah: smooth curved sandstone walls of orange and red only a few meters apart, rising high overhead, a thin strip of sky far above, July, bright daylight from above. At the lip of a waterfall a small group of small figures of canyoneers in helmets, wetsuits and harnesses with coiled ropes, seen from behind, faces not visible stands on a ledge looking down at a roaring white torrent much higher than expected, water pouring over the drop; ropes anchored to the rock. Tense, no one in the water.",
+  "neg": "bodies, corpses, dead people, drowning people, people in the water, blood, gore, injured people, faces, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "L02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. high angle shot. a deep narrow slot canyon in Zion, Utah: smooth curved sandstone walls of orange and red only a few meters apart, rising high overhead, a thin strip of sky far above. Below a powerful waterfall, a deep pool of churning white and brown water spins in a violent whirlpool against the curved sandstone walls, foam and spray, dark water in the center. No people.",
+  "neg": "bodies, corpses, dead people, drowning people, people in the water, blood, gore, injured people, people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "L03",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. a deep narrow slot canyon in Zion, Utah: smooth curved sandstone walls of orange and red only a few meters apart, rising high overhead, a thin strip of sky far above at night, cool blue moonlight high on the walls. On a narrow rock ledge above a roaring white torrent sit six small huddled figures in wet clothing and helmets, close together, seen from a distance, faces in shadow; the water thunders below them. Lonely, cold, waiting.",
+  "neg": "bodies, corpses, dead people, drowning people, people in the water, blood, gore, injured people, faces, fire, flashlights, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "L04",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium shot from behind. a deep narrow slot canyon in Zion, Utah: smooth curved sandstone walls of orange and red only a few meters apart, rising high overhead, a thin strip of sky far above at night. Six small figures wrapped in emergency blankets huddle shoulder to shoulder on a rock ledge, backs to the camera, looking down at foaming white water rushing below, faint moonlight. Faces not visible.",
+  "neg": "bodies, corpses, dead people, drowning people, people in the water, blood, gore, injured people, faces, fire, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "L05",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. very wide shot. Zion National Park, Utah: towering sheer cliffs of red, orange and cream Navajo sandstone with diagonal cross-bedded layers, dark desert varnish streaks, green cottonwoods far below, dawn, soft pink and gold light on the cliff tops, the slot canyon a dark crack below. A red and white rescue helicopter hovers above the canyon rim, small in the vast landscape, a cable hanging down into the slot.",
+  "neg": "bodies, corpses, dead people, drowning people, people in the water, blood, gore, injured people, text, letters, numbers, logos, faces, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "L06",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. looking straight up from inside the slot. a deep narrow slot canyon in Zion, Utah: smooth curved sandstone walls of orange and red only a few meters apart, rising high overhead, a thin strip of sky far above, morning light. Far above, between the narrow walls, a rescuer in a harness is lowered on a thin cable from a helicopter silhouetted against the bright strip of sky.",
+  "neg": "bodies, corpses, dead people, drowning people, people in the water, blood, gore, injured people, faces, text, logos, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "T01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Zion National Park, Utah: towering sheer cliffs of red, orange and cream Navajo sandstone with diagonal cross-bedded layers, dark desert varnish streaks, green cottonwoods far below, morning, 1926. Halfway up a steep sandstone cliff a crew of road and trail workers of 1926 in work shirts, suspenders, denim overalls and brimmed felt hats, using hand tools: hammers, steel drills, picks and shovels cuts a narrow trail into the rock, one man swinging a sledgehammer onto a steel drill held by another, rock chips flying, a wheelbarrow on the ledge. Small figures, faces not detailed, the canyon far below.",
+  "neg": "modern clothing, helmets, machines, faces, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "T02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium shot. A tight stack of short switchbacks being built up a shaded sandstone cleft in Zion, 1926: road and trail workers of 1926 in work shirts, suspenders, denim overalls and brimmed felt hats, using hand tools: hammers, steel drills, picks and shovels lay and shape stone retaining walls and chisel steps into the slope, dust in shafts of light. Faces not detailed.",
+  "neg": "modern clothing, helmets, machines, faces, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ }
+]
