@@ -77,3 +77,4 @@ Every episode inherits all rules. Never ask the owner to repeat one.
 - V40 Never upload more than 2 Shorts a day (>= 6 h apart, different topics); never delete and re-upload a Short (counted as spam).
 - V41 Each Short names its full documentary aloud (exact title) and links it in the description and first comment.
 - V42 No templated sameness: rotate intro lines, end cards and layouts across Shorts/Reels; never the same narration opener twice.
+- V43 (owner 2026-11-03) Side-by-side vertical panels: use sparingly (max 3 per episode) and only with completely different pictures (different subject, colour and place). Gate in build2.py (count + panel colour-similarity < 0.80); single vertical clips stay as one centred panel. Shorts/Reels are full-screen 9:16 only (no panels). Zion Part 1 v2 ships with 0 pairs.
