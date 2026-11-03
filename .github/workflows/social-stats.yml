@@ -1,0 +1,49 @@
+name: social-stats
+# Read-only engagement report: Instagram media (views/reach, likes, comments, saves, shares) and Facebook Page posts/reels
+# (likes, comments, shares, video views). Prints a table; nothing is changed on any account.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - env:
+          IG_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER: ${{ secrets.IG_USER_ID }}
+          FB_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          FB_PAGE: ${{ secrets.FB_PAGE_ID }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, urllib.error, urllib.parse
+          def get(base, path, tok, **q):
+              q["access_token"] = tok
+              try:
+                  with urllib.request.urlopen(f"{base}/{path}?" + urllib.parse.urlencode(q), timeout=30) as r: return json.loads(r.read())
+              except urllib.error.HTTPError as e: return {"error": e.read().decode()[:300].replace(tok, "***")}
+          IG = "https://graph.instagram.com"; T = os.environ["IG_TOKEN"].strip()
+          me = get(IG, "me", T, fields="username,followers_count,media_count"); print("IG", json.dumps(me))
+          m = get(IG, "me/media", T, fields="id,media_type,media_product_type,timestamp,like_count,comments_count,caption", limit="60")
+          tot = {"views": 0, "likes": 0, "comments": 0}
+          for x in m.get("data", []):
+              ins = get(IG, f"{x['id']}/insights", T, metric="views,reach,saved,shares,total_interactions")
+              v = {d["name"]: d["values"][0]["value"] for d in ins.get("data", [])}
+              tot["views"] += v.get("views", 0); tot["likes"] += x.get("like_count", 0); tot["comments"] += x.get("comments_count", 0)
+              cap = (x.get("caption") or "").split("\n")[0][:50]
+              print(f"IG {x['timestamp'][:16]} {x.get('media_product_type',''):6} views={v.get('views','?'):>5} reach={v.get('reach','?'):>5} likes={x.get('like_count',0):>3} comments={x.get('comments_count',0):>3} saves={v.get('saved','?')} shares={v.get('shares','?')} | {cap}")
+          print("IG TOTAL", tot)
+          FB = "https://graph.facebook.com/v26.0"; F = os.environ["FB_TOKEN"].strip(); P = os.environ["FB_PAGE"].strip()
+          pg = get(FB, P, F, fields="name,followers_count,fan_count"); print("FB", json.dumps(pg))
+          posts = get(FB, f"{P}/posts", F, fields="id,created_time,message,shares,reactions.summary(true),comments.summary(true)", limit="60")
+          for x in posts.get("data", []):
+              print(f"FB post {x['created_time'][:16]} reactions={x.get('reactions',{}).get('summary',{}).get('total_count',0)} comments={x.get('comments',{}).get('summary',{}).get('total_count',0)} shares={x.get('shares',{}).get('count',0)} | {(x.get('message') or '').split(chr(10))[0][:50]}")
+          if "error" in posts: print("FB posts error", posts["error"])
+          vids = get(FB, f"{P}/video_reels", F, fields="id,created_time,description,views", limit="60")
+          for x in vids.get("data", []):
+              ins = get(FB, f"{x['id']}/video_insights", F, metric="blue_reels_play_count,post_impressions_unique")
+              v = {d["name"]: d["values"][0]["value"] for d in ins.get("data", [])}
+              print(f"FB reel {x['created_time'][:16]} plays={v.get('blue_reels_play_count','?')} reach={v.get('post_impressions_unique','?')} | {(x.get('description') or '').split(chr(10))[0][:50]}")
+          if "error" in vids: print("FB reels error", vids["error"])
+          PY
