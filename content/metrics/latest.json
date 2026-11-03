@@ -1,5 +1,5 @@
 {
- "at": "2026-11-03T07:43:13Z",
+ "at": "2026-11-03T07:44:51Z",
  "youtube": {
   "channel": {
    "viewCount": "1870",
@@ -24,7 +24,7 @@
     "published": "2026-11-02T18:00:18Z",
     "privacy": "public",
     "duration": "PT52S",
-    "views": 891,
+    "views": 896,
     "likes": 24,
     "comments": 1
    },
@@ -319,7 +319,7 @@
     "comments": 1
    }
   ],
-  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/yt-analytics.readonly",
+  "scopes": "https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/yt-analytics.readonly",
   "analytics_by_video": {
    "columns": [
     "video",
@@ -580,7 +580,12 @@
     1090,
     178
    ]
-  ]
+  ],
+  "reach_job": "created",
+  "reach_14d": {
+   "reports": 0,
+   "by_video": {}
+  }
  },
  "instagram": {
   "profile": {
@@ -1432,7 +1437,7 @@
     "at": "2026-11-03T01:01:39Z",
     "title": "August 17, 1886. Captain Moses Harris rode into Mammoth with fifty me...",
     "duration": 39,
-    "views": 130,
+    "views": 131,
     "likes": 2,
     "comments": 0,
     "shares": 0
