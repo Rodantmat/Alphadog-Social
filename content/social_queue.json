@@ -1772,14 +1772,29 @@
   "platform": "instagram_story",
   "file": "yellowstone_story_ch3s2.mp4",
   "at": "2026-11-04T02:00:00Z",
-  "story_v2": "Mud Volcano | own:0e043e52f46d"
+  "story_v2": "Mud Volcano | own:0e043e52f46d",
+  "done": {
+   "media_id": "18076794464755812",
+   "story": true,
+   "at": "2026-11-04T02:08:48Z"
+  }
  },
  {
   "id": "ch3s2_fb",
   "platform": "facebook_story",
   "file": "yellowstone_story_ch3s2.mp4",
   "at": "2026-11-04T02:00:00Z",
-  "story_v2": "Mud Volcano | own:0e043e52f46d"
+  "story_v2": "Mud Volcano | own:0e043e52f46d",
+  "done": {
+   "video_id": "1017141984763130",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "1108553161917917"
+   },
+   "story": true,
+   "at": "2026-11-04T02:08:48Z"
+  }
  },
  {
   "id": "ch3s3_ig",
