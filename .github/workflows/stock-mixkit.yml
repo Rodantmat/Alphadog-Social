@@ -1,0 +1,64 @@
+name: stock-mixkit
+# Collects free Mixkit stock clips (no account/key; Mixkit free licence incl. commercial) by topic into footage branch
+# stock/mixkit/<topic>/<id>.mp4 + stock/mixkit/index.json. Filler layer only (rules V44/V44a, V8, V10). Additive: never deletes.
+on:
+  workflow_dispatch:
+    inputs:
+      topics: { description: "comma-separated Mixkit category slugs (e.g. canyon,desert,river,waterfall,hiking,rocks,forest)", default: "canyon,desert,river,waterfall,rocks" }
+      per_topic: { description: "max clips per topic", default: "12" }
+      res: { description: "360 | 720 | 1080 (falls back to smaller)", default: "720" }
+permissions:
+  contents: write
+jobs:
+  go:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: scripts }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -q requests
+      - name: Sparse clone footage branch
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" /tmp/fb
+          cd /tmp/fb && git sparse-checkout set stock/mixkit
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+      - name: Collect
+        env: { TOPICS: "${{ inputs.topics }}", PER: "${{ inputs.per_topic }}", RES: "${{ inputs.res }}" }
+        run: |
+          python3 - <<'EOF'
+          import os, re, json, time, requests
+          D = "/tmp/fb/stock/mixkit"; os.makedirs(D, exist_ok=True)
+          UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
+          IX = f"{D}/index.json"; idx = json.load(open(IX)) if os.path.exists(IX) else {"files": []}
+          have = {f["id"] for f in idx["files"]}
+          per = int(os.environ["PER"]); res = os.environ["RES"]
+          for topic in [t.strip() for t in os.environ["TOPICS"].split(",") if t.strip()]:
+              got = 0; page = 1; ids = []
+              while got < per and page <= 6:
+                  r = requests.get(f"https://mixkit.co/free-stock-video/{topic}/?page={page}", headers=UA, timeout=30)
+                  if r.status_code != 200: print(topic, page, "HTTP", r.status_code); break
+                  found = re.findall(r"assets\.mixkit\.co/videos/(\d+)/\1-(?:360|720|1080)\.mp4", r.text)
+                  new = [i for i in dict.fromkeys(found) if i not in ids]
+                  if not new: break
+                  ids += new; page += 1
+                  for i in new:
+                      if got >= per: break
+                      if i in have: continue
+                      for rs in dict.fromkeys([res, "720", "360"]):
+                          v = requests.get(f"https://assets.mixkit.co/videos/{i}/{i}-{rs}.mp4", headers=UA, timeout=120)
+                          if v.status_code == 200 and len(v.content) > 50000 and len(v.content) < 90_000_000: break
+                      else: continue
+                      os.makedirs(f"{D}/{topic}", exist_ok=True)
+                      open(f"{D}/{topic}/{i}.mp4", "wb").write(v.content)
+                      idx["files"].append({"id": i, "topic": topic, "res": rs, "bytes": len(v.content), "file": f"stock/mixkit/{topic}/{i}.mp4",
+                                           "license": "Mixkit Free Stock Video Licence (free, commercial use, no attribution required)",
+                                           "source_page": f"https://mixkit.co/free-stock-video/{topic}/"})
+                      have.add(i); got += 1; time.sleep(0.5)
+              print(topic, "added", got)
+          json.dump(idx, open(IX, "w"), indent=1); print("total", len(idx["files"]))
+          EOF
+          du -sh /tmp/fb/stock/mixkit
+          cd /tmp/fb && git add -A stock/mixkit && git commit -q -m "stock: mixkit clips" || echo nothing
+          for i in 1 2 3 4; do git pull -q --rebase origin footage && git push -q origin HEAD:footage && break; sleep 5; done
