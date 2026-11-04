@@ -1801,14 +1801,29 @@
   "platform": "instagram_story",
   "file": "yellowstone_story_ch3s3.mp4",
   "at": "2026-11-04T19:00:00Z",
-  "story_v2": "Lower Falls of the Yellowstone | own:226a5ba1ccf0"
+  "story_v2": "Lower Falls of the Yellowstone | own:226a5ba1ccf0",
+  "done": {
+   "media_id": "18103945202568462",
+   "story": true,
+   "at": "2026-11-04T19:09:35Z"
+  }
  },
  {
   "id": "ch3s3_fb",
   "platform": "facebook_story",
   "file": "yellowstone_story_ch3s3.mp4",
   "at": "2026-11-04T19:00:00Z",
-  "story_v2": "Lower Falls of the Yellowstone | own:226a5ba1ccf0"
+  "story_v2": "Lower Falls of the Yellowstone | own:226a5ba1ccf0",
+  "done": {
+   "video_id": "1858427855338020",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "2410718249461015"
+   },
+   "story": true,
+   "at": "2026-11-04T19:09:35Z"
+  }
  },
  {
   "id": "ch3s4_ig",
