@@ -1545,7 +1545,13 @@
   "thumb_ms": 1200,
   "caption": "In 1863 the United States cut the Nez Perce reservation by about ninety percent. Many never agreed to the treaty. They still call it the Thief Treaty.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 3 — link in the first comment 👇\n\n#Yellowstone #NezPerce #History #NationalParks #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc",
-  "trial": false
+  "trial": false,
+  "done": {
+   "media_id": "18469227676137160",
+   "permalink": "https://www.instagram.com/reel/DfTPf4kkwl2/",
+   "posted": "2026-11-04T01:09:19+0000",
+   "at": "2026-11-04T01:08:51Z"
+  }
  },
  {
   "id": "ch3y2_fb",
@@ -1553,7 +1559,40 @@
   "file": "yellowstone_ch3_y2.mp4",
   "at": "2026-11-04T01:00:00Z",
   "caption": "In 1863 the United States cut the Nez Perce reservation by about ninety percent. Many never agreed to the treaty. They still call it the Thief Treaty.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 3 — link in the first comment 👇\n\n#Yellowstone #NezPerce #History #NationalParks #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc",
+  "done": {
+   "video_id": "1025222937270764",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1107243035408022"
+   },
+   "permalink": "https://www.facebook.com/reel/1025222937270764/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 21302185
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-04T01:09:28+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1025222937270764_1782174579751453"
+   },
+   "status_errors": null,
+   "at": "2026-11-04T01:08:51Z"
+  }
  },
  {
   "id": "ch3y3_ig",
