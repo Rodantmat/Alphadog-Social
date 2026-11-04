@@ -1,22 +1,92 @@
 {
- "at": "2026-11-03T20:09:56Z",
+ "at": "2026-11-04T20:27:39Z",
  "youtube": {
   "channel": {
-   "viewCount": "1870",
-   "subscriberCount": "8",
+   "viewCount": "2736",
+   "subscriberCount": "10",
    "hiddenSubscriberCount": false,
-   "videoCount": "23"
+   "videoCount": "25"
   },
   "videos": [
+   {
+    "id": "VrWOyOk0urw",
+    "title": "As many as 800 Nez Perce crossed Yellowstone in 1877 #Shorts",
+    "published": "2026-11-04T18:00:22Z",
+    "privacy": "public",
+    "duration": "PT46S",
+    "views": 0,
+    "likes": 0,
+    "comments": 1
+   },
+   {
+    "id": "1KUANk1uGtU",
+    "title": "The Day the Mountain Fell: Zion's Lost Lake",
+    "published": "2026-11-04T17:22:35Z",
+    "privacy": "private",
+    "duration": "PT13M5S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "IgQF68CMycI",
+    "title": "The day soldiers became Yellowstone's first rangers #Shorts",
+    "published": "2026-11-04T08:15:25Z",
+    "privacy": "private",
+    "duration": "PT55S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "rxGpPtUx0h4",
+    "title": "One masked man robbed 17 stagecoaches in Yellowstone #Shorts",
+    "published": "2026-11-04T08:15:03Z",
+    "privacy": "private",
+    "duration": "PT44S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "TK6i56MJcP4",
+    "title": "The poacher who saved America's last wild bison #Shorts",
+    "published": "2026-11-04T08:14:42Z",
+    "privacy": "private",
+    "duration": "PT44S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "baiIsNjf368",
+    "title": "Soldiers were Yellowstone's first tour guides #Shorts",
+    "published": "2026-11-04T08:14:17Z",
+    "privacy": "private",
+    "duration": "PT50S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "bJgBuP716E8",
+    "title": "Why the Nez Perce ran #Shorts",
+    "published": "2026-11-04T01:00:15Z",
+    "privacy": "public",
+    "duration": "PT45S",
+    "views": 2,
+    "likes": 0,
+    "comments": 1
+   },
    {
     "id": "Ay2qGG6UjqI",
     "title": "Left for dead in Yellowstone #Shorts",
     "published": "2026-11-03T18:00:40Z",
     "privacy": "public",
     "duration": "PT53S",
-    "views": 0,
+    "views": 2,
     "likes": 0,
-    "comments": 0
+    "comments": 1
    },
    {
     "id": "jbZbPS173wc",
@@ -24,9 +94,9 @@
     "published": "2026-11-03T16:00:38Z",
     "privacy": "public",
     "duration": "PT11M1S",
-    "views": 1,
+    "views": 5,
     "likes": 0,
-    "comments": 0
+    "comments": 1
    },
    {
     "id": "Hlr80lyDlwA",
@@ -44,16 +114,6 @@
     "published": "2026-11-03T08:30:20Z",
     "privacy": "private",
     "duration": "PT48S",
-    "views": 0,
-    "likes": 0,
-    "comments": 0
-   },
-   {
-    "id": "VrWOyOk0urw",
-    "title": "As many as 800 Nez Perce crossed Yellowstone in 1877 #Shorts",
-    "published": "2026-11-03T08:29:27Z",
-    "privacy": "private",
-    "duration": "PT46S",
     "views": 0,
     "likes": 0,
     "comments": 0
@@ -84,19 +144,9 @@
     "published": "2026-11-02T18:00:18Z",
     "privacy": "public",
     "duration": "PT52S",
-    "views": 1122,
-    "likes": 28,
+    "views": 1308,
+    "likes": 34,
     "comments": 1
-   },
-   {
-    "id": "bJgBuP716E8",
-    "title": "Why the Nez Perce ran #Shorts",
-    "published": "2026-11-02T10:22:05Z",
-    "privacy": "private",
-    "duration": "PT45S",
-    "views": 0,
-    "likes": 0,
-    "comments": 0
    },
    {
     "id": "QICPYzghiNc",
@@ -104,7 +154,7 @@
     "published": "2026-11-02T01:00:09Z",
     "privacy": "public",
     "duration": "PT44S",
-    "views": 178,
+    "views": 187,
     "likes": 6,
     "comments": 1
    },
@@ -114,7 +164,7 @@
     "published": "2026-11-01T18:00:20Z",
     "privacy": "public",
     "duration": "PT55S",
-    "views": 2,
+    "views": 4,
     "likes": 0,
     "comments": 1
    },
@@ -154,7 +204,7 @@
     "published": "2026-11-01T02:30:31Z",
     "privacy": "public",
     "duration": "PT28S",
-    "views": 559,
+    "views": 558,
     "likes": 9,
     "comments": 1
    },
@@ -204,7 +254,7 @@
     "published": "2026-10-31T03:00:19Z",
     "privacy": "public",
     "duration": "PT42S",
-    "views": 489,
+    "views": 490,
     "likes": 15,
     "comments": 1
    },
@@ -224,7 +274,7 @@
     "published": "2026-10-30T22:30:00Z",
     "privacy": "public",
     "duration": "PT54S",
-    "views": 0,
+    "views": 2,
     "likes": 0,
     "comments": 1
    },
@@ -254,7 +304,7 @@
     "published": "2026-10-30T15:00:38Z",
     "privacy": "public",
     "duration": "PT12M58S",
-    "views": 4,
+    "views": 6,
     "likes": 0,
     "comments": 1
    },
@@ -294,7 +344,7 @@
     "published": "2026-10-29T01:30:07Z",
     "privacy": "public",
     "duration": "PT34S",
-    "views": 11,
+    "views": 14,
     "likes": 0,
     "comments": 0
    },
@@ -314,7 +364,7 @@
     "published": "2026-10-27T23:30:15Z",
     "privacy": "public",
     "duration": "PT31S",
-    "views": 18,
+    "views": 19,
     "likes": 0,
     "comments": 0
    },
@@ -324,7 +374,7 @@
     "published": "2026-10-26T18:30:07Z",
     "privacy": "public",
     "duration": "PT31S",
-    "views": 22,
+    "views": 25,
     "likes": 1,
     "comments": 0
    },
@@ -354,12 +404,12 @@
     "published": "2026-10-26T00:02:23Z",
     "privacy": "public",
     "duration": "PT25M12S",
-    "views": 7,
+    "views": 17,
     "likes": 1,
     "comments": 1
    }
   ],
-  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/yt-analytics.readonly",
+  "scopes": "https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/yt-analytics.readonly https://www.googleapis.com/auth/youtube.upload",
   "analytics_by_video": {
    "columns": [
     "video",
@@ -374,12 +424,23 @@
    ],
    "rows": [
     [
+     "R-V4lG2dEfU",
+     938,
+     357,
+     33,
+     64.74,
+     24,
+     0,
+     0,
+     2
+    ],
+    [
      "RWwPTGQF82o",
-     543,
-     58,
-     15,
-     54.730000000000004,
-     7,
+     566,
+     67,
+     17,
+     61.809999999999995,
+     9,
      0,
      0,
      0
@@ -408,11 +469,22 @@
     ],
     [
      "QICPYzghiNc",
-     75,
-     19,
-     26,
-     60.77,
-     4,
+     155,
+     36,
+     25,
+     58.489999999999995,
+     6,
+     0,
+     0,
+     0
+    ],
+    [
+     "4X1O7pEr_FQ",
+     22,
+     3,
+     24,
+     78.92,
+     1,
      0,
      0,
      0
@@ -440,17 +512,6 @@
      0
     ],
     [
-     "4X1O7pEr_FQ",
-     16,
-     2,
-     26,
-     84.32,
-     1,
-     0,
-     0,
-     0
-    ],
-    [
      "G03Sxe_dD9k",
      9,
      0,
@@ -465,16 +526,27 @@
      "LfoM0KAi8Yo",
      6,
      27,
-     307,
-     20.31,
+     334,
+     22.1,
      1,
      0,
      0,
      0
     ],
     [
+     "naMTvf4CXt0",
+     6,
+     1,
+     26,
+     66.47,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
      "bWSnXlwtW04",
-     4,
+     5,
      0,
      24,
      54.13,
@@ -484,8 +556,8 @@
      0
     ],
     [
-     "uTzcrqnoa4I",
-     3,
+     "P99Gu3GCZVw",
+     4,
      0,
      0,
      0,
@@ -496,18 +568,18 @@
     ],
     [
      "-vkXqMrSljM",
-     3,
+     4,
      0,
-     16,
-     2.16,
+     14,
+     1.82,
      0,
      0,
      0,
      0
     ],
     [
-     "P99Gu3GCZVw",
-     2,
+     "uTzcrqnoa4I",
+     3,
      0,
      0,
      0,
@@ -550,22 +622,22 @@
      0
     ],
     [
-     "EuS8OlyY9I4",
+     "M7G6z5k_mm0",
      1,
      0,
-     19,
-     38.82,
+     0,
+     0,
      0,
      0,
      0,
      0
     ],
     [
-     "M7G6z5k_mm0",
+     "EuS8OlyY9I4",
      1,
      0,
-     0,
-     0,
+     19,
+     38.82,
      0,
      0,
      0,
@@ -583,22 +655,22 @@
      0
     ],
     [
-     "W1ytO_kbww0",
+     "yMqRsiwMhhA",
      1,
      0,
-     5,
-     7.31,
+     0,
+     0,
      0,
      0,
      0,
      0
     ],
     [
-     "yMqRsiwMhhA",
+     "W1ytO_kbww0",
      1,
      0,
-     0,
-     0,
+     5,
+     7.31,
      0,
      0,
      0,
@@ -646,13 +718,18 @@
    ],
    [
     "YT_SEARCH",
-    69,
-    10
+    91,
+    14
+   ],
+   [
+    "RELATED_VIDEO",
+    1,
+    0
    ],
    [
     "YT_OTHER_PAGE",
-    18,
-    5
+    32,
+    10
    ],
    [
     "EXT_URL",
@@ -666,8 +743,8 @@
    ],
    [
     "SHORTS",
-    1347,
-    228
+    2367,
+    605
    ]
   ],
   "reach_14d": {
@@ -779,23 +856,62 @@
  "instagram": {
   "profile": {
    "username": "alphadog.studio",
-   "followers_count": 104,
-   "media_count": 56,
+   "followers_count": 106,
+   "media_count": 59,
    "id": "28926959546914399"
   },
   "media": [
+   {
+    "id": "18108217883204428",
+    "at": "2026-11-04T20:09:16+0000",
+    "caption": "About August 23, 1877, the Nez Perce entered Yellowstone near today's West Entra",
+    "likes": 0,
+    "comments": 1,
+    "views": 0,
+    "reach": 0,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 1,
+    "ig_reels_avg_watch_time": 0
+   },
+   {
+    "id": "18469227676137160",
+    "at": "2026-11-04T01:09:19+0000",
+    "caption": "In 1863 the United States cut the Nez Perce reservation by about ninety percent.",
+    "likes": 4,
+    "comments": 1,
+    "views": 129,
+    "reach": 111,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 5,
+    "ig_reels_avg_watch_time": 13750
+   },
+   {
+    "id": "18119984174051359",
+    "at": "2026-11-04T00:12:24+0000",
+    "caption": "August 24, 1877. Tourists camped near Fountain Geyser see riders appear out of t",
+    "likes": 6,
+    "comments": 1,
+    "views": 145,
+    "reach": 121,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 7,
+    "ig_reels_avg_watch_time": 16516
+   },
    {
     "id": "18138266653647107",
     "at": "2026-11-03T04:13:48+0000",
     "caption": "August 17, 1886. Captain Moses Harris rode into Mammoth with fifty men of the Fi",
     "likes": 2,
     "comments": 1,
-    "views": 149,
-    "reach": 137,
+    "views": 158,
+    "reach": 146,
     "saved": 0,
     "shares": 0,
     "total_interactions": 3,
-    "ig_reels_avg_watch_time": 7457
+    "ig_reels_avg_watch_time": 7360
    },
    {
     "id": "18341429083257129",
@@ -803,12 +919,12 @@
     "caption": "In one winter hunters killed some 3,000 elk in and around early Yellowstone, jus",
     "likes": 35,
     "comments": 1,
-    "views": 1785,
-    "reach": 1588,
+    "views": 1798,
+    "reach": 1600,
     "saved": 6,
     "shares": 0,
     "total_interactions": 44,
-    "ig_reels_avg_watch_time": 19158
+    "ig_reels_avg_watch_time": 19090
    },
    {
     "id": "18094438412191750",
@@ -816,12 +932,12 @@
     "caption": "March 1894. An Army scout follows snowshoe tracks through Pelican Valley and fin",
     "likes": 6,
     "comments": 1,
-    "views": 144,
-    "reach": 132,
+    "views": 145,
+    "reach": 133,
     "saved": 0,
     "shares": 0,
     "total_interactions": 7,
-    "ig_reels_avg_watch_time": 14410
+    "ig_reels_avg_watch_time": 14235
    },
    {
     "id": "18108802252967018",
@@ -829,12 +945,12 @@
     "caption": "In 1871 a photographer and a painter went to Yellowstone with a government surve",
     "likes": 7,
     "comments": 1,
-    "views": 252,
-    "reach": 222,
+    "views": 254,
+    "reach": 224,
     "saved": 0,
     "shares": 1,
     "total_interactions": 9,
-    "ig_reels_avg_watch_time": 10472
+    "ig_reels_avg_watch_time": 10400
    },
    {
     "id": "18604683067064648",
@@ -907,12 +1023,12 @@
     "caption": "August 17, 1959. A magnitude 7.3 earthquake strikes just west of Yellowstone. By",
     "likes": 5,
     "comments": 1,
-    "views": 150,
-    "reach": 131,
+    "views": 151,
+    "reach": 132,
     "saved": 0,
     "shares": 0,
     "total_interactions": 6,
-    "ig_reels_avg_watch_time": 14141
+    "ig_reels_avg_watch_time": 14168
    },
    {
     "id": "18132658555759331",
@@ -933,12 +1049,12 @@
     "caption": "1861. A 12-year-old boy is kidnapped in Arizona, and the Army blames Cochise, th",
     "likes": 1,
     "comments": 0,
-    "views": 49,
-    "reach": 44,
+    "views": 50,
+    "reach": 45,
     "saved": 0,
     "shares": 0,
     "total_interactions": 1,
-    "ig_reels_avg_watch_time": 5672
+    "ig_reels_avg_watch_time": 5576
    },
    {
     "id": "18431757256151608",
@@ -1001,6 +1117,30 @@
    "id": "103210859154410"
   },
   "posts": [
+   {
+    "id": "103210859154410_1108105051988487",
+    "at": "2026-11-04T20:09:58+0000",
+    "text": "About August 23, 1877, the Nez Perce entered Yellowstone near today's West Entra",
+    "reactions": 0,
+    "comments": 1,
+    "shares": 0
+   },
+   {
+    "id": "103210859154410_1107243035408022",
+    "at": "2026-11-04T01:10:02+0000",
+    "text": "In 1863 the United States cut the Nez Perce reservation by about ninety percent.",
+    "reactions": 0,
+    "comments": 1,
+    "shares": 0
+   },
+   {
+    "id": "103210859154410_1107210168744642",
+    "at": "2026-11-04T00:13:17+0000",
+    "text": "August 24, 1877. Tourists camped near Fountain Geyser see riders appear out of t",
+    "reactions": 0,
+    "comments": 1,
+    "shares": 0
+   },
    {
     "id": "103210859154410_1106350362163956",
     "at": "2026-11-03T04:14:24+0000",
@@ -1284,48 +1424,75 @@
   ],
   "reels": [
    {
+    "id": "1444981917119156",
+    "at": "2026-11-04T20:09:24+0000",
+    "text": "About August 23, 1877, the Nez Perce entered Yellowstone near today's West Entra",
+    "fb_reels_total_plays": 0,
+    "blue_reels_play_count": 0,
+    "post_video_avg_time_watched": 0,
+    "post_video_followers": 0
+   },
+   {
+    "id": "1025222937270764",
+    "at": "2026-11-04T01:09:28+0000",
+    "text": "In 1863 the United States cut the Nez Perce reservation by about ninety percent.",
+    "fb_reels_total_plays": 2,
+    "blue_reels_play_count": 2,
+    "post_video_avg_time_watched": 2564,
+    "post_video_followers": 0
+   },
+   {
+    "id": "1442702463914812",
+    "at": "2026-11-04T00:12:30+0000",
+    "text": "August 24, 1877. Tourists camped near Fountain Geyser see riders appear out of t",
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 2600,
+    "post_video_followers": 0
+   },
+   {
     "id": "1149138364129293",
     "at": "2026-11-03T04:13:55+0000",
     "text": "August 17, 1886. Captain Moses Harris rode into Mammoth with fifty men of the Fi",
-    "fb_reels_total_plays": 4,
-    "blue_reels_play_count": 2,
-    "post_video_avg_time_watched": 7361,
+    "fb_reels_total_plays": 5,
+    "blue_reels_play_count": 3,
+    "post_video_avg_time_watched": 5967,
     "post_video_followers": 0
    },
    {
     "id": "1867454974408298",
     "at": "2026-11-02T18:15:43+0000",
     "text": "In one winter hunters killed some 3,000 elk in and around early Yellowstone, jus",
-    "fb_reels_total_plays": 1,
-    "blue_reels_play_count": 1,
-    "post_video_avg_time_watched": 21362,
+    "fb_reels_total_plays": 3,
+    "blue_reels_play_count": 2,
+    "post_video_avg_time_watched": 11177,
     "post_video_followers": 0
    },
    {
     "id": "2308538393414931",
     "at": "2026-11-02T01:06:44+0000",
     "text": "In 1871 a photographer and a painter went to Yellowstone with a government surve",
-    "fb_reels_total_plays": 1,
-    "blue_reels_play_count": 1,
-    "post_video_avg_time_watched": 18348,
+    "fb_reels_total_plays": 2,
+    "blue_reels_play_count": 2,
+    "post_video_avg_time_watched": 9773,
     "post_video_followers": 0
    },
    {
     "id": "1140681951745773",
     "at": "2026-11-01T20:22:12+0000",
     "text": "March 1894. An Army scout follows snowshoe tracks through Pelican Valley and fin",
-    "fb_reels_total_plays": 1,
-    "blue_reels_play_count": 1,
-    "post_video_avg_time_watched": 18264,
+    "fb_reels_total_plays": 2,
+    "blue_reels_play_count": 2,
+    "post_video_avg_time_watched": 9881,
     "post_video_followers": 0
    },
    {
     "id": "1483511650288711",
     "at": "2026-10-31T22:44:38+0000",
     "text": "Two 2025 studies in Nature show the magma under Yellowstone is only about 9 to 1",
-    "fb_reels_total_plays": 1,
-    "blue_reels_play_count": 1,
-    "post_video_avg_time_watched": 15244,
+    "fb_reels_total_plays": 2,
+    "blue_reels_play_count": 2,
+    "post_video_avg_time_watched": 8667,
     "post_video_followers": 0
    },
    {
@@ -1622,12 +1789,32 @@
   "handle": "alphadogstudio",
   "videos": [
    {
+    "id": "7704378985727282446",
+    "at": "2026-11-04T18:05:56Z",
+    "title": "About August 23, 1877, the Nez Perce entered Yellowstone near today's...",
+    "duration": 45,
+    "views": 95,
+    "likes": 1,
+    "comments": 0,
+    "shares": 0
+   },
+   {
+    "id": "7704115106656947470",
+    "at": "2026-11-04T01:01:39Z",
+    "title": "In 1863 the United States cut the Nez Perce reservation by about nine...",
+    "duration": 44,
+    "views": 142,
+    "likes": 9,
+    "comments": 0,
+    "shares": 0
+   },
+   {
     "id": "7704007441255648525",
     "at": "2026-11-03T18:03:58Z",
     "title": "August 24, 1877. Tourists camped near Fountain Geyser see riders appe...",
     "duration": 52,
-    "views": 27,
-    "likes": 1,
+    "views": 133,
+    "likes": 7,
     "comments": 0,
     "shares": 0
    },
@@ -1636,8 +1823,8 @@
     "at": "2026-11-03T01:01:39Z",
     "title": "August 17, 1886. Captain Moses Harris rode into Mammoth with fifty me...",
     "duration": 39,
-    "views": 162,
-    "likes": 4,
+    "views": 188,
+    "likes": 6,
     "comments": 0,
     "shares": 0
    },
@@ -1646,8 +1833,8 @@
     "at": "2026-11-02T18:07:30Z",
     "title": "In one winter hunters killed some 3,000 elk in and around early Yello...",
     "duration": 51,
-    "views": 232,
-    "likes": 14,
+    "views": 252,
+    "likes": 16,
     "comments": 0,
     "shares": 0
    },
@@ -1656,7 +1843,7 @@
     "at": "2026-11-02T01:01:28Z",
     "title": "In 1871 a photographer and a painter went to Yellowstone with a gover...",
     "duration": 43,
-    "views": 146,
+    "views": 149,
     "likes": 6,
     "comments": 0,
     "shares": 0
@@ -1666,8 +1853,8 @@
     "at": "2026-11-01T18:04:48Z",
     "title": "March 1894. An Army scout follows snowshoe tracks through Pelican Val...",
     "duration": 54,
-    "views": 123,
-    "likes": 5,
+    "views": 128,
+    "likes": 6,
     "comments": 0,
     "shares": 0
    },
@@ -1676,8 +1863,8 @@
     "at": "2026-11-01T00:00:52Z",
     "title": "2.1 million years ago the Huckleberry Ridge eruption threw out about ...",
     "duration": 45,
-    "views": 195,
-    "likes": 2,
+    "views": 198,
+    "likes": 3,
     "comments": 0,
     "shares": 1
    },
@@ -1686,7 +1873,7 @@
     "at": "2026-10-31T21:30:33Z",
     "title": "Two 2025 studies in Nature show the magma under Yellowstone is only a...",
     "duration": 58,
-    "views": 215,
+    "views": 217,
     "likes": 4,
     "comments": 0,
     "shares": 0
@@ -1696,7 +1883,7 @@
     "at": "2026-10-31T19:02:09Z",
     "title": "Steamboat, the tallest active geyser in the world, is \"entirely unpre...",
     "duration": 47,
-    "views": 188,
+    "views": 191,
     "likes": 9,
     "comments": 0,
     "shares": 0
@@ -1706,8 +1893,8 @@
     "at": "2026-10-31T16:31:11Z",
     "title": "Yellowstone's most likely \"eruption\" is steam, not lava. Clogged unde...",
     "duration": 53,
-    "views": 126,
-    "likes": 1,
+    "views": 129,
+    "likes": 2,
     "comments": 0,
     "shares": 0
    },
@@ -1716,8 +1903,8 @@
     "at": "2026-10-31T03:00:42Z",
     "title": "By 1902 only 23 wild bison remained in Yellowstone, the last wild bis...",
     "duration": 41,
-    "views": 146,
-    "likes": 4,
+    "views": 150,
+    "likes": 5,
     "comments": 0,
     "shares": 0
    },
@@ -1726,7 +1913,7 @@
     "at": "2026-10-31T01:00:52Z",
     "title": "A bacterium from a Yellowstone hot spring gave science the enzyme beh...",
     "duration": 49,
-    "views": 70,
+    "views": 71,
     "likes": 0,
     "comments": 0,
     "shares": 0
@@ -1736,7 +1923,7 @@
     "at": "2026-10-30T22:30:36Z",
     "title": "August 17, 1959. A magnitude 7.3 earthquake strikes just west of Yell...",
     "duration": 53,
-    "views": 172,
+    "views": 173,
     "likes": 1,
     "comments": 0,
     "shares": 0
@@ -1746,7 +1933,7 @@
     "at": "2026-10-30T20:01:30Z",
     "title": "Is Yellowstone \"overdue\" for a super-eruption? The USGS says plainly:...",
     "duration": 57,
-    "views": 172,
+    "views": 175,
     "likes": 5,
     "comments": 0,
     "shares": 0
@@ -1756,7 +1943,7 @@
     "at": "2026-10-30T17:30:52Z",
     "title": "July 23, 2024. The ground at Biscuit Basin lets go. Steam, mud and ro...",
     "duration": 50,
-    "views": 132,
+    "views": 134,
     "likes": 3,
     "comments": 0,
     "shares": 0
@@ -1766,7 +1953,7 @@
     "at": "2026-10-29T01:30:15Z",
     "title": "1886. The Army loaded nearly every Chiricahua Apache onto prison trai...",
     "duration": 33,
-    "views": 548,
+    "views": 552,
     "likes": 40,
     "comments": 4,
     "shares": 2
@@ -1776,7 +1963,7 @@
     "at": "2026-10-28T00:05:47Z",
     "title": "America just got its 64th national park, and most people have never h...",
     "duration": 30,
-    "views": 308,
+    "views": 313,
     "likes": 19,
     "comments": 2,
     "shares": 0
@@ -1786,12 +1973,12 @@
     "at": "2026-10-26T04:10:00Z",
     "title": "Found dead under an oak in 1882. Revolver in hand, boots gone. The ju...",
     "duration": 30,
-    "views": 1075,
+    "views": 1117,
     "likes": 56,
     "comments": 2,
     "shares": 1
    }
   ],
-  "listed": 34
+  "listed": 36
  }
 }
