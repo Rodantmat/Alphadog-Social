@@ -1487,7 +1487,14 @@
   "thumb_ms": 1200,
   "caption": "August 24, 1877. Tourists camped near Fountain Geyser see riders appear out of the steam. Behind them, as many as 800 Nez Perce men, women and children cross the park, running from the U.S. Army.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 3 — link in the first comment 👇\n\n#Yellowstone #NezPerce #History #NationalParks #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc",
-  "trial": true
+  "trial": false,
+  "done": {
+   "media_id": "18119984174051359",
+   "permalink": "https://www.instagram.com/reel/DfTI-lXnFNX/",
+   "posted": "2026-11-04T00:12:24+0000",
+   "via": "video_url",
+   "at": "2026-11-04T00:09:51Z"
+  }
  },
  {
   "id": "ch3y1_fb",
@@ -1495,7 +1502,40 @@
   "file": "yellowstone_ch3_y1.mp4",
   "at": "2026-11-03T20:00:00Z",
   "caption": "August 24, 1877. Tourists camped near Fountain Geyser see riders appear out of the steam. Behind them, as many as 800 Nez Perce men, women and children cross the park, running from the U.S. Army.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 3 — link in the first comment 👇\n\n#Yellowstone #NezPerce #History #NationalParks #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc",
+  "done": {
+   "video_id": "1442702463914812",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1107210168744642"
+   },
+   "permalink": "https://www.facebook.com/reel/1442702463914812/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 40063663
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-04T00:12:30+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1442702463914812_1500300938605914"
+   },
+   "status_errors": null,
+   "at": "2026-11-04T00:09:51Z"
+  }
  },
  {
   "id": "ch3y2_ig",
