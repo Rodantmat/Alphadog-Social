@@ -61,7 +61,7 @@ elif cmd == "edit":
     d = gql("mutation($i: EditPostInput!) { editPost(input: $i) { ... on PostActionSuccess { post { id dueAt status } } ... on MutationError { message } } }", {"i": inp})
     print("EDIT", json.dumps(d))
 elif cmd == "delete":
-    d = gql("mutation($i: DeletePostInput!) { deletePost(input: $i) { ... on PostActionSuccess { post { id } } ... on MutationError { message } } }", {"i": {"id": sys.argv[2]}})
+    d = gql("mutation($i: DeletePostInput!) { deletePost(input: $i) { __typename ... on MutationError { message } } }", {"i": {"id": sys.argv[2]}})
     print("DELETE", json.dumps(d))
 elif cmd == "types":
     for n in (sys.argv[2:] or ["Mutation"]):
