@@ -1209,7 +1209,13 @@
   "thumb_ms": 1200,
   "caption": "Fifteen infantry soldiers stationed at Old Faithful started explaining the geysers to visitors. Park historians say those talks were the beginning of what rangers still do today.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 2 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Army #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw",
-  "trial": true
+  "trial": false,
+  "done": {
+   "media_id": "18274159357309956",
+   "permalink": "https://www.instagram.com/reel/DfX7U0hjXp3/",
+   "posted": "2026-11-05T20:49:26+0000",
+   "at": "2026-11-05T20:47:30Z"
+  }
  },
  {
   "id": "ch2y5_fb",
@@ -1217,7 +1223,40 @@
   "file": "yellowstone_ch2_y5.mp4",
   "at": "2026-11-05T20:00:00Z",
   "caption": "Fifteen infantry soldiers stationed at Old Faithful started explaining the geysers to visitors. Park historians say those talks were the beginning of what rangers still do today.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 2 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Army #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw",
+  "done": {
+   "video_id": "29476422835284429",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1109147878550871"
+   },
+   "permalink": "https://www.facebook.com/reel/29476422835284429/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 50451286
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-05T20:49:37+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "29476422835284429_1154910873687247"
+   },
+   "status_errors": null,
+   "at": "2026-11-05T20:47:30Z"
+  }
  },
  {
   "id": "ch2y6_ig",
@@ -1400,14 +1439,29 @@
   "platform": "instagram_story",
   "file": "yellowstone_story_ch2s5.mp4",
   "at": "2026-11-05T19:00:00Z",
-  "story_v2": "Excelsior Geyser · Firehole River | own:89ef66b84215"
+  "story_v2": "Excelsior Geyser · Firehole River | own:89ef66b84215",
+  "done": {
+   "media_id": "17966479134198940",
+   "story": true,
+   "at": "2026-11-05T20:47:30Z"
+  }
  },
  {
   "id": "ch2s5_fb",
   "platform": "facebook_story",
   "file": "yellowstone_story_ch2s5.mp4",
   "at": "2026-11-05T19:00:00Z",
-  "story_v2": "Excelsior Geyser · Firehole River | own:89ef66b84215"
+  "story_v2": "Excelsior Geyser · Firehole River | own:89ef66b84215",
+  "done": {
+   "video_id": "2661093470988932",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "2859044387814505"
+   },
+   "story": true,
+   "at": "2026-11-05T20:47:30Z"
+  }
  },
  {
   "id": "ch2s6_ig",
