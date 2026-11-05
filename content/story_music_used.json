@@ -1,0 +1,87 @@
+{
+ "yellowstone_story_ch2s1.mp4": {
+  "seed": 870007,
+  "mood": "wonder",
+  "dur": 12
+ },
+ "yellowstone_story_ch2s10.mp4": {
+  "seed": 870138,
+  "mood": "western",
+  "dur": 12
+ },
+ "yellowstone_story_ch2s2.mp4": {
+  "seed": 870269,
+  "mood": "somber",
+  "dur": 12
+ },
+ "yellowstone_story_ch2s5.mp4": {
+  "seed": 870400,
+  "mood": "tension",
+  "dur": 12
+ },
+ "yellowstone_story_ch2s6.mp4": {
+  "seed": 870531,
+  "mood": "wonder",
+  "dur": 12
+ },
+ "yellowstone_story_ch2s7.mp4": {
+  "seed": 870662,
+  "mood": "western",
+  "dur": 12
+ },
+ "yellowstone_story_ch2s8.mp4": {
+  "seed": 870793,
+  "mood": "somber",
+  "dur": 12
+ },
+ "yellowstone_story_ch2s9.mp4": {
+  "seed": 870924,
+  "mood": "tension",
+  "dur": 12
+ },
+ "yellowstone_story_ch3s10.mp4": {
+  "seed": 871055,
+  "mood": "wonder",
+  "dur": 12
+ },
+ "yellowstone_story_ch3s5.mp4": {
+  "seed": 871186,
+  "mood": "western",
+  "dur": 12
+ },
+ "yellowstone_story_ch3s6.mp4": {
+  "seed": 871317,
+  "mood": "somber",
+  "dur": 12
+ },
+ "yellowstone_story_ch3s7.mp4": {
+  "seed": 871448,
+  "mood": "tension",
+  "dur": 12
+ },
+ "yellowstone_story_ch3s8.mp4": {
+  "seed": 871579,
+  "mood": "wonder",
+  "dur": 12
+ },
+ "yellowstone_story_ch3s9.mp4": {
+  "seed": 871710,
+  "mood": "western",
+  "dur": 12
+ },
+ "yellowstone_story_s10.mp4": {
+  "seed": 871841,
+  "mood": "somber",
+  "dur": 12
+ },
+ "yellowstone_story_s8.mp4": {
+  "seed": 871972,
+  "mood": "tension",
+  "dur": 12
+ },
+ "yellowstone_story_s9.mp4": {
+  "seed": 872103,
+  "mood": "wonder",
+  "dur": 12
+ }
+}

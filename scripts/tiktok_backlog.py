@@ -8,7 +8,7 @@ import datetime as dt, glob, json, os, subprocess, sys
 P = "content/tiktok_backlog.json"; FBS = os.environ.get("FBS", "/tmp/fbs/yellowstone-shorts"); REPO = os.environ["GITHUB_REPOSITORY"]
 now = dt.datetime.now(dt.timezone.utc); B = json.load(open(P)); changed = False
 for it in sorted(B, key=lambda x: x["due"]):
-    if it.get("scheduled"): continue
+    if it.get("scheduled") or it.get("hold"): continue
     due = dt.datetime.fromisoformat(it["due"].replace("Z", "+00:00"))
     if due - now > dt.timedelta(days=4): continue
     when = due
