@@ -3,7 +3,7 @@
 usage: shorts_gate.py <dir or files...>
 S1 1080x1920 portrait (phone-safe canvas)  S2 H.264 yuv420p, <= 60 fps  S3 AAC audio present, sample rate <= 48 kHz
    (48 kHz is only a recommendation: 96 kHz files posted fine; the real Instagram failure was file size)  S4 Shorts/Reels <= 59.5 s, Stories <= 60 s
-S5 size <= 100 MB; Instagram Reel uploads (_ig copies) must be <= 20 MB - 25 MB files failed with ProcessingFailedError 2026-10-30  S6 +faststart (moov atom before mdat)
+S7 audible (mean volume > -45 dB; silent tracks fail)  S5 size <= 100 MB; Instagram Reel uploads (_ig copies) must be <= 20 MB - 25 MB files failed with ProcessingFailedError 2026-10-30  S6 +faststart (moov atom before mdat)
 Exit 1 if anything fails."""
 import json, os, subprocess, sys, glob
 files = []
@@ -17,6 +17,10 @@ for f in files:
     if v.get("codec_name") != "h264" or v.get("pix_fmt") != "yuv420p": e.append(f"S2 {v.get('codec_name')}/{v.get('pix_fmt')}")
     if not a: e.append("S3 no audio")
     elif a.get("codec_name") != "aac": e.append(f"S3 audio {a.get('codec_name')}")
+    if a:   # S7 real sound: a silent track (anullsrc) is not audio - Stories/Reels must carry music or natural sound (owner 2026-11-04)
+        vd = subprocess.run(["ffmpeg", "-v", "info", "-i", f, "-vn", "-af", "volumedetect", "-f", "null", "-"], capture_output=True, text=True).stderr
+        mv = [float(l.split("mean_volume:")[1].split()[0]) for l in vd.splitlines() if "mean_volume:" in l]
+        if not mv or mv[0] < -45: e.append(f"S7 silent audio (mean {mv[0] if mv else 'n/a'} dB)")
     if d > 59.5: e.append(f"S4 {d:.1f}s")
     if sz > 100e6: e.append(f"S5 {sz/1e6:.0f} MB")
     if f.endswith("_ig.mp4") and sz > 20e6: e.append(f"S5 Instagram copy {sz/1e6:.0f} MB > 20 MB")
