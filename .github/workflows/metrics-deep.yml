@@ -1,0 +1,27 @@
+name: metrics-deep
+# Read-only deep analytics pull (YouTube Analytics / IG / FB insights) -> content/metrics/deep.json
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: { group: metrics-deep, cancel-in-progress: false }
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          IG_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          FB_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          FB_PAGE: ${{ secrets.FB_PAGE_ID }}
+        run: python3 scripts/metrics_deep.py
+      - name: Commit
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add content/metrics && git commit -qm "metrics deep $(date -u +%F)" || exit 0
+          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
