@@ -1,20 +1,100 @@
 {
- "at": "2026-11-04T20:27:39Z",
+ "at": "2026-11-05T20:42:32Z",
  "youtube": {
   "channel": {
-   "viewCount": "2736",
+   "viewCount": "2919",
    "subscriberCount": "10",
    "hiddenSubscriberCount": false,
-   "videoCount": "25"
+   "videoCount": "28"
   },
   "videos": [
+   {
+    "id": "nEf7KCM5Ors",
+    "title": "Yellowstone, All Three Parts in One Film: Supervolcano, Cavalry and the Nez Perce",
+    "published": "2026-11-05T20:00:12Z",
+    "privacy": "public",
+    "duration": "PT34M55S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "cJ6ZFKlq0Sg",
+    "title": "Soldiers were Yellowstone's first tour guides #Shorts",
+    "published": "2026-11-05T18:00:03Z",
+    "privacy": "public",
+    "duration": "PT50S",
+    "views": 9,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "GBtH7GfGO3o",
+    "title": "2,000 horses crossed the Yellowstone River #Shorts",
+    "published": "2026-11-05T08:19:35Z",
+    "privacy": "private",
+    "duration": "PT54S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "FtSXblbpc3U",
+    "title": "Shot twice, he crawled 12 miles to survive #Shorts",
+    "published": "2026-11-05T08:18:30Z",
+    "privacy": "private",
+    "duration": "PT48S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "hjctJRYvXwY",
+    "title": "The 1894 law that saved Yellowstone's bison #Shorts",
+    "published": "2026-11-05T08:17:27Z",
+    "privacy": "private",
+    "duration": "PT44S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "2Ge5FJpCz3c",
+    "title": "Native people were never afraid of the geysers #Shorts",
+    "published": "2026-11-05T08:16:05Z",
+    "privacy": "private",
+    "duration": "PT45S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "McdCi05pBzg",
+    "title": "The poacher who saved America's last wild bison #Shorts",
+    "published": "2026-11-05T08:14:52Z",
+    "privacy": "private",
+    "duration": "PT44S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "x1PAl5B-IeI",
+    "title": "Nine Yellowstone tourists taken by the Nez Perce #Shorts",
+    "published": "2026-11-05T01:00:19Z",
+    "privacy": "public",
+    "duration": "PT48S",
+    "views": 1,
+    "likes": 0,
+    "comments": 1
+   },
    {
     "id": "VrWOyOk0urw",
     "title": "As many as 800 Nez Perce crossed Yellowstone in 1877 #Shorts",
     "published": "2026-11-04T18:00:22Z",
     "privacy": "public",
     "duration": "PT46S",
-    "views": 0,
+    "views": 4,
     "likes": 0,
     "comments": 1
    },
@@ -50,7 +130,7 @@
    },
    {
     "id": "TK6i56MJcP4",
-    "title": "The poacher who saved America's last wild bison #Shorts",
+    "title": "[OLD private] The poacher who saved America's last wild bison #Shorts",
     "published": "2026-11-04T08:14:42Z",
     "privacy": "private",
     "duration": "PT44S",
@@ -60,7 +140,7 @@
    },
    {
     "id": "baiIsNjf368",
-    "title": "Soldiers were Yellowstone's first tour guides #Shorts",
+    "title": "[OLD private] Soldiers were Yellowstone's first tour guides #Shorts",
     "published": "2026-11-04T08:14:17Z",
     "privacy": "private",
     "duration": "PT50S",
@@ -74,7 +154,7 @@
     "published": "2026-11-04T01:00:15Z",
     "privacy": "public",
     "duration": "PT45S",
-    "views": 2,
+    "views": 4,
     "likes": 0,
     "comments": 1
    },
@@ -84,7 +164,7 @@
     "published": "2026-11-03T18:00:40Z",
     "privacy": "public",
     "duration": "PT53S",
-    "views": 2,
+    "views": 3,
     "likes": 0,
     "comments": 1
    },
@@ -109,32 +189,12 @@
     "comments": 0
    },
    {
-    "id": "x1PAl5B-IeI",
-    "title": "Nine Yellowstone tourists taken by the Nez Perce #Shorts",
-    "published": "2026-11-03T08:30:20Z",
-    "privacy": "private",
-    "duration": "PT48S",
-    "views": 0,
-    "likes": 0,
-    "comments": 0
-   },
-   {
-    "id": "nEf7KCM5Ors",
-    "title": "Yellowstone, All Three Parts in One Film: Supervolcano, Cavalry and the Nez Perce",
-    "published": "2026-11-03T08:24:09Z",
-    "privacy": "private",
-    "duration": "PT34M55S",
-    "views": 0,
-    "likes": 0,
-    "comments": 0
-   },
-   {
     "id": "naMTvf4CXt0",
     "title": "The cavalry rides into Yellowstone #Shorts",
     "published": "2026-11-03T01:00:01Z",
     "privacy": "public",
     "duration": "PT40S",
-    "views": 6,
+    "views": 7,
     "likes": 0,
     "comments": 1
    },
@@ -144,7 +204,7 @@
     "published": "2026-11-02T18:00:18Z",
     "privacy": "public",
     "duration": "PT52S",
-    "views": 1308,
+    "views": 1313,
     "likes": 34,
     "comments": 1
    },
@@ -174,7 +234,7 @@
     "published": "2026-11-01T16:00:03Z",
     "privacy": "public",
     "duration": "PT11M33S",
-    "views": 4,
+    "views": 5,
     "likes": 0,
     "comments": 2
    },
@@ -314,7 +374,7 @@
     "published": "2026-10-30T00:30:36Z",
     "privacy": "public",
     "duration": "PT52S",
-    "views": 22,
+    "views": 24,
     "likes": 0,
     "comments": 0
    },
@@ -404,12 +464,12 @@
     "published": "2026-10-26T00:02:23Z",
     "privacy": "public",
     "duration": "PT25M12S",
-    "views": 17,
+    "views": 25,
     "likes": 1,
     "comments": 1
    }
   ],
-  "scopes": "https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/yt-analytics.readonly https://www.googleapis.com/auth/youtube.upload",
+  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/yt-analytics.readonly",
   "analytics_by_video": {
    "columns": [
     "video",
@@ -425,18 +485,18 @@
    "rows": [
     [
      "R-V4lG2dEfU",
-     938,
-     357,
+     1285,
+     506,
+     35,
+     67.63,
      33,
-     64.74,
-     24,
      0,
      0,
-     2
+     4
     ],
     [
      "RWwPTGQF82o",
-     566,
+     567,
      67,
      17,
      61.809999999999995,
@@ -447,10 +507,10 @@
     ],
     [
      "50XkGgJ5nNQ",
-     491,
+     493,
      102,
      24,
-     58.24,
+     58.10999999999999,
      15,
      0,
      0,
@@ -469,10 +529,10 @@
     ],
     [
      "QICPYzghiNc",
-     155,
-     36,
+     189,
+     43,
      25,
-     58.489999999999995,
+     56.96,
      6,
      0,
      0,
@@ -480,7 +540,7 @@
     ],
     [
      "4X1O7pEr_FQ",
-     22,
+     25,
      3,
      24,
      78.92,
@@ -502,7 +562,7 @@
     ],
     [
      "eNV_qLTs2Js",
-     17,
+     18,
      2,
      20,
      66.15,
@@ -512,23 +572,23 @@
      0
     ],
     [
-     "G03Sxe_dD9k",
-     9,
-     0,
-     11,
-     34.51,
-     0,
+     "LfoM0KAi8Yo",
+     16,
+     154,
+     841,
+     55.67999999999999,
+     1,
      0,
      0,
      0
     ],
     [
-     "LfoM0KAi8Yo",
-     6,
-     27,
-     334,
-     22.1,
+     "G03Sxe_dD9k",
+     14,
      1,
+     18,
+     54.02,
+     0,
      0,
      0,
      0
@@ -539,6 +599,17 @@
      1,
      26,
      66.47,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "-vkXqMrSljM",
+     5,
+     1,
+     14,
+     1.82,
      0,
      0,
      0,
@@ -567,19 +638,30 @@
      0
     ],
     [
-     "-vkXqMrSljM",
-     4,
+     "uTzcrqnoa4I",
+     3,
      0,
-     14,
-     1.82,
+     0,
+     0,
      0,
      0,
      0,
      0
     ],
     [
-     "uTzcrqnoa4I",
+     "jbZbPS173wc",
      3,
+     0,
+     3,
+     0.49,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "SSC66rbZrHo",
+     2,
      0,
      0,
      0,
@@ -622,6 +704,17 @@
      0
     ],
     [
+     "bJgBuP716E8",
+     1,
+     0,
+     43,
+     95.88,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
      "M7G6z5k_mm0",
      1,
      0,
@@ -655,22 +748,22 @@
      0
     ],
     [
-     "yMqRsiwMhhA",
+     "W1ytO_kbww0",
      1,
      0,
-     0,
-     0,
+     5,
+     7.31,
      0,
      0,
      0,
      0
     ],
     [
-     "W1ytO_kbww0",
+     "yMqRsiwMhhA",
      1,
      0,
-     5,
-     7.31,
+     0,
+     0,
      0,
      0,
      0,
@@ -703,33 +796,33 @@
   "traffic_sources": [
    [
     "NO_LINK_OTHER",
-    2,
-    25
+    6,
+    75
    ],
    [
     "SUBSCRIBER",
-    5,
+    10,
     14
    ],
    [
     "YT_CHANNEL",
-    3,
-    0
+    6,
+    1
    ],
    [
     "YT_SEARCH",
-    91,
-    14
+    113,
+    18
    ],
    [
     "RELATED_VIDEO",
-    1,
-    0
+    5,
+    76
    ],
    [
     "YT_OTHER_PAGE",
-    32,
-    10
+    37,
+    12
    ],
    [
     "EXT_URL",
@@ -743,83 +836,55 @@
    ],
    [
     "SHORTS",
-    2367,
-    605
+    2713,
+    755
    ]
   ],
   "reach_14d": {
    "reports": 14,
    "by_video": {
-    "ShKXhJameWs": {
-     "impressions": 2,
-     "ctr": 0.0
-    },
-    "28dwCqkOC1M": {
-     "impressions": 1,
-     "ctr": 0.0
-    },
-    "9Me9ishwydQ": {
-     "impressions": 2,
-     "ctr": 0.0
-    },
-    "M7G6z5k_mm0": {
-     "impressions": 2,
-     "ctr": 0.0
-    },
-    "_JSbcgxt6Bg": {
-     "impressions": 1,
-     "ctr": 0.0
-    },
-    "nPMA_uwSJTc": {
-     "impressions": 2,
-     "ctr": 0.0
-    },
-    "yMqRsiwMhhA": {
-     "impressions": 2,
-     "ctr": 0.0
-    },
     "4X1O7pEr_FQ": {
-     "impressions": 253,
-     "ctr": 0.004
+     "impressions": 293,
+     "ctr": 0.0102
     },
     "LfoM0KAi8Yo": {
-     "impressions": 25,
-     "ctr": 0.04
+     "impressions": 153,
+     "ctr": 0.0327
     },
     "eNV_qLTs2Js": {
-     "impressions": 28,
-     "ctr": 0.0357
+     "impressions": 34,
+     "ctr": 0.0294
     },
     "G03Sxe_dD9k": {
-     "impressions": 63,
-     "ctr": 0.0159
+     "impressions": 81,
+     "ctr": 0.0123
     },
     "l3Wsfo7k-Lo": {
-     "impressions": 316,
-     "ctr": 0.0063
+     "impressions": 376,
+     "ctr": 0.0053
     },
     "-vkXqMrSljM": {
-     "impressions": 35,
-     "ctr": 0.0
+     "impressions": 57,
+     "ctr": 0.0175
     },
     "50XkGgJ5nNQ": {
-     "impressions": 55,
-     "ctr": 0.0182
+     "impressions": 69,
+     "ctr": 0.0145
     },
     "EuS8OlyY9I4": {
-     "impressions": 7,
+     "impressions": 10,
      "ctr": 0.0
     },
     "av9mIcktn6A": {
-     "impressions": 18,
-     "ctr": 0.0556
+     "impressions": 21,
+     "ctr": 0.0476
     },
     "E-izx81EvAE": {
-     "impressions": 33,
+     "impressions": 40,
      "ctr": 0.0
     },
     "RWwPTGQF82o": {
-     "impressions": 18,
+     "impressions": 28,
      "ctr": 0.0
     },
     "iHu31E8tX_k": {
@@ -827,27 +892,51 @@
      "ctr": 0.0
     },
     "nWccTvDItMk": {
-     "impressions": 16,
+     "impressions": 21,
      "ctr": 0.0
     },
     "uTzcrqnoa4I": {
-     "impressions": 5,
+     "impressions": 6,
      "ctr": 0.0
     },
     "P99Gu3GCZVw": {
-     "impressions": 29,
+     "impressions": 61,
      "ctr": 0.0
     },
     "QICPYzghiNc": {
-     "impressions": 1,
-     "ctr": 0.0
+     "impressions": 10,
+     "ctr": 0.1
     },
     "bWSnXlwtW04": {
-     "impressions": 2,
+     "impressions": 6,
      "ctr": 0.0
     },
     "wBQ0FKBps08": {
-     "impressions": 1,
+     "impressions": 10,
+     "ctr": 0.0
+    },
+    "R-V4lG2dEfU": {
+     "impressions": 22,
+     "ctr": 0.0
+    },
+    "naMTvf4CXt0": {
+     "impressions": 6,
+     "ctr": 0.0
+    },
+    "Ay2qGG6UjqI": {
+     "impressions": 5,
+     "ctr": 0.0
+    },
+    "SSC66rbZrHo": {
+     "impressions": 3,
+     "ctr": 0.0
+    },
+    "bJgBuP716E8": {
+     "impressions": 2,
+     "ctr": 0.0
+    },
+    "jbZbPS173wc": {
+     "impressions": 60,
      "ctr": 0.0
     }
    }
@@ -856,23 +945,36 @@
  "instagram": {
   "profile": {
    "username": "alphadog.studio",
-   "followers_count": 106,
-   "media_count": 59,
+   "followers_count": 107,
+   "media_count": 60,
    "id": "28926959546914399"
   },
   "media": [
    {
+    "id": "18170127118496930",
+    "at": "2026-11-05T01:08:51+0000",
+    "caption": "A party of nine tourists, most from Radersburg, Montana, came to see the geysers",
+    "likes": 1,
+    "comments": 1,
+    "views": 127,
+    "reach": 109,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 2,
+    "ig_reels_avg_watch_time": 17757
+   },
+   {
     "id": "18108217883204428",
     "at": "2026-11-04T20:09:16+0000",
     "caption": "About August 23, 1877, the Nez Perce entered Yellowstone near today's West Entra",
-    "likes": 0,
+    "likes": 7,
     "comments": 1,
-    "views": 0,
-    "reach": 0,
-    "saved": 0,
+    "views": 195,
+    "reach": 156,
+    "saved": 3,
     "shares": 0,
-    "total_interactions": 1,
-    "ig_reels_avg_watch_time": 0
+    "total_interactions": 11,
+    "ig_reels_avg_watch_time": 15301
    },
    {
     "id": "18469227676137160",
@@ -919,12 +1021,12 @@
     "caption": "In one winter hunters killed some 3,000 elk in and around early Yellowstone, jus",
     "likes": 35,
     "comments": 1,
-    "views": 1798,
-    "reach": 1600,
+    "views": 1799,
+    "reach": 1601,
     "saved": 6,
     "shares": 0,
     "total_interactions": 44,
-    "ig_reels_avg_watch_time": 19090
+    "ig_reels_avg_watch_time": 19078
    },
    {
     "id": "18094438412191750",
@@ -1118,6 +1220,14 @@
   },
   "posts": [
    {
+    "id": "103210859154410_1108284588637200",
+    "at": "2026-11-05T01:09:27+0000",
+    "text": "A party of nine tourists, most from Radersburg, Montana, came to see the geysers",
+    "reactions": 0,
+    "comments": 1,
+    "shares": 0
+   },
+   {
     "id": "103210859154410_1108105051988487",
     "at": "2026-11-04T20:09:58+0000",
     "text": "About August 23, 1877, the Nez Perce entered Yellowstone near today's West Entra",
@@ -1137,7 +1247,7 @@
     "id": "103210859154410_1107210168744642",
     "at": "2026-11-04T00:13:17+0000",
     "text": "August 24, 1877. Tourists camped near Fountain Geyser see riders appear out of t",
-    "reactions": 0,
+    "reactions": 1,
     "comments": 1,
     "shares": 0
    },
@@ -1424,12 +1534,21 @@
   ],
   "reels": [
    {
-    "id": "1444981917119156",
-    "at": "2026-11-04T20:09:24+0000",
-    "text": "About August 23, 1877, the Nez Perce entered Yellowstone near today's West Entra",
+    "id": "2398338540907305",
+    "at": "2026-11-05T01:08:58+0000",
+    "text": "A party of nine tourists, most from Radersburg, Montana, came to see the geysers",
     "fb_reels_total_plays": 0,
     "blue_reels_play_count": 0,
     "post_video_avg_time_watched": 0,
+    "post_video_followers": 0
+   },
+   {
+    "id": "1444981917119156",
+    "at": "2026-11-04T20:09:24+0000",
+    "text": "About August 23, 1877, the Nez Perce entered Yellowstone near today's West Entra",
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 6530,
     "post_video_followers": 0
    },
    {
@@ -1445,9 +1564,9 @@
     "id": "1442702463914812",
     "at": "2026-11-04T00:12:30+0000",
     "text": "August 24, 1877. Tourists camped near Fountain Geyser see riders appear out of t",
-    "fb_reels_total_plays": 1,
-    "blue_reels_play_count": 1,
-    "post_video_avg_time_watched": 2600,
+    "fb_reels_total_plays": 2,
+    "blue_reels_play_count": 2,
+    "post_video_avg_time_watched": 8787,
     "post_video_followers": 0
    },
    {
@@ -1789,12 +1908,32 @@
   "handle": "alphadogstudio",
   "videos": [
    {
+    "id": "7704750110801956109",
+    "at": "2026-11-05T18:05:33Z",
+    "title": "Fifteen infantry soldiers stationed at Old Faithful started explainin...",
+    "duration": 49,
+    "views": 71,
+    "likes": 0,
+    "comments": 0,
+    "shares": 0
+   },
+   {
+    "id": "7704486411428285709",
+    "at": "2026-11-05T01:02:24Z",
+    "title": "A party of nine tourists, most from Radersburg, Montana, came to see ...",
+    "duration": 47,
+    "views": 168,
+    "likes": 8,
+    "comments": 0,
+    "shares": 0
+   },
+   {
     "id": "7704378985727282446",
     "at": "2026-11-04T18:05:56Z",
     "title": "About August 23, 1877, the Nez Perce entered Yellowstone near today's...",
     "duration": 45,
-    "views": 95,
-    "likes": 1,
+    "views": 163,
+    "likes": 5,
     "comments": 0,
     "shares": 0
    },
@@ -1803,8 +1942,8 @@
     "at": "2026-11-04T01:01:39Z",
     "title": "In 1863 the United States cut the Nez Perce reservation by about nine...",
     "duration": 44,
-    "views": 142,
-    "likes": 9,
+    "views": 155,
+    "likes": 10,
     "comments": 0,
     "shares": 0
    },
@@ -1813,7 +1952,7 @@
     "at": "2026-11-03T18:03:58Z",
     "title": "August 24, 1877. Tourists camped near Fountain Geyser see riders appe...",
     "duration": 52,
-    "views": 133,
+    "views": 138,
     "likes": 7,
     "comments": 0,
     "shares": 0
@@ -1833,7 +1972,7 @@
     "at": "2026-11-02T18:07:30Z",
     "title": "In one winter hunters killed some 3,000 elk in and around early Yello...",
     "duration": 51,
-    "views": 252,
+    "views": 253,
     "likes": 16,
     "comments": 0,
     "shares": 0
@@ -1863,7 +2002,7 @@
     "at": "2026-11-01T00:00:52Z",
     "title": "2.1 million years ago the Huckleberry Ridge eruption threw out about ...",
     "duration": 45,
-    "views": 198,
+    "views": 199,
     "likes": 3,
     "comments": 0,
     "shares": 1
@@ -1893,7 +2032,7 @@
     "at": "2026-10-31T16:31:11Z",
     "title": "Yellowstone's most likely \"eruption\" is steam, not lava. Clogged unde...",
     "duration": 53,
-    "views": 129,
+    "views": 131,
     "likes": 2,
     "comments": 0,
     "shares": 0
@@ -1953,7 +2092,7 @@
     "at": "2026-10-29T01:30:15Z",
     "title": "1886. The Army loaded nearly every Chiricahua Apache onto prison trai...",
     "duration": 33,
-    "views": 552,
+    "views": 574,
     "likes": 40,
     "comments": 4,
     "shares": 2
@@ -1963,7 +2102,7 @@
     "at": "2026-10-28T00:05:47Z",
     "title": "America just got its 64th national park, and most people have never h...",
     "duration": 30,
-    "views": 313,
+    "views": 318,
     "likes": 19,
     "comments": 2,
     "shares": 0
@@ -1973,12 +2112,12 @@
     "at": "2026-10-26T04:10:00Z",
     "title": "Found dead under an oak in 1882. Revolver in hand, boots gone. The ju...",
     "duration": 30,
-    "views": 1117,
+    "views": 1143,
     "likes": 56,
     "comments": 2,
     "shares": 1
    }
   ],
-  "listed": 36
+  "listed": 38
  }
 }
