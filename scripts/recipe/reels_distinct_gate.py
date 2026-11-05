@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Rule V45 gate: every Short/Reel/Story must look completely different from every other one (posted, queued, or in the same batch).
 usage: reels_distinct_gate.py <candidate files/dirs...> [--against <files/dirs...>] [--max 0.05]
-Samples 2 frames/s, 17x16 dHash; a frame 'repeats' when a frame of another video is within Hamming 16/256. A video FAILS if more than
+Samples 2 frames/s (the shared end card, last 3.5 s, is ignored), 17x16 dHash; a frame 'repeats' when a frame of another video is within Hamming 16/256. A video FAILS if more than
 --max (default 5 %) of its frames repeat in any single other video, or if its cover (first 0.5 s) repeats any other video's cover/first 3 s.
 Candidates are also compared with each other. Exit 1 on any failure."""
 import glob, itertools, os, subprocess, sys, tempfile
@@ -17,7 +17,7 @@ def hashes(f):
         out = []
         for p in sorted(glob.glob(d + "/*.png")):
             g = np.asarray(Image.open(p).convert("L").resize((17, 16)), dtype=np.int16); out.append((g[:, 1:] > g[:, :-1]).flatten())
-    return np.array(out)
+    return np.array(out[:-7] if len(out) > 14 else out)   # the shared CTA end card (last ~3.5 s) is by design identical
 C = expand(cand_a); R = [f for f in expand(ref_a) if f not in C]
 H = {f: hashes(f) for f in C + R}; bad = set()
 def share(x, y): return float(((H[x][:, None, :] != H[y][None, :, :]).sum(2).min(1) <= 16).mean())
