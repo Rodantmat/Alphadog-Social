@@ -7,7 +7,7 @@ Instagram: resumable upload (no public URL needed) -> container -> FINISHED -> m
 Facebook: /video_reels start -> rupload -> finish (PUBLISHED), then the link as the first comment (Meta warns links in captions cut reach).
 TikTok (until the app passes TikTok's audit): the clip goes to the creator's TikTok inbox as a draft to finish in the app.
 Every result is written back to the queue (post log)."""
-import json, os, sys, time, subprocess, datetime as dt, urllib.request, urllib.error, urllib.parse
+import re, subprocess, json, os, sys, time, subprocess, datetime as dt, urllib.request, urllib.error, urllib.parse
 G = "https://graph.facebook.com/v26.0"; T = os.environ["FB_PAGE_TOKEN"].strip(); PAGE = os.environ["FB_PAGE_ID"].strip()
 DRY = os.environ.get("DRY_RUN", "").strip().lower() in ("1", "true", "yes"); ONLY = os.environ.get("ONLY", "").strip()
 Q = "content/social_queue.json"; MEDIA = "media"
@@ -160,7 +160,13 @@ for item in q:
     if not due: continue
     if item.get("hold"): print(f"== {item['id']} HELD: {item['hold']}", flush=True); continue
     if "{LINK}" in json.dumps(item): print(f"== {item['id']} SKIPPED: link placeholder not filled yet", flush=True); continue
-    path = os.path.join(MEDIA, item.get("file") or item["files"][0]); print(f"== {item['id']} ({item['platform']}) {path} {os.path.getsize(path)} bytes", flush=True)
+    path = os.path.join(MEDIA, item.get("file") or item["files"][0])
+    if not item["platform"].endswith("album") and path.endswith(".mp4"):   # V46 fail-closed: never publish a silent video (owner 2026-11-04)
+        _v = subprocess.run(["ffmpeg", "-nostats", "-i", path, "-af", "volumedetect", "-vn", "-f", "null", "-"], capture_output=True, text=True).stderr
+        _m = re.search(r"mean_volume: (-?[\d.]+|-inf) dB", _v)
+        if _m is None or _m.group(1) == "-inf" or float(_m.group(1)) < -45:
+            item.setdefault("errors", []).append(f"{now:%Y-%m-%dT%H:%MZ} BLOCKED: silent audio (V46)"); print(f"== {item['id']} BLOCKED: silent audio", flush=True); changed = True; continue
+    print(f"== {item['id']} ({item['platform']}) {path} {os.path.getsize(path)} bytes", flush=True)
     try:
         fn = {"instagram": ig_reel, "facebook": fb_reel, "instagram_story": ig_story, "facebook_story": fb_story, "facebook_album": fb_album, "tiktok_draft": tt_draft}[item["platform"]]
         # Instagram's upload endpoint fails intermittently with 'ProcessingFailedError' (2026-10-30: same file failed 4x, then posted untouched).
