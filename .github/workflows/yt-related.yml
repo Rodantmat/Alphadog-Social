@@ -1,0 +1,33 @@
+name: yt-related
+# Link a Short to its documentary via Studio Related video (explore = look only).
+on:
+  workflow_dispatch:
+    inputs:
+      video_id: { description: "Short video id", required: true }
+      related_title: { description: "exact title of the long video", default: "" }
+      mode: { description: "explore | apply", default: "explore" }
+permissions:
+  contents: write
+concurrency: { group: yt-studio-session, cancel-in-progress: false }
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q playwright cryptography && python3 -m playwright install --with-deps chromium >/dev/null
+      - name: Run
+        env:
+          YT_STUDIO_SESSION: ${{ secrets.YT_STUDIO_SESSION }}
+          YT_GOOGLE_SESSION: ${{ secrets.YT_GOOGLE_SESSION }}
+          VIDEO_ID: ${{ inputs.video_id }}
+          RELATED_TITLE: ${{ inputs.related_title }}
+          MODE: ${{ inputs.mode }}
+        run: xvfb-run -a python3 scripts/yt_studio_related.py
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: related-${{ github.run_id }}
+          path: /tmp/ytqa
+          retention-days: 7
+          if-no-files-found: ignore
