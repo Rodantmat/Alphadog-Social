@@ -1538,14 +1538,29 @@
   "platform": "instagram_story",
   "file": "yellowstone_story_ch2s7.mp4",
   "at": "2026-11-06T19:00:00Z",
-  "story_v2": "Yellowstone hot spring | photo:ph_20211004163150.jpg"
+  "story_v2": "Yellowstone hot spring | photo:ph_20211004163150.jpg",
+  "done": {
+   "media_id": "18130423747882661",
+   "story": true,
+   "at": "2026-11-06T19:04:54Z"
+  }
  },
  {
   "id": "ch2s7_fb",
   "platform": "facebook_story",
   "file": "yellowstone_story_ch2s7.mp4",
   "at": "2026-11-06T19:00:00Z",
-  "story_v2": "Yellowstone hot spring | photo:ph_20211004163150.jpg"
+  "story_v2": "Yellowstone hot spring | photo:ph_20211004163150.jpg",
+  "done": {
+   "video_id": "1801171017634093",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "2209286276674669"
+   },
+   "story": true,
+   "at": "2026-11-06T19:04:54Z"
+  }
  },
  {
   "id": "ch2s8_ig",
