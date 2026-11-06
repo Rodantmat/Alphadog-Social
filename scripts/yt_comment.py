@@ -7,7 +7,7 @@ def token():
                                 "refresh_token": os.environ["YT_REFRESH_TOKEN"], "grant_type": "refresh_token"}).encode()
     with urllib.request.urlopen(urllib.request.Request("https://oauth2.googleapis.com/token", data=d), timeout=30) as r:
         return json.loads(r.read())["access_token"]
-now = datetime.datetime.now(datetime.timezone.utc); tok = None
+now = datetime.datetime.now(datetime.timezone.utc); tok = None; FAILED = []
 for f in sorted(glob.glob("content/pending/comment_*.json")):
     q = json.load(open(f))
     if now < datetime.datetime.fromisoformat(q["after"].replace("Z", "+00:00")): print("not yet", f); continue
@@ -31,4 +31,7 @@ for f in sorted(glob.glob("content/pending/comment_*.json")):
             post("https://www.googleapis.com/youtube/v3/comments?part=snippet", {"snippet": {"parentId": th["id"], "textOriginal": extra}})
             print("reply posted", q["video_id"], len(extra), "chars")
         os.remove(f)
-    except urllib.error.HTTPError as e: print("comment failed", q["video_id"], e.code, e.read()[:600])
+    except urllib.error.HTTPError as e: print("comment failed", q["video_id"], e.code, e.read()[:600]); FAILED.append(q["video_id"])
+
+if FAILED:
+    print("::error::comment failed for", FAILED); sys.exit(1)   # never let a failed comment look green
