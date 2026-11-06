@@ -1266,7 +1266,13 @@
   "thumb_ms": 1200,
   "caption": "A writer in the park that winter sent word of Ed Howell's capture to the magazine Forest and Stream. The story ran with photographs, and the outrage spread fast.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 2 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Army #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw",
-  "trial": false
+  "trial": false,
+  "done": {
+   "media_id": "18124319959912031",
+   "permalink": "https://www.instagram.com/reel/DfYZaytgXZB/",
+   "posted": "2026-11-06T01:12:12+0000",
+   "at": "2026-11-06T01:10:27Z"
+  }
  },
  {
   "id": "ch2y6_fb",
@@ -1274,7 +1280,42 @@
   "file": "yellowstone_ch2_y6.mp4",
   "at": "2026-11-06T01:00:00Z",
   "caption": "A writer in the park that winter sent word of Ed Howell's capture to the magazine Forest and Stream. The story ran with photographs, and the outrage spread fast.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 2 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Army #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw",
+  "done": {
+   "video_id": "3628724230638352",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1109308588534800"
+   },
+   "permalink": "https://www.facebook.com/reel/3628724230638352/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 38170642
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-06T01:12:21+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "3628724230638352_1118577557585590"
+   },
+   "status_errors": [
+    "HTTP 400 https://graph.facebook.com/v26.0/3628724230638352: {\"error\":{\"message\":\"Unsupported get request. Object with ID '3628724230638352' does not exist, cannot be loaded due to missing permissions,"
+   ],
+   "at": "2026-11-06T01:10:27Z"
+  }
  },
  {
   "id": "ch2y7_ig",
