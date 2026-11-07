@@ -1,20 +1,90 @@
 {
- "at": "2026-11-06T19:58:51Z",
+ "at": "2026-11-07T18:04:51Z",
  "youtube": {
   "channel": {
-   "viewCount": "2972",
+   "viewCount": "3043",
    "subscriberCount": "10",
    "hiddenSubscriberCount": false,
-   "videoCount": "30"
+   "videoCount": "32"
   },
   "videos": [
+   {
+    "id": "2Ge5FJpCz3c",
+    "title": "Native people were never afraid of the geysers #Shorts",
+    "published": "2026-11-07T18:00:05Z",
+    "privacy": "public",
+    "duration": "PT45S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "zscU0YPpl_Y",
+    "title": "Why dogs can't drink from Zion's Virgin River #Shorts",
+    "published": "2026-11-07T08:22:03Z",
+    "privacy": "private",
+    "duration": "PT23S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "TPB5_pBj50U",
+    "title": "Hiking the Zion Narrows: the trail is the river #Shorts",
+    "published": "2026-11-07T08:21:56Z",
+    "privacy": "private",
+    "duration": "PT24S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "6sIg9L_rgX4",
+    "title": "4 nights on a ledge in Zion's Kolob Creek #Shorts",
+    "published": "2026-11-07T08:21:55Z",
+    "privacy": "private",
+    "duration": "PT35S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "0c8WvCxQWHY",
+    "title": "Why Zion's floods are so deadly #Shorts",
+    "published": "2026-11-07T08:21:48Z",
+    "privacy": "private",
+    "duration": "PT34S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "tb-0953M_T8",
+    "title": "Zion flash flood: 7 canyoneers, 15 minutes #Shorts",
+    "published": "2026-11-07T08:21:44Z",
+    "privacy": "private",
+    "duration": "PT24S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "IgQF68CMycI",
+    "title": "The day soldiers became Yellowstone's first rangers #Shorts",
+    "published": "2026-11-07T01:00:08Z",
+    "privacy": "public",
+    "duration": "PT55S",
+    "views": 23,
+    "likes": 0,
+    "comments": 1
+   },
    {
     "id": "rxGpPtUx0h4",
     "title": "One masked man robbed 17 stagecoaches in Yellowstone #Shorts",
     "published": "2026-11-06T18:00:20Z",
     "privacy": "public",
     "duration": "PT44S",
-    "views": 11,
+    "views": 26,
     "likes": 0,
     "comments": 1
    },
@@ -64,7 +134,7 @@
     "published": "2026-11-06T01:00:34Z",
     "privacy": "public",
     "duration": "PT44S",
-    "views": 1,
+    "views": 2,
     "likes": 0,
     "comments": 1
    },
@@ -74,7 +144,7 @@
     "published": "2026-11-05T20:00:12Z",
     "privacy": "public",
     "duration": "PT34M55S",
-    "views": 5,
+    "views": 18,
     "likes": 0,
     "comments": 4
    },
@@ -119,16 +189,6 @@
     "comments": 0
    },
    {
-    "id": "2Ge5FJpCz3c",
-    "title": "Native people were never afraid of the geysers #Shorts",
-    "published": "2026-11-05T08:16:05Z",
-    "privacy": "private",
-    "duration": "PT45S",
-    "views": 0,
-    "likes": 0,
-    "comments": 0
-   },
-   {
     "id": "x1PAl5B-IeI",
     "title": "Nine Yellowstone tourists taken by the Nez Perce #Shorts",
     "published": "2026-11-05T01:00:19Z",
@@ -154,16 +214,6 @@
     "published": "2026-11-04T17:22:35Z",
     "privacy": "private",
     "duration": "PT13M5S",
-    "views": 0,
-    "likes": 0,
-    "comments": 0
-   },
-   {
-    "id": "IgQF68CMycI",
-    "title": "The day soldiers became Yellowstone's first rangers #Shorts",
-    "published": "2026-11-04T08:15:25Z",
-    "privacy": "private",
-    "duration": "PT55S",
     "views": 0,
     "likes": 0,
     "comments": 0
@@ -274,7 +324,7 @@
     "published": "2026-11-01T16:00:03Z",
     "privacy": "public",
     "duration": "PT11M33S",
-    "views": 5,
+    "views": 6,
     "likes": 0,
     "comments": 2
    },
@@ -304,7 +354,7 @@
     "published": "2026-11-01T02:30:31Z",
     "privacy": "public",
     "duration": "PT28S",
-    "views": 558,
+    "views": 560,
     "likes": 9,
     "comments": 1
    },
@@ -404,7 +454,7 @@
     "published": "2026-10-30T15:00:38Z",
     "privacy": "public",
     "duration": "PT12M58S",
-    "views": 7,
+    "views": 8,
     "likes": 0,
     "comments": 1
    },
@@ -414,7 +464,7 @@
     "published": "2026-10-30T00:30:36Z",
     "privacy": "public",
     "duration": "PT52S",
-    "views": 24,
+    "views": 28,
     "likes": 0,
     "comments": 0
    },
@@ -444,7 +494,7 @@
     "published": "2026-10-29T01:30:07Z",
     "privacy": "public",
     "duration": "PT34S",
-    "views": 14,
+    "views": 15,
     "likes": 0,
     "comments": 0
    },
@@ -474,7 +524,7 @@
     "published": "2026-10-26T18:30:07Z",
     "privacy": "public",
     "duration": "PT31S",
-    "views": 23,
+    "views": 28,
     "likes": 1,
     "comments": 0
    },
@@ -504,12 +554,12 @@
     "published": "2026-10-26T00:02:23Z",
     "privacy": "public",
     "duration": "PT25M12S",
-    "views": 35,
+    "views": 47,
     "likes": 2,
     "comments": 1
    }
   ],
-  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/yt-analytics.readonly https://www.googleapis.com/auth/youtube.force-ssl",
+  "scopes": "https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/yt-analytics.readonly https://www.googleapis.com/auth/youtube",
   "analytics_by_video": {
    "columns": [
     "video",
@@ -525,14 +575,14 @@
    "rows": [
     [
      "R-V4lG2dEfU",
-     1285,
-     506,
+     1312,
+     519,
      35,
-     67.63,
-     33,
+     68.2,
+     34,
      0,
      0,
-     4
+     5
     ],
     [
      "RWwPTGQF82o",
@@ -590,8 +640,19 @@
      0
     ],
     [
+     "LfoM0KAi8Yo",
+     25,
+     179,
+     671,
+     44.44,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
      "l3Wsfo7k-Lo",
-     22,
+     24,
      2,
      21,
      40.5,
@@ -602,22 +663,11 @@
     ],
     [
      "eNV_qLTs2Js",
-     18,
+     19,
      2,
      20,
      66.15,
      0,
-     0,
-     0,
-     0
-    ],
-    [
-     "LfoM0KAi8Yo",
-     16,
-     154,
-     841,
-     55.67999999999999,
-     1,
      0,
      0,
      0
@@ -635,7 +685,7 @@
     ],
     [
      "naMTvf4CXt0",
-     6,
+     7,
      1,
      26,
      66.47,
@@ -646,10 +696,21 @@
     ],
     [
      "-vkXqMrSljM",
-     5,
+     6,
      1,
-     14,
-     1.82,
+     11,
+     1.46,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "P99Gu3GCZVw",
+     5,
+     0,
+     0,
+     0,
      0,
      0,
      0,
@@ -667,11 +728,44 @@
      0
     ],
     [
-     "P99Gu3GCZVw",
+     "bJgBuP716E8",
+     4,
+     1,
+     44,
+     98.9,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "wBQ0FKBps08",
+     4,
+     1,
+     56,
+     103.05,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "jbZbPS173wc",
      4,
      0,
+     3,
+     0.49,
      0,
      0,
+     0,
+     0
+    ],
+    [
+     "VrWOyOk0urw",
+     4,
+     0,
+     5,
+     11.57,
      0,
      0,
      0,
@@ -689,17 +783,6 @@
      0
     ],
     [
-     "jbZbPS173wc",
-     3,
-     0,
-     3,
-     0.49,
-     0,
-     0,
-     0,
-     0
-    ],
-    [
      "SSC66rbZrHo",
      2,
      0,
@@ -711,22 +794,11 @@
      0
     ],
     [
-     "wBQ0FKBps08",
+     "Ay2qGG6UjqI",
      2,
      0,
      0,
      0,
-     0,
-     0,
-     0,
-     0
-    ],
-    [
-     "av9mIcktn6A",
-     1,
-     0,
-     55,
-     96.45,
      0,
      0,
      0,
@@ -744,22 +816,11 @@
      0
     ],
     [
-     "bJgBuP716E8",
+     "av9mIcktn6A",
      1,
      0,
-     43,
-     95.88,
-     0,
-     0,
-     0,
-     0
-    ],
-    [
-     "M7G6z5k_mm0",
-     1,
-     0,
-     0,
-     0,
+     55,
+     96.45,
      0,
      0,
      0,
@@ -788,6 +849,28 @@
      0
     ],
     [
+     "yMqRsiwMhhA",
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "M7G6z5k_mm0",
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
      "W1ytO_kbww0",
      1,
      0,
@@ -799,11 +882,11 @@
      0
     ],
     [
-     "yMqRsiwMhhA",
+     "x1PAl5B-IeI",
      1,
      0,
-     0,
-     0,
+     46,
+     97.8,
      0,
      0,
      0,
@@ -836,12 +919,12 @@
   "traffic_sources": [
    [
     "NO_LINK_OTHER",
-    6,
-    75
+    4,
+    25
    ],
    [
     "SUBSCRIBER",
-    10,
+    15,
     14
    ],
    [
@@ -851,17 +934,17 @@
    ],
    [
     "YT_SEARCH",
-    113,
-    18
+    126,
+    46
    ],
    [
     "RELATED_VIDEO",
-    5,
-    76
+    12,
+    126
    ],
    [
     "YT_OTHER_PAGE",
-    37,
+    38,
     12
    ],
    [
@@ -876,55 +959,60 @@
    ],
    [
     "SHORTS",
-    2713,
-    755
+    2737,
+    767
+   ],
+   [
+    "HASHTAGS",
+    2,
+    0
    ]
   ],
   "reach_14d": {
    "reports": 14,
    "by_video": {
     "4X1O7pEr_FQ": {
-     "impressions": 293,
-     "ctr": 0.0102
+     "impressions": 305,
+     "ctr": 0.0098
     },
     "LfoM0KAi8Yo": {
-     "impressions": 153,
-     "ctr": 0.0327
+     "impressions": 475,
+     "ctr": 0.0253
     },
     "eNV_qLTs2Js": {
-     "impressions": 34,
-     "ctr": 0.0294
+     "impressions": 41,
+     "ctr": 0.0244
     },
     "G03Sxe_dD9k": {
-     "impressions": 81,
-     "ctr": 0.0123
+     "impressions": 101,
+     "ctr": 0.0099
     },
     "l3Wsfo7k-Lo": {
-     "impressions": 376,
-     "ctr": 0.0053
+     "impressions": 433,
+     "ctr": 0.0046
     },
     "-vkXqMrSljM": {
-     "impressions": 57,
-     "ctr": 0.0175
+     "impressions": 88,
+     "ctr": 0.0227
     },
     "50XkGgJ5nNQ": {
-     "impressions": 69,
-     "ctr": 0.0145
+     "impressions": 72,
+     "ctr": 0.0139
     },
     "EuS8OlyY9I4": {
-     "impressions": 10,
+     "impressions": 11,
      "ctr": 0.0
     },
     "av9mIcktn6A": {
-     "impressions": 21,
-     "ctr": 0.0476
+     "impressions": 24,
+     "ctr": 0.0417
     },
     "E-izx81EvAE": {
-     "impressions": 40,
+     "impressions": 42,
      "ctr": 0.0
     },
     "RWwPTGQF82o": {
-     "impressions": 28,
+     "impressions": 30,
      "ctr": 0.0
     },
     "iHu31E8tX_k": {
@@ -932,7 +1020,7 @@
      "ctr": 0.0
     },
     "nWccTvDItMk": {
-     "impressions": 21,
+     "impressions": 24,
      "ctr": 0.0
     },
     "uTzcrqnoa4I": {
@@ -940,31 +1028,31 @@
      "ctr": 0.0
     },
     "P99Gu3GCZVw": {
-     "impressions": 61,
+     "impressions": 99,
      "ctr": 0.0
     },
     "QICPYzghiNc": {
-     "impressions": 10,
-     "ctr": 0.1
+     "impressions": 11,
+     "ctr": 0.0909
     },
     "bWSnXlwtW04": {
      "impressions": 6,
      "ctr": 0.0
     },
     "wBQ0FKBps08": {
-     "impressions": 10,
-     "ctr": 0.0
+     "impressions": 19,
+     "ctr": 0.0526
     },
     "R-V4lG2dEfU": {
-     "impressions": 22,
+     "impressions": 32,
      "ctr": 0.0
     },
     "naMTvf4CXt0": {
-     "impressions": 6,
+     "impressions": 10,
      "ctr": 0.0
     },
     "Ay2qGG6UjqI": {
-     "impressions": 5,
+     "impressions": 10,
      "ctr": 0.0
     },
     "SSC66rbZrHo": {
@@ -972,12 +1060,32 @@
      "ctr": 0.0
     },
     "bJgBuP716E8": {
-     "impressions": 2,
+     "impressions": 16,
      "ctr": 0.0
     },
     "jbZbPS173wc": {
-     "impressions": 60,
+     "impressions": 103,
      "ctr": 0.0
+    },
+    "VrWOyOk0urw": {
+     "impressions": 32,
+     "ctr": 0.0312
+    },
+    "x1PAl5B-IeI": {
+     "impressions": 27,
+     "ctr": 0.037
+    },
+    "McdCi05pBzg": {
+     "impressions": 2,
+     "ctr": 0.0
+    },
+    "cJ6ZFKlq0Sg": {
+     "impressions": 2,
+     "ctr": 0.0
+    },
+    "nEf7KCM5Ors": {
+     "impressions": 63,
+     "ctr": 0.0159
     }
    }
   }
@@ -985,36 +1093,62 @@
  "instagram": {
   "profile": {
    "username": "alphadog.studio",
-   "followers_count": 108,
-   "media_count": 62,
+   "followers_count": 113,
+   "media_count": 64,
    "id": "28926959546914399"
   },
   "media": [
+   {
+    "id": "17957625027278507",
+    "at": "2026-11-07T01:22:52+0000",
+    "caption": "In 1903 Theodore Roosevelt laid the cornerstone of the arch at the north entranc",
+    "likes": 62,
+    "comments": 1,
+    "views": 1693,
+    "reach": 1518,
+    "saved": 7,
+    "shares": 1,
+    "total_interactions": 72,
+    "ig_reels_avg_watch_time": 23785
+   },
+   {
+    "id": "18131919220752455",
+    "at": "2026-11-06T20:17:09+0000",
+    "caption": "August 24, 1908. A single masked man stopped stagecoach after stagecoach near Ke",
+    "likes": 3,
+    "comments": 1,
+    "views": 150,
+    "reach": 125,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 4,
+    "ig_reels_avg_watch_time": 13232
+   },
    {
     "id": "18124319959912031",
     "at": "2026-11-06T01:12:12+0000",
     "caption": "A writer in the park that winter sent word of Ed Howell's capture to the magazin",
     "likes": 5,
     "comments": 1,
-    "views": 133,
-    "reach": 113,
+    "views": 134,
+    "reach": 115,
     "saved": 0,
     "shares": 0,
     "total_interactions": 6,
-    "ig_reels_avg_watch_time": 14729
+    "ig_reels_avg_watch_time": 14605
    },
    {
     "id": "18274159357309956",
     "at": "2026-11-05T20:49:26+0000",
     "caption": "Fifteen infantry soldiers stationed at Old Faithful started explaining the geyse",
-    "likes": 4,
+    "likes": 5,
     "comments": 1,
-    "views": 168,
-    "reach": 156,
+    "views": 171,
+    "reach": 159,
     "saved": 0,
     "shares": 2,
-    "total_interactions": 7,
-    "ig_reels_avg_watch_time": 17726
+    "total_interactions": 8,
+    "ig_reels_avg_watch_time": 17611
    },
    {
     "id": "18170127118496930",
@@ -1085,14 +1219,14 @@
     "id": "18341429083257129",
     "at": "2026-11-02T18:15:34+0000",
     "caption": "In one winter hunters killed some 3,000 elk in and around early Yellowstone, jus",
-    "likes": 35,
+    "likes": 36,
     "comments": 1,
-    "views": 1800,
-    "reach": 1602,
+    "views": 1802,
+    "reach": 1603,
     "saved": 6,
     "shares": 0,
-    "total_interactions": 44,
-    "ig_reels_avg_watch_time": 19067
+    "total_interactions": 45,
+    "ig_reels_avg_watch_time": 19077
    },
    {
     "id": "18094438412191750",
@@ -1217,12 +1351,12 @@
     "caption": "1861. A 12-year-old boy is kidnapped in Arizona, and the Army blames Cochise, th",
     "likes": 1,
     "comments": 0,
-    "views": 50,
-    "reach": 45,
+    "views": 51,
+    "reach": 46,
     "saved": 0,
     "shares": 0,
     "total_interactions": 1,
-    "ig_reels_avg_watch_time": 5576
+    "ig_reels_avg_watch_time": 5647
    },
    {
     "id": "18431757256151608",
@@ -1285,6 +1419,22 @@
    "id": "103210859154410"
   },
   "posts": [
+   {
+    "id": "103210859154410_1110358375096488",
+    "at": "2026-11-07T01:28:25+0000",
+    "text": "In 1903 Theodore Roosevelt laid the cornerstone of the arch at the north entranc",
+    "reactions": 0,
+    "comments": 1,
+    "shares": 0
+   },
+   {
+    "id": "103210859154410_1110163211782671",
+    "at": "2026-11-06T20:17:49+0000",
+    "text": "August 24, 1908. A single masked man stopped stagecoach after stagecoach near Ke",
+    "reactions": 0,
+    "comments": 1,
+    "shares": 0
+   },
    {
     "id": "103210859154410_1109308588534800",
     "at": "2026-11-06T01:12:53+0000",
@@ -1615,6 +1765,24 @@
    }
   ],
   "reels": [
+   {
+    "id": "2254418925147180",
+    "at": "2026-11-07T01:27:43+0000",
+    "text": "In 1903 Theodore Roosevelt laid the cornerstone of the arch at the north entranc",
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 3104,
+    "post_video_followers": 0
+   },
+   {
+    "id": "2744175769373389",
+    "at": "2026-11-06T20:17:19+0000",
+    "text": "August 24, 1908. A single masked man stopped stagecoach after stagecoach near Ke",
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 4583,
+    "post_video_followers": 0
+   },
    {
     "id": "3628724230638352",
     "at": "2026-11-06T01:12:21+0000",
@@ -2008,12 +2176,22 @@
   "handle": "alphadogstudio",
   "videos": [
    {
+    "id": "7705228520217120014",
+    "at": "2026-11-07T01:02:10Z",
+    "title": "In 1903 Theodore Roosevelt laid the cornerstone of the arch at the no...",
+    "duration": 54,
+    "views": 154,
+    "likes": 1,
+    "comments": 0,
+    "shares": 0
+   },
+   {
     "id": "7705120797190393101",
     "at": "2026-11-06T18:04:34Z",
     "title": "August 24, 1908. A single masked man stopped stagecoach after stageco...",
     "duration": 43,
-    "views": 36,
-    "likes": 0,
+    "views": 168,
+    "likes": 4,
     "comments": 0,
     "shares": 0
    },
@@ -2022,7 +2200,7 @@
     "at": "2026-11-06T01:01:09Z",
     "title": "A writer in the park that winter sent word of Ed Howell's capture to ...",
     "duration": 43,
-    "views": 103,
+    "views": 112,
     "likes": 1,
     "comments": 0,
     "shares": 0
@@ -2032,7 +2210,7 @@
     "at": "2026-11-05T18:05:33Z",
     "title": "Fifteen infantry soldiers stationed at Old Faithful started explainin...",
     "duration": 49,
-    "views": 127,
+    "views": 132,
     "likes": 4,
     "comments": 0,
     "shares": 0
@@ -2042,7 +2220,7 @@
     "at": "2026-11-05T01:02:24Z",
     "title": "A party of nine tourists, most from Radersburg, Montana, came to see ...",
     "duration": 47,
-    "views": 208,
+    "views": 209,
     "likes": 9,
     "comments": 0,
     "shares": 0
@@ -2052,7 +2230,7 @@
     "at": "2026-11-04T18:05:56Z",
     "title": "About August 23, 1877, the Nez Perce entered Yellowstone near today's...",
     "duration": 45,
-    "views": 166,
+    "views": 167,
     "likes": 5,
     "comments": 0,
     "shares": 0
@@ -2062,7 +2240,7 @@
     "at": "2026-11-04T01:01:39Z",
     "title": "In 1863 the United States cut the Nez Perce reservation by about nine...",
     "duration": 44,
-    "views": 156,
+    "views": 157,
     "likes": 11,
     "comments": 0,
     "shares": 0
@@ -2072,7 +2250,7 @@
     "at": "2026-11-03T18:03:58Z",
     "title": "August 24, 1877. Tourists camped near Fountain Geyser see riders appe...",
     "duration": 52,
-    "views": 138,
+    "views": 140,
     "likes": 7,
     "comments": 0,
     "shares": 0
@@ -2132,7 +2310,7 @@
     "at": "2026-10-31T21:30:33Z",
     "title": "Two 2025 studies in Nature show the magma under Yellowstone is only a...",
     "duration": 58,
-    "views": 218,
+    "views": 219,
     "likes": 4,
     "comments": 0,
     "shares": 0
@@ -2212,7 +2390,7 @@
     "at": "2026-10-29T01:30:15Z",
     "title": "1886. The Army loaded nearly every Chiricahua Apache onto prison trai...",
     "duration": 33,
-    "views": 580,
+    "views": 582,
     "likes": 40,
     "comments": 4,
     "shares": 2
@@ -2222,7 +2400,7 @@
     "at": "2026-10-28T00:05:47Z",
     "title": "America just got its 64th national park, and most people have never h...",
     "duration": 30,
-    "views": 377,
+    "views": 483,
     "likes": 23,
     "comments": 2,
     "shares": 0
@@ -2232,12 +2410,12 @@
     "at": "2026-10-26T04:10:00Z",
     "title": "Found dead under an oak in 1882. Revolver in hand, boots gone. The ju...",
     "duration": 30,
-    "views": 1162,
+    "views": 1190,
     "likes": 57,
     "comments": 2,
     "shares": 1
    }
   ],
-  "listed": 40
+  "listed": 41
  }
 }
