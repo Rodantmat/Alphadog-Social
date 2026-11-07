@@ -122,7 +122,12 @@
   "file": "yellowstone_ch3_y9.mp4",
   "due": "2026-11-11T00:00:00Z",
   "service": "tiktok",
-  "text": "\"From where the sun now stands, I will fight no more forever.\" The words were written down and rewritten by an Army officer. One historian counted nineteen published versions.\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Part 3\\n\\n#Yellowstone #NezPerce #History #NationalParks #Shorts"
+  "text": "\"From where the sun now stands, I will fight no more forever.\" The words were written down and rewritten by an Army officer. One historian counted nineteen published versions.\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Part 3\\n\\n#Yellowstone #NezPerce #History #NationalParks #Shorts",
+  "scheduled": {
+   "buffer_id": "6aee79949214322f68c11c1b",
+   "at": "2026-11-07T01:06:23Z",
+   "due": "2026-11-11T00:00:00Z"
+  }
  },
  {
   "mode": "post",
