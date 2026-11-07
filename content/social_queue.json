@@ -1439,7 +1439,13 @@
   "thumb_ms": 1200,
   "caption": "Superintendent Norris claimed Native people were afraid of the geysers. The Park Service says the evidence shows the opposite: tribes had known this land for thousands of years.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 2 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Army #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw",
-  "trial": true
+  "trial": false,
+  "done": {
+   "media_id": "18126301798901529",
+   "permalink": "https://www.instagram.com/reel/DfdAjH9DnpH/",
+   "posted": "2026-11-07T20:11:06+0000",
+   "at": "2026-11-07T20:10:37Z"
+  }
  },
  {
   "id": "ch2y9_fb",
@@ -1447,7 +1453,40 @@
   "file": "yellowstone_ch2_y9.mp4",
   "at": "2026-11-07T20:00:00Z",
   "caption": "Superintendent Norris claimed Native people were afraid of the geysers. The Park Service says the evidence shows the opposite: tribes had known this land for thousands of years.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 2 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Army #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw",
+  "done": {
+   "video_id": "1445984316866000",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1111201585012167"
+   },
+   "permalink": "https://www.facebook.com/reel/1445984316866000/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 25340301
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-07T20:11:15+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1445984316866000_1814042159805940"
+   },
+   "status_errors": null,
+   "at": "2026-11-07T20:10:37Z"
+  }
  },
  {
   "id": "ch2y10_ig",
