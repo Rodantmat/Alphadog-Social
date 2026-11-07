@@ -1674,14 +1674,29 @@
   "platform": "instagram_story",
   "file": "yellowstone_story_ch2s9.mp4",
   "at": "2026-11-07T19:00:00Z",
-  "story_v2": "Cave Falls · Bechler region | own:25b8f9963249"
+  "story_v2": "Cave Falls · Bechler region | own:25b8f9963249",
+  "done": {
+   "media_id": "18121875304745962",
+   "story": true,
+   "at": "2026-11-07T19:10:48Z"
+  }
  },
  {
   "id": "ch2s9_fb",
   "platform": "facebook_story",
   "file": "yellowstone_story_ch2s9.mp4",
   "at": "2026-11-07T19:00:00Z",
-  "story_v2": "Cave Falls · Bechler region | own:25b8f9963249"
+  "story_v2": "Cave Falls · Bechler region | own:25b8f9963249",
+  "done": {
+   "video_id": "1850334576146973",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "1474750078130744"
+   },
+   "story": true,
+   "at": "2026-11-07T19:10:48Z"
+  }
  },
  {
   "id": "ch2s10_ig",
