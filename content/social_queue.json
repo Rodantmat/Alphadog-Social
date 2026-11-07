@@ -1396,7 +1396,40 @@
   "file": "yellowstone_ch2_y8.mp4",
   "at": "2026-11-07T01:00:00Z",
   "caption": "In 1903 Theodore Roosevelt laid the cornerstone of the arch at the north entrance. In 1916 Congress created the National Park Service, and some soldiers took off their uniforms and stayed on as the first rangers.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 2 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Army #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw",
+  "done": {
+   "video_id": "2254418925147180",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1110358375096488"
+   },
+   "permalink": "https://www.facebook.com/reel/2254418925147180/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 41541317
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-07T01:27:43+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "2254418925147180_1075509822175139"
+   },
+   "status_errors": null,
+   "at": "2026-11-07T01:27:43Z"
+  }
  },
  {
   "id": "ch2y9_ig",
