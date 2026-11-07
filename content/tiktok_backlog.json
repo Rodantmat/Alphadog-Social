@@ -135,7 +135,12 @@
   "file": "yellowstone_ch3_y10.mp4",
   "due": "2026-11-11T03:00:00Z",
   "service": "tiktok",
-  "text": "The survivors were not allowed to go home. They were sent to Kansas, then Oklahoma, and Joseph was never allowed to live in his Wallowa Valley again. He died in 1904.\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Part 3\\n\\n#Yellowstone #NezPerce #History #NationalParks #Shorts"
+  "text": "The survivors were not allowed to go home. They were sent to Kansas, then Oklahoma, and Joseph was never allowed to live in his Wallowa Valley again. He died in 1904.\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Part 3\\n\\n#Yellowstone #NezPerce #History #NationalParks #Shorts",
+  "scheduled": {
+   "buffer_id": "6aeeb1d1004e4879a7357c69",
+   "at": "2026-11-07T05:06:19Z",
+   "due": "2026-11-11T03:00:00Z"
+  }
  },
  {
   "mode": "post",
