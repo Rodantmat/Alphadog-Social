@@ -46,21 +46,20 @@ with sync_playwright() as p:
             if not unset and title[:25].lower() in cur.lower() and "#shorts" not in cur.lower():
                 skipped.append((vid, "already set: " + cur[:50])); print(vid, "already set"); continue
             if DRY: skipped.append((vid, f"would link -> {title}")); print(vid, "DRY ->", title); continue
-            SB = "[placeholder*='Search your videos' i], [aria-label*='Search your videos' i], [placeholder*='Pesquis' i], [aria-label*='Pesquis' i]"
+            DLG = pg.locator("ytcp-dialog", has_text=re.compile(r"específico|specific video", re.I)).last
+            SB = "input, [role=textbox], [contenteditable=true]"
             opened = False
-            for how in ("row", "icon", "box"):
+            for how in ("row", "box"):
                 try:
-                    if how == "row": row.click(timeout=5000)
-                    elif how == "icon": box.locator("ytcp-icon-button, button, [role=button], ytcp-button").last.click(timeout=5000)
-                    else: box.click(timeout=5000, position={"x": 400, "y": 20})
+                    (row if how == "row" else box).click(timeout=5000)
                 except Exception as e: print(vid, "click", how, "failed:", str(e)[:80])
-                try: pg.wait_for_selector(SB, timeout=4000, state="visible"); opened = True; break
+                try: DLG.wait_for(state="visible", timeout=6000); opened = True; break
                 except Exception: pass
             if not opened:
-                print(vid, "BOX_HTML", (box.evaluate("e => e.outerHTML") or "")[:300]); print(vid, "DIALOGS", pg.evaluate("() => [...document.querySelectorAll('tp-yt-paper-dialog, ytcp-dialog, [role=dialog]')].map(d => d.tagName + ' ' + (d.innerText||'').slice(0,120).replace(/\\n/g, ' | ')).join(' ## ')")); failed.append((vid, "picker did not open")); S.shot(pg, f"{OUT}/noopen_{vid}.png"); continue
-            sb = pg.locator(SB).first
+                print(vid, "DIALOGS", pg.evaluate("() => [...document.querySelectorAll('ytcp-dialog')].map(d => (d.innerText||'').slice(0,80).replace(/\\n/g,' | ')).join(' ## ')")); failed.append((vid, "picker did not open")); S.shot(pg, f"{OUT}/noopen_{vid}.png"); continue
+            sb = DLG.locator(SB).first
             sb.fill(title[:40]); sb.press("Enter"); pg.wait_for_timeout(2500)
-            opt = pg.get_by_role("option", name=re.compile(r"^(?!.*#shorts)(?=.*" + re.escape(title[:30]) + ")", re.I))
+            opt = DLG.get_by_role("option", name=re.compile(r"^(?!.*#shorts)(?=.*" + re.escape(title[:30]) + ")", re.I))
             if opt.count() != 1: failed.append((vid, f"{opt.count()} matches for '{title[:30]}'")); pg.keyboard.press("Escape"); continue
             opt.first.click(); pg.wait_for_timeout(1500)
             pg.get_by_role("button", name=re.compile(r"^(Save|Salvar)$", re.I)).first.click(); pg.wait_for_timeout(4000)
