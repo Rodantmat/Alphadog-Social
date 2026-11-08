@@ -28,7 +28,7 @@ jobs:
         name: Save rolling session
         run: |
           git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
-          git add content/private/yt_studio_session.enc 2>/dev/null; git commit -qm "yt-link: session" || exit 0
+          git add content/private/yt_studio_session.enc content/logs/yt-link.md 2>/dev/null; git commit -qm "yt-link: session" || exit 0
           for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; sleep $((i*4)); done
       - if: always()
         uses: actions/upload-artifact@v4

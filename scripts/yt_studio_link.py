@@ -70,4 +70,13 @@ with sync_playwright() as p:
         S.pause(2, 4)
     S.save(ctx); b.close()
 print("RESULT", json.dumps({"linked": done, "skipped": skipped, "failed": failed}, ensure_ascii=False))
+try:   # report log (owner 2026-11-08: every scheduled job writes a log that can be read and analyzed)
+    import time as _t
+    os.makedirs("content/logs", exist_ok=True); LOG = "content/logs/yt-link.md"
+    old = open(LOG).read().split("\n## ")[-149:] if os.path.exists(LOG) else []
+    head = "# yt-link log (newest last; each run: linked / already-set / failed)\n"
+    ent = f"{_t.strftime('%Y-%m-%dT%H:%MZ', _t.gmtime())} {'ALERT' if failed else 'OK'} linked={len(done)} skipped={len(skipped)} failed={len(failed)}" + "".join(f"\n- LINKED {v} -> {t}" for v, t in done) + "".join(f"\n- FAILED {v}: {w}" for v, w in failed)
+    body = "\n## ".join([x for x in old if x and not x.startswith("# yt-link log")] + [ent])
+    open(LOG, "w").write(head + "\n## " + body + "\n")
+except Exception as e: print("log write failed:", e)
 sys.exit(1 if failed else 0)
