@@ -41,3 +41,6 @@ Every episode inherits all rules. Never ask the owner to repeat one.
 | D1 | Subtitles as selectable tracks (not burned in): English plus at least Spanish, timed to the voice. | Owner, v2 | [AUTO] en + es SRT present; cue timing anchored to speech pauses |
 | D2 | Before calling an episode final, critique it through the audience personas and score it, grounded in research. | Owner, v2 | [REVIEW] scorecard |
 | D3 | Credits for every CC/PD asset (title, author, link, license): pinned comment < 10,000 chars, overflow in the description (< 5,000); AI narration disclosed. | Research rubric | [AUTO] every used source has a credit |
+
+## V47 — No double post (owner 2026-11-08, hard rule)
+A story/caption may exist ONCE per platform. social_post.py refuses to publish when another queue item on the same platform with the same normalized caption is already logged as posted, or the same caption is already live on the platform (Graph API read; if the read fails the item is blocked, never posted blind). Rebuilt/re-released items count as the same story. The post log is merged onto the newest origin queue (scripts/merge_queue_log.py) so a rebase conflict can never lose a "done" entry (that loss caused the 2026-11-08 double post of ch2 y10). Never delete a reel by an id from the queue without opening it first and verifying caption/permalink.
