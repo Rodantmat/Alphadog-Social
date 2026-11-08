@@ -38,7 +38,9 @@ with sync_playwright() as p:
             pg.mouse.wheel(0, 8000); pg.wait_for_timeout(1500)
             row = pg.get_by_text(REL).first
             row.scroll_into_view_if_needed(timeout=10000)
-            box = row.locator("xpath=ancestor::ytcp-dropdown-trigger[1] | xpath=ancestor::*[self::ytcp-video-metadata-editor-sidepanel-item][1]").first
+            box = row.locator("xpath=ancestor::ytcp-dropdown-trigger[1]")
+            if box.count() == 0: box = row.locator("xpath=..")
+            box = box.first
             cur = (box.inner_text() or "").replace("\\n", " ")
             if "None" not in cur and "Nenhum" not in cur and cur.strip().lower() not in ("related video", "vídeo relacionado"):
                 skipped.append((vid, "already set: " + cur[:50])); print(vid, "already set"); continue
