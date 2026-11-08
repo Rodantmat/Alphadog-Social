@@ -55,3 +55,8 @@ Data (IG/YT, 26 reels): winners were animal / famous landmark-or-person / myth-b
 
 ## Related video link (Short -> full film)
 No public API. Done in the cloud by .github/workflows/yt-link.yml (scripts/yt_studio_link.py, saved Studio session), once a day at 19:37 UTC for every public Short, film parsed from the Short's own "Full documentary (...)" description line. Never accept a Short as the related video (#Shorts titles are excluded). Studio's UI language in the cloud session is Portuguese; selectors are language-tolerant.
+
+## Report logs (owner rule 2026-11-08)
+Every scheduled job appends a dated entry to a committed log so it can be read, analyzed and improved later:
+- content/logs/posting-slots.md (slot task), watchdog.md (watchdog), health.md (daily health/growth), weekly.md (weekly review), yt-link.md (daily Related-video linker, written by the workflow).
+- Format: "## <UTC datetime> OK|ALERT" + short report; newest ~150 entries kept. The health and weekly tasks read these logs first.
