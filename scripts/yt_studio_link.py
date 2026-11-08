@@ -38,12 +38,12 @@ with sync_playwright() as p:
             pg.mouse.wheel(0, 8000); pg.wait_for_timeout(1500)
             row = pg.get_by_text(REL).first
             row.scroll_into_view_if_needed(timeout=10000)
-            box = row.locator("xpath=ancestor::*[self::ytcp-video-metadata-editor-sidepanel-item or self::div][1]")
+            box = row.locator("xpath=ancestor::ytcp-dropdown-trigger[1] | xpath=ancestor::*[self::ytcp-video-metadata-editor-sidepanel-item][1]").first
             cur = (box.inner_text() or "").replace("\\n", " ")
             if "None" not in cur and "Nenhum" not in cur and cur.strip().lower() not in ("related video", "vídeo relacionado"):
                 skipped.append((vid, "already set: " + cur[:50])); print(vid, "already set"); continue
             if DRY: skipped.append((vid, f"would link -> {title}")); print(vid, "DRY ->", title); continue
-            SB = "input[placeholder*='Search your videos' i], input[placeholder*='Pesquis' i], input[aria-label*='Search your videos' i]"
+            SB = "[placeholder*='Search your videos' i], [aria-label*='Search your videos' i], [placeholder*='Pesquis' i], [aria-label*='Pesquis' i]"
             opened = False
             for how in ("row", "icon", "box"):
                 try:
@@ -54,7 +54,7 @@ with sync_playwright() as p:
                 try: pg.wait_for_selector(SB, timeout=4000, state="visible"); opened = True; break
                 except Exception: pass
             if not opened:
-                print(vid, "BOX_HTML", (box.evaluate("e => e.outerHTML") or "")[:600]); failed.append((vid, "picker did not open")); S.shot(pg, f"{OUT}/noopen_{vid}.png"); continue
+                print(vid, "BOX_HTML", (box.evaluate("e => e.outerHTML") or "")[:300]); print(vid, "DIALOGS", pg.evaluate("() => [...document.querySelectorAll('tp-yt-paper-dialog, ytcp-dialog, [role=dialog]')].map(d => d.tagName + ' ' + (d.innerText||'').slice(0,120).replace(/\\n/g, ' | ')).join(' ## ')")); failed.append((vid, "picker did not open")); S.shot(pg, f"{OUT}/noopen_{vid}.png"); continue
             sb = pg.locator(SB).first
             sb.fill(title[:40]); sb.press("Enter"); pg.wait_for_timeout(2500)
             opt = pg.get_by_role("option", name=re.compile(re.escape(title[:30]), re.I))
