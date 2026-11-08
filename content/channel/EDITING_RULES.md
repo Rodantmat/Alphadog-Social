@@ -44,3 +44,11 @@ Every episode inherits all rules. Never ask the owner to repeat one.
 
 ## V47 — No double post (owner 2026-11-08, hard rule)
 A story/caption may exist ONCE per platform. social_post.py refuses to publish when another queue item on the same platform with the same normalized caption is already logged as posted, or the same caption is already live on the platform (Graph API read; if the read fails the item is blocked, never posted blind). Rebuilt/re-released items count as the same story. The post log is merged onto the newest origin queue (scripts/merge_queue_log.py) so a rebase conflict can never lose a "done" entry (that loss caused the 2026-11-08 double post of ch2 y10). Never delete a reel by an id from the queue without opening it first and verifying caption/permalink.
+
+## Hook playbook for new Shorts/Reels (from the 2026-11-08 reach sweep; applies to future items only)
+Data (IG/YT, 26 reels): winners were animal / famous landmark-or-person / myth-bust + a hard number (3,000 elk 1,806 views; Roosevelt arch 1,799; "never afraid of geysers" 1,203; bison law 950). Dry chronology/obscure-name hooks (nine tourists, Nez Perce timeline) sat at 130-250.
+- First 3 s: animal, landmark or famous name + one number; no obscure proper nouns first.
+- Put a new visual or surprising fact at ~12-15 s (IG average watch time is ~15 s of 45 s).
+- Zion order already leads with numbers (z1 7 canyoneers, z6 17 deaths, z9 4,000 to 5 million); keep that for Parts 2/3.
+- Shorts drive ~2,750 views but only ~17 related-video views to the longs: every Short keeps the end card + link comment to the full film; long-form views stay small until that conversion improves.
+- Facebook reels average 0-4 plays: keep auto-posting, spend no extra effort.
