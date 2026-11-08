@@ -42,7 +42,8 @@ with sync_playwright() as p:
             if box.count() == 0: box = row.locator("xpath=..")
             box = box.first
             cur = (box.inner_text() or "").replace("\\n", " ")
-            if "None" not in cur and "Nenhum" not in cur and cur.strip().lower() not in ("related video", "vídeo relacionado"):
+            unset = "None" in cur or "Nenhum" in cur or cur.strip().lower() in ("related video", "vídeo relacionado")
+            if not unset and title[:25].lower() in cur.lower() and "#shorts" not in cur.lower():
                 skipped.append((vid, "already set: " + cur[:50])); print(vid, "already set"); continue
             if DRY: skipped.append((vid, f"would link -> {title}")); print(vid, "DRY ->", title); continue
             SB = "[placeholder*='Search your videos' i], [aria-label*='Search your videos' i], [placeholder*='Pesquis' i], [aria-label*='Pesquis' i]"
@@ -59,7 +60,7 @@ with sync_playwright() as p:
                 print(vid, "BOX_HTML", (box.evaluate("e => e.outerHTML") or "")[:300]); print(vid, "DIALOGS", pg.evaluate("() => [...document.querySelectorAll('tp-yt-paper-dialog, ytcp-dialog, [role=dialog]')].map(d => d.tagName + ' ' + (d.innerText||'').slice(0,120).replace(/\\n/g, ' | ')).join(' ## ')")); failed.append((vid, "picker did not open")); S.shot(pg, f"{OUT}/noopen_{vid}.png"); continue
             sb = pg.locator(SB).first
             sb.fill(title[:40]); sb.press("Enter"); pg.wait_for_timeout(2500)
-            opt = pg.get_by_role("option", name=re.compile(re.escape(title[:30]), re.I))
+            opt = pg.get_by_role("option", name=re.compile(r"^(?!.*#shorts)(?=.*" + re.escape(title[:30]) + ")", re.I))
             if opt.count() != 1: failed.append((vid, f"{opt.count()} matches for '{title[:30]}'")); pg.keyboard.press("Escape"); continue
             opt.first.click(); pg.wait_for_timeout(1500)
             pg.get_by_role("button", name=re.compile(r"^(Save|Salvar)$", re.I)).first.click(); pg.wait_for_timeout(4000)
