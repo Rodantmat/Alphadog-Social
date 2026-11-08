@@ -1,6 +1,8 @@
 name: yt-link
 # Cloud job: sets the Related video (Short -> its full documentary) in Studio with the saved Studio session. No public API exists for it.
 on:
+  schedule:
+    - cron: "37 19 * * *"   # once a day, after metrics-daily; links any new public Short to its documentary (idle = no changes)
   workflow_dispatch:
     inputs:
       video_ids: { description: "comma list of Short ids, or auto (all public Shorts)", default: "auto" }
@@ -19,7 +21,7 @@ jobs:
         env:
           YT_STUDIO_SESSION: ${{ secrets.YT_STUDIO_SESSION }}
           YT_GOOGLE_SESSION: ${{ secrets.YT_GOOGLE_SESSION }}
-          VIDEO_IDS: ${{ inputs.video_ids }}
+          VIDEO_IDS: ${{ inputs.video_ids || 'auto' }}
           DRY: ${{ inputs.dry }}
         run: xvfb-run -a python3 scripts/yt_studio_link.py
       - if: always()
