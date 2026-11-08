@@ -148,7 +148,12 @@
   "file": "zion_p1_z1.mp4",
   "due": "2026-11-12T00:00:00Z",
   "service": "tiktok",
-  "text": "On September 14, 2015, a storm over Zion National Park sent a flash flood through Keyhole Canyon. Seven canyoneers were inside. None came out.\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Zion Part 1\\n\\n#Zion #FlashFlood #NationalParks #Shorts"
+  "text": "On September 14, 2015, a storm over Zion National Park sent a flash flood through Keyhole Canyon. Seven canyoneers were inside. None came out.\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Zion Part 1\\n\\n#Zion #FlashFlood #NationalParks #Shorts",
+  "scheduled": {
+   "buffer_id": "6aefcb43562f2e6de98e7f4d",
+   "at": "2026-11-08T01:07:11Z",
+   "due": "2026-11-12T00:00:00Z"
+  }
  },
  {
   "mode": "post",
