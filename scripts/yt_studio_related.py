@@ -25,6 +25,4 @@ with sync_playwright() as p:
     print("ALL_LINES", json.dumps(lines[:200], ensure_ascii=False))
     labels = pg.evaluate("() => [...document.querySelectorAll('button, [role=button], ytcp-button')].map(e => (e.innerText||e.getAttribute('aria-label')||'').trim()).filter(Boolean).slice(0,120)")
     print("BUTTONS", json.dumps(labels, ensure_ascii=False))
-    if MODE == "apply":
-        raise SystemExit("apply not implemented until explore confirms the UI")
     b.close()
