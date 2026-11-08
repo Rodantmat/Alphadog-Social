@@ -52,3 +52,6 @@ Data (IG/YT, 26 reels): winners were animal / famous landmark-or-person / myth-b
 - Zion order already leads with numbers (z1 7 canyoneers, z6 17 deaths, z9 4,000 to 5 million); keep that for Parts 2/3.
 - Shorts drive ~2,750 views but only ~17 related-video views to the longs: every Short keeps the end card + link comment to the full film; long-form views stay small until that conversion improves.
 - Facebook reels average 0-4 plays: keep auto-posting, spend no extra effort.
+
+## Related video link (Short -> full film)
+No public API. Done in the cloud by .github/workflows/yt-link.yml (scripts/yt_studio_link.py, saved Studio session), once a day at 19:37 UTC for every public Short, film parsed from the Short's own "Full documentary (...)" description line. Never accept a Short as the related video (#Shorts titles are excluded). Studio's UI language in the cloud session is Portuguese; selectors are language-tolerant.
