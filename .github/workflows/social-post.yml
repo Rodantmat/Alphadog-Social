@@ -83,4 +83,9 @@ jobs:
           git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
           for f in content/social_queue.json content/tiktok_studio_token.enc; do [ -f "$f" ] && git add "$f"; done
           git commit -qm "social: post log" || exit 0
-          for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
+          cp content/social_queue.json /tmp/mine.json; [ -f content/tiktok_studio_token.enc ] && cp content/tiktok_studio_token.enc /tmp/tok.enc
+          for i in 1 2 3 4 5 6; do
+            git fetch -q origin main && git reset -q --hard origin/main && cp /tmp/mine.json content/social_queue.json; [ -f /tmp/tok.enc ] && cp /tmp/tok.enc content/tiktok_studio_token.enc
+            python3 scripts/merge_queue_log.py   # re-applies our done/errors/hold onto the newest queue: a post is never forgotten
+            git add content/social_queue.json; [ -f content/tiktok_studio_token.enc ] && git add content/tiktok_studio_token.enc; git commit -qm "social: post log" && git push -q origin HEAD:main && exit 0
+            sleep $((i*5)); done; exit 1

@@ -152,6 +152,34 @@ def tt_draft(item, path):
     if r.returncode != 0 or "SEND_TO_USER_INBOX" not in r.stdout: raise RuntimeError("tiktok draft failed: " + (r.stdout + r.stderr)[-300:])
     return {"status": "SEND_TO_USER_INBOX"}
 
+# ---- V47 NO DOUBLE POST (owner 2026-11-08): never publish what is already live on the platform ----
+def _norm(t): return re.sub(r"[^a-z0-9]+", "", (t or "").lower())[:80]
+_LIVE = {}
+def live_captions(kind):
+    """{normalized caption: id} of what is ALREADY published on the platform (fail-closed: raises if it cannot be read)."""
+    if kind in _LIVE: return _LIVE[kind]
+    out = {}; last = None
+    for _ in range(3):
+        try:
+            if kind == "instagram":
+                ig = get(PAGE, fields="instagram_business_account")["instagram_business_account"]["id"]
+                for m in get(f"{ig}/media", fields="id,caption,media_product_type", limit="60").get("data", []): out.setdefault(_norm(m.get("caption")), m["id"])
+            else:
+                for m in get(f"{PAGE}/video_reels", fields="id,description", limit="60").get("data", []): out.setdefault(_norm(m.get("description")), m["id"])
+            out.pop("", None); _LIVE[kind] = out; return out
+        except Exception as e: last = e; time.sleep(5)
+    raise RuntimeError(f"V47 cannot read live {kind} posts: {last}")
+def already_posted(item, q):
+    """Return (why, id) if this item would be a duplicate, else None."""
+    if item["platform"] not in ("instagram", "facebook") or not item.get("caption"): return None
+    n = _norm(item["caption"])
+    for o in q:   # same platform, different queue id, same story already logged as posted (covers rebuilt / re-released items)
+        if o is not item and o["platform"] == item["platform"] and o.get("done") and not o["done"].get("dry_run") and _norm(o.get("caption")) == n:
+            return (f"same caption already posted as queue item {o['id']}", None)
+    lv = live_captions(item["platform"])
+    if n in lv: return ("same caption is already live on the platform", lv[n])
+    return None
+
 q = json.load(open(Q)); now = dt.datetime.now(dt.timezone.utc); changed = False
 for item in q:
     if item.get("done") and not item["done"].get("dry_run") and not ONLY: continue
@@ -160,6 +188,14 @@ for item in q:
     if not due: continue
     if item.get("hold"): print(f"== {item['id']} HELD: {item['hold']}", flush=True); continue
     if "{LINK}" in json.dumps(item): print(f"== {item['id']} SKIPPED: link placeholder not filled yet", flush=True); continue
+    try: _dup = already_posted(item, q)
+    except Exception as e:
+        item.setdefault("errors", []).append(f"{now:%Y-%m-%dT%H:%MZ} {str(e)[:200]}"); print("==", item["id"], "BLOCKED:", e, flush=True); changed = True; continue
+    if _dup:
+        print(f"== {item['id']} DUPLICATE BLOCKED (V47): {_dup[0]}", flush=True)
+        if _dup[1]: item["done"] = {"duplicate_of_live_id": _dup[1], "at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "note": _dup[0]}
+        else: item["hold"] = "V47 duplicate: " + _dup[0]
+        changed = True; continue
     path = os.path.join(MEDIA, item.get("file") or item["files"][0])
     if not item["platform"].endswith("album") and path.endswith(".mp4"):   # V46 fail-closed: never publish a silent video (owner 2026-11-04)
         _v = subprocess.run(["ffmpeg", "-nostats", "-i", path, "-af", "volumedetect", "-vn", "-f", "null", "-"], capture_output=True, text=True).stderr
@@ -180,7 +216,7 @@ for item in q:
                     print("falling back to Instagram video_url (public release) upload", flush=True); res = ig_reel_url(item, path); break
                 if attempt >= 4: raise
                 time.sleep(45 * attempt)
-        item["done"] = dict(res, at=now.strftime("%Y-%m-%dT%H:%M:%SZ")); print("OK", item["id"], res, flush=True)
+        item["done"] = dict(res, at=now.strftime("%Y-%m-%dT%H:%M:%SZ")); print("OK", item["id"], res, flush=True); _LIVE.get(item["platform"], {}).setdefault(_norm(item.get("caption")), "just-posted")
     except Exception as e:
         item.setdefault("errors", []).append(f"{now:%Y-%m-%dT%H:%MZ} {str(e)[:300]}"); print("FAIL", item["id"], e, flush=True)
     changed = True

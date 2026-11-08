@@ -1223,40 +1223,7 @@
   "file": "yellowstone_ch2_y5.mp4",
   "at": "2026-11-05T20:00:00Z",
   "caption": "Fifteen infantry soldiers stationed at Old Faithful started explaining the geysers to visitors. Park historians say those talks were the beginning of what rangers still do today.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 2 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Army #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw",
-  "done": {
-   "video_id": "29476422835284429",
-   "finish": {
-    "success": true,
-    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
-    "post_id": "1109147878550871"
-   },
-   "permalink": "https://www.facebook.com/reel/29476422835284429/",
-   "status": {
-    "video_status": "ready",
-    "uploading_phase": {
-     "status": "complete",
-     "bytes_transferred": 50451286
-    },
-    "processing_phase": {
-     "status": "complete"
-    },
-    "publishing_phase": {
-     "status": "complete",
-     "publish_status": "published",
-     "publish_time": "2026-11-05T20:49:37+0000"
-    },
-    "copyright_check_status": {
-     "status": "complete",
-     "matches_found": false
-    }
-   },
-   "comment": {
-    "id": "29476422835284429_1154910873687247"
-   },
-   "status_errors": null,
-   "at": "2026-11-05T20:47:30Z"
-  }
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw"
  },
  {
   "id": "ch2y6_ig",
