@@ -1496,7 +1496,13 @@
   "thumb_ms": 1200,
   "caption": "May 7, 1894. A new law banned hunting in Yellowstone. It came too late to punish Howell, but it was written because of him. By 1902 only 23 wild bison were left.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 2 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Army #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw",
-  "trial": false
+  "trial": false,
+  "done": {
+   "media_id": "17917481934540568",
+   "permalink": "https://www.instagram.com/reel/Dfdi8gcDHs8/",
+   "posted": "2026-11-08T01:11:40+0000",
+   "at": "2026-11-08T01:11:12Z"
+  }
  },
  {
   "id": "ch2y10_fb",
@@ -1504,7 +1510,40 @@
   "file": "yellowstone_ch2_y10.mp4",
   "at": "2026-11-08T01:00:00Z",
   "caption": "May 7, 1894. A new law banned hunting in Yellowstone. It came too late to punish Howell, but it was written because of him. By 1902 only 23 wild bison were left.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 2 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Army #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/P99Gu3GCZVw",
+  "done": {
+   "video_id": "1601762674487196",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1111375744994751"
+   },
+   "permalink": "https://www.facebook.com/reel/1601762674487196/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 28489955
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-08T01:11:51+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1601762674487196_1714048973625442"
+   },
+   "status_errors": null,
+   "at": "2026-11-08T01:11:12Z"
+  }
  },
  {
   "id": "ch2s1_ig",
