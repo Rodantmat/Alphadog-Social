@@ -43,8 +43,19 @@ with sync_playwright() as p:
             if "None" not in cur and "Nenhum" not in cur and cur.strip().lower() not in ("related video", "vídeo relacionado"):
                 skipped.append((vid, "already set: " + cur[:50])); print(vid, "already set"); continue
             if DRY: skipped.append((vid, f"would link -> {title}")); print(vid, "DRY ->", title); continue
-            row.click(); pg.wait_for_timeout(1500)
-            sb = pg.get_by_placeholder(re.compile(r"Search your videos|Pesquis", re.I)).first
+            SB = "input[placeholder*='Search your videos' i], input[placeholder*='Pesquis' i], input[aria-label*='Search your videos' i]"
+            opened = False
+            for how in ("row", "icon", "box"):
+                try:
+                    if how == "row": row.click(timeout=5000)
+                    elif how == "icon": box.locator("ytcp-icon-button, button, [role=button], ytcp-button").last.click(timeout=5000)
+                    else: box.click(timeout=5000, position={"x": 400, "y": 20})
+                except Exception as e: print(vid, "click", how, "failed:", str(e)[:80])
+                try: pg.wait_for_selector(SB, timeout=4000, state="visible"); opened = True; break
+                except Exception: pass
+            if not opened:
+                print(vid, "BOX_HTML", (box.evaluate("e => e.outerHTML") or "")[:600]); failed.append((vid, "picker did not open")); S.shot(pg, f"{OUT}/noopen_{vid}.png"); continue
+            sb = pg.locator(SB).first
             sb.fill(title[:40]); sb.press("Enter"); pg.wait_for_timeout(2500)
             opt = pg.get_by_role("option", name=re.compile(re.escape(title[:30]), re.I))
             if opt.count() != 1: failed.append((vid, f"{opt.count()} matches for '{title[:30]}'")); pg.keyboard.press("Escape"); continue
