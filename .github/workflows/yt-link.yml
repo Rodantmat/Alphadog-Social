@@ -30,4 +30,8 @@ jobs:
           for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; sleep $((i*4)); done
       - if: always()
         uses: actions/upload-artifact@v4
-        with: { name: link-${{ github.run_id }}, path: /tmp/ytqa, retention-days: 7, if-no-files-found: ignore }
+        with:
+          name: link-${{ github.run_id }}
+          path: /tmp/ytqa
+          retention-days: 7
+          if-no-files-found: ignore
