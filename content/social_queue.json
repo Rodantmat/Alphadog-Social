@@ -2042,7 +2042,13 @@
   "thumb_ms": 1200,
   "caption": "George Cowan was shot through the thigh, then in the head, and left for dead. He wasn't dead. He dragged himself about twelve miles through the forest until scouts found him on August 29.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 3 — link in the first comment 👇\n\n#Yellowstone #NezPerce #History #NationalParks #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc",
-  "trial": true
+  "trial": true,
+  "done": {
+   "media_id": "18119621062806949",
+   "permalink": "https://www.instagram.com/reel/DfflcGICcKf/",
+   "posted": "2026-11-08T20:11:54+0000",
+   "at": "2026-11-08T20:10:10Z"
+  }
  },
  {
   "id": "ch3y5_fb",
@@ -2050,7 +2056,40 @@
   "file": "yellowstone_ch3_y5.mp4",
   "at": "2026-11-08T20:00:00Z",
   "caption": "George Cowan was shot through the thigh, then in the head, and left for dead. He wasn't dead. He dragged himself about twelve miles through the forest until scouts found him on August 29.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 3 — link in the first comment 👇\n\n#Yellowstone #NezPerce #History #NationalParks #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc",
+  "done": {
+   "video_id": "1144019105193061",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1112252168240442"
+   },
+   "permalink": "https://www.facebook.com/reel/1144019105193061/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 49123442
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-08T20:12:03+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1144019105193061_3149434805447944"
+   },
+   "status_errors": null,
+   "at": "2026-11-08T20:10:10Z"
+  }
  },
  {
   "id": "ch3y6_ig",
