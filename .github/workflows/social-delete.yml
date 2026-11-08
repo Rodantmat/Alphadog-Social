@@ -1,0 +1,30 @@
+name: social-delete
+# Deletes one wrongly posted item (duplicate). Facebook: Graph DELETE. Instagram: tries the API (usually unsupported) and reports.
+on:
+  workflow_dispatch:
+    inputs:
+      platform: { description: "facebook|instagram", default: "facebook" }
+      object_id: { description: "video/media id", default: "" }
+jobs:
+  del:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - env:
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          IG_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          PLATFORM: ${{ inputs.platform }}
+          OID: ${{ inputs.object_id }}
+        run: |
+          python3 - <<'PY'
+          import os,urllib.request,urllib.error,urllib.parse
+          oid=os.environ["OID"].strip(); pl=os.environ["PLATFORM"]
+          tok=os.environ["FB_PAGE_TOKEN"].strip()
+          tries=[("https://graph.facebook.com/v26.0/",tok)]
+          if pl=="instagram": tries.append(("https://graph.instagram.com/v26.0/",os.environ["IG_TOKEN"].strip()))
+          for base,t in tries:
+              req=urllib.request.Request(base+oid,data=urllib.parse.urlencode({"access_token":t}).encode(),method="DELETE")
+              try:
+                  r=urllib.request.urlopen(req,timeout=30); print(base,r.status,r.read().decode()[:300])
+              except urllib.error.HTTPError as e: print(base,e.code,e.read().decode()[:300].replace(t,"***"))
+          PY
