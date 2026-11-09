@@ -2157,7 +2157,13 @@
   "thumb_ms": 1200,
   "caption": "General Howard followed with about 600 men and never caught up. The Nez Perce drew Sturgis away with a feint, then slipped out through a narrow gorge to the Clarks Fork River. They had spent thirteen days in Yellowstone.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 3 — link in the first comment 👇\n\n#Yellowstone #NezPerce #History #NationalParks #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc",
-  "trial": true
+  "trial": true,
+  "done": {
+   "media_id": "17898614319420995",
+   "permalink": "https://www.instagram.com/reel/DfiKOObgVig/",
+   "posted": "2026-11-09T20:11:55+0000",
+   "at": "2026-11-09T20:10:00Z"
+  }
  },
  {
   "id": "ch3y7_fb",
@@ -2165,7 +2171,40 @@
   "file": "yellowstone_ch3_y7.mp4",
   "at": "2026-11-09T20:00:00Z",
   "caption": "General Howard followed with about 600 men and never caught up. The Nez Perce drew Sturgis away with a feint, then slipped out through a narrow gorge to the Clarks Fork River. They had spent thirteen days in Yellowstone.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 3 — link in the first comment 👇\n\n#Yellowstone #NezPerce #History #NationalParks #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc",
+  "done": {
+   "video_id": "1467031402031750",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1113282104804115"
+   },
+   "permalink": "https://www.facebook.com/reel/1467031402031750/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 37649790
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-09T20:12:05+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1467031402031750_1129846233098756"
+   },
+   "status_errors": null,
+   "at": "2026-11-09T20:10:00Z"
+  }
  },
  {
   "id": "ch3y8_ig",
