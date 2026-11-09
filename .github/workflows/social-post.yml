@@ -21,6 +21,9 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+      - name: V48 adjacent-post gate (advisory; blocks at queue time, never a missed post)
+        continue-on-error: true
+        run: python3 scripts/recipe/adjacent_gate.py | tail -15
       - name: TikTok backlog -> Buffer (items due within 4 days)
         continue-on-error: true
         env: { GH_TOKEN: "${{ github.token }}", BUFFER_API_KEY: "${{ secrets.BUFFER_API_KEY }}" }

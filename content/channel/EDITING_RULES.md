@@ -60,3 +60,9 @@ No public API. Done in the cloud by .github/workflows/yt-link.yml (scripts/yt_st
 Every scheduled job appends a dated entry to a committed log so it can be read, analyzed and improved later:
 - content/logs/posting-slots.md (slot task), watchdog.md (watchdog), health.md (daily health/growth), weekly.md (weekly review), yt-link.md (daily Related-video linker, written by the workflow).
 - Format: "## <UTC datetime> OK|ALERT" + short report; newest ~150 entries kept. The health and weekly tasks read these logs first.
+
+## V48 — Neighbouring posts differ DRASTICALLY (owner 2026-11-08)
+Back-to-back posts (same platform, same kind) must differ drastically: footage, topic, hook, film/segment, music, layout. Never look-alikes.
+- scripts/recipe/adjacent_gate.py: metadata (same file, caption-hook overlap >= 0.4 within a 3-post window) + optional visual check (`--footage DIR`: no repeated frame between neighbours).
+- Run it on every new batch BEFORE queueing; a failure means re-order/replace the item. social-post.yml runs it advisory only (a missed post is also unacceptable).
+- Music is checked by hand per batch (never repeat a track); add an audio fingerprint check when tracks are catalogued.
