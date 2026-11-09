@@ -2371,14 +2371,29 @@
   "platform": "instagram_story",
   "file": "yellowstone_story_ch3s6.mp4",
   "at": "2026-11-09T02:00:00Z",
-  "story_v2": "Fountain Paint Pot | own:aae11f69f4f7"
+  "story_v2": "Fountain Paint Pot | own:aae11f69f4f7",
+  "done": {
+   "media_id": "18648389809039490",
+   "story": true,
+   "at": "2026-11-09T02:10:21Z"
+  }
  },
  {
   "id": "ch3s6_fb",
   "platform": "facebook_story",
   "file": "yellowstone_story_ch3s6.mp4",
   "at": "2026-11-09T02:00:00Z",
-  "story_v2": "Fountain Paint Pot | own:aae11f69f4f7"
+  "story_v2": "Fountain Paint Pot | own:aae11f69f4f7",
+  "done": {
+   "video_id": "1125519550122747",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "1012153671921771"
+   },
+   "story": true,
+   "at": "2026-11-09T02:10:21Z"
+  }
  },
  {
   "id": "ch3s7_ig",
