@@ -2099,7 +2099,14 @@
   "thumb_ms": 1200,
   "caption": "The whole Nez Perce caravan crossed the Yellowstone River near Mud Volcano, hundreds of people and nearly two thousand horses. Today the place is called Nez Perce Ford.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 3 — link in the first comment 👇\n\n#Yellowstone #NezPerce #History #NationalParks #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc",
-  "trial": false
+  "trial": false,
+  "done": {
+   "media_id": "18145544071599590",
+   "permalink": "https://www.instagram.com/reel/DfgIBoIFPj2/",
+   "posted": "2026-11-09T01:14:15+0000",
+   "via": "video_url",
+   "at": "2026-11-09T01:11:02Z"
+  }
  },
  {
   "id": "ch3y6_fb",
@@ -2107,7 +2114,40 @@
   "file": "yellowstone_ch3_y6.mp4",
   "at": "2026-11-09T01:00:00Z",
   "caption": "The whole Nez Perce caravan crossed the Yellowstone River near Mud Volcano, hundreds of people and nearly two thousand horses. Today the place is called Nez Perce Ford.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 3 — link in the first comment 👇\n\n#Yellowstone #NezPerce #History #NationalParks #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc",
+  "done": {
+   "video_id": "1704812621010993",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1112428841556108"
+   },
+   "permalink": "https://www.facebook.com/reel/1704812621010993/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 41107533
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-09T01:14:24+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1704812621010993_1490485672996763"
+   },
+   "status_errors": null,
+   "at": "2026-11-09T01:11:02Z"
+  }
  },
  {
   "id": "ch3y7_ig",
