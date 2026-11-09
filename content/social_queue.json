@@ -2400,14 +2400,29 @@
   "platform": "instagram_story",
   "file": "yellowstone_story_ch3s7.mp4",
   "at": "2026-11-09T19:00:00Z",
-  "story_v2": "Midway Geyser Basin | photo:ph_IMG_2777.jpg"
+  "story_v2": "Midway Geyser Basin | photo:ph_IMG_2777.jpg",
+  "done": {
+   "media_id": "17945962689366280",
+   "story": true,
+   "at": "2026-11-09T19:11:59Z"
+  }
  },
  {
   "id": "ch3s7_fb",
   "platform": "facebook_story",
   "file": "yellowstone_story_ch3s7.mp4",
   "at": "2026-11-09T19:00:00Z",
-  "story_v2": "Midway Geyser Basin | photo:ph_IMG_2777.jpg"
+  "story_v2": "Midway Geyser Basin | photo:ph_IMG_2777.jpg",
+  "done": {
+   "video_id": "2268884630343857",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "1673523094125296"
+   },
+   "story": true,
+   "at": "2026-11-09T19:11:59Z"
+  }
  },
  {
   "id": "ch3s8_ig",
