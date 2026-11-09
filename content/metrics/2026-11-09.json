@@ -1,5 +1,5 @@
 {
- "at": "2026-11-09T21:24:18Z",
+ "at": "2026-11-09T23:01:53Z",
  "youtube": {
   "channel": {
    "viewCount": "3990",
@@ -14,7 +14,7 @@
     "published": "2026-11-09T18:00:32Z",
     "privacy": "public",
     "duration": "PT56S",
-    "views": 8,
+    "views": 11,
     "likes": 0,
     "comments": 1
    },
@@ -24,7 +24,7 @@
     "published": "2026-11-09T01:00:14Z",
     "privacy": "public",
     "duration": "PT54S",
-    "views": 74,
+    "views": 76,
     "likes": 2,
     "comments": 1
    },
@@ -74,7 +74,7 @@
     "published": "2026-11-08T18:00:31Z",
     "privacy": "public",
     "duration": "PT48S",
-    "views": 484,
+    "views": 504,
     "likes": 8,
     "comments": 1
    },
@@ -84,7 +84,7 @@
     "published": "2026-11-08T16:00:33Z",
     "privacy": "public",
     "duration": "PT10M53S",
-    "views": 7,
+    "views": 8,
     "likes": 0,
     "comments": 1
    },
@@ -94,7 +94,7 @@
     "published": "2026-11-08T01:00:05Z",
     "privacy": "public",
     "duration": "PT44S",
-    "views": 133,
+    "views": 135,
     "likes": 3,
     "comments": 1
    },
@@ -594,12 +594,12 @@
     "published": "2026-10-26T00:02:23Z",
     "privacy": "public",
     "duration": "PT25M12S",
-    "views": 76,
+    "views": 78,
     "likes": 2,
     "comments": 1
    }
   ],
-  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/yt-analytics.readonly https://www.googleapis.com/auth/youtube.force-ssl",
+  "scopes": "https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/yt-analytics.readonly https://www.googleapis.com/auth/youtube.upload",
   "analytics_by_video": {
    "columns": [
     "video",
@@ -691,23 +691,23 @@
      1
     ],
     [
-     "LfoM0KAi8Yo",
-     56,
-     318,
-     530,
-     35.05,
-     2,
-     0,
-     0,
-     0
-    ],
-    [
      "rxGpPtUx0h4",
      56,
      13,
      26,
      60.39,
      0,
+     0,
+     0,
+     0
+    ],
+    [
+     "LfoM0KAi8Yo",
+     56,
+     318,
+     530,
+     35.05,
+     2,
      0,
      0,
      0
@@ -790,22 +790,22 @@
      0
     ],
     [
-     "P99Gu3GCZVw",
+     "-vkXqMrSljM",
      8,
-     0,
-     7,
-     1.08,
+     1,
+     11,
+     1.42,
      0,
      0,
      0,
      0
     ],
     [
-     "-vkXqMrSljM",
+     "P99Gu3GCZVw",
      8,
-     1,
-     11,
-     1.42,
+     0,
+     7,
+     1.08,
      0,
      0,
      0,
@@ -845,22 +845,22 @@
      0
     ],
     [
-     "jbZbPS173wc",
+     "VrWOyOk0urw",
      5,
      0,
-     3,
-     0.49,
+     21,
+     46.01,
      0,
      0,
      0,
      0
     ],
     [
-     "VrWOyOk0urw",
+     "jbZbPS173wc",
      5,
      0,
-     21,
-     46.01,
+     3,
+     0.49,
      0,
      0,
      0,
@@ -977,6 +977,17 @@
      0
     ],
     [
+     "yMqRsiwMhhA",
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
      "EuS8OlyY9I4",
      1,
      0,
@@ -993,17 +1004,6 @@
      0,
      5,
      7.31,
-     0,
-     0,
-     0,
-     0
-    ],
-    [
-     "yMqRsiwMhhA",
-     1,
-     0,
-     0,
-     0,
      0,
      0,
      0,
@@ -1226,7 +1226,7 @@
  "instagram": {
   "profile": {
    "username": "alphadog.studio",
-   "followers_count": 125,
+   "followers_count": 126,
    "media_count": 69,
    "id": "28926959546914399"
   },
@@ -1235,170 +1235,170 @@
     "id": "17898614319420995",
     "at": "2026-11-09T20:11:55+0000",
     "caption": "General Howard followed with about 600 men and never caught up. The Nez Perce dr",
-    "likes": 0,
+    "likes": 5,
     "comments": 1,
-    "views": 35,
-    "reach": 27,
-    "saved": 0,
+    "views": 98,
+    "reach": 78,
+    "saved": 1,
     "shares": 0,
-    "total_interactions": 1,
-    "ig_reels_avg_watch_time": 7162
+    "total_interactions": 7,
+    "ig_reels_avg_watch_time": 13914
    },
    {
     "id": "18145544071599590",
     "at": "2026-11-09T01:14:15+0000",
     "caption": "The whole Nez Perce caravan crossed the Yellowstone River near Mud Volcano, hund",
-    "likes": 3,
+    "likes": 5,
     "comments": 1,
-    "views": 151,
-    "reach": 133,
+    "views": 154,
+    "reach": 136,
     "saved": 0,
     "shares": 0,
-    "total_interactions": 4,
-    "ig_reels_avg_watch_time": 9411
+    "total_interactions": 6,
+    "ig_reels_avg_watch_time": 9663
    },
    {
     "id": "18119621062806949",
     "at": "2026-11-08T20:11:54+0000",
     "caption": "George Cowan was shot through the thigh, then in the head, and left for dead. He",
-    "likes": 1,
+    "likes": 2,
     "comments": 1,
-    "views": 126,
-    "reach": 112,
+    "views": 127,
+    "reach": 113,
     "saved": 0,
     "shares": 0,
-    "total_interactions": 2,
-    "ig_reels_avg_watch_time": 12028
+    "total_interactions": 3,
+    "ig_reels_avg_watch_time": 11932
    },
    {
     "id": "17917481934540568",
     "at": "2026-11-08T01:11:40+0000",
     "caption": "May 7, 1894. A new law banned hunting in Yellowstone. It came too late to punish",
-    "likes": 23,
+    "likes": 24,
     "comments": 1,
-    "views": 993,
-    "reach": 822,
+    "views": 994,
+    "reach": 823,
     "saved": 1,
     "shares": 4,
-    "total_interactions": 29,
-    "ig_reels_avg_watch_time": 16237
+    "total_interactions": 30,
+    "ig_reels_avg_watch_time": 16219
    },
    {
     "id": "18126301798901529",
     "at": "2026-11-07T20:11:06+0000",
     "caption": "Superintendent Norris claimed Native people were afraid of the geysers. The Park",
-    "likes": 25,
+    "likes": 26,
     "comments": 1,
-    "views": 1208,
-    "reach": 1107,
+    "views": 1209,
+    "reach": 1108,
     "saved": 3,
     "shares": 0,
-    "total_interactions": 32,
-    "ig_reels_avg_watch_time": 15070
+    "total_interactions": 33,
+    "ig_reels_avg_watch_time": 15058
    },
    {
     "id": "17957625027278507",
     "at": "2026-11-07T01:22:52+0000",
     "caption": "In 1903 Theodore Roosevelt laid the cornerstone of the arch at the north entranc",
-    "likes": 72,
+    "likes": 73,
     "comments": 1,
-    "views": 1810,
-    "reach": 1623,
+    "views": 1812,
+    "reach": 1625,
     "saved": 8,
     "shares": 2,
-    "total_interactions": 84,
-    "ig_reels_avg_watch_time": 23404
+    "total_interactions": 85,
+    "ig_reels_avg_watch_time": 23393
    },
    {
     "id": "18131919220752455",
     "at": "2026-11-06T20:17:09+0000",
     "caption": "August 24, 1908. A single masked man stopped stagecoach after stagecoach near Ke",
-    "likes": 3,
+    "likes": 4,
     "comments": 1,
-    "views": 156,
-    "reach": 130,
+    "views": 157,
+    "reach": 131,
     "saved": 0,
     "shares": 0,
-    "total_interactions": 4,
-    "ig_reels_avg_watch_time": 13394
+    "total_interactions": 5,
+    "ig_reels_avg_watch_time": 13302
    },
    {
     "id": "18124319959912031",
     "at": "2026-11-06T01:12:12+0000",
     "caption": "A writer in the park that winter sent word of Ed Howell's capture to the magazin",
-    "likes": 5,
+    "likes": 6,
     "comments": 1,
-    "views": 136,
-    "reach": 117,
+    "views": 137,
+    "reach": 118,
     "saved": 0,
     "shares": 0,
-    "total_interactions": 6,
-    "ig_reels_avg_watch_time": 14436
+    "total_interactions": 7,
+    "ig_reels_avg_watch_time": 14322
    },
    {
     "id": "18274159357309956",
     "at": "2026-11-05T20:49:26+0000",
     "caption": "Fifteen infantry soldiers stationed at Old Faithful started explaining the geyse",
-    "likes": 5,
+    "likes": 6,
     "comments": 1,
-    "views": 176,
-    "reach": 161,
+    "views": 177,
+    "reach": 162,
     "saved": 0,
     "shares": 2,
-    "total_interactions": 8,
-    "ig_reels_avg_watch_time": 17522
+    "total_interactions": 9,
+    "ig_reels_avg_watch_time": 17423
    },
    {
     "id": "18170127118496930",
     "at": "2026-11-05T01:08:51+0000",
     "caption": "A party of nine tourists, most from Radersburg, Montana, came to see the geysers",
-    "likes": 1,
+    "likes": 2,
     "comments": 1,
-    "views": 131,
-    "reach": 113,
+    "views": 132,
+    "reach": 114,
     "saved": 0,
     "shares": 0,
-    "total_interactions": 2,
-    "ig_reels_avg_watch_time": 17097
+    "total_interactions": 3,
+    "ig_reels_avg_watch_time": 16960
    },
    {
     "id": "18108217883204428",
     "at": "2026-11-04T20:09:16+0000",
     "caption": "About August 23, 1877, the Nez Perce entered Yellowstone near today's West Entra",
-    "likes": 7,
+    "likes": 8,
     "comments": 1,
-    "views": 202,
-    "reach": 159,
+    "views": 203,
+    "reach": 160,
     "saved": 3,
     "shares": 0,
-    "total_interactions": 11,
-    "ig_reels_avg_watch_time": 15657
+    "total_interactions": 12,
+    "ig_reels_avg_watch_time": 15568
    },
    {
     "id": "18469227676137160",
     "at": "2026-11-04T01:09:19+0000",
     "caption": "In 1863 the United States cut the Nez Perce reservation by about ninety percent.",
-    "likes": 4,
+    "likes": 5,
     "comments": 1,
-    "views": 133,
-    "reach": 114,
+    "views": 134,
+    "reach": 115,
     "saved": 0,
     "shares": 0,
-    "total_interactions": 5,
-    "ig_reels_avg_watch_time": 13440
+    "total_interactions": 6,
+    "ig_reels_avg_watch_time": 13333
    },
    {
     "id": "18119984174051359",
     "at": "2026-11-04T00:12:24+0000",
     "caption": "August 24, 1877. Tourists camped near Fountain Geyser see riders appear out of t",
-    "likes": 6,
+    "likes": 7,
     "comments": 1,
-    "views": 149,
-    "reach": 124,
+    "views": 150,
+    "reach": 125,
     "saved": 0,
     "shares": 0,
-    "total_interactions": 7,
-    "ig_reels_avg_watch_time": 16173
+    "total_interactions": 8,
+    "ig_reels_avg_watch_time": 16054
    },
    {
     "id": "18138266653647107",
@@ -1407,7 +1407,7 @@
     "likes": 3,
     "comments": 1,
     "views": 162,
-    "reach": 151,
+    "reach": 152,
     "saved": 0,
     "shares": 0,
     "total_interactions": 4,
@@ -1419,7 +1419,7 @@
     "caption": "In one winter hunters killed some 3,000 elk in and around early Yellowstone, jus",
     "likes": 36,
     "comments": 1,
-    "views": 1806,
+    "views": 1807,
     "reach": 1607,
     "saved": 6,
     "shares": 0,
@@ -2189,8 +2189,7 @@
     "text": "By 1902 only 23 wild bison remained in Yellowstone, the last wild bison in North",
     "fb_reels_total_plays": 2,
     "blue_reels_play_count": 1,
-    "post_video_avg_time_watched": 41815,
-    "post_video_followers": 0
+    "post_video_avg_time_watched": 41815
    },
    {
     "id": "1172408145140494",
@@ -2207,8 +2206,7 @@
     "text": "August 17, 1959. A magnitude 7.3 earthquake strikes just west of Yellowstone. By",
     "fb_reels_total_plays": 4,
     "blue_reels_play_count": 2,
-    "post_video_avg_time_watched": 10151,
-    "post_video_followers": 0
+    "post_video_avg_time_watched": 10151
    },
    {
     "id": "1453559290219735",
@@ -2234,8 +2232,7 @@
     "text": "1861. A 12-year-old boy is kidnapped in Arizona, and the Army blames Cochise, th",
     "fb_reels_total_plays": 2,
     "blue_reels_play_count": 1,
-    "post_video_avg_time_watched": 3605,
-    "post_video_followers": 0
+    "post_video_avg_time_watched": 3605
    },
    {
     "id": "1617495313446017",
@@ -2243,8 +2240,7 @@
     "text": "1886. The Army loaded nearly every Chiricahua Apache onto prison trains, even th",
     "fb_reels_total_plays": 2,
     "blue_reels_play_count": 1,
-    "post_video_avg_time_watched": 6345,
-    "post_video_followers": 0
+    "post_video_avg_time_watched": 6345
    },
    {
     "id": "1367441375278212",
@@ -2463,8 +2459,8 @@
     "at": "2026-11-09T03:01:03Z",
     "title": "The whole Nez Perce caravan crossed the Yellowstone River near Mud Vo...",
     "duration": 53,
-    "views": 125,
-    "likes": 2,
+    "views": 130,
+    "likes": 3,
     "comments": 1,
     "shares": 0
    },
@@ -2473,7 +2469,7 @@
     "at": "2026-11-09T00:02:08Z",
     "title": "George Cowan was shot through the thigh, then in the head, and left f...",
     "duration": 47,
-    "views": 153,
+    "views": 160,
     "likes": 2,
     "comments": 0,
     "shares": 0
@@ -2723,7 +2719,7 @@
     "at": "2026-10-28T00:05:47Z",
     "title": "America just got its 64th national park, and most people have never h...",
     "duration": 30,
-    "views": 1387,
+    "views": 1432,
     "likes": 32,
     "comments": 2,
     "shares": 1
@@ -2733,7 +2729,7 @@
     "at": "2026-10-26T04:10:00Z",
     "title": "Found dead under an oak in 1882. Revolver in hand, boots gone. The ju...",
     "duration": 30,
-    "views": 1238,
+    "views": 1242,
     "likes": 57,
     "comments": 2,
     "shares": 1
