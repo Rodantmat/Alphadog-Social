@@ -38,3 +38,6 @@ No new messages (list run 42593011277): answered 0, escalated 0, spam 0.
 
 ## 2026-11-09 10:23 UTC OK
 No new messages (list run 42600439499): answered 0, escalated 0, spam 0.
+
+## 2026-11-09 11:26 UTC OK
+1 new message (list run 42608734084): answered 0, escalated 0, spam 1 (id 11, automated DMARC aggregate report; done run 42608889670).
