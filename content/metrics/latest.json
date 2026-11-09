@@ -1,22 +1,82 @@
 {
- "at": "2026-11-08T18:23:46Z",
+ "at": "2026-11-09T21:24:18Z",
  "youtube": {
   "channel": {
-   "viewCount": "3325",
-   "subscriberCount": "11",
+   "viewCount": "3990",
+   "subscriberCount": "12",
    "hiddenSubscriberCount": false,
-   "videoCount": "35"
+   "videoCount": "37"
   },
   "videos": [
+   {
+    "id": "u2ShH8jAZb8",
+    "title": "13 days, 600 soldiers and a narrow escape #Shorts",
+    "published": "2026-11-09T18:00:32Z",
+    "privacy": "public",
+    "duration": "PT56S",
+    "views": 8,
+    "likes": 0,
+    "comments": 1
+   },
+   {
+    "id": "GBtH7GfGO3o",
+    "title": "2,000 horses crossed the Yellowstone River #Shorts",
+    "published": "2026-11-09T01:00:14Z",
+    "privacy": "public",
+    "duration": "PT54S",
+    "views": 74,
+    "likes": 2,
+    "comments": 1
+   },
+   {
+    "id": "T5BjlD54g9Y",
+    "title": "5 tons of human waste below Angels Landing #Shorts",
+    "published": "2026-11-08T18:42:16Z",
+    "privacy": "private",
+    "duration": "PT22S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "OaGTyy0wnak",
+    "title": "Angels Landing permit lottery: 8% odds #Shorts",
+    "published": "2026-11-08T18:42:09Z",
+    "privacy": "private",
+    "duration": "PT22S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "vfEdsxIDZZ0",
+    "title": "Zion: 4,000 visitors became 5 million #Shorts",
+    "published": "2026-11-08T18:42:09Z",
+    "privacy": "private",
+    "duration": "PT34S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "tLN9SN6m6rs",
+    "title": "Angels Landing: 17 deaths on one trail #Shorts",
+    "published": "2026-11-08T18:42:08Z",
+    "privacy": "private",
+    "duration": "PT33S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
    {
     "id": "FtSXblbpc3U",
     "title": "Shot twice, he crawled 12 miles to survive #Shorts",
     "published": "2026-11-08T18:00:31Z",
     "privacy": "public",
     "duration": "PT48S",
-    "views": 30,
-    "likes": 0,
-    "comments": 0
+    "views": 484,
+    "likes": 8,
+    "comments": 1
    },
    {
     "id": "Hlr80lyDlwA",
@@ -24,9 +84,9 @@
     "published": "2026-11-08T16:00:33Z",
     "privacy": "public",
     "duration": "PT10M53S",
-    "views": 0,
+    "views": 7,
     "likes": 0,
-    "comments": 0
+    "comments": 1
    },
    {
     "id": "hjctJRYvXwY",
@@ -34,8 +94,8 @@
     "published": "2026-11-08T01:00:05Z",
     "privacy": "public",
     "duration": "PT44S",
-    "views": 101,
-    "likes": 2,
+    "views": 133,
+    "likes": 3,
     "comments": 1
    },
    {
@@ -44,7 +104,7 @@
     "published": "2026-11-07T18:00:05Z",
     "privacy": "public",
     "duration": "PT45S",
-    "views": 92,
+    "views": 106,
     "likes": 1,
     "comments": 1
    },
@@ -104,7 +164,7 @@
     "published": "2026-11-07T01:00:08Z",
     "privacy": "public",
     "duration": "PT55S",
-    "views": 47,
+    "views": 63,
     "likes": 0,
     "comments": 1
    },
@@ -114,7 +174,7 @@
     "published": "2026-11-06T18:00:20Z",
     "privacy": "public",
     "duration": "PT44S",
-    "views": 60,
+    "views": 70,
     "likes": 0,
     "comments": 1
    },
@@ -149,16 +209,6 @@
     "comments": 0
    },
    {
-    "id": "u2ShH8jAZb8",
-    "title": "13 days, 600 soldiers and a narrow escape #Shorts",
-    "published": "2026-11-06T08:14:54Z",
-    "privacy": "private",
-    "duration": "PT56S",
-    "views": 0,
-    "likes": 0,
-    "comments": 0
-   },
-   {
     "id": "McdCi05pBzg",
     "title": "The poacher who saved America's last wild bison #Shorts",
     "published": "2026-11-06T01:00:34Z",
@@ -174,7 +224,7 @@
     "published": "2026-11-05T20:00:12Z",
     "privacy": "public",
     "duration": "PT34M55S",
-    "views": 21,
+    "views": 23,
     "likes": 0,
     "comments": 4
    },
@@ -187,16 +237,6 @@
     "views": 10,
     "likes": 0,
     "comments": 1
-   },
-   {
-    "id": "GBtH7GfGO3o",
-    "title": "2,000 horses crossed the Yellowstone River #Shorts",
-    "published": "2026-11-05T08:19:35Z",
-    "privacy": "private",
-    "duration": "PT54S",
-    "views": 0,
-    "likes": 0,
-    "comments": 0
    },
    {
     "id": "x1PAl5B-IeI",
@@ -214,7 +254,7 @@
     "published": "2026-11-04T18:00:22Z",
     "privacy": "public",
     "duration": "PT46S",
-    "views": 5,
+    "views": 6,
     "likes": 0,
     "comments": 1
    },
@@ -254,7 +294,7 @@
     "published": "2026-11-04T01:00:15Z",
     "privacy": "public",
     "duration": "PT45S",
-    "views": 6,
+    "views": 9,
     "likes": 0,
     "comments": 1
    },
@@ -294,7 +334,7 @@
     "published": "2026-11-02T18:00:18Z",
     "privacy": "public",
     "duration": "PT52S",
-    "views": 1325,
+    "views": 1326,
     "likes": 33,
     "comments": 1
    },
@@ -324,7 +364,7 @@
     "published": "2026-11-01T16:00:03Z",
     "privacy": "public",
     "duration": "PT11M33S",
-    "views": 9,
+    "views": 10,
     "likes": 0,
     "comments": 2
    },
@@ -364,7 +404,7 @@
     "published": "2026-11-01T00:00:11Z",
     "privacy": "public",
     "duration": "PT46S",
-    "views": 5,
+    "views": 7,
     "likes": 0,
     "comments": 1
    },
@@ -454,7 +494,7 @@
     "published": "2026-10-30T15:00:38Z",
     "privacy": "public",
     "duration": "PT12M58S",
-    "views": 8,
+    "views": 9,
     "likes": 0,
     "comments": 1
    },
@@ -469,12 +509,12 @@
     "comments": 0
    },
    {
-    "id": "ZeckenkuKbc",
-    "title": "[OLD private] 13 Days in Yellowstone: The Nez Perce, 1877",
-    "published": "2026-10-29T16:05:44Z",
-    "privacy": "private",
-    "duration": "PT11M1S",
-    "views": 0,
+    "id": "l3Wsfo7k-Lo",
+    "title": "Cochise Cut His Way Out of an Army Tent",
+    "published": "2026-10-30T00:30:36Z",
+    "privacy": "public",
+    "duration": "PT52S",
+    "views": 31,
     "likes": 0,
     "comments": 0
    },
@@ -554,12 +594,12 @@
     "published": "2026-10-26T00:02:23Z",
     "privacy": "public",
     "duration": "PT25M12S",
-    "views": 58,
+    "views": 76,
     "likes": 2,
     "comments": 1
    }
   ],
-  "scopes": "https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/yt-analytics.readonly https://www.googleapis.com/auth/youtube.upload",
+  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/yt-analytics.readonly https://www.googleapis.com/auth/youtube.force-ssl",
   "analytics_by_video": {
    "columns": [
     "video",
@@ -575,10 +615,10 @@
    "rows": [
     [
      "R-V4lG2dEfU",
-     1318,
-     521,
+     1325,
+     525,
      35,
-     68.2,
+     68.16,
      34,
      0,
      0,
@@ -586,7 +626,7 @@
     ],
     [
      "RWwPTGQF82o",
-     558,
+     560,
      67,
      17,
      61.809999999999995,
@@ -608,10 +648,10 @@
     ],
     [
      "nWccTvDItMk",
-     232,
+     234,
      52,
      32,
-     68.18,
+     66.97,
      11,
      0,
      0,
@@ -629,22 +669,66 @@
      0
     ],
     [
-     "LfoM0KAi8Yo",
-     34,
-     216,
-     618,
-     40.89,
+     "hjctJRYvXwY",
+     86,
+     21,
+     29,
+     67.68,
      2,
      0,
      0,
      0
     ],
     [
-     "l3Wsfo7k-Lo",
-     24,
+     "2Ge5FJpCz3c",
+     85,
+     27,
+     36,
+     82.07,
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     "LfoM0KAi8Yo",
+     56,
+     318,
+     530,
+     35.05,
      2,
-     21,
-     40.5,
+     0,
+     0,
+     0
+    ],
+    [
+     "rxGpPtUx0h4",
+     56,
+     13,
+     26,
+     60.39,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "IgQF68CMycI",
+     45,
+     13,
+     31,
+     56.55,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "l3Wsfo7k-Lo",
+     31,
+     3,
+     19,
+     36.86,
      0,
      0,
      0,
@@ -652,11 +736,22 @@
     ],
     [
      "4X1O7pEr_FQ",
-     23,
-     3,
-     24,
-     78.92,
+     28,
+     7,
+     52,
+     168.83,
      1,
+     0,
+     0,
+     0
+    ],
+    [
+     "nEf7KCM5Ors",
+     21,
+     15,
+     182,
+     8.69,
+     0,
      0,
      0,
      0
@@ -674,7 +769,7 @@
     ],
     [
      "G03Sxe_dD9k",
-     14,
+     15,
      1,
      18,
      54.02,
@@ -685,10 +780,32 @@
     ],
     [
      "cJ6ZFKlq0Sg",
-     9,
+     10,
      1,
      13,
      27.889999999999997,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "P99Gu3GCZVw",
+     8,
+     0,
+     7,
+     1.08,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "-vkXqMrSljM",
+     8,
+     1,
+     11,
+     1.42,
      0,
      0,
      0,
@@ -706,22 +823,11 @@
      0
     ],
     [
-     "-vkXqMrSljM",
+     "bJgBuP716E8",
      6,
-     1,
-     11,
-     1.46,
-     0,
-     0,
-     0,
-     0
-    ],
-    [
-     "VrWOyOk0urw",
-     5,
-     0,
-     21,
-     46.01,
+     2,
+     56,
+     124.92000000000002,
      0,
      0,
      0,
@@ -750,22 +856,11 @@
      0
     ],
     [
-     "nEf7KCM5Ors",
+     "VrWOyOk0urw",
      5,
      0,
-     5,
-     0.25,
-     0,
-     0,
-     0,
-     0
-    ],
-    [
-     "P99Gu3GCZVw",
-     5,
-     0,
-     0,
-     0,
+     21,
+     46.01,
      0,
      0,
      0,
@@ -794,17 +889,6 @@
      0
     ],
     [
-     "bJgBuP716E8",
-     4,
-     1,
-     44,
-     98.9,
-     0,
-     0,
-     0,
-     0
-    ],
-    [
      "Ay2qGG6UjqI",
      3,
      0,
@@ -827,33 +911,22 @@
      0
     ],
     [
+     "McdCi05pBzg",
+     2,
+     0,
+     3,
+     7.580000000000001,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
      "SSC66rbZrHo",
      2,
      0,
      0,
      0,
-     0,
-     0,
-     0,
-     0
-    ],
-    [
-     "EuS8OlyY9I4",
-     1,
-     0,
-     19,
-     38.82,
-     0,
-     0,
-     0,
-     0
-    ],
-    [
-     "W1ytO_kbww0",
-     1,
-     0,
-     5,
-     7.31,
      0,
      0,
      0,
@@ -904,6 +977,28 @@
      0
     ],
     [
+     "EuS8OlyY9I4",
+     1,
+     0,
+     19,
+     38.82,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "W1ytO_kbww0",
+     1,
+     0,
+     5,
+     7.31,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
      "yMqRsiwMhhA",
      1,
      0,
@@ -941,33 +1036,33 @@
   "traffic_sources": [
    [
     "NO_LINK_OTHER",
-    5,
+    7,
     25
    ],
    [
     "SUBSCRIBER",
-    21,
-    15
+    29,
+    16
    ],
    [
     "YT_CHANNEL",
-    6,
-    1
+    10,
+    17
    ],
    [
     "YT_SEARCH",
-    133,
-    47
+    174,
+    54
    ],
    [
     "RELATED_VIDEO",
-    17,
-    163
+    29,
+    263
    ],
    [
     "YT_OTHER_PAGE",
-    38,
-    12
+    46,
+    18
    ],
    [
     "EXT_URL",
@@ -981,8 +1076,8 @@
    ],
    [
     "SHORTS",
-    2755,
-    772
+    3026,
+    850
    ],
    [
     "HASHTAGS",
@@ -994,123 +1089,135 @@
    "reports": 14,
    "by_video": {
     "4X1O7pEr_FQ": {
-     "impressions": 306,
-     "ctr": 0.0098
+     "impressions": 292,
+     "ctr": 0.0171
     },
     "LfoM0KAi8Yo": {
-     "impressions": 604,
-     "ctr": 0.0215
+     "impressions": 853,
+     "ctr": 0.0258
     },
     "eNV_qLTs2Js": {
-     "impressions": 41,
-     "ctr": 0.0244
+     "impressions": 48,
+     "ctr": 0.0208
     },
     "G03Sxe_dD9k": {
-     "impressions": 115,
-     "ctr": 0.0087
+     "impressions": 136,
+     "ctr": 0.0074
     },
     "l3Wsfo7k-Lo": {
-     "impressions": 472,
-     "ctr": 0.0064
+     "impressions": 547,
+     "ctr": 0.0055
     },
     "-vkXqMrSljM": {
-     "impressions": 106,
-     "ctr": 0.0377
+     "impressions": 146,
+     "ctr": 0.0342
     },
     "50XkGgJ5nNQ": {
-     "impressions": 81,
-     "ctr": 0.0123
+     "impressions": 99,
+     "ctr": 0.0101
     },
     "EuS8OlyY9I4": {
-     "impressions": 12,
+     "impressions": 16,
      "ctr": 0.0
     },
     "av9mIcktn6A": {
-     "impressions": 27,
-     "ctr": 0.037
+     "impressions": 32,
+     "ctr": 0.0312
     },
     "E-izx81EvAE": {
-     "impressions": 43,
+     "impressions": 51,
      "ctr": 0.0
     },
     "RWwPTGQF82o": {
-     "impressions": 40,
+     "impressions": 57,
      "ctr": 0.0
     },
     "iHu31E8tX_k": {
-     "impressions": 1,
+     "impressions": 2,
      "ctr": 0.0
     },
     "nWccTvDItMk": {
-     "impressions": 26,
+     "impressions": 34,
      "ctr": 0.0
     },
     "uTzcrqnoa4I": {
-     "impressions": 6,
+     "impressions": 8,
      "ctr": 0.0
     },
     "P99Gu3GCZVw": {
-     "impressions": 142,
+     "impressions": 187,
      "ctr": 0.0
     },
     "QICPYzghiNc": {
-     "impressions": 11,
-     "ctr": 0.0909
+     "impressions": 21,
+     "ctr": 0.0952
     },
     "bWSnXlwtW04": {
-     "impressions": 6,
+     "impressions": 11,
      "ctr": 0.0
     },
     "wBQ0FKBps08": {
-     "impressions": 20,
-     "ctr": 0.05
+     "impressions": 32,
+     "ctr": 0.0312
     },
     "R-V4lG2dEfU": {
-     "impressions": 42,
+     "impressions": 66,
      "ctr": 0.0
     },
     "naMTvf4CXt0": {
-     "impressions": 12,
+     "impressions": 19,
      "ctr": 0.0
     },
     "Ay2qGG6UjqI": {
-     "impressions": 10,
+     "impressions": 16,
      "ctr": 0.0
     },
     "SSC66rbZrHo": {
-     "impressions": 3,
-     "ctr": 0.0
-    },
-    "bJgBuP716E8": {
-     "impressions": 22,
-     "ctr": 0.0455
-    },
-    "jbZbPS173wc": {
-     "impressions": 116,
-     "ctr": 0.0
-    },
-    "VrWOyOk0urw": {
-     "impressions": 46,
-     "ctr": 0.0217
-    },
-    "x1PAl5B-IeI": {
-     "impressions": 33,
-     "ctr": 0.0303
-    },
-    "McdCi05pBzg": {
-     "impressions": 7,
-     "ctr": 0.1429
-    },
-    "cJ6ZFKlq0Sg": {
      "impressions": 6,
      "ctr": 0.0
     },
+    "bJgBuP716E8": {
+     "impressions": 28,
+     "ctr": 0.0357
+    },
+    "jbZbPS173wc": {
+     "impressions": 149,
+     "ctr": 0.0
+    },
+    "VrWOyOk0urw": {
+     "impressions": 50,
+     "ctr": 0.02
+    },
+    "x1PAl5B-IeI": {
+     "impressions": 35,
+     "ctr": 0.0286
+    },
+    "McdCi05pBzg": {
+     "impressions": 16,
+     "ctr": 0.0625
+    },
+    "cJ6ZFKlq0Sg": {
+     "impressions": 7,
+     "ctr": 0.0
+    },
     "nEf7KCM5Ors": {
-     "impressions": 207,
-     "ctr": 0.0048
+     "impressions": 282,
+     "ctr": 0.0106
     },
     "rxGpPtUx0h4": {
-     "impressions": 11,
+     "impressions": 28,
+     "ctr": 0.0
+    },
+    "2Ge5FJpCz3c": {
+     "impressions": 4,
+     "ctr": 0.0
+    },
+    "IgQF68CMycI": {
+     "impressions": 2,
+     "ctr": 0.0
+    },
+    "hjctJRYvXwY": {
+     "impressions": 3,
      "ctr": 0.0
     }
    }
@@ -1119,23 +1226,62 @@
  "instagram": {
   "profile": {
    "username": "alphadog.studio",
-   "followers_count": 123,
-   "media_count": 66,
+   "followers_count": 125,
+   "media_count": 69,
    "id": "28926959546914399"
   },
   "media": [
+   {
+    "id": "17898614319420995",
+    "at": "2026-11-09T20:11:55+0000",
+    "caption": "General Howard followed with about 600 men and never caught up. The Nez Perce dr",
+    "likes": 0,
+    "comments": 1,
+    "views": 35,
+    "reach": 27,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 1,
+    "ig_reels_avg_watch_time": 7162
+   },
+   {
+    "id": "18145544071599590",
+    "at": "2026-11-09T01:14:15+0000",
+    "caption": "The whole Nez Perce caravan crossed the Yellowstone River near Mud Volcano, hund",
+    "likes": 3,
+    "comments": 1,
+    "views": 151,
+    "reach": 133,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 4,
+    "ig_reels_avg_watch_time": 9411
+   },
+   {
+    "id": "18119621062806949",
+    "at": "2026-11-08T20:11:54+0000",
+    "caption": "George Cowan was shot through the thigh, then in the head, and left for dead. He",
+    "likes": 1,
+    "comments": 1,
+    "views": 126,
+    "reach": 112,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 2,
+    "ig_reels_avg_watch_time": 12028
+   },
    {
     "id": "17917481934540568",
     "at": "2026-11-08T01:11:40+0000",
     "caption": "May 7, 1894. A new law banned hunting in Yellowstone. It came too late to punish",
     "likes": 23,
     "comments": 1,
-    "views": 950,
-    "reach": 786,
+    "views": 993,
+    "reach": 822,
     "saved": 1,
     "shares": 4,
     "total_interactions": 29,
-    "ig_reels_avg_watch_time": 16339
+    "ig_reels_avg_watch_time": 16237
    },
    {
     "id": "18126301798901529",
@@ -1143,12 +1289,12 @@
     "caption": "Superintendent Norris claimed Native people were afraid of the geysers. The Park",
     "likes": 25,
     "comments": 1,
-    "views": 1203,
-    "reach": 1102,
+    "views": 1208,
+    "reach": 1107,
     "saved": 3,
     "shares": 0,
     "total_interactions": 32,
-    "ig_reels_avg_watch_time": 15093
+    "ig_reels_avg_watch_time": 15070
    },
    {
     "id": "17957625027278507",
@@ -1156,12 +1302,12 @@
     "caption": "In 1903 Theodore Roosevelt laid the cornerstone of the arch at the north entranc",
     "likes": 72,
     "comments": 1,
-    "views": 1799,
-    "reach": 1613,
+    "views": 1810,
+    "reach": 1623,
     "saved": 8,
     "shares": 2,
     "total_interactions": 84,
-    "ig_reels_avg_watch_time": 23441
+    "ig_reels_avg_watch_time": 23404
    },
    {
     "id": "18131919220752455",
@@ -1169,12 +1315,12 @@
     "caption": "August 24, 1908. A single masked man stopped stagecoach after stagecoach near Ke",
     "likes": 3,
     "comments": 1,
-    "views": 155,
-    "reach": 129,
+    "views": 156,
+    "reach": 130,
     "saved": 0,
     "shares": 0,
     "total_interactions": 4,
-    "ig_reels_avg_watch_time": 13565
+    "ig_reels_avg_watch_time": 13394
    },
    {
     "id": "18124319959912031",
@@ -1300,7 +1446,7 @@
     "likes": 7,
     "comments": 1,
     "views": 254,
-    "reach": 224,
+    "reach": 225,
     "saved": 0,
     "shares": 1,
     "total_interactions": 9,
@@ -1442,12 +1588,12 @@
     "caption": "America just got its 64th national park, and most people have never heard of it.",
     "likes": 5,
     "comments": 0,
-    "views": 174,
-    "reach": 149,
+    "views": 175,
+    "reach": 150,
     "saved": 0,
     "shares": 0,
     "total_interactions": 5,
-    "ig_reels_avg_watch_time": 7374
+    "ig_reels_avg_watch_time": 7387
    },
    {
     "id": "17869890501658096",
@@ -1471,6 +1617,30 @@
    "id": "103210859154410"
   },
   "posts": [
+   {
+    "id": "103210859154410_1113282104804115",
+    "at": "2026-11-09T20:12:43+0000",
+    "text": "General Howard followed with about 600 men and never caught up. The Nez Perce dr",
+    "reactions": 0,
+    "comments": 1,
+    "shares": 0
+   },
+   {
+    "id": "103210859154410_1112428841556108",
+    "at": "2026-11-09T01:15:18+0000",
+    "text": "The whole Nez Perce caravan crossed the Yellowstone River near Mud Volcano, hund",
+    "reactions": 0,
+    "comments": 1,
+    "shares": 0
+   },
+   {
+    "id": "103210859154410_1112252168240442",
+    "at": "2026-11-08T20:12:42+0000",
+    "text": "George Cowan was shot through the thigh, then in the head, and left for dead. He",
+    "reactions": 0,
+    "comments": 1,
+    "shares": 0
+   },
    {
     "id": "103210859154410_1111428768322782",
     "at": "2026-11-08T02:25:39+0000",
@@ -1834,6 +2004,33 @@
   ],
   "reels": [
    {
+    "id": "1467031402031750",
+    "at": "2026-11-09T20:12:05+0000",
+    "text": "General Howard followed with about 600 men and never caught up. The Nez Perce dr",
+    "fb_reels_total_plays": 0,
+    "blue_reels_play_count": 0,
+    "post_video_avg_time_watched": 0,
+    "post_video_followers": 0
+   },
+   {
+    "id": "1704812621010993",
+    "at": "2026-11-09T01:14:24+0000",
+    "text": "The whole Nez Perce caravan crossed the Yellowstone River near Mud Volcano, hund",
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 3804,
+    "post_video_followers": 0
+   },
+   {
+    "id": "1144019105193061",
+    "at": "2026-11-08T20:12:03+0000",
+    "text": "George Cowan was shot through the thigh, then in the head, and left for dead. He",
+    "fb_reels_total_plays": 0,
+    "blue_reels_play_count": 0,
+    "post_video_avg_time_watched": 0,
+    "post_video_followers": 0
+   },
+   {
     "id": "1911796396660027",
     "at": "2026-11-08T02:24:54+0000",
     "text": "Fifteen infantry soldiers stationed at Old Faithful started explaining the geyse",
@@ -1846,9 +2043,9 @@
     "id": "1601762674487196",
     "at": "2026-11-08T01:11:51+0000",
     "text": "May 7, 1894. A new law banned hunting in Yellowstone. It came too late to punish",
-    "fb_reels_total_plays": 0,
-    "blue_reels_play_count": 0,
-    "post_video_avg_time_watched": 0,
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 1911,
     "post_video_followers": 0
    },
    {
@@ -2089,9 +2286,9 @@
     "id": "482234329939385",
     "at": "2022-08-19T19:22:14+0000",
     "text": "🔐 This place is a super #SecretSpot , I have to #TubaCity few times before and I",
-    "fb_reels_total_plays": 5404,
-    "blue_reels_play_count": 5404,
-    "post_video_avg_time_watched": 14585,
+    "fb_reels_total_plays": 5406,
+    "blue_reels_play_count": 5406,
+    "post_video_avg_time_watched": 14580,
     "post_video_followers": 0
    },
    {
@@ -2262,12 +2459,32 @@
   "handle": "alphadogstudio",
   "videos": [
    {
+    "id": "7706001303767387405",
+    "at": "2026-11-09T03:01:03Z",
+    "title": "The whole Nez Perce caravan crossed the Yellowstone River near Mud Vo...",
+    "duration": 53,
+    "views": 125,
+    "likes": 2,
+    "comments": 1,
+    "shares": 0
+   },
+   {
+    "id": "7705955214913735949",
+    "at": "2026-11-09T00:02:08Z",
+    "title": "George Cowan was shot through the thigh, then in the head, and left f...",
+    "duration": 47,
+    "views": 153,
+    "likes": 2,
+    "comments": 0,
+    "shares": 0
+   },
+   {
     "id": "7705630307864628494",
     "at": "2026-11-08T03:01:12Z",
     "title": "May 7, 1894. A new law banned hunting in Yellowstone. It came too lat...",
     "duration": 43,
-    "views": 152,
-    "likes": 5,
+    "views": 207,
+    "likes": 10,
     "comments": 0,
     "shares": 1
    },
@@ -2276,8 +2493,8 @@
     "at": "2026-11-08T00:01:51Z",
     "title": "Superintendent Norris claimed Native people were afraid of the geyser...",
     "duration": 44,
-    "views": 142,
-    "likes": 2,
+    "views": 167,
+    "likes": 4,
     "comments": 0,
     "shares": 0
    },
@@ -2286,7 +2503,7 @@
     "at": "2026-11-07T01:02:10Z",
     "title": "In 1903 Theodore Roosevelt laid the cornerstone of the arch at the no...",
     "duration": 54,
-    "views": 190,
+    "views": 192,
     "likes": 7,
     "comments": 0,
     "shares": 0
@@ -2306,7 +2523,7 @@
     "at": "2026-11-06T01:01:09Z",
     "title": "A writer in the park that winter sent word of Ed Howell's capture to ...",
     "duration": 43,
-    "views": 113,
+    "views": 114,
     "likes": 1,
     "comments": 0,
     "shares": 0
@@ -2326,7 +2543,7 @@
     "at": "2026-11-05T01:02:24Z",
     "title": "A party of nine tourists, most from Radersburg, Montana, came to see ...",
     "duration": 47,
-    "views": 209,
+    "views": 210,
     "likes": 9,
     "comments": 0,
     "shares": 0
@@ -2376,7 +2593,7 @@
     "at": "2026-11-02T18:07:30Z",
     "title": "In one winter hunters killed some 3,000 elk in and around early Yello...",
     "duration": 51,
-    "views": 253,
+    "views": 254,
     "likes": 16,
     "comments": 0,
     "shares": 0
@@ -2496,7 +2713,7 @@
     "at": "2026-10-29T01:30:15Z",
     "title": "1886. The Army loaded nearly every Chiricahua Apache onto prison trai...",
     "duration": 33,
-    "views": 582,
+    "views": 583,
     "likes": 40,
     "comments": 4,
     "shares": 2
@@ -2506,22 +2723,22 @@
     "at": "2026-10-28T00:05:47Z",
     "title": "America just got its 64th national park, and most people have never h...",
     "duration": 30,
-    "views": 841,
-    "likes": 25,
+    "views": 1387,
+    "likes": 32,
     "comments": 2,
-    "shares": 0
+    "shares": 1
    },
    {
     "id": "7700823880042089759",
     "at": "2026-10-26T04:10:00Z",
     "title": "Found dead under an oak in 1882. Revolver in hand, boots gone. The ju...",
     "duration": 30,
-    "views": 1210,
+    "views": 1238,
     "likes": 57,
     "comments": 2,
     "shares": 1
    }
   ],
-  "listed": 43
+  "listed": 45
  }
 }
