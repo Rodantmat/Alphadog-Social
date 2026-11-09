@@ -1,5 +1,13 @@
 # CNPJ monitor log
 
+## 2026-11-09 ~20:30 UTC NEEDS-RODO
+- Situação cadastral: not checked (blocked by login)
+- Pendências open: not checked; last known: cadastral pendência open, omissions cleared, 68 x R$50,00 = R$3.400,00 fines (4406-01) due 08/12/2026, a vencer
+- Fines/totals: not re-checked
+- Installment availability: not checked
+- Actions taken: e-CAC session expired (gov.br login page); pushed Rodo to log in; re-checked ~8 times over ~30 min, login never completed; stopped
+- Captcha encountered: N (login required: Y)
+
 ## 2026-11-09 18:51 UTC NEEDS-RODO
 - Situação cadastral: not checked (blocked by login)
 - Pendências open: not checked; last known (03:30 UTC run): cadastral pendência open, omissions cleared, 68 x R$50,00 = R$3.400,00 fines (4406-01) due 08/12/2026, a vencer
