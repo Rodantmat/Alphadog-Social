@@ -1,5 +1,15 @@
 # CNPJ monitor log
 
+## 2026-11-10 ~UTC (follow-up, same session) OK
+- Situação cadastral: ATIVA
+- Pendências open: none shown; analysis still 'incompleta' on Receita side
+- Fines: unchanged, 70 items = R$3.550,00 (69 x R$50 4406-01 + 1 x R$100 5440-01), all a vencer, due 08/12/2026
+- Installment availability: NOT available. e-CAC Parcelamento > Negociar novo parcelamento shows empty list of modalidades (system hours 07-21h business days). Expected while fines are a vencer.
+- DCTFWeb: 10/2021 still Ativa, original sem movimento, debit 0,00, saldo 0,00; no new omitted months
+- Not checked: public CNPJ consulta (portal already shows Ativa), DARF issuance screen, PGDAS-D 10/2026 (due 20/11/2026) status
+- Actions taken: read-only navigation; nothing declared or paid
+- Captcha encountered: N
+
 ## 2026-11-10 ~UTC CHANGE
 - Situação cadastral: ATIVA (was INAPTA) per Minhas Dívidas e Pendências
 - Pendências open: no cadastral pendência or omission shown. Receita analysis banner says 'Análise incompleta' (could not reach all RFB/PGFN data; Atualizar did not clear it), so not yet final.
@@ -37,7 +47,7 @@
 ## 2026-11-08 NEEDS-RODO
 - Situação cadastral: not checked (blocked)
 - Pendências open: not checked — Minhas Dívidas e Pendências showed a captcha; session itself appears logged in (Representante no CNPJ)
-- Fines/totals: not checked
+- Fines/totals: not re-checked
 - Installment availability: not checked
 - Actions taken: none; push notification sent asking Rodo to solve captcha
 - Captcha encountered: Y
