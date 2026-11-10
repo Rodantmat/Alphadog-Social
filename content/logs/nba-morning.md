@@ -9,3 +9,13 @@
 - Strategies: no state/cap changes vs 11-07; CLEAN 5->6 on A_core_3power, A_regular_5power, A_wrebounds_4flex, A_wsteals_5flex, C_wstocks_4flex. B_demon_3flex / B_demon_5flex still red (REQUAL HOLD since 11-02).
 - Edge monitors: PP z 2.10, UD z 1.04, both RUNNING (19 slates), no ALARM.
 - Boards 11-09 (8 games): 0 rows yet - expected, first capture is P2B ~08:06 PT.
+
+## 2026-11-10 13:58 UTC ACTION
+- Market term: review revert. audit_market_coverage (run 42828974614) VERDICT NOT READY, 20 dates pooled: coverage 9.8% (ref 64.3%), depth 1.47 (ref 2.11), player match 14.6% (<95%). 11-09 alone: coverage 30.3%, depth 1.72. 11-09 window rungs 1,903, avg 1.72 books.
+- Pipelines: P2A 11-10 success (03:31-03:44 PT); P2A/P2B/P1/P3 11-09 all success; P3 11-09 no soft-step failures. Scheduler tick 46s old.
+- PP 11-09: 6 slips, 6u staked, 0 returned, net -6u, ROI -100%. Season: 87 slips, 87u, 120u returned, +33u, ROI +37.9%.
+- UD P5 (shadow) 11-09: 3 slips, 3u, 0 returned, -3u, ROI -100%. Season P5: 66 slips, 60u, 67.27u, +7.27u, ROI +12.1%.
+- UD live (T+C) 11-09: 3 slips, 3u, 5.22u returned, +2.22u, ROI +74%. Season T+C: 37 slips, 37u, 42.74u, +5.74u, ROI +15.5%.
+- Strategies: no state/cap changes vs 11-08; CLEAN 6->7 on A_core_3power, A_regular_5power, A_wrebounds_4flex, A_wsteals_5flex, C_wstocks_4flex. B_demon_3flex / B_demon_5flex still red (REQUAL HOLD re-dated 11-02 -> 11-09). Rotation steals ewma 0.768 -> 0.652 (ok).
+- Edge monitors: PP z 2.02, UD z 1.01, both RUNNING (20 slates), no ALARM.
+- Boards 11-10 (6 games, routine snapshot): PrizePicks 965, Underdog 774, Sleeper 303, Fliff 140, novig 187, prophetx 148. Betr 0 so far (Betr is captured only in the P3 window, as on 11-09: 4,739).
