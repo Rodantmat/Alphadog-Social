@@ -1,0 +1,26 @@
+name: anim-gate
+# V49: strict AI-animation review. Clips are read from the footage branch dir `dir` (mp4) with an intents file `spec` (json) in the same dir.
+on:
+  workflow_dispatch:
+    inputs:
+      dir: { description: "footage-branch directory holding clips + spec.json", required: true }
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q opencv-python-headless numpy
+      - env: { GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+        run: git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb && cd /tmp/fb && git sparse-checkout set --no-cone "/${{ inputs.dir }}"
+      - env: { GEMINI_API_KEY: "${{ secrets.GEMINI_API_KEY }}" }
+        run: |
+          cd /tmp/fb/${{ inputs.dir }} && python3 - <<'PY'
+          import json;s=json.load(open('spec.json'))
+          for c in s: c['clip']=c['clip'] if c['clip'].startswith('/') else '/tmp/fb/${{ inputs.dir }}/'+c['clip']
+          json.dump(s,open('/tmp/spec_abs.json','w'))
+          PY
+          python3 $GITHUB_WORKSPACE/scripts/recipe/anim_gate.py /tmp/spec_abs.json /tmp/animout | tee /tmp/anim.log
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with: { name: anim-report, path: /tmp/animout }
