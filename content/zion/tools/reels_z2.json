@@ -1,0 +1,546 @@
+{
+ "thumb": "ch2/release/thumb.jpg",
+ "line1": "The Day the Mountain Fell",
+ "line2": "Full documentary on YouTube",
+ "reels": [
+  {
+   "id": "w1",
+   "title": "A 350-foot lake once stood here",
+   "music": "ch2/music/span_00_cold_open.wav",
+   "names": [
+    "Zion",
+    "Lodge"
+   ],
+   "shots": [
+    {
+     "src": "own:4a56def9f77b",
+     "ss": 0,
+     "fx": 0.5
+    },
+    {
+     "at": "this hotel is",
+     "src": "z2_npg_lodge_main_building_1975",
+     "z0": 1.0,
+     "z1": 1.08
+    },
+    {
+     "at": "about three hundred and",
+     "src": "ai:S05",
+     "fx": 0.5
+    },
+    {
+     "at": "A mountainside fell,",
+     "src": "ai:S02",
+     "fx": 0.5
+    },
+    {
+     "at": "and the lake slowly",
+     "src": "ai:S04",
+     "fx": 0.5
+    },
+    {
+     "at": "Full documentary:",
+     "src": "z2_npg_canyon_floor_patriarchs_1928",
+     "x0": 0.3,
+     "x1": 0.7
+    }
+   ]
+  },
+  {
+   "id": "w2",
+   "title": "One minute that built Zion",
+   "music": "ch2/music/span_01_chapter_1.wav",
+   "names": [
+    "Zion",
+    "Canyon"
+   ],
+   "shots": [
+    {
+     "src": "own:c19350b7a064",
+     "ss": 5,
+     "fx": 0.5
+    },
+    {
+     "at": "took a mountainside to",
+     "src": "ai:S02b",
+     "fx": 0.5
+    },
+    {
+     "at": "about four thousand eight",
+     "src": "z2_usgs_temple_of_aeolus_1870s",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "Models suggest the rock",
+     "src": "z2_npg_sentinel_slide_color_1",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "The main mass crossed",
+     "src": "ai:S03",
+     "fx": 0.5
+    },
+    {
+     "at": "One geologist who studied",
+     "src": "ai:S08",
+     "fx": 0.5
+    },
+    {
+     "at": "minute with up to",
+     "src": "z2_npg_sentinel_slide_color_3",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "Watch The Day the",
+     "src": "z2_npg_flood_damage_wall_1963",
+     "x0": 0.3,
+     "x1": 0.7
+    }
+   ]
+  },
+  {
+   "id": "w3",
+   "title": "90 Hoover Dams of rock",
+   "music": "ch2/music/span_02_chapter_2.wav",
+   "names": [
+    "Hoover",
+    "Dams",
+    "Zion",
+    "Canyon"
+   ],
+   "shots": [
+    {
+     "src": "own:54ffa69b98cd",
+     "ss": 8,
+     "fx": 0.5
+    },
+    {
+     "at": "That's how much concrete",
+     "src": "z2_usgs_narrows_1910",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "the mountainside that collapsed",
+     "src": "z2_npg_sentinel_slide_color_2",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "About ten billion cubic",
+     "src": "z2_npg_kolob_rockslide_hist",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "roughly five times bigger",
+     "src": "z2_npg_sentinel_slide_color_5",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "North America's recorded history",
+     "src": "z2_npg_rubble_birch_creek",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "The full story:",
+     "src": "z2_npg_slide_area_wall_1942",
+     "x0": 0.3,
+     "x1": 0.7
+    }
+   ]
+  },
+  {
+   "id": "w4",
+   "title": "430 people cut off by a landslide",
+   "music": "ch2/music/span_03_chapter_3.wav",
+   "names": [
+    "Virgin",
+    "River",
+    "Zion",
+    "Lodge"
+   ],
+   "shots": [
+    {
+     "src": "own:5cabb65d05d2",
+     "ss": 0,
+     "fx": 0.5
+    },
+    {
+     "at": "On the night of",
+     "src": "ai:R01",
+     "fx": 0.5
+    },
+    {
+     "at": "part of an ancient",
+     "src": "ai:R02",
+     "fx": 0.5
+    },
+    {
+     "at": "It blocked the Virgin",
+     "src": "ai:R04",
+     "fx": 0.5
+    },
+    {
+     "at": "straight through the road.",
+     "src": "z2_npg_road_rockslide_1979_b",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "Guests and employees at",
+     "src": "z2_npg_lodge_rededication_1990_a",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "Crews carved an emergency",
+     "src": "ai:R03",
+     "fx": 0.5
+    },
+    {
+     "at": "canyon wall in about",
+     "src": "z2_npg_scenic_drive_1941",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "Full documentary:",
+     "src": "z2_npg_road_construction_boulder",
+     "x0": 0.3,
+     "x1": 0.7
+    }
+   ]
+  },
+  {
+   "id": "w5",
+   "title": "Lumber down a wire",
+   "music": "ch2/music/span_04_chapter_4.wav",
+   "names": [
+    "Zion",
+    "Lodge",
+    "Cable",
+    "Mountain"
+   ],
+   "shots": [
+    {
+     "src": "own:210759a38d30",
+     "ss": 25,
+     "fx": 0.5
+    },
+    {
+     "at": "lumber, down a wire.",
+     "src": "z2_usgs_cable_lumber_wall_1910",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "That's how Zion Lodge",
+     "src": "ai:H01",
+     "fx": 0.5
+    },
+    {
+     "at": "A tramway on Cable",
+     "src": "z2_npg_cableworks_stereograph",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "more than two thousand",
+     "src": "z2_npg_cable_mtn_east_rim_1963",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "Watch The Day the",
+     "src": "z2_npg_cable_works_remnants",
+     "x0": 0.3,
+     "x1": 0.7
+    }
+   ]
+  },
+  {
+   "id": "w6",
+   "title": "3,000 feet up, a slab let go",
+   "music": "ch2/music/span_05_chapter_5.wav",
+   "names": [
+    "Cable",
+    "Mountain",
+    "Weeping",
+    "Rock"
+   ],
+   "shots": [
+    {
+     "src": "own:ce80fba7bf1f",
+     "ss": 0,
+     "fx": 0.5
+    },
+    {
+     "at": "August twenty-fourth,",
+     "src": "z2_nps_cable_mtn_before_2015",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "Mountain, above Weeping Rock.",
+     "src": "z2_npg_weeping_rock_1952",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "More than four hundred",
+     "src": "z2_npg_organ_from_cable_mtn_1962",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "Part of a trail",
+     "src": "z2_nps_weeping_rock_rockfall_2019",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "The twist?",
+     "src": "own:e8be12a459c7",
+     "ss": 0,
+     "fx": 0.5
+    },
+    {
+     "at": "Nearly a century earlier,",
+     "src": "z2_npg_cable_headworks_rim_1963",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "The full story is",
+     "src": "z2_npg_sinawava_area_1963",
+     "x0": 0.3,
+     "x1": 0.7
+    }
+   ]
+  },
+  {
+   "id": "w7",
+   "title": "Rebuilt in 108 days",
+   "music": "ch2/music/span_06_chapter_6.wav",
+   "names": [
+    "Zion",
+    "Lodge"
+   ],
+   "shots": [
+    {
+     "src": "own:6fee62373944",
+     "ss": 0,
+     "fx": 0.5
+    },
+    {
+     "at": "On January twenty-sixth,",
+     "src": "z2_npg_lodge_rededication_1990_b",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "the main building of",
+     "src": "ai:H04",
+     "fx": 0.5
+    },
+    {
+     "at": "A prefabricated replacement was",
+     "src": "ai:H05",
+     "fx": 0.5
+    },
+    {
+     "at": "hundred and eight days",
+     "src": "z2_npg_lodge_rebuilding_1966",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "stands on the bed",
+     "src": "ai:S07",
+     "fx": 0.5
+    },
+    {
+     "at": "Full documentary:",
+     "src": "ai:H02",
+     "fx": 0.5
+    }
+   ]
+  },
+  {
+   "id": "w8",
+   "title": "80 deer became 600",
+   "music": "ch2/music/span_01_chapter_1.wav",
+   "music_off": 70,
+   "names": [
+    "Oregon",
+    "State",
+    "North",
+    "Creek"
+   ],
+   "shots": [
+    {
+     "src": "own:2fe1309ede17",
+     "ss": 0,
+     "fx": 0.5
+    },
+    {
+     "at": "Two Oregon State ecologists",
+     "src": "z2_npg_deer_south_of_lodge_1959",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "pushed the cougars out",
+     "src": "z2_npg_deer_visitor_center_1966",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "the deer boomed.",
+     "src": "own:7fbc669a7bc8",
+     "ss": 0,
+     "fx": 0.5
+    },
+    {
+     "at": "the Park Service killed",
+     "src": "z2_npg_deer_lion_trap_1950",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "And the deer ate",
+     "src": "own:4ec0463298de",
+     "ss": 0,
+     "fx": 0.5
+    },
+    {
+     "at": "In nearby North Creek,",
+     "src": "z2_npg_beaver_cottonwoods_1957",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "forty times more young",
+     "src": "z2_npg_beaver_cut_cottonwoods",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "Watch The Day the",
+     "src": "own:3aecad02bed0",
+     "ss": 0,
+     "fx": 0.5
+    }
+   ]
+  },
+  {
+   "id": "w9",
+   "title": "5,000 tons of rock fell",
+   "music": "ch2/music/span_02_chapter_2.wav",
+   "music_off": 70,
+   "names": [
+    "Narrows",
+    "Zion",
+    "Park",
+    "Service"
+   ],
+   "shots": [
+    {
+     "src": "own:4512fe47671e",
+     "ss": 0,
+     "fx": 0.5
+    },
+    {
+     "at": "In nineteen sixty-eight,",
+     "src": "z2_npg_gateway_narrows_rockslide",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "hit the end of",
+     "src": "z2_npg_narrows_trail_rockslide",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "In Zion,",
+     "src": "z2_npg_rockfall_residence_1969",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "no visitor has ever",
+     "src": "z2_nps_emerald_pools_rockfall_2023",
+     "x0": 0.3,
+     "x1": 0.7
+    },
+    {
+     "at": "Full documentary:",
+     "src": "z2_npg_road_rockslide_1979_a",
+     "x0": 0.3,
+     "x1": 0.7
+    }
+   ]
+  },
+  {
+   "id": "w10",
+   "title": "A lake that filled itself in",
+   "music": "ch2/music/span_03_chapter_3.wav",
+   "music_off": 70,
+   "names": [
+    "Lake",
+    "Zion",
+    "Virgin",
+    "River"
+   ],
+   "shots": [
+    {
+     "src": "own:d20e7c4997eb",
+     "ss": 30,
+     "fx": 0.5
+    },
+    {
+     "at": "When a mountainside fell",
+     "src": "own:ed325557e613",
+     "ss": 12,
+     "fx": 0.5
+    },
+    {
+     "at": "River, and a lake",
+     "src": "own:86f6914b70b8",
+     "ss": 0,
+     "fx": 0.5
+    },
+    {
+     "at": "Then the river slowly",
+     "src": "ai:S06",
+     "fx": 0.5
+    },
+    {
+     "at": "into the still water,",
+     "src": "own:bb8801078aaf",
+     "ss": 5,
+     "fx": 0.5
+    },
+    {
+     "at": "the lake was full.",
+     "src": "own:38c2930d28bc",
+     "ss": 0,
+     "fx": 0.5
+    },
+    {
+     "at": "That's the flat floor",
+     "src": "z2_usgs_down_canyon_1925",
+     "x0": 0.3,
+     "x1": 0.7
+    }
+   ]
+  }
+ ]
+}

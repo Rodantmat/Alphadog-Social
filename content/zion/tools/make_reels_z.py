@@ -75,7 +75,7 @@ for sh in SPEC["reels"]:
     # audio: episode narration + fresh music bed (ducked under voice)
     TOT = dur + ECARD; N = int(TOT * SR); narr = narr[: int(dur * SR)]
     voice = np.zeros(N, np.float32); voice[: len(narr)] = narr
-    m = rd(f"{D}/{sh['music']}")
+    m = rd(f"{D}/{sh['music']}"); m = np.roll(m, -int(sh.get('music_off', 0) * SR))
     m = np.tile(m, N // len(m) + 1)[:N].copy()
     vm = np.convolve((np.abs(voice) > 0.01).astype(np.float32), np.ones(SR // 4) / (SR // 4), "same")
     m *= (0.20 - 0.14 * np.clip(vm * 4, 0, 1))
