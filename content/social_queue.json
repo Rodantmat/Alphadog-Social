@@ -2536,14 +2536,29 @@
   "platform": "instagram_story",
   "file": "yellowstone_story_ch3s9.mp4",
   "at": "2026-11-10T19:00:00Z",
-  "story_v2": "Grand Canyon of the Yellowstone | own:f38a5b1fdcbf"
+  "story_v2": "Grand Canyon of the Yellowstone | own:f38a5b1fdcbf",
+  "done": {
+   "media_id": "18122562274941428",
+   "story": true,
+   "at": "2026-11-10T19:11:37Z"
+  }
  },
  {
   "id": "ch3s9_fb",
   "platform": "facebook_story",
   "file": "yellowstone_story_ch3s9.mp4",
   "at": "2026-11-10T19:00:00Z",
-  "story_v2": "Grand Canyon of the Yellowstone | own:f38a5b1fdcbf"
+  "story_v2": "Grand Canyon of the Yellowstone | own:f38a5b1fdcbf",
+  "done": {
+   "video_id": "39937785139200576",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "1918205352883207"
+   },
+   "story": true,
+   "at": "2026-11-10T19:11:37Z"
+  }
  },
  {
   "id": "ch3s10_ig",
