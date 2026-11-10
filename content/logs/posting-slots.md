@@ -31,3 +31,11 @@
 - TikTok backlog -> Buffer: nothing to feed (no new items due within 4 days).
 - Non-fatal: download-artifact "shorts" not found (expired); footage-branch fallback step succeeded. No DUPLICATE BLOCKED lines.
 - No overdue un-posted items in queue after run; no catch-up runs needed.
+
+## 2026-11-10 01:16 UTC OK
+- Slot: 17:05 PT Reels (Mon Nov 9). Run 42733535835 (social-post, success).
+- Posted ch3y8_ig https://www.instagram.com/reel/Dfisl4dkiBo/
+- Posted ch3y8_fb https://www.facebook.com/reel/1879801782887212/
+- TikTok backlog -> Buffer: zion_p1_z5.mp4 scheduled for 2026-11-14T00:00Z (Buffer 6af26e83b59b34913a494015); 4 still pending.
+- Non-fatal: download-artifact "shorts" not found (expired); footage-branch fallback step succeeded. No DUPLICATE BLOCKED lines.
+- No overdue un-posted items in queue after run; no catch-up runs needed. Next due: ch3s8 stories 02:00Z.
