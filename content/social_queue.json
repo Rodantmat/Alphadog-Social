@@ -2271,7 +2271,13 @@
   "thumb_ms": 1200,
   "caption": "\"From where the sun now stands, I will fight no more forever.\" The words were written down and rewritten by an Army officer. One historian counted nineteen published versions.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 3 — link in the first comment 👇\n\n#Yellowstone #NezPerce #History #NationalParks #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc",
-  "trial": true
+  "trial": true,
+  "done": {
+   "media_id": "17954178228296215",
+   "permalink": "https://www.instagram.com/reel/Dfkvb5nEl93/",
+   "posted": "2026-11-10T20:15:29+0000",
+   "at": "2026-11-10T20:13:40Z"
+  }
  },
  {
   "id": "ch3y9_fb",
@@ -2279,7 +2285,40 @@
   "file": "yellowstone_ch3_y9.mp4",
   "at": "2026-11-10T20:00:00Z",
   "caption": "\"From where the sun now stands, I will fight no more forever.\" The words were written down and rewritten by an Army officer. One historian counted nineteen published versions.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 3 — link in the first comment 👇\n\n#Yellowstone #NezPerce #History #NationalParks #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc",
+  "done": {
+   "video_id": "1028353813671974",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1114335098032149"
+   },
+   "permalink": "https://www.facebook.com/reel/1028353813671974/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 30211923
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-10T20:15:40+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1028353813671974_4564112820401910"
+   },
+   "status_errors": null,
+   "at": "2026-11-10T20:13:40Z"
+  }
  },
  {
   "id": "ch3y10_ig",
