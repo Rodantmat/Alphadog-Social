@@ -19,6 +19,7 @@ usage: analyze.py VIDEO [--srt-dir DIR --srt-prefix NAME] [--mode auto|long|vert
                   [--timeline timeline.json] [--es-audio FILE] [--recipe recipe.yaml] [--out DIR] [--skip ocr,clip,whisper,faces]
                   [--stems DIR] [--voice-mask mask.npy] [--logo logo.png] [--channel-name NAME]
 """
+# V49 (owner 2026-11-10): new AI clips must ALSO pass scripts/recipe/anim_gate.py (anim-gate.yml) before assembly; A4 + P2 below cover finished cuts.
 import argparse, difflib, json, math, os, re, subprocess, sys, time
 import numpy as np, cv2
 

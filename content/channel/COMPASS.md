@@ -47,7 +47,7 @@ Status: DONE · IN-PROGRESS · OPEN · WAIT-DATA · MONITOR. "Backed" = evidence
 | I18 | Repo size / cloud disk | workspace disk filled 11-08 (cleared); GitHub fine, no upgrade needed | MONITOR | health task reports repo size (repo-size-audit.yml) | 11-09 |
 | I19 | Archival + outside footage share in films | owner rule | IN-PROGRESS | keep for Zion P3/film | 11-09 |
 | I20 | Track YPP progress weekly (subs, long-form hours) | section 1 | IN-PROGRESS | weekly review | 11-09 |
-| I21 | V49 animation strictness gate for new videos (anim_gate.py; regenerate rejects) | EDITING_RULES V49 | DONE (gate); apply on Zion P3/film | gate every new clip batch | 11-10 |
+| I21 | V49 animation strictness gate (anim_gate.py; regenerate rejects) | EDITING_RULES V49 | DONE (gate, analyzer-linked) | gate every new clip batch (Zion P3/film) | 11-10 |
 
 ## 6. How tasks use this file
 1. Start of every run: read this file; carry OPEN/IN-PROGRESS items into the run.
