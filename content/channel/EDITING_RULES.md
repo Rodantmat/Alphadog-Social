@@ -66,3 +66,10 @@ Back-to-back posts (same platform, same kind) must differ drastically: footage, 
 - scripts/recipe/adjacent_gate.py: metadata (same file, caption-hook overlap >= 0.4 within a 3-post window) + optional visual check (`--footage DIR`: no repeated frame between neighbours).
 - Run it on every new batch BEFORE queueing; a failure means re-order/replace the item. social-post.yml runs it advisory only (a missed post is also unacceptable).
 - Music is checked by hand per batch (never repeat a track); add an audio fingerprint check when tracks are catalogued.
+
+## V49 — Animation strictness for NEW videos (owner 2026-11-10)
+Every new AI clip must match the script line, era, story and audio; no hallucination, drift, morphing, flicker, anachronism, stray people/objects, or static clips. Already-posted/queued content stays unless truly weird.
+- scripts/recipe/anim_gate.py (workflow anim-gate.yml, dir=<footage dir with spec.json>): each spec item {id, clip, intent, era, narration}. PASS needs no score < 8, overall >= 8.5, no flags.
+- Procedure: generate -> gate -> REJECT clips get regenerated (new seed / tighter prompt, "no people", era words) -> re-gate. Max 3 tries, then replace with archival/own footage. Nothing ships unrejected.
+- Calibration 2026-11-10 (17 Zion P2 clips, existing): judge rejected nearly all, so it is a strict filter, not a verdict; use its reasons (intent/sync 0-3, anachronism, people in "no people" scenes) to drive regeneration. Clips with intent/sync <=3 are the real problems (S03, S04, S06, S08, R01, R04).
+- Also feed the same checks into analyze.py review of finished films (owner rule: every correction goes in the analyzer).

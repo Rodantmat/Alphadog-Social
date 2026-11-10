@@ -30,7 +30,7 @@ def drift(fs):  # structural jump between consecutive sampled frames (low-res ed
     g = [cv2.Canny(cv2.resize(cv2.cvtColor(f, cv2.COLOR_BGR2GRAY), (160, 90)), 60, 140).astype(np.float32) for f in fs]
     return [round(float(np.mean(np.abs(a - b)) / 255), 3) for a, b in zip(g, g[1:])]
 def ask(parts):
-    for model in ("gemini-2.5-pro", "gemini-2.5-flash"):
+    for model in ("gemini-2.5-flash",):
         try:
             r = urllib.request.urlopen(urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GK}",
                 data=json.dumps({"contents": [{"parts": parts}], "generationConfig": {"temperature": 0, "responseMimeType": "application/json"}}).encode(),
