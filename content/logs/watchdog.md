@@ -34,3 +34,10 @@
 - YouTube: 11 pending comments, none overdue (earliest "after" 2026-11-10T18:06Z); 01:06Z comment already handled by yt-followup 42736631103 (success); not re-triggered.
 - yt-link latest run 42716024327 success.
 - Run ids checked: social-post 42733535835, 42702047993; yt-followup 42736631103; yt-link 42716024327.
+
+## 2026-11-10 02:36 UTC OK
+- All posts on time: 0 missed items in social_queue.json (150 items checked); all past-due TikTok backlog items (through ch3_y8, due 03:00Z… y7 00:00Z) have "scheduled".
+- Latest social-post runs visible in last 30 runs (42740423626, 42733535835) both success.
+- YouTube: 12 pending comments, none overdue (earliest "after" 2026-11-10T18:06Z); yt-followup not triggered.
+- yt-link latest run 42742343823 success. (Unrelated: pages build 42742712535 failed but was superseded by 42743098134 success.)
+- Run ids checked: social-post 42740423626, 42733535835; yt-link 42742343823.
