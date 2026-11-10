@@ -55,3 +55,11 @@
 - TikTok backlog -> Buffer: nothing to feed (no new items due within 4 days).
 - Non-fatal: download-artifact "shorts" not found (expired); footage-branch fallback step succeeded. No DUPLICATE BLOCKED lines.
 - No overdue un-posted items in queue after run (170 items checked); no catch-up runs needed. Next due: ch3y9 reels 20:00Z.
+
+## 2026-11-10 20:18 UTC OK
+- Slot: 12:05 PT Reels (Tue Nov 10). Run 42891949794 (social-post, success).
+- Posted ch3y9_ig https://www.instagram.com/reel/Dfkvb5nEl93/ (IG ProcessingFailedError x1 + trial-reel not allowed, posted as normal reel)
+- Posted ch3y9_fb https://www.facebook.com/reel/1028353813671974/
+- TikTok backlog -> Buffer: nothing to feed (no new items due within 4 days).
+- Non-fatal: download-artifact "shorts" not found (expired); footage-branch fallback step succeeded. No DUPLICATE BLOCKED lines.
+- No overdue un-posted items in queue after run (170 items checked); no catch-up runs needed. Next due: ch3y10 reels 01:00Z.
