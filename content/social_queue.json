@@ -715,7 +715,13 @@
   "thumb_ms": 1200,
   "caption": "2.1 million years ago the Huckleberry Ridge eruption threw out about 2,400 cubic kilometers of rock and ash, enough to bury Rhode Island nearly half a mile deep.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 1 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Volcano #Geology #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/-vkXqMrSljM",
-  "trial": true
+  "trial": true,
+  "done": {
+   "media_id": "18136979074657769",
+   "permalink": "https://www.instagram.com/reel/DfnT4V9gUVS/",
+   "posted": "2026-11-11T20:12:25+0000",
+   "at": "2026-11-11T20:11:55Z"
+  }
  },
  {
   "id": "y9_fb",
@@ -723,7 +729,40 @@
   "file": "yellowstone_ch1_y9.mp4",
   "at": "2026-11-11T20:00:00Z",
   "caption": "2.1 million years ago the Huckleberry Ridge eruption threw out about 2,400 cubic kilometers of rock and ash, enough to bury Rhode Island nearly half a mile deep.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 1 — link in the first comment 👇\n\n#Yellowstone #NationalParks #History #Volcano #Geology #Shorts",
-  "comment": "▶ Full documentary on YouTube 👉 https://youtu.be/-vkXqMrSljM"
+  "comment": "▶ Full documentary on YouTube 👉 https://youtu.be/-vkXqMrSljM",
+  "done": {
+   "video_id": "1488160341042009",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1115367711262221"
+   },
+   "permalink": "https://www.facebook.com/reel/1488160341042009/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 45101046
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-11T20:12:35+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1488160341042009_1687884412755579"
+   },
+   "status_errors": null,
+   "at": "2026-11-11T20:11:55Z"
+  }
  },
  {
   "id": "y10_ig",
