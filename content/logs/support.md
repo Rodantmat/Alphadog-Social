@@ -209,3 +209,6 @@ No new messages (list run 43077087147): answered 0, escalated 0, spam 0.
 
 ## 2026-11-11 19:23 UTC OK
 No new messages (list run 43086466520): answered 0, escalated 0, spam 0.
+
+## 2026-11-11 20:35 UTC ALERT
+Inbox not checked: answered 0, escalated 0, spam 0. List run 43095609976 (dispatched 20:22Z) stayed "queued" ~13 min with no runner assigned (cancel returned 409 "Cannot cancel a workflow run that has not been queued yet"); retry list run 43096522992 (20:31Z) also stuck "queued". buffer-run 43095067985 likewise stuck queued since 20:17Z, so this looks like a GitHub Actions runner backlog/outage. Both list runs are read-only and may complete late; next run will pick up any new messages.
