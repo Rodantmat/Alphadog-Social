@@ -2328,7 +2328,14 @@
   "thumb_ms": 1200,
   "caption": "The survivors were not allowed to go home. They were sent to Kansas, then Oklahoma, and Joseph was never allowed to live in his Wallowa Valley again. He died in 1904.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 3 — link in the first comment 👇\n\n#Yellowstone #NezPerce #History #NationalParks #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc",
-  "trial": false
+  "trial": false,
+  "done": {
+   "media_id": "17954183889051352",
+   "permalink": "https://www.instagram.com/reel/DflRmclAXyB/",
+   "posted": "2026-11-11T01:14:27+0000",
+   "via": "video_url",
+   "at": "2026-11-11T01:11:32Z"
+  }
  },
  {
   "id": "ch3y10_fb",
@@ -2336,7 +2343,40 @@
   "file": "yellowstone_ch3_y10.mp4",
   "at": "2026-11-11T01:00:00Z",
   "caption": "The survivors were not allowed to go home. They were sent to Kansas, then Oklahoma, and Joseph was never allowed to live in his Wallowa Valley again. He died in 1904.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Part 3 — link in the first comment 👇\n\n#Yellowstone #NezPerce #History #NationalParks #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/jbZbPS173wc",
+  "done": {
+   "video_id": "1801847900756763",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1114523008013358"
+   },
+   "permalink": "https://www.facebook.com/reel/1801847900756763/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 42428381
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-11T01:14:41+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1801847900756763_3213038905572107"
+   },
+   "status_errors": null,
+   "at": "2026-11-11T01:11:32Z"
+  }
  },
  {
   "id": "ch3s1_ig",
