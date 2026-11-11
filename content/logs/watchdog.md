@@ -76,3 +76,10 @@
 - YouTube: 1 comment overdue (tb-0953M_T8, after 18:06Z) — triggered yt-followup, log: "comment posted tb-0953M_T8 106 chars".
 - yt-link latest run 42929652546 success.
 - Run ids: yt-followup 43088839397; social-post checked 43084296912, 43043508584, 42975982925, 42943714036; yt-link 42929652546.
+
+## 2026-11-11 20:37 UTC OK
+- All posts on time: 0 missed items in social_queue.json (170 items checked; y9_ig/fb 20:00Z done; next y10_ig/fb 2026-11-12T01:00Z); all past-due TikTok backlog items (due ≤ 2026-11-11T03:00Z) have "scheduled".
+- Latest 4 social-post runs (143, 142, 141, 140) all success.
+- YouTube: 19 pending comments, none overdue (earliest "after" 2026-11-12T01:06Z, 0c8WvCxQWHY); yt-followup not triggered.
+- yt-link latest run 42929652546 success.
+- Run ids checked: social-post 43093343587, 43084296912, 43043508584, 42975982925; yt-link 42929652546.
