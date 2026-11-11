@@ -87,3 +87,11 @@
 - TikTok backlog -> Buffer: nothing to feed (no new items due within 4 days).
 - Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded. No DUPLICATE BLOCKED lines.
 - No overdue un-posted items in queue after run (170 items checked); no catch-up runs needed. Next due: y9 reels 20:00Z.
+
+## 2026-11-11 20:13 UTC OK
+- Slot: 12:05 PT Reels (Wed Nov 11). Run 43093343587 (social-post, success; ~7 min).
+- Posted y9_ig https://www.instagram.com/reel/DfnT4V9gUVS/ (trial-reel not allowed, posted as normal reel)
+- Posted y9_fb https://www.facebook.com/reel/1488160341042009/
+- TikTok backlog -> Buffer: nothing to feed (no new items due within 4 days).
+- Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded. No DUPLICATE BLOCKED lines.
+- No overdue un-posted items in queue after run; no catch-up runs needed. Next due: y10 reels 2026-11-12 01:00Z.
