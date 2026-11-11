@@ -71,3 +71,11 @@
 - TikTok backlog -> Buffer: nothing to feed (no new items due within 4 days).
 - Non-fatal: download-artifact "shorts" not found (expired); footage-branch fallback step succeeded. No DUPLICATE BLOCKED lines.
 - No overdue un-posted items in queue after run (170 items checked); no catch-up runs needed. Next due: ch3s10 stories 02:00Z.
+
+## 2026-11-11 02:15 UTC OK
+- Slot: 18:05 PT Stories (Tue Nov 10). Run 42943714036 (social-post, success).
+- Posted ch3s10_ig story (media_id 18385554502237343; stories have no permalink)
+- Posted ch3s10_fb story (video_id 29131837719801748, post_id 1828967831562747)
+- TikTok backlog -> Buffer: nothing to feed (no new items due within 4 days).
+- Non-fatal: download-artifact "shorts" not found (expired); footage-branch fallback step succeeded. No DUPLICATE BLOCKED lines.
+- No overdue un-posted items in queue after run; no catch-up runs needed. Next due: s8 stories 2026-11-11 19:00Z.
