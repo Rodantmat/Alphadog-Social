@@ -2644,14 +2644,29 @@
   "platform": "instagram_story",
   "file": "yellowstone_story_ch3s10.mp4",
   "at": "2026-11-11T02:00:00Z",
-  "story_v2": "West Thumb · Yellowstone Lake | own:863584e6333b"
+  "story_v2": "West Thumb · Yellowstone Lake | own:863584e6333b",
+  "done": {
+   "media_id": "18385554502237343",
+   "story": true,
+   "at": "2026-11-11T02:11:47Z"
+  }
  },
  {
   "id": "ch3s10_fb",
   "platform": "facebook_story",
   "file": "yellowstone_story_ch3s10.mp4",
   "at": "2026-11-11T02:00:00Z",
-  "story_v2": "West Thumb · Yellowstone Lake | own:863584e6333b"
+  "story_v2": "West Thumb · Yellowstone Lake | own:863584e6333b",
+  "done": {
+   "video_id": "29131837719801748",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "1828967831562747"
+   },
+   "story": true,
+   "at": "2026-11-11T02:11:47Z"
+  }
  },
  {
   "id": "zn1z1_ig",
