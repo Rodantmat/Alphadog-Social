@@ -83,3 +83,10 @@
 - YouTube: 19 pending comments, none overdue (earliest "after" 2026-11-12T01:06Z, 0c8WvCxQWHY); yt-followup not triggered.
 - yt-link latest run 42929652546 success.
 - Run ids checked: social-post 43093343587, 43084296912, 43043508584, 42975982925; yt-link 42929652546.
+
+## 2026-11-12 01:40 UTC OK
+- All posts on time: 0 missed items in social_queue.json (170 items checked: 124 done, 46 future, no holds; y10_ig/fb posted 01:11Z by run 43132095874; next s9_ig/fb 02:00Z); all past-due TikTok backlog items (due ≤ 2026-11-12T00:00Z) have "scheduled".
+- Latest 4 social-post runs all success (non-fatal "Artifact not found for name: promo" in a download-artifact step of 43132095874; step passed, posts OK).
+- YouTube: 1 comment overdue (0c8WvCxQWHY, after 01:06Z) — triggered yt-followup, log: "comment posted 0c8WvCxQWHY 106 chars"; 17 others not yet due.
+- yt-link latest run 43115856683 success.
+- Run ids: yt-followup 43135661680; social-post checked 43132095874, 43105953501, 43093343587, 43084296912; yt-link 43115856683.
