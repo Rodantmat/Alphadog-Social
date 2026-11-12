@@ -48,7 +48,7 @@ Status: DONE · IN-PROGRESS · OPEN · WAIT-DATA · MONITOR. "Backed" = evidence
 | I19 | Archival + outside footage share in films | owner rule | IN-PROGRESS | keep for Zion P3/film | 11-09 |
 | I20 | Track YPP progress weekly (subs, long-form hours) | section 1 | IN-PROGRESS | weekly review | 11-11 |
 | I21 | V49 animation strictness gate (anim_gate.py; regenerate rejects) | EDITING_RULES V49 | DONE (gate, analyzer-linked) | gate every new clip batch (Zion P3/film) | 11-10 |
-| I22 | YouTube API refresh token dead (HTTP 400 on token refresh since 11-12 18:58Z): yt-followup, comment-sweep YT, yt-publish blocked | section 3 | OPEN-OWNER | owner re-authorizes OAuth; then re-run yt-followup (19 comments pending) | 11-12 |
+| I22 | YouTube API refresh token dead 11-12 -> re-authorized 22:25Z, yt-followup OK | section 3 | DONE; MONITOR 7-day expiry (OAuth app in Testing?) | 11-12 |
 | I22 | Stories lead < 5 days: IG/FB Stories queued only to 2026-11-13T19:00Z (4 future items per platform at 11-11) | health 11-10 and 11-11 queue check (2nd consecutive report => ALERT) | OPEN (ALERT) | build/queue Zion Stories s11+ (Zion P1/P2 material) to extend lead to ≥ Nov 20 | 11-11 |
 | I23 | Backup trigger for yt-link (2nd cron or watchdog dispatch) | I11 skipped three days | OPEN (ALERT) | add second schedule (e.g. 01:37Z) in yt-link.yml or have the watchdog dispatch it when no run in 20 h | 11-11 |
 
