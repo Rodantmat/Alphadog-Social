@@ -97,3 +97,11 @@
 - YouTube: 17 pending comments, none overdue (earliest "after" 2026-11-12T18:06Z, TPB5_pBj50U); yt-followup not triggered.
 - yt-link latest run 43136109258 success.
 - Run ids checked: social-post 43139037353, 43132095874, 43105953501; yt-link 43136109258.
+
+## 2026-11-12 19:40 UTC ALERT
+- Posts on time: 0 missed items in social_queue.json (170 checked); all past-due TikTok backlog items (due ≤ 2026-11-12T03:00Z) have "scheduled". Social-post runs visible (43286626404, 43282889655, 43202957323) all success.
+- YouTube comment TPB5_pBj50U (Zion Part 1 link, after 18:06Z) NOT posted: yt-followup failing 3x (43285418526, 43289789597, and my retry 43291973905).
+- Failing step "Post due comments": scripts/yt_comment.py line 8 token() -> oauth2.googleapis.com/token "HTTPError: HTTP Error 400: Bad Request" — YouTube OAuth refresh fails (likely revoked/expired YT_REFRESH_TOKEN, invalid_grant). Not a comment-content problem; every YouTube comment will fail until the secret is renewed.
+- Next at risk: 1KUANk1uGtU credits comment (after 20:05Z today), then 6sIg9L_rgX4 (2026-11-13 01:06Z).
+- yt-link: no run in the last 30 workflow runs; status not verifiable this run (it uses YouTube API too, likely affected).
+- Run ids: yt-followup 43285418526, 43289789597, 43291973905; social-post checked 43286626404, 43282889655, 43202957323.
