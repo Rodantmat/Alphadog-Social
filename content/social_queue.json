@@ -1044,14 +1044,29 @@
   "platform": "instagram_story",
   "file": "yellowstone_story_s9.mp4",
   "at": "2026-11-12T02:00:00Z",
-  "story_v2": "Norris Geyser Basin | own:8f12081adbf9"
+  "story_v2": "Norris Geyser Basin | own:8f12081adbf9",
+  "done": {
+   "media_id": "17965823286233697",
+   "story": true,
+   "at": "2026-11-12T02:10:46Z"
+  }
  },
  {
   "id": "s9_fb",
   "platform": "facebook_story",
   "file": "yellowstone_story_s9.mp4",
   "at": "2026-11-12T02:00:00Z",
-  "story_v2": "Norris Geyser Basin | own:8f12081adbf9"
+  "story_v2": "Norris Geyser Basin | own:8f12081adbf9",
+  "done": {
+   "video_id": "1113114345027739",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "1140641498336865"
+   },
+   "story": true,
+   "at": "2026-11-12T02:10:46Z"
+  }
  },
  {
   "id": "s10_ig",
