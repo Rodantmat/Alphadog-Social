@@ -103,3 +103,11 @@
 - TikTok backlog -> Buffer: zion_p1_z9.mp4 scheduled for 2026-11-16T00:00Z (Buffer 6af511073d8c751bfd064ff2); 10 still pending.
 - Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded. No DUPLICATE BLOCKED lines.
 - No overdue un-posted items in queue after run (170 items checked); no catch-up runs needed. Next due: s9 stories 02:00Z.
+
+## 2026-11-12 02:12 UTC OK
+- Slot: 18:05 PT Stories (Wed Nov 11). Run 43139037353 (social-post, success; ~5 min).
+- Posted s9_ig story (media_id 17965823286233697; stories have no permalink)
+- Posted s9_fb story (video_id 1113114345027739, post_id 1140641498336865)
+- TikTok backlog -> Buffer: nothing to feed (no new items due within 4 days).
+- Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded. No DUPLICATE BLOCKED lines.
+- No overdue un-posted items in queue after run (170 items checked); no catch-up runs needed. Next due: s10 stories 2026-11-12 19:00Z.
