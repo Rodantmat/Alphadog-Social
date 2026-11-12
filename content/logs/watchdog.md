@@ -105,3 +105,11 @@
 - Next at risk: 1KUANk1uGtU credits comment (after 20:05Z today), then 6sIg9L_rgX4 (2026-11-13 01:06Z).
 - yt-link: no run in the last 30 workflow runs; status not verifiable this run (it uses YouTube API too, likely affected).
 - Run ids: yt-followup 43285418526, 43289789597, 43291973905; social-post checked 43286626404, 43282889655, 43202957323.
+
+## 2026-11-12 20:38 UTC ALERT
+- Posts on time: 0 missed items in social_queue.json (170 checked; zn1z1_ig/fb posted 20:10Z by 43296793059: https://www.instagram.com/reel/Dfp4cgPDs76/ , https://www.facebook.com/reel/1604871874210482/ ; next zn1z2 2026-11-13T01:00Z); all past-due TikTok backlog items (due ≤ 2026-11-12T03:00Z) have "scheduled".
+- Latest 4 social-post runs (43296793059, 43286626404, 43282889655, 43202957323) all success (IG trial-reel fallback to normal reel is non-fatal).
+- YouTube comments STILL NOT POSTED: TPB5_pBj50U (after 18:06Z) and 1KUANk1uGtU Zion Part 2 credits (after 20:05Z). Triggered yt-followup 43301968149 -> failed again (4th failure since 18:58Z).
+- Failing step "Post due comments": scripts/yt_comment.py line 8 token() -> oauth2.googleapis.com/token "HTTPError: HTTP Error 400: Bad Request" = YT_REFRESH_TOKEN rejected (likely revoked/expired). Needs owner to re-auth YouTube (yt-auth.yml) and update the secret. Next at risk: 6sIg9L_rgX4 (2026-11-13 01:06Z).
+- yt-link latest run 43136109258 (2026-11-12 01:40Z) success.
+- Run ids: yt-followup 43301968149 (plus earlier 43285418526, 43289789597, 43291973905); social-post checked 43296793059, 43286626404, 43282889655, 43202957323; yt-link 43136109258.
