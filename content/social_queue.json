@@ -1073,14 +1073,29 @@
   "platform": "instagram_story",
   "file": "yellowstone_story_s10.mp4",
   "at": "2026-11-12T19:00:00Z",
-  "story_v2": "Firehole River | photo:ph_20211004155746.jpg"
+  "story_v2": "Firehole River | photo:ph_20211004155746.jpg",
+  "done": {
+   "media_id": "17910367500667949",
+   "story": true,
+   "at": "2026-11-12T19:10:07Z"
+  }
  },
  {
   "id": "s10_fb",
   "platform": "facebook_story",
   "file": "yellowstone_story_s10.mp4",
   "at": "2026-11-12T19:00:00Z",
-  "story_v2": "Firehole River | photo:ph_20211004155746.jpg"
+  "story_v2": "Firehole River | photo:ph_20211004155746.jpg",
+  "done": {
+   "video_id": "1125402836990741",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "1781471226243624"
+   },
+   "story": true,
+   "at": "2026-11-12T19:10:07Z"
+  }
  },
  {
   "id": "ch2y1_ig",
