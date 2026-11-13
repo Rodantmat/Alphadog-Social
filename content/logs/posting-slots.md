@@ -127,3 +127,11 @@
 - TikTok backlog -> Buffer: nothing to feed (no new items due within 4 days).
 - Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded. No DUPLICATE BLOCKED lines.
 - No overdue un-posted items in queue after run (170 items checked); no catch-up runs needed. Next due: zn1z2 reels 2026-11-13 01:00Z.
+
+## 2026-11-13 01:20 UTC OK
+- Slot: 17:05 PT Reels (Thu Nov 12). Run 43342278046 (social-post, success; ~9 min).
+- Posted zn1z2_ig https://www.instagram.com/reel/DfqbIiQAQ7_/ (IG ProcessingFailedError x2, recovered via video_url fallback)
+- Posted zn1z2_fb https://www.facebook.com/reel/1648330853658686/
+- TikTok backlog -> Buffer: zion_p2_w1.mp4 scheduled for 2026-11-17T00:00Z (Buffer 6af66284fb90ccefdd0e82ed); 9 still pending.
+- Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded. No DUPLICATE BLOCKED lines.
+- No other overdue un-posted items in queue (170 items checked; only zn1z2 was due); no catch-up runs needed. Next due: ch2s1 stories 02:00Z.
