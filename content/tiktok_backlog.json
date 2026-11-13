@@ -278,7 +278,12 @@
   "file": "zion_p2_w2.mp4",
   "due": "2026-11-17T03:00:00Z",
   "service": "tiktok",
-  "text": "About a minute. That's how long it took a mountainside to fall into Zion Canyon, about four thousand eight hundred years ago. Models suggest the rock averaged about a hundred and twelve miles per hour and peaked near two hundred. The main mass crossed the canyon in about twenty seconds. One geologist who studied it called it a minute with up to ten thousand years of consequences.\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Zion Part 2\\n\\n#Zion #Landslide #Geology #NationalParks"
+  "text": "About a minute. That's how long it took a mountainside to fall into Zion Canyon, about four thousand eight hundred years ago. Models suggest the rock averaged about a hundred and twelve miles per hour and peaked near two hundred. The main mass crossed the canyon in about twenty seconds. One geologist who studied it called it a minute with up to ten thousand years of consequences.\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Zion Part 2\\n\\n#Zion #Landslide #Geology #NationalParks",
+  "scheduled": {
+   "buffer_id": "6af6a703c1a0010a5bffbb9b",
+   "at": "2026-11-13T05:58:23Z",
+   "due": "2026-11-17T03:00:00Z"
+  }
  },
  {
   "mode": "post",
