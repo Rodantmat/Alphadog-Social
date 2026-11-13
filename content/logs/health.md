@@ -20,3 +20,10 @@
 - Zion Part 3 (~Nov 15) and Zion film (Nov 19) still have no script/assets (5th report, I05). Stories lead only to Nov 13 19:00Z (3rd report, I24). Reels/TikTok lead to Nov 21 OK. 0 missed posts, no duplicates; Zion P2 premiere 1KUANk1uGtU public on time.
 - YouTube 14 subs (13), 4,871 views (+437), long-form about 10.5 h of 8,000. New best Short: "Three thousand elk in one winter" 1,328 views, 5 subs (about 30x median 39; animal + number). IG 133 followers, FB 152.
 - Details: content/metrics/health_2026-11-12.md. COMPASS rows I02, I03, I05, I11, I22, I23, I24 (renumbered Stories), I25, I26 updated.
+
+## 2026-11-13T23:00Z ALERT
+- yt-link is down: Studio session logged out ("studio status: login", exit 2) in 4 runs since 11-13 00:41Z, incl. my single dispatch today (43523077497). Cron 19:37Z skipped a 5th day (I23 unbuilt). OWNER must re-export YT_STUDIO_SESSION / YT_GOOGLE_SESSION; not retried further (I17, I25).
+- No IG/FB Stories queued at all (4th report, I24). Zion Part 3 (~11-15) and Zion film (11-19) still have no script/assets (6th report, I05). Reels lead to 11-21 OK; TikTok OK.
+- No other failed runs, 0 missed posts, no duplicates, 14 pending comments none overdue; Zion Shorts zscU0YPpl_Y and 6sIg9L_rgX4 public with titles intact.
+- YouTube 16 subs (+2), 5,621 views (+750), long-form about 11-12 h of 8,000. Kolob ledge Short 444 views at 24 h (9x median 47); elk still best at 1,328. IG top 1,822/1,809 (12x median 155), TikTok top 1,803; hard-number/news hooks win everywhere. IG 136 followers, FB 152.
+- Details: content/metrics/health_2026-11-13.md. COMPASS rows I02, I05, I11, I17, I20, I23, I24, I25, I26 updated.
