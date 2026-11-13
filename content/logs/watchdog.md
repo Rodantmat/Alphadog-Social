@@ -113,3 +113,10 @@
 - Failing step "Post due comments": scripts/yt_comment.py line 8 token() -> oauth2.googleapis.com/token "HTTPError: HTTP Error 400: Bad Request" = YT_REFRESH_TOKEN rejected (likely revoked/expired). Needs owner to re-auth YouTube (yt-auth.yml) and update the secret. Next at risk: 6sIg9L_rgX4 (2026-11-13 01:06Z).
 - yt-link latest run 43136109258 (2026-11-12 01:40Z) success.
 - Run ids: yt-followup 43301968149 (plus earlier 43285418526, 43289789597, 43291973905); social-post checked 43296793059, 43286626404, 43282889655, 43202957323; yt-link 43136109258.
+
+## 2026-11-13 01:39 UTC ALERT
+- Posts on time: 0 missed items in social_queue.json (170 checked; zn1z2_ig/fb posted 01:14Z by 43342278046: https://www.instagram.com/reel/DfqbIiQAQ7_/ , https://www.facebook.com/reel/1648330853658686/ ; IG ProcessingFailedError x2 then video_url fallback OK). All past-due TikTok backlog items (due ≤ 2026-11-13T00:00Z) have "scheduled".
+- Social-post runs visible in last 30 runs (43342278046, 43333351647) both success.
+- YouTube OAuth fixed (yt-auth 43319711949/43325128782 success; yt-followup 43337224650 success, earlier stuck comments cleared). 6sIg9L_rgX4 (after 01:06Z) overdue -> triggered yt-followup 43346174825: "comment posted 6sIg9L_rgX4 106 chars". 15 others not yet due.
+- yt-link FAILING 3x (43324065641, 43324513392, latest 43338998778 at 00:41Z): step "Link" -> "studio status: login" then exit code 2 = YouTube Studio browser session (rolling copy from 2026-11-12 01:47 UTC) is logged out; needs owner to refresh the Studio login session. Related-video linking not running.
+- Run ids: yt-followup 43346174825; social-post checked 43342278046, 43333351647; yt-link 43338998778.
