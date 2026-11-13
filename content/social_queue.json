@@ -2856,7 +2856,14 @@
   "thumb_ms": 1200,
   "caption": "The Virgin River drops about 71 feet per mile through Zion, and the bare sandstone can't soak up a storm. Every side canyon becomes a funnel. The floods are how the canyon was made.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 1 — link in the first comment 👇\n\n#Zion #Geology #NationalParks #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA",
-  "trial": false
+  "trial": false,
+  "done": {
+   "media_id": "18139711660714465",
+   "permalink": "https://www.instagram.com/reel/DfqbIiQAQ7_/",
+   "posted": "2026-11-13T01:13:50+0000",
+   "via": "video_url",
+   "at": "2026-11-13T01:10:38Z"
+  }
  },
  {
   "id": "zn1z2_fb",
@@ -2864,7 +2871,40 @@
   "file": "zion_p1_z2.mp4",
   "at": "2026-11-13T01:00:00Z",
   "caption": "The Virgin River drops about 71 feet per mile through Zion, and the bare sandstone can't soak up a storm. Every side canyon becomes a funnel. The floods are how the canyon was made.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 1 — link in the first comment 👇\n\n#Zion #Geology #NationalParks #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA",
+  "done": {
+   "video_id": "1648330853658686",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1116592841139708"
+   },
+   "permalink": "https://www.facebook.com/reel/1648330853658686/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 54607897
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-13T01:14:02+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1648330853658686_2218024015730843"
+   },
+   "status_errors": null,
+   "at": "2026-11-13T01:10:38Z"
+  }
  },
  {
   "id": "zn1z3_ig",
