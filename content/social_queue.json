@@ -2944,7 +2944,13 @@
   "thumb_ms": 1200,
   "caption": "We hiked the Zion Narrows top to bottom in November 2021. Walls a thousand feet high, in places only 20 to 30 feet apart. When the water rises in here, there's often nowhere to climb.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 1 — link in the first comment 👇\n\n#ZionNarrows #Hiking #NationalParks #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA",
-  "trial": true
+  "trial": true,
+  "done": {
+   "media_id": "18122383726962713",
+   "permalink": "https://www.instagram.com/reel/DfsdhPOl1g0/",
+   "posted": "2026-11-13T20:12:52+0000",
+   "at": "2026-11-13T20:12:22Z"
+  }
  },
  {
   "id": "zn1z3_fb",
@@ -2952,7 +2958,40 @@
   "file": "zion_p1_z3.mp4",
   "at": "2026-11-13T20:00:00Z",
   "caption": "We hiked the Zion Narrows top to bottom in November 2021. Walls a thousand feet high, in places only 20 to 30 feet apart. When the water rises in here, there's often nowhere to climb.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 1 — link in the first comment 👇\n\n#ZionNarrows #Hiking #NationalParks #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA",
+  "done": {
+   "video_id": "1162664776348577",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1117454067720252"
+   },
+   "permalink": "https://www.facebook.com/reel/1162664776348577/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 33360775
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-13T20:13:03+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1162664776348577_3052940175049462"
+   },
+   "status_errors": null,
+   "at": "2026-11-13T20:12:22Z"
+  }
  },
  {
   "id": "zn1z4_ig",
