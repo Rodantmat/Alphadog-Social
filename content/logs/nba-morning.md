@@ -39,3 +39,14 @@
 - Strategies: no state/cap changes vs 11-10; CLEAN 8->9 on A_core_3power, A_regular_5power, A_wrebounds_4flex, A_wsteals_5flex, C_wstocks_4flex; H5 "opening-weeks" hurdle cleared from all five. B_demon_3flex / B_demon_5flex still red (REQUAL HOLD 11-09). Rotation steals ewma 0.637 -> 0.676 (ok).
 - Edge monitors: PP z 2.43, UD z 1.48, both RUNNING (22 slates), no ALARM.
 - Boards 11-12 (4 games, routine snapshot): PrizePicks 259, Underdog 467. Sleeper/Fliff/Betr/sportsbooks 0 so far (P2B ~08:06 PT not yet run; Betr only in P3 window).
+
+## 2026-11-14 13:57 UTC ACTION
+- Market term: review revert. audit_market_coverage (run 43601986214) VERDICT NOT READY, 24 dates pooled: coverage 13.3% (ref 64.3%), depth 1.71 (ref 2.11), player match 13.6% (<95%). 11-13 alone: coverage 36.3%, depth 2.33. 11-13 window rungs 2,510, avg 2.33 books.
+- Pipelines: P2A 11-14 success (03:31-03:43 PT); P2A/P2B/P3 11-13 all success (P3 claimed 13:16 PT, workflow_dispatch); P3 11-13 no soft-step failures. Scheduler tick 48s old.
+- PP 11-13 (PLAY): 5 slips (all graded_void: P_B3_3power, P_B4_4flex, P_B9_6flex, P_F5_5flex, P_FB_U6flex), 5u staked, 0 returned, net -5u, ROI -100%. Season: 102 slips, 102u, 144.5u, +42.5u, ROI +41.7%.
+- UD P5 (shadow) 11-13: 4 slips, 4u, 2.25u returned, -1.75u, ROI -43.8%. Season P5 (stake>0): 80 slips, 74u, 99.2u, +25.2u, ROI +34.1%.
+- UD live 11-13: C 2 slips, 2u, 0 returned, -2u (T was shadow, 2 slips, +1.03u). Season T+C live: 51 slips, 51u, 71.36u, +20.36u, ROI +39.9%.
+- Units: per_app flat from 11-13 (owner): PP/Sleeper $10, UD/Fliff/Betr $5.
+- Strategies: no state/cap changes vs 11-12; CLEAN 10->11 on A_core_3power, A_regular_5power, A_wrebounds_4flex, A_wsteals_5flex, C_wstocks_4flex. B_demon_3flex / B_demon_5flex still red (REQUAL HOLD 11-09). Rotation steals ewma 0.696 -> 0.628 (ok).
+- Edge monitors: PP z 2.70, UD z 1.96, both RUNNING (24 slates), no ALARM.
+- Boards 11-14 (5 games): 0 rows for every app so far (latest board date in table 11-13). Prior mornings had a routine PP/UD snapshot by now - watch P2B ~08:06 PT.
