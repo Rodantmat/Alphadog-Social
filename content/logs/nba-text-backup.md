@@ -14,3 +14,6 @@ Slate 4 games; P3 status success (finished ~21:31Z). Pipeline text step delivere
 
 ## 2026-11-13T21:40Z FALLBACK
 Slate 9 games; P3 status success (seen by ~21:32Z). At 21:35Z no rodo row in text_alert_log and no sent Voice text today, so fallback "Slips are ready" text sent to rodo. Pipeline then logged rodo and friend rows at 21:37Z (pipeline text step ran late), so rodo may have received a duplicate. Friend received the pipeline text only (no fallback). Friend snapshot present.
+
+## 2026-11-14T21:36Z OK
+Slate 5 games; P3 status success (finished ~21:31Z). Pipeline text step delivered: rodo (21:32Z) and friend (21:32Z) rows present in text_alert_log (pipeline, no fallback needed). Friend snapshot present. No fallback texts sent.
