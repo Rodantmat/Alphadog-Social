@@ -3058,7 +3058,13 @@
   "thumb_ms": 1200,
   "caption": "On July 4, 2020, a dog died about an hour after playing in the Virgin River. Park scientists found cyanobacteria in the algae making a nerve toxin far above safe levels. Never let your dog drink from the river.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 1 — link in the first comment 👇\n\n#Zion #DogSafety #NationalParks #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA",
-  "trial": true
+  "trial": true,
+  "done": {
+   "media_id": "18093897830223298",
+   "permalink": "https://www.instagram.com/reel/DfvB-SbisfL/",
+   "posted": "2026-11-14T20:09:55+0000",
+   "at": "2026-11-14T20:09:22Z"
+  }
  },
  {
   "id": "zn1z5_fb",
@@ -3066,7 +3072,40 @@
   "file": "zion_p1_z5.mp4",
   "at": "2026-11-14T20:00:00Z",
   "caption": "On July 4, 2020, a dog died about an hour after playing in the Virgin River. Park scientists found cyanobacteria in the algae making a nerve toxin far above safe levels. Never let your dog drink from the river.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 1 — link in the first comment 👇\n\n#Zion #DogSafety #NationalParks #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA",
+  "done": {
+   "video_id": "1876037510416267",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1118535984278727"
+   },
+   "permalink": "https://www.facebook.com/reel/1876037510416267/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 18814426
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-14T20:10:05+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1876037510416267_1488033756583782"
+   },
+   "status_errors": null,
+   "at": "2026-11-14T20:09:22Z"
+  }
  },
  {
   "id": "zn1z6_ig",
