@@ -2,6 +2,7 @@ name: yt-link
 # Cloud job: sets the Related video (Short -> its full documentary) in Studio with the saved Studio session. No public API exists for it.
 on:
   schedule:
+    - cron: "41 3 * * *"    # backup run (I23): GitHub often skips single scheduled runs
     - cron: "37 19 * * *"   # once a day, after metrics-daily; links any new public Short to its documentary (idle = no changes)
   workflow_dispatch:
     inputs:
