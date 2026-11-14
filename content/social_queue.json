@@ -3001,7 +3001,13 @@
   "thumb_ms": 1200,
   "caption": "July 1993: three leaders and five teenage boys tried to descend Kolob Creek in Zion with the water far too high. Two leaders drowned. The last adult and the boys waited four nights on a ledge until rescuers winched them out. All six survived.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 1 — link in the first comment 👇\n\n#Zion #Rescue #NationalParks #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA",
-  "trial": false
+  "trial": false,
+  "done": {
+   "media_id": "18174308050456853",
+   "permalink": "https://www.instagram.com/reel/Dfs_tjPEkf5/",
+   "posted": "2026-11-14T01:11:41+0000",
+   "at": "2026-11-14T01:09:50Z"
+  }
  },
  {
   "id": "zn1z4_fb",
@@ -3009,7 +3015,40 @@
   "file": "zion_p1_z4.mp4",
   "at": "2026-11-14T01:00:00Z",
   "caption": "July 1993: three leaders and five teenage boys tried to descend Kolob Creek in Zion with the water far too high. Two leaders drowned. The last adult and the boys waited four nights on a ledge until rescuers winched them out. All six survived.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 1 — link in the first comment 👇\n\n#Zion #Rescue #NationalParks #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA",
+  "done": {
+   "video_id": "1181389971229480",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1117640704368255"
+   },
+   "permalink": "https://www.facebook.com/reel/1181389971229480/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 21281106
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-14T01:11:51+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1181389971229480_1869518577807336"
+   },
+   "status_errors": null,
+   "at": "2026-11-14T01:09:50Z"
+  }
  },
  {
   "id": "zn1z5_ig",
