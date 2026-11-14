@@ -4,7 +4,7 @@
 - Stories lead is only to Nov 13 19:00Z (about 3 days, under 5): IG/FB Stories have 6 future items each and no Zion stories. IG/FB Reels (last Nov 21) and TikTok (Nov 21) are fine. Zion Part 3 (~Nov 15) and the Zion film (Nov 19) still do not exist; recommended three days running, so escalated.
 - yt-link cron (19:37Z) skipped again (second day in a row); I dispatched it once (run 42918744862). Proposed a second schedule (I23).
 - No failed runs in 24 h, no missed posts, no duplicates. 21 pending comments, none overdue; Zion P2 premiere comment is queued for Nov 12 20:05Z.
-- YouTube 13 subs (12 yesterday, 8 on Nov 3), 4,057 views (3,990), long-form watch about 8.2 h of 8,000 h (5.6 yesterday). RELATED_VIDEO is 38 views and 377 min, so the Short-to-film link works. Median public Short 19 views; "Shot twice, he crawled 12 miles" at 615 is the standout (person + number).
+- YouTube 13 subs (12 yesterday, 8 on Nov 3), 4,057 views (3,990), long-form watch about 8.2 h of 8,000 (5.6 yesterday). RELATED_VIDEO is 38 views and 377 min, so the Short-to-film link works. Median public Short 19 views; "Shot twice, he crawled 12 miles" at 615 is the standout (person + number).
 - Details: content/metrics/health_2026-11-10.md. COMPASS rows I05, I11 changed; I22 and I23 added.
 
 ## 2026-11-11T23:00Z ALERT
@@ -27,3 +27,10 @@
 - No other failed runs, 0 missed posts, no duplicates, 14 pending comments none overdue; Zion Shorts zscU0YPpl_Y and 6sIg9L_rgX4 public with titles intact.
 - YouTube 16 subs (+2), 5,621 views (+750), long-form about 11-12 h of 8,000. Kolob ledge Short 444 views at 24 h (9x median 47); elk still best at 1,328. IG top 1,822/1,809 (12x median 155), TikTok top 1,803; hard-number/news hooks win everywhere. IG 136 followers, FB 152.
 - Details: content/metrics/health_2026-11-13.md. COMPASS rows I02, I05, I11, I17, I20, I23, I24, I25, I26 updated.
+
+## 2026-11-14T23:05Z ALERT
+- Zion Part 3 (premiere ~11-15, tomorrow) and Zion film (11-19) still have no script/assets (7th report, I05). IG/FB Stories queue empty (5th report, I24b). Reels lead to 11-21 and TikTok OK.
+- yt-link recovered: owner cookies renewed, run 20:45Z linked 6 Zion Shorts. 19:37Z cron skipped a 6th day; I added backup cron 03:41Z to yt-link.yml (fd122b2), verify 11-15.
+- No failed runs, 0 missed posts, no duplicates, 12 pending comments none overdue.
+- YouTube 17 subs (16), 6,547 views (+926; +3,504 in 7 d), long-form about 11.0 h of 8,000. New #2 Short: Zion dog-died 1,042 views (18x median 58, animal + hour). RELATED_VIDEO 48 views unchanged. Repo .git 152 MB.
+- Details: content/metrics/health_2026-11-14.md. COMPASS rows I02, I05, I11, I17, I18, I20, I23b-I26b updated, I27 added.
