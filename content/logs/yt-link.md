@@ -17,3 +17,11 @@
 - LINKED jfFx5yB_qFA -> 13 Days in Yellowstone: The Nez Perce, 1877
 
 ## 2026-11-12T01:47Z OK linked=0 skipped=31 failed=0
+
+## 2026-11-14T20:56Z OK linked=6 skipped=31 failed=0
+- LINKED OaGTyy0wnak -> Zion's Deadliest Day
+- LINKED tLN9SN6m6rs -> Zion's Deadliest Day
+- LINKED zscU0YPpl_Y -> Zion's Deadliest Day
+- LINKED 6sIg9L_rgX4 -> Zion's Deadliest Day
+- LINKED TPB5_pBj50U -> Zion's Deadliest Day
+- LINKED 0c8WvCxQWHY -> Zion's Deadliest Day
