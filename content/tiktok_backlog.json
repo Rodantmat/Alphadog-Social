@@ -291,7 +291,12 @@
   "file": "zion_p2_w3.mp4",
   "due": "2026-11-18T00:00:00Z",
   "service": "tiktok",
-  "text": "Ninety Hoover Dams. That's how much concrete you'd need to rebuild the mountainside that collapsed into Zion Canyon. About ten billion cubic feet of rock, roughly five times bigger than any landslide in North America's recorded history, not counting volcanoes.\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Zion Part 2\\n\\n#Zion #HooverDam #Landslide #NationalParks"
+  "text": "Ninety Hoover Dams. That's how much concrete you'd need to rebuild the mountainside that collapsed into Zion Canyon. About ten billion cubic feet of rock, roughly five times bigger than any landslide in North America's recorded history, not counting volcanoes.\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Zion Part 2\\n\\n#Zion #HooverDam #Landslide #NationalParks",
+  "scheduled": {
+   "buffer_id": "6af7b3f04b28296eb127b12f",
+   "at": "2026-11-14T01:05:49Z",
+   "due": "2026-11-18T00:00:00Z"
+  }
  },
  {
   "mode": "post",
