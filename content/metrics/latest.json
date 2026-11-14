@@ -1,21 +1,41 @@
 {
- "at": "2026-11-13T20:30:58Z",
+ "at": "2026-11-14T18:46:08Z",
  "youtube": {
   "channel": {
-   "viewCount": "5621",
-   "subscriberCount": "16",
+   "viewCount": "6547",
+   "subscriberCount": "17",
    "hiddenSubscriberCount": false,
-   "videoCount": "46"
+   "videoCount": "48"
   },
   "videos": [
+   {
+    "id": "OaGTyy0wnak",
+    "title": "Angels Landing permit lottery: 8% odds #Shorts",
+    "published": "2026-11-14T18:00:06Z",
+    "privacy": "public",
+    "duration": "PT22S",
+    "views": 14,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "tLN9SN6m6rs",
+    "title": "Angels Landing: 17 deaths on one trail #Shorts",
+    "published": "2026-11-14T01:00:30Z",
+    "privacy": "public",
+    "duration": "PT33S",
+    "views": 7,
+    "likes": 0,
+    "comments": 1
+   },
    {
     "id": "zscU0YPpl_Y",
     "title": "A dog died within an hour of playing in Zion's Virgin River #Shorts",
     "published": "2026-11-13T18:00:17Z",
     "privacy": "public",
     "duration": "PT23S",
-    "views": 113,
-    "likes": 2,
+    "views": 1042,
+    "likes": 9,
     "comments": 1
    },
    {
@@ -24,7 +44,7 @@
     "published": "2026-11-13T01:00:24Z",
     "privacy": "public",
     "duration": "PT35S",
-    "views": 444,
+    "views": 466,
     "likes": 3,
     "comments": 1
    },
@@ -34,7 +54,7 @@
     "published": "2026-11-12T20:00:33Z",
     "privacy": "public",
     "duration": "PT13M5S",
-    "views": 17,
+    "views": 26,
     "likes": 0,
     "comments": 2
    },
@@ -44,7 +64,7 @@
     "published": "2026-11-12T18:00:20Z",
     "privacy": "public",
     "duration": "PT24S",
-    "views": 235,
+    "views": 257,
     "likes": 1,
     "comments": 1
    },
@@ -54,7 +74,7 @@
     "published": "2026-11-12T01:00:32Z",
     "privacy": "public",
     "duration": "PT34S",
-    "views": 372,
+    "views": 381,
     "likes": 5,
     "comments": 1
    },
@@ -64,7 +84,7 @@
     "published": "2026-11-11T18:00:00Z",
     "privacy": "public",
     "duration": "PT24S",
-    "views": 82,
+    "views": 83,
     "likes": 0,
     "comments": 1
    },
@@ -74,8 +94,8 @@
     "published": "2026-11-11T01:00:31Z",
     "privacy": "public",
     "duration": "PT56S",
-    "views": 61,
-    "likes": 0,
+    "views": 65,
+    "likes": 1,
     "comments": 1
    },
    {
@@ -84,7 +104,7 @@
     "published": "2026-11-10T18:00:14Z",
     "privacy": "public",
     "duration": "PT35S",
-    "views": 88,
+    "views": 89,
     "likes": 1,
     "comments": 1
    },
@@ -204,7 +224,7 @@
     "published": "2026-11-09T18:00:32Z",
     "privacy": "public",
     "duration": "PT56S",
-    "views": 47,
+    "views": 48,
     "likes": 0,
     "comments": 1
    },
@@ -229,31 +249,11 @@
     "comments": 0
    },
    {
-    "id": "OaGTyy0wnak",
-    "title": "Angels Landing permit lottery: 8% odds #Shorts",
-    "published": "2026-11-08T18:42:09Z",
-    "privacy": "private",
-    "duration": "PT22S",
-    "views": 0,
-    "likes": 0,
-    "comments": 0
-   },
-   {
     "id": "vfEdsxIDZZ0",
     "title": "Zion: 4,000 visitors became 5 million #Shorts",
     "published": "2026-11-08T18:42:09Z",
     "privacy": "private",
     "duration": "PT34S",
-    "views": 0,
-    "likes": 0,
-    "comments": 0
-   },
-   {
-    "id": "tLN9SN6m6rs",
-    "title": "Angels Landing: 17 deaths on one trail #Shorts",
-    "published": "2026-11-08T18:42:08Z",
-    "privacy": "private",
-    "duration": "PT33S",
     "views": 0,
     "likes": 0,
     "comments": 0
@@ -274,7 +274,7 @@
     "published": "2026-11-08T16:00:33Z",
     "privacy": "public",
     "duration": "PT10M53S",
-    "views": 28,
+    "views": 41,
     "likes": 1,
     "comments": 1
    },
@@ -334,7 +334,7 @@
     "published": "2026-11-05T20:00:12Z",
     "privacy": "public",
     "duration": "PT34M55S",
-    "views": 44,
+    "views": 62,
     "likes": 1,
     "comments": 4
    },
@@ -464,7 +464,7 @@
     "published": "2026-11-01T16:00:03Z",
     "privacy": "public",
     "duration": "PT11M33S",
-    "views": 11,
+    "views": 12,
     "likes": 0,
     "comments": 2
    },
@@ -694,12 +694,12 @@
     "published": "2026-10-26T00:02:23Z",
     "privacy": "public",
     "duration": "PT25M12S",
-    "views": 91,
+    "views": 90,
     "likes": 2,
     "comments": 1
    }
   ],
-  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/yt-analytics.readonly",
+  "scopes": "https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/yt-analytics.readonly",
   "analytics_by_video": {
    "columns": [
     "video",
@@ -1275,7 +1275,7 @@
    ],
    [
     "SHORTS",
-    4451,
+    4455,
     1316
    ],
    [
@@ -1293,52 +1293,52 @@
    "reports": 14,
    "by_video": {
     "-vkXqMrSljM": {
-     "impressions": 181,
-     "ctr": 0.0276
+     "impressions": 176,
+     "ctr": 0.0341
     },
     "4X1O7pEr_FQ": {
-     "impressions": 147,
-     "ctr": 0.034
+     "impressions": 145,
+     "ctr": 0.0345
     },
     "50XkGgJ5nNQ": {
      "impressions": 101,
      "ctr": 0.0099
     },
-    "EuS8OlyY9I4": {
-     "impressions": 17,
-     "ctr": 0.0
-    },
-    "G03Sxe_dD9k": {
-     "impressions": 116,
-     "ctr": 0.0
-    },
-    "LfoM0KAi8Yo": {
-     "impressions": 1375,
-     "ctr": 0.0276
-    },
-    "av9mIcktn6A": {
-     "impressions": 35,
-     "ctr": 0.0286
-    },
-    "eNV_qLTs2Js": {
-     "impressions": 31,
-     "ctr": 0.0
-    },
-    "l3Wsfo7k-Lo": {
-     "impressions": 535,
-     "ctr": 0.0037
-    },
     "E-izx81EvAE": {
      "impressions": 54,
      "ctr": 0.0
     },
+    "EuS8OlyY9I4": {
+     "impressions": 13,
+     "ctr": 0.0
+    },
+    "G03Sxe_dD9k": {
+     "impressions": 108,
+     "ctr": 0.0
+    },
+    "LfoM0KAi8Yo": {
+     "impressions": 1447,
+     "ctr": 0.0276
+    },
     "RWwPTGQF82o": {
-     "impressions": 63,
+     "impressions": 68,
+     "ctr": 0.0
+    },
+    "av9mIcktn6A": {
+     "impressions": 33,
+     "ctr": 0.0303
+    },
+    "eNV_qLTs2Js": {
+     "impressions": 30,
      "ctr": 0.0
     },
     "iHu31E8tX_k": {
      "impressions": 2,
      "ctr": 0.0
+    },
+    "l3Wsfo7k-Lo": {
+     "impressions": 392,
+     "ctr": 0.0026
     },
     "nWccTvDItMk": {
      "impressions": 38,
@@ -1349,7 +1349,7 @@
      "ctr": 0.0
     },
     "P99Gu3GCZVw": {
-     "impressions": 229,
+     "impressions": 236,
      "ctr": 0.0
     },
     "QICPYzghiNc": {
@@ -1361,15 +1361,15 @@
      "ctr": 0.0556
     },
     "wBQ0FKBps08": {
-     "impressions": 41,
-     "ctr": 0.0732
+     "impressions": 43,
+     "ctr": 0.0698
     },
     "R-V4lG2dEfU": {
      "impressions": 81,
      "ctr": 0.0
     },
     "naMTvf4CXt0": {
-     "impressions": 31,
+     "impressions": 33,
      "ctr": 0.0
     },
     "Ay2qGG6UjqI": {
@@ -1381,20 +1381,20 @@
      "ctr": 0.0
     },
     "bJgBuP716E8": {
-     "impressions": 40,
-     "ctr": 0.025
+     "impressions": 43,
+     "ctr": 0.0233
     },
     "jbZbPS173wc": {
-     "impressions": 176,
+     "impressions": 180,
      "ctr": 0.0
     },
     "VrWOyOk0urw": {
-     "impressions": 73,
-     "ctr": 0.0274
+     "impressions": 74,
+     "ctr": 0.027
     },
     "x1PAl5B-IeI": {
-     "impressions": 57,
-     "ctr": 0.0175
+     "impressions": 59,
+     "ctr": 0.0169
     },
     "McdCi05pBzg": {
      "impressions": 23,
@@ -1405,40 +1405,52 @@
      "ctr": 0.0
     },
     "nEf7KCM5Ors": {
-     "impressions": 416,
-     "ctr": 0.012
+     "impressions": 443,
+     "ctr": 0.0113
     },
     "rxGpPtUx0h4": {
-     "impressions": 33,
-     "ctr": 0.0
+     "impressions": 38,
+     "ctr": 0.0263
     },
     "2Ge5FJpCz3c": {
-     "impressions": 9,
+     "impressions": 12,
      "ctr": 0.0
     },
     "IgQF68CMycI": {
-     "impressions": 8,
+     "impressions": 9,
      "ctr": 0.0
     },
     "hjctJRYvXwY": {
-     "impressions": 10,
+     "impressions": 11,
      "ctr": 0.0
     },
     "FtSXblbpc3U": {
-     "impressions": 21,
+     "impressions": 39,
      "ctr": 0.0
     },
     "GBtH7GfGO3o": {
-     "impressions": 21,
+     "impressions": 36,
      "ctr": 0.0
     },
     "Hlr80lyDlwA": {
-     "impressions": 49,
-     "ctr": 0.1224
+     "impressions": 53,
+     "ctr": 0.1132
     },
     "YTQT_qQYGSQ": {
+     "impressions": 20,
+     "ctr": 0.05
+    },
+    "cpWUzLRok5I": {
+     "impressions": 23,
+     "ctr": 0.0
+    },
+    "jfFx5yB_qFA": {
      "impressions": 4,
-     "ctr": 0.25
+     "ctr": 0.0
+    },
+    "u2ShH8jAZb8": {
+     "impressions": 3,
+     "ctr": 0.0
     }
    }
   }
@@ -1447,22 +1459,35 @@
   "profile": {
    "username": "alphadog.studio",
    "followers_count": 136,
-   "media_count": 77,
+   "media_count": 78,
    "id": "28926959546914399"
   },
   "media": [
    {
+    "id": "18174308050456853",
+    "at": "2026-11-14T01:11:41+0000",
+    "caption": "July 1993: three leaders and five teenage boys tried to descend Kolob Creek in Z",
+    "likes": 2,
+    "comments": 1,
+    "views": 124,
+    "reach": 115,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 3,
+    "ig_reels_avg_watch_time": 7004
+   },
+   {
     "id": "18122383726962713",
     "at": "2026-11-13T20:12:52+0000",
     "caption": "We hiked the Zion Narrows top to bottom in November 2021. Walls a thousand feet ",
-    "likes": 1,
+    "likes": 4,
     "comments": 1,
-    "views": 2,
-    "reach": 0,
+    "views": 150,
+    "reach": 133,
     "saved": 0,
     "shares": 0,
-    "total_interactions": 2,
-    "ig_reels_avg_watch_time": 0
+    "total_interactions": 5,
+    "ig_reels_avg_watch_time": 5638
    },
    {
     "id": "18139711660714465",
@@ -1470,12 +1495,12 @@
     "caption": "The Virgin River drops about 71 feet per mile through Zion, and the bare sandsto",
     "likes": 6,
     "comments": 1,
-    "views": 539,
-    "reach": 453,
+    "views": 595,
+    "reach": 502,
     "saved": 1,
     "shares": 0,
     "total_interactions": 8,
-    "ig_reels_avg_watch_time": 11915
+    "ig_reels_avg_watch_time": 11895
    },
    {
     "id": "18645472636052201",
@@ -1483,12 +1508,12 @@
     "caption": "On September 14, 2015, a storm over Zion National Park sent a flash flood throug",
     "likes": 3,
     "comments": 1,
-    "views": 200,
-    "reach": 170,
+    "views": 204,
+    "reach": 173,
     "saved": 0,
     "shares": 0,
     "total_interactions": 4,
-    "ig_reels_avg_watch_time": 8720
+    "ig_reels_avg_watch_time": 8737
    },
    {
     "id": "17992652076079802",
@@ -1496,12 +1521,12 @@
     "caption": "The colors of Grand Prismatic Spring aren't minerals. They're living mats of mic",
     "likes": 6,
     "comments": 1,
-    "views": 218,
-    "reach": 204,
+    "views": 219,
+    "reach": 205,
     "saved": 2,
     "shares": 0,
     "total_interactions": 9,
-    "ig_reels_avg_watch_time": 5975
+    "ig_reels_avg_watch_time": 5952
    },
    {
     "id": "18136979074657769",
@@ -1509,12 +1534,12 @@
     "caption": "2.1 million years ago the Huckleberry Ridge eruption threw out about 2,400 cubic",
     "likes": 3,
     "comments": 1,
-    "views": 138,
-    "reach": 125,
+    "views": 139,
+    "reach": 126,
     "saved": 0,
     "shares": 0,
     "total_interactions": 4,
-    "ig_reels_avg_watch_time": 11295
+    "ig_reels_avg_watch_time": 11218
    },
    {
     "id": "17954183889051352",
@@ -1652,12 +1677,12 @@
     "caption": "A writer in the park that winter sent word of Ed Howell's capture to the magazin",
     "likes": 7,
     "comments": 1,
-    "views": 140,
-    "reach": 120,
+    "views": 141,
+    "reach": 121,
     "saved": 0,
     "shares": 0,
     "total_interactions": 8,
-    "ig_reels_avg_watch_time": 13933
+    "ig_reels_avg_watch_time": 13827
    },
    {
     "id": "18274159357309956",
@@ -1769,12 +1794,12 @@
     "caption": "In 1871 a photographer and a painter went to Yellowstone with a government surve",
     "likes": 8,
     "comments": 1,
-    "views": 258,
-    "reach": 228,
+    "views": 259,
+    "reach": 229,
     "saved": 0,
     "shares": 1,
     "total_interactions": 10,
-    "ig_reels_avg_watch_time": 10235
+    "ig_reels_avg_watch_time": 10197
    },
    {
     "id": "18604683067064648",
@@ -1941,6 +1966,14 @@
    "id": "103210859154410"
   },
   "posts": [
+   {
+    "id": "103210859154410_1117640704368255",
+    "at": "2026-11-14T01:12:15+0000",
+    "text": "July 1993: three leaders and five teenage boys tried to descend Kolob Creek in Z",
+    "reactions": 0,
+    "comments": 1,
+    "shares": 0
+   },
    {
     "id": "103210859154410_1117454067720252",
     "at": "2026-11-13T20:14:02+0000",
@@ -2332,24 +2365,25 @@
     "reactions": 2,
     "comments": 0,
     "shares": 0
-   },
-   {
-    "id": "103210859154410_108631491945680",
-    "at": "2022-08-03T01:03:25+0000",
-    "text": "The #secret of the secrets #KachinaTreeCave\nYou don’t see many guides to this pl",
-    "reactions": 1,
-    "comments": 0,
-    "shares": 0
    }
   ],
   "reels": [
    {
+    "id": "1181389971229480",
+    "at": "2026-11-14T01:11:51+0000",
+    "text": "July 1993: three leaders and five teenage boys tried to descend Kolob Creek in Z",
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 1048,
+    "post_video_followers": 0
+   },
+   {
     "id": "1162664776348577",
     "at": "2026-11-13T20:13:03+0000",
     "text": "We hiked the Zion Narrows top to bottom in November 2021. Walls a thousand feet ",
-    "fb_reels_total_plays": 0,
-    "blue_reels_play_count": 0,
-    "post_video_avg_time_watched": 0,
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 21601,
     "post_video_followers": 0
    },
    {
@@ -2780,17 +2814,7 @@
     "at": "2022-08-06T00:12:59+0000",
     "text": "Back with the #secretspots still in #arizona \nThis place got few different names",
     "fb_reels_total_plays": 2212,
-    "blue_reels_play_count": 2212,
     "post_video_avg_time_watched": 13862,
-    "post_video_followers": 0
-   },
-   {
-    "id": "1093815187923697",
-    "at": "2022-08-05T01:11:18+0000",
-    "text": "#Jerome itself is already an amazing #town and still a very good #keptsecret , #",
-    "fb_reels_total_plays": 309,
-    "blue_reels_play_count": 309,
-    "post_video_avg_time_watched": 9266,
     "post_video_followers": 0
    }
   ]
@@ -2799,12 +2823,32 @@
   "handle": "alphadogstudio",
   "videos": [
    {
+    "id": "7707856828377451789",
+    "at": "2026-11-14T03:01:22Z",
+    "title": "At least seventeen people have died at Angels Landing in Zion. The la...",
+    "duration": 32,
+    "views": 140,
+    "likes": 2,
+    "comments": 0,
+    "shares": 0
+   },
+   {
+    "id": "7707810772281330957",
+    "at": "2026-11-14T00:02:44Z",
+    "title": "On July 4, 2020, a dog died about an hour after playing in the Virgin...",
+    "duration": 22,
+    "views": 88,
+    "likes": 1,
+    "comments": 0,
+    "shares": 0
+   },
+   {
     "id": "7707485631399660813",
     "at": "2026-11-13T03:00:50Z",
     "title": "July 1993: three leaders and five teenage boys tried to descend Kolob...",
     "duration": 34,
-    "views": 82,
-    "likes": 1,
+    "views": 99,
+    "likes": 2,
     "comments": 0,
     "shares": 0
    },
@@ -2813,8 +2857,8 @@
     "at": "2026-11-13T00:03:14Z",
     "title": "We hiked the Zion Narrows top to bottom in November 2021. Walls a tho...",
     "duration": 23,
-    "views": 114,
-    "likes": 2,
+    "views": 134,
+    "likes": 5,
     "comments": 0,
     "shares": 0
    },
@@ -2823,7 +2867,7 @@
     "at": "2026-11-12T03:01:37Z",
     "title": "The Virgin River drops about 71 feet per mile through Zion, and the b...",
     "duration": 33,
-    "views": 318,
+    "views": 324,
     "likes": 32,
     "comments": 1,
     "shares": 1
@@ -2843,7 +2887,7 @@
     "at": "2026-11-12T00:04:12Z",
     "title": "On September 14, 2015, a storm over Zion National Park sent a flash f...",
     "duration": 23,
-    "views": 94,
+    "views": 96,
     "likes": 0,
     "comments": 0,
     "shares": 0
@@ -2853,7 +2897,7 @@
     "at": "2026-11-11T03:01:28Z",
     "title": "The survivors were not allowed to go home. They were sent to Kansas, ...",
     "duration": 55,
-    "views": 176,
+    "views": 177,
     "likes": 6,
     "comments": 0,
     "shares": 0
@@ -2903,7 +2947,7 @@
     "at": "2026-11-09T00:02:08Z",
     "title": "George Cowan was shot through the thigh, then in the head, and left f...",
     "duration": 47,
-    "views": 183,
+    "views": 184,
     "likes": 3,
     "comments": 0,
     "shares": 0
@@ -2923,7 +2967,7 @@
     "at": "2026-11-08T00:01:51Z",
     "title": "Superintendent Norris claimed Native people were afraid of the geyser...",
     "duration": 44,
-    "views": 167,
+    "views": 168,
     "likes": 4,
     "comments": 0,
     "shares": 0
@@ -2953,7 +2997,7 @@
     "at": "2026-11-06T01:01:09Z",
     "title": "A writer in the park that winter sent word of Ed Howell's capture to ...",
     "duration": 43,
-    "views": 114,
+    "views": 115,
     "likes": 1,
     "comments": 0,
     "shares": 0
@@ -3003,7 +3047,7 @@
     "at": "2026-11-03T18:03:58Z",
     "title": "August 24, 1877. Tourists camped near Fountain Geyser see riders appe...",
     "duration": 52,
-    "views": 140,
+    "views": 141,
     "likes": 7,
     "comments": 0,
     "shares": 0
@@ -3023,7 +3067,7 @@
     "at": "2026-11-02T18:07:30Z",
     "title": "In one winter hunters killed some 3,000 elk in and around early Yello...",
     "duration": 51,
-    "views": 254,
+    "views": 256,
     "likes": 16,
     "comments": 0,
     "shares": 0
@@ -3083,7 +3127,7 @@
     "at": "2026-10-31T16:31:11Z",
     "title": "Yellowstone's most likely \"eruption\" is steam, not lava. Clogged unde...",
     "duration": 53,
-    "views": 133,
+    "views": 136,
     "likes": 2,
     "comments": 0,
     "shares": 0
@@ -3133,7 +3177,7 @@
     "at": "2026-10-30T17:30:52Z",
     "title": "July 23, 2024. The ground at Biscuit Basin lets go. Steam, mud and ro...",
     "duration": 50,
-    "views": 134,
+    "views": 136,
     "likes": 3,
     "comments": 0,
     "shares": 0
@@ -3153,7 +3197,7 @@
     "at": "2026-10-28T00:05:47Z",
     "title": "America just got its 64th national park, and most people have never h...",
     "duration": 30,
-    "views": 1803,
+    "views": 1805,
     "likes": 36,
     "comments": 2,
     "shares": 1
@@ -3163,12 +3207,12 @@
     "at": "2026-10-26T04:10:00Z",
     "title": "Found dead under an oak in 1882. Revolver in hand, boots gone. The ju...",
     "duration": 30,
-    "views": 1304,
+    "views": 1310,
     "likes": 60,
     "comments": 2,
     "shares": 1
    }
   ],
-  "listed": 54
+  "listed": 56
  }
 }
