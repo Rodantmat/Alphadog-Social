@@ -34,3 +34,10 @@
 - No failed runs, 0 missed posts, no duplicates, 12 pending comments none overdue.
 - YouTube 17 subs (16), 6,547 views (+926; +3,504 in 7 d), long-form about 11.0 h of 8,000. New #2 Short: Zion dog-died 1,042 views (18x median 58, animal + hour). RELATED_VIDEO 48 views unchanged. Repo .git 152 MB.
 - Details: content/metrics/health_2026-11-14.md. COMPASS rows I02, I05, I11, I17, I18, I20, I23b-I26b updated, I27 added.
+
+## 2026-11-15T23:00Z ALERT
+- Zion Part 3 (due ~11-15) is NOT public and content/zion has no p3/film files (8th report, I05); Zion film 11-19 also nothing. IG/FB Stories queue still empty (6th report, I24b). Reels lead to 11-21 OK.
+- yt-link: no run since 11-14 20:56Z; backup cron 03:41Z did not fire and 19:37Z skipped a 7th day (I11). Dispatched once 22:53Z (run 43771798742, result unconfirmed). No cookie/login failure seen.
+- 0 failed runs in 24 h, 0 missed posts, no duplicates, 10 pending comments (private Shorts) none overdue; Zion Shorts T5BjlD54g9Y, vfEdsxIDZZ0 public on time, titles intact.
+- YouTube 17 subs (flat), 7,158 views (+611), long-form about 14-15 h of 8,000. RELATED_VIDEO 66 views/580 min. IG 146 followers; IG 1,364/1,463 and TikTok 1,638 outliers (8-9x median) on Angels Landing deaths/dog/5-tons-waste hooks; the same Angels deaths Short got only 13 YT views.
+- Details: content/metrics/health_2026-11-15.md. COMPASS rows I02, I05, I11, I20, I23b, I24b updated.
