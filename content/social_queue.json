@@ -3172,7 +3172,13 @@
   "thumb_ms": 1200,
   "caption": "Since 2022 you need a lottery permit to climb Angels Landing. Nearly 400,000 were issued in two years, and on the busiest days the odds of winning were as low as 8 percent.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 1 — link in the first comment 👇\n\n#AngelsLanding #Zion #NationalParks #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA",
-  "trial": true
+  "trial": true,
+  "done": {
+   "media_id": "17957673990290808",
+   "permalink": "https://www.instagram.com/reel/DfxmywVkoZQ/",
+   "posted": "2026-11-15T20:10:04+0000",
+   "at": "2026-11-15T20:09:36Z"
+  }
  },
  {
   "id": "zn1z7_fb",
@@ -3180,7 +3186,40 @@
   "file": "zion_p1_z7.mp4",
   "at": "2026-11-15T20:00:00Z",
   "caption": "Since 2022 you need a lottery permit to climb Angels Landing. Nearly 400,000 were issued in two years, and on the busiest days the odds of winning were as low as 8 percent.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 1 — link in the first comment 👇\n\n#AngelsLanding #Zion #NationalParks #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA",
+  "done": {
+   "video_id": "1162334756287807",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1119549354177390"
+   },
+   "permalink": "https://www.facebook.com/reel/1162334756287807/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 16716775
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-15T20:10:15+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1162334756287807_1919718779014084"
+   },
+   "status_errors": null,
+   "at": "2026-11-15T20:09:36Z"
+  }
  },
  {
   "id": "zn1z8_ig",
