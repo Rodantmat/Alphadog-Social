@@ -50,3 +50,13 @@
 - Strategies: no state/cap changes vs 11-12; CLEAN 10->11 on A_core_3power, A_regular_5power, A_wrebounds_4flex, A_wsteals_5flex, C_wstocks_4flex. B_demon_3flex / B_demon_5flex still red (REQUAL HOLD 11-09). Rotation steals ewma 0.696 -> 0.628 (ok).
 - Edge monitors: PP z 2.70, UD z 1.96, both RUNNING (24 slates), no ALARM.
 - Boards 11-14 (5 games): 0 rows for every app so far (latest board date in table 11-13). Prior mornings had a routine PP/UD snapshot by now - watch P2B ~08:06 PT.
+
+## 2026-11-15 13:58 UTC ACTION
+- Market term: review revert. audit_market_coverage (run 43721481469) VERDICT NOT READY, 25 dates pooled: coverage 13.6% (ref 64.3%), depth 1.74 (ref 2.11), player match 13.5% (<95%). 11-14 alone: coverage 25.0%, depth 2.37. 11-14 window rungs 1,035, avg 2.37 books.
+- Pipelines: P2A 11-15 success (04:16-04:29 PT, ~45 min later than usual); P2A/P2B/P3 11-14 all success (P3 claimed 13:16 PT, workflow_dispatch); no soft-step failures in P3 11-14 or P2A 11-15. Scheduler tick 6s old. Outside the pipeline: "NBA Underdog Login (one-time token)" failed twice 11-14 (12:40, 15:08 PT); one "NBA UD Live (paper)" failure at 14:32 PT, re-run succeeded a minute later.
+- PP 11-14 (PLAY): 4 slips (P_B7_3power 3/3 +5u, P_T6_flex +2u, P_B4_4flex -1u, P_B5_3power -1u), 4u staked, 9u returned, net +5u, ROI +125%. Season: 106 slips, 106u, 153.5u, +47.5u, ROI +44.8%.
+- UD P5 (shadow) 11-14: 3 slips, 3u, 12.33u returned, +9.33u, ROI +311%. Season P5 (graded, stake>0): 80 slips, 74.5u, net +21.35u (profit column), ROI +28.7%; 3 older slips (11-02, 11-06, 11-07) still ungraded. Note: payout on half-stake rows is not scaled, so payout-based totals overstate returns; this season figure does not match the 11-14 entry (+25.2u).
+- UD live 11-14: C 1 slip, 1u, 3.78u returned, +2.78u, ROI +278%. Season live: 51 slips, 51u, 75.14u, +24.14u, ROI +47.3%.
+- Strategies: no state/cap changes vs 11-13; CLEAN 11->12 on A_core_3power, A_regular_5power, A_wrebounds_4flex, A_wsteals_5flex, C_wstocks_4flex. B_demon_3flex / B_demon_5flex still red (REQUAL HOLD 11-09). Rotation steals ewma 0.679, turnovers 0.690 (both ok).
+- Edge monitors: PP z 2.83, UD z 2.21, both RUNNING (25 slates), no ALARM.
+- Boards 11-15 (9 games): 0 rows for every app so far, same as 11-14 at this hour (11-14 later filled: window 24,282 rows, 14 books incl. PP/UD/Sleeper/Betr/Fliff). Watch P2B ~08:06 PT.
