@@ -3115,7 +3115,14 @@
   "thumb_ms": 1200,
   "caption": "At least seventeen people have died at Angels Landing in Zion. The last half mile follows a spine of rock with sheer drops on both sides. We climbed it in 2021. Many of the falls didn't happen on the chains at all.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 1 — link in the first comment 👇\n\n#AngelsLanding #Zion #Hiking #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA",
-  "trial": false
+  "trial": false,
+  "done": {
+   "media_id": "18451682179120205",
+   "permalink": "https://www.instagram.com/reel/DfvkkerjdoB/",
+   "posted": "2026-11-15T01:12:21+0000",
+   "via": "video_url",
+   "at": "2026-11-15T01:09:38Z"
+  }
  },
  {
   "id": "zn1z6_fb",
@@ -3123,7 +3130,39 @@
   "file": "zion_p1_z6.mp4",
   "at": "2026-11-15T01:00:00Z",
   "caption": "At least seventeen people have died at Angels Landing in Zion. The last half mile follows a spine of rock with sheer drops on both sides. We climbed it in 2021. Many of the falls didn't happen on the chains at all.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 1 — link in the first comment 👇\n\n#AngelsLanding #Zion #Hiking #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA",
+  "done": {
+   "video_id": "1663051768620145",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1118732837592375"
+   },
+   "permalink": "https://www.facebook.com/reel/1663051768620145/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 24159835
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-15T01:12:29+0000"
+    },
+    "copyright_check_status": {
+     "status": "in_progress"
+    }
+   },
+   "comment": {
+    "id": "1663051768620145_1581000647379415"
+   },
+   "status_errors": null,
+   "at": "2026-11-15T01:09:38Z"
+  }
  },
  {
   "id": "zn1z7_ig",
