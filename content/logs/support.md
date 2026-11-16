@@ -446,3 +446,6 @@ No new messages (list run 43884978865): answered 0, escalated 0, spam 0. Checkou
 
 ## 2026-11-16 15:24 UTC OK
 No new messages (list run 43895584597): answered 0, escalated 0, spam 0. Checkout step slow (~1.3 min) but run completed successfully.
+
+## 2026-11-16 16:35 UTC OK
+No new messages (list run 43908062393): answered 0, escalated 0, spam 0. First list run 43906709055 (16:22Z) stuck "queued" ~7 min with no runner (cancel returned 409); retry completed successfully (checkout ~2 min). The stuck run is read-only and may complete late.
