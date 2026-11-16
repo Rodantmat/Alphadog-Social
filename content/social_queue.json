@@ -3229,7 +3229,13 @@
   "thumb_ms": 1200,
   "caption": "In 2021 park crews hauled almost five tons of human waste off the toilets at Scout Lookout, just below the Angels Landing chains. That's what five million visitors look like.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 1 — link in the first comment 👇\n\n#Zion #AngelsLanding #NationalParks #Shorts",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA",
-  "trial": false
+  "trial": false,
+  "done": {
+   "media_id": "18192045886413042",
+   "permalink": "https://www.instagram.com/reel/DfyJH0ZDDzJ/",
+   "posted": "2026-11-16T01:10:03+0000",
+   "at": "2026-11-16T01:09:35Z"
+  }
  },
  {
   "id": "zn1z8_fb",
@@ -3237,7 +3243,40 @@
   "file": "zion_p1_z8.mp4",
   "at": "2026-11-16T01:00:00Z",
   "caption": "In 2021 park crews hauled almost five tons of human waste off the toilets at Scout Lookout, just below the Angels Landing chains. That's what five million visitors look like.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 1 — link in the first comment 👇\n\n#Zion #AngelsLanding #NationalParks #Shorts",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/Hlr80lyDlwA",
+  "done": {
+   "video_id": "1166732989035997",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1119710480827944"
+   },
+   "permalink": "https://www.facebook.com/reel/1166732989035997/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 20622475
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-16T01:10:11+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1166732989035997_2356503231841204"
+   },
+   "status_errors": null,
+   "at": "2026-11-16T01:09:35Z"
+  }
  },
  {
   "id": "zn1z9_ig",
