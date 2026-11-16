@@ -449,3 +449,6 @@ No new messages (list run 43774432047): answered 0, escalated 0, spam 0.
 
 ## 2026-11-16 00:24 UTC OK
 No new messages (list run 43779960482): answered 0, escalated 0, spam 0. Run took ~2 min but completed successfully.
+
+## 2026-11-16 01:24 UTC OK
+No new messages (list run 43785858597): answered 0, escalated 0, spam 0. First dispatch returned HTTP 500 from GitHub (no run created); retry succeeded. Run took ~1.5 min (slow checkout).
