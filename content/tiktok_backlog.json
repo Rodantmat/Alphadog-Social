@@ -343,7 +343,12 @@
   "file": "zion_p2_w7.mp4",
   "due": "2026-11-20T00:00:00Z",
   "service": "tiktok",
-  "text": "A hundred and eight days. On January twenty-sixth, nineteen sixty-six, the main building of Zion Lodge burned. A prefabricated replacement was up and operating a hundred and eight days later. And all of it stands on the bed of an ancient lake.\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Zion Part 2\\n\\n#Zion #ZionLodge #History #NationalParks"
+  "text": "A hundred and eight days. On January twenty-sixth, nineteen sixty-six, the main building of Zion Lodge burned. A prefabricated replacement was up and operating a hundred and eight days later. And all of it stands on the bed of an ancient lake.\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Zion Part 2\\n\\n#Zion #ZionLodge #History #NationalParks",
+  "scheduled": {
+   "buffer_id": "6afa56eb60a910801c5cdd8e",
+   "at": "2026-11-16T01:05:43Z",
+   "due": "2026-11-20T00:00:00Z"
+  }
  },
  {
   "mode": "post",
