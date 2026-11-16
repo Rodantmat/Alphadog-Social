@@ -41,3 +41,10 @@
 - 0 failed runs in 24 h, 0 missed posts, no duplicates, 10 pending comments (private Shorts) none overdue; Zion Shorts T5BjlD54g9Y, vfEdsxIDZZ0 public on time, titles intact.
 - YouTube 17 subs (flat), 7,158 views (+611), long-form about 14-15 h of 8,000. RELATED_VIDEO 66 views/580 min. IG 146 followers; IG 1,364/1,463 and TikTok 1,638 outliers (8-9x median) on Angels Landing deaths/dog/5-tons-waste hooks; the same Angels deaths Short got only 13 YT views.
 - Details: content/metrics/health_2026-11-15.md. COMPASS rows I02, I05, I11, I20, I23b, I24b updated.
+
+## 2026-11-16T23:00Z ALERT
+- Zion Part 3 (due ~11-15) still NOT public and content/zion has no p3/film files (9th report, I05, ESCALATED); Zion film 11-19 (3 days) has nothing. IG/FB Stories queue empty (7th report, I24b). Reels/TikTok lead only to 11-21 (4.9 days, under the 5-day bar), nothing queued after.
+- yt-link: 19:37Z cron skipped an 8th evening (I11); dispatched once 22:54Z (run 43974385904, result unconfirmed). 02:49Z and 12:08Z runs were OK.
+- 0 failed runs in 24 h, 0 missed posts, no duplicates, 8 pending comments none overdue; Zion Shorts lake-350-ft and mountain-fell public on time, titles intact.
+- YouTube 19 subs (+7 in 7 d), 7,243 views (+3,253 in 7 d), long-form about 31 h of 8,000. RELATED_VIDEO 109 views/1,310 min. Public Shorts median 66; Zion lake 350 ft 1,134 views (17x) in <1 day, TikTok 5 tons waste 6,452 (38x median 171), IG 17 deaths 2,085 (12x). IG 160 followers, FB 152 flat.
+- Details: content/metrics/health_2026-11-16.md. COMPASS rows I05, I11, I24b updated, I29 added.
