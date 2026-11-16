@@ -1,8 +1,8 @@
 {
- "at": "2026-11-16T21:23:50Z",
+ "at": "2026-11-16T22:56:08Z",
  "youtube": {
   "channel": {
-   "viewCount": "7243",
+   "viewCount": "8443",
    "subscriberCount": "19",
    "hiddenSubscriberCount": false,
    "videoCount": "52"
@@ -24,7 +24,7 @@
     "published": "2026-11-16T01:00:07Z",
     "privacy": "public",
     "duration": "PT26S",
-    "views": 1134,
+    "views": 1137,
     "likes": 12,
     "comments": 1
    },
@@ -74,7 +74,7 @@
     "published": "2026-11-13T18:00:17Z",
     "privacy": "public",
     "duration": "PT23S",
-    "views": 1061,
+    "views": 1062,
     "likes": 9,
     "comments": 1
    },
@@ -274,7 +274,7 @@
     "published": "2026-11-08T16:00:33Z",
     "privacy": "public",
     "duration": "PT10M53S",
-    "views": 64,
+    "views": 68,
     "likes": 2,
     "comments": 1
    },
@@ -699,7 +699,7 @@
     "comments": 1
    }
   ],
-  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/yt-analytics.readonly https://www.googleapis.com/auth/youtube.force-ssl",
+  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/yt-analytics.readonly",
   "analytics_by_video": {
    "columns": [
     "video",
@@ -1357,7 +1357,7 @@
    ],
    [
     "SHORTS",
-    6569,
+    6573,
     1670
    ],
    [
@@ -1585,14 +1585,14 @@
     "id": "18604003453071189",
     "at": "2026-11-16T20:15:22+0000",
     "caption": "In 1920 fewer than 4,000 people visited Zion. In 2021 more than five million did",
-    "likes": 3,
+    "likes": 4,
     "comments": 1,
-    "views": 123,
-    "reach": 103,
+    "views": 128,
+    "reach": 115,
     "saved": 0,
     "shares": 0,
-    "total_interactions": 5,
-    "ig_reels_avg_watch_time": 8512
+    "total_interactions": 6,
+    "ig_reels_avg_watch_time": 29689
    },
    {
     "id": "18192045886413042",
@@ -1600,12 +1600,12 @@
     "caption": "In 2021 park crews hauled almost five tons of human waste off the toilets at Sco",
     "likes": 9,
     "comments": 1,
-    "views": 1946,
-    "reach": 1691,
+    "views": 1948,
+    "reach": 1695,
     "saved": 2,
     "shares": 1,
     "total_interactions": 13,
-    "ig_reels_avg_watch_time": 14549
+    "ig_reels_avg_watch_time": 14550
    },
    {
     "id": "17957673990290808",
@@ -1613,8 +1613,8 @@
     "caption": "Since 2022 you need a lottery permit to climb Angels Landing. Nearly 400,000 wer",
     "likes": 12,
     "comments": 1,
-    "views": 648,
-    "reach": 569,
+    "views": 649,
+    "reach": 570,
     "saved": 2,
     "shares": 0,
     "total_interactions": 16,
@@ -1626,12 +1626,12 @@
     "caption": "At least seventeen people have died at Angels Landing in Zion. The last half mil",
     "likes": 31,
     "comments": 1,
-    "views": 2085,
+    "views": 2086,
     "reach": 1875,
     "saved": 7,
     "shares": 3,
     "total_interactions": 45,
-    "ig_reels_avg_watch_time": 12331
+    "ig_reels_avg_watch_time": 12325
    },
    {
     "id": "18093897830223298",
@@ -1665,7 +1665,7 @@
     "caption": "We hiked the Zion Narrows top to bottom in November 2021. Walls a thousand feet ",
     "likes": 6,
     "comments": 1,
-    "views": 174,
+    "views": 175,
     "reach": 155,
     "saved": 0,
     "shares": 0,
@@ -3021,8 +3021,8 @@
     "at": "2026-11-15T03:01:18Z",
     "title": "In 2021 park crews hauled almost five tons of human waste off the toi...",
     "duration": 21,
-    "views": 6452,
-    "likes": 15,
+    "views": 6616,
+    "likes": 16,
     "comments": 0,
     "shares": 3
    },
@@ -3031,7 +3031,7 @@
     "at": "2026-11-15T00:02:16Z",
     "title": "Since 2022 you need a lottery permit to climb Angels Landing. Nearly ...",
     "duration": 21,
-    "views": 383,
+    "views": 387,
     "likes": 11,
     "comments": 0,
     "shares": 0
@@ -3041,7 +3041,7 @@
     "at": "2026-11-14T03:01:22Z",
     "title": "At least seventeen people have died at Angels Landing in Zion. The la...",
     "duration": 32,
-    "views": 375,
+    "views": 381,
     "likes": 4,
     "comments": 0,
     "shares": 0
@@ -3421,7 +3421,7 @@
     "at": "2026-10-26T04:10:00Z",
     "title": "Found dead under an oak in 1882. Revolver in hand, boots gone. The ju...",
     "duration": 30,
-    "views": 1328,
+    "views": 1329,
     "likes": 61,
     "comments": 2,
     "shares": 1
