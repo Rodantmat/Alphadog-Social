@@ -197,3 +197,10 @@
 - YouTube: 10 pending comments, none overdue (earliest "after" 2026-11-16T01:06Z, HSrgGisF3Kw); yt-followup not triggered.
 - yt-link STILL FAILING (no new run since 43708982022 at 2026-11-15 11:27Z): step "Link" -> "studio status: login" then "Process completed with exit code 2" = YouTube Studio browser session (rolling copy from 2026-11-14 20:56 UTC) logged out; owner must refresh the Studio login session. Related-video linking not running.
 - Run ids checked: social-post 43756077103, 43751465835, 43750483485, 43716203042; yt-link 43708982022.
+
+## 2026-11-16 01:40 UTC ALERT
+- Posts on time: 0 missed items in social_queue.json (170 checked, no holds; zn1z8_ig/fb posted 01:10Z by 43784175611: https://www.instagram.com/reel/DfyJH0ZDDzJ/ , https://www.facebook.com/reel/1166732989035997/ ; next zn1z9). All past-due TikTok backlog items (due ≤ 2026-11-16T00:00Z) have "scheduled"; zion_p2_w8+ (due 11-20T03Z onward) not yet scheduled, not yet due.
+- Social-post runs visible in last 30 runs (43784175611, 43775010166, 43756077103) all success (non-fatal "Artifact not found for name: shorts/promo" in download-artifact steps).
+- YouTube: 1 comment overdue (HSrgGisF3Kw, after 01:06Z) — triggered yt-followup 43787289747: "comment posted HSrgGisF3Kw 106 chars"; 9 others not yet due.
+- yt-link STILL FAILING: 2 new failures 43771798742 (22:53Z) and latest 43775134462 (23:30Z): step "Link" -> "studio status: login" then "Process completed with exit code 2" = YouTube Studio browser session (rolling copy from 2026-11-14 20:56 UTC) logged out; owner must refresh the Studio login session. Related-video linking not running.
+- Run ids: yt-followup 43787289747; social-post checked 43784175611, 43775010166, 43756077103; yt-link 43775134462, 43771798742.
