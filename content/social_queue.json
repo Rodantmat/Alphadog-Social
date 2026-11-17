@@ -3343,7 +3343,13 @@
   "at": "2026-11-17T01:00:00Z",
   "thumb_ms": 1200,
   "caption": "Hundreds of feet of water once stood where this hotel is. Where Zion Lodge sits today, the lake was about three hundred and fifty to three hundred and eighty feet deep. A mountainside fell, dammed the river, and the lake slowly filled with mud.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #ZionLodge #History #NationalParks",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
+  "done": {
+   "media_id": "18135008008689437",
+   "permalink": "https://www.instagram.com/reel/Df0uJIyjzwa/",
+   "posted": "2026-11-17T01:12:01+0000",
+   "at": "2026-11-17T01:11:34Z"
+  }
  },
  {
   "id": "zn2w1_fb",
@@ -3351,7 +3357,40 @@
   "file": "zion_p2_w1.mp4",
   "at": "2026-11-17T01:00:00Z",
   "caption": "Hundreds of feet of water once stood where this hotel is. Where Zion Lodge sits today, the lake was about three hundred and fifty to three hundred and eighty feet deep. A mountainside fell, dammed the river, and the lake slowly filled with mud.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #ZionLodge #History #NationalParks",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
+  "done": {
+   "video_id": "1609132343810147",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1120681990730793"
+   },
+   "permalink": "https://www.facebook.com/reel/1609132343810147/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 16591438
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-17T01:12:12+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1609132343810147_1140398975139083"
+   },
+   "status_errors": null,
+   "at": "2026-11-17T01:11:34Z"
+  }
  },
  {
   "id": "zn2w2_ig",
