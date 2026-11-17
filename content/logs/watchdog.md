@@ -239,3 +239,10 @@
 - YouTube: 7 pending comments, none overdue (earliest "after" 2026-11-17T18:06Z, C8TXhVDX4TU); yt-followup not triggered.
 - yt-link last completed run 43974385904 (2026-11-16 22:54Z) success; new run 44004152773 in progress at check time.
 - Run ids checked: social-post 44000415141, 43992886094; yt-link 43974385904, 44004152773.
+
+## 2026-11-17 19:40 UTC OK
+- All posts on time: 0 missed items in social_queue.json (170 checked, no holds; next due zn2w2_ig/fb 2026-11-17T20:00Z). All past-due TikTok backlog items (due ≤ 2026-11-17T03:00Z) have "scheduled"; every backlog item now scheduled (incl. zion_p2_w10).
+- Social-post runs visible in last 30 runs (44154877289, 44082032471, 44010470152) all success; no failures.
+- YouTube: 1 comment overdue (C8TXhVDX4TU, after 18:06Z) — triggered yt-followup 44160478600: "comment posted C8TXhVDX4TU 106 chars"; 6 others not yet due (earliest V1kQP7DZLs8 2026-11-18T01:06Z).
+- yt-link latest run 44082887710 (2026-11-17 12:24Z) success.
+- Run ids: yt-followup 44160478600; social-post checked 44154877289, 44082032471, 44010470152; yt-link 44082887710.
