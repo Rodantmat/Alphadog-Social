@@ -257,3 +257,10 @@
 - TikTok backlog -> Buffer: zion_p2_w9.mp4 scheduled for 2026-11-21T00:00Z (Buffer 6afba87e85dca6b14a102915); 1 still pending.
 - Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded. No DUPLICATE BLOCKED lines.
 - No overdue un-posted items in queue after run (170 items checked); no catch-up runs needed. Next due: zn2w2 reels 2026-11-17 20:00Z.
+
+## 2026-11-17 02:09 UTC OK
+- Slot: 18:05 PT Stories (Mon Nov 16). Run 44000415141 (social-post, success). "Anything due?" = no; Post step skipped.
+- Nothing posted: no queue item due this slot (no stories item scheduled for 02:00Z today).
+- TikTok backlog -> Buffer: nothing to feed. Adjacent gate PASS (18 pending, 0 problems).
+- No DUPLICATE BLOCKED lines; no errors.
+- No overdue un-posted items in queue (170 items checked); no catch-up runs needed. Next due: zn2w2 reels 2026-11-17 20:00Z.
