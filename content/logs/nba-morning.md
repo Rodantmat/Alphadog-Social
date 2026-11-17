@@ -71,3 +71,12 @@
 - Strategies: no state/cap changes vs 11-14; CLEAN 12->13 on A_core_3power, A_regular_5power, A_wrebounds_4flex, A_wsteals_5flex, C_wstocks_4flex. B_demon_3flex / B_demon_5flex still red (REQUAL HOLD 11-09). Rotation steals ewma 0.679 -> 0.642, turnovers 0.690 -> 0.719 (both ok).
 - Edge monitors: PP z 2.95, UD z 2.30, both RUNNING (26 slates), no ALARM.
 - Boards 11-16 (8 games): PrizePicks 5,883, Sleeper 3,535, Betr 2,930. Underdog, Fliff and sportsbooks 0 so far - watch P2B ~08:06 PT (Underdog had a routine snapshot by this hour on 11-10..11-12).
+
+## 2026-11-17 13:58 UTC ACTION
+- Market term: review revert. audit_market_coverage (run 44097426549) VERDICT NOT READY, 27 dates pooled: coverage 14.6% (ref 64.3%), depth 1.84, player match 12.5% (<95%). 11-16 alone: coverage 26.2%, depth 2.39. 11-16 window rungs 1,816, avg 2.39 books.
+- Pipelines: P1 11-16 FAILED (pipeline_runs "failure/failure"; NBA P1 Weekly Static run 43936799906, step "Verify unacknowledged loads": nba-static-shotquality - player_shot_quality_delta / player_shot_zone_profile not written since 11-09). A later P1 Weekly Static run 11-16 18:13 PT shows success. P2A 11-17 success (03:31-03:45 PT); P2B/P3 11-16 success (P3 claimed 13:17 PT, Afternoon Light), P3 no soft-step failures. Scheduler tick 17s old. Outside the pipeline: NBA Friend Page Run failed 11-16 15:42 PT (next run 19:03 PT success).
+- PP 11-16 (PLAY): 5 slips (P_B3_3power, P_B4_4flex, P_B5_3power, P_B9_6flex, P_FB_U6flex), 5u staked, 0 returned, net -5u, ROI -100%. Season: 116 slips, 116u, 158u, +42u, ROI +36.2%.
+- UD P5 (shadow) 11-16: 3 slips, 3u, 0 returned, -3u, ROI -100%. Season P5 (stake>0, profit column): 90 slips, 84u, +15.75u, ROI +18.8%; all 90 graded.
+- Strategies: no state/cap changes vs 11-15; CLEAN 13->14 on A_core_3power, A_regular_5power, A_wrebounds_4flex, A_wsteals_5flex, C_wstocks_4flex. B_demon_3flex / B_demon_5flex still red (REQUAL HOLD). Rotation steals ewma 0.642 -> 0.548, turnovers 0.719 -> 0.611 (both still ok).
+- Edge monitors: PP z 2.20, UD z 2.27, both RUNNING (27 slates), no ALARM.
+- Boards 11-17 (5 games): 0 rows for every app so far (11-16 filled later: PP 32,971, UD 19,967, Sleeper 15,618, Betr 8,484, Fliff 6,800, 9 sportsbooks). Watch P2B ~08:06 PT.
