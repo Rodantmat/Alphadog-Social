@@ -3400,7 +3400,13 @@
   "thumb_ms": 1200,
   "caption": "About a minute. That's how long it took a mountainside to fall into Zion Canyon, about four thousand eight hundred years ago. Models suggest the rock averaged about a hundred and twelve miles per hour and peaked near two hundred. The main mass crossed the canyon in about twenty seconds. One geologist who studied it called it a minute with up to ten thousand years of consequences.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #Landslide #Geology #NationalParks",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
-  "trial": true
+  "trial": true,
+  "done": {
+   "media_id": "18102651209398802",
+   "permalink": "https://www.instagram.com/reel/Df2waolApMk/",
+   "posted": "2026-11-17T20:10:27+0000",
+   "at": "2026-11-17T20:09:50Z"
+  }
  },
  {
   "id": "zn2w2_fb",
@@ -3408,7 +3414,40 @@
   "file": "zion_p2_w2.mp4",
   "at": "2026-11-17T20:00:00Z",
   "caption": "About a minute. That's how long it took a mountainside to fall into Zion Canyon, about four thousand eight hundred years ago. Models suggest the rock averaged about a hundred and twelve miles per hour and peaked near two hundred. The main mass crossed the canyon in about twenty seconds. One geologist who studied it called it a minute with up to ten thousand years of consequences.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #Landslide #Geology #NationalParks",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
+  "done": {
+   "video_id": "1160495866396789",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1121477327317926"
+   },
+   "permalink": "https://www.facebook.com/reel/1160495866396789/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 24398362
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-17T20:10:36+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1160495866396789_2040756809790298"
+   },
+   "status_errors": null,
+   "at": "2026-11-17T20:09:50Z"
+  }
  },
  {
   "id": "zn2w3_ig",
