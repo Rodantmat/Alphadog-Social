@@ -48,3 +48,10 @@
 - 0 failed runs in 24 h, 0 missed posts, no duplicates, 8 pending comments none overdue; Zion Shorts lake-350-ft and mountain-fell public on time, titles intact.
 - YouTube 19 subs (+7 in 7 d), 7,243 views (+3,253 in 7 d), long-form about 31 h of 8,000. RELATED_VIDEO 109 views/1,310 min. Public Shorts median 66; Zion lake 350 ft 1,134 views (17x) in <1 day, TikTok 5 tons waste 6,452 (38x median 171), IG 17 deaths 2,085 (12x). IG 160 followers, FB 152 flat.
 - Details: content/metrics/health_2026-11-16.md. COMPASS rows I05, I11, I24b updated, I29 added.
+
+## 2026-11-17T23:00Z ALERT
+- Zion Part 3 (due ~11-15) still NOT public, no p3/film files (10th report, I05); Zion film 11-19 is 2 days away with nothing. IG/FB Reels last slot 11-21 20:00Z (3.9 days), TikTok 11-21 03:00Z (3.2 days), Stories queue empty (8th report): posting stops after Nov 21 without an owner decision (I29).
+- yt-link: 19:37Z cron skipped a 9th evening (I11); dispatched once 22:53Z (run 44194425233, result unconfirmed). Last good run 12:34Z.
+- 0 failed runs in 24 h, 0 missed posts, no duplicates, 6 pending comments none overdue; Zion Shorts Hoover Dams and 430-people public on time, titles intact.
+- YouTube 20 subs (+1), 9,616 views (+2,373 in 24 h), long-form about 36.8 h of 8,000. RELATED_VIDEO 125 views/1,512 min. Hoover Dams Short 1,024 views in <1 day (14x median 72); TikTok 5 tons waste 7,663 (45x). IG 160 followers, FB 152 flat.
+- Details: content/metrics/health_2026-11-17.md. COMPASS rows I02, I03, I05, I11, I20, I23, I24b, I29 updated.
