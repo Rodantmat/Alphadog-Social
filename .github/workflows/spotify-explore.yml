@@ -1,0 +1,23 @@
+name: spotify-explore
+# Read-only: maps the Spotify for Creators "new episode" page (no uploads). Screenshots go to an artifact.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: { group: spotify-session, cancel-in-progress: false }
+jobs:
+  explore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q playwright cryptography && python3 -m playwright install --with-deps chromium >/dev/null
+      - env:
+          SPOTIFY_CREATORS_SESSION: ${{ secrets.SPOTIFY_CREATORS_SESSION }}
+        run: python3 scripts/spotify_explore.py
+      - uses: actions/upload-artifact@v4
+        with: { name: spotify-explore, path: /tmp/spx }
+      - name: Save refreshed session
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add content/private/spotify_session.enc; git diff --cached --quiet || (git commit -qm "spotify session refresh" && git pull -q --rebase && git push -q)
