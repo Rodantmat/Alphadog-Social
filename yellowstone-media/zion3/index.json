@@ -1,6 +1,6 @@
 {
  "chapter": "zion3",
- "list_sha": "87558296aa6bb971",
+ "list_sha": "2b2dc172cbb41458",
  "files": [
   {
    "name": "z3_commons_dellenbaugh_1",
@@ -429,388 +429,66 @@
  ],
  "not_obtained": [
   {
-   "name": "z3_commons_zmc_tunnel_5",
-   "src_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Zion-Mount_Carmel_Highway_%28Utah_State_Route_9%29_%285521705134%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "source_page": "https://commons.wikimedia.org/wiki/File:Zion-Mount_Carmel_Highway_(Utah_State_Route_9)_(5521705134).jpg",
-   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway / tunnel images",
-   "license": "CC BY-SA 2.0",
-   "credit": "Ken Lund from Reno, Nevada, USA (2011-03-12 11:44) via Wikimedia Commons, CC BY-SA 2.0",
-   "status": "OK",
-   "title": "File:Zion-Mount Carmel Highway (Utah State Route 9) (5521705134).jpg",
-   "page_usage": "Wikimedia Commons licence: CC BY-SA 2.0",
-   "date": "2011-03-12 11:44",
-   "err": "download failed"
+   "name": "z3x_haer_zmc",
+   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+  },
+  {
+   "name": "z3x_haer_pine",
+   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+  },
+  {
+   "name": "z3x_haer_short",
+   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+  },
+  {
+   "name": "z3x_haer_switch",
+   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+  },
+  {
+   "name": "z3x_zion_1920s",
+   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+  },
+  {
+   "name": "z3x_grafton",
+   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+  },
+  {
+   "name": "z3x_springdale",
+   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+  },
+  {
+   "name": "z3x_toquerville",
+   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+  },
+  {
+   "name": "z3x_cedar_city_harding",
+   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+  },
+  {
+   "name": "z3x_harding_west",
+   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+  },
+  {
+   "name": "z3x_taft_signing",
+   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+  },
+  {
+   "name": "z3x_wilson_1919",
+   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+  },
+  {
+   "name": "z3x_gov_dern",
+   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+  },
+  {
+   "name": "z3x_mukuntuweap",
+   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
   }
  ],
  "probes": {
-  "commons:z3_commons_zmc_tunnel": [
-   [
-    "File:Zion-Mount Carmel Tunnel.jpg",
-    "CC BY 2.5",
-    "Tylas at English Wikipedia",
-    "18 September 2006 (original upload date)"
-   ],
-   [
-    "File:ZION-MOUNT CARMEL HIGHWAY, PROPOSED TUNNEL ALIGNMENT. PHOTOGRAPH TAKEN FROM NEAR CANYON OVERLOOK TRAIL. CLIFF BRAY, PHOTOGRAPHER, 1928. - Zion-Mount Carmel Highway, Tunnel, HAER UTAH,27-SPDA.V,3A-30.tif",
-    "Public domain",
-    "Grogan, Brian C., creator",
-    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
-   ],
-   [
-    "File:View facing west across bridge deck to tunnel portal - Zion-Mount Carmel Highway, Upper Pine Creek Bridge, Spanning Upper Pine Creek on Zion-Mount Carmel Highway, Springdale, HAER UTAH,27-SPDA.V,3J-2.tif",
-    "Public domain",
-    "Lowe, Jet, creator",
-    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
-   ],
-   [
-    "File:Approaching Zion-Mount Carmel Tunnel, Zion National Park, Utah (2147525502).jpg",
-    "CC BY-SA 2.0",
-    "Ken Lund from Reno, Nevada, USA",
-    "2007-12-28 15:22"
-   ],
-   [
-    "File:Zion-Mount Carmel Highway (Utah State Route 9) (5521705134).jpg",
-    "CC BY-SA 2.0",
-    "Ken Lund from Reno, Nevada, USA",
-    "2011-03-12 11:44"
-   ],
-   [
-    "File:Three-quarter view facing southwest - Zion-Mount Carmel Highway, Upper Pine Creek Bridge, Spanning Upper Pine Creek on Zion-Mount Carmel Highway, Springdale, Washington County HAER UTAH,27-SPDA.V,3J-3.tif",
-    "Public domain",
-    "Lowe, Jet, creator",
-    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
-   ],
-   [
-    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-8.tif",
-    "Public domain",
-    "",
-    "Documentation compiled after 1968"
-   ],
-   [
-    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-10.tif",
-    "Public domain",
-    "",
-    "Documentation compiled after 1968"
-   ],
-   [
-    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-12.tif",
-    "Public domain",
-    "",
-    "Documentation compiled after 1968"
-   ],
-   [
-    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-15.tif",
-    "Public domain",
-    "",
-    "Documentation compiled after 1968"
-   ],
-   [
-    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-13.tif",
-    "Public domain",
-    "",
-    "Documentation compiled after 1968"
-   ],
-   [
-    "File:Zion-Mount Carmel Highway (Utah State Route 9) (5521704646).jpg",
-    "CC BY-SA 2.0",
-    "Ken Lund from Reno, Nevada, USA",
-    "Taken on 12 March 2011, 11:43"
-   ],
-   [
-    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-9.tif",
-    "Public domain",
-    "",
-    "Documentation compiled after 1968"
-   ],
-   [
-    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-11.tif",
-    "Public domain",
-    "",
-    "Documentation compiled after 1968"
-   ],
-   [
-    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-14.tif",
-    "Public domain",
-    "",
-    "Documentation compiled after 1968"
-   ],
-   [
-    "File:Zion-Mount Carmel Highway, Tunnel, Two miles east of Zion Canyon Scenic Drive, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3A- (sheet 3 of 3).tif",
-    "Public domain",
-    "",
-    "Documentation compiled after 1968"
-   ],
-   [
-    "File:Air Vent for Tunnel, Zion-Mount Carmel Highway, Zion National Park, Utah (1024959993).jpg",
-    "CC BY-SA 2.0",
-    "Ken Lund from Reno, Nevada, USA",
-    "2007-08-04 09:53"
-   ],
-   [
-    "File:PAVING OPERATIONS IN GALLERY NO. 1 - Zion-Mount Carmel Highway, Tunnel, Two miles east of Zion Canyon Scenic Drive, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3A-38.tif",
-    "Public domain",
-    "Grogan, Brian C., creator",
-    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
-   ],
-   [
-    "File:Zion-Mount Carmel Highway at tunnel, road visible at right - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, HAER UTAH,27-SPDA.V,3H-4.tif",
-    "Public domain",
-    "Lowe, Jet, creator",
-    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
-   ],
-   [
-    "File:Zion-Mount Carmel Highway, Zion National Park, Utah (1024987309).jpg",
-    "CC BY-SA 2.0",
-    "Ken Lund from Reno, Nevada, USA",
-    "2007-08-04 09:57"
-   ]
-  ],
   "commons:z3_commons_zion_tunnel2": [],
-  "commons:z3_commons_dellenbaugh": [
-   [
-    "File:Frederick Samuel Dellenbaugh.jpg",
-    "Public domain",
-    "Unknown author Unknown author",
-    "1872"
-   ],
-   [
-    "File:Serpent Glacier by Frederick Dellenbaugh, 1899, watercolor.JPG",
-    "Public domain",
-    "Frederick Samuel Dellenbaugh",
-    "1899"
-   ],
-   [
-    "File:Old Mill near Pont Aven?, by Frederick Samuel Dellenbaugh (Getty 107GFX).jpg",
-    "CC0",
-    "Frederick Samuel Dellenbaugh",
-    ""
-   ],
-   [
-    "File:Frederick Samuel Dellenbaugh at the Grand Canyon 1907.jpg",
-    "Public domain",
-    "Unknown author Unknown author",
-    "1907"
-   ],
-   [
-    "File:Dellenbaugh in 1872.png",
-    "Public domain",
-    "J. K. Hillers",
-    "1909-01-01"
-   ],
-   [
-    "File:Still Life with Ornate Chinese Vase, by Frederick Samuel Dellenbaugh (Getty 106PMF).jpg",
-    "CC0",
-    "Frederick Samuel Dellenbaugh",
-    ""
-   ],
-   [
-    "File:Picture of Frederick Dellenbaugh.jpg",
-    "Public domain",
-    "not stated",
-    "no later than 1901"
-   ],
-   [
-    "File:Frederick S. Dellenbaugh circa 1929.jpg",
-    "Public domain",
-    "Will Connell",
-    "November 1929"
-   ],
-   [
-    "File:Mt. St. Elias from Yakuta Bay by Frederick Samuel Dellenbaugh, 1899.jpg",
-    "CC0",
-    "Hiart",
-    "1899"
-   ],
-   [
-    "File:'Walpi of the North', oil painting by Frederick Samuel Dellenbaugh.JPG",
-    "Public domain",
-    "Frederick Samuel Dellenbaugh",
-    ""
-   ],
-   [
-    "File:On Hall Island by Frederick Samuel Dellenbaugh, 1899, oil on board, Anchorage Museum.jpg",
-    "CC0",
-    "Hiart",
-    "1899"
-   ],
-   [
-    "File:Muir Glacier and John Muir's Cabin by Frederick Samuel Dellenbaugh, 1899.jpg",
-    "CC0",
-    "Hiart",
-    "1899"
-   ],
-   [
-    "File:Dellenbaugh Block, Buffalo, New York - 20200513.jpg",
-    "CC BY-SA 4.0",
-    "Andre Carrotflower",
-    "2020-05-13 18:24:33"
-   ],
-   [
-    "File:Foggy Bay, Cape Fox, oil canvas painting by Frederick Samuel Dellenbaugh, 1899, Anchorage Museum.jpg",
-    "CC0",
-    "Frederick Samuel Dellenbaugh",
-    "1899"
-   ],
-   [
-    "File:Old Russian Trading Post, Sitka by Frederick Samuel Dellenbaugh, 1899, Anchorage Museum.jpg",
-    "Public domain",
-    "Frederick Samuel Dellenbaugh",
-    "1899"
-   ],
-   [
-    "File:Aleut Village, Woody Island, Kodiak by Frederick Samuel Dellenbaugh, 1899, Anchorage Museum.jpg",
-    "Public domain",
-    "Frederick Samuel Dellenbaugh",
-    "1899"
-   ],
-   [
-    "File:Frederick S. Dellenbaugh (American - Still Life with Ornate Chinese Vase - Google Art Project.jpg",
-    "Public domain",
-    "Frederick S. Dellenbaugh (American, 1853 - 1935) (1853 - 1935) \u2013 photographer (American) Details on Google Art Project",
-    "about 1910"
-   ],
-   [
-    "File:1903 painting of Zion Canyon by Dellenbaugh.jpg",
-    "Public domain",
-    "Frederick S. Dellenbaugh",
-    "1903"
-   ],
-   [
-    "File:\"Quality - DRUGSTORE - Service\" ghost sign on side of Dellenbaugh Block, Buffalo, New York - 20230109.jpg",
-    "CC BY-SA 4.0",
-    "Andre Carrotflower",
-    "2023-01-09 13:28:20"
-   ],
-   [
-    "File:View from Anchorage at Orca (Point), Prince William Sound, by Frederick Samuel Dellenbaugh.jpg",
-    "Public domain",
-    "Frederick Samuel Dellenbaugh",
-    "1899"
-   ]
-  ],
   "commons:z3_commons_ucsb_taft": [],
   "commons:z3_commons_utah_parks_company": [],
-  "commons:z3_commons_world_fair_1904": [
-   [
-    "File:\"Palace of Art.\" (Visitors viewing works of art at the 1904 World's Fair).jpg",
-    "Public domain",
-    "Jessie Tarbox Beals",
-    "1904"
-   ],
-   [
-    "File:French Section including the Manufacture National Beauvais in the Palace of Fine Arts at the 1904 World's Fair.jpg",
-    "Public domain",
-    "Unknown author Unknown author",
-    "1904"
-   ],
-   [
-    "File:View of the Fine Arts building under construction from the north east at the 1904 World's Fair site, 5 Apr 1904.jpg",
-    "Public domain",
-    "Byrnes Photographic Company",
-    "1904-04-05"
-   ],
-   [
-    "File:View of the construction on the Palace of Art at the 1904 World's Fair site, Spring 1903.jpg",
-    "Public domain",
-    "Official Photographic Company (Byrnes)",
-    "1903"
-   ],
-   [
-    "File:Louisiana Purchase Exposition- St. Louis World's Fair Album 4 - DPLA - c54541ab1b6a552ee90eea4aea9beb4d (page 53).jpg",
-    "No restrictions",
-    "Louisiana Purchase Exposition Co. (Saint Louis, Mo.)",
-    ""
-   ],
-   [
-    "File:Louisiana Purchase Exposition- St. Louis World's Fair Album 4 - DPLA - c54541ab1b6a552ee90eea4aea9beb4d (page 71).jpg",
-    "No restrictions",
-    "Louisiana Purchase Exposition Co. (Saint Louis, Mo.)",
-    ""
-   ],
-   [
-    "File:Louisiana Purchase Exposition- St. Louis World's Fair Album 4 - DPLA - c54541ab1b6a552ee90eea4aea9beb4d (page 49).jpg",
-    "No restrictions",
-    "Louisiana Purchase Exposition Co. (Saint Louis, Mo.)",
-    ""
-   ],
-   [
-    "File:Louisiana Purchase Exposition- St. Louis World's Fair Album 4 - DPLA - c54541ab1b6a552ee90eea4aea9beb4d (page 48).jpg",
-    "No restrictions",
-    "Louisiana Purchase Exposition Co. (Saint Louis, Mo.)",
-    ""
-   ],
-   [
-    "File:Louisiana Purchase Exposition- St. Louis World's Fair Album 4 - DPLA - c54541ab1b6a552ee90eea4aea9beb4d (page 47).jpg",
-    "No restrictions",
-    "Louisiana Purchase Exposition Co. (Saint Louis, Mo.)",
-    ""
-   ],
-   [
-    "File:Louisiana Purchase Exposition- St. Louis World's Fair Album 4 - DPLA - c54541ab1b6a552ee90eea4aea9beb4d (page 59).jpg",
-    "No restrictions",
-    "Louisiana Purchase Exposition Co. (Saint Louis, Mo.)",
-    ""
-   ],
-   [
-    "File:Louisiana Purchase Exposition- St. Louis World's Fair Album 4 - DPLA - c54541ab1b6a552ee90eea4aea9beb4d (page 60).jpg",
-    "No restrictions",
-    "Louisiana Purchase Exposition Co. (Saint Louis, Mo.)",
-    ""
-   ],
-   [
-    "File:Louisiana Purchase Exposition- St. Louis World's Fair Album 4 - DPLA - c54541ab1b6a552ee90eea4aea9beb4d (page 57).jpg",
-    "No restrictions",
-    "Louisiana Purchase Exposition Co. (Saint Louis, Mo.)",
-    ""
-   ],
-   [
-    "File:Louisiana Purchase Exposition- St. Louis World's Fair Album 4 - DPLA - c54541ab1b6a552ee90eea4aea9beb4d (page 65).jpg",
-    "No restrictions",
-    "Louisiana Purchase Exposition Co. (Saint Louis, Mo.)",
-    ""
-   ],
-   [
-    "File:Louisiana Purchase Exposition- St. Louis World's Fair Album 4 - DPLA - c54541ab1b6a552ee90eea4aea9beb4d (page 58).jpg",
-    "No restrictions",
-    "Louisiana Purchase Exposition Co. (Saint Louis, Mo.)",
-    ""
-   ],
-   [
-    "File:Louisiana Purchase Exposition- St. Louis World's Fair Album 4 - DPLA - c54541ab1b6a552ee90eea4aea9beb4d (page 63).jpg",
-    "No restrictions",
-    "Louisiana Purchase Exposition Co. (Saint Louis, Mo.)",
-    ""
-   ],
-   [
-    "File:Louisiana Purchase Exposition- St. Louis World's Fair Album 4 - DPLA - c54541ab1b6a552ee90eea4aea9beb4d (page 64).jpg",
-    "No restrictions",
-    "Louisiana Purchase Exposition Co. (Saint Louis, Mo.)",
-    ""
-   ],
-   [
-    "File:Louisiana Purchase Exposition- St. Louis World's Fair Album 4 - DPLA - c54541ab1b6a552ee90eea4aea9beb4d (page 50).jpg",
-    "No restrictions",
-    "Louisiana Purchase Exposition Co. (Saint Louis, Mo.)",
-    ""
-   ],
-   [
-    "File:Louisiana Purchase Exposition- St. Louis World's Fair Album 4 - DPLA - c54541ab1b6a552ee90eea4aea9beb4d (page 56).jpg",
-    "No restrictions",
-    "Louisiana Purchase Exposition Co. (Saint Louis, Mo.)",
-    ""
-   ],
-   [
-    "File:Louisiana Purchase Exposition- St. Louis World's Fair Album 4 - DPLA - c54541ab1b6a552ee90eea4aea9beb4d (page 70).jpg",
-    "No restrictions",
-    "Louisiana Purchase Exposition Co. (Saint Louis, Mo.)",
-    ""
-   ],
-   [
-    "File:Louisiana Purchase Exposition- St. Louis World's Fair Album 4 - DPLA - c54541ab1b6a552ee90eea4aea9beb4d (page 66).jpg",
-    "No restrictions",
-    "Louisiana Purchase Exposition Co. (Saint Louis, Mo.)",
-    ""
-   ]
-  ]
+  "commons:z3x_zion_lodge_old": []
  }
 }
