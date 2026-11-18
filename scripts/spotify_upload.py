@@ -35,6 +35,17 @@ with sync_playwright() as p:
         fis = [f for f in pg.query_selector_all("input[type=file]") if f.get_attribute("id") != "uploadAreaInput"]
         if fis: fis[0].set_input_files(thumb); print("thumbnail set")
     pg.wait_for_timeout(8000)
+    for dlg in pg.query_selector_all("[role=dialog],[class*=dialog]"):
+        try:
+            print("dialog text:", dlg.inner_text()[:500].replace("\n", " | "))
+            print("dialog buttons:", [x.inner_text().strip()[:30] for x in dlg.query_selector_all("button") if x.inner_text().strip()])
+        except Exception: pass
+    pg.screenshot(path=f"{OUT}/after_thumb.png")
+    for rx in (r"^(Done|Save|Apply|Confirm|Crop|Use|Select|Continue|OK)", ):
+        for bt in pg.query_selector_all("[role=dialog] button, [class*=dialog] button"):
+            try:
+                if re.match(rx, bt.inner_text().strip(), re.I) and bt.is_visible(): print("clicking dialog button:", bt.inner_text().strip()); bt.click(); pg.wait_for_timeout(4000); break
+            except Exception: pass
     print("title ok:", pg.input_value("#title-input")[:60], "| desc chars:", len(pg.inner_text("[contenteditable=true]")))
     # wait for the media upload to finish: Next enabled and no progress text
     nxt = pg.get_by_role("button", name="Next")
