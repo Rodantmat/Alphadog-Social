@@ -3,6 +3,9 @@ name: spotify-upload
 on:
   workflow_dispatch:
     inputs:
+      base: { description: "folder on the footage branch holding the film folder (yellowstone-release, zion-release, ...)", required: false, default: yellowstone-release }
+      es_title_file: { description: "repo path of the Spanish title file (lang=es)", required: false, default: content/yellowstone/film_title_es.txt }
+      es_desc_file: { description: "repo path of the Spanish description file (lang=es)", required: false, default: content/yellowstone/film_desc_es.txt }
       film: { description: "folder under yellowstone-release/ on the footage branch (e.g. film)", required: true }
       lang: { description: "en (English show, default) | es (Spanish show, Spanish dub)", required: false, default: en }
       mode: { description: "probe | review | publish (review = fill the form and stop at the Review page)", required: true, default: probe }
@@ -17,12 +20,12 @@ jobs:
       - uses: actions/checkout@v4
       - run: pip install -q playwright cryptography && python3 -m playwright install --with-deps chromium >/dev/null
       - env: { GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
-        run: git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb && cd /tmp/fb && git sparse-checkout set --no-cone "/yellowstone-release/${{ inputs.film }}"
+        run: git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb && cd /tmp/fb && git sparse-checkout set --no-cone "/${{ inputs.base }}/${{ inputs.film }}"
       - name: Install ffmpeg
         run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
       - name: Assemble and shrink the film
         run: |
-          D=/tmp/fb/yellowstone-release/${{ inputs.film }}
+          D=/tmp/fb/${{ inputs.base }}/${{ inputs.film }}
           cat $D/*_final.mp4.part* > /tmp/full.mp4
           if [ "${{ inputs.lang }}" = "es" ]; then
             ffprobe -v error -show_entries format=duration -of default=nw=1 $D/film_es.m4a
@@ -33,15 +36,15 @@ jobs:
           ffmpeg -v error -y -i /tmp/full.mp4 -vf scale=-2:1080 -c:v libx264 -preset veryfast -crf 25 -maxrate 3500k -bufsize 7000k -c:a aac -b:a 160k -movflags +faststart /tmp/spotify.mp4
           ls -la /tmp/spotify.mp4
           python3 - <<PY
-          import json;m=json.load(open("$D/meta_0_long.json"));import os;open("/tmp/title.txt","w").write(open("content/yellowstone/film_title_es.txt").read() if "${{ inputs.lang }}"=="es" else m["title"])
+          import json;m=json.load(open("$D/meta_0_long.json"));import os;open("/tmp/title.txt","w").write(open("${{ inputs.es_title_file }}").read() if "${{ inputs.lang }}"=="es" else m["title"])
           PY
       - env:
           SPOTIFY_CREATORS_SESSION: ${{ secrets.SPOTIFY_CREATORS_SESSION }}
-          THUMB: /tmp/fb/yellowstone-release/${{ inputs.film }}/thumb.jpg
+          THUMB: /tmp/fb/${{ inputs.base }}/${{ inputs.film }}/thumb.jpg
           SHOW_ID: ${{ inputs.lang == 'es' && '0Ylyy2y3qBkG0AUpAgGT7Q' || '5K5ZytGhBYz2xJ8Iwvf8ss' }}
         run: |
-          DESC=/tmp/fb/yellowstone-release/${{ inputs.film }}/desc_long.txt
-          [ "${{ inputs.lang }}" = "es" ] && DESC=content/yellowstone/film_desc_es.txt
+          DESC=/tmp/fb/${{ inputs.base }}/${{ inputs.film }}/desc_long.txt
+          [ "${{ inputs.lang }}" = "es" ] && DESC=${{ inputs.es_desc_file }}
           python3 scripts/spotify_upload.py "${{ inputs.mode }}" /tmp/spotify.mp4 "$(cat /tmp/title.txt)" "$DESC"
       - name: Save refreshed session
         if: always()
