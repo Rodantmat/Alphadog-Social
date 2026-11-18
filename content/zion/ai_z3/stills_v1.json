@@ -1,0 +1,134 @@
+[
+ {
+  "id": "T01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot from inside a rough-cut tunnel. Zion, Utah, 1928. Looking down a long, dark, rough-hewn sandstone tunnel heading lit by a few work lamps; a drill rig and stacked timber props, small silhouettes of miners with helmets, a haze of orange rock dust, at the far end a bright flash of a dynamite blast. faces not detailed.",
+  "neg": "modern cars, smartphones, power lines, signs, text, letters, bodies, injured people, gore, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "T02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Zion Canyon, Utah: a wide flat-floored canyon between towering sheer cliffs of red, orange and cream Navajo sandstone with diagonal cross-bedded layers and dark desert varnish streaks, 1928. High on a sheer red cliff face, hundreds of feet above a creek, a rectangular window has been blasted into the rock and daylight pours through; a small wooden scaffold and tiny workers in hard hats stand beside it, a pile of broken stone below. faces not detailed.",
+  "neg": "modern cars, smartphones, power lines, signs, text, letters, crowd, gore, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "T03",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium shot. Inside a narrow hand-blasted sandstone tunnel, Utah, 1929. A single bare electric bulb on a wire lights rough orange rock walls; dust drifts through the beam; a wheelbarrow and a pneumatic drill lean against the wall. No people.",
+  "neg": "modern cars, smartphones, power lines, signs, text, letters, people, gore, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "T04",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Inside an unfinished rough sandstone tunnel, Utah, 1929. Two groups of workers in hard hats carrying lanterns approach each other from opposite ends along the same tunnel and meet in the middle, a thin wall of rock just broken through between them, dust in the lantern light. faces not detailed.",
+  "neg": "modern cars, smartphones, power lines, signs, text, letters, gore, crowd, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "S01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Zion Canyon, Utah: a wide flat-floored canyon between towering sheer cliffs of red, orange and cream Navajo sandstone with diagonal cross-bedded layers and dark desert varnish streaks, 1920s. A surveyor in a 1920s hat and work clothes, seen from behind, stands on a bare rock ledge beside a brass transit on a tripod, a rope around his waist, looking up at a sheer red cliff wall above; a faint canyon far below.",
+  "neg": "modern cars, smartphones, power lines, signs, text, letters, faces, crowd, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "T05",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Zion Canyon road, July 4, 1930. A crowd of small figures in 1930 clothes and a row of black Model A cars gather on a new road in front of a dark tunnel mouth cut into a red cliff; American flags and bunting flutter in the wind; a tall old-fashioned microphone on a wooden platform. faces not detailed.",
+  "neg": "modern cars, smartphones, power lines, signs, text, letters, text, letters, banners with writing, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "T06",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. close shot from inside. A rectangular window cut in the wall of a long rock tunnel is sealed from the outside by a wall of fallen boulders, a thin beam of dusty light leaking between the rocks, a single dry leaf drifting on the road in the foreground. No people.",
+  "neg": "modern cars, smartphones, power lines, signs, text, letters, people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "P01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. A grand exhibition hall at the 1904 St. Louis World's Fair, a huge wall painting of towering red canyon cliffs under a bright sky hangs at the end of the hall; small groups of visitors in long coats, bowler hats and long skirts stand looking up at it, all seen from behind. faces not detailed.",
+  "neg": "modern cars, smartphones, power lines, signs, text, letters, text, letters, signs, faces, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "R01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Zion Canyon, Utah: a wide flat-floored canyon between towering sheer cliffs of red, orange and cream Navajo sandstone with diagonal cross-bedded layers and dark desert varnish streaks, June 1923. A long line of riders on horseback climbs a dusty dirt canyon road in a cloud of pale dust, seen from behind; the lead rider wears a very wide cowboy hat, a kerchief and big leather chaps. No person is identifiable. faces not detailed.",
+  "neg": "modern cars, smartphones, power lines, signs, text, letters, faces, crowd, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "R02",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. Southern Utah high desert railway station, June 1923. A black steam train stands at a small wooden station, a big crowd of townspeople in 1920s clothes waves from the platform and street, red cliffs and juniper hills behind. faces not detailed.",
+  "neg": "modern cars, smartphones, power lines, signs, text, letters, text, letters, signs, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "R03",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. wide shot. A black steam locomotive pulls a train across the empty Nevada desert at dusk, long shadows, orange sky, a trail of white smoke. No people.",
+  "neg": "modern cars, smartphones, power lines, signs, text, letters, people, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ },
+ {
+  "id": "D01",
+  "seeds": [
+   5,
+   23
+  ],
+  "steps": 50,
+  "cfg": 4.0,
+  "prompt": "2D animated history documentary still, hand-painted illustration with clean dark ink outlines, soft cel shading and visible gouache brush texture, grounded adult proportions, muted natural colors, soft painted background with atmospheric depth, wide 16:9 cinematic composition. medium shot. Zion Canyon, Utah: a wide flat-floored canyon between towering sheer cliffs of red, orange and cream Navajo sandstone with diagonal cross-bedded layers and dark desert varnish streaks, 1920s. A small scruffy brown-and-white farm dog sits calmly in a wooden crate hanging from a long steel cable high above the canyon, the red cliff wall and the tiny green canyon floor far below, gentle storybook mood.",
+  "neg": "modern cars, smartphones, power lines, signs, text, letters, people, gore, text, photo, photorealistic, 3d render, CGI, anime, Disney, Pixar, cute, chibi, big eyes, cartoonish exaggeration, text, letters, words, numbers, signs, labels, captions, watermark, logo, signature, deformed hands, extra fingers, extra limbs, extra legs, duplicate people, blurry, low quality, jpeg artifacts"
+ }
+]
