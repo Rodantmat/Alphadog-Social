@@ -58,6 +58,8 @@ with sync_playwright() as p:
     nxt.click(); pg.wait_for_timeout(8000)
     ui(pg, "review")
     if MODE == "publish":
+        try: pg.get_by_role("button", name=re.compile(r"^Now$")).first.click(); pg.wait_for_timeout(1500)
+        except Exception as e: print("now click:", str(e)[:80])
         btn = pg.get_by_role("button", name=re.compile(r"^(Publish|Publish now|Publish episode)$", re.I))
         print("publish buttons:", btn.count())
         if btn.count() == 1:
