@@ -17,11 +17,13 @@ jobs:
       - run: pip install -q playwright cryptography && python3 -m playwright install --with-deps chromium >/dev/null
       - env: { GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
         run: git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb && cd /tmp/fb && git sparse-checkout set --no-cone "/yellowstone-release/${{ inputs.film }}"
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
       - name: Assemble and shrink the film
         run: |
           D=/tmp/fb/yellowstone-release/${{ inputs.film }}
           cat $D/*_final.mp4.part* > /tmp/full.mp4
-          (cd $D && sha256sum -c *_final.mp4.sha256 2>&1 | tail -1 || true)
+          echo "sha expected: $(cut -c1-16 $D/*_final.mp4.sha256) got: $(sha256sum /tmp/full.mp4 | cut -c1-16)"
           ffprobe -v error -show_entries format=duration,size -of default=nw=1 /tmp/full.mp4
           ffmpeg -v error -y -i /tmp/full.mp4 -vf scale=-2:1080 -c:v libx264 -preset veryfast -crf 25 -maxrate 3500k -bufsize 7000k -c:a aac -b:a 160k -movflags +faststart /tmp/spotify.mp4
           ls -la /tmp/spotify.mp4
