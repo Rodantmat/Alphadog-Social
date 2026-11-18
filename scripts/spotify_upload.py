@@ -58,8 +58,16 @@ with sync_playwright() as p:
     nxt.click(); pg.wait_for_timeout(8000)
     ui(pg, "review")
     if MODE == "publish":
-        try: pg.get_by_role("button", name=re.compile(r"^Now$")).first.click(); pg.wait_for_timeout(1500)
-        except Exception as e: print("now click:", str(e)[:80])
+        print("radios:", pg.eval_on_selector_all("input[type=radio]", "e=>e.map(x=>({id:x.id,name:x.name,v:x.value,c:x.checked}))"))
+        done = False
+        for fn in (lambda: pg.locator("input[type=radio][value=now]").first.check(force=True),
+                   lambda: pg.locator("label:has-text('Now')").first.click(timeout=8000),
+                   lambda: pg.get_by_text("Now", exact=True).first.click(timeout=8000, force=True),
+                   lambda: pg.get_by_role("radio", name=re.compile("Now", re.I)).first.check(force=True)):
+            try: fn(); done = True; print("selected Now"); break
+            except Exception as e: print("now try failed:", str(e)[:90])
+        pg.wait_for_timeout(1500)
+        print("radios after:", pg.eval_on_selector_all("input[type=radio]", "e=>e.map(x=>({id:x.id,v:x.value,c:x.checked}))"))
         btn = pg.get_by_role("button", name=re.compile(r"^(Publish|Publish now|Publish episode)$", re.I))
         print("publish buttons:", btn.count())
         if btn.count() == 1:
