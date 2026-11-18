@@ -1,0 +1,39 @@
+name: spotify-upload
+# Uploads a FULL documentary (not a part) to the Spotify for Creators English show. mode=probe uploads and stops at the Details step (a draft; nothing is published).
+on:
+  workflow_dispatch:
+    inputs:
+      film: { description: "folder under yellowstone-release/ on the footage branch (e.g. film)", required: true }
+      mode: { description: "probe | publish", required: true, default: probe }
+permissions:
+  contents: write
+concurrency: { group: spotify-session, cancel-in-progress: false }
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q playwright cryptography && python3 -m playwright install --with-deps chromium >/dev/null
+      - env: { GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+        run: git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb && cd /tmp/fb && git sparse-checkout set --no-cone "/yellowstone-release/${{ inputs.film }}"
+      - name: Assemble and shrink the film
+        run: |
+          D=/tmp/fb/yellowstone-release/${{ inputs.film }}
+          cat $D/*_final.mp4.part* > /tmp/full.mp4
+          (cd $D && sha256sum -c *_final.mp4.sha256 2>&1 | tail -1 || true)
+          ffprobe -v error -show_entries format=duration,size -of default=nw=1 /tmp/full.mp4
+          ffmpeg -v error -y -i /tmp/full.mp4 -vf scale=-2:1080 -c:v libx264 -preset veryfast -crf 25 -maxrate 3500k -bufsize 7000k -c:a aac -b:a 160k -movflags +faststart /tmp/spotify.mp4
+          ls -la /tmp/spotify.mp4
+          python3 - <<PY
+          import json;m=json.load(open("$D/meta_0_long.json"));open("/tmp/title.txt","w").write(m["title"])
+          PY
+      - env:
+          SPOTIFY_CREATORS_SESSION: ${{ secrets.SPOTIFY_CREATORS_SESSION }}
+        run: python3 scripts/spotify_upload.py "${{ inputs.mode }}" /tmp/spotify.mp4 "$(cat /tmp/title.txt)" /tmp/fb/yellowstone-release/${{ inputs.film }}/desc_long.txt
+      - name: Save refreshed session
+        if: always()
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add content/private/spotify_session.enc && git commit -qm "spotify: session refreshed" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
