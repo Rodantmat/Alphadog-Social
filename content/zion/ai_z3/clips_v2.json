@@ -1,0 +1,50 @@
+[
+ {
+  "name": "P01",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn3_v1/P01_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the visitors stand before the huge painting, a few shift their weight and lean closer, soft light in the gallery.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ },
+ {
+  "name": "D01",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn3_v1/D01_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the wooden crate swings gently on the cable high over the canyon, the dog's ears flap in the breeze, the cable sways.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ },
+ {
+  "name": "T04",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn3_v1/T04_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the two crews lift their lanterns toward each other, lantern light flickering on the broken rock, dust settling.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ },
+ {
+  "name": "R02",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn3_v1/R02_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 40,
+  "cfg": 5.0,
+  "seed": 42,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: steam billows from the locomotive, the crowd waves their hats and arms, the smoke drifting across the platform.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ }
+]
