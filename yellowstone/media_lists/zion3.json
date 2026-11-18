@@ -207,7 +207,7 @@
    "kind": "commons",
    "name": "z3x_haer_zmc",
    "search": "Zion-Mount Carmel Highway HAER Utah",
-   "max_n": "25",
+   "max_n": 25,
    "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
    "use_for": "tunnel / highway engineering"
   },
@@ -215,7 +215,7 @@
    "kind": "commons",
    "name": "z3x_haer_pine",
    "search": "Pine Creek Bridge Zion-Mount Carmel Highway",
-   "max_n": "8",
+   "max_n": 8,
    "shows": "Wikimedia Commons: Pine Creek Bridge Zion-Mount Carmel Highway",
    "use_for": "bridge"
   },
@@ -223,7 +223,7 @@
    "kind": "commons",
    "name": "z3x_haer_short",
    "search": "Zion-Mount Carmel Highway Short Tunnel",
-   "max_n": "8",
+   "max_n": 8,
    "shows": "Wikimedia Commons: Zion-Mount Carmel Highway Short Tunnel",
    "use_for": "short tunnel"
   },
@@ -231,7 +231,7 @@
    "kind": "commons",
    "name": "z3x_haer_switch",
    "search": "Zion-Mount Carmel Highway switchbacks",
-   "max_n": "8",
+   "max_n": 8,
    "shows": "Wikimedia Commons: Zion-Mount Carmel Highway switchbacks",
    "use_for": "switchbacks"
   },
@@ -239,7 +239,7 @@
    "kind": "commons",
    "name": "z3x_zion_1920s",
    "search": "Zion National Park 1920s historic photograph",
-   "max_n": "10",
+   "max_n": 10,
    "shows": "Wikimedia Commons: Zion National Park 1920s historic photograph",
    "use_for": "1920s park"
   },
@@ -247,7 +247,7 @@
    "kind": "commons",
    "name": "z3x_zion_lodge_old",
    "search": "Zion Lodge Utah Parks Company historic",
-   "max_n": "8",
+   "max_n": 8,
    "shows": "Wikimedia Commons: Zion Lodge Utah Parks Company historic",
    "use_for": "lodge / railroad era"
   },
@@ -255,7 +255,7 @@
    "kind": "commons",
    "name": "z3x_grafton",
    "search": "Grafton Utah ghost town",
-   "max_n": "8",
+   "max_n": 8,
    "shows": "Wikimedia Commons: Grafton Utah ghost town",
    "use_for": "farming towns"
   },
@@ -263,7 +263,7 @@
    "kind": "commons",
    "name": "z3x_springdale",
    "search": "Springdale Utah historic",
-   "max_n": "6",
+   "max_n": 6,
    "shows": "Wikimedia Commons: Springdale Utah historic",
    "use_for": "farming towns"
   },
@@ -271,7 +271,7 @@
    "kind": "commons",
    "name": "z3x_toquerville",
    "search": "Toquerville Utah OR Virgin Utah OR Rockville Utah historic",
-   "max_n": "6",
+   "max_n": 6,
    "shows": "Wikimedia Commons: Toquerville Utah OR Virgin Utah OR Rockville Utah historic",
    "use_for": "farming towns"
   },
@@ -279,7 +279,7 @@
    "kind": "commons",
    "name": "z3x_cedar_city_harding",
    "search": "Warren Harding Cedar City Utah 1923",
-   "max_n": "6",
+   "max_n": 6,
    "shows": "Wikimedia Commons: Warren Harding Cedar City Utah 1923",
    "use_for": "Harding"
   },
@@ -287,7 +287,7 @@
    "kind": "commons",
    "name": "z3x_harding_west",
    "search": "Warren G. Harding Voyage of Understanding 1923",
-   "max_n": "6",
+   "max_n": 6,
    "shows": "Wikimedia Commons: Warren G. Harding Voyage of Understanding 1923",
    "use_for": "Harding"
   },
@@ -295,7 +295,7 @@
    "kind": "commons",
    "name": "z3x_taft_signing",
    "search": "William Howard Taft 1909",
-   "max_n": "4",
+   "max_n": 4,
    "shows": "Wikimedia Commons: William Howard Taft 1909",
    "use_for": "Taft"
   },
@@ -303,7 +303,7 @@
    "kind": "commons",
    "name": "z3x_wilson_1919",
    "search": "Woodrow Wilson 1919",
-   "max_n": "4",
+   "max_n": 4,
    "shows": "Wikimedia Commons: Woodrow Wilson 1919",
    "use_for": "Wilson"
   },
@@ -311,7 +311,7 @@
    "kind": "commons",
    "name": "z3x_gov_dern",
    "search": "George Dern Governor of Utah",
-   "max_n": "4",
+   "max_n": 4,
    "shows": "Wikimedia Commons: George Dern Governor of Utah",
    "use_for": "Governor Dern"
   },
@@ -319,7 +319,7 @@
    "kind": "commons",
    "name": "z3x_mukuntuweap",
    "search": "Mukuntuweap National Monument",
-   "max_n": "6",
+   "max_n": 6,
    "shows": "Wikimedia Commons: Mukuntuweap National Monument",
    "use_for": "monument"
   }
