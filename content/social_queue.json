@@ -3513,7 +3513,13 @@
   "thumb_ms": 1200,
   "caption": "About four hundred and thirty people cut off, and one road gone. On the night of April twelfth, nineteen ninety-five, part of an ancient landslide in Zion moved again. It blocked the Virgin River, and the river cut a new path straight through the road. About six hundred feet of it was destroyed. Guests and employees at Zion Lodge were stuck. Crews carved an emergency detour out of the canyon wall in about twenty-two hours.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #Landslide #History #NationalParks",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
-  "trial": true
+  "trial": true,
+  "done": {
+   "media_id": "18078930725768876",
+   "permalink": "https://www.instagram.com/reel/Df5VRQ9jQx2/",
+   "posted": "2026-11-18T20:10:53+0000",
+   "at": "2026-11-18T20:10:24Z"
+  }
  },
  {
   "id": "zn2w4_fb",
@@ -3521,7 +3527,40 @@
   "file": "zion_p2_w4.mp4",
   "at": "2026-11-18T20:00:00Z",
   "caption": "About four hundred and thirty people cut off, and one road gone. On the night of April twelfth, nineteen ninety-five, part of an ancient landslide in Zion moved again. It blocked the Virgin River, and the river cut a new path straight through the road. About six hundred feet of it was destroyed. Guests and employees at Zion Lodge were stuck. Crews carved an emergency detour out of the canyon wall in about twenty-two hours.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #Landslide #History #NationalParks",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
+  "done": {
+   "video_id": "1829766438286929",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1122418190557173"
+   },
+   "permalink": "https://www.facebook.com/reel/1829766438286929/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 19805869
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-18T20:11:05+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1829766438286929_1420690696814953"
+   },
+   "status_errors": null,
+   "at": "2026-11-18T20:10:24Z"
+  }
  },
  {
   "id": "zn2w5_ig",
