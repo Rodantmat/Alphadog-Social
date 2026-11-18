@@ -253,3 +253,11 @@
 - YouTube: 6 pending comments, none overdue (earliest "after" 2026-11-18T01:06Z, V1kQP7DZLs8); yt-followup not triggered.
 - yt-link latest run 44082887710 (2026-11-17 12:24Z) success.
 - Run ids checked: social-post 44165618805, 44154877289, 44082032471; yt-link 44082887710.
+
+## 2026-11-18 01:38 UTC OK
+- All posts on time: 0 missed items in social_queue.json (170 checked: 156 done, 14 future, no holds; zn2w3_ig/fb posted 01:14Z by 44213576499: https://www.instagram.com/reel/Df3TK_tgHpN/ , https://www.facebook.com/reel/1511962467443688/ ; next zn2w4 2026-11-18T20:00Z). All past-due TikTok backlog items (due ≤ 2026-11-18T00:00Z) have "scheduled"; every backlog item scheduled.
+- Social-post runs visible in last 30 runs (44213576499, 44177653572) both success; no failures.
+- YouTube: 1 comment overdue (V1kQP7DZLs8, after 01:06Z) — triggered yt-followup 44217055065: "comment posted V1kQP7DZLs8 106 chars"; 5 others not yet due (earliest J_uFe3-xCVQ 2026-11-18T18:06Z).
+- yt-link latest run 44194425233 (2026-11-17 22:53Z) success.
+- (Outside watchdog scope: spotify-upload 44214906789 failed at 01:19Z, superseded by 44215134034 success.)
+- Run ids: yt-followup 44217055065; social-post checked 44213576499, 44177653572; yt-link 44194425233.
