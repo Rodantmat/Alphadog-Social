@@ -25,12 +25,30 @@ with sync_playwright() as p:
     print("uploading", os.path.getsize(VIDEO) // 1000000, "MB")
     pg.set_input_files("#uploadAreaInput", VIDEO)
     t0 = time.time()
-    while time.time() - t0 < 25 * 60:               # wait until the Details step is reachable
-        txt = pg.inner_text("body")
-        if re.search(r"Episode title|Episode description|Title", txt) and pg.query_selector("input[name=title], input[id*=title], textarea, [contenteditable=true]"): break
+    pg.wait_for_selector("#title-input", timeout=180000)
+    pg.fill("#title-input", TITLE[:200])
+    ed = pg.query_selector("[contenteditable=true]")
+    ed.click(); pg.keyboard.press("Control+A"); pg.keyboard.press("Delete")
+    ed.fill(DESC[:4000]) if hasattr(ed, "fill") else pg.keyboard.insert_text(DESC[:4000])
+    thumb = os.environ.get("THUMB")
+    if thumb and os.path.exists(thumb):
+        fis = [f for f in pg.query_selector_all("input[type=file]") if f.get_attribute("id") != "uploadAreaInput"]
+        if fis: fis[0].set_input_files(thumb); print("thumbnail set")
+    pg.wait_for_timeout(8000)
+    print("title ok:", pg.input_value("#title-input")[:60], "| desc chars:", len(pg.inner_text("[contenteditable=true]")))
+    # wait for the media upload to finish: Next enabled and no progress text
+    nxt = pg.get_by_role("button", name="Next")
+    while time.time() - t0 < 40 * 60:
+        busy = re.search(r"Uploading|Processing|\d+\s?%", pg.inner_text("body")[:3000])
+        if nxt.is_enabled() and not busy: break
         time.sleep(15)
-    print("upload step finished after", int(time.time() - t0), "s")
-    pg.wait_for_timeout(5000); ui(pg, "details")
-    if MODE == "probe":
-        S.save(ctx); b.close(); sys.exit(0)
+    print("media upload ready after", int(time.time() - t0), "s")
+    ui(pg, "details_filled")
+    nxt.click(); pg.wait_for_timeout(8000)
+    ui(pg, "review")
+    if MODE == "publish":
+        btn = pg.get_by_role("button", name=re.compile(r"^(Publish|Publish now|Publish episode)$", re.I))
+        print("publish buttons:", btn.count())
+        if btn.count() == 1:
+            btn.first.click(); pg.wait_for_timeout(20000); ui(pg, "after_publish")
     S.save(ctx); b.close()

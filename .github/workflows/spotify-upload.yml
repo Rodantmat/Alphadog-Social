@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       film: { description: "folder under yellowstone-release/ on the footage branch (e.g. film)", required: true }
-      mode: { description: "probe | publish", required: true, default: probe }
+      mode: { description: "probe | review | publish (review = fill the form and stop at the Review page)", required: true, default: probe }
 permissions:
   contents: write
 concurrency: { group: spotify-session, cancel-in-progress: false }
@@ -32,6 +32,7 @@ jobs:
           PY
       - env:
           SPOTIFY_CREATORS_SESSION: ${{ secrets.SPOTIFY_CREATORS_SESSION }}
+          THUMB: /tmp/fb/yellowstone-release/${{ inputs.film }}/thumb.jpg
         run: python3 scripts/spotify_upload.py "${{ inputs.mode }}" /tmp/spotify.mp4 "$(cat /tmp/title.txt)" /tmp/fb/yellowstone-release/${{ inputs.film }}/desc_long.txt
       - name: Save refreshed session
         if: always()
