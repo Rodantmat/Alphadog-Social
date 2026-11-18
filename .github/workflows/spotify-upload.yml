@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       film: { description: "folder under yellowstone-release/ on the footage branch (e.g. film)", required: true }
+      lang: { description: "en (English show, default) | es (Spanish show, Spanish dub)", required: false, default: en }
       mode: { description: "probe | review | publish (review = fill the form and stop at the Review page)", required: true, default: probe }
 permissions:
   contents: write
@@ -23,17 +24,25 @@ jobs:
         run: |
           D=/tmp/fb/yellowstone-release/${{ inputs.film }}
           cat $D/*_final.mp4.part* > /tmp/full.mp4
+          if [ "${{ inputs.lang }}" = "es" ]; then
+            ffprobe -v error -show_entries format=duration -of default=nw=1 $D/film_es.m4a
+            ffmpeg -v error -y -i /tmp/full.mp4 -i $D/film_es.m4a -map 0:v:0 -map 1:a:0 -c copy -shortest /tmp/full_es.mp4 && mv /tmp/full_es.mp4 /tmp/full.mp4
+          fi
           echo "sha expected: $(cut -c1-16 $D/*_final.mp4.sha256) got: $(sha256sum /tmp/full.mp4 | cut -c1-16)"
           ffprobe -v error -show_entries format=duration,size -of default=nw=1 /tmp/full.mp4
           ffmpeg -v error -y -i /tmp/full.mp4 -vf scale=-2:1080 -c:v libx264 -preset veryfast -crf 25 -maxrate 3500k -bufsize 7000k -c:a aac -b:a 160k -movflags +faststart /tmp/spotify.mp4
           ls -la /tmp/spotify.mp4
           python3 - <<PY
-          import json;m=json.load(open("$D/meta_0_long.json"));open("/tmp/title.txt","w").write(m["title"])
+          import json;m=json.load(open("$D/meta_0_long.json"));import os;open("/tmp/title.txt","w").write(open("content/yellowstone/film_title_es.txt").read() if "${{ inputs.lang }}"=="es" else m["title"])
           PY
       - env:
           SPOTIFY_CREATORS_SESSION: ${{ secrets.SPOTIFY_CREATORS_SESSION }}
           THUMB: /tmp/fb/yellowstone-release/${{ inputs.film }}/thumb.jpg
-        run: python3 scripts/spotify_upload.py "${{ inputs.mode }}" /tmp/spotify.mp4 "$(cat /tmp/title.txt)" /tmp/fb/yellowstone-release/${{ inputs.film }}/desc_long.txt
+          SHOW_ID: ${{ inputs.lang == 'es' && '0Ylyy2y3qBkG0AUpAgGT7Q' || '5K5ZytGhBYz2xJ8Iwvf8ss' }}
+        run: |
+          DESC=/tmp/fb/yellowstone-release/${{ inputs.film }}/desc_long.txt
+          [ "${{ inputs.lang }}" = "es" ] && DESC=content/yellowstone/film_desc_es.txt
+          python3 scripts/spotify_upload.py "${{ inputs.mode }}" /tmp/spotify.mp4 "$(cat /tmp/title.txt)" "$DESC"
       - name: Save refreshed session
         if: always()
         run: |

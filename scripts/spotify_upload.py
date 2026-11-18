@@ -8,7 +8,7 @@ import spotify_session as S
 from playwright.sync_api import sync_playwright
 MODE, VIDEO, TITLE, DESC = sys.argv[1:5]
 DESC = open(DESC, encoding="utf-8").read().strip()
-SHOW = "5K5ZytGhBYz2xJ8Iwvf8ss"; OUT = "/tmp/spx"; os.makedirs(OUT, exist_ok=True)
+SHOW = os.environ.get("SHOW_ID", "5K5ZytGhBYz2xJ8Iwvf8ss"); OUT = "/tmp/spx"; os.makedirs(OUT, exist_ok=True)
 def ui(pg, tag):
     pg.screenshot(path=f"{OUT}/{tag}.png", full_page=True)
     print(f"[{tag}] url={pg.url.split('?')[0].replace(SHOW,'<id>')}")
