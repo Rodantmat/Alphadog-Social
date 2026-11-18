@@ -55,3 +55,10 @@
 - 0 failed runs in 24 h, 0 missed posts, no duplicates, 6 pending comments none overdue; Zion Shorts Hoover Dams and 430-people public on time, titles intact.
 - YouTube 20 subs (+1), 9,616 views (+2,373 in 24 h), long-form about 36.8 h of 8,000. RELATED_VIDEO 125 views/1,512 min. Hoover Dams Short 1,024 views in <1 day (14x median 72); TikTok 5 tons waste 7,663 (45x). IG 160 followers, FB 152 flat.
 - Details: content/metrics/health_2026-11-17.md. COMPASS rows I02, I03, I05, I11, I20, I23, I24b, I29 updated.
+
+## 2026-11-18T23:00Z ALERT
+- Lead time: IG/FB Reels last slot 11-21 20:00Z (3.0 days), TikTok 11-21 03:00Z (2.2 days), Stories queue empty (10th report): posting stops after Nov 21 without owner decision (I05/I29). Progress: Zion P3 production started today (script, TTS, media list, AI stills committed); P3 and Zion film (11-19) not on YouTube yet.
+- yt-link: 19:37Z cron skipped a 10th evening (I11); dispatched once 22:56Z (run 44416234536). Last good run 12:24Z.
+- 0 failed runs in 24 h, 0 missed posts, no duplicates, 4 pending comments none overdue; lumber and Cable Mountain Shorts public on time, titles intact.
+- YouTube 23 subs (+3), 9,658 views, long-form about 39.9 h of 8,000. RELATED_VIDEO 143 views/1,836 min. Zion lumber-on-a-wire Short 1,146 views in <1 day (16x median 72). TikTok metrics fetch errored (I31). Repo .git 152 MB.
+- Details: content/metrics/health_2026-11-18.md. COMPASS rows I02, I03, I05, I11, I20, I23, I24b, I29 updated, I31 added.
