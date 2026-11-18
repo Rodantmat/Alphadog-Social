@@ -80,3 +80,13 @@
 - Strategies: no state/cap changes vs 11-15; CLEAN 13->14 on A_core_3power, A_regular_5power, A_wrebounds_4flex, A_wsteals_5flex, C_wstocks_4flex. B_demon_3flex / B_demon_5flex still red (REQUAL HOLD). Rotation steals ewma 0.642 -> 0.548, turnovers 0.719 -> 0.611 (both still ok).
 - Edge monitors: PP z 2.20, UD z 2.27, both RUNNING (27 slates), no ALARM.
 - Boards 11-17 (5 games): 0 rows for every app so far (11-16 filled later: PP 32,971, UD 19,967, Sleeper 15,618, Betr 8,484, Fliff 6,800, 9 sportsbooks). Watch P2B ~08:06 PT.
+
+## 2026-11-18 14:00 UTC ACTION
+- Market term: review revert. audit_market_coverage (run 44318475729) VERDICT NOT READY, 28 dates pooled: coverage 14.9% (ref 64.3%), depth 1.86, >=4 books 13.7%, player match 12.3% (<95%). 11-17 alone: coverage 26.2%, depth 2.41. 11-17 window rungs 1,151, avg 2.41 books.
+- Pipelines: P2A 11-18 success (03:32-03:43 PT); P2A/P2B/P3 11-17 all success (P3 claimed 13:17 PT, Afternoon Light). P3 11-17 soft-failed step: slips-screen-warm (run stays green). Scheduler tick 3s old. Outside the pipeline: NBA Friend Page Run failed 11-17 14:50 PT (next run 18:32 PT success).
+- PP 11-17 (PLAY, $10 unit): 4 slips (P_B5_3power 3/3 +5u, P_T6_flex +2u, P_B3_3power -1u, P_B4_4flex -1u), 4u staked, 9u returned, net +5u, ROI +125%. Season: 120 slips, 120u, 167u, +47u, ROI +39.2%.
+- UD live 11-17: 3 slips (T 2, C 1), 3u, 5.35u returned, +2.35u, ROI +78%. Season live T+C: 59 slips, 59u, +22.74u (profit column), ROI +38.5%; 1 T slip (11-01) payout still null.
+- UD P5 (shadow) 11-17: 3 slips, 3u, 3.5u returned, +0.5u, ROI +16.7%. Season P5 (paper+shadow, stake>0, profit column): 93 slips, 87u, +16.25u, ROI +18.7%; 3 older slips (11-02, 11-06, 11-07) payout null.
+- Strategies: no state/cap changes vs 11-16 on the 12 strategies; CLEAN 14->15 on A_core_3power, A_regular_5power, A_wrebounds_4flex, A_wsteals_5flex, C_wstocks_4flex. B_demon_3flex / B_demon_5flex still red (REQUAL HOLD 11-09). CHANGE: _ROTATION state normal -> rotation, live_cap 0 -> 1; steals ok -> cool (ewma 0.548 -> 0.466, trail10 0.475); turnovers ok (0.620).
+- Edge monitors: PP z 2.37, UD z 2.25, both RUNNING (28 slates), no ALARM.
+- Boards 11-18 (12 games, routine snapshot): PrizePicks 675, Underdog 411, Sleeper 221, Fliff 84. Betr and sportsbooks 0 so far (Betr only in P3 window; books after P2B ~08:06 PT).
