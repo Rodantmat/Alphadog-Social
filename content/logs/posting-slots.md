@@ -279,3 +279,11 @@
 - TikTok backlog -> Buffer: nothing to feed. Adjacent gate PASS (18 pending, 0 problems).
 - Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded. No DUPLICATE BLOCKED lines.
 - No overdue un-posted items in queue after run (170 items checked); no catch-up runs needed. Next due: zn2w3 reels 2026-11-18 01:00Z.
+
+## 2026-11-18 01:21 UTC OK
+- Slot: 17:05 PT Reels (Tue Nov 17). Run 44213576499 (social-post, success; ~6 min).
+- Posted zn2w3_ig https://www.instagram.com/reel/Df3TK_tgHpN/
+- Posted zn2w3_fb https://www.facebook.com/reel/1511962467443688/
+- TikTok backlog -> Buffer: nothing to feed.
+- Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded. No DUPLICATE BLOCKED lines.
+- No overdue un-posted items in queue after run (170 items checked); no catch-up runs needed. Next due: zn2w4 reels 2026-11-18 20:00Z.
