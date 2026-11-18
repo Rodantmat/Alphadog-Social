@@ -3456,7 +3456,13 @@
   "at": "2026-11-18T01:00:00Z",
   "thumb_ms": 1200,
   "caption": "Ninety Hoover Dams. That's how much concrete you'd need to rebuild the mountainside that collapsed into Zion Canyon. About ten billion cubic feet of rock, roughly five times bigger than any landslide in North America's recorded history, not counting volcanoes.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #HooverDam #Landslide #NationalParks",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
+  "done": {
+   "media_id": "18166314229497442",
+   "permalink": "https://www.instagram.com/reel/Df3TK_tgHpN/",
+   "posted": "2026-11-18T01:14:05+0000",
+   "at": "2026-11-18T01:13:37Z"
+  }
  },
  {
   "id": "zn2w3_fb",
@@ -3464,7 +3470,40 @@
   "file": "zion_p2_w3.mp4",
   "at": "2026-11-18T01:00:00Z",
   "caption": "Ninety Hoover Dams. That's how much concrete you'd need to rebuild the mountainside that collapsed into Zion Canyon. About ten billion cubic feet of rock, roughly five times bigger than any landslide in North America's recorded history, not counting volcanoes.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #HooverDam #Landslide #NationalParks",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
+  "done": {
+   "video_id": "1511962467443688",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1121644307301228"
+   },
+   "permalink": "https://www.facebook.com/reel/1511962467443688/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 14522723
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-18T01:14:13+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1511962467443688_2016339102390376"
+   },
+   "status_errors": null,
+   "at": "2026-11-18T01:13:37Z"
+  }
  },
  {
   "id": "zn2w4_ig",
