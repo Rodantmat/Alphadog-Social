@@ -276,3 +276,10 @@
 - YouTube: 1 comment overdue (J_uFe3-xCVQ, after 18:06Z) — triggered yt-followup 44382112607: "comment posted J_uFe3-xCVQ 106 chars"; 4 others not yet due (earliest aNnsMZQJ3p8 2026-11-19T01:06Z).
 - yt-link latest run 44301595003 (2026-11-18 12:11Z) success.
 - Run ids: yt-followup 44382112607; social-post checked 44376858959, 44300630695; yt-link 44301595003.
+
+## 2026-11-18 20:37 UTC OK
+- All posts on time: 0 missed items in social_queue.json (170 checked, no holds; zn2w4_ig/fb posted 20:11Z by 44387359325: https://www.instagram.com/reel/Df5VRQ9jQx2/ , https://www.facebook.com/reel/1829766438286929/ ; next zn2w5 2026-11-19). All past-due TikTok backlog items (due ≤ 2026-11-18T03:00Z) have "scheduled"; every backlog item scheduled.
+- Social-post runs visible in last 30 runs (44387359325, 44376858959, 44300630695) all success (IG trial-reel fallback non-fatal); no failures in any workflow.
+- YouTube: 4 pending comments, none overdue (earliest "after" 2026-11-19T01:06Z, aNnsMZQJ3p8); yt-followup not triggered (last 44382112607 success).
+- yt-link latest run 44301595003 (2026-11-18 12:11Z) success.
+- Run ids checked: social-post 44387359325, 44376858959, 44300630695; yt-followup 44382112607; yt-link 44301595003.
