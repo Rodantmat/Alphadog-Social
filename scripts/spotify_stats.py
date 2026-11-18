@@ -17,8 +17,8 @@ with sync_playwright() as p:
         m = re.search(r"/pod/show/([A-Za-z0-9]+)", h)
         if m and m.group(1) not in ids: ids.append(m.group(1))
     print("SHOW_IDS", ids)
-    for sid in ids:
-        for path in ("", "/analytics", "/episodes"):
+    for sid in ["0Ylyy2y3qBkG0AUpAgGT7Q","2KocfjPnhOYoSesUmFICRb"]:
+        for path in ("", "/episodes"):
             pg.goto(f"https://creators.spotify.com/pod/show/{sid}{path}", wait_until="domcontentloaded"); pg.wait_for_timeout(9000)
             print(f"== {sid} {path or '/home'}:", pg.inner_text("body")[:1500].replace("\n", " | ").replace("\t", ""))
     S.save(ctx)
