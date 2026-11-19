@@ -3625,7 +3625,13 @@
   "thumb_ms": 1200,
   "caption": "Three thousand feet up, a slab of sandstone let go. August twenty-fourth, twenty nineteen: rock broke off Cable Mountain, above Weeping Rock. More than four hundred and thirty-five thousand cubic feet of debris came down. Three visitors were hurt. Part of a trail was buried under what geologists called a small rock avalanche. The twist? Nearly a century earlier, that same mountain had lowered the lumber for Zion Lodge on a wire.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #Rockfall #CableMountain #NationalParks",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
-  "trial": true
+  "trial": true,
+  "done": {
+   "media_id": "17923730592242292",
+   "permalink": "https://www.instagram.com/reel/Df76I8tCDjc/",
+   "posted": "2026-11-19T20:11:34+0000",
+   "at": "2026-11-19T20:11:01Z"
+  }
  },
  {
   "id": "zn2w6_fb",
@@ -3633,7 +3639,40 @@
   "file": "zion_p2_w6.mp4",
   "at": "2026-11-19T20:00:00Z",
   "caption": "Three thousand feet up, a slab of sandstone let go. August twenty-fourth, twenty nineteen: rock broke off Cable Mountain, above Weeping Rock. More than four hundred and thirty-five thousand cubic feet of debris came down. Three visitors were hurt. Part of a trail was buried under what geologists called a small rock avalanche. The twist? Nearly a century earlier, that same mountain had lowered the lumber for Zion Lodge on a wire.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #Rockfall #CableMountain #NationalParks",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
+  "done": {
+   "video_id": "2329646414273888",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1123447423787583"
+   },
+   "permalink": "https://www.facebook.com/reel/2329646414273888/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 24752864
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-19T20:11:46+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "2329646414273888_1478508544221622"
+   },
+   "status_errors": null,
+   "at": "2026-11-19T20:11:01Z"
+  }
  },
  {
   "id": "zn2w7_ig",
