@@ -1,0 +1,98 @@
+[
+ {
+  "name": "T01",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn3_v1/T01_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 50,
+  "cfg": 5.0,
+  "seed": 7,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: inside the tunnel the drill rig works steadily and a slow flash of orange light pulses at the far end, dust drifting, lamps steady.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ },
+ {
+  "name": "T03",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn3_v1/T03_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 50,
+  "cfg": 5.0,
+  "seed": 7,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the pneumatic drill hammers against the rock face with small vibrations, dust puffs drift through the light beam, the bulb sways gently.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ },
+ {
+  "name": "R03",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn3_v1/R03_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 50,
+  "cfg": 5.0,
+  "seed": 7,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the steam locomotive rolls steadily left to right along the track, white steam streams back and the carriages follow in a straight line, wheels turning.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ },
+ {
+  "name": "S01",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn3_v1/S01_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 50,
+  "cfg": 5.0,
+  "seed": 7,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the surveyor stays still at the brass instrument while a gentle breeze moves the rope, soft cloud shadows drift slowly across the red cliff.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ },
+ {
+  "name": "T06",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn3_v1/T06_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 50,
+  "cfg": 5.0,
+  "seed": 7,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: fine dust floats slowly in the shaft of light, the dry leaf shivers slightly in the draft, everything else is perfectly still.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ },
+ {
+  "name": "D01",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn3_v1/D01_5.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 50,
+  "cfg": 5.0,
+  "seed": 7,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the crate hangs and sways very gently on the cable, the dog's ears move in the breeze, the canyon behind stays perfectly still.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ },
+ {
+  "name": "P01",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn3_v1/P01_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 50,
+  "cfg": 5.0,
+  "seed": 7,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: the visitors stand very still before the huge painting, one or two slowly shift their weight, soft gallery light, nothing else moves.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ },
+ {
+  "name": "T02",
+  "image_url": "https://raw.githubusercontent.com/Rodantmat/Alphadog-Social/main/review/zn3_v1/T02_23.jpg",
+  "w": 1280,
+  "h": 704,
+  "frames": 97,
+  "steps": 50,
+  "cfg": 5.0,
+  "seed": 7,
+  "prompt": "2D animated documentary scene, hand-painted illustration with clean ink outlines and soft cel shading, muted natural colors, consistent style in every frame. Real-time speed. Real-time: a little dust trickles from the cliff opening, the river flows slowly below, the scaffold and workers stay still.",
+  "neg": "slow motion, static, frozen, slideshow, morphing, melting, flicker, style change, photorealistic, 3d render, face morphing, extra people, new person appearing, extra legs, extra fingers, extra arms, text, letters, watermark, blurry"
+ }
+]
