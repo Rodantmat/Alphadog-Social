@@ -3569,7 +3569,13 @@
   "at": "2026-11-19T01:00:00Z",
   "thumb_ms": 1200,
   "caption": "Two hundred and sixty-five thousand board feet of lumber, down a wire. That's how Zion Lodge was built in nineteen twenty-five. A tramway on Cable Mountain lowered the wood more than two thousand vertical feet to the canyon floor.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #ZionLodge #History #NationalParks",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
+  "done": {
+   "media_id": "17961361086015895",
+   "permalink": "https://www.instagram.com/reel/Df53-NCDLD4/",
+   "posted": "2026-11-19T01:14:00+0000",
+   "at": "2026-11-19T01:13:39Z"
+  }
  },
  {
   "id": "zn2w5_fb",
@@ -3577,7 +3583,39 @@
   "file": "zion_p2_w5.mp4",
   "at": "2026-11-19T01:00:00Z",
   "caption": "Two hundred and sixty-five thousand board feet of lumber, down a wire. That's how Zion Lodge was built in nineteen twenty-five. A tramway on Cable Mountain lowered the wood more than two thousand vertical feet to the canyon floor.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #ZionLodge #History #NationalParks",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
+  "done": {
+   "video_id": "1557993769681468",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1122592513873074"
+   },
+   "permalink": "https://www.facebook.com/reel/1557993769681468/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 17951716
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-19T01:14:09+0000"
+    },
+    "copyright_check_status": {
+     "status": "in_progress"
+    }
+   },
+   "comment": {
+    "id": "1557993769681468_1673997694113317"
+   },
+   "status_errors": null,
+   "at": "2026-11-19T01:13:39Z"
+  }
  },
  {
   "id": "zn2w6_ig",
