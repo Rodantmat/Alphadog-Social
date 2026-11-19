@@ -317,3 +317,11 @@
 - TikTok backlog -> Buffer: nothing to feed.
 - Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded. No DUPLICATE BLOCKED lines.
 - No overdue un-posted items in queue after run (170 items checked); no catch-up runs needed. Next due: zn2w6 reels 2026-11-19 20:00Z.
+
+## 2026-11-19 02:10 UTC OK
+- Slot: 18:05 PT Stories (Wed Nov 18). Run 44441760883 (social-post, success). "Anything due?" = no; Post step skipped.
+- Nothing posted: no queue item due this slot (no stories item scheduled for 02:00Z today).
+- TikTok backlog -> Buffer: nothing to feed. Adjacent gate PASS (10 pending, 0 problems).
+- No DUPLICATE BLOCKED lines; no errors.
+- No overdue un-posted items in queue (170 items checked); no catch-up runs needed. Next due: zn2w6 reels 2026-11-19 20:00Z.
+- Tooling: Alphadog_Bridge social_* tools returned 401 "Bad credentials" (GitHub token expired/revoked); run triggered, read and logged via GitHub connector instead.
