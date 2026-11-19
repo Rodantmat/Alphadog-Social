@@ -62,3 +62,10 @@
 - 0 failed runs in 24 h, 0 missed posts, no duplicates, 4 pending comments none overdue; lumber and Cable Mountain Shorts public on time, titles intact.
 - YouTube 23 subs (+3), 9,658 views, long-form about 39.9 h of 8,000. RELATED_VIDEO 143 views/1,836 min. Zion lumber-on-a-wire Short 1,146 views in <1 day (16x median 72). TikTok metrics fetch errored (I31). Repo .git 152 MB.
 - Details: content/metrics/health_2026-11-18.md. COMPASS rows I02, I03, I05, I11, I20, I23, I24b, I29 updated, I31 added.
+
+## 2026-11-19T23:00Z ALERT
+- Lead time: IG/FB Reels last slot 11-21 20:00Z (1.9 days), TikTok 11-21 03:00Z (1.2 days), Stories queue empty (11th report): posting stops after Nov 21 without new items (I05/I29, 4th report). Zion film (due today 11-19) and P3 are NOT on YouTube; P3 script/TTS files exist, no film files.
+- yt-link: 19:37Z cron skipped an 11th evening (I11); dispatched once 22:54Z (run 44632836299, result unconfirmed). Last good run 12:18Z.
+- 0 failed runs in last 40, 0 missed posts, no duplicates, 2 pending comments (private Shorts) none overdue; Lodge-burned and deer/cougar Shorts public on time, titles intact.
+- YouTube 23 subs (flat), 11,908 views (+2,250 in 24 h), long-form about 46.6 h of 8,000 (+6.7 h). RELATED_VIDEO 164 views/2,155 min. Public Shorts median 82; lumber wire 1,148, lake 1,142, dog 1,062; deer/cougar 366 at 5 h. TikTok fetch recovered (I31 closed).
+- Details: content/metrics/health_2026-11-19.md. COMPASS rows I02, I03, I05, I11, I20, I23, I24b, I29, I30, I31 updated.
