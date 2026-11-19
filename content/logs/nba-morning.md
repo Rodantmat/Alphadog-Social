@@ -90,3 +90,12 @@
 - Strategies: no state/cap changes vs 11-16 on the 12 strategies; CLEAN 14->15 on A_core_3power, A_regular_5power, A_wrebounds_4flex, A_wsteals_5flex, C_wstocks_4flex. B_demon_3flex / B_demon_5flex still red (REQUAL HOLD 11-09). CHANGE: _ROTATION state normal -> rotation, live_cap 0 -> 1; steals ok -> cool (ewma 0.548 -> 0.466, trail10 0.475); turnovers ok (0.620).
 - Edge monitors: PP z 2.37, UD z 2.25, both RUNNING (28 slates), no ALARM.
 - Boards 11-18 (12 games, routine snapshot): PrizePicks 675, Underdog 411, Sleeper 221, Fliff 84. Betr and sportsbooks 0 so far (Betr only in P3 window; books after P2B ~08:06 PT).
+
+## 2026-11-19 13:55 UTC ACTION
+- Market term: review revert (carried). Could not run audit_market_coverage today: github_trigger_workflow returned 403 (token lacks actions:write). Last verdict 11-18 (run 44318475729) NOT READY, 28 dates. 11-18 window rungs 2,511, avg 2.40 books.
+- Pipelines: P2A 11-19 success (03:31-03:47 PT); P2A/P2B/P3 11-18 all success (P3 claimed 13:17 PT, finished 13:35 PT). Scheduler tick 58s old. P3 11-18 soft-failed grep NOT done: run is outside the last-100-runs window of github_list_workflow_runs. Outside the pipeline: NBA Friend Page Run failed 11-18 17:56 PT.
+- PP 11-18 (PLAY, $10 unit): 7 slips (P_B3_3power, P_B5_3power, P_B7_3power 0; P_F5_5flex 0.4u; void P_B4_4flex 0, P_B9_6flex 0.4u, P_FB_U6flex 0), 7u staked, 0.8u returned, net -6.2u (-$62), ROI -88.6%. Season: 127 slips, 127u, 167.8u, +40.8u, ROI +32.1%.
+- UD P5 (paper+shadow) 11-18: 4 slips, 4u, +3u (profit col), ROI +75%. Season P5: 97 slips, 91u, +19.25u, ROI +21.2%.
+- Strategies: no state/cap changes on the 12 strategies vs 11-17; CLEAN 15->16 on A_core_3power, A_regular_5power, A_wrebounds_4flex, A_wsteals_5flex, C_wstocks_4flex. B_demon_3flex / B_demon_5flex still red (REQUAL HOLD 11-09). CHANGE: _ROTATION state rotation -> normal, live_cap 1 -> 0; steals cool -> ok (ewma 0.466 -> 0.507, trail10 0.465); turnovers ok (0.607).
+- Edge monitors: PP z 2.71, UD z 2.23, both RUNNING (29 slates), no ALARM.
+- Boards 11-19 (4 games): 0 rows for every app so far (11-18 filled later: PrizePicks 38,011, Underdog 26,131, Sleeper 17,777, Betr 8,001, Fliff 10,102, 9 sportsbooks). Watch P2B ~08:06 PT.
