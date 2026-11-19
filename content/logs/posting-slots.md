@@ -333,3 +333,12 @@
 - Queue check: 170 items, none past-due without done/hold; no retries needed.
 - No DUPLICATE BLOCKED lines; no errors. Social tools worked this run (no 401).
 - Next due: zn2w6 reels 2026-11-19 20:00Z (12:05 PT).
+
+## 2026-11-19 20:15 UTC OK
+- Slot: 12:05 PT Reels (Thu Nov 19). Run 44605164757 (social-post, success; ~9 min). Triggered manually via social_trigger_workflow (no inputs).
+- Posted zn2w6_ig https://www.instagram.com/reel/Df76I8tCDjc/ (trial-reel not accepted, posted as normal reel; IG media_id 17923730592242292)
+- Posted zn2w6_fb https://www.facebook.com/reel/2329646414273888/ (FB post_id 1123447423787583)
+- TikTok backlog -> Buffer: "nothing to feed" (no unscheduled items due within 4 days).
+- Queue check: 170 items; only zn2w6 was past-due without done/hold, now posted. No retries needed.
+- No DUPLICATE BLOCKED lines. Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded.
+- Next due: zn2w7 reels 2026-11-20 01:00Z (12:05 PT slot ahead: 17:05 PT).
