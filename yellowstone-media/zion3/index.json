@@ -1,6 +1,6 @@
 {
  "chapter": "zion3",
- "list_sha": "2b2dc172cbb41458",
+ "list_sha": "f90907aeab925e18",
  "files": [
   {
    "name": "z3_commons_dellenbaugh_1",
@@ -425,70 +425,2972 @@
    "w": 1858,
    "h": 3000,
    "bytes": 1727769
+  },
+  {
+   "name": "z3x_cedar_city_harding_1",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/GRADING_OPERATIONS_SHOWING_HORSE-DRAWN_DRAG_-_Bryce_Canyon_National_Park_Rim_Road%2C_State_Highway_63_to_Rainbow_Point%2C_Tropic%2C_Garfield_County%2C_UT_HAER_UTAH%2C9-TROP.V%2C1%3B_-17.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:GRADING_OPERATIONS_SHOWING_HORSE-DRAWN_DRAG_-_Bryce_Canyon_National_Park_Rim_Road,_State_Highway_63_to_Rainbow_Point,_Tropic,_Garfield_County,_UT_HAER_UTAH,9-TROP.V,1;_-17.tif",
+   "shows": "Wikimedia Commons: Warren Harding Cedar City Utah 1923",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:GRADING OPERATIONS SHOWING HORSE-DRAWN DRAG - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -17.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_cedar_city_harding_1.jpg",
+   "w": 3000,
+   "h": 2396,
+   "bytes": 662642
+  },
+  {
+   "name": "z3x_cedar_city_harding_2",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/VIEW_OF_ROAD_CROSSING_PAUNSAUGUNT_PLATEAU%2C_FACING%3F_-_Bryce_Canyon_National_Park_Rim_Road%2C_State_Highway_63_to_Rainbow_Point%2C_Tropic%2C_Garfield_County%2C_UT_HAER_UTAH%2C9-TROP.V%2C1%3B_-10.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:VIEW_OF_ROAD_CROSSING_PAUNSAUGUNT_PLATEAU,_FACING%3F_-_Bryce_Canyon_National_Park_Rim_Road,_State_Highway_63_to_Rainbow_Point,_Tropic,_Garfield_County,_UT_HAER_UTAH,9-TROP.V,1;_-10.tif",
+   "shows": "Wikimedia Commons: Warren Harding Cedar City Utah 1923",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:VIEW OF ROAD CROSSING PAUNSAUGUNT PLATEAU, FACING? - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -10.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_cedar_city_harding_2.jpg",
+   "w": 3000,
+   "h": 2162,
+   "bytes": 1163091
+  },
+  {
+   "name": "z3x_cedar_city_harding_4",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/VIEW_OF_NATURAL_BRIDGE_OVERLOOK_PARKING_AREA%2C_FACING_NORTHEAST._NOTE_DETERIORATION_OF_WALL_AND_USE_OF_AESTHETICALLY_INTRUSIVE_FENCING._-_Bryce_Canyon_National_Park_Rim_Road%2C_HAER_UTAH%2C9-TROP.V%2C1%3B_-12.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:VIEW_OF_NATURAL_BRIDGE_OVERLOOK_PARKING_AREA,_FACING_NORTHEAST._NOTE_DETERIORATION_OF_WALL_AND_USE_OF_AESTHETICALLY_INTRUSIVE_FENCING._-_Bryce_Canyon_National_Park_Rim_Road,_HAER_UTAH,9-TROP.V,1;_-12.tif",
+   "shows": "Wikimedia Commons: Warren Harding Cedar City Utah 1923",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:VIEW OF NATURAL BRIDGE OVERLOOK PARKING AREA, FACING NORTHEAST. NOTE DETERIORATION OF WALL AND USE OF AESTHETICALLY INTRUSIVE FENCING. - Bryce Canyon National Park Rim Road, HAER UTAH,9-TROP.V,1; -12.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_cedar_city_harding_4.jpg",
+   "w": 3000,
+   "h": 2132,
+   "bytes": 1210301
+  },
+  {
+   "name": "z3x_cedar_city_harding_5",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/VIEW_OF_ROAD_CROSSING_PAUNSAUGUNT_PLATEAU%2C_FACING_SOUTHWEST%3F_-_Bryce_Canyon_National_Park_Rim_Road%2C_State_Highway_63_to_Rainbow_Point%2C_Tropic%2C_Garfield_County%2C_UT_HAER_UTAH%2C9-TROP.V%2C1%3B_-9.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:VIEW_OF_ROAD_CROSSING_PAUNSAUGUNT_PLATEAU,_FACING_SOUTHWEST%3F_-_Bryce_Canyon_National_Park_Rim_Road,_State_Highway_63_to_Rainbow_Point,_Tropic,_Garfield_County,_UT_HAER_UTAH,9-TROP.V,1;_-9.tif",
+   "shows": "Wikimedia Commons: Warren Harding Cedar City Utah 1923",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:VIEW OF ROAD CROSSING PAUNSAUGUNT PLATEAU, FACING SOUTHWEST? - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -9.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_cedar_city_harding_5.jpg",
+   "w": 3000,
+   "h": 2164,
+   "bytes": 696462
+  },
+  {
+   "name": "z3x_gov_dern_1",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/7/71/1925%2C_Fruita_Children_and_Governor_George_H._Dern_%2820e3ca6f-2b59-4012-aa04-d92677d9b6ee%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:1925,_Fruita_Children_and_Governor_George_H._Dern_(20e3ca6f-2b59-4012-aa04-d92677d9b6ee).jpg",
+   "shows": "Wikimedia Commons: George Dern Governor of Utah",
+   "license": "Public domain",
+   "credit": "NPS (Taken on 16 April 2011) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:1925, Fruita Children and Governor George H. Dern (20e3ca6f-2b59-4012-aa04-d92677d9b6ee).jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Taken on 16 April 2011",
+   "file": "img/z3x_gov_dern_1.jpg",
+   "w": 2545,
+   "h": 2052,
+   "bytes": 1350106
+  },
+  {
+   "name": "z3x_gov_dern_2",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Message_of_Governor_George_H._Dern_to_the_Seventeenth_Legislature_of_the_state_of_Utah_-_DPLA_-_c1e97fb5bfe29369e7517d5917b47f47_%28page_30%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Message_of_Governor_George_H._Dern_to_the_Seventeenth_Legislature_of_the_state_of_Utah_-_DPLA_-_c1e97fb5bfe29369e7517d5917b47f47_(page_30).jpg",
+   "shows": "Wikimedia Commons: George Dern Governor of Utah",
+   "license": "Public domain",
+   "credit": "Dern, George H., 1872-1936, author (1927 date QS:P571,+1927-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 30).jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1927 date QS:P571,+1927-00-00T00:00:00Z/9",
+   "file": "img/z3x_gov_dern_2.jpg",
+   "w": 2024,
+   "h": 3000,
+   "bytes": 953672
+  },
+  {
+   "name": "z3x_gov_dern_3",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Message_of_Governor_George_H._Dern_to_the_Seventeenth_Legislature_of_the_state_of_Utah_-_DPLA_-_c1e97fb5bfe29369e7517d5917b47f47_%28page_23%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Message_of_Governor_George_H._Dern_to_the_Seventeenth_Legislature_of_the_state_of_Utah_-_DPLA_-_c1e97fb5bfe29369e7517d5917b47f47_(page_23).jpg",
+   "shows": "Wikimedia Commons: George Dern Governor of Utah",
+   "license": "Public domain",
+   "credit": "Dern, George H., 1872-1936, author (1927 date QS:P571,+1927-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 23).jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1927 date QS:P571,+1927-00-00T00:00:00Z/9",
+   "file": "img/z3x_gov_dern_3.jpg",
+   "w": 2024,
+   "h": 3000,
+   "bytes": 942387
+  },
+  {
+   "name": "z3x_grafton_1",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Grafton_Ghost_Town%2C_Utah_%2815018424114%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Grafton_Ghost_Town,_Utah_(15018424114).jpg",
+   "shows": "Wikimedia Commons: Grafton Utah ghost town",
+   "license": "Public domain",
+   "credit": "Bureau of Land Management (2012-09-14 21:08) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Grafton Ghost Town, Utah (15018424114).jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "2012-09-14 21:08",
+   "file": "img/z3x_grafton_1.jpg",
+   "w": 500,
+   "h": 332,
+   "bytes": 97755
+  },
+  {
+   "name": "z3x_grafton_2",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Pastoral_Utah%2C_Grafton_Ghost_Town_4-14_%2827042678566%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Pastoral_Utah,_Grafton_Ghost_Town_4-14_(27042678566).jpg",
+   "shows": "Wikimedia Commons: Grafton Utah ghost town",
+   "license": "CC BY-SA 2.0",
+   "credit": "Don Graham from Redlands, CA, USA - God bless it! (Taken on 30 April 2014, 10:54) via Wikimedia Commons, CC BY-SA 2.0",
+   "status": "OK",
+   "title": "File:Pastoral Utah, Grafton Ghost Town 4-14 (27042678566).jpg",
+   "page_usage": "Wikimedia Commons licence: CC BY-SA 2.0",
+   "date": "Taken on 30 April 2014, 10:54",
+   "file": "img/z3x_grafton_2.jpg",
+   "w": 2450,
+   "h": 1588,
+   "bytes": 2027765
+  },
+  {
+   "name": "z3x_grafton_4",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Grafton_UT_-_schoolhouse.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Grafton_UT_-_schoolhouse.JPG",
+   "shows": "Wikimedia Commons: Grafton Utah ghost town",
+   "license": "Public domain",
+   "credit": "Triberocker at English Wikipedia (Taken on 5 June 2004) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Grafton UT - schoolhouse.JPG",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Taken on 5 June 2004",
+   "file": "img/z3x_grafton_4.jpg",
+   "w": 2272,
+   "h": 1704,
+   "bytes": 764507
+  },
+  {
+   "name": "z3x_grafton_5",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Grafton_Ghost_Town_Pasture_8-07a_%288510924294%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Grafton_Ghost_Town_Pasture_8-07a_(8510924294).jpg",
+   "shows": "Wikimedia Commons: Grafton Utah ghost town",
+   "license": "CC BY-SA 2.0",
+   "credit": "inkknife_2000 (7.5 million views +) (2013-02-26 09:32:55) via Wikimedia Commons, CC BY-SA 2.0",
+   "status": "OK",
+   "title": "File:Grafton Ghost Town Pasture 8-07a (8510924294).jpg",
+   "page_usage": "Wikimedia Commons licence: CC BY-SA 2.0",
+   "date": "2013-02-26 09:32:55",
+   "file": "img/z3x_grafton_5.jpg",
+   "w": 1050,
+   "h": 884,
+   "bytes": 210181
+  },
+  {
+   "name": "z3x_grafton_6",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Grafton_Ghost_Town_Pasture_8-07b_%288510924066%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Grafton_Ghost_Town_Pasture_8-07b_(8510924066).jpg",
+   "shows": "Wikimedia Commons: Grafton Utah ghost town",
+   "license": "CC BY-SA 2.0",
+   "credit": "inkknife_2000 (7.5 million views +) (2013-02-26 09:32:50) via Wikimedia Commons, CC BY-SA 2.0",
+   "status": "OK",
+   "title": "File:Grafton Ghost Town Pasture 8-07b (8510924066).jpg",
+   "page_usage": "Wikimedia Commons licence: CC BY-SA 2.0",
+   "date": "2013-02-26 09:32:50",
+   "file": "img/z3x_grafton_6.jpg",
+   "w": 1250,
+   "h": 886,
+   "bytes": 259571
+  },
+  {
+   "name": "z3x_grafton_8",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Grafton_Ghost_Town_Pasture_8-07_%288509816227%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Grafton_Ghost_Town_Pasture_8-07_(8509816227).jpg",
+   "shows": "Wikimedia Commons: Grafton Utah ghost town",
+   "license": "CC BY-SA 2.0",
+   "credit": "inkknife_2000 (7.5 million views +) (Taken on 28 August 2007, 15:22:33) via Wikimedia Commons, CC BY-SA 2.0",
+   "status": "OK",
+   "title": "File:Grafton Ghost Town Pasture 8-07 (8509816227).jpg",
+   "page_usage": "Wikimedia Commons licence: CC BY-SA 2.0",
+   "date": "Taken on 28 August 2007, 15:22:33",
+   "file": "img/z3x_grafton_8.jpg",
+   "w": 1950,
+   "h": 1512,
+   "bytes": 704167
+  },
+  {
+   "name": "z3x_haer_pine_3",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/VIEW_FROM_EAST_TUNNEL_PORTAL_FACING_EAST_ACROSS_UPPER_PINE_CREEK_BRIDGE_-_Zion-Mount_Carmel_Highway%2C_Tunnel%2C_Two_miles_east_of_Zion_Canyon_Scenic_Drive%2C_Springdale%2C_HAER_UTAH%2C27-SPDA.V%2C3A-37.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:VIEW_FROM_EAST_TUNNEL_PORTAL_FACING_EAST_ACROSS_UPPER_PINE_CREEK_BRIDGE_-_Zion-Mount_Carmel_Highway,_Tunnel,_Two_miles_east_of_Zion_Canyon_Scenic_Drive,_Springdale,_HAER_UTAH,27-SPDA.V,3A-37.tif",
+   "shows": "Wikimedia Commons: Pine Creek Bridge Zion-Mount Carmel Highway",
+   "license": "Public domain",
+   "credit": "Grogan, Brian C., creator (1993 date QS:P571,+1993-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:VIEW FROM EAST TUNNEL PORTAL FACING EAST ACROSS UPPER PINE CREEK BRIDGE - Zion-Mount Carmel Highway, Tunnel, Two miles east of Zion Canyon Scenic Drive, Springdale, HAER UTAH,27-SPDA.V,3A-37.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1993 date QS:P571,+1993-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_pine_3.jpg",
+   "w": 3000,
+   "h": 2412,
+   "bytes": 591198
+  },
+  {
+   "name": "z3x_haer_pine_4",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Zion-Mount_Carmel_Highway%2C_Pine_Creek_Bridge%2C_Spanning_Pine_Creek_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3B-_%28sheet_2_of_2%29.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Zion-Mount_Carmel_Highway,_Pine_Creek_Bridge,_Spanning_Pine_Creek_on_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3B-_(sheet_2_of_2).tif",
+   "shows": "Wikimedia Commons: Pine Creek Bridge Zion-Mount Carmel Highway",
+   "license": "Public domain",
+   "credit": "Croteau, Todd A., creator (1993 date QS:P571,+1993-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Zion-Mount Carmel Highway, Pine Creek Bridge, Spanning Pine Creek on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3B- (sheet 2 of 2).tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1993 date QS:P571,+1993-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_pine_4.jpg",
+   "w": 3000,
+   "h": 1998,
+   "bytes": 841805
+  },
+  {
+   "name": "z3x_haer_pine_5",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Zion-Mount_Carmel_Highway%2C_Pine_Creek_Bridge%2C_Spanning_Pine_Creek_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3B-_%28sheet_1_of_2%29.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Zion-Mount_Carmel_Highway,_Pine_Creek_Bridge,_Spanning_Pine_Creek_on_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3B-_(sheet_1_of_2).tif",
+   "shows": "Wikimedia Commons: Pine Creek Bridge Zion-Mount Carmel Highway",
+   "license": "Public domain",
+   "credit": "Croteau, Todd A., creator (1993 date QS:P571,+1993-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Zion-Mount Carmel Highway, Pine Creek Bridge, Spanning Pine Creek on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3B- (sheet 1 of 2).tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1993 date QS:P571,+1993-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_pine_5.jpg",
+   "w": 3000,
+   "h": 1996,
+   "bytes": 1161431
+  },
+  {
+   "name": "z3x_haer_pine_6",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Substructure_of_bridge%2C_facing_east_-_Zion-Mount_Carmel_Highway%2C_Upper_Pine_Creek_Bridge%2C_Spanning_Upper_Pine_Creek_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County_HAER_UTAH%2C27-SPDA.V%2C3J-6.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Substructure_of_bridge,_facing_east_-_Zion-Mount_Carmel_Highway,_Upper_Pine_Creek_Bridge,_Spanning_Upper_Pine_Creek_on_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County_HAER_UTAH,27-SPDA.V,3J-6.tif",
+   "shows": "Wikimedia Commons: Pine Creek Bridge Zion-Mount Carmel Highway",
+   "license": "Public domain",
+   "credit": "Lowe, Jet, creator (1992 date QS:P571,+1992-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Substructure of bridge, facing east - Zion-Mount Carmel Highway, Upper Pine Creek Bridge, Spanning Upper Pine Creek on Zion-Mount Carmel Highway, Springdale, Washington County HAER UTAH,27-SPDA.V,3J-6.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1992 date QS:P571,+1992-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_pine_6.jpg",
+   "w": 3000,
+   "h": 2158,
+   "bytes": 1153993
+  },
+  {
+   "name": "z3x_haer_pine_7",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Looking_down_at_bridge_from_canyon_overlook_trail%2C_facing_south_-_Zion-Mount_Carmel_Highway%2C_Upper_Pine_Creek_Bridge%2C_Spanning_Upper_Pine_Creek_on_Zion-Mount_Carmel_Highway%2C_HAER_UTAH%2C27-SPDA.V%2C3J-5.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Looking_down_at_bridge_from_canyon_overlook_trail,_facing_south_-_Zion-Mount_Carmel_Highway,_Upper_Pine_Creek_Bridge,_Spanning_Upper_Pine_Creek_on_Zion-Mount_Carmel_Highway,_HAER_UTAH,27-SPDA.V,3J-5.tif",
+   "shows": "Wikimedia Commons: Pine Creek Bridge Zion-Mount Carmel Highway",
+   "license": "Public domain",
+   "credit": "Lowe, Jet, creator (1992 date QS:P571,+1992-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Looking down at bridge from canyon overlook trail, facing south - Zion-Mount Carmel Highway, Upper Pine Creek Bridge, Spanning Upper Pine Creek on Zion-Mount Carmel Highway, HAER UTAH,27-SPDA.V,3J-5.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1992 date QS:P571,+1992-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_pine_7.jpg",
+   "w": 1920,
+   "h": 2689,
+   "bytes": 1201498
+  },
+  {
+   "name": "z3x_haer_pine_8",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Looking_down_at_north_elevation%2C_facing_south_-_Zion-Mount_Carmel_Highway%2C_Upper_Pine_Creek_Bridge%2C_Spanning_Upper_Pine_Creek_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_HAER_UTAH%2C27-SPDA.V%2C3J-4.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Looking_down_at_north_elevation,_facing_south_-_Zion-Mount_Carmel_Highway,_Upper_Pine_Creek_Bridge,_Spanning_Upper_Pine_Creek_on_Zion-Mount_Carmel_Highway,_Springdale,_HAER_UTAH,27-SPDA.V,3J-4.tif",
+   "shows": "Wikimedia Commons: Pine Creek Bridge Zion-Mount Carmel Highway",
+   "license": "Public domain",
+   "credit": "Lowe, Jet, creator (1992 date QS:P571,+1992-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Looking down at north elevation, facing south - Zion-Mount Carmel Highway, Upper Pine Creek Bridge, Spanning Upper Pine Creek on Zion-Mount Carmel Highway, Springdale, HAER UTAH,27-SPDA.V,3J-4.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1992 date QS:P571,+1992-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_pine_8.jpg",
+   "w": 1920,
+   "h": 2664,
+   "bytes": 1256920
+  },
+  {
+   "name": "z3x_haer_switch_1",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Pine_Creek_canyon_and_the_Zion-Mount_Carmel_Highway_switchbacks_from_Canyon_Overlook%2C_Zion_National_Park%2C_Utah.jpg/3840px-Pine_Creek_canyon_and_the_Zion-Mount_Carmel_Highway_switchbacks_from_Canyon_Overlook%2C_Zion_National_Park%2C_Utah.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Pine_Creek_canyon_and_the_Zion-Mount_Carmel_Highway_switchbacks_from_Canyon_Overlook,_Zion_National_Park,_Utah.jpg",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway switchbacks",
+   "license": "CC BY-SA 4.0",
+   "credit": "Christian David (26 April 2026, 20:38) via Wikimedia Commons, CC BY-SA 4.0",
+   "status": "OK",
+   "title": "File:Pine Creek canyon and the Zion-Mount Carmel Highway switchbacks from Canyon Overlook, Zion National Park, Utah.jpg",
+   "page_usage": "Wikimedia Commons licence: CC BY-SA 4.0",
+   "date": "26 April 2026, 20:38",
+   "file": "img/z3x_haer_switch_1.jpg",
+   "w": 3000,
+   "h": 2250,
+   "bytes": 2272877
+  },
+  {
+   "name": "z3x_haer_switch_2",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/SWITCHBACKS_SECTION_ABOVE_PINE_CREEK_-_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3-44.tif/lossy-page1-3840px-SWITCHBACKS_SECTION_ABOVE_PINE_CREEK_-_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3-44.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:SWITCHBACKS_SECTION_ABOVE_PINE_CREEK_-_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3-44.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway switchbacks",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:SWITCHBACKS SECTION ABOVE PINE CREEK - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-44.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_haer_switch_2.jpg",
+   "w": 2422,
+   "h": 3000,
+   "bytes": 625825
+  },
+  {
+   "name": "z3x_haer_switch_3",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/SWITCHBACKS_ON_TUNNEL_APPROACH%2C_FACING_WEST_-_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3-18.tif/lossy-page1-1920px-SWITCHBACKS_ON_TUNNEL_APPROACH%2C_FACING_WEST_-_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3-18.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:SWITCHBACKS_ON_TUNNEL_APPROACH,_FACING_WEST_-_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3-18.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway switchbacks",
+   "license": "Public domain",
+   "credit": "Grogan, Brian C., creator (1993 date QS:P571,+1993-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:SWITCHBACKS ON TUNNEL APPROACH, FACING WEST - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-18.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1993 date QS:P571,+1993-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_switch_3.jpg",
+   "w": 1920,
+   "h": 2653,
+   "bytes": 1254361
+  },
+  {
+   "name": "z3x_haer_switch_5",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Exhibit_7-_Zion-Mt._Carmel_Highway_tunnel_road_at_the_switchbacks._%3B_ZION_Museum_and_Archives_Image_007_01_040_%3B_ZION_8789_%28d78b908c964c4868ba2a4af081e6cf33%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Exhibit_7-_Zion-Mt._Carmel_Highway_tunnel_road_at_the_switchbacks._;_ZION_Museum_and_Archives_Image_007_01_040_;_ZION_8789_(d78b908c964c4868ba2a4af081e6cf33).jpg",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway switchbacks",
+   "license": "Public domain",
+   "credit": "Carl E. Jepson (Taken on 22 August 2016) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Exhibit 7- Zion-Mt. Carmel Highway tunnel road at the switchbacks. ; ZION Museum and Archives Image 007 01 040 ; ZION 8789 (d78b908c964c4868ba2a4af081e6cf33).jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Taken on 22 August 2016",
+   "file": "img/z3x_haer_switch_5.jpg",
+   "w": 1200,
+   "h": 966,
+   "bytes": 298568
+  },
+  {
+   "name": "z3x_haer_switch_6",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/GUARD_WALL_ON_SWITCHBACKS%2C_FACING_SOUTHWEST_-_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3-22.tif/lossy-page1-3840px-GUARD_WALL_ON_SWITCHBACKS%2C_FACING_SOUTHWEST_-_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3-22.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:GUARD_WALL_ON_SWITCHBACKS,_FACING_SOUTHWEST_-_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3-22.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway switchbacks",
+   "license": "Public domain",
+   "credit": "Grogan, Brian C., creator (1993 date QS:P571,+1993-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:GUARD WALL ON SWITCHBACKS, FACING SOUTHWEST - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-22.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1993 date QS:P571,+1993-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_switch_6.jpg",
+   "w": 3000,
+   "h": 2148,
+   "bytes": 1508889
+  },
+  {
+   "name": "z3x_haer_switch_7",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/RETAINING_WALL_ON_TUNNEL_SWITCHBACKS%2C_FACING_WEST_-_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3-17.tif/lossy-page1-3840px-RETAINING_WALL_ON_TUNNEL_SWITCHBACKS%2C_FACING_WEST_-_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3-17.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:RETAINING_WALL_ON_TUNNEL_SWITCHBACKS,_FACING_WEST_-_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3-17.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway switchbacks",
+   "license": "Public domain",
+   "credit": "Grogan, Brian C., creator (1993 date QS:P571,+1993-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:RETAINING WALL ON TUNNEL SWITCHBACKS, FACING WEST - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-17.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1993 date QS:P571,+1993-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_switch_7.jpg",
+   "w": 3000,
+   "h": 2124,
+   "bytes": 1609947
+  },
+  {
+   "name": "z3x_haer_switch_8",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/TUNNEL_SWITCHBACKS_VIEWED_FROM_ABOVE_GREAT_ARCH%2C_FACING_WEST_-_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3-15.tif/lossy-page1-3840px-TUNNEL_SWITCHBACKS_VIEWED_FROM_ABOVE_GREAT_ARCH%2C_FACING_WEST_-_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3-15.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:TUNNEL_SWITCHBACKS_VIEWED_FROM_ABOVE_GREAT_ARCH,_FACING_WEST_-_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3-15.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway switchbacks",
+   "license": "Public domain",
+   "credit": "Grogan, Brian C., creator (1993 date QS:P571,+1993-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:TUNNEL SWITCHBACKS VIEWED FROM ABOVE GREAT ARCH, FACING WEST - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-15.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1993 date QS:P571,+1993-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_switch_8.jpg",
+   "w": 3000,
+   "h": 2100,
+   "bytes": 673389
+  },
+  {
+   "name": "z3x_haer_zmc_1",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-15.tif/lossy-page1-3840px-Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-15.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Zion-Mount_Carmel_Highway,_Short_Tunnel,_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3H-15.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-15.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_haer_zmc_1.jpg",
+   "w": 3000,
+   "h": 2428,
+   "bytes": 1667799
+  },
+  {
+   "name": "z3x_haer_zmc_11",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Short_tunnel%2C_east_portal_facing_west_-_Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-1.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Short_tunnel,_east_portal_facing_west_-_Zion-Mount_Carmel_Highway,_Short_Tunnel,_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3H-1.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": "Lowe, Jet, creator (1992 date QS:P571,+1992-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Short tunnel, east portal facing west - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-1.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1992 date QS:P571,+1992-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_zmc_11.jpg",
+   "w": 3000,
+   "h": 2138,
+   "bytes": 1533783
+  },
+  {
+   "name": "z3x_haer_zmc_12",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Short_tunnel%2C_west_portal_facing_east_-_Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-2.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Short_tunnel,_west_portal_facing_east_-_Zion-Mount_Carmel_Highway,_Short_Tunnel,_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3H-2.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": "Lowe, Jet, creator (1992 date QS:P571,+1992-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Short tunnel, west portal facing east - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-2.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1992 date QS:P571,+1992-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_zmc_12.jpg",
+   "w": 1920,
+   "h": 2678,
+   "bytes": 1024691
+  },
+  {
+   "name": "z3x_haer_zmc_13",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Bored_culvert%2C_interior_detail_-_Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-7.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Bored_culvert,_interior_detail_-_Zion-Mount_Carmel_Highway,_Short_Tunnel,_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3H-7.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": "Lowe, Jet (1992 date QS:P571,+1992-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Bored culvert, interior detail - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-7.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1992 date QS:P571,+1992-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_zmc_13.jpg",
+   "w": 3000,
+   "h": 2148,
+   "bytes": 921513
+  },
+  {
+   "name": "z3x_haer_zmc_14",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/OVERALL_VIEW_OF_HIGHWAY%2C_LOOKING_WEST_-_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3-4.tif/lossy-page1-3840px-OVERALL_VIEW_OF_HIGHWAY%2C_LOOKING_WEST_-_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3-4.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:OVERALL_VIEW_OF_HIGHWAY,_LOOKING_WEST_-_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3-4.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:OVERALL VIEW OF HIGHWAY, LOOKING WEST - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-4.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_haer_zmc_14.jpg",
+   "w": 2402,
+   "h": 3000,
+   "bytes": 1936345
+  },
+  {
+   "name": "z3x_haer_zmc_15",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Triple_culvert_at_east_portal%2C_facing_north_-_Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_HAER_UTAH%2C27-SPDA.V%2C3H-3.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Triple_culvert_at_east_portal,_facing_north_-_Zion-Mount_Carmel_Highway,_Short_Tunnel,_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_HAER_UTAH,27-SPDA.V,3H-3.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": "Lowe, Jet, creator (1992 date QS:P571,+1992-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Triple culvert at east portal, facing north - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, HAER UTAH,27-SPDA.V,3H-3.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1992 date QS:P571,+1992-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_zmc_15.jpg",
+   "w": 3000,
+   "h": 2152,
+   "bytes": 1617586
+  },
+  {
+   "name": "z3x_haer_zmc_16",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/RETAINING_WALL_AT_CULVERT_-_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3-31.tif/lossy-page1-3840px-RETAINING_WALL_AT_CULVERT_-_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3-31.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:RETAINING_WALL_AT_CULVERT_-_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3-31.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": "Grogan, Brian C., creator (1993 date QS:P571,+1993-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:RETAINING WALL AT CULVERT - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-31.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1993 date QS:P571,+1993-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_zmc_16.jpg",
+   "w": 3000,
+   "h": 2160,
+   "bytes": 1679924
+  },
+  {
+   "name": "z3x_haer_zmc_17",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Bored_culvert_detail%2C_facing_south_-_Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-6.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Bored_culvert_detail,_facing_south_-_Zion-Mount_Carmel_Highway,_Short_Tunnel,_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3H-6.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": "Lowe, Jet (1992 date QS:P571,+1992-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Bored culvert detail, facing south - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-6.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1992 date QS:P571,+1992-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_zmc_17.jpg",
+   "w": 3000,
+   "h": 2164,
+   "bytes": 1367226
+  },
+  {
+   "name": "z3x_haer_zmc_18",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/VIEW_FROM_SWITCHBACKS_TO_THE_SOUTHEAST%2C_FACING_NORTHWEST_-_Zion-Mount_Carmel_Highway%2C_Virgin_River_Bridge%2C_Spanning_North_Fork_of_Virgin_River_on_Zion-Mount_Carmel_Highway%2C_HAER_UTAH%2C27-SPDA.V%2C3C-9.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:VIEW_FROM_SWITCHBACKS_TO_THE_SOUTHEAST,_FACING_NORTHWEST_-_Zion-Mount_Carmel_Highway,_Virgin_River_Bridge,_Spanning_North_Fork_of_Virgin_River_on_Zion-Mount_Carmel_Highway,_HAER_UTAH,27-SPDA.V,3C-9.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": "Grogan, Brian C., creator (1993 date QS:P571,+1993-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:VIEW FROM SWITCHBACKS TO THE SOUTHEAST, FACING NORTHWEST - Zion-Mount Carmel Highway, Virgin River Bridge, Spanning North Fork of Virgin River on Zion-Mount Carmel Highway, HAER UTAH,27-SPDA.V,3C-9.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1993 date QS:P571,+1993-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_zmc_18.jpg",
+   "w": 1920,
+   "h": 2644,
+   "bytes": 902027
+  },
+  {
+   "name": "z3x_haer_zmc_19",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Bored_culvert_near_short_tunnel%2C_facing_south_-_Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_HAER_UTAH%2C27-SPDA.V%2C3H-5.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Bored_culvert_near_short_tunnel,_facing_south_-_Zion-Mount_Carmel_Highway,_Short_Tunnel,_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_HAER_UTAH,27-SPDA.V,3H-5.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": "Lowe, Jet (1992 date QS:P571,+1992-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Bored culvert near short tunnel, facing south - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, HAER UTAH,27-SPDA.V,3H-5.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1992 date QS:P571,+1992-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_zmc_19.jpg",
+   "w": 3000,
+   "h": 2180,
+   "bytes": 1563378
+  },
+  {
+   "name": "z3x_haer_zmc_2",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-13.tif/lossy-page1-3840px-Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-13.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Zion-Mount_Carmel_Highway,_Short_Tunnel,_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3H-13.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-13.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_haer_zmc_2.jpg",
+   "w": 3000,
+   "h": 2436,
+   "bytes": 1543195
+  },
+  {
+   "name": "z3x_haer_zmc_20",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/OVERALL_VIEW_OF_HIGHWAY%2C_LOOKING_NORTHWEST_-_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3-5.tif/lossy-page1-3840px-OVERALL_VIEW_OF_HIGHWAY%2C_LOOKING_NORTHWEST_-_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3-5.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:OVERALL_VIEW_OF_HIGHWAY,_LOOKING_NORTHWEST_-_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3-5.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:OVERALL VIEW OF HIGHWAY, LOOKING NORTHWEST - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-5.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_haer_zmc_20.jpg",
+   "w": 3000,
+   "h": 2392,
+   "bytes": 1968031
+  },
+  {
+   "name": "z3x_haer_zmc_3",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-14.tif/lossy-page1-3840px-Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-14.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Zion-Mount_Carmel_Highway,_Short_Tunnel,_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3H-14.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-14.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_haer_zmc_3.jpg",
+   "w": 3000,
+   "h": 2446,
+   "bytes": 1733459
+  },
+  {
+   "name": "z3x_haer_zmc_4",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-8.tif/lossy-page1-3840px-Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-8.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Zion-Mount_Carmel_Highway,_Short_Tunnel,_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3H-8.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-8.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_haer_zmc_4.jpg",
+   "w": 3000,
+   "h": 2426,
+   "bytes": 1730487
+  },
+  {
+   "name": "z3x_haer_zmc_5",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-9.tif/lossy-page1-3840px-Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-9.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Zion-Mount_Carmel_Highway,_Short_Tunnel,_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3H-9.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-9.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_haer_zmc_5.jpg",
+   "w": 3000,
+   "h": 2450,
+   "bytes": 1327272
+  },
+  {
+   "name": "z3x_haer_zmc_6",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-10.tif/lossy-page1-3840px-Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-10.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Zion-Mount_Carmel_Highway,_Short_Tunnel,_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3H-10.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-10.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_haer_zmc_6.jpg",
+   "w": 3000,
+   "h": 2438,
+   "bytes": 1555247
+  },
+  {
+   "name": "z3x_haer_zmc_7",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-12.tif/lossy-page1-3840px-Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-12.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Zion-Mount_Carmel_Highway,_Short_Tunnel,_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3H-12.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-12.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_haer_zmc_7.jpg",
+   "w": 3000,
+   "h": 2410,
+   "bytes": 1240796
+  },
+  {
+   "name": "z3x_haer_zmc_8",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-11.tif/lossy-page1-3840px-Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_Washington_County%2C_UT_HAER_UTAH%2C27-SPDA.V%2C3H-11.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Zion-Mount_Carmel_Highway,_Short_Tunnel,_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway,_Springdale,_Washington_County,_UT_HAER_UTAH,27-SPDA.V,3H-11.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-11.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_haer_zmc_8.jpg",
+   "w": 3000,
+   "h": 2414,
+   "bytes": 1333785
+  },
+  {
+   "name": "z3x_haer_zmc_9",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Zion-Mount_Carmel_Highway_at_tunnel%2C_road_visible_at_right_-_Zion-Mount_Carmel_Highway%2C_Short_Tunnel%2C_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway%2C_Springdale%2C_HAER_UTAH%2C27-SPDA.V%2C3H-4.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Zion-Mount_Carmel_Highway_at_tunnel,_road_visible_at_right_-_Zion-Mount_Carmel_Highway,_Short_Tunnel,_Passing_through_Rock_Spur_on_Zion-Mount_Carmel_Highway,_Springdale,_HAER_UTAH,27-SPDA.V,3H-4.tif",
+   "shows": "Wikimedia Commons: Zion-Mount Carmel Highway HAER Utah",
+   "license": "Public domain",
+   "credit": "Lowe, Jet, creator (1992 date QS:P571,+1992-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Zion-Mount Carmel Highway at tunnel, road visible at right - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, HAER UTAH,27-SPDA.V,3H-4.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1992 date QS:P571,+1992-00-00T00:00:00Z/9",
+   "file": "img/z3x_haer_zmc_9.jpg",
+   "w": 3000,
+   "h": 2174,
+   "bytes": 1682223
+  },
+  {
+   "name": "z3x_harding_west_1",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Harding_and_Gillett_at_SLCC_%28Juvenile_Instructor%29.jpg/960px-Harding_and_Gillett_at_SLCC_%28Juvenile_Instructor%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Harding_and_Gillett_at_SLCC_(Juvenile_Instructor).jpg",
+   "shows": "Wikimedia Commons: Warren G. Harding Voyage of Understanding 1923",
+   "license": "Public domain",
+   "credit": "Unknown author Unknown author (1923-07) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Harding and Gillett at SLCC (Juvenile Instructor).jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1923-07",
+   "file": "img/z3x_harding_west_1.jpg",
+   "w": 960,
+   "h": 630,
+   "bytes": 165621
+  },
+  {
+   "name": "z3x_harding_west_2",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Seattle_Elks_band_at_Boys_Picnic%2C_Woodland_Park%2C_1923_%28MOHAI_13125%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Seattle_Elks_band_at_Boys_Picnic,_Woodland_Park,_1923_(MOHAI_13125).jpg",
+   "shows": "Wikimedia Commons: Warren G. Harding Voyage of Understanding 1923",
+   "license": "Public domain",
+   "credit": "Frank H. Nowell (1923 date QS:P571,+1923-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Seattle Elks band at Boys Picnic, Woodland Park, 1923 (MOHAI 13125).jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1923 date QS:P571,+1923-00-00T00:00:00Z/9",
+   "file": "img/z3x_harding_west_2.jpg",
+   "w": 1000,
+   "h": 262,
+   "bytes": 71835
+  },
+  {
+   "name": "z3x_mukuntuweap_1",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Zion_angels_landing_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Zion_angels_landing_view.jpg",
+   "shows": "Wikimedia Commons: Mukuntuweap National Monument",
+   "license": "CC BY-SA 3.0",
+   "credit": "Diliff (2004-09-13) via Wikimedia Commons, CC BY-SA 3.0",
+   "status": "OK",
+   "title": "File:Zion angels landing view.jpg",
+   "page_usage": "Wikimedia Commons licence: CC BY-SA 3.0",
+   "date": "2004-09-13",
+   "file": "img/z3x_mukuntuweap_1.jpg",
+   "w": 1000,
+   "h": 1025,
+   "bytes": 237999
+  },
+  {
+   "name": "z3x_mukuntuweap_2",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Kolob_Canyons_part_of_Zion_National_Park.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Kolob_Canyons_part_of_Zion_National_Park.JPG",
+   "shows": "Wikimedia Commons: Mukuntuweap National Monument",
+   "license": "CC BY 3.0",
+   "credit": "Michael G\u00e4bler (1997-08) via Wikimedia Commons, CC BY 3.0",
+   "status": "OK",
+   "title": "File:Kolob Canyons part of Zion National Park.JPG",
+   "page_usage": "Wikimedia Commons licence: CC BY 3.0",
+   "date": "1997-08",
+   "file": "img/z3x_mukuntuweap_2.jpg",
+   "w": 2087,
+   "h": 1330,
+   "bytes": 2645015
+  },
+  {
+   "name": "z3x_mukuntuweap_3",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Navajo_Sandstone_formations_in_Zion_National_Park%2C_Utah.-_%28USA_2016%29.jpg/3840px-Navajo_Sandstone_formations_in_Zion_National_Park%2C_Utah.-_%28USA_2016%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Navajo_Sandstone_formations_in_Zion_National_Park,_Utah.-_(USA_2016).jpg",
+   "shows": "Wikimedia Commons: Mukuntuweap National Monument",
+   "license": "CC BY-SA 4.0",
+   "credit": "Pierre Andr\u00e9 Leclercq (2016-10-12 22:54:55) via Wikimedia Commons, CC BY-SA 4.0",
+   "status": "OK",
+   "title": "File:Navajo Sandstone formations in Zion National Park, Utah.- (USA 2016).jpg",
+   "page_usage": "Wikimedia Commons licence: CC BY-SA 4.0",
+   "date": "2016-10-12 22:54:55",
+   "file": "img/z3x_mukuntuweap_3.jpg",
+   "w": 3000,
+   "h": 2296,
+   "bytes": 2171681
+  },
+  {
+   "name": "z3x_mukuntuweap_4",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Angels_Landing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Angels_Landing.jpg",
+   "shows": "Wikimedia Commons: Mukuntuweap National Monument",
+   "license": "CC BY-SA 4.0",
+   "credit": "Tobias Alt (Taken on 14 July 2007) via Wikimedia Commons, CC BY-SA 4.0",
+   "status": "OK",
+   "title": "File:Angels Landing.jpg",
+   "page_usage": "Wikimedia Commons licence: CC BY-SA 4.0",
+   "date": "Taken on 14 July 2007",
+   "file": "img/z3x_mukuntuweap_4.jpg",
+   "w": 3000,
+   "h": 2250,
+   "bytes": 2974149
+  },
+  {
+   "name": "z3x_mukuntuweap_5",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Zion_National_Park%2C_the_Narrows.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Zion_National_Park,_the_Narrows.jpg",
+   "shows": "Wikimedia Commons: Mukuntuweap National Monument",
+   "license": "CC BY 4.0",
+   "credit": "Trougnouf (Taken on 2 June 2016, 16:40:18) via Wikimedia Commons, CC BY 4.0",
+   "status": "OK",
+   "title": "File:Zion National Park, the Narrows.jpg",
+   "page_usage": "Wikimedia Commons licence: CC BY 4.0",
+   "date": "Taken on 2 June 2016, 16:40:18",
+   "file": "img/z3x_mukuntuweap_5.jpg",
+   "w": 2250,
+   "h": 3000,
+   "bytes": 1459206
+  },
+  {
+   "name": "z3x_springdale_1",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/HLCH_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:HLCH_4.jpg",
+   "shows": "Wikimedia Commons: Springdale Utah historic",
+   "license": "CC BY-SA 4.0",
+   "credit": "Anuzman1 (2021-10-24 17:05:48) via Wikimedia Commons, CC BY-SA 4.0",
+   "status": "OK",
+   "title": "File:HLCH 4.jpg",
+   "page_usage": "Wikimedia Commons licence: CC BY-SA 4.0",
+   "date": "2021-10-24 17:05:48",
+   "file": "img/z3x_springdale_1.jpg",
+   "w": 3000,
+   "h": 2250,
+   "bytes": 961457
+  },
+  {
+   "name": "z3x_springdale_2",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/HLCH_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:HLCH_2.jpg",
+   "shows": "Wikimedia Commons: Springdale Utah historic",
+   "license": "CC BY-SA 4.0",
+   "credit": "Anuzman1 (2021-10-24 17:07:43) via Wikimedia Commons, CC BY-SA 4.0",
+   "status": "OK",
+   "title": "File:HLCH 2.jpg",
+   "page_usage": "Wikimedia Commons licence: CC BY-SA 4.0",
+   "date": "2021-10-24 17:07:43",
+   "file": "img/z3x_springdale_2.jpg",
+   "w": 3000,
+   "h": 2250,
+   "bytes": 1069666
+  },
+  {
+   "name": "z3x_springdale_4",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/HLCH_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:HLCH_1.jpg",
+   "shows": "Wikimedia Commons: Springdale Utah historic",
+   "license": "CC BY-SA 4.0",
+   "credit": "Anuzman1 (2021-10-24 17:07:51) via Wikimedia Commons, CC BY-SA 4.0",
+   "status": "OK",
+   "title": "File:HLCH 1.jpg",
+   "page_usage": "Wikimedia Commons licence: CC BY-SA 4.0",
+   "date": "2021-10-24 17:07:51",
+   "file": "img/z3x_springdale_4.jpg",
+   "w": 3000,
+   "h": 2250,
+   "bytes": 1128915
+  },
+  {
+   "name": "z3x_springdale_5",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/6/65/HLCH_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:HLCH_5.jpg",
+   "shows": "Wikimedia Commons: Springdale Utah historic",
+   "license": "CC BY-SA 4.0",
+   "credit": "Anuzman1 (2021-10-24 17:05:34) via Wikimedia Commons, CC BY-SA 4.0",
+   "status": "OK",
+   "title": "File:HLCH 5.jpg",
+   "page_usage": "Wikimedia Commons licence: CC BY-SA 4.0",
+   "date": "2021-10-24 17:05:34",
+   "file": "img/z3x_springdale_5.jpg",
+   "w": 3000,
+   "h": 2250,
+   "bytes": 1251910
+  },
+  {
+   "name": "z3x_springdale_6",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Zion_National_Park%2C_Zion_Museum%2C_Springdale_vicinity_%28Washington%2C_Utah%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Zion_National_Park,_Zion_Museum,_Springdale_vicinity_(Washington,_Utah).jpg",
+   "shows": "Wikimedia Commons: Springdale Utah historic",
+   "license": "Public domain",
+   "credit": "Clayton B. Fraser, Fraserdesign, Photographer (1984-09) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Zion National Park, Zion Museum, Springdale vicinity (Washington, Utah).jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1984-09",
+   "file": "img/z3x_springdale_6.jpg",
+   "w": 907,
+   "h": 664,
+   "bytes": 218932
+  },
+  {
+   "name": "z3x_taft_signing_1",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/3/39/William_Howard_Taft%2C_head-and-shoulders_portrait%2C_facing_front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:William_Howard_Taft,_head-and-shoulders_portrait,_facing_front.jpg",
+   "shows": "Wikimedia Commons: William Howard Taft 1909",
+   "license": "Public domain",
+   "credit": "Unknown author Unknown author (1909-03-11) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:William Howard Taft, head-and-shoulders portrait, facing front.jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1909-03-11",
+   "file": "img/z3x_taft_signing_1.jpg",
+   "w": 2250,
+   "h": 3000,
+   "bytes": 736792
+  },
+  {
+   "name": "z3x_taft_signing_2",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Cabinet_card_of_William_Howard_Taft_by_Pach_Brothers_-_Cropped_to_image.jpg/3840px-Cabinet_card_of_William_Howard_Taft_by_Pach_Brothers_-_Cropped_to_image.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Cabinet_card_of_William_Howard_Taft_by_Pach_Brothers_-_Cropped_to_image.jpg",
+   "shows": "Wikimedia Commons: William Howard Taft 1909",
+   "license": "Public domain",
+   "credit": "Pach Brothers, restored by Adam Cuerden (1908) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Cabinet card of William Howard Taft by Pach Brothers - Cropped to image.jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1908",
+   "file": "img/z3x_taft_signing_2.jpg",
+   "w": 2118,
+   "h": 3000,
+   "bytes": 629151
+  },
+  {
+   "name": "z3x_taft_signing_3",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/William_Howard_Taft_1909_in_Reserve_Lousiana.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:William_Howard_Taft_1909_in_Reserve_Lousiana.jpg",
+   "shows": "Wikimedia Commons: William Howard Taft 1909",
+   "license": "Public domain",
+   "credit": "unknown, possibly the New Orleans Times-Picayune (1909-01-01) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:William Howard Taft 1909 in Reserve Lousiana.jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1909-01-01",
+   "file": "img/z3x_taft_signing_3.jpg",
+   "w": 1000,
+   "h": 582,
+   "bytes": 183152
+  },
+  {
+   "name": "z3x_taft_signing_4",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/William_Howard_Taft_1909.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:William_Howard_Taft_1909.jpg",
+   "shows": "Wikimedia Commons: William Howard Taft 1909",
+   "license": "Public domain",
+   "credit": "unattributed (1909-03-11) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:William Howard Taft 1909.jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1909-03-11",
+   "file": "img/z3x_taft_signing_4.jpg",
+   "w": 2250,
+   "h": 3000,
+   "bytes": 1713658
+  },
+  {
+   "name": "z3x_toquerville_1",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/View_facing_northwest_-_Rockville_Bridge%2C_Spanning_North_Fork_Virgin_River_at_Rockville_cut-off%2C_Rockville%2C_Washington_County%2C_UT_HAER_UTAH%2C27-ROC.VI.V%2C1-3.tif/lossy-page1-3840px-View_facing_northwest_-_Rockville_Bridge%2C_Spanning_North_Fork_Virgin_River_at_Rockville_cut-off%2C_Rockville%2C_Washington_County%2C_UT_HAER_UTAH%2C27-ROC.VI.V%2C1-3.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:View_facing_northwest_-_Rockville_Bridge,_Spanning_North_Fork_Virgin_River_at_Rockville_cut-off,_Rockville,_Washington_County,_UT_HAER_UTAH,27-ROC.VI.V,1-3.tif",
+   "shows": "Wikimedia Commons: Toquerville Utah OR Virgin Utah OR Rockville Utah historic",
+   "license": "Public domain",
+   "credit": "Grogan, Brian C., creator (1993 date QS:P571,+1993-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:View facing northwest - Rockville Bridge, Spanning North Fork Virgin River at Rockville cut-off, Rockville, Washington County, UT HAER UTAH,27-ROC.VI.V,1-3.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1993 date QS:P571,+1993-00-00T00:00:00Z/9",
+   "file": "img/z3x_toquerville_1.jpg",
+   "w": 3000,
+   "h": 2184,
+   "bytes": 1596397
+  },
+  {
+   "name": "z3x_toquerville_2",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/View_through_truss%2C_facing_172_south_-_Rockville_Bridge%2C_Spanning_North_Fork_Virgin_River_at_Rockville_cut-off%2C_Rockville%2C_Washington_County%2C_UT_HAER_UTAH%2C27-ROC.VI.V%2C1-2.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:View_through_truss,_facing_172_south_-_Rockville_Bridge,_Spanning_North_Fork_Virgin_River_at_Rockville_cut-off,_Rockville,_Washington_County,_UT_HAER_UTAH,27-ROC.VI.V,1-2.tif",
+   "shows": "Wikimedia Commons: Toquerville Utah OR Virgin Utah OR Rockville Utah historic",
+   "license": "Public domain",
+   "credit": "Grogan, Brian C., creator (1993 date QS:P571,+1993-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:View through truss, facing 172 south - Rockville Bridge, Spanning North Fork Virgin River at Rockville cut-off, Rockville, Washington County, UT HAER UTAH,27-ROC.VI.V,1-2.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1993 date QS:P571,+1993-00-00T00:00:00Z/9",
+   "file": "img/z3x_toquerville_2.jpg",
+   "w": 3000,
+   "h": 2150,
+   "bytes": 1267105
+  },
+  {
+   "name": "z3x_toquerville_3",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Detail_of_vertical_and_diagonal_connection_-_Rockville_Bridge%2C_Spanning_North_Fork_Virgin_River_at_Rockville_cut-off%2C_Rockville%2C_Washington_County%2C_UT_HAER_UTAH%2C27-ROC.VI.V%2C1-5.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Detail_of_vertical_and_diagonal_connection_-_Rockville_Bridge,_Spanning_North_Fork_Virgin_River_at_Rockville_cut-off,_Rockville,_Washington_County,_UT_HAER_UTAH,27-ROC.VI.V,1-5.tif",
+   "shows": "Wikimedia Commons: Toquerville Utah OR Virgin Utah OR Rockville Utah historic",
+   "license": "Public domain",
+   "credit": "Grogan, Brian C. (1993 date QS:P571,+1993-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Detail of vertical and diagonal connection - Rockville Bridge, Spanning North Fork Virgin River at Rockville cut-off, Rockville, Washington County, UT HAER UTAH,27-ROC.VI.V,1-5.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1993 date QS:P571,+1993-00-00T00:00:00Z/9",
+   "file": "img/z3x_toquerville_3.jpg",
+   "w": 1920,
+   "h": 2679,
+   "bytes": 704940
+  },
+  {
+   "name": "z3x_toquerville_4",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/View_facing_north_northwest_-_Rockville_Bridge%2C_Spanning_North_Fork_Virgin_River_at_Rockville_cut-off%2C_Rockville%2C_Washington_County%2C_UT_HAER_UTAH%2C27-ROC.VI.V%2C1-4.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:View_facing_north_northwest_-_Rockville_Bridge,_Spanning_North_Fork_Virgin_River_at_Rockville_cut-off,_Rockville,_Washington_County,_UT_HAER_UTAH,27-ROC.VI.V,1-4.tif",
+   "shows": "Wikimedia Commons: Toquerville Utah OR Virgin Utah OR Rockville Utah historic",
+   "license": "Public domain",
+   "credit": "Grogan, Brian C., creator (1993 date QS:P571,+1993-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:View facing north northwest - Rockville Bridge, Spanning North Fork Virgin River at Rockville cut-off, Rockville, Washington County, UT HAER UTAH,27-ROC.VI.V,1-4.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1993 date QS:P571,+1993-00-00T00:00:00Z/9",
+   "file": "img/z3x_toquerville_4.jpg",
+   "w": 3000,
+   "h": 2154,
+   "bytes": 1469107
+  },
+  {
+   "name": "z3x_toquerville_5",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Elevation%2C_facing_202_southwest_-_Rockville_Bridge%2C_Spanning_North_Fork_Virgin_River_at_Rockville_cut-off%2C_Rockville%2C_Washington_County%2C_UT_HAER_UTAH%2C27-ROC.VI.V%2C1-1.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elevation,_facing_202_southwest_-_Rockville_Bridge,_Spanning_North_Fork_Virgin_River_at_Rockville_cut-off,_Rockville,_Washington_County,_UT_HAER_UTAH,27-ROC.VI.V,1-1.tif",
+   "shows": "Wikimedia Commons: Toquerville Utah OR Virgin Utah OR Rockville Utah historic",
+   "license": "Public domain",
+   "credit": "Grogan, Brian C. (1993 date QS:P571,+1993-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Elevation, facing 202 southwest - Rockville Bridge, Spanning North Fork Virgin River at Rockville cut-off, Rockville, Washington County, UT HAER UTAH,27-ROC.VI.V,1-1.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1993 date QS:P571,+1993-00-00T00:00:00Z/9",
+   "file": "img/z3x_toquerville_5.jpg",
+   "w": 3000,
+   "h": 2206,
+   "bytes": 1287304
+  },
+  {
+   "name": "z3x_toquerville_6",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Rockville_Bridge%2C_Rockville%2C_Utah.jpg/3840px-Rockville_Bridge%2C_Rockville%2C_Utah.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Rockville_Bridge,_Rockville,_Utah.jpg",
+   "shows": "Wikimedia Commons: Toquerville Utah OR Virgin Utah OR Rockville Utah historic",
+   "license": "Public domain",
+   "credit": "Brian C. Grogan (1993-08) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Rockville Bridge, Rockville, Utah.jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1993-08",
+   "file": "img/z3x_toquerville_6.jpg",
+   "w": 3000,
+   "h": 2076,
+   "bytes": 1605805
+  },
+  {
+   "name": "z3x_wilson_1919_1",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Woodrow_Wilson_in_1919.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Woodrow_Wilson_in_1919.jpg",
+   "shows": "Wikimedia Commons: Woodrow Wilson 1919",
+   "license": "Public domain",
+   "credit": "Harris & Ewing (1919) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Woodrow Wilson in 1919.jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1919",
+   "file": "img/z3x_wilson_1919_1.jpg",
+   "w": 1984,
+   "h": 3000,
+   "bytes": 705809
+  },
+  {
+   "name": "z3x_wilson_1919_2",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Woodrow_Wilson_in_1919.tiff/lossy-page1-1920px-Woodrow_Wilson_in_1919.tiff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Woodrow_Wilson_in_1919.tiff",
+   "shows": "Wikimedia Commons: Woodrow Wilson 1919",
+   "license": "Public domain",
+   "credit": "Harris & Ewing (1919) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Woodrow Wilson in 1919.tiff",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1919",
+   "file": "img/z3x_wilson_1919_2.jpg",
+   "w": 1920,
+   "h": 2902,
+   "bytes": 651636
+  },
+  {
+   "name": "z3x_wilson_1919_4",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Thomas_Woodrow_Wilson%2C_Harris_%26_Ewing_bw_photo_portrait%2C_1919.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Thomas_Woodrow_Wilson,_Harris_%26_Ewing_bw_photo_portrait,_1919.jpg",
+   "shows": "Wikimedia Commons: Woodrow Wilson 1919",
+   "license": "Public domain",
+   "credit": "Harris & Ewing (1919) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Thomas Woodrow Wilson, Harris & Ewing bw photo portrait, 1919.jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1919",
+   "file": "img/z3x_wilson_1919_4.jpg",
+   "w": 1980,
+   "h": 3000,
+   "bytes": 932362
+  },
+  {
+   "name": "z3x_zion_1920s_1",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/DIRECTIONAL_SIGN_TO_ZION_AND_GRAND_CANYON_-_Bryce_Canyon_National_Park_Rim_Road%2C_State_Highway_63_to_Rainbow_Point%2C_Tropic%2C_Garfield_County%2C_UT_HAER_UTAH%2C9-TROP.V%2C1%3B_-21.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:DIRECTIONAL_SIGN_TO_ZION_AND_GRAND_CANYON_-_Bryce_Canyon_National_Park_Rim_Road,_State_Highway_63_to_Rainbow_Point,_Tropic,_Garfield_County,_UT_HAER_UTAH,9-TROP.V,1;_-21.tif",
+   "shows": "Wikimedia Commons: Zion National Park 1920s historic photograph",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:DIRECTIONAL SIGN TO ZION AND GRAND CANYON - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -21.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_zion_1920s_1.jpg",
+   "w": 3000,
+   "h": 2368,
+   "bytes": 677231
+  },
+  {
+   "name": "z3x_zion_1920s_10",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/PARK_RANGER_PATROL_CAR_AND_OTHER_VEHICLES_AT_PARIA_POINT-RAINBOW_POINT_WYE_-_Bryce_Canyon_National_Park_Rim_Road%2C_State_Highway_63_to_Rainbow_Point%2C_Tropic%2C_Garfield_County%2C_HAER_UTAH%2C9-TROP.V%2C1%3B_-22.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:PARK_RANGER_PATROL_CAR_AND_OTHER_VEHICLES_AT_PARIA_POINT-RAINBOW_POINT_WYE_-_Bryce_Canyon_National_Park_Rim_Road,_State_Highway_63_to_Rainbow_Point,_Tropic,_Garfield_County,_HAER_UTAH,9-TROP.V,1;_-22.tif",
+   "shows": "Wikimedia Commons: Zion National Park 1920s historic photograph",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:PARK RANGER PATROL CAR AND OTHER VEHICLES AT PARIA POINT-RAINBOW POINT WYE - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, HAER UTAH,9-TROP.V,1; -22.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_zion_1920s_10.jpg",
+   "w": 3000,
+   "h": 2436,
+   "bytes": 812769
+  },
+  {
+   "name": "z3x_zion_1920s_2",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/RUSTIC_ENTRANCE_SIGN_AT_NORTH_PARK_BOUNDARY_-_Bryce_Canyon_National_Park_Rim_Road%2C_State_Highway_63_to_Rainbow_Point%2C_Tropic%2C_Garfield_County%2C_UT_HAER_UTAH%2C9-TROP.V%2C1%3B_-14.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:RUSTIC_ENTRANCE_SIGN_AT_NORTH_PARK_BOUNDARY_-_Bryce_Canyon_National_Park_Rim_Road,_State_Highway_63_to_Rainbow_Point,_Tropic,_Garfield_County,_UT_HAER_UTAH,9-TROP.V,1;_-14.tif",
+   "shows": "Wikimedia Commons: Zion National Park 1920s historic photograph",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:RUSTIC ENTRANCE SIGN AT NORTH PARK BOUNDARY - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -14.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_zion_1920s_2.jpg",
+   "w": 3000,
+   "h": 2406,
+   "bytes": 692158
+  },
+  {
+   "name": "z3x_zion_1920s_3",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/VIEW_OF_OLD_PARK_ROAD_BETWEEN_NORTH_CAMPGROUND_AND_ENTRANCE_STATION%2C_FACING_NORTH_-_Bryce_Canyon_National_Park_Rim_Road%2C_State_Highway_63_to_Rainbow_Point%2C_Tropic%2C_Garfield_HAER_UTAH%2C9-TROP.V%2C1%3B_-4.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:VIEW_OF_OLD_PARK_ROAD_BETWEEN_NORTH_CAMPGROUND_AND_ENTRANCE_STATION,_FACING_NORTH_-_Bryce_Canyon_National_Park_Rim_Road,_State_Highway_63_to_Rainbow_Point,_Tropic,_Garfield_HAER_UTAH,9-TROP.V,1;_-4.tif",
+   "shows": "Wikimedia Commons: Zion National Park 1920s historic photograph",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:VIEW OF OLD PARK ROAD BETWEEN NORTH CAMPGROUND AND ENTRANCE STATION, FACING NORTH - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield HAER UTAH,9-TROP.V,1; -4.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_zion_1920s_3.jpg",
+   "w": 3000,
+   "h": 2172,
+   "bytes": 1372922
+  },
+  {
+   "name": "z3x_zion_1920s_4",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/DIRECTIONAL_SIGN_FOR_CAFETERIA_AND_CABINS_-_Bryce_Canyon_National_Park_Rim_Road%2C_State_Highway_63_to_Rainbow_Point%2C_Tropic%2C_Garfield_County%2C_UT_HAER_UTAH%2C9-TROP.V%2C1%3B_-18.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:DIRECTIONAL_SIGN_FOR_CAFETERIA_AND_CABINS_-_Bryce_Canyon_National_Park_Rim_Road,_State_Highway_63_to_Rainbow_Point,_Tropic,_Garfield_County,_UT_HAER_UTAH,9-TROP.V,1;_-18.tif",
+   "shows": "Wikimedia Commons: Zion National Park 1920s historic photograph",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:DIRECTIONAL SIGN FOR CAFETERIA AND CABINS - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -18.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_zion_1920s_4.jpg",
+   "w": 3000,
+   "h": 2418,
+   "bytes": 802854
+  },
+  {
+   "name": "z3x_zion_1920s_5",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/CONSTRUCTION_OF_CURBING_IN_PARKING_AREA_-_Bryce_Canyon_National_Park_Rim_Road%2C_State_Highway_63_to_Rainbow_Point%2C_Tropic%2C_Garfield_County%2C_UT_HAER_UTAH%2C9-TROP.V%2C1%3B_-20.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:CONSTRUCTION_OF_CURBING_IN_PARKING_AREA_-_Bryce_Canyon_National_Park_Rim_Road,_State_Highway_63_to_Rainbow_Point,_Tropic,_Garfield_County,_UT_HAER_UTAH,9-TROP.V,1;_-20.tif",
+   "shows": "Wikimedia Commons: Zion National Park 1920s historic photograph",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:CONSTRUCTION OF CURBING IN PARKING AREA - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -20.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_zion_1920s_5.jpg",
+   "w": 3000,
+   "h": 2382,
+   "bytes": 605965
+  },
+  {
+   "name": "z3x_zion_1920s_6",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/CONSTRUCTION_OF_CURBING_IN_PARKING_AREA_-_Bryce_Canyon_National_Park_Rim_Road%2C_State_Highway_63_to_Rainbow_Point%2C_Tropic%2C_Garfield_County%2C_UT_HAER_UTAH%2C9-TROP.V%2C1%3B_-19.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:CONSTRUCTION_OF_CURBING_IN_PARKING_AREA_-_Bryce_Canyon_National_Park_Rim_Road,_State_Highway_63_to_Rainbow_Point,_Tropic,_Garfield_County,_UT_HAER_UTAH,9-TROP.V,1;_-19.tif",
+   "shows": "Wikimedia Commons: Zion National Park 1920s historic photograph",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:CONSTRUCTION OF CURBING IN PARKING AREA - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -19.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_zion_1920s_6.jpg",
+   "w": 3000,
+   "h": 2422,
+   "bytes": 745713
+  },
+  {
+   "name": "z3x_zion_1920s_7",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/RUSTIC_LOG_ENTRANCE_STATION_AT_NORTH_ENTRANCE_-_Bryce_Canyon_National_Park_Rim_Road%2C_State_Highway_63_to_Rainbow_Point%2C_Tropic%2C_Garfield_County%2C_UT_HAER_UTAH%2C9-TROP.V%2C1%3B_-15.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:RUSTIC_LOG_ENTRANCE_STATION_AT_NORTH_ENTRANCE_-_Bryce_Canyon_National_Park_Rim_Road,_State_Highway_63_to_Rainbow_Point,_Tropic,_Garfield_County,_UT_HAER_UTAH,9-TROP.V,1;_-15.tif",
+   "shows": "Wikimedia Commons: Zion National Park 1920s historic photograph",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:RUSTIC LOG ENTRANCE STATION AT NORTH ENTRANCE - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -15.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_zion_1920s_7.jpg",
+   "w": 3000,
+   "h": 2378,
+   "bytes": 614334
+  },
+  {
+   "name": "z3x_zion_1920s_8",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/GENERAL_VIEW_OF_BRYCE_CANYON._-_Bryce_Canyon_National_Park_Rim_Road%2C_State_Highway_63_to_Rainbow_Point%2C_Tropic%2C_Garfield_County%2C_UT_HAER_UTAH%2C9-TROP.V%2C1%3B_-1.tif/lossy-page1-1920px-GENERAL_VIEW_OF_BRYCE_CANYON._-_Bryce_Canyon_National_Park_Rim_Road%2C_State_Highway_63_to_Rainbow_Point%2C_Tropic%2C_Garfield_County%2C_UT_HAER_UTAH%2C9-TROP.V%2C1%3B_-1.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:GENERAL_VIEW_OF_BRYCE_CANYON._-_Bryce_Canyon_National_Park_Rim_Road,_State_Highway_63_to_Rainbow_Point,_Tropic,_Garfield_County,_UT_HAER_UTAH,9-TROP.V,1;_-1.tif",
+   "shows": "Wikimedia Commons: Zion National Park 1920s historic photograph",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:GENERAL VIEW OF BRYCE CANYON. - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -1.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_zion_1920s_8.jpg",
+   "w": 1920,
+   "h": 2620,
+   "bytes": 842689
+  },
+  {
+   "name": "z3x_zion_1920s_9",
+   "src_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/VIEW_OF_ENTRANCE_STATION_AND_VISITOR_CENTER%2C_FACING_NORTH_FROM_INSIDE_PARK_-_Bryce_Canyon_National_Park_Rim_Road%2C_State_Highway_63_to_Rainbow_Point%2C_Tropic%2C_Garfield_County%2C_HAER_UTAH%2C9-TROP.V%2C1%3B_-3.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "source_page": "https://commons.wikimedia.org/wiki/File:VIEW_OF_ENTRANCE_STATION_AND_VISITOR_CENTER,_FACING_NORTH_FROM_INSIDE_PARK_-_Bryce_Canyon_National_Park_Rim_Road,_State_Highway_63_to_Rainbow_Point,_Tropic,_Garfield_County,_HAER_UTAH,9-TROP.V,1;_-3.tif",
+   "shows": "Wikimedia Commons: Zion National Park 1920s historic photograph",
+   "license": "Public domain",
+   "credit": " (Documentation compiled after 1968) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:VIEW OF ENTRANCE STATION AND VISITOR CENTER, FACING NORTH FROM INSIDE PARK - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, HAER UTAH,9-TROP.V,1; -3.tif",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Documentation compiled after 1968",
+   "file": "img/z3x_zion_1920s_9.jpg",
+   "w": 3000,
+   "h": 2162,
+   "bytes": 996024
   }
  ],
  "not_obtained": [
   {
-   "name": "z3x_haer_zmc",
-   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+   "name": "z3x_grafton_3",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Grafton_Ghost_Town%2C_Utah_%2815018424184%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Grafton_Ghost_Town,_Utah_(15018424184).jpg",
+   "shows": "Wikimedia Commons: Grafton Utah ghost town",
+   "license": "Public domain",
+   "credit": "Bureau of Land Management (Taken on 14 September 2012, 21:12) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Grafton Ghost Town, Utah (15018424184).jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "Taken on 14 September 2012, 21:12",
+   "err": "download failed"
   },
   {
-   "name": "z3x_haer_pine",
-   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+   "name": "z3x_grafton_7",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Grafton_Ghost_Town_Road_8-07_%288509815659%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Grafton_Ghost_Town_Road_8-07_(8509815659).jpg",
+   "shows": "Wikimedia Commons: Grafton Utah ghost town",
+   "license": "CC BY-SA 2.0",
+   "credit": "inkknife_2000 (7.5 million views +) (2013-02-26 09:32:47) via Wikimedia Commons, CC BY-SA 2.0",
+   "status": "OK",
+   "title": "File:Grafton Ghost Town Road 8-07 (8509815659).jpg",
+   "page_usage": "Wikimedia Commons licence: CC BY-SA 2.0",
+   "date": "2013-02-26 09:32:47",
+   "err": "download failed"
   },
   {
-   "name": "z3x_haer_short",
-   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+   "name": "z3x_springdale_3",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/HLCH_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:HLCH_6.jpg",
+   "shows": "Wikimedia Commons: Springdale Utah historic",
+   "license": "CC BY-SA 4.0",
+   "credit": "Anuzman1 (2021-10-24 17:05:18) via Wikimedia Commons, CC BY-SA 4.0",
+   "status": "OK",
+   "title": "File:HLCH 6.jpg",
+   "page_usage": "Wikimedia Commons licence: CC BY-SA 4.0",
+   "date": "2021-10-24 17:05:18",
+   "err": "download failed"
   },
   {
-   "name": "z3x_haer_switch",
-   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+   "name": "z3x_wilson_1919_3",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Thomas_Woodrow_Wilson%2C_Harris_%26_Ewing_bw_photo_portrait%2C_1919_%28cropped%29_c.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Thomas_Woodrow_Wilson,_Harris_%26_Ewing_bw_photo_portrait,_1919_(cropped)_c.jpg",
+   "shows": "Wikimedia Commons: Woodrow Wilson 1919",
+   "license": "Public domain",
+   "credit": "Harris & Ewing (1919) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Thomas Woodrow Wilson, Harris & Ewing bw photo portrait, 1919 (cropped) c.jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1919",
+   "err": "download failed"
   },
   {
-   "name": "z3x_zion_1920s",
-   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+   "name": "z3x_gov_dern_4",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Message_of_Governor_George_H._Dern_to_the_Seventeenth_Legislature_of_the_state_of_Utah_-_DPLA_-_c1e97fb5bfe29369e7517d5917b47f47_%28page_1%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Message_of_Governor_George_H._Dern_to_the_Seventeenth_Legislature_of_the_state_of_Utah_-_DPLA_-_c1e97fb5bfe29369e7517d5917b47f47_(page_1).jpg",
+   "shows": "Wikimedia Commons: George Dern Governor of Utah",
+   "license": "Public domain",
+   "credit": "Dern, George H., 1872-1936, author (1927 date QS:P571,+1927-00-00T00:00:00Z/9) via Wikimedia Commons, Public domain",
+   "status": "OK",
+   "title": "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 1).jpg",
+   "page_usage": "Wikimedia Commons licence: Public domain",
+   "date": "1927 date QS:P571,+1927-00-00T00:00:00Z/9",
+   "err": "download failed"
   },
   {
-   "name": "z3x_grafton",
-   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
-  },
-  {
-   "name": "z3x_springdale",
-   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
-  },
-  {
-   "name": "z3x_toquerville",
-   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
-  },
-  {
-   "name": "z3x_cedar_city_harding",
-   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
-  },
-  {
-   "name": "z3x_harding_west",
-   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
-  },
-  {
-   "name": "z3x_taft_signing",
-   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
-  },
-  {
-   "name": "z3x_wilson_1919",
-   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
-  },
-  {
-   "name": "z3x_gov_dern",
-   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
-  },
-  {
-   "name": "z3x_mukuntuweap",
-   "err": "exception TypeError(\"'>=' not supported between instances of 'int' and 'str'\")"
+   "name": "z3x_mukuntuweap_6",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Mountains_in_Zion_National_Park%2C_Utah.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Mountains_in_Zion_National_Park,_Utah.jpg",
+   "shows": "Wikimedia Commons: Mukuntuweap National Monument",
+   "license": "CC BY-SA 3.0",
+   "credit": "\u201cJon Zander( digon3 )\u201d (Taken on 16 May 2006) via Wikimedia Commons, CC BY-SA 3.0",
+   "status": "OK",
+   "title": "File:Mountains in Zion National Park, Utah.jpg",
+   "page_usage": "Wikimedia Commons licence: CC BY-SA 3.0",
+   "date": "Taken on 16 May 2006",
+   "err": "download failed"
   }
  ],
  "probes": {
   "commons:z3_commons_zion_tunnel2": [],
   "commons:z3_commons_ucsb_taft": [],
   "commons:z3_commons_utah_parks_company": [],
-  "commons:z3x_zion_lodge_old": []
+  "commons:z3x_haer_zmc": [
+   [
+    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-15.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-13.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-14.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-8.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-9.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-10.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-12.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-11.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:Zion-Mount Carmel Highway at tunnel, road visible at right - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, HAER UTAH,27-SPDA.V,3H-4.tif",
+    "Public domain",
+    "Lowe, Jet, creator",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:ZION-MOUNT CARMEL HIGHWAY, PROPOSED TUNNEL ALIGNMENT. PHOTOGRAPH TAKEN FROM NEAR CANYON OVERLOOK TRAIL. CLIFF BRAY, PHOTOGRAPHER, 1928. - Zion-Mount Carmel Highway, Tunnel, HAER UTAH,27-SPDA.V,3A-30.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Short tunnel, east portal facing west - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-1.tif",
+    "Public domain",
+    "Lowe, Jet, creator",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Short tunnel, west portal facing east - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-2.tif",
+    "Public domain",
+    "Lowe, Jet, creator",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Bored culvert, interior detail - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-7.tif",
+    "Public domain",
+    "Lowe, Jet",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:OVERALL VIEW OF HIGHWAY, LOOKING WEST - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-4.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:Triple culvert at east portal, facing north - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, HAER UTAH,27-SPDA.V,3H-3.tif",
+    "Public domain",
+    "Lowe, Jet, creator",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:RETAINING WALL AT CULVERT - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-31.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Bored culvert detail, facing south - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-6.tif",
+    "Public domain",
+    "Lowe, Jet",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:VIEW FROM SWITCHBACKS TO THE SOUTHEAST, FACING NORTHWEST - Zion-Mount Carmel Highway, Virgin River Bridge, Spanning North Fork of Virgin River on Zion-Mount Carmel Highway, HAER UTAH,27-SPDA.V,3C-9.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Bored culvert near short tunnel, facing south - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, HAER UTAH,27-SPDA.V,3H-5.tif",
+    "Public domain",
+    "Lowe, Jet",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:OVERALL VIEW OF HIGHWAY, LOOKING NORTHWEST - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-5.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ]
+  ],
+  "commons:z3x_haer_pine": [
+   [
+    "File:View facing west across bridge deck to tunnel portal - Zion-Mount Carmel Highway, Upper Pine Creek Bridge, Spanning Upper Pine Creek on Zion-Mount Carmel Highway, Springdale, HAER UTAH,27-SPDA.V,3J-2.tif",
+    "Public domain",
+    "Lowe, Jet, creator",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Three-quarter view facing southwest - Zion-Mount Carmel Highway, Upper Pine Creek Bridge, Spanning Upper Pine Creek on Zion-Mount Carmel Highway, Springdale, Washington County HAER UTAH,27-SPDA.V,3J-3.tif",
+    "Public domain",
+    "Lowe, Jet, creator",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:VIEW FROM EAST TUNNEL PORTAL FACING EAST ACROSS UPPER PINE CREEK BRIDGE - Zion-Mount Carmel Highway, Tunnel, Two miles east of Zion Canyon Scenic Drive, Springdale, HAER UTAH,27-SPDA.V,3A-37.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Zion-Mount Carmel Highway, Pine Creek Bridge, Spanning Pine Creek on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3B- (sheet 2 of 2).tif",
+    "Public domain",
+    "Croteau, Todd A., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Zion-Mount Carmel Highway, Pine Creek Bridge, Spanning Pine Creek on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3B- (sheet 1 of 2).tif",
+    "Public domain",
+    "Croteau, Todd A., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Substructure of bridge, facing east - Zion-Mount Carmel Highway, Upper Pine Creek Bridge, Spanning Upper Pine Creek on Zion-Mount Carmel Highway, Springdale, Washington County HAER UTAH,27-SPDA.V,3J-6.tif",
+    "Public domain",
+    "Lowe, Jet, creator",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Looking down at bridge from canyon overlook trail, facing south - Zion-Mount Carmel Highway, Upper Pine Creek Bridge, Spanning Upper Pine Creek on Zion-Mount Carmel Highway, HAER UTAH,27-SPDA.V,3J-5.tif",
+    "Public domain",
+    "Lowe, Jet, creator",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Looking down at north elevation, facing south - Zion-Mount Carmel Highway, Upper Pine Creek Bridge, Spanning Upper Pine Creek on Zion-Mount Carmel Highway, Springdale, HAER UTAH,27-SPDA.V,3J-4.tif",
+    "Public domain",
+    "Lowe, Jet, creator",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:North elevation, facing south - Zion-Mount Carmel Highway, Upper Pine Creek Bridge, Spanning Upper Pine Creek on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3J-1.tif",
+    "Public domain",
+    "Lowe, Jet, creator",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:APPROACHING PINE CREEK BRIDGE - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-12.tif",
+    "Public domain",
+    "Grogan, Brian C.",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:APPROACHING PINE CREEK BRIDGE, FACING WEST - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-11.tif",
+    "Public domain",
+    "Grogan, Brian C.",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:OVERALL VIEW OF HIGHWAY WITH PINE CREEK BRIDGE IN RIGHT FOREGROUND, LOOKING WEST - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-3.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:Replacement Clear Creek Bridge under construction facing west - Zion-Mount Carmel Highway, 62-foot Concrete Arch Pine Creek Bridge, Spanning Clear Creek, Springdale, HAER UTAH,27-SPDA.V,3E-10.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Zion-Mount Carmel Tunnel.jpg",
+    "CC BY 2.5",
+    "Tylas at English Wikipedia",
+    "18 September 2006 (original upload date)"
+   ],
+   [
+    "File:Overall view of Clear Creek Bridge, looking southwest. - Zion-Mount Carmel Highway, 62-foot Concrete Arch Pine Creek Bridge, Spanning Clear Creek, Springdale, Washington HAER UTAH,27-SPDA.V,3E-1.tif",
+    "Public domain",
+    "Thallheimer, Arnold, creator",
+    "1991 date QS:P571,+1991-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Cut at approach to bridge, facing east - Zion-Mount Carmel Highway, 62-foot Concrete Arch Pine Creek Bridge, Spanning Clear Creek, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3E-9.tif",
+    "Public domain",
+    "Grogan, Brian C.",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:View of Clear Creek Bridge railing and under-structure, looking northwest. - Zion-Mount Carmel Highway, 62-foot Concrete Arch Pine Creek Bridge, Spanning Clear Creek, HAER UTAH,27-SPDA.V,3E-2.tif",
+    "Public domain",
+    "Thallheimer, Arnold, creator",
+    "1991 date QS:P571,+1991-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Historical marker, west side Clear Creek Bridge, looking north. - Zion-Mount Carmel Highway, 62-foot Concrete Arch Pine Creek Bridge, Spanning Clear Creek, Springdale, HAER UTAH,27-SPDA.V,3E-6.tif",
+    "Public domain",
+    "Thallheimer, Arnold, creator",
+    "1991 date QS:P571,+1991-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Overall view of road cut west of bridge, looking west. - Zion-Mount Carmel Highway, 62-foot Concrete Arch Pine Creek Bridge, Spanning Clear Creek, Springdale, Washington HAER UTAH,27-SPDA.V,3E-7.tif",
+    "Public domain",
+    "Thallheimer, Arnold, creator",
+    "1991 date QS:P571,+1991-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Under-structure view of Clear Creek Bridge, east end, looking northeast. - Zion-Mount Carmel Highway, 62-foot Concrete Arch Pine Creek Bridge, Spanning Clear Creek, Springdale HAER UTAH,27-SPDA.V,3E-5.tif",
+    "Public domain",
+    "Thallheimer, Arnold, creator",
+    "1991 date QS:P571,+1991-00-00T00:00:00Z/9"
+   ]
+  ],
+  "commons:z3x_haer_short": [
+   [
+    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-8.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-10.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-12.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-11.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-9.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:Zion-Mount Carmel Highway at tunnel, road visible at right - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, HAER UTAH,27-SPDA.V,3H-4.tif",
+    "Public domain",
+    "Lowe, Jet, creator",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Short tunnel, east portal facing west - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-1.tif",
+    "Public domain",
+    "Lowe, Jet, creator",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Short tunnel, west portal facing east - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-2.tif",
+    "Public domain",
+    "Lowe, Jet, creator",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-15.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-13.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-14.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:Northeast at Zion-Mount Carmel short tunnel, Oct 16.jpg",
+    "CC BY-SA 4.0",
+    "An Errant Knight",
+    "Taken on 19 October 2016, 17:31:59"
+   ],
+   [
+    "File:West at Zion-Mount Carmel short tunnel, Oct 16.jpg",
+    "CC BY-SA 4.0",
+    "An Errant Knight",
+    "Taken on 19 October 2016, 17:31:20"
+   ],
+   [
+    "File:Small Tunnel, Zion-Mount Carmel Highway, Zion National Park, Utah (1025928278).jpg",
+    "CC BY-SA 2.0",
+    "Ken Lund from Reno, Nevada, USA",
+    "2007-08-04 10:06"
+   ],
+   [
+    "File:Eastern tunnel along the Zion-Mount Carmel Highway.jpg",
+    "CC BY 2.0",
+    "Alex Proimos from Sydney, Australia",
+    "Taken on 15 April 2009, 04:08"
+   ],
+   [
+    "File:Bored culvert near short tunnel, facing south - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, HAER UTAH,27-SPDA.V,3H-5.tif",
+    "Public domain",
+    "Lowe, Jet",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Bored culvert, interior detail - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-7.tif",
+    "Public domain",
+    "Lowe, Jet",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Bored culvert detail, facing south - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3H-6.tif",
+    "Public domain",
+    "Lowe, Jet",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Triple culvert at east portal, facing north - Zion-Mount Carmel Highway, Short Tunnel, Passing through Rock Spur on Zion-Mount Carmel Highway, Springdale, Washington County, HAER UTAH,27-SPDA.V,3H-3.tif",
+    "Public domain",
+    "Lowe, Jet, creator",
+    "1992 date QS:P571,+1992-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:VIEW OF WEST PORTAL OF EAST HIGHWAY TUNNEL, LOOKING EAST - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-8.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ]
+  ],
+  "commons:z3x_haer_switch": [
+   [
+    "File:Pine Creek canyon and the Zion-Mount Carmel Highway switchbacks from Canyon Overlook, Zion National Park, Utah.jpg",
+    "CC BY-SA 4.0",
+    "Christian David",
+    "26 April 2026, 20:38"
+   ],
+   [
+    "File:SWITCHBACKS SECTION ABOVE PINE CREEK - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-44.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:SWITCHBACKS ON TUNNEL APPROACH, FACING WEST - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-18.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:VIEW FROM SWITCHBACKS TO THE SOUTHEAST, FACING NORTHWEST - Zion-Mount Carmel Highway, Virgin River Bridge, Spanning North Fork of Virgin River on Zion-Mount Carmel Highway, HAER UTAH,27-SPDA.V,3C-9.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Exhibit 7- Zion-Mt. Carmel Highway tunnel road at the switchbacks. ; ZION Museum and Archives Image 007 01 040 ; ZION 8789 (d78b908c964c4868ba2a4af081e6cf33).jpg",
+    "Public domain",
+    "Carl E. Jepson",
+    "Taken on 22 August 2016"
+   ],
+   [
+    "File:GUARD WALL ON SWITCHBACKS, FACING SOUTHWEST - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-22.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:RETAINING WALL ON TUNNEL SWITCHBACKS, FACING WEST - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-17.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:TUNNEL SWITCHBACKS VIEWED FROM ABOVE GREAT ARCH, FACING WEST - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-15.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:ROAD APPROACHING SWITCHBACKS, FACING EAST. RETAINING WALL VISIBLE IN MIDDLE BACKGROUND - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-20.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:VIEW OF TUNNEL SWITCHBACKS FROM ABOVE GREAT ARCH, FACING WEST - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-14.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:SANDWICH ROCK SWITCHBACK, FACING NORTH - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-21.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:VIEW OF TUNNEL CONSTRUCTION CAMP SITE BETWEEN SPRING BEND AND SANDWICH ROCK SWITCHBACKS, FACING WEST - Zion-Mount Carmel Highway, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,3-16.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:VIEW FROM NEVADA SWITCHBACK FACING WEST. ROAD VISIBLE AT LOWER LEFT AND IN RIGHT MIDDLE BACKGROUND. GREAT ARCH IN BACKGROUND. - Zion-Mount Carmel Highway, Springdale, HAER UTAH,27-SPDA.V,3-13.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Copy of topo map, Zion-Mt. Carmel Highway switchback section, enlarged for geologic study of mass wasting (slope movement (5fbce7e03f0d4e2582e5bb0e22541291).jpg",
+    "Public domain",
+    "Carl E. Jepson",
+    "Taken on 22 August 2016"
+   ],
+   [
+    "File:File-B&W negative of rock slide on Nevada switchback (Zion-Mt. Carmel Highway) vehicles and workers clearing road. -second image and (d5a6670870454b78a00581a5ff791758).jpg",
+    "Public domain",
+    "Chester A. Thomas",
+    "Taken on 15 March 1950"
+   ],
+   [
+    "File:Switchbacks of Carmel road west of tunnel. Looking toward Zion Canyon. West Temple at left. West Temple sometimes known locally (42933a9bbb3b40829562bbb36f83f5f8).jpg",
+    "Public domain",
+    "George A. Grant",
+    "1929 date QS:P571,+1929-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Switchbacks of Mt. Carmel road west of tunnel, looking towards Zion Canyon. West Temple at left. West Temple... - NARA - 520395.jpg",
+    "Public domain",
+    "George A. Grant",
+    "5 September 1929 date QS:P571,+1929-09-05T00:00:00Z/11"
+   ],
+   [
+    "File:Great arch- a subject for wayside exhibit on switchbacks. ; ZION Museum and Archives Image 007 01 023 ; ZION 8168 (456b027bac9a4334a7451a68545f53e9).jpg",
+    "Public domain",
+    "Carl E. Jepson",
+    "Taken on 22 August 2016"
+   ],
+   [
+    "File:Shale formation near Pine Creek Bridge at base of switchbacks on Mt. Carmel road where fossils are found. - NARA - 520427.jpg",
+    "Public domain",
+    "George A. Grant",
+    "11 September 1929 date QS:P571,+1929-09-11T00:00:00Z/11"
+   ],
+   [
+    "File:Horizontal view northwest from third gallery of Zion Tunnel, looking toward Zion Canyon. Sentinel, right center... - NARA - 520398.jpg",
+    "Public domain",
+    "George A. Grant",
+    "2 September 1929 date QS:P571,+1929-09-02T00:00:00Z/11"
+   ]
+  ],
+  "commons:z3x_zion_1920s": [
+   [
+    "File:DIRECTIONAL SIGN TO ZION AND GRAND CANYON - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -21.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:RUSTIC ENTRANCE SIGN AT NORTH PARK BOUNDARY - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -14.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF OLD PARK ROAD BETWEEN NORTH CAMPGROUND AND ENTRANCE STATION, FACING NORTH - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield HAER UTAH,9-TROP.V,1; -4.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:DIRECTIONAL SIGN FOR CAFETERIA AND CABINS - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -18.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:CONSTRUCTION OF CURBING IN PARKING AREA - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -20.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:CONSTRUCTION OF CURBING IN PARKING AREA - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -19.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:RUSTIC LOG ENTRANCE STATION AT NORTH ENTRANCE - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -15.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:GENERAL VIEW OF BRYCE CANYON. - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -1.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF ENTRANCE STATION AND VISITOR CENTER, FACING NORTH FROM INSIDE PARK - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, HAER UTAH,9-TROP.V,1; -3.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:PARK RANGER PATROL CAR AND OTHER VEHICLES AT PARIA POINT-RAINBOW POINT WYE - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, HAER UTAH,9-TROP.V,1; -22.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF BRYCE POINT PARKING AREA, FACING SOUTHEAST - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -8.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF BRYCE POINT PARKING AREA AND TRAILHEADS, FACING SOUTH - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -7.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF ROAD CROSSING PAUNSAUGUNT PLATEAU, FACING? - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -10.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:CONSTRUCTION THROUGH MEADOWS, SHOWING LOGS USED FOR WINDROWS AT TOES OF SLOPES - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield HAER UTAH,9-TROP.V,1; -16.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:GRADING OPERATIONS SHOWING HORSE-DRAWN DRAG - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -17.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF ROAD CROSSING PAUNSAUGUNT PLATEAU, FACING SOUTHWEST? - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -9.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF NATURAL BRIDGE OVERLOOK PARKING AREA, FACING NORTHEAST. NOTE DETERIORATION OF WALL AND USE OF AESTHETICALLY INTRUSIVE FENCING. - Bryce Canyon National Park Rim Road, HAER UTAH,9-TROP.V,1; -12.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF NATURAL BRIDGE OVERLOOK (TO RIGHT), FACING NORTHEAST - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -11.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF DOUBLE WYE AT SPURS FOR INSPIRATION AND BRYCE POINTS, FACING SOUTHEAST - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield HAER UTAH,9-TROP.V,1; -6.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF RAINBOW POINT SHELTER, FACING EAST. - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -13.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ]
+  ],
+  "commons:z3x_zion_lodge_old": [],
+  "commons:z3x_grafton": [
+   [
+    "File:Grafton Ghost Town, Utah (15018424114).jpg",
+    "Public domain",
+    "Bureau of Land Management",
+    "2012-09-14 21:08"
+   ],
+   [
+    "File:Pastoral Utah, Grafton Ghost Town 4-14 (27042678566).jpg",
+    "CC BY-SA 2.0",
+    "Don Graham from Redlands, CA, USA - God bless it!",
+    "Taken on 30 April 2014, 10:54"
+   ],
+   [
+    "File:Grafton Ghost Town, Utah (15018424184).jpg",
+    "Public domain",
+    "Bureau of Land Management",
+    "Taken on 14 September 2012, 21:12"
+   ],
+   [
+    "File:Grafton UT - schoolhouse.JPG",
+    "Public domain",
+    "Triberocker at English Wikipedia",
+    "Taken on 5 June 2004"
+   ],
+   [
+    "File:Grafton Ghost Town Pasture 8-07a (8510924294).jpg",
+    "CC BY-SA 2.0",
+    "inkknife_2000 (7.5 million views +)",
+    "2013-02-26 09:32:55"
+   ],
+   [
+    "File:Grafton Ghost Town Pasture 8-07b (8510924066).jpg",
+    "CC BY-SA 2.0",
+    "inkknife_2000 (7.5 million views +)",
+    "2013-02-26 09:32:50"
+   ],
+   [
+    "File:Grafton Ghost Town Road 8-07 (8509815659).jpg",
+    "CC BY-SA 2.0",
+    "inkknife_2000 (7.5 million views +)",
+    "2013-02-26 09:32:47"
+   ],
+   [
+    "File:Grafton Ghost Town Pasture 8-07 (8509816227).jpg",
+    "CC BY-SA 2.0",
+    "inkknife_2000 (7.5 million views +)",
+    "Taken on 28 August 2007, 15:22:33"
+   ],
+   [
+    "File:Fenced In, Grafton Ghost Town, UT 4-14 (28646771351).jpg",
+    "CC BY-SA 2.0",
+    "Don Graham from Redlands, CA, USA - God bless it!",
+    "Taken on 30 April 2014, 10:35"
+   ],
+   [
+    "File:Once a Home, Grafton Ghost Town 4-14 (26801519860).jpg",
+    "CC BY-SA 2.0",
+    "Don Graham from Redlands, CA, USA - God bless it!",
+    "Taken on 30 April 2014, 10:34"
+   ],
+   [
+    "File:Grafton Ghost Town Mountain 8-07 (8509816909).jpg",
+    "CC BY-SA 2.0",
+    "inkknife_2000 (7.5 million views +)",
+    "Taken on 28 August 2007, 15:20:40"
+   ],
+   [
+    "File:Grafton Ghost Town Grazing 8-07 (16470277273).jpg",
+    "CC BY-SA 2.0",
+    "inkknife_2000 (7.5 million views +)",
+    "Taken on 28 August 2007, 15:24:06"
+   ],
+   [
+    "File:Ranch, Grafton Ghost Town, 4-30-14v (14120806300).jpg",
+    "CC BY-SA 2.0",
+    "inkknife_2000 (7.5 million views +)",
+    "Taken on 30 April 2014, 10:58:02"
+   ],
+   [
+    "File:Grafton Ghost Town, UT 8-2007 (7116263809).jpg",
+    "CC BY-SA 2.0",
+    "inkknife_2000 (7.5 million views +)",
+    "Taken on 28 August 2007, 15:24:24"
+   ],
+   [
+    "File:Wagon Tracks, Grafton Ghost Town 4-30-14d (14306851604).jpg",
+    "CC BY-SA 2.0",
+    "inkknife_2000 (7.5 million views +)",
+    "Taken on 30 April 2014, 10:28:37"
+   ],
+   [
+    "File:Pastoral Utah, Grafton 5-14 (25790406794).jpg",
+    "CC BY-SA 2.0",
+    "Don Graham from Redlands, CA, USA - God bless it!",
+    "Taken on 30 April 2014, 11:03"
+   ],
+   [
+    "File:Lonely, Grafton Ghost Town Cemetery 5-14 (20006432273).jpg",
+    "CC BY-SA 2.0",
+    "Don Graham from Redlands, CA, USA - God bless it!",
+    "Taken on 30 April 2014, 10:50"
+   ],
+   [
+    "File:Grafton Ghost Town, UT 8-2007 (7116260593).jpg",
+    "CC BY-SA 2.0",
+    "inkknife_2000 (7.5 million views +)",
+    "Taken on 28 August 2007, 15:03:26"
+   ],
+   [
+    "File:Grafton Ghost Town 4-30-14n (14120899627).jpg",
+    "CC BY-SA 2.0",
+    "inkknife_2000 (7.5 million views +)",
+    "Taken on 30 April 2014, 10:37:19"
+   ],
+   [
+    "File:Grafton Ghost Town, UT 8-07 (15422217875).jpg",
+    "CC BY-SA 2.0",
+    "inkknife_2000 (7.5 million views +)",
+    "Taken on 28 August 2007, 15:12:58"
+   ]
+  ],
+  "commons:z3x_springdale": [
+   [
+    "File:HLCH 4.jpg",
+    "CC BY-SA 4.0",
+    "Anuzman1",
+    "2021-10-24 17:05:48"
+   ],
+   [
+    "File:HLCH 2.jpg",
+    "CC BY-SA 4.0",
+    "Anuzman1",
+    "2021-10-24 17:07:43"
+   ],
+   [
+    "File:HLCH 6.jpg",
+    "CC BY-SA 4.0",
+    "Anuzman1",
+    "2021-10-24 17:05:18"
+   ],
+   [
+    "File:HLCH 1.jpg",
+    "CC BY-SA 4.0",
+    "Anuzman1",
+    "2021-10-24 17:07:51"
+   ],
+   [
+    "File:HLCH 5.jpg",
+    "CC BY-SA 4.0",
+    "Anuzman1",
+    "2021-10-24 17:05:34"
+   ],
+   [
+    "File:Zion National Park, Zion Museum, Springdale vicinity (Washington, Utah).jpg",
+    "Public domain",
+    "Clayton B. Fraser, Fraserdesign, Photographer",
+    "1984-09"
+   ],
+   [
+    "File:NORTH REAR; VIEW TO SOUTH - Oak Creek Historic Complex, Ranger's House, Springdale, Washington County, UT HABS UTAH,27-SPDA.V,4E-2.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:SOUTH FRONT; VIEW TO NORTH - Oak Creek Historic Complex, Ranger's House, Springdale, Washington County, UT HABS UTAH,27-SPDA.V,4C-1.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:Zion National Park, East Ranger's House, Springdale, Washington County, UT HABS UTAH,27-SPDA.V,7H-7.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:SOUTH SIDE AND EAST FRONT; VIEW TO NORTH - Oak Creek Historic Complex, Ranger's House, Springdale, Washington County, UT HABS UTAH,27-SPDA.V,4F-3.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:SOUTHWEST FRONT AND SOUTHEAST SIDE; VIEW TO NORTH - Oak Creek Historic Complex, Firehouse, Springdale, Washington County, UT HABS UTAH, 27-SPDA.V,4M-1.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:Reverse of sign, facing south - South Entrance Sign, Zion-Mt. Carmel Highway at south park boundary, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,9A-3.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:NORTHWEST SIDE AND NORTHEAST REAR; VIEW TO EAST - Oak Creek Historic Complex, Firehouse, Springdale, Washington County, UT HABS UTAH, 27-SPDA.V,4M-2.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:SOUTH FRONT AND EAST SIDE; VIEW TO NORTHWEST - Oak Creek Historic Complex, Ranger's House, Springdale, Washington County, UT HABS UTAH,27-SPDA.V,4D-2.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:SOUTH FRONT AND EAST SIDE; VIEW TO NORTHWEST - Oak Creek Historic Complex, Ranger's House, Springdale, Washington County, UT HABS UTAH,27-SPDA.V,4E-1.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:EAST FRONT AND NORTH SIDE; VIEW TO SOUTHWEST - Oak Creek Historic Complex, Ranger's House, Springdale, Washington County, UT HABS UTAH,27-SPDA.V,4H-2.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:SOUTH FRONT AND WEST SIDE; VIEW TO NORTHEAST - Oak Creek Historic Complex, Ranger's House, Springdale, Washington County, UT HABS UTAH,27-SPDA.V,4B-1.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:EAST SIDE AND NORTH REAR; VIEW TO SOUTHWEST - Oak Creek Historic Complex, Ranger's House, Springdale, Washington County, UT HABS UTAH,27-SPDA.V,4B-3.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:SOUTH FRONT AND WEST SIDE; VIEW TO EAST - Oak Creek Historic Complex, Ranger's House, Springdale, Washington County, UT HABS UTAH,27-SPDA.V,4C-3.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:SOUTH FRONT AND WEST SIDE; VIEW TO EAST - Oak Creek Historic Complex, Ranger's House, Springdale, Washington County, UT HABS UTAH,27-SPDA.V,4B-4.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ]
+  ],
+  "commons:z3x_toquerville": [
+   [
+    "File:View facing northwest - Rockville Bridge, Spanning North Fork Virgin River at Rockville cut-off, Rockville, Washington County, UT HAER UTAH,27-ROC.VI.V,1-3.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:View through truss, facing 172 south - Rockville Bridge, Spanning North Fork Virgin River at Rockville cut-off, Rockville, Washington County, UT HAER UTAH,27-ROC.VI.V,1-2.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Detail of vertical and diagonal connection - Rockville Bridge, Spanning North Fork Virgin River at Rockville cut-off, Rockville, Washington County, UT HAER UTAH,27-ROC.VI.V,1-5.tif",
+    "Public domain",
+    "Grogan, Brian C.",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:View facing north northwest - Rockville Bridge, Spanning North Fork Virgin River at Rockville cut-off, Rockville, Washington County, UT HAER UTAH,27-ROC.VI.V,1-4.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Elevation, facing 202 southwest - Rockville Bridge, Spanning North Fork Virgin River at Rockville cut-off, Rockville, Washington County, UT HAER UTAH,27-ROC.VI.V,1-1.tif",
+    "Public domain",
+    "Grogan, Brian C.",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Rockville Bridge, Rockville, Utah.jpg",
+    "Public domain",
+    "Brian C. Grogan",
+    "1993-08"
+   ],
+   [
+    "File:Rockville, Utah, Main Street, facing west - Zion National Park Roads and Bridges, Springdale, Washington County, UT HAER UTAH,27-SPDA.V,9-6.tif",
+    "Public domain",
+    "Grogan, Brian C., creator",
+    "1993 date QS:P571,+1993-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Deseret Telegraph and Post Office Building, State Route 15, Rockville, Washington County, UT HABS UTAH,27-ROCVI,1- (sheet 1 of 7).png",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:Deseret Telegraph and Post Office Building, State Route 15, Rockville, Washington County, UT HABS UTAH,27-ROCVI,1- (sheet 2 of 7).png",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:Deseret Telegraph and Post Office Building, State Route 15, Rockville, Washington County, UT HABS UTAH,27-ROCVI,1- (sheet 1 of 7).tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:Deseret Telegraph and Post Office Building, State Route 15, Rockville, Washington County, UT HABS UTAH,27-ROCVI,1- (sheet 2 of 7).tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:Deseret Telegraph and Post Office Building, State Route 15, Rockville, Washington County, UT HABS UTAH,27-ROCVI,1- (sheet 4 of 7).tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:Deseret Telegraph and Post Office Building, State Route 15, Rockville, Washington County, UT HABS UTAH,27-ROCVI,1- (sheet 5 of 7).tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:Deseret Telegraph and Post Office Building, State Route 15, Rockville, Washington County, UT HABS UTAH,27-ROCVI,1- (sheet 4 of 7).png",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:Deseret Telegraph and Post Office Building, State Route 15, Rockville, Washington County, UT HABS UTAH,27-ROCVI,1- (sheet 3 of 7).png",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:Deseret Telegraph and Post Office Building, State Route 15, Rockville, Washington County, UT HABS UTAH,27-ROCVI,1- (sheet 6 of 7).tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:Deseret Telegraph and Post Office Building, State Route 15, Rockville, Washington County, UT HABS UTAH,27-ROCVI,1- (sheet 5 of 7).png",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:Deseret Telegraph and Post Office Building, State Route 15, Rockville, Washington County, UT HABS UTAH,27-ROCVI,1- (sheet 3 of 7).tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:Deseret Telegraph and Post Office Building, State Route 15, Rockville, Washington County, UT HABS UTAH,27-ROCVI,1- (sheet 6 of 7).png",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ],
+   [
+    "File:Deseret Telegraph and Post Office Building, State Route 15, Rockville, Washington County, UT HABS UTAH,27-ROCVI,1- (sheet 7 of 7).png",
+    "Public domain",
+    "",
+    "Documentation compiled after 1933"
+   ]
+  ],
+  "commons:z3x_cedar_city_harding": [
+   [
+    "File:GRADING OPERATIONS SHOWING HORSE-DRAWN DRAG - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -17.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF ROAD CROSSING PAUNSAUGUNT PLATEAU, FACING? - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -10.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:CONSTRUCTION OF CURBING IN PARKING AREA - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -20.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF NATURAL BRIDGE OVERLOOK PARKING AREA, FACING NORTHEAST. NOTE DETERIORATION OF WALL AND USE OF AESTHETICALLY INTRUSIVE FENCING. - Bryce Canyon National Park Rim Road, HAER UTAH,9-TROP.V,1; -12.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF ROAD CROSSING PAUNSAUGUNT PLATEAU, FACING SOUTHWEST? - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -9.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:CONSTRUCTION OF CURBING IN PARKING AREA - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -19.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:GENERAL VIEW OF BRYCE CANYON. - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -1.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF NATURAL BRIDGE OVERLOOK (TO RIGHT), FACING NORTHEAST - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -11.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF DOUBLE WYE AT SPURS FOR INSPIRATION AND BRYCE POINTS, FACING SOUTHEAST - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield HAER UTAH,9-TROP.V,1; -6.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF RAINBOW POINT SHELTER, FACING EAST. - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -13.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF ENTRANCE STATION AND VISITOR CENTER, FACING WEST - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -2.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF DOUBLE WYE AT THE SPURS FOR INSPIRATION AND BRYCE POINTS, FACING EAST - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County HAER UTAH,9-TROP.V,1; -5.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF BRYCE POINT PARKING AREA, FACING SOUTHEAST - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -8.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF ENTRANCE STATION AND VISITOR CENTER, FACING NORTH FROM INSIDE PARK - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, HAER UTAH,9-TROP.V,1; -3.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:PARK RANGER PATROL CAR AND OTHER VEHICLES AT PARIA POINT-RAINBOW POINT WYE - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, HAER UTAH,9-TROP.V,1; -22.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF BRYCE POINT PARKING AREA AND TRAILHEADS, FACING SOUTH - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -7.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:RUSTIC ENTRANCE SIGN AT NORTH PARK BOUNDARY - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -14.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:VIEW OF OLD PARK ROAD BETWEEN NORTH CAMPGROUND AND ENTRANCE STATION, FACING NORTH - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield HAER UTAH,9-TROP.V,1; -4.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:DIRECTIONAL SIGN FOR CAFETERIA AND CABINS - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -18.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ],
+   [
+    "File:DIRECTIONAL SIGN TO ZION AND GRAND CANYON - Bryce Canyon National Park Rim Road, State Highway 63 to Rainbow Point, Tropic, Garfield County, UT HAER UTAH,9-TROP.V,1; -21.tif",
+    "Public domain",
+    "",
+    "Documentation compiled after 1968"
+   ]
+  ],
+  "commons:z3x_harding_west": [
+   [
+    "File:Harding and Gillett at SLCC (Juvenile Instructor).jpg",
+    "Public domain",
+    "Unknown author Unknown author",
+    "1923-07"
+   ],
+   [
+    "File:Seattle Elks band at Boys Picnic, Woodland Park, 1923 (MOHAI 13125).jpg",
+    "Public domain",
+    "Frank H. Nowell",
+    "1923 date QS:P571,+1923-00-00T00:00:00Z/9"
+   ]
+  ],
+  "commons:z3x_taft_signing": [
+   [
+    "File:William Howard Taft, head-and-shoulders portrait, facing front.jpg",
+    "Public domain",
+    "Unknown author Unknown author",
+    "1909-03-11"
+   ],
+   [
+    "File:Cabinet card of William Howard Taft by Pach Brothers - Cropped to image.jpg",
+    "Public domain",
+    "Pach Brothers, restored by Adam Cuerden",
+    "1908"
+   ],
+   [
+    "File:William Howard Taft 1909 in Reserve Lousiana.jpg",
+    "Public domain",
+    "unknown, possibly the New Orleans Times-Picayune",
+    "1909-01-01"
+   ],
+   [
+    "File:William Howard Taft 1909.jpg",
+    "Public domain",
+    "unattributed",
+    "1909-03-11"
+   ],
+   [
+    "File:President William Howard Taft, College of the Immaculate Conception, New Orleans.jpg",
+    "Public domain",
+    "Ernest J. Bellocq",
+    "Taken on 30 October 1909"
+   ],
+   [
+    "File:William Howard Taft 1909 (cropped).jpg",
+    "Public domain",
+    "unattributed",
+    "1909-03-11"
+   ],
+   [
+    "File:William Howard Taft 1909b.jpg",
+    "Public domain",
+    "unattributed",
+    "1909-03-11"
+   ],
+   [
+    "File:Horace H. Lurton, William Howard Taft, and William R. Day.png",
+    "Public domain",
+    "Unknown author Unknown author",
+    "circa 1899 date QS:P,+1899-00-00T00:00:00Z/9,P1480,Q5727902"
+   ],
+   [
+    "File:1909 White Steamer with President Taft and his family.jpg",
+    "Public domain",
+    "1909 photo",
+    "1909-03-04"
+   ],
+   [
+    "File:William Howard Taft, head-and-shoulders portrait, facing front.tif",
+    "Public domain",
+    "Unknown author Unknown author",
+    "1909-03-11"
+   ],
+   [
+    "File:William Howard Taft, 1857-1930.jpg",
+    "CC0",
+    "Johnston, Frances Benjamin, 1864-1952, photographer",
+    "between 1909 and 1913 date QS:P,+1950-00-00T00:00:00Z/7,P131"
+   ],
+   [
+    "File:William Howard Taft 1909 (cropped3x4).jpg",
+    "Public domain",
+    "unattributed",
+    "1909-03-11"
+   ],
+   [
+    "File:William Howard Taft - Key West, Florida.jpg",
+    "Public domain",
+    "Wright Langley",
+    "circa 1909 date QS:P,+1909-00-00T00:00:00Z/9,P1480,Q5727902"
+   ],
+   [
+    "File:William Howard Taft, Pres. U.S., 1857-1930 LCCN2003654860.jpg",
+    "Public domain",
+    "George Grantham Bain Collection",
+    "1909-06-28"
+   ],
+   [
+    "File:William Howard Taft (1857-1930) Amerikaans politicus (Republikein) en 27-ste president van de, SFA022004632.jpg",
+    "Public domain",
+    "Unknown author Unknown author",
+    "1911"
+   ],
+   [
+    "File:William Howard Taft, head-and-shoulders portrait, facing front LCCN2001698190.jpg",
+    "Public domain",
+    "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+    "1909"
+   ],
+   [
+    "File:William Howard Taft on tour 1909 cph.3b11798.jpg",
+    "Public domain",
+    "Unknown author Unknown author",
+    "1909-09-27"
+   ],
+   [
+    "File:President Taft and Mrs. Taft.jpg",
+    "Public domain",
+    "Brown Brothers",
+    "2013-06-22 22:58:33"
+   ],
+   [
+    "File:TAFT, WILLIAM HOWARD LOC hec.07123.jpg",
+    "Public domain",
+    "Harris & Ewing Collection",
+    "between 1909 and 1923 date QS:P,+1950-00-00T00:00:00Z/7,P131"
+   ],
+   [
+    "File:William Howard Taft, head-and-shoulders portrait, facing slightly left LCCN2001698191.jpg",
+    "Public domain",
+    "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+    "1909"
+   ]
+  ],
+  "commons:z3x_wilson_1919": [
+   [
+    "File:Woodrow Wilson in 1919.jpg",
+    "Public domain",
+    "Harris & Ewing",
+    "1919"
+   ],
+   [
+    "File:Woodrow Wilson in 1919.tiff",
+    "Public domain",
+    "Harris & Ewing",
+    "1919"
+   ],
+   [
+    "File:Thomas Woodrow Wilson, Harris & Ewing bw photo portrait, 1919 (cropped) c.jpg",
+    "Public domain",
+    "Harris & Ewing",
+    "1919"
+   ],
+   [
+    "File:Thomas Woodrow Wilson, Harris & Ewing bw photo portrait, 1919.jpg",
+    "Public domain",
+    "Harris & Ewing",
+    "1919"
+   ],
+   [
+    "File:Woodrow Wilson in 1919 (B&W).tiff",
+    "CC BY-SA 4.0",
+    "Harris & Ewing; retouched by Soerfm",
+    "2016-06-29"
+   ],
+   [
+    "File:President Woodrow Wilson at Suresnes in 1919.jpg",
+    "Public domain",
+    "Unknown author Unknown author",
+    "Taken on 30 May 1919"
+   ],
+   [
+    "File:Woodrow Wilson - 1919 Nobel Peace Prize Recipient.jpg",
+    "CC BY 4.0",
+    "Rick Obst",
+    "2017-11-24 09:08:15"
+   ],
+   [
+    "File:Thomas Woodrow Wilson, Harris & Ewing bw photo portrait, 1919 - black and white (cropped).jpg",
+    "Public domain",
+    "Harris & Ewing",
+    "1919"
+   ],
+   [
+    "File:1919 Art Young cartoon of Woodrow Wilson.jpg",
+    "Public domain",
+    "Art Young",
+    "1919-06-26"
+   ],
+   [
+    "File:Woodrow Wilson returning from the Versailles Peace Conference (1919).jpg",
+    "Public domain",
+    "Associated Press",
+    "1919"
+   ],
+   [
+    "File:Thomas Woodrow Wilson, Harris & Ewing bw photo portrait, 1919 cropped.jpg",
+    "Public domain",
+    "Harris & Ewing",
+    "1919"
+   ],
+   [
+    "File:Thomas Woodrow Wilson, Harris & Ewing bw photo portrait, 1919 (cropped 3x4).jpg",
+    "Public domain",
+    "Harris & Ewing",
+    "1919"
+   ],
+   [
+    "File:Thomas Woodrow Wilson, Harris & Ewing bw photo portrait, 1919 (cropped) b.jpg",
+    "Public domain",
+    "Harris & Ewing",
+    "1919"
+   ],
+   [
+    "File:William Orpen Woodrow Wilson 1919.jpg",
+    "Public domain",
+    "William Orpen",
+    "1919 date QS:P571,+1919-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Woodrow Wilson (Nobel 1919).jpg",
+    "Public domain",
+    "Unknown, printed by A. B. Lagrelius & Westphal, Stockholm",
+    "1919"
+   ],
+   [
+    "File:Woodrow Wilson Speaking Tour (4454207561).jpg",
+    "No restrictions",
+    "Woodrow Wilson Presidential Library Archives from Staunton, VA",
+    "1919"
+   ],
+   [
+    "File:President Woodrow Wilson, Memorial Day, 30 May 1919 (19488657642).jpg",
+    "CC BY 2.0",
+    "USMC Archives from Quantico, USA",
+    "1919-05-30"
+   ],
+   [
+    "File:Woodrow Wilson, Twenty-Eighth President of the United States LOC 6332007340.jpg",
+    "No restrictions",
+    "The Library of Congress",
+    "1919-01-01 00:00:00"
+   ],
+   [
+    "File:Woodrow Wilson making speech outdoors to crowd in France, May 30th, 1919 LCCN90712458.jpg",
+    "Public domain",
+    "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+    "1919-05-30"
+   ],
+   [
+    "File:President Woodrow Wilson, visiting the ruins of the Leuven library with the King and Queen of Belgium (National Archives and Records Administration).jpg",
+    "Public domain",
+    "Anonymous Unknown author",
+    "1919"
+   ]
+  ],
+  "commons:z3x_gov_dern": [
+   [
+    "File:1925, Fruita Children and Governor George H. Dern (20e3ca6f-2b59-4012-aa04-d92677d9b6ee).jpg",
+    "Public domain",
+    "NPS",
+    "Taken on 16 April 2011"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 30).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 23).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 1).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 10).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 60).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 61).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 32).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 66).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 24).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 35).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 46).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 57).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 45).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 14).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 63).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 21).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 37).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 53).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ],
+   [
+    "File:Message of Governor George H. Dern to the Seventeenth Legislature of the state of Utah - DPLA - c1e97fb5bfe29369e7517d5917b47f47 (page 51).jpg",
+    "Public domain",
+    "Dern, George H., 1872-1936, author",
+    "1927 date QS:P571,+1927-00-00T00:00:00Z/9"
+   ]
+  ],
+  "commons:z3x_mukuntuweap": [
+   [
+    "File:Zion angels landing view.jpg",
+    "CC BY-SA 3.0",
+    "Diliff",
+    "2004-09-13"
+   ],
+   [
+    "File:Kolob Canyons part of Zion National Park.JPG",
+    "CC BY 3.0",
+    "Michael G\u00e4bler",
+    "1997-08"
+   ],
+   [
+    "File:Navajo Sandstone formations in Zion National Park, Utah.- (USA 2016).jpg",
+    "CC BY-SA 4.0",
+    "Pierre Andr\u00e9 Leclercq",
+    "2016-10-12 22:54:55"
+   ],
+   [
+    "File:Angels Landing.jpg",
+    "CC BY-SA 4.0",
+    "Tobias Alt",
+    "Taken on 14 July 2007"
+   ],
+   [
+    "File:Zion National Park, the Narrows.jpg",
+    "CC BY 4.0",
+    "Trougnouf",
+    "Taken on 2 June 2016, 16:40:18"
+   ],
+   [
+    "File:Mountains in Zion National Park, Utah.jpg",
+    "CC BY-SA 3.0",
+    "\u201cJon Zander( digon3 )\u201d",
+    "Taken on 16 May 2006"
+   ],
+   [
+    "File:Zion-national-park-sunset.jpg",
+    "CC BY-SA 4.0",
+    "Gauravbharadwajm",
+    "2019-09-05"
+   ],
+   [
+    "File:Zion National Park - Utah - 8770914707.jpg",
+    "CC BY-SA 2.0",
+    "Dougtone",
+    "2013-05-13 13:58:09"
+   ],
+   [
+    "File:Zion National Park from Angel's Landing.jpg",
+    "CC BY-SA 4.0",
+    "KadenMP",
+    "2024-02-03 20:57:18"
+   ],
+   [
+    "File:Zion National Park South Entrance.jpg",
+    "CC BY-SA 4.0",
+    "YosemiteYamper",
+    "2023-09-30 10:54:45"
+   ],
+   [
+    "File:View from Zion National Park.jpg",
+    "CC BY-SA 4.0",
+    "Christophe Krief",
+    "2019-12-27 16:44:52"
+   ],
+   [
+    "File:Zion National Park - HCP - October 02, 2022 - 068 - Zion Canyon Scenic Drive.jpg",
+    "CC0",
+    "Vulturesong",
+    "2022-10-02 18:50:21"
+   ],
+   [
+    "File:Zion National Park - HCP - October 02, 2022 - 025 - Zion Canyon Scenic Drive.jpg",
+    "CC0",
+    "Vulturesong",
+    "2022-10-02 17:46:37"
+   ],
+   [
+    "File:Zion National Park - HCP - October 02, 2022 - 016 - Zion Canyon Scenic Drive.jpg",
+    "CC0",
+    "Vulturesong",
+    "2022-10-02 17:28:32"
+   ],
+   [
+    "File:Zion National Park - HCP - October 03, 2022 - 160 - Zion Canyon Scenic Drive.jpg",
+    "CC0",
+    "Vulturesong",
+    "2022-10-03 19:17:23"
+   ],
+   [
+    "File:Zion National Park - HCP - October 02, 2022 - 014 - Zion Canyon Scenic Drive.jpg",
+    "CC0",
+    "Vulturesong",
+    "2022-10-02 17:23:00"
+   ],
+   [
+    "File:Zion National Park aerial photo May 2021.jpg",
+    "CC0",
+    "Jstuby",
+    "2021-05-18 11:11:05"
+   ],
+   [
+    "File:Zion National Park - HCP - October 03, 2022 - 128 - Zion Canyon Scenic Drive.jpg",
+    "CC0",
+    "Vulturesong",
+    "2022-10-03 18:17:33"
+   ],
+   [
+    "File:Zion National Park - HCP - October 02, 2022 - 015 - Zion Canyon Scenic Drive.jpg",
+    "CC0",
+    "Vulturesong",
+    "2022-10-02 17:24:54"
+   ],
+   [
+    "File:Zion National Park - HCP - October 02, 2022 - 021 - Zion Canyon Scenic Drive.jpg",
+    "CC0",
+    "Vulturesong",
+    "2022-10-02 17:36:32"
+   ]
+  ]
  }
 }
