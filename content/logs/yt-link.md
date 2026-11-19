@@ -55,3 +55,7 @@
 ## 2026-11-19T01:38Z OK linked=0 skipped=45 failed=0
 
 ## 2026-11-19T12:18Z OK linked=0 skipped=45 failed=0
+
+## 2026-11-19T23:09Z OK linked=2 skipped=45 failed=0
+- LINKED U2fo4PZtsoE -> The Day the Mountain Fell: Zion's Lost Lake
+- LINKED aNnsMZQJ3p8 -> The Day the Mountain Fell: Zion's Lost Lake
