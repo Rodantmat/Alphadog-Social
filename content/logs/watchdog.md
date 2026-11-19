@@ -291,3 +291,11 @@
 - yt-link latest run 44437092265 (2026-11-19 01:27Z, scheduled) success.
 - Note: Alphadog_Bridge social_run_log / social_get_file started returning 401 "Bad credentials" mid-run (bridge GitHub token); used GitHub connector for logs and this log write instead.
 - Run ids: yt-followup 44438191215; social-post checked 44434271559, 44394966055, 44387359325, 44376858959; yt-link 44437092265.
+
+## 2026-11-19 02:37 UTC OK
+- All posts on time: 0 missed items in social_queue.json (170 checked, no holds; last done zn2w5_ig/fb 01:00Z; next zn2w6_ig/fb 2026-11-19T20:00Z). All past-due TikTok backlog items (due ≤ 2026-11-19T00:00Z) have "scheduled"; every backlog item scheduled.
+- Latest 4 social-post runs (44443638253, 44441760883, 44434271559, 44394966055) all success.
+- YouTube: 3 pending comments, none overdue (earliest "after" 2026-11-19T18:06Z, U2fo4PZtsoE); yt-followup not triggered.
+- yt-link latest run 44437092265 (2026-11-19 01:27Z) success.
+- Note: Alphadog_Bridge social_* tools still return 401 "Bad credentials" (bridge GitHub token); used GitHub connector / git instead.
+- Run ids checked: social-post 44443638253, 44441760883, 44434271559, 44394966055; yt-link 44437092265.
