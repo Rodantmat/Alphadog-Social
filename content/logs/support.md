@@ -1,8 +1,5 @@
 # AlphaDog Styles support log
 
-## 2026-11-12 18:23 UTC OK
-No new messages (list run 43279068390): answered 0, escalated 0, spam 0.
-
 ## 2026-11-12 19:23 UTC OK
 No new messages (list run 43289366808): answered 0, escalated 0, spam 0.
 
@@ -449,3 +446,6 @@ No new messages (list run 44428429090): answered 0, escalated 0, spam 0. Run too
 
 ## 2026-11-19 01:24 UTC OK
 No new messages (list run 44436381289): answered 0, escalated 0, spam 0. Checkout step slow (~1 min) but run completed successfully.
+
+## 2026-11-19 05:24 UTC OK
+No new messages (list run 44464658397): answered 0, escalated 0, spam 0. Alphadog_Bridge dispatch returned 403 "Resource not accessible by personal access token"; dispatched via GitHub connector instead, run completed successfully (checkout ~1 min).
