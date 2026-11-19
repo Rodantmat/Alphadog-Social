@@ -283,3 +283,11 @@
 - YouTube: 4 pending comments, none overdue (earliest "after" 2026-11-19T01:06Z, aNnsMZQJ3p8); yt-followup not triggered (last 44382112607 success).
 - yt-link latest run 44301595003 (2026-11-18 12:11Z) success.
 - Run ids checked: social-post 44387359325, 44376858959, 44300630695; yt-followup 44382112607; yt-link 44301595003.
+
+## 2026-11-19 01:42 UTC OK
+- All posts on time: 0 missed items in social_queue.json (170 checked, no holds; zn2w5_ig/fb due 01:00Z done by social-post 44434271559). All past-due TikTok backlog items (due ≤ 2026-11-19T00:00Z) have "scheduled"; every backlog item scheduled.
+- Latest 4 social-post runs (44434271559, 44394966055, 44387359325, 44376858959) all success.
+- YouTube: 1 comment overdue (aNnsMZQJ3p8, after 01:06Z) — triggered yt-followup 44438191215: "comment posted aNnsMZQJ3p8 106 chars"; 3 others not yet due (earliest U2fo4PZtsoE 2026-11-19T18:06Z).
+- yt-link latest run 44437092265 (2026-11-19 01:27Z, scheduled) success.
+- Note: Alphadog_Bridge social_run_log / social_get_file started returning 401 "Bad credentials" mid-run (bridge GitHub token); used GitHub connector for logs and this log write instead.
+- Run ids: yt-followup 44438191215; social-post checked 44434271559, 44394966055, 44387359325, 44376858959; yt-link 44437092265.
