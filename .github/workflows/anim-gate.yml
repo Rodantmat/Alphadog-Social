@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       dir: { description: "footage-branch directory holding clips + spec.json", required: true }
+      spec_main: { description: "optional path on main to a spec.json to use instead of dir/spec.json", required: false, default: "" }
 jobs:
   go:
     runs-on: ubuntu-latest
@@ -15,6 +16,7 @@ jobs:
         run: git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fb && cd /tmp/fb && git sparse-checkout set --no-cone "/${{ inputs.dir }}"
       - env: { GEMINI_API_KEY: "${{ secrets.GEMINI_API_KEY }}" }
         run: |
+          if [ -n "${{ inputs.spec_main }}" ]; then cp "$GITHUB_WORKSPACE/${{ inputs.spec_main }}" "/tmp/fb/${{ inputs.dir }}/spec.json"; fi
           cd /tmp/fb/${{ inputs.dir }} && python3 - <<'PY'
           import json;s=json.load(open('spec.json'))
           for c in s: c['clip']=c['clip'] if c['clip'].startswith('/') else '/tmp/fb/${{ inputs.dir }}/'+c['clip']
