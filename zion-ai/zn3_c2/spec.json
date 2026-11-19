@@ -1,0 +1,30 @@
+[
+ {
+  "id": "P01",
+  "clip": "P01.mp4",
+  "intent": "visitors stand before a huge painting of a red canyon in a grand gallery",
+  "era": "1904 World Fair art gallery",
+  "narration": "He painted it. His canvases of Zion were shown at the nineteen oh four World's Fair in St. Louis, and he wrote about the canyon for Scribner's Magazine, calling it a new valley of wonders."
+ },
+ {
+  "id": "D01",
+  "clip": "D01.mp4",
+  "intent": "a wooden crate carrying a dog hangs from a cable high over a canyon",
+  "era": "about 1900, logging cable",
+  "narration": "And according to the Park Service, a family dog named Darkey once rode that wire two thousand feet down the mountain."
+ },
+ {
+  "id": "T04",
+  "clip": "T04.mp4",
+  "intent": "two crews of tunnel workers with lanterns meet where two bores break through",
+  "era": "1929 tunnel breakthrough",
+  "narration": "When the two bores met, a newspaper reported, they were nowhere more than three inches out of line. After a mile of rock, that was close enough to shake hands."
+ },
+ {
+  "id": "R02",
+  "clip": "R02.mp4",
+  "intent": "a steam locomotive arrives at a small wooden station while a crowd waves",
+  "era": "1923 train arrival, crowd in 1920s clothes",
+  "narration": "In June nineteen twenty-three, the biggest tourist of all arrived. President Warren Harding came to Cedar City, Utah, by train, to thousands of cheering locals. Sheriffs rounded up about seventy-five horses to ride him up the canyon. According to a Deseret News account, the president wore a cowboy hat, a kerchief and a pair of oversized chaps. His wife, Florence, said she wouldn't have missed the trip for anything."
+ }
+]

@@ -1,0 +1,58 @@
+[
+ {
+  "id": "R01",
+  "clip": "R01.mp4",
+  "intent": "a rider leads a line of horsemen along a dusty canyon track in southern Utah",
+  "era": "1908, ranchers and horses, no cars",
+  "narration": "In nineteen oh eight, eight ranchers from southern Utah asked the government for a land survey. The General Land Office sent a surveyor named Leo Snow. He surveyed the canyon and wrote that it was surpassed in grandeur only by the view of the Grand Canyon of the Colorado. His recommendation was short: Zion Canyon, he said, ought to be made a national park."
+ },
+ {
+  "id": "R03",
+  "clip": "R03.mp4",
+  "intent": "a steam locomotive pulls a long passenger train across the desert",
+  "era": "1923, steam locomotive, Union Pacific era",
+  "narration": "In June nineteen twenty-three, the biggest tourist of all arrived. President Warren Harding came to Cedar City, Utah, by train, to thousands of cheering locals. Sheriffs rounded up about seventy-five horses to ride him up the canyon. According to a Deseret News account, the president wore a cowboy hat, a kerchief and a pair of oversized chaps. His wife, Florence, said she wouldn't have missed the trip for anything."
+ },
+ {
+  "id": "S01",
+  "clip": "S01.mp4",
+  "intent": "a surveyor with a brass instrument on a tripod at a rock ledge facing red canyon cliffs",
+  "era": "1920s surveying, brass transit, period clothes",
+  "narration": "It took more than four years of surveys just to find a route. A local stockman, John Winder, is credited with showing the surveyors the way up Pine Creek. When they were done, the road to Bryce Canyon would shrink from a hundred and forty-nine miles to eighty-eight."
+ },
+ {
+  "id": "T01",
+  "clip": "T01.mp4",
+  "intent": "inside a tunnel under construction a drill rig, work lamps and a dynamite blast flash at the far end, silhouetted workers",
+  "era": "1927-1930 tunnel construction",
+  "narration": "The crews started by blasting openings in the cliff face, windows high above Pine Creek. Through them, they hauled out the rock and let in air and light. Then they bored the tunnel in two directions, toward each other, and widened it with dynamite and air shovels. Several times, parts of it collapsed."
+ },
+ {
+  "id": "T02",
+  "clip": "T02.mp4",
+  "intent": "workers on a wooden scaffold at a rough window blasted through a red cliff face, a river below",
+  "era": "1927-1930 tunnel gallery window",
+  "narration": "The crews started by blasting openings in the cliff face, windows high above Pine Creek. Through them, they hauled out the rock and let in air and light. Then they bored the tunnel in two directions, toward each other, and widened it with dynamite and air shovels. Several times, parts of it collapsed."
+ },
+ {
+  "id": "T03",
+  "clip": "T03.mp4",
+  "intent": "a hanging bulb and a pneumatic drill and wheelbarrow in a rough rock tunnel, dust in the light",
+  "era": "1927-1930 tunnel construction",
+  "narration": "Construction began in September nineteen twenty-seven. A Nevada construction company from Fallon took the job. About two hundred workers and their families lived in a camp near the work."
+ },
+ {
+  "id": "T05",
+  "clip": "T05.mp4",
+  "intent": "a 1930 tunnel dedication: flags and bunting at a tunnel portal, a crowd, a line of 1920s cars, a microphone",
+  "era": "July 4 1930 tunnel opening ceremony",
+  "narration": "The tunnel was dedicated on July fourth, nineteen thirty. Utah's governor, George Dern, was there. A prayer was offered by the president of the Church of Jesus Christ of Latter-day Saints, Heber J. Grant. Visiting governors from a governors' conference came to see it, and the ceremony was broadcast live on the radio."
+ },
+ {
+  "id": "T06",
+  "clip": "T06.mp4",
+  "intent": "a rock tunnel with a window in the cliff wall letting a shaft of light onto the road, rubble blocking part of it, a dry leaf",
+  "era": "present day, a sealed gallery window",
+  "narration": "Not everything has lasted. One of the windows was closed because seepage turned the road to ice. Another was sealed by a rockslide in nineteen fifty-eight, and two more were closed later. The same mountain that the tunnel crosses keeps working on it, which is the same story as the lakebed, the lodge and the trail: this canyon is always moving."
+ }
+]
