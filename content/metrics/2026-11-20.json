@@ -1,21 +1,41 @@
 {
- "at": "2026-11-20T07:58:04Z",
+ "at": "2026-11-20T21:14:57Z",
  "youtube": {
   "channel": {
    "viewCount": "13316",
-   "subscriberCount": "24",
+   "subscriberCount": "25",
    "hiddenSubscriberCount": false,
-   "videoCount": "59"
+   "videoCount": "61"
   },
   "videos": [
+   {
+    "id": "30zzYRt_Mgk",
+    "title": "The Impossible Tunnel: Zion's 1.1-Mile Road Through Solid Rock",
+    "published": "2026-11-20T18:31:28Z",
+    "privacy": "public",
+    "duration": "PT10M37S",
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+   },
+   {
+    "id": "BuIp2REquPw",
+    "title": "A lake lasted 700 years, then filled itself in #Shorts",
+    "published": "2026-11-20T18:00:31Z",
+    "privacy": "public",
+    "duration": "PT34S",
+    "views": 396,
+    "likes": 12,
+    "comments": 1
+   },
    {
     "id": "NtLVgTN1dKU",
     "title": "5,000 tons of rock fell in Zion in 1968 #Shorts",
     "published": "2026-11-20T01:00:01Z",
     "privacy": "public",
     "duration": "PT26S",
-    "views": 167,
-    "likes": 1,
+    "views": 324,
+    "likes": 3,
     "comments": 1
    },
    {
@@ -24,8 +44,8 @@
     "published": "2026-11-19T18:00:15Z",
     "privacy": "public",
     "duration": "PT36S",
-    "views": 975,
-    "likes": 22,
+    "views": 982,
+    "likes": 23,
     "comments": 1
    },
    {
@@ -34,7 +54,7 @@
     "published": "2026-11-19T01:00:02Z",
     "privacy": "public",
     "duration": "PT26S",
-    "views": 282,
+    "views": 280,
     "likes": 2,
     "comments": 1
    },
@@ -44,8 +64,8 @@
     "published": "2026-11-18T18:00:09Z",
     "privacy": "public",
     "duration": "PT36S",
-    "views": 528,
-    "likes": 6,
+    "views": 586,
+    "likes": 7,
     "comments": 1
    },
    {
@@ -54,8 +74,8 @@
     "published": "2026-11-18T01:00:30Z",
     "privacy": "public",
     "duration": "PT24S",
-    "views": 1148,
-    "likes": 14,
+    "views": 1147,
+    "likes": 15,
     "comments": 1
    },
    {
@@ -64,7 +84,7 @@
     "published": "2026-11-17T18:00:15Z",
     "privacy": "public",
     "duration": "PT35S",
-    "views": 1029,
+    "views": 1033,
     "likes": 7,
     "comments": 1
    },
@@ -164,7 +184,7 @@
     "published": "2026-11-12T20:00:33Z",
     "privacy": "public",
     "duration": "PT13M5S",
-    "views": 81,
+    "views": 80,
     "likes": 2,
     "comments": 2
    },
@@ -217,16 +237,6 @@
     "views": 94,
     "likes": 1,
     "comments": 1
-   },
-   {
-    "id": "BuIp2REquPw",
-    "title": "A lake lasted 700 years, then filled itself in #Shorts",
-    "published": "2026-11-10T06:48:54Z",
-    "privacy": "private",
-    "duration": "PT34S",
-    "views": 0,
-    "likes": 0,
-    "comments": 0
    },
    {
     "id": "YTQT_qQYGSQ",
@@ -334,7 +344,7 @@
     "published": "2026-11-05T20:00:12Z",
     "privacy": "public",
     "duration": "PT34M55S",
-    "views": 135,
+    "views": 137,
     "likes": 2,
     "comments": 4
    },
@@ -454,7 +464,7 @@
     "published": "2026-11-01T18:00:20Z",
     "privacy": "public",
     "duration": "PT55S",
-    "views": 9,
+    "views": 11,
     "likes": 0,
     "comments": 1
    },
@@ -499,13 +509,13 @@
     "comments": 1
    },
    {
-    "id": "bWSnXlwtW04",
-    "title": "Yellowstone's first giant eruption #Shorts",
-    "published": "2026-11-01T00:00:11Z",
+    "id": "RWwPTGQF82o",
+    "title": "Why Grand Prismatic Spring has those colors #Shorts",
+    "published": "2026-11-01T02:30:31Z",
     "privacy": "public",
-    "duration": "PT46S",
-    "views": 8,
-    "likes": 0,
+    "duration": "PT28S",
+    "views": 562,
+    "likes": 9,
     "comments": 1
    },
    {
@@ -699,7 +709,7 @@
     "comments": 1
    }
   ],
-  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/yt-analytics.readonly",
+  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/yt-analytics.readonly",
   "analytics_by_video": {
    "columns": [
     "video",
@@ -726,10 +736,10 @@
     ],
     [
      "V1kQP7DZLs8",
-     1145,
+     1148,
      197,
      14,
-     59.260000000000005,
+     59.34,
      13,
      1,
      0,
@@ -737,10 +747,10 @@
     ],
     [
      "HSrgGisF3Kw",
-     1139,
+     1141,
      216,
      17,
-     69.23,
+     69.15,
      12,
      1,
      1,
@@ -758,8 +768,19 @@
      1
     ],
     [
+     "C8TXhVDX4TU",
+     1027,
+     280,
+     23,
+     65.99,
+     7,
+     0,
+     0,
+     3
+    ],
+    [
      "0xmoyQ9hZsc",
-     1020,
+     1022,
      180,
      18,
      64.84,
@@ -767,17 +788,6 @@
      1,
      0,
      1
-    ],
-    [
-     "C8TXhVDX4TU",
-     1016,
-     278,
-     23,
-     66.22,
-     7,
-     0,
-     0,
-     3
     ],
     [
      "FtSXblbpc3U",
@@ -825,12 +835,23 @@
     ],
     [
      "0c8WvCxQWHY",
-     380,
+     382,
      78,
      19,
-     57.84,
+     57.65,
      5,
      1,
+     0,
+     0
+    ],
+    [
+     "J_uFe3-xCVQ",
+     322,
+     91,
+     23,
+     65.98,
+     3,
+     0,
      0,
      0
     ],
@@ -841,6 +862,17 @@
      11,
      51.690000000000005,
      4,
+     1,
+     0,
+     0
+    ],
+    [
+     "aNnsMZQJ3p8",
+     277,
+     36,
+     15,
+     60.08,
+     2,
      1,
      0,
      0
@@ -891,10 +923,10 @@
     ],
     [
      "nEf7KCM5Ors",
-     119,
-     1780,
-     1296,
-     61.86000000000001,
+     127,
+     2069,
+     1360,
+     64.96,
      2,
      0,
      0,
@@ -913,10 +945,10 @@
     ],
     [
      "YTQT_qQYGSQ",
-     106,
-     34,
+     107,
+     35,
      31,
-     61.59,
+     62,
      1,
      1,
      0,
@@ -924,10 +956,10 @@
     ],
     [
      "LfoM0KAi8Yo",
-     94,
-     549,
-     537,
-     35.56,
+     95,
+     550,
+     529,
+     35.05,
      3,
      0,
      0,
@@ -957,7 +989,7 @@
     ],
     [
      "tb-0953M_T8",
-     84,
+     85,
      13,
      15,
      62.53999999999999,
@@ -978,11 +1010,22 @@
      0
     ],
     [
+     "75qUKWJzcX0",
+     81,
+     17,
+     20,
+     64.76,
+     2,
+     1,
+     0,
+     0
+    ],
+    [
      "Hlr80lyDlwA",
-     77,
-     194,
-     193,
-     29.68,
+     80,
+     196,
+     192,
+     29.410000000000004,
      2,
      0,
      0,
@@ -1000,14 +1043,14 @@
      0
     ],
     [
-     "75qUKWJzcX0",
-     71,
-     14,
-     19,
-     61.12,
+     "1KUANk1uGtU",
+     72,
+     226,
+     245,
+     31.240000000000002,
+     2,
      1,
-     1,
-     0,
+     2,
      0
     ],
     [
@@ -1019,17 +1062,6 @@
      1,
      1,
      0,
-     0
-    ],
-    [
-     "1KUANk1uGtU",
-     63,
-     198,
-     252,
-     32.21,
-     2,
-     1,
-     2,
      0
     ],
     [
@@ -1088,6 +1120,17 @@
      0
     ],
     [
+     "P99Gu3GCZVw",
+     20,
+     15,
+     99,
+     14.360000000000001,
+     2,
+     0,
+     0,
+     0
+    ],
+    [
      "eNV_qLTs2Js",
      20,
      2,
@@ -1106,17 +1149,6 @@
      58.02,
      0,
      1,
-     0,
-     0
-    ],
-    [
-     "P99Gu3GCZVw",
-     17,
-     14,
-     122,
-     17.75,
-     2,
-     0,
      0,
      0
     ],
@@ -1144,10 +1176,10 @@
     ],
     [
      "jbZbPS173wc",
-     13,
+     14,
      0,
-     2,
-     0.44,
+     4,
+     0.7,
      1,
      0,
      0,
@@ -1198,17 +1230,6 @@
      0
     ],
     [
-     "bWSnXlwtW04",
-     8,
-     1,
-     19,
-     43.41,
-     0,
-     0,
-     0,
-     0
-    ],
-    [
      "naMTvf4CXt0",
      8,
      2,
@@ -1220,11 +1241,33 @@
      0
     ],
     [
+     "bWSnXlwtW04",
+     8,
+     1,
+     19,
+     43.41,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
      "x1PAl5B-IeI",
      5,
      1,
      24,
      50.36999999999999,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "av9mIcktn6A",
+     4,
+     1,
+     44,
+     76.93,
      0,
      0,
      0,
@@ -1264,17 +1307,6 @@
      0
     ],
     [
-     "av9mIcktn6A",
-     4,
-     1,
-     44,
-     76.93,
-     0,
-     0,
-     0,
-     0
-    ],
-    [
      "SSC66rbZrHo",
      3,
      0,
@@ -1308,17 +1340,6 @@
      0
     ],
     [
-     "ShKXhJameWs",
-     1,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0
-    ],
-    [
      "W1ytO_kbww0",
      1,
      0,
@@ -1330,7 +1351,7 @@
      0
     ],
     [
-     "yMqRsiwMhhA",
+     "ShKXhJameWs",
      1,
      0,
      0,
@@ -1374,6 +1395,17 @@
      0
     ],
     [
+     "yMqRsiwMhhA",
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
      "7TWuloRJytw",
      1,
      0,
@@ -1389,13 +1421,13 @@
   "traffic_sources": [
    [
     "NO_LINK_OTHER",
-    24,
-    246
+    29,
+    351
    ],
    [
     "SUBSCRIBER",
-    115,
-    57
+    124,
+    58
    ],
    [
     "YT_CHANNEL",
@@ -1404,18 +1436,18 @@
    ],
    [
     "YT_SEARCH",
-    371,
-    146
+    380,
+    148
    ],
    [
     "RELATED_VIDEO",
-    164,
-    2155
+    174,
+    2368
    ],
    [
     "YT_OTHER_PAGE",
-    84,
-    39
+    88,
+    40
    ],
    [
     "EXT_URL",
@@ -1434,8 +1466,8 @@
    ],
    [
     "SHORTS",
-    11007,
-    2567
+    11628,
+    2699
    ],
    [
     "HASHTAGS",
@@ -1686,23 +1718,36 @@
  "instagram": {
   "profile": {
    "username": "alphadog.studio",
-   "followers_count": 160,
-   "media_count": 90,
+   "followers_count": 161,
+   "media_count": 91,
    "id": "28926959546914399"
   },
   "media": [
+   {
+    "id": "18392215699230487",
+    "at": "2026-11-20T20:11:25+0000",
+    "caption": "Fewer than eighty deer became six hundred. Two Oregon State ecologists argue tha",
+    "likes": 1,
+    "comments": 1,
+    "views": 127,
+    "reach": 113,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 2,
+    "ig_reels_avg_watch_time": 6044
+   },
    {
     "id": "18135357649700925",
     "at": "2026-11-20T01:10:59+0000",
     "caption": "A hundred and eight days. On January twenty-sixth, nineteen sixty-six, the main ",
     "likes": 1,
     "comments": 1,
-    "views": 127,
-    "reach": 117,
+    "views": 132,
+    "reach": 123,
     "saved": 0,
     "shares": 0,
     "total_interactions": 3,
-    "ig_reels_avg_watch_time": 6652
+    "ig_reels_avg_watch_time": 6680
    },
    {
     "id": "17923730592242292",
@@ -1710,12 +1755,12 @@
     "caption": "Three thousand feet up, a slab of sandstone let go. August twenty-fourth, twenty",
     "likes": 5,
     "comments": 1,
-    "views": 1156,
-    "reach": 1027,
+    "views": 1533,
+    "reach": 1423,
     "saved": 0,
     "shares": 0,
     "total_interactions": 7,
-    "ig_reels_avg_watch_time": 13117
+    "ig_reels_avg_watch_time": 13319
    },
    {
     "id": "17961361086015895",
@@ -1723,12 +1768,12 @@
     "caption": "Two hundred and sixty-five thousand board feet of lumber, down a wire. That's ho",
     "likes": 1,
     "comments": 1,
-    "views": 128,
-    "reach": 118,
+    "views": 129,
+    "reach": 119,
     "saved": 0,
     "shares": 0,
     "total_interactions": 3,
-    "ig_reels_avg_watch_time": 7285
+    "ig_reels_avg_watch_time": 7233
    },
    {
     "id": "18078930725768876",
@@ -1737,7 +1782,7 @@
     "likes": 1,
     "comments": 1,
     "views": 165,
-    "reach": 154,
+    "reach": 155,
     "saved": 0,
     "shares": 0,
     "total_interactions": 2,
@@ -1801,12 +1846,12 @@
     "caption": "In 2021 park crews hauled almost five tons of human waste off the toilets at Sco",
     "likes": 9,
     "comments": 1,
-    "views": 1959,
+    "views": 1960,
     "reach": 1700,
     "saved": 2,
     "shares": 1,
     "total_interactions": 13,
-    "ig_reels_avg_watch_time": 14510
+    "ig_reels_avg_watch_time": 14512
    },
    {
     "id": "17957673990290808",
@@ -1827,12 +1872,12 @@
     "caption": "At least seventeen people have died at Angels Landing in Zion. The last half mil",
     "likes": 31,
     "comments": 1,
-    "views": 2097,
+    "views": 2098,
     "reach": 1882,
     "saved": 7,
     "shares": 3,
     "total_interactions": 45,
-    "ig_reels_avg_watch_time": 12287
+    "ig_reels_avg_watch_time": 12296
    },
    {
     "id": "18093897830223298",
@@ -2152,12 +2197,12 @@
     "caption": "In one winter hunters killed some 3,000 elk in and around early Yellowstone, jus",
     "likes": 37,
     "comments": 1,
-    "views": 1813,
-    "reach": 1613,
+    "views": 1814,
+    "reach": 1614,
     "saved": 6,
     "shares": 0,
     "total_interactions": 46,
-    "ig_reels_avg_watch_time": 18996
+    "ig_reels_avg_watch_time": 18985
    },
    {
     "id": "18094438412191750",
@@ -2327,19 +2372,6 @@
     "shares": 0,
     "total_interactions": 6,
     "ig_reels_avg_watch_time": 7459
-   },
-   {
-    "id": "17869890501658096",
-    "at": "2026-10-26T19:07:40+0000",
-    "caption": "In 1882, a man was found dead under an oak tree in Arizona. Revolver in his hand",
-    "likes": 4,
-    "comments": 0,
-    "views": 175,
-    "reach": 126,
-    "saved": 0,
-    "shares": 0,
-    "total_interactions": 4,
-    "ig_reels_avg_watch_time": 14994
    }
   ]
  },
@@ -2350,6 +2382,14 @@
    "id": "103210859154410"
   },
   "posts": [
+   {
+    "id": "103210859154410_1124530523679273",
+    "at": "2026-11-20T20:12:03+0000",
+    "text": "Fewer than eighty deer became six hundred. Two Oregon State ecologists argue tha",
+    "reactions": 0,
+    "comments": 1,
+    "shares": 0
+   },
    {
     "id": "103210859154410_1123638853768440",
     "at": "2026-11-20T01:11:44+0000",
@@ -2370,7 +2410,7 @@
     "id": "103210859154410_1122592513873074",
     "at": "2026-11-19T01:14:34+0000",
     "text": "Two hundred and sixty-five thousand board feet of lumber, down a wire. That's ho",
-    "reactions": 0,
+    "reactions": 1,
     "comments": 1,
     "shares": 0
    },
@@ -2741,24 +2781,25 @@
     "reactions": 1,
     "comments": 0,
     "shares": 0
-   },
-   {
-    "id": "103210859154410_1098997939565865",
-    "at": "2026-10-26T19:08:15+0000",
-    "text": "In 1882, a man was found dead under an oak tree in Arizona. Revolver in his hand",
-    "reactions": 0,
-    "comments": 1,
-    "shares": 0
    }
   ],
   "reels": [
    {
-    "id": "1703552571231390",
-    "at": "2026-11-20T01:11:11+0000",
-    "text": "A hundred and eight days. On January twenty-sixth, nineteen sixty-six, the main ",
+    "id": "2084670218869230",
+    "at": "2026-11-20T20:11:35+0000",
+    "text": "Fewer than eighty deer became six hundred. Two Oregon State ecologists argue tha",
     "fb_reels_total_plays": 0,
     "blue_reels_play_count": 0,
     "post_video_avg_time_watched": 0,
+    "post_video_followers": 0
+   },
+   {
+    "id": "1703552571231390",
+    "at": "2026-11-20T01:11:11+0000",
+    "text": "A hundred and eight days. On January twenty-sixth, nineteen sixty-six, the main ",
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 1960,
     "post_video_followers": 0
    },
    {
@@ -2774,9 +2815,9 @@
     "id": "1557993769681468",
     "at": "2026-11-19T01:14:09+0000",
     "text": "Two hundred and sixty-five thousand board feet of lumber, down a wire. That's ho",
-    "fb_reels_total_plays": 0,
-    "blue_reels_play_count": 0,
-    "post_video_avg_time_watched": 0,
+    "fb_reels_total_plays": 2,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 5305,
     "post_video_followers": 0
    },
    {
@@ -3192,15 +3233,6 @@
     "blue_reels_play_count": 3,
     "post_video_avg_time_watched": 13605,
     "post_video_followers": 0
-   },
-   {
-    "id": "1464836312261086",
-    "at": "2026-10-26T19:07:45+0000",
-    "text": "In 1882, a man was found dead under an oak tree in Arizona. Revolver in his hand",
-    "fb_reels_total_plays": 7,
-    "blue_reels_play_count": 4,
-    "post_video_avg_time_watched": 8443,
-    "post_video_followers": 0
    }
   ]
  },
@@ -3212,7 +3244,7 @@
     "at": "2026-11-20T03:01:46Z",
     "title": "Fewer than eighty deer became six hundred. Two Oregon State ecologist...",
     "duration": 35,
-    "views": 66,
+    "views": 101,
     "likes": 2,
     "comments": 0,
     "shares": 0
@@ -3222,8 +3254,8 @@
     "at": "2026-11-20T00:04:06Z",
     "title": "A hundred and eight days. On January twenty-sixth, nineteen sixty-six...",
     "duration": 25,
-    "views": 43,
-    "likes": 0,
+    "views": 107,
+    "likes": 1,
     "comments": 0,
     "shares": 0
    },
@@ -3232,7 +3264,7 @@
     "at": "2026-11-19T03:01:30Z",
     "title": "Three thousand feet up, a slab of sandstone let go. August twenty-fou...",
     "duration": 35,
-    "views": 315,
+    "views": 338,
     "likes": 6,
     "comments": 0,
     "shares": 0
@@ -3242,7 +3274,7 @@
     "at": "2026-11-19T00:04:24Z",
     "title": "Two hundred and sixty-five thousand board feet of lumber, down a wire...",
     "duration": 23,
-    "views": 165,
+    "views": 166,
     "likes": 2,
     "comments": 0,
     "shares": 0
@@ -3302,8 +3334,8 @@
     "at": "2026-11-15T03:01:18Z",
     "title": "In 2021 park crews hauled almost five tons of human waste off the toi...",
     "duration": 21,
-    "views": 8213,
-    "likes": 19,
+    "views": 8298,
+    "likes": 20,
     "comments": 0,
     "shares": 3
    },
@@ -3702,7 +3734,7 @@
     "at": "2026-10-26T04:10:00Z",
     "title": "Found dead under an oak in 1882. Revolver in hand, boots gone. The ju...",
     "duration": 30,
-    "views": 1348,
+    "views": 1351,
     "likes": 61,
     "comments": 2,
     "shares": 1
