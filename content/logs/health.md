@@ -69,3 +69,10 @@
 - 0 failed runs in last 40, 0 missed posts, no duplicates, 2 pending comments (private Shorts) none overdue; Lodge-burned and deer/cougar Shorts public on time, titles intact.
 - YouTube 23 subs (flat), 11,908 views (+2,250 in 24 h), long-form about 46.6 h of 8,000 (+6.7 h). RELATED_VIDEO 164 views/2,155 min. Public Shorts median 82; lumber wire 1,148, lake 1,142, dog 1,062; deer/cougar 366 at 5 h. TikTok fetch recovered (I31 closed).
 - Details: content/metrics/health_2026-11-19.md. COMPASS rows I02, I03, I05, I11, I20, I23, I24b, I29, I30, I31 updated.
+
+## 2026-11-20T23:00Z ALERT
+- Lead time: IG/FB Reels last slot 11-21 20:00Z (~21 h), TikTok last 11-21 03:00Z (~4 h), Stories queue empty (12th report): posting stops after Nov 21 (I05/I29, 5th report). PROGRESS: Zion Part 3 "The Impossible Tunnel" (30zzYRt_Mgk, 10:37) went public 18:31Z, but no Shorts/Reels/Stories exist for it and the Zion film (due 11-19) is still missing.
+- yt-link: 19:37Z cron skipped a 12th evening (I11); dispatched once 22:56Z (run 44832983199, in progress). Last good run 12:21Z. yt-publish 18:26Z and zion-p3-build 18:00Z failed once, both fixed and green on re-run.
+- 0 missed posts, no duplicates, comment sweeps and followups OK, no viewer comments.
+- YouTube 25 subs (+2), 13,316 views (+1,408), long-form about 51.2 h of 8,000 (+4.6 h). RELATED_VIDEO 174 views/2,368 min. Public Shorts median 85; "80 deer became 600" 982 (11.5x). IG 161 followers, median 166, Cable Mountain 1,533; FB 152 flat; TikTok median 168. Repo .git 159 MB.
+- Details: content/metrics/health_2026-11-20.md. COMPASS rows I02, I03, I05, I11, I20, I23, I24b, I29, I30 updated.
