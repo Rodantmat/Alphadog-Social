@@ -3738,7 +3738,13 @@
   "thumb_ms": 1200,
   "caption": "Fewer than eighty deer became six hundred. Two Oregon State ecologists argue that when crowds pushed the cougars out of Zion Canyon in the nineteen thirties, the deer boomed. Between nineteen thirty-eight and nineteen forty-seven, the Park Service killed or removed seven hundred and eighty of them. And the deer ate the young cottonwoods. In nearby North Creek, where cougars stayed, the researchers found almost forty times more young trees. It's a debated idea.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #Wildlife #Ecology #NationalParks",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
-  "trial": true
+  "trial": true,
+  "done": {
+   "media_id": "18392215699230487",
+   "permalink": "https://www.instagram.com/reel/Df-e62MANjT/",
+   "posted": "2026-11-20T20:11:25+0000",
+   "at": "2026-11-20T20:10:56Z"
+  }
  },
  {
   "id": "zn2w8_fb",
@@ -3746,7 +3752,40 @@
   "file": "zion_p2_w8.mp4",
   "at": "2026-11-20T20:00:00Z",
   "caption": "Fewer than eighty deer became six hundred. Two Oregon State ecologists argue that when crowds pushed the cougars out of Zion Canyon in the nineteen thirties, the deer boomed. Between nineteen thirty-eight and nineteen forty-seven, the Park Service killed or removed seven hundred and eighty of them. And the deer ate the young cottonwoods. In nearby North Creek, where cougars stayed, the researchers found almost forty times more young trees. It's a debated idea.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #Wildlife #Ecology #NationalParks",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
+  "done": {
+   "video_id": "2084670218869230",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1124530523679273"
+   },
+   "permalink": "https://www.facebook.com/reel/2084670218869230/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 38679597
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-20T20:11:35+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "2084670218869230_1433698972212066"
+   },
+   "status_errors": null,
+   "at": "2026-11-20T20:10:56Z"
+  }
  },
  {
   "id": "zn2w9_ig",
