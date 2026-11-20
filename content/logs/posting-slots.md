@@ -342,3 +342,11 @@
 - Queue check: 170 items; only zn2w6 was past-due without done/hold, now posted. No retries needed.
 - No DUPLICATE BLOCKED lines. Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded.
 - Next due: zn2w7 reels 2026-11-20 01:00Z (12:05 PT slot ahead: 17:05 PT).
+
+## 2026-11-20 02:12 UTC OK
+- Slot: 18:05 PT Stories (Thu Nov 19). Run 44658398053 (social-post, success). "Anything due?" = no; Post step skipped.
+- Nothing posted: no queue item due this slot (no stories item scheduled for 02:00Z today).
+- TikTok backlog -> Buffer: nothing to feed (no unscheduled items due within 4 days).
+- Queue check: 170 items; none past-due without done/hold (zn2w6 and zn2w7 already done). No retries needed.
+- No DUPLICATE BLOCKED lines; no errors. Social tools worked this run.
+- Next due: zn2w7 ig/fb was already posted 01:10Z; next queue item zn2w8 reels 2026-11-20 20:00Z (12:05 PT).
