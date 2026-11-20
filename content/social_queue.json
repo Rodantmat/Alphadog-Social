@@ -3681,7 +3681,13 @@
   "at": "2026-11-20T01:00:00Z",
   "thumb_ms": 1200,
   "caption": "A hundred and eight days. On January twenty-sixth, nineteen sixty-six, the main building of Zion Lodge burned. A prefabricated replacement was up and operating a hundred and eight days later. And all of it stands on the bed of an ancient lake.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #ZionLodge #History #NationalParks",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
+  "done": {
+   "media_id": "18135357649700925",
+   "permalink": "https://www.instagram.com/reel/Df8caCgE1xY/",
+   "posted": "2026-11-20T01:10:59+0000",
+   "at": "2026-11-20T01:10:30Z"
+  }
  },
  {
   "id": "zn2w7_fb",
@@ -3689,7 +3695,40 @@
   "file": "zion_p2_w7.mp4",
   "at": "2026-11-20T01:00:00Z",
   "caption": "A hundred and eight days. On January twenty-sixth, nineteen sixty-six, the main building of Zion Lodge burned. A prefabricated replacement was up and operating a hundred and eight days later. And all of it stands on the bed of an ancient lake.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #ZionLodge #History #NationalParks",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
+  "done": {
+   "video_id": "1703552571231390",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1123638853768440"
+   },
+   "permalink": "https://www.facebook.com/reel/1703552571231390/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 14993392
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-20T01:11:11+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1703552571231390_1675724890806783"
+   },
+   "status_errors": null,
+   "at": "2026-11-20T01:10:30Z"
+  }
  },
  {
   "id": "zn2w8_ig",
