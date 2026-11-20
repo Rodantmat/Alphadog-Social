@@ -306,3 +306,11 @@
 - YouTube: 2 pending comments, none overdue (BuIp2REquPw after 2026-11-20T18:06Z, NtLVgTN1dKU after 2026-11-20T01:06Z); yt-followup not triggered.
 - yt-link latest run 44520612978 (2026-11-19 12:05Z) success.
 - Run ids: social-post 44605164757, 44597850901, 44594746809, 44507542586; yt-link 44520612978.
+
+## 2026-11-20 19:40 UTC OK
+- All posts on time: 0 missed items in social_queue.json (170 checked, no holds; next due zn2w8_ig/fb 2026-11-20T20:00Z). All past-due TikTok backlog items have "scheduled" (tiktok_backlog.json, 26 items checked).
+- Latest social-post runs (44798949284, 44785121688, 44706490220; only 3 in the last 60 runs) all success; no social-post failures.
+- YouTube: 1 comment overdue (BuIp2REquPw, after 18:06Z) — triggered yt-followup 44803699442: log "comment posted BuIp2REquPw 106 chars" (run success). Not re-triggered.
+- yt-link: latest success 44733209835 (2026-11-20 12:07Z); no yt-link failure in recent runs. 02:35Z backup dispatch not applicable at this run time.
+- Outside watchdog scope, noted: yt-publish 44792847725 failed 18:26Z (superseded by 44793421469 success); zion-p3-build 44788629707 failed 18:00Z (superseded by 44790277705 success).
+- Run ids: yt-followup 44803699442; social-post 44798949284, 44785121688, 44706490220; yt-link 44733209835.
