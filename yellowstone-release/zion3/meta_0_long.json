@@ -1,0 +1,52 @@
+{
+ "file": "zion_ch3_final.mp4",
+ "title": "The Impossible Tunnel: Zion's 1.1-Mile Road Through Solid Rock",
+ "description_file": "desc_long.txt",
+ "tags": [
+  "zion national park",
+  "zion",
+  "zion mount carmel tunnel",
+  "zion tunnel",
+  "utah",
+  "national parks",
+  "national parks history",
+  "zion documentary",
+  "history",
+  "documentary",
+  "harding",
+  "dellenbaugh"
+ ],
+ "category": "27",
+ "privacy": "public",
+ "thumbnail": "thumb.jpg",
+ "made_for_kids": false,
+ "synthetic": false,
+ "language": "en",
+ "captions": [
+  {
+   "file": "zion_ch3.en.srt",
+   "language": "en",
+   "name": "English"
+  },
+  {
+   "file": "zion_ch3.es.srt",
+   "language": "es",
+   "name": "Español"
+  },
+  {
+   "file": "zion_ch3.pt.srt",
+   "language": "pt",
+   "name": "Português"
+  }
+ ],
+ "localizations": {
+  "es": {
+   "title": "El túnel imposible: 1,8 km de carretera por roca sólida en Zion",
+   "description": "Dos cuadrillas excavaron una hacia la otra, en la oscuridad, a través de más de un kilómetro y medio de roca arenisca en Zion. La historia de cómo un cañón en el que nadie creía se volvió parque nacional y cómo abrieron la carretera hasta él. Subtítulos en español."
+  },
+  "pt": {
+   "title": "O túnel impossível: 1,8 km de estrada por rocha sólida em Zion",
+   "description": "Duas equipes cavaram uma em direção à outra, no escuro, por mais de um quilômetro e meio de arenito em Zion. A história de como um cânion em que ninguém acreditava virou parque nacional e de como abriram a estrada até ele. Legendas em português."
+  }
+ }
+}
