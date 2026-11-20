@@ -99,3 +99,12 @@
 - Strategies: no state/cap changes on the 12 strategies vs 11-17; CLEAN 15->16 on A_core_3power, A_regular_5power, A_wrebounds_4flex, A_wsteals_5flex, C_wstocks_4flex. B_demon_3flex / B_demon_5flex still red (REQUAL HOLD 11-09). CHANGE: _ROTATION state rotation -> normal, live_cap 1 -> 0; steals cool -> ok (ewma 0.466 -> 0.507, trail10 0.465); turnovers ok (0.607).
 - Edge monitors: PP z 2.71, UD z 2.23, both RUNNING (29 slates), no ALARM.
 - Boards 11-19 (4 games): 0 rows for every app so far (11-18 filled later: PrizePicks 38,011, Underdog 26,131, Sleeper 17,777, Betr 8,001, Fliff 10,102, 9 sportsbooks). Watch P2B ~08:06 PT.
+
+## 2026-11-20 13:58 UTC ACTION
+- Market term: review revert (carried). audit_market_coverage not run: github_trigger_workflow 403 again (token lacks actions:write). Last verdict 11-18 (run 44318475729) NOT READY, 28 dates. 11-19 window rungs 985, avg 2.40 books.
+- Pipelines: P2A 11-20 success (03:31-03:42 PT); P2A/P2B/P3 11-19 all success (P3 claimed 13:17 PT, finished 13:28 PT). Scheduler tick 51s old. P3 11-19 soft-failed grep NOT done (run outside last-100-runs window).
+- PP 11-19 (PLAY, 4 games... 3 slips): P_FB_U3power x2 (0 hits-short), P_FB_U4flex x1; 3u staked, 0 returned, net -3u, ROI -100%. Season: 130 slips, 130u, 167.8u, +37.8u, ROI +29.1%.
+- UD live 11-19: T 1 slip +2.13u, C 1 slip -1u (net +1.13u). UD P5 shadow 11-19: 3 slips, -3u. Season live T+C: 61 slips, 61u, +22.87u, ROI +37.5%. Season P5 (paper+shadow, graded): 97 slips, 91.5u, +16.25u, ROI +17.8%.
+- Strategies: no state/cap changes on the 12 strategies vs 11-18; CLEAN 16->17 on the five A/C strategies. B_demon_3flex / B_demon_5flex still red (REQUAL HOLD 11-09). CHANGE: _ROTATION state normal -> rotation, live_cap 0 -> 1; steals ok -> cool (ewma 0.459, trail10 0.483); turnovers ok (0.634).
+- Edge monitors: PP z 2.83 (UNDECIDED, 30 slates), UD z 1.95 (UNDECIDED, 30 slates), no ALARM.
+- Boards 11-20 (slate day, 4+ games): PrizePicks 2,258, Underdog 901, Sleeper 346, Fliff 150. Betr and sportsbooks 0 so far (Betr only in P3 window; books after P2B ~08:06 PT) - same pattern as prior mornings.
