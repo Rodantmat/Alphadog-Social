@@ -30,7 +30,7 @@ jobs:
         run: |
           cd /tmp/fbs/yellowstone-release/zion3 && cat zion_ch3_final.mp4.part* > /tmp/f.mp4 && ffprobe -v error -show_entries format=duration:stream=codec_type,width,height -of compact /tmp/f.mp4
           python3 -c "import subprocess,sys;d=float(subprocess.run(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0','/tmp/f.mp4'],capture_output=True,text=True).stdout);assert 560<d<760,d"
-          ffmpeg -v error -i /tmp/f.mp4 -af volumedetect -f null - 2>&1 | grep -i mean_volume; ffmpeg -i /tmp/f.mp4 -vf blackdetect=d=1.5:pix_th=0.05 -an -f null - 2>&1 | grep -c black_start || true
+          ffmpeg -hide_banner -i /tmp/f.mp4 -af volumedetect -f null - 2>&1 | grep -i mean_volume || true; ffmpeg -i /tmp/f.mp4 -vf blackdetect=d=1.5:pix_th=0.05 -an -f null - 2>&1 | grep -c black_start || true
       - name: Commit to footage
         run: |
           cd /tmp/fbs && git config user.name alphadog-bot && git config user.email bot@users.noreply.github.com
