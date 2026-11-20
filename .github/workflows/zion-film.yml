@@ -1,0 +1,54 @@
+name: zion-film
+# Complete Zion film (Part 1 + 2 + 3) from the released episode finals on the footage branch.
+# mode=preview: frames around each part's start/end -> footage review/zionfilm
+# mode=build: cut each part at its trim (0 = full), concat, merged EN/ES/PT subtitles + chapters, thumbnail, meta -> footage yellowstone-release/zionfilm (95 MB parts)
+on:
+  workflow_dispatch:
+    inputs:
+      mode: { description: "preview | build", default: "preview" }
+      trims: { description: "seconds to keep per part, comma list (0 = full)", default: "0,0,0" }
+permissions:
+  contents: write
+jobs:
+  film:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: sudo apt-get -qq update >/dev/null && sudo apt-get -qq install -y ffmpeg fonts-dejavu-core >/dev/null && pip -q install pillow
+      - name: Fetch finals
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
+          cd /tmp/fbs && git sparse-checkout set --no-cone /yellowstone-release/zion1 /yellowstone-release/zion2 /yellowstone-release/zion3 /yellowstone-media/zion3/img
+          mkdir -p /tmp/w && cd /tmp/w
+          for c in 1 2 3; do
+            cat /tmp/fbs/yellowstone-release/zion$c/zion_ch${c}_final.mp4.part* > p$c.mp4
+            want=$(cut -d' ' -f1 /tmp/fbs/yellowstone-release/zion$c/zion_ch${c}_final.mp4.sha256); got=$(sha256sum p$c.mp4 | cut -d' ' -f1)
+            [ "$want" = "$got" ] && echo "SHA OK $c" || { echo "SHA MISMATCH $c"; exit 1; }
+            ffprobe -v error -show_entries format=duration:stream=codec_type,codec_name,width,height,r_frame_rate,sample_rate,channels -of compact p$c.mp4
+          done
+      - name: Preview
+        if: inputs.mode == 'preview'
+        run: |
+          cd /tmp/w && mkdir -p /tmp/fbs/review/zionfilm && rm -f /tmp/fbs/review/zionfilm/*
+          for c in 1 2 3; do
+            d=$(ffprobe -v error -show_entries format=duration -of csv=p=0 p$c.mp4)
+            for k in 24 18 12 8 5 3 1; do t=$(python3 -c "print(max(0,$d-$k))"); ffmpeg -v error -y -ss $t -i p$c.mp4 -frames:v 1 -vf scale=480:-2 /tmp/fbs/review/zionfilm/ch${c}_end-$(printf %02d $k).jpg; done
+            for k in 1 3 6; do ffmpeg -v error -y -ss $k -i p$c.mp4 -frames:v 1 -vf scale=480:-2 /tmp/fbs/review/zionfilm/ch${c}_start+$k.jpg; done
+          done
+          cd /tmp/fbs && git config user.name alphadog-bot && git config user.email bot@users.noreply.github.com
+          git sparse-checkout add /review/zionfilm && git add review/zionfilm && git commit -qm "zionfilm: preview frames" && git push -q origin HEAD:footage
+      - name: Build
+        if: inputs.mode == 'build'
+        env: { TRIMS: "${{ inputs.trims }}" }
+        run: |
+          cd /tmp/w && python3 $GITHUB_WORKSPACE/scripts/zion_film_build.py "$TRIMS" /tmp/fbs
+          python3 $GITHUB_WORKSPACE/scripts/zion_film_meta.py
+          mkdir -p /tmp/fbs/yellowstone-release/zionfilm && cd /tmp/fbs/yellowstone-release/zionfilm && rm -f *
+          split -b 95m -d -a 2 /tmp/w/film.mp4 zion_film_final.mp4.part && sha256sum /tmp/w/film.mp4 | sed 's#/tmp/w/film.mp4#zion_film_final.mp4#' > zion_film_final.mp4.sha256
+          cp /tmp/w/out/* . && ls -la
+          cd /tmp/fbs && git config user.name alphadog-bot && git config user.email bot@users.noreply.github.com
+          git sparse-checkout add /yellowstone-release/zionfilm && git add yellowstone-release/zionfilm && git commit -qm "zionfilm: complete cut" && git push -q origin HEAD:footage
