@@ -314,3 +314,11 @@
 - yt-link: latest success 44733209835 (2026-11-20 12:07Z); no yt-link failure in recent runs. 02:35Z backup dispatch not applicable at this run time.
 - Outside watchdog scope, noted: yt-publish 44792847725 failed 18:26Z (superseded by 44793421469 success); zion-p3-build 44788629707 failed 18:00Z (superseded by 44790277705 success).
 - Run ids: yt-followup 44803699442; social-post 44798949284, 44785121688, 44706490220; yt-link 44733209835.
+
+## 2026-11-20 20:37 UTC OK
+- All posts on time: 0 missed items in content/social_queue.json (170 checked, no holds; none past due unposted; next due zn2w9_ig/fb 2026-11-21T01:00Z). All past-due TikTok backlog items (due <= 2026-11-20T03:00Z) have "scheduled" (tiktok_backlog.json, 26 items checked).
+- Latest social-post runs (44808263243 is social-post 20:06Z; then 44798949284, 44785121688) all success; no social-post failures in last 60 runs.
+- YouTube: no comment_*.json pending in content/pending (comment file for BuIp2REquPw was posted 19:36Z by yt-followup 44803699442, file removed); yt-followup not triggered.
+- yt-link: latest success 44733209835 (2026-11-20 12:07Z); no yt-link failure in window; 02:35Z backup dispatch not applicable at this run time.
+- Outside watchdog scope, noted: none new.
+- Run ids: social-post 44808263243, 44798949284, 44785121688; yt-followup 44803699442, 44739814173; yt-link 44733209835.
