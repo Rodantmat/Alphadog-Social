@@ -33,6 +33,7 @@ jobs:
           else
             gh release download "${{ inputs.tag }}" -R "${{ github.repository }}" -D /tmp/rel
           fi
+          for p in /tmp/rel/*.part00; do [ -e "$p" ] || continue; b="${p%.part00}"; cat "$b".part* > "$b" && rm "$b".part*; done
           ls -la /tmp/rel
       - name: Upload to YouTube (long video, captions, localizations, thumbnail, playlist, credits; scheduled Shorts)
         env:
