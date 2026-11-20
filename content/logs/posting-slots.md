@@ -356,3 +356,13 @@
 - Nothing posted: no queue item due this slot. Queue: 170 items, none past-due without done/hold; no retries needed.
 - TikTok backlog -> Buffer: "nothing to feed" (no unscheduled items due within 4 days).
 - No DUPLICATE BLOCKED lines; no errors. Next due: zn2w8 ig/fb reels 2026-11-20 20:00Z (12:05 PT).
+
+## 2026-11-20 20:16 UTC OK
+- Slot: 12:05 PT Reels (Fri Nov 20). Run 44808263243 (social-post, success; dispatched 20:06:06Z, triggered with no inputs).
+- Posted zn2w8_ig https://www.instagram.com/reel/Df-e62MANjT/ (IG media_id 18392215699230487; trial reel not accepted, posted as normal reel)
+- Posted zn2w8_fb https://www.facebook.com/reel/2084670218869230/ (FB post_id 1124530523679273)
+- TikTok backlog -> Buffer: "nothing to feed" (no unscheduled items due within 4 days).
+- Queue check: 170 items; zn2w8 was the only item past-due without done/hold, now posted. Still open but not yet due: zn2w9 ig/fb (2026-11-21 01:00Z) and zn2w10 ig/fb (2026-11-21 20:00Z). No retries needed.
+- No DUPLICATE BLOCKED lines. Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded.
+- Next due: zn2w9 reels 2026-11-21 01:00Z (17:05 PT Fri slot).
+- Run ids used: 44808263243.
