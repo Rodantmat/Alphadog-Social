@@ -42,7 +42,10 @@ def font(sz):
     for p in ("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf","/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"):
         if os.path.exists(p): return ImageFont.truetype(p,sz)
     return ImageFont.load_default()
-d.text((60,H-235),"THE IMPOSSIBLE TUNNEL",font=font(92),fill=(255,255,255)); d.text((64,H-110),"1.1 miles through solid rock · Zion",font=font(48),fill=(240,190,80))
+def fit(txt,sz,maxw):
+    while sz>20 and d.textbbox((0,0),txt,font=font(sz))[2]>maxw: sz-=2
+    return font(sz)
+d.text((60,H-235),"THE IMPOSSIBLE TUNNEL",font=fit("THE IMPOSSIBLE TUNNEL",92,W-120),fill=(255,255,255)); d.text((64,H-110),"1.1 miles through solid rock · Zion",font=fit("1.1 miles through solid rock · Zion",48,W-120),fill=(240,190,80))
 im.save(f"{REL}/thumb.jpg",quality=92)
 # chapters
 chap=[("0:00","Cold open: three inches")]

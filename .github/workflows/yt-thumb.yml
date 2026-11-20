@@ -1,0 +1,19 @@
+name: yt-thumb
+on:
+  workflow_dispatch:
+    inputs:
+      video_id: { description: "YouTube video id", required: true }
+      path: { description: "repo path of the jpg", required: true }
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          VID: ${{ inputs.video_id }}
+          P: ${{ inputs.path }}
+        run: python3 scripts/yt_thumb.py

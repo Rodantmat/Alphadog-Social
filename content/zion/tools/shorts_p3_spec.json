@@ -1,0 +1,362 @@
+{
+ "items": [
+  {
+   "id": "z3s1",
+   "kind": "short",
+   "segs": [
+    "s001",
+    "s002"
+   ],
+   "hook": "146 tons of dynamite. No GPS. No lasers.",
+   "imgs": [
+    "z3x_haer_zmc_13",
+    "z3_npg_blasting_gallery_uhl",
+    "z3x_haer_pine_3",
+    "z3x_haer_zmc_17",
+    "z3_commons_zmc_tunnel_6"
+   ],
+   "file": "zion_p3_z3s1.mp4",
+   "key": 0,
+   "end1": "Zion, Part 3: The Impossible Tunnel",
+   "end2": "Full documentary on YouTube",
+   "caption": "Two crews dug toward each other through a mile of solid sandstone in Zion, using 146 tons of dynamite, surveyors, string and math.",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3s2",
+   "kind": "short",
+   "segs": [
+    "s029",
+    "s030"
+   ],
+   "hook": "A mile of rock. Off by 3 inches.",
+   "imgs": [
+    "z3x_haer_zmc_19",
+    "z3x_haer_zmc_8",
+    "z3x_haer_zmc_4",
+    "z3x_haer_zmc_11",
+    "z3x_haer_switch_7"
+   ],
+   "file": "zion_p3_z3s2.mp4",
+   "key": 1,
+   "end1": "Zion, Part 3: The Impossible Tunnel",
+   "end2": "Full documentary on YouTube",
+   "caption": "When the two bores of Zion's tunnel finally met, a newspaper reported they were nowhere more than three inches out of line.",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3s3",
+   "kind": "short",
+   "segs": [
+    "s022",
+    "s023",
+    "s024"
+   ],
+   "hook": "The dog that rode a wire 2,000 feet down",
+   "imgs": [
+    "z3x_haer_zmc_9",
+    "z3x_haer_zmc_18",
+    "z3x_toquerville_3",
+    "A:D01",
+    "z3x_haer_switch_2"
+   ],
+   "file": "zion_p3_z3s3.mp4",
+   "key": 2,
+   "end1": "Zion, Part 3: The Impossible Tunnel",
+   "end2": "Full documentary on YouTube",
+   "caption": "A logger strung fifty thousand feet of wire up Zion's east rim, and according to the Park Service a family dog named Darkey once rode it two thousand feet down. A dog could do it. A car could not.",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3s4",
+   "kind": "short",
+   "segs": [
+    "s032",
+    "s033"
+   ],
+   "hook": "1.1 miles. 6 windows. $500,000.",
+   "imgs": [
+    "z3_commons_zmc_tunnel_4",
+    "z3x_haer_pine_4",
+    "z3x_haer_pine_5",
+    "z3x_haer_zmc_12",
+    "z3x_haer_zmc_7",
+    "z3x_zion_1920s_10"
+   ],
+   "file": "zion_p3_z3s4.mp4",
+   "key": 3,
+   "end1": "Zion, Part 3: The Impossible Tunnel",
+   "end2": "Full documentary on YouTube",
+   "caption": "The Zion-Mount Carmel Tunnel: 1.1 miles long, 22 feet wide, 16 feet high, with six windows cut into the cliff, and about half a million dollars to build. Zion was no longer a dead end.",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3s5",
+   "kind": "short",
+   "segs": [
+    "s014",
+    "s018"
+   ],
+   "hook": "3,700 visitors in 1920. 55,000 by 1930.",
+   "imgs": [
+    "z3x_springdale_6",
+    "z3x_zion_1920s_3",
+    "z3x_zion_1920s_7",
+    "z3x_springdale_5",
+    "z3x_zion_1920s_4"
+   ],
+   "file": "zion_p3_z3s5.mp4",
+   "key": 4,
+   "end1": "Zion, Part 3: The Impossible Tunnel",
+   "end2": "Full documentary on YouTube",
+   "caption": "In 1920 about 3,700 people visited Zion. By 1930 it was nearly 55,000, fifteen times as many, and that created a new problem.",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3s6",
+   "kind": "short",
+   "segs": [
+    "s016",
+    "s017"
+   ],
+   "hook": "75 horses for a president. 5 weeks later, he was dead.",
+   "imgs": [
+    "z3x_harding_west_1",
+    "z3x_harding_west_2",
+    "z3x_zion_1920s_1",
+    "z3x_zion_1920s_9",
+    "z3x_toquerville_2",
+    "z3x_toquerville_4",
+    "z3x_toquerville_6"
+   ],
+   "file": "zion_p3_z3s6.mp4",
+   "key": 5,
+   "end1": "Zion, Part 3: The Impossible Tunnel",
+   "end2": "Full documentary on YouTube",
+   "caption": "In June 1923, President Warren Harding came to Cedar City, Utah, by train, and sheriffs rounded up about seventy-five horses to ride him up the canyon. He died five weeks later, but the visit had done its work. Zion was famous.",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3s7",
+   "kind": "short",
+   "segs": [
+    "s010",
+    "s011"
+   ],
+   "hook": "8 ranchers. 1 petition. A national monument.",
+   "imgs": [
+    "z3x_grafton_5",
+    "z3x_mukuntuweap_2",
+    "z3x_grafton_8",
+    "z3x_mukuntuweap_3",
+    "z3x_taft_signing_1",
+    "z3x_taft_signing_3",
+    "z3x_taft_signing_2",
+    "z3x_grafton_2"
+   ],
+   "file": "zion_p3_z3s7.mp4",
+   "key": 6,
+   "end1": "Zion, Part 3: The Impossible Tunnel",
+   "end2": "Full documentary on YouTube",
+   "caption": "In 1908 eight ranchers from southern Utah asked for a land survey of Zion Canyon. On July 31, 1909, President Taft signed the proclamation creating Mukuntuweap National Monument.",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3s8",
+   "kind": "short",
+   "segs": [
+    "s006",
+    "s007"
+   ],
+   "hook": "1904: nobody believed this painting was real",
+   "imgs": [
+    "z3_commons_dellenbaugh_1",
+    "z3_commons_dellenbaugh_4",
+    "z3_commons_dellenbaugh_3",
+    "z3_npg_dellenbaugh_zion_canyon_1903",
+    "z3_commons_world_fair_1904_1",
+    "z3_commons_world_fair_1904_3",
+    "z3_commons_dellenbaugh_2"
+   ],
+   "file": "zion_p3_z3s8.mp4",
+   "key": 7,
+   "end1": "Zion, Part 3: The Impossible Tunnel",
+   "end2": "Full documentary on YouTube",
+   "caption": "In the summer of 1903 painter Frederick Dellenbaugh came to Zion. His canvases were shown at the 1904 World's Fair in St. Louis, where visitors reportedly doubted a place like that could be real.",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3s9",
+   "kind": "short",
+   "segs": [
+    "s035",
+    "s036"
+   ],
+   "hook": "Taller than 11 ft 4 in? This tunnel says no.",
+   "imgs": [
+    "z3_commons_zmc_tunnel_1",
+    "z3x_haer_zmc_6",
+    "z3_loc_haer_ut0271",
+    "z3_loc_haer_ut0272",
+    "z3_commons_zmc_tunnel_2",
+    "z3x_haer_zmc_14",
+    "z3_npg_tunnel_west_portal_1928"
+   ],
+   "file": "zion_p3_z3s9.mp4",
+   "key": 8,
+   "end1": "Zion, Part 3: The Impossible Tunnel",
+   "end2": "Full documentary on YouTube",
+   "caption": "Zion's tunnel was built for 1920s cars. One window was closed by ice, another by a rockslide in 1958, and anything over 11 feet 4 inches tall needs a permit and one-way traffic.",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3s10",
+   "kind": "short",
+   "segs": [
+    "s020",
+    "s021"
+   ],
+   "hook": "The road to Bryce: 149 miles around",
+   "imgs": [
+    "z3x_haer_switch_8",
+    "z3x_toquerville_5",
+    "z3x_zion_1920s_2",
+    "z3x_zion_1920s_8"
+   ],
+   "file": "zion_p3_z3s10.mp4",
+   "key": 9,
+   "end1": "Zion, Part 3: The Impossible Tunnel",
+   "end2": "Full documentary on YouTube",
+   "caption": "Zion Canyon is a box canyon: the road went in and came out the same way. To drive from Zion to Bryce Canyon you had to go 149 miles the long way around.",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3t1",
+   "kind": "story",
+   "segs": [
+    "s013"
+   ],
+   "hook": "Utah's first national park: Nov 19, 1919",
+   "imgs": [
+    "z3x_wilson_1919_1",
+    "z3x_wilson_1919_4"
+   ],
+   "file": "zion_p3_z3t1.mp4",
+   "key": 10,
+   "end1": "Zion Part 3",
+   "end2": "Full documentary on YouTube",
+   "caption": "",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3t2",
+   "kind": "story",
+   "segs": [
+    "s027"
+   ],
+   "hook": "200 workers lived in a camp by the cliff",
+   "imgs": [
+    "z3x_zion_1920s_5",
+    "z3x_zion_1920s_6"
+   ],
+   "file": "zion_p3_z3t2.mp4",
+   "key": 11,
+   "end1": "Zion Part 3",
+   "end2": "Full documentary on YouTube",
+   "caption": "",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3t3",
+   "kind": "story",
+   "segs": [
+    "s025"
+   ],
+   "hook": "A road up a canyon wall, a tunnel through it",
+   "imgs": [
+    "z3x_haer_switch_3",
+    "z3x_haer_switch_5"
+   ],
+   "file": "zion_p3_z3t3.mp4",
+   "key": 12,
+   "end1": "Zion Part 3",
+   "end2": "Full documentary on YouTube",
+   "caption": "",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3t4",
+   "kind": "story",
+   "segs": [
+    "s026"
+   ],
+   "hook": "4 years of surveys to find one route",
+   "imgs": [
+    "z3x_haer_pine_7",
+    "z3x_haer_pine_8",
+    "z3x_haer_switch_6"
+   ],
+   "file": "zion_p3_z3t4.mp4",
+   "key": 13,
+   "end1": "Zion Part 3",
+   "end2": "Full documentary on YouTube",
+   "caption": "",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3t5",
+   "kind": "story",
+   "segs": [
+    "s037"
+   ],
+   "hook": "Nearly 5 million visits a year",
+   "imgs": [
+    "z3x_mukuntuweap_1",
+    "z3x_mukuntuweap_4",
+    "z3x_mukuntuweap_5"
+   ],
+   "file": "zion_p3_z3t5.mp4",
+   "key": 14,
+   "end1": "Zion Part 3",
+   "end2": "Full documentary on YouTube",
+   "caption": "",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3t6",
+   "kind": "story",
+   "segs": [
+    "s008"
+   ],
+   "hook": "They saw the paintings. They doubted it was real.",
+   "imgs": [
+    "z3_commons_world_fair_1904_2",
+    "z3_commons_world_fair_1904_4"
+   ],
+   "file": "zion_p3_z3t6.mp4",
+   "key": 15,
+   "end1": "Zion Part 3",
+   "end2": "Full documentary on YouTube",
+   "caption": "",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3t7",
+   "kind": "story",
+   "segs": [
+    "s012"
+   ],
+   "hook": "Renamed Zion in 1918: 76,000+ acres",
+   "imgs": [
+    "z3x_haer_switch_1",
+    "z3_commons_zmc_tunnel_3"
+   ],
+   "file": "zion_p3_z3t7.mp4",
+   "key": 16,
+   "end1": "Zion Part 3",
+   "end2": "Full documentary on YouTube",
+   "caption": "",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+name: zion-p3-shorts
+# Build the Zion Part 3 Shorts + Stories (1080x1920, narration audio, end card to the film) and commit to footage yellowstone-shorts/zion3/ with YouTube metas.
+on:
+  workflow_dispatch:
+    inputs:
+      only: { description: "optional space-separated item ids; empty = all", default: "" }
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: sudo apt-get -qq update >/dev/null && sudo apt-get -qq install -y ffmpeg fonts-dejavu-core >/dev/null && pip -q install numpy pillow
+      - name: Fetch media
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
+          cd /tmp/fbs && git sparse-checkout set --no-cone /zion-narr/p3/am_michael /yellowstone-media/zion3 /zion-ai/zn3_c3 /yellowstone-shorts/zion3
+      - name: Build
+        run: NARR=/tmp/fbs/zion-narr/p3/am_michael IMG=/tmp/fbs/yellowstone-media/zion3/img AI=/tmp/fbs/zion-ai/zn3_c3 OUT=/tmp/fbs/yellowstone-shorts/zion3 THUMB=content/zion/p3_thumb.jpg python3 content/zion/tools/build_shorts_p3.py ${{ inputs.only }}
+      - name: Metas + QA
+        run: |
+          cd /tmp/fbs/yellowstone-shorts/zion3 && rm -rf _z3* && cd - >/dev/null
+          python3 content/zion/tools/p3_pack.py --metas /tmp/fbs/yellowstone-shorts/zion3
+          cd /tmp/fbs/yellowstone-shorts/zion3 && for f in zion_p3_*.mp4; do ffprobe -v error -show_entries stream=codec_type,width,height:format=duration -of compact $f | tr '\n' ' '; echo $f; done; ls | wc -l
+      - name: Commit to footage
+        run: |
+          cd /tmp/fbs && git config user.name alphadog-bot && git config user.email bot@users.noreply.github.com
+          git add yellowstone-shorts/zion3 && git commit -qm "zion3: shorts + stories" && for i in 1 2 3 4 5; do git pull -q --rebase origin footage && git push -q origin HEAD:footage && break; sleep $((i*5)); done
