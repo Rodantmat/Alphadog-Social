@@ -1,0 +1,37 @@
+name: zion-p3-build
+# Build Zion Part 3 from narration + curated stills on the footage branch, package it, commit to footage yellowstone-release/zion3/.
+on:
+  workflow_dispatch:
+    inputs:
+      publish_at: { description: "optional ISO UTC premiere (>=1h ahead); empty = public now", default: "" }
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: sudo apt-get -qq update >/dev/null && sudo apt-get -qq install -y ffmpeg fonts-dejavu-core >/dev/null && pip -q install numpy pillow
+      - name: Fetch media from footage branch
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
+          cd /tmp/fbs && git sparse-checkout set --no-cone /zion-narr/p3/am_michael /yellowstone-media/zion3 /zion-ai/zn3_c3 /yellowstone-release/zion3
+          ls zion-narr/p3/am_michael | wc -l; ls yellowstone-media/zion3/img | wc -l
+      - name: Build
+        run: NARR=/tmp/fbs/zion-narr/p3/am_michael IMG=/tmp/fbs/yellowstone-media/zion3/img AI=/tmp/fbs/zion-ai/zn3_c3 SEGS=content/zion/p3_segments.json PLAN=content/zion/p3_plan2.txt OUT=/tmp/p3 python3 content/zion/tools/build_p3.py
+      - name: Package
+        env: { PUBLISH_AT: "${{ inputs.publish_at }}" }
+        run: OUT=/tmp/p3 REL=/tmp/fbs/yellowstone-release/zion3 IMG=/tmp/fbs/yellowstone-media/zion3/img SEGS=content/zion/p3_segments.json python3 content/zion/tools/p3_release.py
+      - name: QA gate (duration, audio, black frames)
+        run: |
+          cd /tmp/fbs/yellowstone-release/zion3 && cat zion_ch3_final.mp4.part* > /tmp/f.mp4 && ffprobe -v error -show_entries format=duration:stream=codec_type,width,height -of compact /tmp/f.mp4
+          python3 -c "import subprocess,sys;d=float(subprocess.run(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0','/tmp/f.mp4'],capture_output=True,text=True).stdout);assert 560<d<760,d"
+          ffmpeg -v error -i /tmp/f.mp4 -af volumedetect -f null - 2>&1 | grep -i mean_volume; ffmpeg -i /tmp/f.mp4 -vf blackdetect=d=1.5:pix_th=0.05 -an -f null - 2>&1 | grep -c black_start || true
+      - name: Commit to footage
+        run: |
+          cd /tmp/fbs && git config user.name alphadog-bot && git config user.email bot@users.noreply.github.com
+          git add yellowstone-release/zion3 && git commit -qm "zion3: release package" && for i in 1 2 3 4 5; do git pull -q --rebase origin footage && git push -q origin HEAD:footage && break; sleep $((i*5)); done
