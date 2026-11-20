@@ -12,3 +12,11 @@
 - Run ids: spotify-stats 44591199884 (success).
 - Blockers: Zion film not produced/released (no release folder, no film_es.m4a). Not overdue yet; the overdue threshold is 2026-11-22. Next check: next daily run; if the Zion film is public by then, run EN then ES as in the routine.
 - Tooling note: the bridge tools cannot read the footage branch, so the check used the GitHub API on the footage tree.
+
+## 2026-11-20
+- Checked: Zion film (YouTube release was due 2026-11-19, now 1 day late; overdue threshold 2026-11-22). Footage branch has no zion-release/ folder and no zion-release/film/ assets. The latest metrics snapshot (content/metrics/latest.json, 2026-11-20 07:58Z) lists no Zion full film on YouTube. Zion Part 3 was built (zion3 release, footage commit 2026-11-20 18:26Z, workflow zion-p3-build run 44790277705, success) and uploaded by yt-publish run 44793421469 (success, 18:30Z, video 30zzYRt_Mgk). That is a Part, not the full film, so it is excluded from Spotify.
+- Spotify duplicate check: not run, because there was no full film to post (last check: spotify-stats run 44591199884 on 2026-11-19, success).
+- Posted: nothing. spotify-upload was not dispatched for EN or ES.
+- Run ids: yt-publish 44793421469 (success, Zion P3, not a film); yt-publish 44792847725 (failure at 18:27Z, FileNotFoundError on zion_ch3_final.mp4, superseded by the 18:30Z run); zion-p3-build 44790277705 (success).
+- Blockers: Zion film not produced or released (no release folder, no film_es.m4a, no film_title_es.txt or film_desc_es.txt). Not yet overdue (overdue after 2026-11-22). Next check: next daily run. If the Zion film is public by then, run EN then ES as in the routine.
+- Tooling note: COMPASS row I30 could not be updated in this run. The session's GitHub write path was refused for content/channel/COMPASS.md (too large to rewrite through the bridge tool). Owner or next run should set I30 Last check to 11-20 and add the note above.
