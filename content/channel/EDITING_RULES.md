@@ -74,3 +74,6 @@ Every new AI clip must match the script line, era, story and audio; no hallucina
 - Procedure: generate -> gate -> REJECT clips get regenerated (new seed / tighter prompt, "no people", era words) -> re-gate. Max 3 tries, then replace with archival/own footage. Nothing ships unrejected.
 - Calibration 2026-11-10 (17 Zion P2 clips, existing): judge rejected nearly all, so it is a strict filter, not a verdict; use its reasons (intent/sync 0-3, anachronism, people in "no people" scenes) to drive regeneration. Clips with intent/sync <=3 are the real problems (S03, S04, S06, S08, R01, R04).
 - Also feed the same checks into analyze.py review of finished films (owner rule: every correction goes in the analyzer).
+
+## Growth log
+- 2026-11-21: number-first object/animal Shorts keep repeating the 10x+ pattern on YouTube (elk 1,329; lumber wire 1,148; lake 350 ft 1,142; dog 1,062; Hoover Dams 1,038; lake 700 years 1,030 vs median 85). On TikTok the lake-700-years Short got only 1.8x median (311), so YT and TikTok winners differ; the TikTok outlier is still 5 tons of waste (8,387, ~49x). Shorts feed gives 13,043 views / 3,107 min but RELATED_VIDEO (182 views) gives 2,553 min = 14 min/view: the Short-to-film link is what earns long-form hours; the Zion film and P3 (27 / 15 views) have no Shorts pointing at them yet.
