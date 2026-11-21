@@ -76,3 +76,11 @@
 - 0 missed posts, no duplicates, comment sweeps and followups OK, no viewer comments.
 - YouTube 25 subs (+2), 13,316 views (+1,408), long-form about 51.2 h of 8,000 (+4.6 h). RELATED_VIDEO 174 views/2,368 min. Public Shorts median 85; "80 deer became 600" 982 (11.5x). IG 161 followers, median 166, Cable Mountain 1,533; FB 152 flat; TikTok median 168. Repo .git 159 MB.
 - Details: content/metrics/health_2026-11-20.md. COMPASS rows I02, I03, I05, I11, I20, I23, I24b, I29, I30 updated.
+
+## 2026-11-21T23:00Z ALERT
+- Lead time: IG/FB Reels last slot 11-26 20:00Z (4.9 days), TikTok 11-27 00:00Z (5.1 d), Stories last 11-25 02:00Z (3.1 d). All queued items are Zion P3 Shorts; nothing exists for the Zion film (public 11-21 00:56Z, 27 views) and nothing after 11-27 (I29, 6th report, I33 new).
+- Spotify: Zion film posted on EN; ES blocked, film_es.m4a missing (I32).
+- yt-link: 19:37Z cron skipped a 13th evening (I11); dispatched once 22:56Z (run 44959285290). Runs 01:07Z and 11:54Z OK.
+- 0 real failures, 0 missed posts, no duplicates, 10 pending comments none overdue, no viewer comments.
+- YouTube 26 subs (+1), 14,540 views (+1,224; +7,993 in 7 d), long-form about 55.0 h of 8,000 (+3.8 h). RELATED_VIDEO 182 views/2,553 min (14 min/view). Median Short 85; lake-700-years 1,030 (12x). IG 163 followers, FB 152 flat, TikTok median 171 (top 8,387).
+- Details: content/metrics/health_2026-11-21.md. COMPASS rows I02, I03, I05, I11, I20, I23, I24b, I29, I30 updated; I32, I33 added.
