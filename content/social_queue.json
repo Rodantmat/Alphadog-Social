@@ -3794,7 +3794,13 @@
   "at": "2026-11-21T01:00:00Z",
   "thumb_ms": 1200,
   "caption": "Five thousand tons of rock, and no visitor killed. In nineteen sixty-eight, a rockfall that size hit the end of the trail to the Narrows. In Zion, rocks fall often. Yet according to the Park Service, no visitor has ever died from one here.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #Rockfall #History #NationalParks",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
+  "done": {
+   "media_id": "17995762931901279",
+   "permalink": "https://www.instagram.com/reel/Df_A-2WCb23/",
+   "posted": "2026-11-21T01:08:57+0000",
+   "at": "2026-11-21T01:08:36Z"
+  }
  },
  {
   "id": "zn2w9_fb",
@@ -3802,7 +3808,40 @@
   "file": "zion_p2_w9.mp4",
   "at": "2026-11-21T01:00:00Z",
   "caption": "Five thousand tons of rock, and no visitor killed. In nineteen sixty-eight, a rockfall that size hit the end of the trail to the Narrows. In Zion, rocks fall often. Yet according to the Park Service, no visitor has ever died from one here.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #Rockfall #History #NationalParks",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
+  "done": {
+   "video_id": "1006824008639545",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1124711050327887"
+   },
+   "permalink": "https://www.facebook.com/reel/1006824008639545/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 17368233
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-21T01:09:07+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1006824008639545_2788918891503608"
+   },
+   "status_errors": null,
+   "at": "2026-11-21T01:08:36Z"
+  }
  },
  {
   "id": "zn2w10_ig",
