@@ -36,7 +36,7 @@ jobs:
           cd /tmp/w && mkdir -p /tmp/fbs/review/zionfilm && rm -f /tmp/fbs/review/zionfilm/*
           for c in 1 2 3; do
             d=$(ffprobe -v error -show_entries format=duration -of csv=p=0 p$c.mp4)
-            for k in 24 18 12 8 5 3 1; do t=$(python3 -c "print(max(0,$d-$k))"); ffmpeg -v error -y -ss $t -i p$c.mp4 -frames:v 1 -vf scale=480:-2 /tmp/fbs/review/zionfilm/ch${c}_end-$(printf %02d $k).jpg; done
+            for k in 17 16 15 14 13 12 11 10 9; do t=$(python3 -c "print(max(0,$d-$k))"); ffmpeg -v error -y -ss $t -i p$c.mp4 -frames:v 1 -vf scale=480:-2 /tmp/fbs/review/zionfilm/ch${c}_end-$(printf %02d $k).jpg; done
             for k in 1 3 6; do ffmpeg -v error -y -ss $k -i p$c.mp4 -frames:v 1 -vf scale=480:-2 /tmp/fbs/review/zionfilm/ch${c}_start+$k.jpg; done
           done
           cd /tmp/fbs && git config user.name alphadog-bot && git config user.email bot@users.noreply.github.com
