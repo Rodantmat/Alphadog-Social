@@ -6,7 +6,7 @@ import json, os, re, subprocess, sys
 trims = [float(x) for x in sys.argv[1].split(",")]; FB = sys.argv[2]
 def dur(p): return float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", p], capture_output=True, text=True).stdout)
 D = [dur(f"p{i}.mp4") for i in (1, 2, 3)]
-K = [t if t > 0 else D[i] for i, t in enumerate(trims)]          # kept length per part
+K = [t if t > 0 else (D[i] + t if t < 0 else D[i]) for i, t in enumerate(trims)]   # t<0: cut |t| seconds off the end          # kept length per part
 OFF = [0, K[0], K[0] + K[1]]
 print("durations", D, "kept", K, "offsets", OFF)
 os.makedirs("out", exist_ok=True)
