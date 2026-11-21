@@ -366,3 +366,12 @@
 - No DUPLICATE BLOCKED lines. Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded.
 - Next due: zn2w9 reels 2026-11-21 01:00Z (17:05 PT Fri slot).
 - Run ids used: 44808263243.
+
+## 2026-11-21 20:12 UTC OK
+- Slot: 12:05 PT Reels (Sat Nov 21). Run 44944439067 (social-post, success). Triggered manually via social_trigger_workflow (no inputs).
+- Posted zn2w10_ig https://www.instagram.com/reel/DgBDVk5Ez64/ (IG media_id 17921000661536177; trial reel not accepted, posted as normal reel)
+- Posted zn2w10_fb https://www.facebook.com/reel/2172197350061647/ (FB post_id 1125561003576225)
+- TikTok backlog -> Buffer: "nothing to feed" (no unscheduled items due within 4 days).
+- Queue check: no past-due items without done/hold after run; no retries needed. Next due: z3s1 reels 2026-11-22 01:00Z (17:05 PT Sat), then z3t1 stories 2026-11-22 02:00Z.
+- Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded. No DUPLICATE BLOCKED lines.
+- Run ids used: 44944439067.
