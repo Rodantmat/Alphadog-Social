@@ -108,3 +108,12 @@
 - Strategies: no state/cap changes on the 12 strategies vs 11-18; CLEAN 16->17 on the five A/C strategies. B_demon_3flex / B_demon_5flex still red (REQUAL HOLD 11-09). CHANGE: _ROTATION state normal -> rotation, live_cap 0 -> 1; steals ok -> cool (ewma 0.459, trail10 0.483); turnovers ok (0.634).
 - Edge monitors: PP z 2.83 (UNDECIDED, 30 slates), UD z 1.95 (UNDECIDED, 30 slates), no ALARM.
 - Boards 11-20 (slate day, 4+ games): PrizePicks 2,258, Underdog 901, Sleeper 346, Fliff 150. Betr and sportsbooks 0 so far (Betr only in P3 window; books after P2B ~08:06 PT) - same pattern as prior mornings.
+
+## 2026-11-21 13:58 UTC ACTION
+- Market term: review revert (carried). audit_market_coverage not run: github_trigger_workflow 403 (token lacks actions:write), third day running. Last verdict 11-18 (run 44318475729) NOT READY, 28 dates. 11-20 window rungs 2,069, avg 2.44 books. Today is slate date 32 of the season.
+- Pipelines: P2A 11-21 success (03:31-03:44 PT); P2A/P2B/P3 11-20 all success (P3 claimed 13:17 PT, finished 13:32 PT). Scheduler tick 31s old. P3 11-20 soft-failed grep NOT done (run outside last-100-runs window). Outside the pipeline: NBA Replay Downstream (parallel store) run 44910191119 failed 11-21 05:42 PT; later runs in progress/success.
+- PP 11-20 (PLAY, $10 unit): 9 slips (6 graded_void, 3 graded; only H_P4/H_P5 etc. partial hits), 9u staked, 0 returned, net -9u (-$90), ROI -100%. Season: 139 slips, 139u, 167.8u, +28.8u, ROI +20.7%.
+- UD P5 (shadow) 11-20: 3 slips, 3u, 3.5u returned, +0.5u, ROI +16.7%. Season P5 (stake>0, profit col): 103 slips, 97u, +16.75u, ROI +17.3%. UD live 11-20: H 9 slips (live) 9u, 3.5u returned, -5.5u; T 2 slips -1u and C 2 slips -1.75u (both shadow). Season live (T+C+H, status live/graded): 71 slips, 71u, +17.37u, ROI +24.5%.
+- Strategies: no state/cap changes vs previous history; CLEAN 18 on the five A/C strategies. B_demon_3flex / B_demon_5flex still red (REQUAL HOLD 11-09, 0 slips). _ROTATION rotation (cap 1) unchanged: steals cool (ewma 0.399, trail10 0.434), turnovers ok (0.663). Ten H_P* strategies active, cap 1.
+- Edge monitors: PP z 3.23, UD z 2.23, both RUNNING (31 slates), no ALARM.
+- Boards 11-21 (6 games): 0 rows for every app so far (same pattern as prior mornings; 11-20 filled later: PrizePicks 32,929, Underdog 20,175, Sleeper 13,982, Betr 6,314, Fliff 8,004, 9 sportsbooks). Watch P2B ~08:06 PT.
