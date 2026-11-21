@@ -473,7 +473,12 @@
   "file": "zion_p3_z3s7.mp4",
   "due": "2026-11-25T03:00:00Z",
   "service": "tiktok",
-  "text": "In 1908 eight ranchers from southern Utah asked for a land survey of Zion Canyon. On July 31, 1909, President Taft signed the proclamation creating Mukuntuweap National Monument.\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Zion Part 3\\n\\n#Zion #ZionNationalPark #History #NationalParks"
+  "text": "In 1908 eight ranchers from southern Utah asked for a land survey of Zion Canyon. On July 31, 1909, President Taft signed the proclamation creating Mukuntuweap National Monument.\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Zion Part 3\\n\\n#Zion #ZionNationalPark #History #NationalParks",
+  "scheduled": {
+   "buffer_id": "6b01344cdd205ed779c1f240",
+   "at": "2026-11-21T06:03:53Z",
+   "due": "2026-11-25T03:00:00Z"
+  }
  },
  {
   "mode": "post",
