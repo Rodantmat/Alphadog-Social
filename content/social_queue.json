@@ -3851,7 +3851,13 @@
   "thumb_ms": 1200,
   "caption": "A lake that lasted seven hundred years, then filled itself in. When a mountainside fell into Zion Canyon, it dammed the Virgin River, and a lake some call Lake Zion filled the valley. Then the river slowly buried it, dropping sand and mud into the still water, until about four thousand one hundred years ago the lake was full. Not of water. Of sediment. That's the flat floor of Zion Canyon today.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #Geology #History #NationalParks",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
-  "trial": true
+  "trial": true,
+  "done": {
+   "media_id": "17921000661536177",
+   "permalink": "https://www.instagram.com/reel/DgBDVk5Ez64/",
+   "posted": "2026-11-21T20:08:06+0000",
+   "at": "2026-11-21T20:07:38Z"
+  }
  },
  {
   "id": "zn2w10_fb",
@@ -3859,7 +3865,40 @@
   "file": "zion_p2_w10.mp4",
   "at": "2026-11-21T20:00:00Z",
   "caption": "A lake that lasted seven hundred years, then filled itself in. When a mountainside fell into Zion Canyon, it dammed the Virgin River, and a lake some call Lake Zion filled the valley. Then the river slowly buried it, dropping sand and mud into the still water, until about four thousand one hundred years ago the lake was full. Not of water. Of sediment. That's the flat floor of Zion Canyon today.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 2 — link in the first comment 👇\n\n#Zion #Geology #History #NationalParks",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/1KUANk1uGtU",
+  "done": {
+   "video_id": "2172197350061647",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1125561003576225"
+   },
+   "permalink": "https://www.facebook.com/reel/2172197350061647/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 48252183
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-21T20:08:15+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "2172197350061647_1873976480272690"
+   },
+   "status_errors": null,
+   "at": "2026-11-21T20:07:38Z"
+  }
  },
  {
   "id": "z3s1_ig",
