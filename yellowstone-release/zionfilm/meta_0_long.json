@@ -1,0 +1,40 @@
+{
+ "file": "zion_film_final.mp4",
+ "title": "Zion National Park: The Complete Story (Full Documentary)",
+ "description_file": "desc_long.txt",
+ "tags": [
+  "zion national park",
+  "zion",
+  "zion documentary",
+  "zion full documentary",
+  "utah",
+  "national parks",
+  "national parks history",
+  "documentary",
+  "history"
+ ],
+ "category": "27",
+ "privacy": "public",
+ "thumbnail": "thumb.jpg",
+ "made_for_kids": false,
+ "synthetic": false,
+ "language": "en",
+ "playlist_title": "America's National Parks: The Hidden History",
+ "captions": [
+  {
+   "file": "zion_film.en.srt",
+   "language": "en",
+   "name": "English"
+  },
+  {
+   "file": "zion_film.es.srt",
+   "language": "es",
+   "name": "Español"
+  },
+  {
+   "file": "zion_film.pt.srt",
+   "language": "pt",
+   "name": "Português"
+  }
+ ]
+}
