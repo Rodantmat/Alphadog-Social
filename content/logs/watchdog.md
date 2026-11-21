@@ -322,3 +322,11 @@
 - yt-link: latest success 44733209835 (2026-11-20 12:07Z); no yt-link failure in window; 02:35Z backup dispatch not applicable at this run time.
 - Outside watchdog scope, noted: none new.
 - Run ids: social-post 44808263243, 44798949284, 44785121688; yt-followup 44803699442, 44739814173; yt-link 44733209835.
+
+## 2026-11-21 02:36 UTC OK
+- All posts on time: 0 missed items in content/social_queue.json (204 items checked, no holds, none past due unposted). All past-due TikTok backlog items (due <= 2026-11-21T03:00Z) have "scheduled" (tiktok_backlog.json).
+- Latest social-post runs 44853935518 (02:05Z) and 44848118876 (01:06Z) both success; no social-post failures.
+- YouTube: no pending comments overdue (earliest "after" 2026-11-22T01:06Z); yt-followup not triggered.
+- yt-link latest run 44847037273 (2026-11-21 00:56Z) success; 02:35Z backup dispatch not needed (success within 12h).
+- Other: pages build 44848161949 cancelled, superseded by success; yt-followup 44855073953 success.
+- Run ids: social-post 44853935518, 44848118876; yt-followup 44855073953; yt-link 44847037273.
