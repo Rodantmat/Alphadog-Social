@@ -4114,14 +4114,29 @@
   "platform": "instagram_story",
   "file": "zion_p3_z3t1.mp4",
   "at": "2026-11-22T02:00:00Z",
-  "story_v2": "Utah's first national park: Nov 19, 1919 | zion3"
+  "story_v2": "Utah's first national park: Nov 19, 1919 | zion3",
+  "done": {
+   "media_id": "17914205688561042",
+   "story": true,
+   "at": "2026-11-22T02:07:04Z"
+  }
  },
  {
   "id": "z3t1_fb",
   "platform": "facebook_story",
   "file": "zion_p3_z3t1.mp4",
   "at": "2026-11-22T02:00:00Z",
-  "story_v2": "Utah's first national park: Nov 19, 1919 | zion3"
+  "story_v2": "Utah's first national park: Nov 19, 1919 | zion3",
+  "done": {
+   "video_id": "1802896597447613",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "1910259117066290"
+   },
+   "story": true,
+   "at": "2026-11-22T02:07:04Z"
+  }
  },
  {
   "id": "z3t2_ig",
