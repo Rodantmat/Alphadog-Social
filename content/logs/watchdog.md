@@ -359,3 +359,11 @@
 - yt-link latest success 45019742661 (2026-11-22 11:56Z), within 12h; 02:35Z backup dispatch not applicable at this run time, not dispatched.
 - Other: yt-related 45005754838 failed at 09:04Z (not yt-link; not investigated this run).
 - Run ids: social-post 45058796312, 45041331571, 45005978232; yt-followup 45037687217; yt-link 45019742661; yt-related 45005754838.
+
+## 2026-11-22 20:40 UTC OK
+- All posts on time: 0 missed items in content/social_queue.json (204 items checked, no holds, none past due unposted). All past-due TikTok backlog items (due <= 2026-11-22T03:00Z) have "scheduled" (content/tiktok_backlog.json).
+- Latest social-post runs 45058796312 (19:05Z) and 45041331571 (15:59Z) success; the 3rd and 4th were outside the 30-run window of social-post runs, none failed in the window.
+- YouTube: 1 comment overdue (NNK2KmB2RIg, after 20:06Z) - triggered yt-followup 45067372134 (success): log "comment posted NNK2KmB2RIg 106 chars"; 8 others not yet due (earliest 2026-11-23T01:06Z).
+- yt-link: latest success 45019742661 (2026-11-22 11:56Z), within 12h; 02:35Z backup dispatch not applicable at this run time (20:36Z), not dispatched.
+- Other: yt-related 45005754838 failed at 09:04Z earlier (not yt-link; not investigated this run).
+- Run ids: yt-followup 45067372134; social-post 45058796312, 45041331571; yt-link 45019742661.
