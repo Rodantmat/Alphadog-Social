@@ -84,3 +84,10 @@
 - 0 real failures, 0 missed posts, no duplicates, 10 pending comments none overdue, no viewer comments.
 - YouTube 26 subs (+1), 14,540 views (+1,224; +7,993 in 7 d), long-form about 55.0 h of 8,000 (+3.8 h). RELATED_VIDEO 182 views/2,553 min (14 min/view). Median Short 85; lake-700-years 1,030 (12x). IG 163 followers, FB 152 flat, TikTok median 171 (top 8,387).
 - Details: content/metrics/health_2026-11-21.md. COMPASS rows I02, I03, I05, I11, I20, I23, I24b, I29, I30 updated; I32, I33 added.
+
+## 2026-11-22T22:40Z ALERT
+- Lead time: IG/FB Reels last slot 11-26 20:00Z (3.9 days, under 5), Stories last 11-25 02:00Z (2.1 d), TikTok 11-27 00:00Z (5.1 d). All queued items are Zion P3; nothing for the Zion FILM (63 views, P3 18) and nothing after 11-27 (I29, 7th report; I33).
+- yt-link: 19:37Z cron skipped a 14th evening (I11); dispatched once ~22:35Z. Last good run 12:07Z. GRAWb3Xymmw and NNK2KmB2RIg await linking.
+- 0 real failures, 0 missed posts, no duplicates, 8 pending comments none overdue, no viewer comments. Spotify ES for the film still blocked (I32).
+- YouTube 28 subs (+2), 15,992 views (+1,452; +8,834 in 7 d), long-form about 58.9 h of 8,000 (+3.9 h). RELATED_VIDEO 205 views/2,835 min (13.8 min/view). Median Short 85; "146 tons of dynamite" 648 (7.6x). IG 165 followers, FB 152 flat, TikTok median 170.
+- Details: content/metrics/health_2026-11-22.md. COMPASS rows I02, I05, I11, I20, I23, I24b, I29, I33 updated.
