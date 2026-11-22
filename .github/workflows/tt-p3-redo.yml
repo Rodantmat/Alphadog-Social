@@ -1,0 +1,32 @@
+name: tt-p3-redo
+# Delete the Buffer TikTok posts that were scheduled with the old (tofu-text) files and clear their backlog flag; social-post's backlog step then re-uploads the fixed file and reschedules at the same due time.
+on:
+  workflow_dispatch:
+    inputs:
+      files: { description: "space-separated mp4 names in tiktok_backlog.json", required: true }
+permissions:
+  contents: write
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - env: { BUFFER_API_KEY: "${{ secrets.BUFFER_API_KEY }}", FILES: "${{ inputs.files }}" }
+        run: |
+          python3 - <<'PY'
+          import json, os, subprocess
+          P="content/tiktok_backlog.json"; B=json.load(open(P))
+          for it in B:
+              if it["file"] in os.environ["FILES"].split() and it.get("scheduled"):
+                  bid=it["scheduled"]["buffer_id"]
+                  r=subprocess.run(["python3","scripts/buffer_post.py","delete",bid],capture_output=True,text=True); print(it["file"],bid,(r.stdout+r.stderr)[-300:])
+                  if "MutationError" in r.stdout and "NotFound" not in r.stdout: print("WARN delete result above"); 
+                  it.pop("scheduled",None); it.pop("late",None); it.pop("error",None)
+          json.dump(B,open(P,"w"),indent=1,ensure_ascii=False)
+          PY
+          git config user.name alphadog-bot; git config user.email bot@users.noreply.github.com
+          git add content/tiktok_backlog.json; git commit -qm "tt-p3-redo: cleared stale tofu TikTok posts" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
