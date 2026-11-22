@@ -102,7 +102,7 @@ for n,it in enumerate(SPEC["items"]):
     ovs=[]  # (png, x, y, t0, t1)
     hk=card(wrap(it["hook"],F(70),700),F(70),10,8,False,5); hp=f"{tmp}/hook.png"; hk.save(hp); ovs.append((hp,(W-hk.width)//2,330,0,4.5))
     for i,(a_,b_,x) in enumerate(caps):
-        cp=card(wrap(x,F(46),700),F(46),16,6,True,4); pp=f"{tmp}/cap{i}.png"; cp.save(pp); ovs.append((pp,(W-cp.width)//2,1130,a_,b_))
+        cp=card(wrap(x,F(46),700),F(46),16,6,True,4); pp=f"{tmp}/cap{i}.png"; cp.save(pp); assert 1130+cp.height<=1440, f'caption too tall {cp.height} in {it["id"]}'; ovs.append((pp,(W-cp.width)//2,1130,a_,b_))
     cmd=["ffmpeg","-v","error","-y","-i",vo]
     for o in ovs: cmd+=["-i",o[0]]
     fc=""; last="0:v"
