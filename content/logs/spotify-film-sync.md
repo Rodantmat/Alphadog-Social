@@ -30,3 +30,11 @@
 - Run ids: spotify-stats 44937326806 (success); spotify-upload 44937536102 (success, EN).
 - COMPASS I30: NOT updated. The bridge write path targets a different repo and the file is too large to rewrite safely. The owner or next run should set I30 to: Zion full film posted EN 11-21 (run 44937536102); ES blocked pending film_es.m4a.
 - Next step: when film_es.m4a is added to yellowstone-release/zionfilm, write the Spanish title and description files and dispatch spotify-upload with lang=es, es_title_file, es_desc_file, base=yellowstone-release, film=zionfilm, mode=publish. Then confirm Published on the ES show.
+
+## 2026-11-22
+- Checked: no new full film to sync. Zion full film (ugASzW14E9s, public since 2026-11-21) is already on the EN show (posted 11-21). Footage branch root: no other film release folder pending. Spanish audio check: yellowstone-release/zionfilm has no film_es.m4a (the only film_es.m4a on the footage branch is yellowstone-release/film/film_es.m4a, which belongs to the Yellowstone film). Zion ES title/desc files not written.
+- Spotify duplicate check: not re-run, because nothing was posted this run. Last check: spotify-stats 44937326806 (2026-11-21, success).
+- Posted: nothing. spotify-upload was not dispatched for EN or ES.
+- Run ids: none for posting. Read-only checks only (footage tree, release folder listing, recent Actions runs; latest runs all success).
+- Blockers: ES for Zion is still blocked on film_es.m4a (I32 open). Overdue rule: the film went public 2026-11-21, so it is not more than 3 days overdue from its YouTube release yet. If film_es.m4a is not added by 2026-11-24, the ES sync is overdue and should be flagged plainly.
+- COMPASS I30 and I32 not changed in this run; the 11-21 entry already records the state (EN posted, ES blocked).
