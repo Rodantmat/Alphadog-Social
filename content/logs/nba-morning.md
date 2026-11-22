@@ -12,7 +12,7 @@
 
 ## 2026-11-10 13:58 UTC ACTION
 - Market term: review revert. audit_market_coverage (run 42828974614) VERDICT NOT READY, 20 dates pooled: coverage 9.8% (ref 64.3%), depth 1.47 (ref 2.11), player match 14.6% (<95%). 11-09 alone: coverage 30.3%, depth 1.72. 11-09 window rungs 1,903, avg 1.72 books.
-- Pipelines: P2A 11-10 success (03:31-03:44 PT); P2A/P2B/P1/P3 11-09 all success; P3 11-09 no soft-step failures. Scheduler tick 46s old.
+- Pipelines: P2A 11-10 success (03:31-03:44 PT); P2A/P2B/P1/P3 11-09 all success; P3 11-09 no soft-step failures (P2A 11-10 note: soft-failed load-content-check). Scheduler tick 46s old.
 - PP 11-09: 6 slips, 6u staked, 0 returned, net -6u, ROI -100%. Season: 87 slips, 87u, 120u returned, +33u, ROI +37.9%.
 - UD P5 (shadow) 11-09: 3 slips, 3u, 0 returned, -3u, ROI -100%. Season P5: 66 slips, 60u, 67.27u, +7.27u, ROI +12.1%.
 - UD live (T+C) 11-09: 3 slips, 3u, 5.22u returned, +2.22u, ROI +74%. Season T+C: 37 slips, 37u, 42.74u, +5.74u, ROI +15.5%.
@@ -117,3 +117,12 @@
 - Strategies: no state/cap changes vs previous history; CLEAN 18 on the five A/C strategies. B_demon_3flex / B_demon_5flex still red (REQUAL HOLD 11-09, 0 slips). _ROTATION rotation (cap 1) unchanged: steals cool (ewma 0.399, trail10 0.434), turnovers ok (0.663). Ten H_P* strategies active, cap 1.
 - Edge monitors: PP z 3.23, UD z 2.23, both RUNNING (31 slates), no ALARM.
 - Boards 11-21 (6 games): 0 rows for every app so far (same pattern as prior mornings; 11-20 filled later: PrizePicks 32,929, Underdog 20,175, Sleeper 13,982, Betr 6,314, Fliff 8,004, 9 sportsbooks). Watch P2B ~08:06 PT.
+
+## 2026-11-22 13:55 UTC ACTION
+- Market term: review revert (carried). audit_market_coverage not run: github_trigger_workflow 403 (token lacks actions:write), 4th day running. Last verdict 11-18 NOT READY, 28 dates. 11-21 window rungs 1,249, avg 3.10 books. Slate date 33.
+- Pipelines: P2A 11-22 success (03:31-03:43 PT); P2A/P2B/P3 11-21 all success (P3 claimed 09:32 PT, finished 09:57 PT). P3 11-21 soft-failed step: slips-screen-warm (run green; also 11-17). Scheduler tick 22s old. Outside the pipeline: one NBA Research Run failed 05:51 PT (others in progress).
+- PP 11-21 (PLAY): 9 slips, 9u staked, 3.6u returned, net -5.4u, ROI -60% (H_P4 +2u, six others 0-0.4u). Season: 148 slips, 148u, 171.4u, +23.4u, ROI +15.8%.
+- UD P5 (shadow) 11-21: 3 slips, 2.5u staked, +1.0u (profit col). Season P5 (stake>0, profit col): 106 slips, 99.5u, +17.75u, ROI +17.8%. UD live 11-21: H 9 slips (live) 9u, +30.1u; T 1 and C 1 shadow (-1u, +0.4u); P4 shadow 3 slips +1.67u.
+- Strategies: no state/cap changes vs 11-21 history; A_wsteals_5flex yellow cap 4 (9 slips, +2.2u), A_regular_5power yellow cap 1 (-2u), A_wrebounds_4flex yellow cap 1, A_core_3power yellow cap 1 (+3u); C_wstocks_4flex paper (-3u). B_demon_3flex / B_demon_5flex red (REQUAL HOLD 11-09). Rotation: steals cool (ewma 0.399), turnovers ok (0.656).
+- Edge monitors: PP z 3.12 (32 slates), UD z 2.53 (32 slates), both RUNNING, no ALARM.
+- Boards 11-22 (7 games): 0 rows for PrizePicks, Underdog, Sleeper, Betr, Fliff so far; 9 sportsbooks present (e.g. draftkings 73,611). Same early-morning pattern as prior days (apps fill later, P2B ~08:06 PT).
