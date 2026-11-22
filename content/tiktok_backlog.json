@@ -486,7 +486,12 @@
   "file": "zion_p3_z3s8.mp4",
   "due": "2026-11-26T00:00:00Z",
   "service": "tiktok",
-  "text": "In the summer of 1903 painter Frederick Dellenbaugh came to Zion. His canvases were shown at the 1904 World's Fair in St. Louis, where visitors reportedly doubted a place like that could be real.\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Zion Part 3\\n\\n#Zion #ZionNationalPark #History #NationalParks"
+  "text": "In the summer of 1903 painter Frederick Dellenbaugh came to Zion. His canvases were shown at the 1904 World's Fair in St. Louis, where visitors reportedly doubted a place like that could be real.\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Zion Part 3\\n\\n#Zion #ZionNationalPark #History #NationalParks",
+  "scheduled": {
+   "buffer_id": "6b023ea8846b0ee9074d274a",
+   "at": "2026-11-22T01:00:21Z",
+   "due": "2026-11-26T00:00:00Z"
+  }
  },
  {
   "mode": "post",
