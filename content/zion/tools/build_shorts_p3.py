@@ -71,13 +71,34 @@ for n,it in enumerate(SPEC["items"]):
     eo=f"{tmp}/end.mp4"; run(["ffmpeg","-v","error","-y","-loop","1","-framerate",str(FPS),"-i",ec,"-t",f"{ECARD}","-vf","format=yuv420p","-c:v","libx264","-preset","veryfast","-crf","20",eo])
     open(f"{tmp}/c.txt","w").write("".join(f"file '{os.path.abspath(c)}'\n" for c in clips+[eo]))
     vo=f"{tmp}/v.mp4"; run(["ffmpeg","-v","error","-y","-f","concat","-safe","0","-i",f"{tmp}/c.txt","-c","copy",vo])
-    # overlay: hook title (first 4.5 s) + captions
-    hook="\n".join(textwrap.wrap(it["hook"],17)); open(f"{tmp}/hook.txt","w").write(hook)
-    flt=f"drawtext=fontfile={BOLD}:textfile={tmp}/hook.txt:fontsize=70:fontcolor=white:borderw=5:bordercolor=black:x=(w-text_w)/2:y=330:line_spacing=10:enable='between(t,0,4.5)'"
-    for i,(a,b,x) in enumerate(caps):
-        open(f"{tmp}/cap{i}.txt","w").write("\n".join(textwrap.wrap(x,23)))
-        flt+=f",drawtext=fontfile={BOLD}:textfile={tmp}/cap{i}.txt:fontsize=48:fontcolor=white:borderw=4:bordercolor=black:box=1:boxcolor=black@0.45:boxborderw=14:x=(w-text_w)/2:y=1130:line_spacing=8:enable='between(t,{a:.2f},{b:.2f})'"
-    vt=f"{tmp}/vt.mp4"; run(["ffmpeg","-v","error","-y","-i",vo,"-vf",flt,"-c:v","libx264","-preset","veryfast","-crf","20","-pix_fmt","yuv420p",vt])
+    # overlay: hook title (first 4.5 s) + sentence captions, rendered with PIL (no drawtext: its line breaks rendered as tofu boxes)
+    def wrap(txt,font,maxw):
+        words=txt.split(); lines=[]; cur=""
+        for w_ in words:
+            t_=(cur+" "+w_).strip()
+            if font.getbbox(t_)[2]<=maxw or not cur: cur=t_
+            else: lines.append(cur); cur=w_
+        if cur: lines.append(cur)
+        return lines
+    def card(lines,font,pad,line_gap,box,stroke):
+        hs=[font.getbbox(l)[3]-font.getbbox(l)[1] for l in lines]; asc=font.getmetrics()[0]
+        wmax=max(font.getbbox(l)[2] for l in lines); lh=font.getmetrics()[0]+font.getmetrics()[1]
+        Wc=wmax+2*pad; Hc=len(lines)*lh+(len(lines)-1)*line_gap+2*pad
+        im=Image.new("RGBA",(Wc,Hc),(0,0,0,0)); d=ImageDraw.Draw(im)
+        if box: d.rounded_rectangle((0,0,Wc-1,Hc-1),radius=18,fill=(0,0,0,125))
+        for i,l in enumerate(lines):
+            w_=font.getbbox(l)[2]; d.text(((Wc-w_)//2,pad+i*(lh+line_gap)),l,font=font,fill=(255,255,255,255),stroke_width=stroke,stroke_fill=(0,0,0,255))
+        return im
+    ovs=[]  # (png, x, y, t0, t1)
+    hk=card(wrap(it["hook"],F(70),700),F(70),10,8,False,5); hp=f"{tmp}/hook.png"; hk.save(hp); ovs.append((hp,(W-hk.width)//2,330,0,4.5))
+    for i,(a_,b_,x) in enumerate(caps):
+        cp=card(wrap(x,F(46),700),F(46),16,6,True,4); pp=f"{tmp}/cap{i}.png"; cp.save(pp); ovs.append((pp,(W-cp.width)//2,1130,a_,b_))
+    cmd=["ffmpeg","-v","error","-y","-i",vo]
+    for o in ovs: cmd+=["-i",o[0]]
+    fc=""; last="0:v"
+    for i,(pp,x_,y_,t0,t1) in enumerate(ovs):
+        fc+=f"[{last}][{i+1}:v]overlay=x={x_}:y={y_}:enable='between(t,{t0:.2f},{t1:.2f})'[v{i}];"; last=f"v{i}"
+    vt=f"{tmp}/vt.mp4"; run(cmd+["-filter_complex",fc.rstrip(";"),"-map",f"[{last}]","-c:v","libx264","-preset","veryfast","-crf","20","-pix_fmt","yuv420p",vt])
     # audio
     N=len(V); bed=music(n,it.get("key",n),N/SR); k=np.ones(SR//4)/(SR//4); duck=np.convolve(M.astype(np.float32),k,"same"); tt=np.arange(N)/SR
     gain=(0.17-0.12*duck); fade=np.minimum(1,np.minimum(tt/1.5,(N/SR-tt)/1.2)); mix=np.clip(V*0.95+bed*gain*fade,-1,1).astype(np.float32)
