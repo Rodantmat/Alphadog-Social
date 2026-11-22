@@ -14,10 +14,20 @@ def run(c): subprocess.run(c,check=True,stdout=subprocess.DEVNULL,stderr=subproc
 def dur(p): return float(subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",p],capture_output=True,text=True).stdout)
 def sents(x):
     import re; return [p.strip() for p in re.split(r'(?<=[.!?])(?<!St\.)(?<!Mr\.)(?<!Dr\.)(?<!U\.S\.)\s+',x) if p.strip()]
+def chunk(ss,mx=95):
+    import re; out=[]
+    for x in ss:
+        while len(x)>mx:
+            cuts=[m.end() for m in re.finditer(r'[,:;] |\s(?:and|but|to|that|where|with) ',x) if 35<=m.end()<=mx]
+            if not cuts: break
+            c=cuts[-1]; out.append(x[:c].strip()); x=x[c:].strip()
+        out.append(x)
+    return out
 def shot(src,d,out,k,pre=None):
     if src.startswith("A:"):
         run(["ffmpeg","-v","error","-y","-stream_loop","-1","-i",f"{AI}/{src[2:]}.mp4","-t",f"{d:.3f}","-vf",f"scale=-2:{H},crop={W}:{H},fps={FPS},format=yuv420p","-an","-c:v","libx264","-preset","veryfast","-crf","20",out]); return
-    p=f"{IMG}/{src}.jpg"; im=Image.open(p); w,h=im.size
+    p0=f"{IMG}/{src}.jpg"; im0=Image.open(p0).convert("RGB"); w0,h0=im0.size; mx,my=int(w0*0.045),int(h0*0.045)
+    p=f"{out}.src.jpg"; im0.crop((mx,my,w0-mx,h0-my)).save(p,quality=95); im=Image.open(p); w,h=im.size
     # cover: fill the frame, pan across the free axis (keeps most of the picture visible, no letterbox, mild scale only)
     sc=1.0+0.0
     if w/h>=W/H:   # wide: scale to height, pan horizontally
@@ -57,7 +67,7 @@ for n,it in enumerate(SPEC["items"]):
         p=f"{NARR}/{s}.m4a"; d=dur(p)
         raw=subprocess.run(["ffmpeg","-v","error","-i",p,"-f","f32le","-ac","1","-ar",str(SR),"-"],capture_output=True).stdout; a=np.frombuffer(raw,np.float32)
         tot=d+GAP; arr=np.zeros(int(tot*SR),np.float32); arr[:len(a)]=a[:len(arr)]; m=np.zeros(len(arr),bool); m[:len(a)]=True; voice.append(arr); mask.append(m)
-        ss=sents(SEGS[s]); L=sum(len(x) for x in ss); tt=t
+        ss=chunk(sents(SEGS[s])); L=sum(len(x) for x in ss); tt=t
         for x in ss:
             dd=d*len(x)/L; caps.append((tt,tt+dd,x)); tt+=dd
         t+=tot
