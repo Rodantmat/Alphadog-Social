@@ -3963,7 +3963,13 @@
   "at": "2026-11-22T20:00:00Z",
   "caption": "When the two bores of Zion's tunnel finally met, a newspaper reported they were nowhere more than three inches out of line.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 3 — link in the first comment 👇\n\n#Zion #ZionNationalPark #History #NationalParks",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
-  "thumb_ms": 1200
+  "thumb_ms": 1200,
+  "done": {
+   "media_id": "17991113517108830",
+   "permalink": "https://www.instagram.com/reel/DgDoKwBj0q4/",
+   "posted": "2026-11-22T20:08:26+0000",
+   "at": "2026-11-22T20:07:57Z"
+  }
  },
  {
   "id": "z3s2_fb",
@@ -3971,7 +3977,40 @@
   "file": "zion_p3_z3s2.mp4",
   "at": "2026-11-22T20:00:00Z",
   "caption": "When the two bores of Zion's tunnel finally met, a newspaper reported they were nowhere more than three inches out of line.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 3 — link in the first comment 👇\n\n#Zion #ZionNationalPark #History #NationalParks",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
+  "done": {
+   "video_id": "1159690923262137",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1126623506803308"
+   },
+   "permalink": "https://www.facebook.com/reel/1159690923262137/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 9720978
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-22T20:08:36+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1159690923262137_2169985986940170"
+   },
+   "status_errors": null,
+   "at": "2026-11-22T20:07:57Z"
+  }
  },
  {
   "id": "z3s3_ig",
