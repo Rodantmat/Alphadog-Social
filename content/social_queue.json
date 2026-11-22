@@ -4143,14 +4143,29 @@
   "platform": "instagram_story",
   "file": "zion_p3_z3t2.mp4",
   "at": "2026-11-22T19:00:00Z",
-  "story_v2": "200 workers lived in a camp by the cliff | zion3"
+  "story_v2": "200 workers lived in a camp by the cliff | zion3",
+  "done": {
+   "media_id": "17918631915494937",
+   "story": true,
+   "at": "2026-11-22T19:08:03Z"
+  }
  },
  {
   "id": "z3t2_fb",
   "platform": "facebook_story",
   "file": "zion_p3_z3t2.mp4",
   "at": "2026-11-22T19:00:00Z",
-  "story_v2": "200 workers lived in a camp by the cliff | zion3"
+  "story_v2": "200 workers lived in a camp by the cliff | zion3",
+  "done": {
+   "video_id": "2730581880711313",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "2225730251625423"
+   },
+   "story": true,
+   "at": "2026-11-22T19:08:03Z"
+  }
  },
  {
   "id": "z3t3_ig",
