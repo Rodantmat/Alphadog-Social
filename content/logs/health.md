@@ -91,3 +91,10 @@
 - 0 real failures, 0 missed posts, no duplicates, 8 pending comments none overdue, no viewer comments. Spotify ES for the film still blocked (I32).
 - YouTube 28 subs (+2), 15,992 views (+1,452; +8,834 in 7 d), long-form about 58.9 h of 8,000 (+3.9 h). RELATED_VIDEO 205 views/2,835 min (13.8 min/view). Median Short 85; "146 tons of dynamite" 648 (7.6x). IG 165 followers, FB 152 flat, TikTok median 170.
 - Details: content/metrics/health_2026-11-22.md. COMPASS rows I02, I05, I11, I20, I23, I24b, I29, I33 updated.
+
+## 2026-11-23T23:00Z ALERT
+- Lead time: IG/FB Reels last 11-29 20:00Z (5.9 d OK), Stories 11-27 02:00Z (3.1 d, under 5), TikTok backlog 11-29 22:00Z. Nothing exists for the Zion FILM or after Part 4 (I29/I33, 9th report).
+- yt-link: 19:37Z cron skipped a 15th evening (I11); dispatched once 22:56Z (run 45284327457). Last good 13:48Z.
+- 0 real failures, 0 missed posts, no duplicates, 12 pending comments none overdue, no viewer comments. Fixed adjacent_gate false positives (shared "Zion National Park history:" prefix; gate now PASS, commit fe739b9). Spotify ES for film still blocked (I32).
+- YouTube 28 subs (flat), 16,858 views (+866), long-form 68.0 h of 8,000. RELATED_VIDEO 255 views/3,336 min (13.1 min/view). Median Short 91.5; dynamite 777 (8.5x), dog-on-wire 718 (7.8x). IG 164 followers, FB 152 flat, TikTok median 169.
+- Details: content/metrics/health_2026-11-23.md. COMPASS rows I11, I12, I20, I24b, I29, I33 updated; I35 added.
