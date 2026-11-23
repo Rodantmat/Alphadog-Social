@@ -1,22 +1,32 @@
 {
- "at": "2026-11-22T20:23:31Z",
+ "at": "2026-11-23T02:52:14Z",
  "youtube": {
   "channel": {
    "viewCount": "15992",
    "subscriberCount": "28",
    "hiddenSubscriberCount": false,
-   "videoCount": "64"
+   "videoCount": "65"
   },
   "videos": [
+   {
+    "id": "SQcoms6EFOU",
+    "title": "The dog that rode a wire 2,000 feet down #Shorts",
+    "published": "2026-11-23T01:00:39Z",
+    "privacy": "public",
+    "duration": "PT38S",
+    "views": 220,
+    "likes": 6,
+    "comments": 1
+   },
    {
     "id": "NNK2KmB2RIg",
     "title": "A mile of rock. Off by 3 inches #Shorts",
     "published": "2026-11-22T20:00:16Z",
     "privacy": "public",
     "duration": "PT35S",
-    "views": 14,
-    "likes": 1,
-    "comments": 0
+    "views": 373,
+    "likes": 3,
+    "comments": 1
    },
    {
     "id": "XYvuD5a9tU8",
@@ -89,24 +99,14 @@
     "comments": 0
    },
    {
-    "id": "SQcoms6EFOU",
-    "title": "The dog that rode a wire 2,000 feet down #Shorts",
-    "published": "2026-11-22T09:03:10Z",
-    "privacy": "private",
-    "duration": "PT38S",
-    "views": 0,
-    "likes": 0,
-    "comments": 0
-   },
-   {
     "id": "GRAWb3Xymmw",
     "title": "146 tons of dynamite. No GPS. No lasers #Shorts",
     "published": "2026-11-22T01:00:17Z",
     "privacy": "public",
     "duration": "PT32S",
-    "views": 648,
+    "views": 688,
     "likes": 11,
-    "comments": 2
+    "comments": 3
    },
    {
     "id": "ugASzW14E9s",
@@ -114,7 +114,7 @@
     "published": "2026-11-21T00:56:05Z",
     "privacy": "public",
     "duration": "PT33M54S",
-    "views": 63,
+    "views": 76,
     "likes": 2,
     "comments": 0
    },
@@ -214,7 +214,7 @@
     "published": "2026-11-20T18:31:28Z",
     "privacy": "public",
     "duration": "PT10M37S",
-    "views": 18,
+    "views": 19,
     "likes": 1,
     "comments": 0
    },
@@ -224,7 +224,7 @@
     "published": "2026-11-20T18:00:31Z",
     "privacy": "public",
     "duration": "PT34S",
-    "views": 1039,
+    "views": 1044,
     "likes": 19,
     "comments": 1
    },
@@ -234,7 +234,7 @@
     "published": "2026-11-20T01:00:01Z",
     "privacy": "public",
     "duration": "PT26S",
-    "views": 974,
+    "views": 972,
     "likes": 12,
     "comments": 1
    },
@@ -244,7 +244,7 @@
     "published": "2026-11-19T18:00:15Z",
     "privacy": "public",
     "duration": "PT36S",
-    "views": 1005,
+    "views": 997,
     "likes": 23,
     "comments": 1
    },
@@ -384,7 +384,7 @@
     "published": "2026-11-12T20:00:33Z",
     "privacy": "public",
     "duration": "PT13M5S",
-    "views": 98,
+    "views": 100,
     "likes": 2,
     "comments": 2
    },
@@ -484,7 +484,7 @@
     "published": "2026-11-08T16:00:33Z",
     "privacy": "public",
     "duration": "PT10M53S",
-    "views": 96,
+    "views": 95,
     "likes": 2,
     "comments": 1
    },
@@ -514,7 +514,7 @@
     "published": "2026-11-12T20:00:33Z",
     "privacy": "public",
     "duration": "PT13M5S",
-    "views": 98,
+    "views": 100,
     "likes": 2,
     "comments": 2
    },
@@ -524,7 +524,7 @@
     "published": "2026-11-08T16:00:33Z",
     "privacy": "public",
     "duration": "PT10M53S",
-    "views": 96,
+    "views": 95,
     "likes": 2,
     "comments": 1
    },
@@ -554,7 +554,7 @@
     "published": "2026-11-05T20:00:12Z",
     "privacy": "public",
     "duration": "PT34M55S",
-    "views": 152,
+    "views": 154,
     "likes": 2,
     "comments": 4
    },
@@ -909,7 +909,7 @@
     "comments": 1
    }
   ],
-  "scopes": "https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/yt-analytics.readonly https://www.googleapis.com/auth/youtube.upload",
+  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/yt-analytics.readonly https://www.googleapis.com/auth/youtube.force-ssl",
   "analytics_by_video": {
    "columns": [
     "video",
@@ -1986,22 +1986,35 @@
   "profile": {
    "username": "alphadog.studio",
    "followers_count": 165,
-   "media_count": 95,
+   "media_count": 96,
    "id": "28926959546914399"
   },
   "media": [
    {
+    "id": "17958451176335761",
+    "at": "2026-11-23T01:08:55+0000",
+    "caption": "A logger strung fifty thousand feet of wire up Zion's east rim, and according to",
+    "likes": 2,
+    "comments": 1,
+    "views": 297,
+    "reach": 267,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 3,
+    "ig_reels_avg_watch_time": 8153
+   },
+   {
     "id": "17991113517108830",
     "at": "2026-11-22T20:08:26+0000",
     "caption": "When the two bores of Zion's tunnel finally met, a newspaper reported they were ",
-    "likes": 1,
+    "likes": 2,
     "comments": 1,
-    "views": 0,
-    "reach": 0,
+    "views": 352,
+    "reach": 322,
     "saved": 0,
     "shares": 0,
-    "total_interactions": 2,
-    "ig_reels_avg_watch_time": 0
+    "total_interactions": 3,
+    "ig_reels_avg_watch_time": 16605
    },
    {
     "id": "18662911897009668",
@@ -2009,12 +2022,12 @@
     "caption": "Two crews dug toward each other through a mile of solid sandstone in Zion, using",
     "likes": 6,
     "comments": 1,
-    "views": 373,
-    "reach": 328,
+    "views": 384,
+    "reach": 337,
     "saved": 1,
     "shares": 0,
     "total_interactions": 9,
-    "ig_reels_avg_watch_time": 9364
+    "ig_reels_avg_watch_time": 9390
    },
    {
     "id": "17921000661536177",
@@ -2022,12 +2035,12 @@
     "caption": "A lake that lasted seven hundred years, then filled itself in. When a mountainsi",
     "likes": 17,
     "comments": 1,
-    "views": 1840,
-    "reach": 1669,
+    "views": 1868,
+    "reach": 1696,
     "saved": 1,
     "shares": 1,
     "total_interactions": 22,
-    "ig_reels_avg_watch_time": 14752
+    "ig_reels_avg_watch_time": 14857
    },
    {
     "id": "17995762931901279",
@@ -2066,20 +2079,20 @@
     "saved": 0,
     "shares": 0,
     "total_interactions": 5,
-    "ig_reels_avg_watch_time": 6696
+    "ig_reels_avg_watch_time": 6635
    },
    {
     "id": "17923730592242292",
     "at": "2026-11-19T20:11:34+0000",
     "caption": "Three thousand feet up, a slab of sandstone let go. August twenty-fourth, twenty",
-    "likes": 6,
+    "likes": 7,
     "comments": 1,
-    "views": 1541,
-    "reach": 1432,
+    "views": 1545,
+    "reach": 1435,
     "saved": 0,
     "shares": 0,
-    "total_interactions": 8,
-    "ig_reels_avg_watch_time": 13322
+    "total_interactions": 9,
+    "ig_reels_avg_watch_time": 13300
    },
    {
     "id": "17961361086015895",
@@ -2137,14 +2150,14 @@
     "id": "18135008008689437",
     "at": "2026-11-17T01:12:01+0000",
     "caption": "Hundreds of feet of water once stood where this hotel is. Where Zion Lodge sits ",
-    "likes": 4,
+    "likes": 5,
     "comments": 1,
-    "views": 155,
-    "reach": 151,
+    "views": 157,
+    "reach": 153,
     "saved": 0,
     "shares": 0,
-    "total_interactions": 6,
-    "ig_reels_avg_watch_time": 6610
+    "total_interactions": 8,
+    "ig_reels_avg_watch_time": 6584
    },
    {
     "id": "18604003453071189",
@@ -2152,38 +2165,38 @@
     "caption": "In 1920 fewer than 4,000 people visited Zion. In 2021 more than five million did",
     "likes": 18,
     "comments": 1,
-    "views": 194,
-    "reach": 173,
+    "views": 195,
+    "reach": 174,
     "saved": 0,
     "shares": 0,
     "total_interactions": 23,
-    "ig_reels_avg_watch_time": 25980
+    "ig_reels_avg_watch_time": 25845
    },
    {
     "id": "18192045886413042",
     "at": "2026-11-16T01:10:03+0000",
     "caption": "In 2021 park crews hauled almost five tons of human waste off the toilets at Sco",
-    "likes": 9,
+    "likes": 10,
     "comments": 1,
-    "views": 1963,
-    "reach": 1702,
+    "views": 1965,
+    "reach": 1704,
     "saved": 2,
     "shares": 1,
-    "total_interactions": 13,
-    "ig_reels_avg_watch_time": 14510
+    "total_interactions": 14,
+    "ig_reels_avg_watch_time": 14497
    },
    {
     "id": "17957673990290808",
     "at": "2026-11-15T20:10:04+0000",
     "caption": "Since 2022 you need a lottery permit to climb Angels Landing. Nearly 400,000 wer",
-    "likes": 13,
+    "likes": 14,
     "comments": 1,
-    "views": 657,
-    "reach": 580,
+    "views": 658,
+    "reach": 581,
     "saved": 2,
     "shares": 0,
-    "total_interactions": 18,
-    "ig_reels_avg_watch_time": 8764
+    "total_interactions": 19,
+    "ig_reels_avg_watch_time": 8763
    },
    {
     "id": "18451682179120205",
@@ -2204,12 +2217,12 @@
     "caption": "On July 4, 2020, a dog died about an hour after playing in the Virgin River. Par",
     "likes": 15,
     "comments": 1,
-    "views": 1478,
-    "reach": 1376,
+    "views": 1479,
+    "reach": 1378,
     "saved": 2,
     "shares": 1,
     "total_interactions": 22,
-    "ig_reels_avg_watch_time": 10661
+    "ig_reels_avg_watch_time": 10655
    },
    {
     "id": "18174308050456853",
@@ -2321,12 +2334,12 @@
     "caption": "In the Bears Paw Mountains, about forty miles from Canada, Army forces under Col",
     "likes": 4,
     "comments": 1,
-    "views": 140,
-    "reach": 130,
+    "views": 141,
+    "reach": 131,
     "saved": 2,
     "shares": 0,
     "total_interactions": 7,
-    "ig_reels_avg_watch_time": 11884
+    "ig_reels_avg_watch_time": 11891
    },
    {
     "id": "17898614319420995",
@@ -2334,12 +2347,12 @@
     "caption": "General Howard followed with about 600 men and never caught up. The Nez Perce dr",
     "likes": 9,
     "comments": 1,
-    "views": 146,
-    "reach": 131,
+    "views": 147,
+    "reach": 132,
     "saved": 2,
     "shares": 0,
     "total_interactions": 12,
-    "ig_reels_avg_watch_time": 14882
+    "ig_reels_avg_watch_time": 14801
    },
    {
     "id": "18145544071599590",
@@ -2626,19 +2639,6 @@
     "shares": 0,
     "total_interactions": 7,
     "ig_reels_avg_watch_time": 14091
-   },
-   {
-    "id": "18132658555759331",
-    "at": "2026-10-30T20:40:37+0000",
-    "caption": "Is Yellowstone \"overdue\" for a super-eruption? The USGS says plainly: no. The fa",
-    "likes": 2,
-    "comments": 1,
-    "views": 130,
-    "reach": 121,
-    "saved": 0,
-    "shares": 0,
-    "total_interactions": 3,
-    "ig_reels_avg_watch_time": 9549
    }
   ]
  },
@@ -2649,6 +2649,14 @@
    "id": "103210859154410"
   },
   "posts": [
+   {
+    "id": "103210859154410_1126802696785389",
+    "at": "2026-11-23T01:09:37+0000",
+    "text": "A logger strung fifty thousand feet of wire up Zion's east rim, and according to",
+    "reactions": 0,
+    "comments": 1,
+    "shares": 0
+   },
    {
     "id": "103210859154410_1126623506803308",
     "at": "2026-11-22T20:09:03+0000",
@@ -3040,17 +3048,18 @@
     "reactions": 1,
     "comments": 1,
     "shares": 0
-   },
-   {
-    "id": "103210859154410_1102977669167892",
-    "at": "2026-10-30T20:25:21+0000",
-    "text": "Is Yellowstone \"overdue\" for a super-eruption? The USGS says plainly: no. The fa",
-    "reactions": 0,
-    "comments": 1,
-    "shares": 0
    }
   ],
   "reels": [
+   {
+    "id": "1927619185068730",
+    "at": "2026-11-23T01:09:05+0000",
+    "text": "A logger strung fifty thousand feet of wire up Zion's east rim, and according to",
+    "fb_reels_total_plays": 0,
+    "blue_reels_play_count": 0,
+    "post_video_avg_time_watched": 0,
+    "post_video_followers": 0
+   },
    {
     "id": "1159690923262137",
     "at": "2026-11-22T20:08:36+0000",
@@ -3491,15 +3500,6 @@
     "blue_reels_play_count": 2,
     "post_video_avg_time_watched": 10151,
     "post_video_followers": 0
-   },
-   {
-    "id": "1453559290219735",
-    "at": "2026-10-30T20:24:45+0000",
-    "text": "Is Yellowstone \"overdue\" for a super-eruption? The USGS says plainly: no. The fa",
-    "fb_reels_total_plays": 1,
-    "blue_reels_play_count": 1,
-    "post_video_avg_time_watched": 26018,
-    "post_video_followers": 0
    }
   ]
  },
@@ -3507,11 +3507,21 @@
   "handle": "alphadogstudio",
   "videos": [
    {
+    "id": "7711150148688170254",
+    "at": "2026-11-23T00:01:09Z",
+    "title": "When the two bores of Zion's tunnel finally met, a newspaper reported...",
+    "duration": 34,
+    "views": 90,
+    "likes": 1,
+    "comments": 0,
+    "shares": 0
+   },
+   {
     "id": "7710825357565381901",
     "at": "2026-11-22T03:00:51Z",
     "title": "Two crews dug toward each other through a mile of solid sandstone in ...",
     "duration": 31,
-    "views": 112,
+    "views": 136,
     "likes": 1,
     "comments": 0,
     "shares": 0
@@ -3521,7 +3531,7 @@
     "at": "2026-11-21T03:01:30Z",
     "title": "A lake that lasted seven hundred years, then filled itself in. When a...",
     "duration": 33,
-    "views": 586,
+    "views": 608,
     "likes": 8,
     "comments": 0,
     "shares": 0
@@ -3531,7 +3541,7 @@
     "at": "2026-11-21T00:03:28Z",
     "title": "Five thousand tons of rock, and no visitor killed. In nineteen sixty-...",
     "duration": 25,
-    "views": 224,
+    "views": 232,
     "likes": 3,
     "comments": 0,
     "shares": 0
@@ -3561,7 +3571,7 @@
     "at": "2026-11-19T03:01:30Z",
     "title": "Three thousand feet up, a slab of sandstone let go. August twenty-fou...",
     "duration": 35,
-    "views": 380,
+    "views": 381,
     "likes": 7,
     "comments": 0,
     "shares": 0
@@ -3591,7 +3601,7 @@
     "at": "2026-11-18T00:04:57Z",
     "title": "Ninety Hoover Dams. That's how much concrete you'd need to rebuild th...",
     "duration": 27,
-    "views": 196,
+    "views": 197,
     "likes": 3,
     "comments": 0,
     "shares": 0
@@ -3631,7 +3641,7 @@
     "at": "2026-11-15T03:01:18Z",
     "title": "In 2021 park crews hauled almost five tons of human waste off the toi...",
     "duration": 21,
-    "views": 8391,
+    "views": 8392,
     "likes": 21,
     "comments": 0,
     "shares": 3
@@ -3661,7 +3671,7 @@
     "at": "2026-11-14T00:02:44Z",
     "title": "On July 4, 2020, a dog died about an hour after playing in the Virgin...",
     "duration": 22,
-    "views": 103,
+    "views": 107,
     "likes": 1,
     "comments": 0,
     "shares": 0
@@ -3711,7 +3721,7 @@
     "at": "2026-11-12T00:04:12Z",
     "title": "On September 14, 2015, a storm over Zion National Park sent a flash f...",
     "duration": 23,
-    "views": 107,
+    "views": 108,
     "likes": 1,
     "comments": 0,
     "shares": 0
@@ -4011,7 +4021,7 @@
     "at": "2026-10-29T01:30:15Z",
     "title": "1886. The Army loaded nearly every Chiricahua Apache onto prison trai...",
     "duration": 33,
-    "views": 592,
+    "views": 593,
     "likes": 40,
     "comments": 4,
     "shares": 2
@@ -4021,7 +4031,7 @@
     "at": "2026-10-28T00:05:47Z",
     "title": "America just got its 64th national park, and most people have never h...",
     "duration": 30,
-    "views": 1839,
+    "views": 1841,
     "likes": 37,
     "comments": 2,
     "shares": 1
@@ -4031,12 +4041,12 @@
     "at": "2026-10-26T04:10:00Z",
     "title": "Found dead under an oak in 1882. Revolver in hand, boots gone. The ju...",
     "duration": 30,
-    "views": 1365,
+    "views": 1372,
     "likes": 61,
     "comments": 2,
     "shares": 1
    }
   ],
-  "listed": 70
+  "listed": 71
  }
 }
