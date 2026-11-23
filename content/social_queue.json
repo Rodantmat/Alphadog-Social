@@ -4279,14 +4279,29 @@
   "platform": "instagram_story",
   "file": "zion_p3_z3t4.mp4",
   "at": "2026-11-23T19:00:00Z",
-  "story_v2": "4 years of surveys to find one route | zion3"
+  "story_v2": "4 years of surveys to find one route | zion3",
+  "done": {
+   "media_id": "18361816783217463",
+   "story": true,
+   "at": "2026-11-23T19:09:06Z"
+  }
  },
  {
   "id": "z3t4_fb",
   "platform": "facebook_story",
   "file": "zion_p3_z3t4.mp4",
   "at": "2026-11-23T19:00:00Z",
-  "story_v2": "4 years of surveys to find one route | zion3"
+  "story_v2": "4 years of surveys to find one route | zion3",
+  "done": {
+   "video_id": "1833427747678490",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "1690426456013547"
+   },
+   "story": true,
+   "at": "2026-11-23T19:09:06Z"
+  }
  },
  {
   "id": "z3t5_ig",
