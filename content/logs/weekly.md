@@ -20,3 +20,13 @@
 - Applied: Hook playbook line (EDITING_RULES); COMPASS rows I02, I05, I06, I08, I09, I11, I14, I20, I23, I23b, I24b, I26b updated, I28 added (IG watch time).
 - Next scripts: number + recent/deadly fact in line one, payoff in 3 s, beat at 12-15 s, 20-36 s plus one 45-50 s test cut, end card + link comment.
 - Report: content/metrics/weekly_2026-11-16.md
+
+## 2026-11-23 21:35 UTC WEEKLY (ALERT)
+- ESCALATED: no Shorts/Reels/Stories for the Zion FILM (58 views, P3 18) and nothing queued after ~11-29 (I29/I33, 8th report); yt-link 19:37Z cron skipped 15 evenings (I11, needs owner-side task edit); Zion film ES audio for Spotify still blocked (I32).
+- YouTube: 28 subs (19 a week ago, +9), 16,858 views (+9,615). Long-form 68.0 h (4,077 min; +36.9 h) = 1.7 % of 4,000. RELATED_VIDEO 255 views / 3,336 min (13.1 min/view). Zion film avg view only 20 % vs Yellowstone film 63 % (I06).
+- YT Shorts top: lumber wire 1,150, lake 350 ft 1,145, dog died 1,063; newest lake 700 y 1,046, 5,000 tons 984, dynamite 777. IG top: 17 deaths 2,101, 5 tons 1,965, lake 1,884; bottom 108 days 136, lumber 131, "fight no more" 122. TikTok top: 5 tons waste 8,393 (58x), lake 658, Angels lottery 421. FB 0-3 plays.
+- Worked: animal/object + hard number + recent fact (lumber, lake, dog, 17 deaths, 5 tons); hook-number split no longer informative (22/24 YT Shorts have one); IG/TikTok captions spell numbers as words so my digit classifier was invalid there (I34).
+- Slots: not enough data (YT 11/12, IG 13/13, TikTok 12/12, FB flat; need 30). No change applied.
+- Applied: no queue or rule change; COMPASS rows I02, I05, I11, I14, I20, I23, I24b, I29, I33 updated, I34 added.
+- Next scripts: 6-10 Zion FILM Shorts/Reels with digit-first hooks, payoff in 3 s, beat at 12-15 s, end card + film link; one 45-50 s matched test cut.
+- Report: content/metrics/weekly_2026-11-23.md
