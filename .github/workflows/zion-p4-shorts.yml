@@ -1,0 +1,33 @@
+name: zion-p4-shorts
+# Build the Zion Part 4 Shorts + Stories (1080x1920, narration audio, end card to the film) and commit to footage yellowstone-shorts/zion4/ with YouTube metas.
+on:
+  workflow_dispatch:
+    inputs:
+      only: { description: "optional space-separated item ids; empty = all", default: "" }
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: sudo apt-get -qq update >/dev/null && sudo apt-get -qq install -y ffmpeg fonts-dejavu-core >/dev/null && pip -q install numpy pillow
+      - name: Fetch media
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
+          cd /tmp/fbs && git sparse-checkout set --no-cone /zion-narr/p4/am_michael /zion4 /yellowstone-shorts/zion4
+      - name: Build
+        run: python3 -c "import glob,os;from PIL import Image;[Image.open(f).convert('RGB').save(f[:-4]+'.jpg',quality=95) for f in glob.glob('/tmp/fbs/zion4/img/*.png')]" && NARR=/tmp/fbs/zion-narr/p4/am_michael IMG=/tmp/fbs/zion4/img AI=/nonexistent SEGS=content/zion/p4_segments.json SPEC=content/zion/tools/shorts_p4_spec.json OUT=/tmp/fbs/yellowstone-shorts/zion4 THUMB=content/zion/p3_thumb.jpg python3 content/zion/tools/build_shorts_p3.py ${{ inputs.only }}
+      - name: Metas + QA
+        run: |
+          cd /tmp/fbs/yellowstone-shorts/zion4 && rm -rf _z4* && cd - >/dev/null
+          python3 content/zion/tools/p4_pack.py --metas /tmp/fbs/yellowstone-shorts/zion4
+          cd /tmp/fbs/yellowstone-shorts/zion4 && for f in zion_p4_*.mp4; do ffprobe -v error -show_entries stream=codec_type,width,height:format=duration -of compact $f | tr '\n' ' '; echo $f; done; ls | wc -l
+      - name: Commit to footage
+        run: |
+          cd /tmp/fbs && git config user.name alphadog-bot && git config user.email bot@users.noreply.github.com
+          git add yellowstone-shorts/zion4 && git commit -qm "zion4: shorts + stories" && for i in 1 2 3 4 5; do git pull -q --rebase origin footage && git push -q origin HEAD:footage && break; sleep $((i*5)); done
