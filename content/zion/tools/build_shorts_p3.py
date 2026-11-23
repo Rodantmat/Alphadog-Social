@@ -14,16 +14,18 @@ def run(c): subprocess.run(c,check=True,stdout=subprocess.DEVNULL,stderr=subproc
 def dur(p): return float(subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",p],capture_output=True,text=True).stdout)
 def sents(x):
     import re; return [p.strip() for p in re.split(r'(?<=[.!?])(?<!St\.)(?<!Mr\.)(?<!Dr\.)(?<!U\.S\.)\s+',x) if p.strip()]
-def chunk(ss,mx=80):
+def chunk(ss,mx=88):
     import re; out=[]
+    bad={'a','an','the','of','with','to','and','in','on','at','for','by','from','as','or','its','their','his','her','is','was','that','than','into','over','but','where','who','which'}
     for x in ss:
         while len(x)>mx:
-            cuts=[m.end() for m in re.finditer(r'[,:;] |\s(?:and|but|to|that|where|with) ',x) if 35<=m.end()<=mx]
-            if not cuts:
-                sp=[m.start() for m in re.finditer(r' ',x) if 30<=m.start()<=mx]
-                if not sp: break
-                c=min(sp,key=lambda k:abs(k-len(x)//2)); out.append(x[:c].strip()); x=x[c:].strip(); continue
-            c=cuts[-1]; out.append(x[:c].strip()); x=x[c:].strip()
+            cands=[m.end() for m in re.finditer(r'[,:;] ',x)]
+            cands+=[m.start() for m in re.finditer(r'\s(?=(?:and|but|to|that|where|with|because|which)\s)',x)]
+            cands=[c for c in cands if 25<=c<=len(x)-20 and c<=mx]
+            if not cands:
+                cands=[m.start() for m in re.finditer(r' ',x) if 25<=m.start()<=len(x)-20 and m.start()<=mx and x[:m.start()].split()[-1].lower().strip(',.') not in bad]
+            if not cands: break
+            c=min(cands,key=lambda k:abs(k-len(x)/2)); out.append(x[:c].strip()); x=x[c:].strip()
         out.append(x)
     return out
 def shot(src,d,out,k,pre=None):
