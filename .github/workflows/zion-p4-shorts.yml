@@ -19,9 +19,9 @@ jobs:
         env: { GH_TOKEN: "${{ github.token }}" }
         run: |
           git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
-          cd /tmp/fbs && git sparse-checkout set --no-cone /zion-narr/p4/am_michael /zion4 /yellowstone-shorts/zion4
+          cd /tmp/fbs && git sparse-checkout set --no-cone /zion-narr/p4/am_michael /zion4 /zion4b /yellowstone-shorts/zion4
       - name: Build
-        run: python3 -c "import glob,os;from PIL import Image;[Image.open(f).convert('RGB').save(f[:-4]+'.jpg',quality=95) for f in glob.glob('/tmp/fbs/zion4/img/*.png')]" && NARR=/tmp/fbs/zion-narr/p4/am_michael IMG=/tmp/fbs/zion4/img AI=/nonexistent SEGS=content/zion/p4_segments.json SPEC=content/zion/tools/shorts_p4_spec.json OUT=/tmp/fbs/yellowstone-shorts/zion4 THUMB=content/zion/p3_thumb.jpg python3 content/zion/tools/build_shorts_p3.py ${{ inputs.only }}
+        run: cp /tmp/fbs/zion4b/img/*.jpg /tmp/fbs/zion4/img/ && python3 -c "import glob,os;from PIL import Image;[Image.open(f).convert('RGB').save(f[:-4]+'.jpg',quality=95) for f in glob.glob('/tmp/fbs/zion4/img/*.png')]" && NARR=/tmp/fbs/zion-narr/p4/am_michael IMG=/tmp/fbs/zion4/img AI=/nonexistent SEGS=content/zion/p4_segments.json SPEC=content/zion/tools/shorts_p4_spec.json OUT=/tmp/fbs/yellowstone-shorts/zion4 THUMB=content/zion/p3_thumb.jpg python3 content/zion/tools/build_shorts_p3.py ${{ inputs.only }}
       - name: Metas + QA
         run: |
           cd /tmp/fbs/yellowstone-shorts/zion4 && rm -rf _z4* && cd - >/dev/null
