@@ -14,12 +14,15 @@ def run(c): subprocess.run(c,check=True,stdout=subprocess.DEVNULL,stderr=subproc
 def dur(p): return float(subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",p],capture_output=True,text=True).stdout)
 def sents(x):
     import re; return [p.strip() for p in re.split(r'(?<=[.!?])(?<!St\.)(?<!Mr\.)(?<!Dr\.)(?<!U\.S\.)\s+',x) if p.strip()]
-def chunk(ss,mx=95):
+def chunk(ss,mx=80):
     import re; out=[]
     for x in ss:
         while len(x)>mx:
             cuts=[m.end() for m in re.finditer(r'[,:;] |\s(?:and|but|to|that|where|with) ',x) if 35<=m.end()<=mx]
-            if not cuts: break
+            if not cuts:
+                sp=[m.start() for m in re.finditer(r' ',x) if 30<=m.start()<=mx]
+                if not sp: break
+                c=sp[-1]; out.append(x[:c].strip()); x=x[c:].strip(); continue
             c=cuts[-1]; out.append(x[:c].strip()); x=x[c:].strip()
         out.append(x)
     return out
