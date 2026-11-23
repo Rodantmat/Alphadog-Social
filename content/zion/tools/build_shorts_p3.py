@@ -22,7 +22,7 @@ def chunk(ss,mx=80):
             if not cuts:
                 sp=[m.start() for m in re.finditer(r' ',x) if 30<=m.start()<=mx]
                 if not sp: break
-                c=sp[-1]; out.append(x[:c].strip()); x=x[c:].strip(); continue
+                c=min(sp,key=lambda k:abs(k-len(x)//2)); out.append(x[:c].strip()); x=x[c:].strip(); continue
             c=cuts[-1]; out.append(x[:c].strip()); x=x[c:].strip()
         out.append(x)
     return out
