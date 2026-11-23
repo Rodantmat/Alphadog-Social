@@ -9,7 +9,7 @@ import json, os, re, subprocess, sys
 a = sys.argv[1:]; opt = lambda k, d: a[a.index(k) + 1] if k in a else d
 Q = next((x for x in a if x.endswith(".json")), "content/social_queue.json"); W = int(opt("--window", 3)); FD = opt("--footage", "")
 q = [i for i in json.load(open(Q)) if not i.get("hold") and not (i.get("done") and not i["done"].get("dry_run"))]
-tok = lambda s: set(re.findall(r"[a-z0-9]{4,}", re.split(r"[.!?\n]", s.lower())[0]))
+tok = lambda s: set(re.findall(r"[a-z0-9]{4,}", re.split(r"[.!?\n]", re.sub(r"^\s*[a-z ]*national park history:\s*", "", s.lower()))[0]))  # health 11-23: strip shared "Zion National Park history:" prefix (false positives)
 film = lambda i: (re.search(r"(zion|yellowstone|chiricahua)[\w ]*?part\s*\d", i.get("caption","").lower()) or re.search(r"(zion|yellowstone|chiricahua)", i.get("caption","").lower()) or [None])[0]
 kind = lambda i: "story" if "story" in i["id"] or i["file"].startswith("story") else "reel"
 bad = []
