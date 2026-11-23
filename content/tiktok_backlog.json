@@ -525,7 +525,12 @@
   "file": "zion_p3_z3s11.mp4",
   "due": "2026-11-27T03:00:00Z",
   "service": "tiktok",
-  "text": "Zion National Park history: July 4, 1930: a governor, a prayer and live radio. Save this for your trip, full story on YouTube (AlphaDog Studio).\\n\\n#zionnationalpark #nationalparks #history #utah #hiddenhistory"
+  "text": "Zion National Park history: July 4, 1930: a governor, a prayer and live radio. Save this for your trip, full story on YouTube (AlphaDog Studio).\\n\\n#zionnationalpark #nationalparks #history #utah #hiddenhistory",
+  "scheduled": {
+   "buffer_id": "6b041da8a8420aaa33536c5b",
+   "at": "2026-11-23T11:04:02Z",
+   "due": "2026-11-27T03:00:00Z"
+  }
  },
  {
   "mode": "post",
