@@ -1,0 +1,16 @@
+name: yt-trailer
+on:
+  workflow_dispatch:
+    inputs:
+      trailer: { description: "video id for the non-subscriber channel trailer", required: true }
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          TRAILER: ${{ inputs.trailer }}
+        run: python3 scripts/yt_trailer.py
