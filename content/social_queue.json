@@ -4250,14 +4250,29 @@
   "platform": "instagram_story",
   "file": "zion_p3_z3t3.mp4",
   "at": "2026-11-23T02:00:00Z",
-  "story_v2": "A road up a canyon wall, a tunnel through it | zion3"
+  "story_v2": "A road up a canyon wall, a tunnel through it | zion3",
+  "done": {
+   "media_id": "18133308701485821",
+   "story": true,
+   "at": "2026-11-23T02:07:57Z"
+  }
  },
  {
   "id": "z3t3_fb",
   "platform": "facebook_story",
   "file": "zion_p3_z3t3.mp4",
   "at": "2026-11-23T02:00:00Z",
-  "story_v2": "A road up a canyon wall, a tunnel through it | zion3"
+  "story_v2": "A road up a canyon wall, a tunnel through it | zion3",
+  "done": {
+   "video_id": "972131648988983",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "2220442298545607"
+   },
+   "story": true,
+   "at": "2026-11-23T02:07:57Z"
+  }
  },
  {
   "id": "z3t4_ig",
