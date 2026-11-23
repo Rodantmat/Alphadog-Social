@@ -38,3 +38,11 @@
 - Run ids: none for posting. Read-only checks only (footage tree, release folder listing, recent Actions runs; latest runs all success).
 - Blockers: ES for Zion is still blocked on film_es.m4a (I32 open). Overdue rule: the film went public 2026-11-21, so it is not more than 3 days overdue from its YouTube release yet. If film_es.m4a is not added by 2026-11-24, the ES sync is overdue and should be flagged plainly.
 - COMPASS I30 and I32 not changed in this run; the 11-21 entry already records the state (EN posted, ES blocked).
+
+## 2026-11-23
+- Checked: no new full film to sync. Footage branch release folders: yellowstone-release/film (Yellowstone, already on EN and ES), yellowstone-release/zionfilm (Zion, already on EN since 11-21), no other park film folder. yellowstone-release/zionfilm still has no film_es.m4a (listing via GitHub API on the footage branch: chapters.txt, desc_long.txt, film_cuts.json, meta_0_long.json, thumb.jpg, SRTs EN/ES/PT, zion_film_final.mp4.part00-part13, .sha256). No zion_film_es title/desc files written.
+- Spotify duplicate check: not re-run, because nothing new to post. Last check: spotify-stats 44937326806 (2026-11-21, success).
+- Posted: nothing. spotify-upload was not dispatched for EN or ES. The Zion ES sync stays blocked (I32).
+- Run ids: none for posting. Read-only checks only.
+- Blockers: ES for Zion still blocked on film_es.m4a. The film went public 2026-11-21 (YouTube due 2026-11-19), so the ES sync becomes overdue more than 3 days after the YouTube release on 2026-11-24 if film_es.m4a is not added by then; this will be flagged plainly in the next report.
+- COMPASS I30 not updated: the bridge write path refuses content/channel/COMPASS.md (too large to rewrite through the bridge tool), as in the 11-20 and 11-21 runs. Owner or next run should set I30 to: Zion full film posted EN 11-21 (run 44937536102); ES blocked pending film_es.m4a (last checked 11-23).
