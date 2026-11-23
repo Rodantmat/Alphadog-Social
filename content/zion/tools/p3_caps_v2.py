@@ -20,7 +20,7 @@ B=json.load(open("content/tiktok_backlog.json")); m=0
 for x in B:
     sid=x["file"].replace("zion_p3_","").replace(".mp4","")
     if sid in spec and not x.get("scheduled"):
-        i=spec[sid]; t=f"Zion National Park history: {i['hook']}. Save this for your trip, full story on YouTube (AlphaDog Studio)."
+        i=spec[sid]; t=f"Zion National Park history: {i['hook'].rstrip('.')}. Save this for your trip, full story on YouTube (AlphaDog Studio)."
         x["text"]=(t[:200]+"\\n\\n"+TTTAGS); m+=1
 json.dump(B,open("content/tiktok_backlog.json","w"),indent=1,ensure_ascii=False)
 print("queue entries",n,"tiktok",m)
