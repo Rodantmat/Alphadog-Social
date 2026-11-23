@@ -538,7 +538,12 @@
   "file": "zion_p4_z4s1.mp4",
   "due": "2026-11-27T22:00:00Z",
   "service": "tiktok",
-  "text": "Zion National Park history: Reveille at six: a day in a CCC camp. Save this for your trip, full story on YouTube (AlphaDog Studio).\\n\\n#zionnationalpark #nationalparks #history #utah #hiddenhistory"
+  "text": "Zion National Park history: Reveille at six: a day in a CCC camp. Save this for your trip, full story on YouTube (AlphaDog Studio).\\n\\n#zionnationalpark #nationalparks #history #utah #hiddenhistory",
+  "scheduled": {
+   "buffer_id": "6b04c37a8165ce395ba290b0",
+   "at": "2026-11-23T22:51:36Z",
+   "due": "2026-11-27T22:00:00Z"
+  }
  },
  {
   "mode": "post",
