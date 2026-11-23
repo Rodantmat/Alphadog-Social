@@ -4075,7 +4075,13 @@
   "at": "2026-11-23T20:00:00Z",
   "caption": "Zion National Park history: 1.1 miles. 6 windows. $500,000.\n\nThe Zion-Mount Carmel Tunnel: 1.1 miles long, 22 feet wide, 16 feet high, with six windows cut into the cliff, and about half a million dollars to build. Zion was no longer a dead end.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): Zion, Part 3 — The Impossible Tunnel, by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
-  "thumb_ms": 1200
+  "thumb_ms": 1200,
+  "done": {
+   "media_id": "18102194156093368",
+   "permalink": "https://www.instagram.com/reel/DgGNC_UCKZn/",
+   "posted": "2026-11-23T20:09:12+0000",
+   "at": "2026-11-23T20:08:40Z"
+  }
  },
  {
   "id": "z3s4_fb",
@@ -4083,7 +4089,40 @@
   "file": "zion_p3_z3s4.mp4",
   "at": "2026-11-23T20:00:00Z",
   "caption": "Zion National Park history: 1.1 miles. 6 windows. $500,000.\n\nThe Zion-Mount Carmel Tunnel: 1.1 miles long, 22 feet wide, 16 feet high, with six windows cut into the cliff, and about half a million dollars to build. Zion was no longer a dead end.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): Zion, Part 3 — The Impossible Tunnel, by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
+  "done": {
+   "video_id": "40484055087876260",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1127658753366450"
+   },
+   "permalink": "https://www.facebook.com/reel/40484055087876260/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 8753572
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-23T20:09:24+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "40484055087876260_1434814328635233"
+   },
+   "status_errors": null,
+   "at": "2026-11-23T20:08:40Z"
+  }
  },
  {
   "id": "z3s5_ig",
