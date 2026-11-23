@@ -30,7 +30,7 @@
 
 ## 2026-11-10 01:37 UTC OK
 - All posts on time: 0 missed items in social_queue.json (150 items checked); all past-due TikTok backlog items have "scheduled".
-- Latest social-post runs visible (42733535835, 42702047993) both success; no failures in last 30 runs of any workflow (2 pages builds cancelled, superseded).
+- Latest social-post runs visible (42733535835, 42702047993) both success; no failures in last 30 runs (2 pages builds cancelled, superseded).
 - YouTube: 11 pending comments, none overdue (earliest "after" 2026-11-10T18:06Z); 01:06Z comment already handled by yt-followup 42736631103 (success); not re-triggered.
 - yt-link latest run 42716024327 success.
 - Run ids checked: social-post 42733535835, 42702047993; yt-followup 42736631103; yt-link 42716024327.
@@ -367,3 +367,11 @@
 - yt-link: latest success 45019742661 (2026-11-22 11:56Z), within 12h; 02:35Z backup dispatch not applicable at this run time (20:36Z), not dispatched.
 - Other: yt-related 45005754838 failed at 09:04Z earlier (not yt-link; not investigated this run).
 - Run ids: yt-followup 45067372134; social-post 45058796312, 45041331571; yt-link 45019742661.
+
+## 2026-11-23 19:36 UTC OK
+- All posts on time: 0 missed items in content/social_queue.json (224 items checked, no holds; none past due unposted). All past-due TikTok backlog items (due <= 2026-11-23T03:00Z) have "scheduled" (content/tiktok_backlog.json, 26 items checked; zion_p3_z3s4+ not yet due).
+- social-post: 2 runs visible in the latest 50-run window (45245382684 at 19:06Z, 45161706442 at 11:03Z), both success; no social-post failures. Only 2 of the latest 4 visible in that window.
+- YouTube: 13 pending comment files, none overdue (earliest "after" 2026-11-23T20:06Z, G3-diOgRqZ4); yt-followup not triggered.
+- yt-link latest success 45185499791 (2026-11-23 13:35Z), within 12h; 02:35Z backup dispatch not applicable at this run time (19:36Z), not dispatched.
+- Other: yt-followup 45177696555 success (12:47Z); comment-sweep 45186482585 success; yt-publish 45108813043 and zion-p4-shorts 45108670069 success.
+- Run ids: social-post 45245382684, 45161706442; yt-link 45185499791; yt-followup 45177696555.
