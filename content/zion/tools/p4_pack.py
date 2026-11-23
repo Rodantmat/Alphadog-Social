@@ -15,7 +15,7 @@ if "--metas" in sys.argv:
     out=sys.argv[sys.argv.index("--metas")+1]
     for n,i in enumerate(shorts):
         t=slot(n+OFF); title=i["hook"].rstrip(".")+" #Shorts"
-        m={"file":i["file"],"title":title,"description":f"{i['caption']}\n\n▶ Zion documentary (Part 3: The Impossible Tunnel): {Y}\n\n#Shorts #Zion #History #NationalParks","tags":["Zion","national parks","Zion National Park","Shorts","history","CCC","bighorn sheep"],"category":"27","privacy":"private","publish_at":z(t),"made_for_kids":False,"synthetic":True,"language":"en",
+        m={"file":i["file"],"title":title,"description":f"{i['caption']}\n\n▶ Zion documentary (Part 3: The Impossible Tunnel): {Y}\n\n#Shorts #Zion #History #NationalParks","tags":["Zion","national parks","Zion National Park","Shorts","history",(["Civilian Conservation Corps","CCC","New Deal"] if i["id"] in ("z4s1","z4s2","z4s3") else ["desert bighorn sheep","wildlife","bighorn"])],"category":"27","privacy":"private","publish_at":z(t),"made_for_kids":False,"synthetic":True,"language":"en",
            "queue_comment":{"after":z(t+dt.timedelta(minutes=6)),"text":f"▶ Watch the full documentary here: {Y}\nZion, Part 3 of our national parks series."}}
         json.dump(m,open(f"{out}/meta_{i['id']}.json","w"),ensure_ascii=False,indent=1)
 if "--queue" in sys.argv:
