@@ -1,0 +1,156 @@
+{
+ "items": [
+  {
+   "id": "z4s1",
+   "kind": "short",
+   "segs": [
+    "p4_001",
+    "p4_002",
+    "p4_003",
+    "p4_004",
+    "p4_005"
+   ],
+   "hook": "Reveille at six: a day in a CCC camp",
+   "imgs": [
+    "commons_eca2e2d7c2",
+    "commons_3283a70ab1",
+    "commons_22e11e6286"
+   ],
+   "file": "zion_p4_z4s1.mp4",
+   "key": 21,
+   "end1": "More Zion history",
+   "end2": "Full documentary on YouTube",
+   "caption": "Reveille at six, work until five, lights out at ten. This is a day in a Civilian Conservation Corps camp, as the National Park Service describes it.",
+   "url": ""
+  },
+  {
+   "id": "z4s2",
+   "kind": "short",
+   "segs": [
+    "p4_006",
+    "p4_007",
+    "p4_008",
+    "p4_009",
+    "p4_010"
+   ],
+   "hook": "$30 a month, and $25 went home",
+   "imgs": [
+    "commons_5ecaa20bb3",
+    "commons_8ddb240c9f",
+    "commons_3283a70ab1"
+   ],
+   "file": "zion_p4_z4s2.mp4",
+   "key": 22,
+   "end1": "More Zion history",
+   "end2": "Full documentary on YouTube",
+   "caption": "Thirty dollars a month, twenty-five of it sent home to family. Here is who joined the Civilian Conservation Corps, and what a term looked like.",
+   "url": ""
+  },
+  {
+   "id": "z4s3",
+   "kind": "short",
+   "segs": [
+    "p4_011",
+    "p4_012",
+    "p4_013"
+   ],
+   "hook": "The switchbacks Zion's CCC crews built",
+   "imgs": [
+    "commons_e587bf80ff",
+    "commons_056c446587",
+    "commons_5697d3d49c",
+    "commons_abb471387a",
+    "commons_7e9c022d44"
+   ],
+   "file": "zion_p4_z4s3.mp4",
+   "key": 23,
+   "end1": "Zion Part 3",
+   "end2": "Full documentary on YouTube",
+   "caption": "Below the Zion\u2013Mount Carmel Tunnel, Civilian Conservation Corps crews sloped the banks and built the retaining walls, mostly by hand.",
+   "url": ""
+  },
+  {
+   "id": "z4s4",
+   "kind": "short",
+   "segs": [
+    "p4_014",
+    "p4_015",
+    "p4_016",
+    "p4_017"
+   ],
+   "hook": "Zion's bighorn vanished. Then 14 came back.",
+   "imgs": [
+    "commons_55957bb045",
+    "commons_10feb9dd6a",
+    "commons_c0a358afbb"
+   ],
+   "file": "zion_p4_z4s4.mp4",
+   "key": 24,
+   "end1": "More Zion history",
+   "end2": "Full documentary on YouTube",
+   "caption": "Desert bighorn sheep were gone from Zion by the mid-1900s. Then fourteen were brought back by 1978.",
+   "url": ""
+  },
+  {
+   "id": "z4s5",
+   "kind": "short",
+   "segs": [
+    "p4_018",
+    "p4_019",
+    "p4_020",
+    "p4_021",
+    "p4_022"
+   ],
+   "hook": "From 14 sheep to more than 500",
+   "imgs": [
+    "commons_40d4a3d9b6",
+    "commons_18d9e83f22",
+    "commons_10feb9dd6a"
+   ],
+   "file": "zion_p4_z4s5.mp4",
+   "key": 25,
+   "end1": "More Zion history",
+   "end2": "Full documentary on YouTube",
+   "caption": "Fourteen desert bighorn in 1978, more than five hundred by 2018. Here is how they live on the cliffs of Zion, and what worries biologists now.",
+   "url": ""
+  },
+  {
+   "id": "z4t1",
+   "kind": "story",
+   "segs": [
+    "p4_023",
+    "p4_024"
+   ],
+   "hook": "12 pounds in two months",
+   "imgs": [
+    "commons_22e11e6286",
+    "commons_8ddb240c9f"
+   ],
+   "file": "zion_p4_z4t1.mp4",
+   "key": 26,
+   "end1": "More Zion history",
+   "end2": "Full documentary on YouTube",
+   "caption": "",
+   "url": ""
+  },
+  {
+   "id": "z4t2",
+   "kind": "story",
+   "segs": [
+    "p4_025",
+    "p4_026"
+   ],
+   "hook": "Rams clash from July to October",
+   "imgs": [
+    "commons_c0a358afbb",
+    "commons_55957bb045"
+   ],
+   "file": "zion_p4_z4t2.mp4",
+   "key": 27,
+   "end1": "More Zion history",
+   "end2": "Full documentary on YouTube",
+   "caption": "",
+   "url": ""
+  }
+ ]
+}
