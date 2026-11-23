@@ -4019,7 +4019,13 @@
   "at": "2026-11-23T01:00:00Z",
   "caption": "A logger strung fifty thousand feet of wire up Zion's east rim, and according to the Park Service a family dog named Darkey once rode it two thousand feet down. A dog could do it. A car could not.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 3 — link in the first comment 👇\n\n#Zion #ZionNationalPark #History #NationalParks",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
-  "thumb_ms": 1200
+  "thumb_ms": 1200,
+  "done": {
+   "media_id": "17958451176335761",
+   "permalink": "https://www.instagram.com/reel/DgEKjTJAvdq/",
+   "posted": "2026-11-23T01:08:55+0000",
+   "at": "2026-11-23T01:08:22Z"
+  }
  },
  {
   "id": "z3s3_fb",
@@ -4027,7 +4033,40 @@
   "file": "zion_p3_z3s3.mp4",
   "at": "2026-11-23T01:00:00Z",
   "caption": "A logger strung fifty thousand feet of wire up Zion's east rim, and according to the Park Service a family dog named Darkey once rode it two thousand feet down. A dog could do it. A car could not.\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion Part 3 — link in the first comment 👇\n\n#Zion #ZionNationalPark #History #NationalParks",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
+  "done": {
+   "video_id": "1927619185068730",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1126802696785389"
+   },
+   "permalink": "https://www.facebook.com/reel/1927619185068730/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 9366954
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-23T01:09:05+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1927619185068730_2349451635896247"
+   },
+   "status_errors": null,
+   "at": "2026-11-23T01:08:22Z"
+  }
  },
  {
   "id": "z3s4_ig",
