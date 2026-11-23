@@ -357,6 +357,64 @@
    "end2": "Full documentary on YouTube",
    "caption": "",
    "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3s11",
+   "kind": "short",
+   "segs": [
+    "s031"
+   ],
+   "hook": "July 4, 1930: a governor, a prayer and live radio",
+   "imgs": [
+    "z3x_gov_dern_1",
+    "z3x_haer_zmc_5",
+    "z3x_haer_zmc_20",
+    "z3x_haer_zmc_16"
+   ],
+   "file": "zion_p3_z3s11.mp4",
+   "key": 17,
+   "end1": "Zion, Part 3: The Impossible Tunnel",
+   "end2": "Full documentary on YouTube",
+   "caption": "The tunnel was dedicated on July fourth, nineteen thirty. Utah's governor, George Dern, was there.",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3t8",
+   "kind": "story",
+   "segs": [
+    "s005",
+    "s009"
+   ],
+   "hook": "To most of America, Zion was a rumor",
+   "imgs": [
+    "z3x_grafton_6",
+    "z3x_grafton_4",
+    "z3x_grafton_1"
+   ],
+   "file": "zion_p3_z3t8.mp4",
+   "key": 18,
+   "end1": "Zion Part 3",
+   "end2": "Full documentary on YouTube",
+   "caption": "",
+   "url": "https://youtu.be/30zzYRt_Mgk"
+  },
+  {
+   "id": "z3t9",
+   "kind": "story",
+   "segs": [
+    "s034"
+   ],
+   "hook": "Still in use: a 2012 civil engineering landmark",
+   "imgs": [
+    "z3x_haer_zmc_3",
+    "z3x_haer_zmc_15"
+   ],
+   "file": "zion_p3_z3t9.mp4",
+   "key": 19,
+   "end1": "Zion Part 3",
+   "end2": "Full documentary on YouTube",
+   "caption": "",
+   "url": "https://youtu.be/30zzYRt_Mgk"
   }
  ]
 }
