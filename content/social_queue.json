@@ -4131,7 +4131,13 @@
   "at": "2026-11-24T01:00:00Z",
   "caption": "Zion National Park history: 3,700 visitors in 1920. 55,000 by 1930.\n\nIn 1920 about 3,700 people visited Zion. By 1930 it was nearly 55,000, fifteen times as many, and that created a new problem.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): Zion, Part 3 — The Impossible Tunnel, by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
-  "thumb_ms": 1200
+  "thumb_ms": 1200,
+  "done": {
+   "media_id": "18651296119039497",
+   "permalink": "https://www.instagram.com/reel/DgGveadFTUp/",
+   "posted": "2026-11-24T01:10:00+0000",
+   "at": "2026-11-24T01:08:13Z"
+  }
  },
  {
   "id": "z3s5_fb",
@@ -4139,7 +4145,40 @@
   "file": "zion_p3_z3s5.mp4",
   "at": "2026-11-24T01:00:00Z",
   "caption": "Zion National Park history: 3,700 visitors in 1920. 55,000 by 1930.\n\nIn 1920 about 3,700 people visited Zion. By 1930 it was nearly 55,000, fifteen times as many, and that created a new problem.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): Zion, Part 3 — The Impossible Tunnel, by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
+  "done": {
+   "video_id": "1962099594950460",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1127841636681495"
+   },
+   "permalink": "https://www.facebook.com/reel/1962099594950460/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 7534356
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-24T01:10:12+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1962099594950460_1183184791058243"
+   },
+   "status_errors": null,
+   "at": "2026-11-24T01:08:13Z"
+  }
  },
  {
   "id": "z3s6_ig",
