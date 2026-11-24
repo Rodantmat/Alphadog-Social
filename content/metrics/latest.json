@@ -1,5 +1,5 @@
 {
- "at": "2026-11-24T22:54:48Z",
+ "at": "2026-11-24T23:04:30Z",
  "youtube": {
   "channel": {
    "viewCount": "18951",
@@ -164,7 +164,7 @@
     "published": "2026-11-22T01:00:17Z",
     "privacy": "public",
     "duration": "PT32S",
-    "views": 792,
+    "views": 790,
     "likes": 13,
     "comments": 3
    },
@@ -544,7 +544,7 @@
     "published": "2026-11-08T16:00:33Z",
     "privacy": "public",
     "duration": "PT10M53S",
-    "views": 109,
+    "views": 110,
     "likes": 2,
     "comments": 1
    },
@@ -969,7 +969,7 @@
     "comments": 1
    }
   ],
-  "scopes": "https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/yt-analytics.readonly",
+  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/yt-analytics.readonly",
   "analytics_by_video": {
    "columns": [
     "video",
@@ -2101,12 +2101,12 @@
     "caption": "Zion National Park history: 75 horses for a president. 5 weeks later, he was dea",
     "likes": 2,
     "comments": 1,
-    "views": 167,
+    "views": 168,
     "reach": 146,
     "saved": 0,
     "shares": 0,
     "total_interactions": 4,
-    "ig_reels_avg_watch_time": 6660
+    "ig_reels_avg_watch_time": 6792
    },
    {
     "id": "18651296119039497",
@@ -3666,7 +3666,7 @@
     "at": "2026-11-21T03:01:30Z",
     "title": "A lake that lasted seven hundred years, then filled itself in. When a...",
     "duration": 33,
-    "views": 684,
+    "views": 685,
     "likes": 8,
     "comments": 0,
     "shares": 0
