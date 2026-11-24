@@ -135,3 +135,12 @@
 - Strategies: no state/cap changes vs 11-22 history. A_wsteals_5flex yellow cap 4 (9 slips, +2.2u), A_core_3power / A_regular_5power / A_wrebounds_4flex yellow cap 1, C_wstocks_4flex paper (-3u). B_demon_3flex / B_demon_5flex red (0 slips). Ten H_P* + H_FB1 active cap 1.
 - Edge monitors: PP z 3.09 (33 slates), UD z 2.66 (33 slates), both RUNNING, no ALARM.
 - Boards 11-23 (10 games): 0 rows for every app and sportsbook so far (11-22 filled later: PrizePicks 21,857, Underdog 14,392, Sleeper 10,129, Betr 4,431, Fliff 5,790, 10 sportsbooks). Unlike 11-22, sportsbooks are also empty at 05:53 PT. Watch P2B ~08:06 PT.
+
+## 2026-11-24 13:55 UTC ACTION
+- Market term: review revert (carried). audit_market_coverage not run: github_trigger_workflow 403 (token lacks actions:write), 6th day running. Last verdict 11-18 NOT READY, 28 dates. 11-23 window rungs 1,984, avg 2.46 books. Slate date 35.
+- Pipelines: P2A 11-24 success (03:31-03:47 PT); P2A/P2B/P3 11-23 all success (P3 claimed 13:17 PT, finished 13:31 PT; P1 11-23 "success/cancelled"). Scheduler tick 6s old. P3 11-23 soft-failed grep NOT done (run outside the last-100-runs window). Outside the pipeline: NBA Honest Referee failed 11-23 16:18 PT; NBA Friend Page Run failed 11-23 18:06 PT and 11-23 20:54 PT.
+- PP 11-23 (PLAY): 4 slips (H_P1 +5u, H_P10 +2u, H_P3 +0.5u, H_P11 -1u), 4u staked, 10.5u returned, net +6.5u, ROI +162%. Season: 161 slips, 161u, 183.1u, +22.1u, ROI +13.7%.
+- UD 11-23: H live 2 slips, 2u, +1.5u. P5 (shadow) 4 slips, 4u, -3u (profit col). Season P5 (paper+shadow): 113 slips, 106.5u, +15.25u, ROI +14.3%. Season live (T+C+H): 89 slips, 89u, +39.5u, ROI +44.3%.
+- Strategies: no cap changes. A_wsteals_5flex yellow cap 4, A_core_3power / A_regular_5power / A_wrebounds_4flex yellow cap 1, C_wstocks_4flex paper (CLEAN 21), B_demon_3flex / B_demon_5flex red (REQUAL HOLD 11-09). _ROTATION normal (cap 0): steals ok (ewma 0.506), turnovers ok (0.631).
+- Edge monitors: PP z 2.97 (34 slates), UD z 2.39 (34 slates), both RUNNING, no ALARM.
+- Boards 11-24 (3 games): 0 rows for every app and sportsbook so far (same early-morning pattern as prior days). Watch P2B ~08:06 PT.
