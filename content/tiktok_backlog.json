@@ -551,7 +551,12 @@
   "file": "zion_p4_z4s2.mp4",
   "due": "2026-11-28T05:00:00Z",
   "service": "tiktok",
-  "text": "Zion National Park history: $30 a month, and $25 went home. Save this for your trip, full story on YouTube (AlphaDog Studio).\\n\\n#zionnationalpark #nationalparks #history #utah #hiddenhistory"
+  "text": "Zion National Park history: $30 a month, and $25 went home. Save this for your trip, full story on YouTube (AlphaDog Studio).\\n\\n#zionnationalpark #nationalparks #history #utah #hiddenhistory",
+  "scheduled": {
+   "buffer_id": "6b053362f1f0435123278d72",
+   "at": "2026-11-24T06:49:03Z",
+   "due": "2026-11-28T05:00:00Z"
+  }
  },
  {
   "mode": "post",
