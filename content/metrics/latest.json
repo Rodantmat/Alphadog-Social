@@ -1,22 +1,42 @@
 {
- "at": "2026-11-24T00:59:58Z",
+ "at": "2026-11-24T22:54:48Z",
  "youtube": {
   "channel": {
-   "viewCount": "16858",
+   "viewCount": "18951",
    "subscriberCount": "29",
    "hiddenSubscriberCount": false,
-   "videoCount": "66"
+   "videoCount": "68"
   },
   "videos": [
+   {
+    "id": "PeSqdBWNoz8",
+    "title": "75 horses for a president. 5 weeks later, he was dead #Shorts",
+    "published": "2026-11-24T20:00:06Z",
+    "privacy": "public",
+    "duration": "PT44S",
+    "views": 0,
+    "likes": 0,
+    "comments": 1
+   },
+   {
+    "id": "UIScDxTtq3k",
+    "title": "3,700 visitors in 1920. 55,000 by 1930 #Shorts",
+    "published": "2026-11-24T01:00:17Z",
+    "privacy": "public",
+    "duration": "PT31S",
+    "views": 127,
+    "likes": 2,
+    "comments": 4
+   },
    {
     "id": "G3-diOgRqZ4",
     "title": "1.1 miles. 6 windows. $500,000 #Shorts",
     "published": "2026-11-23T20:00:33Z",
     "privacy": "public",
     "duration": "PT41S",
-    "views": 332,
-    "likes": 9,
-    "comments": 2
+    "views": 724,
+    "likes": 13,
+    "comments": 3
    },
    {
     "id": "6WN2qkGAw8c",
@@ -84,7 +104,7 @@
     "published": "2026-11-23T01:00:39Z",
     "privacy": "public",
     "duration": "PT38S",
-    "views": 730,
+    "views": 823,
     "likes": 15,
     "comments": 1
    },
@@ -94,8 +114,8 @@
     "published": "2026-11-22T20:00:16Z",
     "privacy": "public",
     "duration": "PT35S",
-    "views": 465,
-    "likes": 5,
+    "views": 532,
+    "likes": 6,
     "comments": 1
    },
    {
@@ -139,32 +159,12 @@
     "comments": 0
    },
    {
-    "id": "PeSqdBWNoz8",
-    "title": "75 horses for a president. 5 weeks later, he was dead #Shorts",
-    "published": "2026-11-22T09:03:18Z",
-    "privacy": "private",
-    "duration": "PT44S",
-    "views": 0,
-    "likes": 0,
-    "comments": 0
-   },
-   {
-    "id": "UIScDxTtq3k",
-    "title": "3,700 visitors in 1920. 55,000 by 1930 #Shorts",
-    "published": "2026-11-22T09:03:16Z",
-    "privacy": "private",
-    "duration": "PT31S",
-    "views": 0,
-    "likes": 0,
-    "comments": 0
-   },
-   {
     "id": "GRAWb3Xymmw",
     "title": "146 tons of dynamite. No GPS. No lasers #Shorts",
     "published": "2026-11-22T01:00:17Z",
     "privacy": "public",
     "duration": "PT32S",
-    "views": 783,
+    "views": 792,
     "likes": 13,
     "comments": 3
    },
@@ -174,7 +174,7 @@
     "published": "2026-11-21T00:56:05Z",
     "privacy": "public",
     "duration": "PT33M54S",
-    "views": 99,
+    "views": 107,
     "likes": 2,
     "comments": 0
    },
@@ -274,8 +274,8 @@
     "published": "2026-11-20T18:31:28Z",
     "privacy": "public",
     "duration": "PT10M37S",
-    "views": 21,
-    "likes": 1,
+    "views": 22,
+    "likes": 2,
     "comments": 0
    },
    {
@@ -294,7 +294,7 @@
     "published": "2026-11-20T01:00:01Z",
     "privacy": "public",
     "duration": "PT26S",
-    "views": 986,
+    "views": 987,
     "likes": 12,
     "comments": 1
    },
@@ -324,7 +324,7 @@
     "published": "2026-11-18T18:00:09Z",
     "privacy": "public",
     "duration": "PT36S",
-    "views": 609,
+    "views": 610,
     "likes": 7,
     "comments": 1
    },
@@ -444,7 +444,7 @@
     "published": "2026-11-12T20:00:33Z",
     "privacy": "public",
     "duration": "PT13M5S",
-    "views": 107,
+    "views": 113,
     "likes": 2,
     "comments": 2
    },
@@ -494,7 +494,7 @@
     "published": "2026-11-10T18:00:14Z",
     "privacy": "public",
     "duration": "PT35S",
-    "views": 96,
+    "views": 97,
     "likes": 1,
     "comments": 1
    },
@@ -514,7 +514,7 @@
     "published": "2026-11-12T20:00:33Z",
     "privacy": "public",
     "duration": "PT13M5S",
-    "views": 107,
+    "views": 113,
     "likes": 2,
     "comments": 2
    },
@@ -544,7 +544,7 @@
     "published": "2026-11-08T16:00:33Z",
     "privacy": "public",
     "duration": "PT10M53S",
-    "views": 101,
+    "views": 109,
     "likes": 2,
     "comments": 1
    },
@@ -604,7 +604,7 @@
     "published": "2026-11-05T20:00:12Z",
     "privacy": "public",
     "duration": "PT34M55S",
-    "views": 159,
+    "views": 163,
     "likes": 2,
     "comments": 4
    },
@@ -724,7 +724,7 @@
     "published": "2026-11-01T18:00:20Z",
     "privacy": "public",
     "duration": "PT55S",
-    "views": 17,
+    "views": 18,
     "likes": 0,
     "comments": 1
    },
@@ -969,7 +969,7 @@
     "comments": 1
    }
   ],
-  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/yt-analytics.readonly https://www.googleapis.com/auth/youtube.force-ssl",
+  "scopes": "https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/yt-analytics.readonly",
   "analytics_by_video": {
    "columns": [
     "video",
@@ -1007,7 +1007,7 @@
     ],
     [
      "HSrgGisF3Kw",
-     1144,
+     1145,
      217,
      18,
      69.29,
@@ -1028,26 +1028,26 @@
      1
     ],
     [
-     "C8TXhVDX4TU",
-     1040,
-     284,
-     22,
-     65.68,
-     7,
-     1,
-     0,
-     3
-    ],
-    [
      "BuIp2REquPw",
-     1037,
-     278,
+     1046,
+     280,
      23,
-     68.84,
+     68.67,
      19,
      1,
      2,
      1
+    ],
+    [
+     "C8TXhVDX4TU",
+     1041,
+     284,
+     22,
+     65.61,
+     7,
+     1,
+     0,
+     3
     ],
     [
      "0xmoyQ9hZsc",
@@ -1062,7 +1062,7 @@
     ],
     [
      "U2fo4PZtsoE",
-     996,
+     997,
      286,
      25,
      70.95,
@@ -1073,12 +1073,34 @@
     ],
     [
      "NtLVgTN1dKU",
-     954,
-     146,
+     979,
+     149,
      15,
-     59.599999999999994,
-     11,
+     59.42000000000001,
+     12,
      1,
+     0,
+     1
+    ],
+    [
+     "GRAWb3Xymmw",
+     778,
+     125,
+     16,
+     52.95000000000001,
+     12,
+     2,
+     0,
+     2
+    ],
+    [
+     "SQcoms6EFOU",
+     666,
+     154,
+     21,
+     56.7,
+     14,
+     0,
      0,
      1
     ],
@@ -1095,10 +1117,10 @@
     ],
     [
      "J_uFe3-xCVQ",
-     594,
-     200,
+     608,
+     203,
      29,
-     81.08,
+     80.87,
      7,
      1,
      0,
@@ -1114,17 +1136,6 @@
      0,
      0,
      0
-    ],
-    [
-     "GRAWb3Xymmw",
-     510,
-     87,
-     18,
-     57.92,
-     8,
-     1,
-     0,
-     1
     ],
     [
      "50XkGgJ5nNQ",
@@ -1147,6 +1158,17 @@
      1,
      0,
      2
+    ],
+    [
+     "NNK2KmB2RIg",
+     444,
+     96,
+     19,
+     55.86,
+     5,
+     0,
+     0,
+     0
     ],
     [
      "0c8WvCxQWHY",
@@ -1216,10 +1238,10 @@
     ],
     [
      "nEf7KCM5Ors",
-     151,
-     2462,
-     1325,
-     63.28,
+     156,
+     2532,
+     1315,
+     62.81,
      2,
      0,
      0,
@@ -1237,17 +1259,6 @@
      0
     ],
     [
-     "YTQT_qQYGSQ",
-     107,
-     35,
-     31,
-     62,
-     1,
-     1,
-     0,
-     0
-    ],
-    [
      "2Ge5FJpCz3c",
      107,
      34,
@@ -1259,15 +1270,37 @@
      1
     ],
     [
-     "cpWUzLRok5I",
-     95,
-     12,
-     22,
-     64.47,
+     "YTQT_qQYGSQ",
+     107,
+     35,
+     31,
+     62,
      1,
      1,
      0,
      0
+    ],
+    [
+     "1KUANk1uGtU",
+     106,
+     299,
+     250,
+     31.94,
+     2,
+     1,
+     2,
+     0
+    ],
+    [
+     "Hlr80lyDlwA",
+     100,
+     276,
+     209,
+     32.15,
+     2,
+     0,
+     0,
+     1
     ],
     [
      "LfoM0KAi8Yo",
@@ -1281,25 +1314,25 @@
      0
     ],
     [
-     "1KUANk1uGtU",
-     93,
-     279,
-     252,
-     32.17,
-     2,
+     "cpWUzLRok5I",
+     95,
+     12,
+     22,
+     64.47,
      1,
-     2,
+     1,
+     0,
      0
     ],
     [
-     "Hlr80lyDlwA",
-     93,
-     271,
-     219,
-     33.63,
+     "ugASzW14E9s",
+     91,
+     545,
+     467,
+     22.96,
      2,
      0,
-     0,
+     1,
      1
     ],
     [
@@ -1359,10 +1392,10 @@
     ],
     [
      "jfFx5yB_qFA",
-     69,
-     21,
-     24,
-     44.46,
+     71,
+     23,
+     25,
+     45.11,
      1,
      1,
      0,
@@ -1378,17 +1411,6 @@
      0,
      0,
      0
-    ],
-    [
-     "ugASzW14E9s",
-     58,
-     387,
-     398,
-     19.6,
-     2,
-     0,
-     1,
-     1
     ],
     [
      "u2ShH8jAZb8",
@@ -1425,7 +1447,7 @@
     ],
     [
      "G03Sxe_dD9k",
-     22,
+     23,
      2,
      21,
      62.36999999999999,
@@ -1435,12 +1457,12 @@
      0
     ],
     [
-     "eNV_qLTs2Js",
-     20,
-     2,
-     20,
-     66.15,
-     0,
+     "30zzYRt_Mgk",
+     21,
+     86,
+     320,
+     50.32,
+     1,
      0,
      0,
      0
@@ -1468,19 +1490,19 @@
      0
     ],
     [
-     "30zzYRt_Mgk",
-     18,
-     86,
-     341,
-     53.64,
-     1,
+     "eNV_qLTs2Js",
+     20,
+     2,
+     20,
+     66.15,
+     0,
      0,
      0,
      0
     ],
     [
      "wBQ0FKBps08",
-     16,
+     17,
      5,
      44,
      80.73,
@@ -1513,7 +1535,7 @@
     ],
     [
      "jbZbPS173wc",
-     14,
+     15,
      0,
      4,
      0.7,
@@ -1589,17 +1611,6 @@
      0
     ],
     [
-     "uTzcrqnoa4I",
-     4,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0
-    ],
-    [
      "McdCi05pBzg",
      4,
      0,
@@ -1611,11 +1622,11 @@
      0
     ],
     [
-     "av9mIcktn6A",
+     "uTzcrqnoa4I",
      4,
-     1,
-     44,
-     76.93,
+     0,
+     0,
+     0,
      0,
      0,
      0,
@@ -1627,6 +1638,17 @@
      0,
      0,
      0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "av9mIcktn6A",
+     4,
+     1,
+     44,
+     76.93,
      0,
      0,
      0,
@@ -1655,17 +1677,6 @@
      0
     ],
     [
-     "EuS8OlyY9I4",
-     2,
-     0,
-     21,
-     41.57,
-     0,
-     0,
-     0,
-     0
-    ],
-    [
      "iHu31E8tX_k",
      2,
      0,
@@ -1677,11 +1688,11 @@
      0
     ],
     [
-     "W1ytO_kbww0",
-     1,
+     "EuS8OlyY9I4",
+     2,
      0,
-     5,
-     7.31,
+     21,
+     41.57,
      0,
      0,
      0,
@@ -1721,6 +1732,17 @@
      0
     ],
     [
+     "W1ytO_kbww0",
+     1,
+     0,
+     5,
+     7.31,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
      "yMqRsiwMhhA",
      1,
      0,
@@ -1747,13 +1769,13 @@
   "traffic_sources": [
    [
     "NO_LINK_OTHER",
-    28,
-    282
+    29,
+    317
    ],
    [
     "SUBSCRIBER",
-    159,
-    116
+    192,
+    134
    ],
    [
     "YT_CHANNEL",
@@ -1762,18 +1784,18 @@
    ],
    [
     "YT_SEARCH",
-    461,
-    169
+    492,
+    211
    ],
    [
     "RELATED_VIDEO",
-    255,
-    3336
+    269,
+    3497
    ],
    [
     "YT_OTHER_PAGE",
-    113,
-    83
+    124,
+    87
    ],
    [
     "EXT_URL",
@@ -1792,8 +1814,8 @@
    ],
    [
     "SHORTS",
-    15325,
-    3583
+    16730,
+    3876
    ],
    [
     "HASHTAGS",
@@ -1815,159 +1837,131 @@
    "reports": 14,
    "by_video": {
     "-vkXqMrSljM": {
-     "impressions": 51,
-     "ctr": 0.0392
+     "impressions": 27,
+     "ctr": 0.0741
     },
     "0c8WvCxQWHY": {
-     "impressions": 22,
-     "ctr": 0.0909
+     "impressions": 20,
+     "ctr": 0.1
     },
     "1KUANk1uGtU": {
-     "impressions": 1168,
-     "ctr": 0.0377
+     "impressions": 977,
+     "ctr": 0.0399
     },
     "4X1O7pEr_FQ": {
-     "impressions": 38,
-     "ctr": 0.0
-    },
-    "50XkGgJ5nNQ": {
-     "impressions": 6,
+     "impressions": 39,
      "ctr": 0.0
     },
     "6sIg9L_rgX4": {
-     "impressions": 43,
+     "impressions": 30,
      "ctr": 0.0
-    },
-    "G03Sxe_dD9k": {
-     "impressions": 101,
-     "ctr": 0.0
-    },
-    "GBtH7GfGO3o": {
-     "impressions": 29,
-     "ctr": 0.0
-    },
-    "Hlr80lyDlwA": {
-     "impressions": 548,
-     "ctr": 0.0693
-    },
-    "IgQF68CMycI": {
-     "impressions": 10,
-     "ctr": 0.0
-    },
-    "LfoM0KAi8Yo": {
-     "impressions": 57,
-     "ctr": 0.1404
-    },
-    "OaGTyy0wnak": {
-     "impressions": 71,
-     "ctr": 0.0282
-    },
-    "P99Gu3GCZVw": {
-     "impressions": 218,
-     "ctr": 0.0459
-    },
-    "RWwPTGQF82o": {
-     "impressions": 12,
-     "ctr": 0.0
-    },
-    "SSC66rbZrHo": {
-     "impressions": 3,
-     "ctr": 0.0
-    },
-    "T5BjlD54g9Y": {
-     "impressions": 69,
-     "ctr": 0.0
-    },
-    "TPB5_pBj50U": {
-     "impressions": 79,
-     "ctr": 0.0506
-    },
-    "VrWOyOk0urw": {
-     "impressions": 8,
-     "ctr": 0.0
-    },
-    "YTQT_qQYGSQ": {
-     "impressions": 71,
-     "ctr": 0.0563
-    },
-    "bJgBuP716E8": {
-     "impressions": 6,
-     "ctr": 0.0
-    },
-    "cpWUzLRok5I": {
-     "impressions": 277,
-     "ctr": 0.0072
-    },
-    "jbZbPS173wc": {
-     "impressions": 94,
-     "ctr": 0.0426
-    },
-    "jfFx5yB_qFA": {
-     "impressions": 79,
-     "ctr": 0.0506
-    },
-    "l3Wsfo7k-Lo": {
-     "impressions": 56,
-     "ctr": 0.0
-    },
-    "nEf7KCM5Ors": {
-     "impressions": 1131,
-     "ctr": 0.0195
-    },
-    "rxGpPtUx0h4": {
-     "impressions": 29,
-     "ctr": 0.0
-    },
-    "tLN9SN6m6rs": {
-     "impressions": 220,
-     "ctr": 0.0273
-    },
-    "tb-0953M_T8": {
-     "impressions": 33,
-     "ctr": 0.0
-    },
-    "u2ShH8jAZb8": {
-     "impressions": 10,
-     "ctr": 0.0
-    },
-    "wBQ0FKBps08": {
-     "impressions": 212,
-     "ctr": 0.0142
-    },
-    "x1PAl5B-IeI": {
-     "impressions": 12,
-     "ctr": 0.0
-    },
-    "zscU0YPpl_Y": {
-     "impressions": 123,
-     "ctr": 0.0163
     },
     "EuS8OlyY9I4": {
      "impressions": 2,
      "ctr": 0.0
     },
-    "HSrgGisF3Kw": {
-     "impressions": 61,
+    "G03Sxe_dD9k": {
+     "impressions": 99,
      "ctr": 0.0
+    },
+    "GBtH7GfGO3o": {
+     "impressions": 27,
+     "ctr": 0.0
+    },
+    "HSrgGisF3Kw": {
+     "impressions": 63,
+     "ctr": 0.0
+    },
+    "Hlr80lyDlwA": {
+     "impressions": 533,
+     "ctr": 0.0619
+    },
+    "LfoM0KAi8Yo": {
+     "impressions": 61,
+     "ctr": 0.1311
+    },
+    "OaGTyy0wnak": {
+     "impressions": 64,
+     "ctr": 0.0
+    },
+    "P99Gu3GCZVw": {
+     "impressions": 185,
+     "ctr": 0.0432
     },
     "QICPYzghiNc": {
      "impressions": 8,
      "ctr": 0.0
+    },
+    "RWwPTGQF82o": {
+     "impressions": 15,
+     "ctr": 0.0
+    },
+    "T5BjlD54g9Y": {
+     "impressions": 62,
+     "ctr": 0.0
+    },
+    "TPB5_pBj50U": {
+     "impressions": 63,
+     "ctr": 0.0635
+    },
+    "YTQT_qQYGSQ": {
+     "impressions": 67,
+     "ctr": 0.0597
+    },
+    "cpWUzLRok5I": {
+     "impressions": 278,
+     "ctr": 0.0072
     },
     "eNV_qLTs2Js": {
      "impressions": 2,
      "ctr": 0.0
     },
     "hjctJRYvXwY": {
-     "impressions": 5,
+     "impressions": 6,
+     "ctr": 0.0
+    },
+    "jbZbPS173wc": {
+     "impressions": 94,
+     "ctr": 0.0426
+    },
+    "jfFx5yB_qFA": {
+     "impressions": 72,
+     "ctr": 0.0694
+    },
+    "l3Wsfo7k-Lo": {
+     "impressions": 44,
+     "ctr": 0.0
+    },
+    "nEf7KCM5Ors": {
+     "impressions": 1130,
+     "ctr": 0.0212
+    },
+    "rxGpPtUx0h4": {
+     "impressions": 24,
+     "ctr": 0.0
+    },
+    "tLN9SN6m6rs": {
+     "impressions": 158,
+     "ctr": 0.0
+    },
+    "tb-0953M_T8": {
+     "impressions": 28,
+     "ctr": 0.0
+    },
+    "u2ShH8jAZb8": {
+     "impressions": 8,
      "ctr": 0.0
     },
     "vfEdsxIDZZ0": {
-     "impressions": 45,
+     "impressions": 51,
      "ctr": 0.0
     },
+    "zscU0YPpl_Y": {
+     "impressions": 82,
+     "ctr": 0.0244
+    },
     "0xmoyQ9hZsc": {
-     "impressions": 116,
+     "impressions": 117,
      "ctr": 0.0
     },
     "2Ge5FJpCz3c": {
@@ -1975,7 +1969,7 @@
      "ctr": 0.0
     },
     "75qUKWJzcX0": {
-     "impressions": 38,
+     "impressions": 40,
      "ctr": 0.0
     },
     "Ay2qGG6UjqI": {
@@ -1986,6 +1980,10 @@
      "impressions": 4,
      "ctr": 0.0
     },
+    "IgQF68CMycI": {
+     "impressions": 2,
+     "ctr": 0.0
+    },
     "McdCi05pBzg": {
      "impressions": 4,
      "ctr": 0.0
@@ -1994,64 +1992,96 @@
      "impressions": 2,
      "ctr": 0.0
     },
-    "cJ6ZFKlq0Sg": {
-     "impressions": 3,
+    "VrWOyOk0urw": {
+     "impressions": 6,
      "ctr": 0.0
     },
-    "naMTvf4CXt0": {
+    "bJgBuP716E8": {
      "impressions": 2,
      "ctr": 0.0
     },
-    "C8TXhVDX4TU": {
-     "impressions": 134,
+    "cJ6ZFKlq0Sg": {
+     "impressions": 4,
      "ctr": 0.0
     },
+    "naMTvf4CXt0": {
+     "impressions": 3,
+     "ctr": 0.0
+    },
+    "wBQ0FKBps08": {
+     "impressions": 275,
+     "ctr": 0.0145
+    },
+    "x1PAl5B-IeI": {
+     "impressions": 4,
+     "ctr": 0.0
+    },
+    "C8TXhVDX4TU": {
+     "impressions": 158,
+     "ctr": 0.0063
+    },
     "V1kQP7DZLs8": {
-     "impressions": 118,
+     "impressions": 131,
      "ctr": 0.0
     },
     "J_uFe3-xCVQ": {
-     "impressions": 26,
+     "impressions": 32,
      "ctr": 0.0
     },
     "aNnsMZQJ3p8": {
-     "impressions": 23,
+     "impressions": 40,
      "ctr": 0.0
     },
     "uTzcrqnoa4I": {
      "impressions": 2,
      "ctr": 0.0
     },
+    "50XkGgJ5nNQ": {
+     "impressions": 7,
+     "ctr": 0.0
+    },
     "NtLVgTN1dKU": {
-     "impressions": 46,
+     "impressions": 81,
      "ctr": 0.0
     },
     "U2fo4PZtsoE": {
-     "impressions": 43,
+     "impressions": 62,
      "ctr": 0.0
     },
     "bWSnXlwtW04": {
-     "impressions": 6,
+     "impressions": 12,
      "ctr": 0.0
     },
     "30zzYRt_Mgk": {
-     "impressions": 479,
-     "ctr": 0.0251
+     "impressions": 950,
+     "ctr": 0.0242
     },
     "BuIp2REquPw": {
-     "impressions": 112,
-     "ctr": 0.0179
+     "impressions": 215,
+     "ctr": 0.0186
     },
     "iHu31E8tX_k": {
-     "impressions": 1,
+     "impressions": 2,
      "ctr": 0.0
     },
     "ugASzW14E9s": {
-     "impressions": 2372,
-     "ctr": 0.0126
+     "impressions": 2838,
+     "ctr": 0.0152
     },
     "GRAWb3Xymmw": {
-     "impressions": 5,
+     "impressions": 10,
+     "ctr": 0.0
+    },
+    "SSC66rbZrHo": {
+     "impressions": 1,
+     "ctr": 0.0
+    },
+    "NNK2KmB2RIg": {
+     "impressions": 2,
+     "ctr": 0.0
+    },
+    "SQcoms6EFOU": {
+     "impressions": 2,
      "ctr": 0.0
     }
    }
@@ -2061,35 +2091,61 @@
   "profile": {
    "username": "alphadog.studio",
    "followers_count": 164,
-   "media_count": 97,
+   "media_count": 99,
    "id": "28926959546914399"
   },
   "media": [
+   {
+    "id": "17994475794079439",
+    "at": "2026-11-24T20:14:43+0000",
+    "caption": "Zion National Park history: 75 horses for a president. 5 weeks later, he was dea",
+    "likes": 2,
+    "comments": 1,
+    "views": 167,
+    "reach": 146,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 4,
+    "ig_reels_avg_watch_time": 6660
+   },
+   {
+    "id": "18651296119039497",
+    "at": "2026-11-24T01:10:00+0000",
+    "caption": "Zion National Park history: 3,700 visitors in 1920. 55,000 by 1930.\n\nIn 1920 abo",
+    "likes": 2,
+    "comments": 1,
+    "views": 213,
+    "reach": 193,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 3,
+    "ig_reels_avg_watch_time": 6566
+   },
    {
     "id": "18102194156093368",
     "at": "2026-11-23T20:09:12+0000",
     "caption": "Zion National Park history: 1.1 miles. 6 windows. $500,000.\n\nThe Zion-Mount Carm",
     "likes": 0,
     "comments": 1,
-    "views": 202,
-    "reach": 181,
+    "views": 323,
+    "reach": 279,
     "saved": 0,
     "shares": 0,
     "total_interactions": 1,
-    "ig_reels_avg_watch_time": 8784
+    "ig_reels_avg_watch_time": 7545
    },
    {
     "id": "17958451176335761",
     "at": "2026-11-23T01:08:55+0000",
     "caption": "A logger strung fifty thousand feet of wire up Zion's east rim, and according to",
-    "likes": 3,
+    "likes": 4,
     "comments": 1,
-    "views": 547,
-    "reach": 506,
+    "views": 555,
+    "reach": 515,
     "saved": 0,
     "shares": 0,
-    "total_interactions": 5,
-    "ig_reels_avg_watch_time": 8484
+    "total_interactions": 7,
+    "ig_reels_avg_watch_time": 8422
    },
    {
     "id": "17991113517108830",
@@ -2123,12 +2179,12 @@
     "caption": "A lake that lasted seven hundred years, then filled itself in. When a mountainsi",
     "likes": 17,
     "comments": 1,
-    "views": 1886,
-    "reach": 1715,
+    "views": 1890,
+    "reach": 1719,
     "saved": 1,
     "shares": 1,
     "total_interactions": 22,
-    "ig_reels_avg_watch_time": 14826
+    "ig_reels_avg_watch_time": 14816
    },
    {
     "id": "17995762931901279",
@@ -2292,12 +2348,12 @@
     "caption": "At least seventeen people have died at Angels Landing in Zion. The last half mil",
     "likes": 31,
     "comments": 1,
-    "views": 2101,
-    "reach": 1885,
+    "views": 2103,
+    "reach": 1887,
     "saved": 7,
     "shares": 3,
     "total_interactions": 45,
-    "ig_reels_avg_watch_time": 12297
+    "ig_reels_avg_watch_time": 12289
    },
    {
     "id": "18093897830223298",
@@ -2396,12 +2452,12 @@
     "caption": "The survivors were not allowed to go home. They were sent to Kansas, then Oklaho",
     "likes": 3,
     "comments": 1,
-    "views": 197,
-    "reach": 183,
+    "views": 198,
+    "reach": 184,
     "saved": 0,
     "shares": 0,
     "total_interactions": 4,
-    "ig_reels_avg_watch_time": 11417
+    "ig_reels_avg_watch_time": 11547
    },
    {
     "id": "17954178228296215",
@@ -2688,32 +2744,6 @@
     "shares": 0,
     "total_interactions": 4,
     "ig_reels_avg_watch_time": 12850
-   },
-   {
-    "id": "18118286653974895",
-    "at": "2026-10-31T03:59:56+0000",
-    "caption": "By 1902 only 23 wild bison remained in Yellowstone, the last wild bison in North",
-    "likes": 4,
-    "comments": 1,
-    "views": 127,
-    "reach": 121,
-    "saved": 0,
-    "shares": 0,
-    "total_interactions": 5,
-    "ig_reels_avg_watch_time": 7761
-   },
-   {
-    "id": "17870425644693186",
-    "at": "2026-10-31T02:15:06+0000",
-    "caption": "A bacterium from a Yellowstone hot spring gave science the enzyme behind PCR, th",
-    "likes": 37,
-    "comments": 1,
-    "views": 921,
-    "reach": 795,
-    "saved": 6,
-    "shares": 0,
-    "total_interactions": 44,
-    "ig_reels_avg_watch_time": 16960
    }
   ]
  },
@@ -2724,6 +2754,22 @@
    "id": "103210859154410"
   },
   "posts": [
+   {
+    "id": "103210859154410_1128718573260468",
+    "at": "2026-11-24T20:15:26+0000",
+    "text": "Zion National Park history: 75 horses for a president. 5 weeks later, he was dea",
+    "reactions": 0,
+    "comments": 1,
+    "shares": 0
+   },
+   {
+    "id": "103210859154410_1127841636681495",
+    "at": "2026-11-24T01:10:40+0000",
+    "text": "Zion National Park history: 3,700 visitors in 1920. 55,000 by 1930.\n\nIn 1920 abo",
+    "reactions": 1,
+    "comments": 1,
+    "shares": 0
+   },
    {
     "id": "103210859154410_1127658753366450",
     "at": "2026-11-23T20:09:54+0000",
@@ -3107,32 +3153,34 @@
     "reactions": 0,
     "comments": 1,
     "shares": 0
-   },
-   {
-    "id": "103210859154410_1103265689139090",
-    "at": "2026-10-31T04:00:41+0000",
-    "text": "By 1902 only 23 wild bison remained in Yellowstone, the last wild bison in North",
-    "reactions": 1,
-    "comments": 1,
-    "shares": 0
-   },
-   {
-    "id": "103210859154410_1103186662480326",
-    "at": "2026-10-31T02:15:53+0000",
-    "text": "A bacterium from a Yellowstone hot spring gave science the enzyme behind PCR, th",
-    "reactions": 0,
-    "comments": 1,
-    "shares": 0
    }
   ],
   "reels": [
    {
+    "id": "2013923989993327",
+    "at": "2026-11-24T20:14:54+0000",
+    "text": "Zion National Park history: 75 horses for a president. 5 weeks later, he was dea",
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 671,
+    "post_video_followers": 0
+   },
+   {
+    "id": "1962099594950460",
+    "at": "2026-11-24T01:10:12+0000",
+    "text": "Zion National Park history: 3,700 visitors in 1920. 55,000 by 1930.\n\nIn 1920 abo",
+    "fb_reels_total_plays": 2,
+    "blue_reels_play_count": 2,
+    "post_video_avg_time_watched": 2038,
+    "post_video_followers": 0
+   },
+   {
     "id": "40484055087876260",
     "at": "2026-11-23T20:09:24+0000",
     "text": "Zion National Park history: 1.1 miles. 6 windows. $500,000.\n\nThe Zion-Mount Carm",
-    "fb_reels_total_plays": 0,
-    "blue_reels_play_count": 0,
-    "post_video_avg_time_watched": 0,
+    "fb_reels_total_plays": 1,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 1273,
     "post_video_followers": 0
    },
    {
@@ -3557,24 +3605,6 @@
     "blue_reels_play_count": 1,
     "post_video_avg_time_watched": 1568,
     "post_video_followers": 0
-   },
-   {
-    "id": "1615420762918568",
-    "at": "2026-10-31T04:00:07+0000",
-    "text": "By 1902 only 23 wild bison remained in Yellowstone, the last wild bison in North",
-    "fb_reels_total_plays": 2,
-    "blue_reels_play_count": 1,
-    "post_video_avg_time_watched": 41815,
-    "post_video_followers": 0
-   },
-   {
-    "id": "1172408145140494",
-    "at": "2026-10-31T02:15:15+0000",
-    "text": "A bacterium from a Yellowstone hot spring gave science the enzyme behind PCR, th",
-    "fb_reels_total_plays": 1,
-    "blue_reels_play_count": 1,
-    "post_video_avg_time_watched": 3784,
-    "post_video_followers": 0
    }
   ]
  },
@@ -3582,12 +3612,22 @@
   "handle": "alphadogstudio",
   "videos": [
    {
+    "id": "7711567643815316750",
+    "at": "2026-11-24T03:01:15Z",
+    "title": "Zion National Park history: 3,700 visitors in 1920. 55,000 by 1930. S...",
+    "duration": 30,
+    "views": 190,
+    "likes": 7,
+    "comments": 0,
+    "shares": 0
+   },
+   {
     "id": "7711521522552179982",
     "at": "2026-11-24T00:02:09Z",
     "title": "Zion National Park history: 1.1 miles. 6 windows. $500,000. Save this...",
     "duration": 40,
-    "views": 77,
-    "likes": 0,
+    "views": 177,
+    "likes": 2,
     "comments": 0,
     "shares": 0
    },
@@ -3596,7 +3636,7 @@
     "at": "2026-11-23T03:00:43Z",
     "title": "A logger strung fifty thousand feet of wire up Zion's east rim, and a...",
     "duration": 37,
-    "views": 128,
+    "views": 131,
     "likes": 3,
     "comments": 0,
     "shares": 0
@@ -3606,7 +3646,7 @@
     "at": "2026-11-23T00:01:09Z",
     "title": "When the two bores of Zion's tunnel finally met, a newspaper reported...",
     "duration": 34,
-    "views": 129,
+    "views": 146,
     "likes": 5,
     "comments": 0,
     "shares": 0
@@ -3616,7 +3656,7 @@
     "at": "2026-11-22T03:00:51Z",
     "title": "Two crews dug toward each other through a mile of solid sandstone in ...",
     "duration": 31,
-    "views": 144,
+    "views": 148,
     "likes": 2,
     "comments": 0,
     "shares": 0
@@ -3626,7 +3666,7 @@
     "at": "2026-11-21T03:01:30Z",
     "title": "A lake that lasted seven hundred years, then filled itself in. When a...",
     "duration": 33,
-    "views": 662,
+    "views": 684,
     "likes": 8,
     "comments": 0,
     "shares": 0
@@ -3636,7 +3676,7 @@
     "at": "2026-11-21T00:03:28Z",
     "title": "Five thousand tons of rock, and no visitor killed. In nineteen sixty-...",
     "duration": 25,
-    "views": 239,
+    "views": 240,
     "likes": 3,
     "comments": 0,
     "shares": 0
@@ -3646,7 +3686,7 @@
     "at": "2026-11-20T03:01:46Z",
     "title": "Fewer than eighty deer became six hundred. Two Oregon State ecologist...",
     "duration": 35,
-    "views": 118,
+    "views": 119,
     "likes": 3,
     "comments": 0,
     "shares": 0
@@ -3656,7 +3696,7 @@
     "at": "2026-11-20T00:04:06Z",
     "title": "A hundred and eight days. On January twenty-sixth, nineteen sixty-six...",
     "duration": 25,
-    "views": 111,
+    "views": 112,
     "likes": 1,
     "comments": 0,
     "shares": 0
@@ -3666,7 +3706,7 @@
     "at": "2026-11-19T03:01:30Z",
     "title": "Three thousand feet up, a slab of sandstone let go. August twenty-fou...",
     "duration": 35,
-    "views": 383,
+    "views": 387,
     "likes": 7,
     "comments": 0,
     "shares": 0
@@ -3676,7 +3716,7 @@
     "at": "2026-11-19T00:04:24Z",
     "title": "Two hundred and sixty-five thousand board feet of lumber, down a wire...",
     "duration": 23,
-    "views": 170,
+    "views": 171,
     "likes": 2,
     "comments": 0,
     "shares": 0
@@ -3686,7 +3726,7 @@
     "at": "2026-11-18T03:01:40Z",
     "title": "About four hundred and thirty people cut off, and one road gone. On t...",
     "duration": 34,
-    "views": 118,
+    "views": 120,
     "likes": 1,
     "comments": 0,
     "shares": 0
@@ -3696,7 +3736,7 @@
     "at": "2026-11-18T00:04:57Z",
     "title": "Ninety Hoover Dams. That's how much concrete you'd need to rebuild th...",
     "duration": 27,
-    "views": 198,
+    "views": 200,
     "likes": 3,
     "comments": 0,
     "shares": 0
@@ -3736,7 +3776,7 @@
     "at": "2026-11-15T03:01:18Z",
     "title": "In 2021 park crews hauled almost five tons of human waste off the toi...",
     "duration": 21,
-    "views": 8393,
+    "views": 8394,
     "likes": 21,
     "comments": 0,
     "shares": 3
@@ -3766,7 +3806,7 @@
     "at": "2026-11-14T00:02:44Z",
     "title": "On July 4, 2020, a dog died about an hour after playing in the Virgin...",
     "duration": 22,
-    "views": 112,
+    "views": 114,
     "likes": 1,
     "comments": 0,
     "shares": 0
@@ -3826,7 +3866,7 @@
     "at": "2026-11-11T03:01:28Z",
     "title": "The survivors were not allowed to go home. They were sent to Kansas, ...",
     "duration": 55,
-    "views": 184,
+    "views": 185,
     "likes": 6,
     "comments": 0,
     "shares": 0
@@ -3886,7 +3926,7 @@
     "at": "2026-11-08T03:01:12Z",
     "title": "May 7, 1894. A new law banned hunting in Yellowstone. It came too lat...",
     "duration": 43,
-    "views": 214,
+    "views": 215,
     "likes": 10,
     "comments": 0,
     "shares": 1
@@ -4096,7 +4136,7 @@
     "at": "2026-10-30T20:01:30Z",
     "title": "Is Yellowstone \"overdue\" for a super-eruption? The USGS says plainly:...",
     "duration": 57,
-    "views": 176,
+    "views": 177,
     "likes": 5,
     "comments": 0,
     "shares": 0
@@ -4116,7 +4156,7 @@
     "at": "2026-10-29T01:30:15Z",
     "title": "1886. The Army loaded nearly every Chiricahua Apache onto prison trai...",
     "duration": 33,
-    "views": 593,
+    "views": 594,
     "likes": 40,
     "comments": 4,
     "shares": 2
@@ -4126,7 +4166,7 @@
     "at": "2026-10-28T00:05:47Z",
     "title": "America just got its 64th national park, and most people have never h...",
     "duration": 30,
-    "views": 1844,
+    "views": 1851,
     "likes": 37,
     "comments": 2,
     "shares": 1
@@ -4136,12 +4176,12 @@
     "at": "2026-10-26T04:10:00Z",
     "title": "Found dead under an oak in 1882. Revolver in hand, boots gone. The ju...",
     "duration": 30,
-    "views": 1376,
+    "views": 1383,
     "likes": 61,
     "comments": 2,
     "shares": 1
    }
   ],
-  "listed": 73
+  "listed": 74
  }
 }
