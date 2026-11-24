@@ -4187,7 +4187,13 @@
   "at": "2026-11-24T20:00:00Z",
   "caption": "Zion National Park history: 75 horses for a president. 5 weeks later, he was dead.\n\nIn June 1923, President Warren Harding came to Cedar City, Utah, by train, and sheriffs rounded up about seventy-five horses to ride him up the canyon. He died five weeks later, but the visit had done its work.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): Zion, Part 3 — The Impossible Tunnel, by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
-  "thumb_ms": 1200
+  "thumb_ms": 1200,
+  "done": {
+   "media_id": "17994475794079439",
+   "permalink": "https://www.instagram.com/reel/DgIyenFDCOU/",
+   "posted": "2026-11-24T20:14:43+0000",
+   "at": "2026-11-24T20:14:15Z"
+  }
  },
  {
   "id": "z3s6_fb",
@@ -4195,7 +4201,42 @@
   "file": "zion_p3_z3s6.mp4",
   "at": "2026-11-24T20:00:00Z",
   "caption": "Zion National Park history: 75 horses for a president. 5 weeks later, he was dead.\n\nIn June 1923, President Warren Harding came to Cedar City, Utah, by train, and sheriffs rounded up about seventy-five horses to ride him up the canyon. He died five weeks later, but the visit had done its work.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): Zion, Part 3 — The Impossible Tunnel, by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
+  "done": {
+   "video_id": "2013923989993327",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1128718573260468"
+   },
+   "permalink": "https://www.facebook.com/reel/2013923989993327/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 12128932
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-24T20:14:54+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "2013923989993327_2430027281098793"
+   },
+   "status_errors": [
+    "HTTP 400 https://graph.facebook.com/v26.0/2013923989993327: {\"error\":{\"message\":\"Unsupported get request. Object with ID '2013923989993327' does not exist, cannot be loaded due to missing permissions,"
+   ],
+   "at": "2026-11-24T20:14:15Z"
+  }
  },
  {
   "id": "z3s7_ig",
