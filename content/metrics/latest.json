@@ -1,9 +1,9 @@
 {
- "at": "2026-11-23T21:24:24Z",
+ "at": "2026-11-24T00:59:58Z",
  "youtube": {
   "channel": {
    "viewCount": "16858",
-   "subscriberCount": "28",
+   "subscriberCount": "29",
    "hiddenSubscriberCount": false,
    "videoCount": "66"
   },
@@ -14,8 +14,8 @@
     "published": "2026-11-23T20:00:33Z",
     "privacy": "public",
     "duration": "PT41S",
-    "views": 98,
-    "likes": 3,
+    "views": 332,
+    "likes": 9,
     "comments": 2
    },
    {
@@ -84,8 +84,8 @@
     "published": "2026-11-23T01:00:39Z",
     "privacy": "public",
     "duration": "PT38S",
-    "views": 718,
-    "likes": 14,
+    "views": 730,
+    "likes": 15,
     "comments": 1
    },
    {
@@ -94,7 +94,7 @@
     "published": "2026-11-22T20:00:16Z",
     "privacy": "public",
     "duration": "PT35S",
-    "views": 458,
+    "views": 465,
     "likes": 5,
     "comments": 1
    },
@@ -164,7 +164,7 @@
     "published": "2026-11-22T01:00:17Z",
     "privacy": "public",
     "duration": "PT32S",
-    "views": 777,
+    "views": 783,
     "likes": 13,
     "comments": 3
    },
@@ -174,7 +174,7 @@
     "published": "2026-11-21T00:56:05Z",
     "privacy": "public",
     "duration": "PT33M54S",
-    "views": 92,
+    "views": 99,
     "likes": 2,
     "comments": 0
    },
@@ -284,8 +284,8 @@
     "published": "2026-11-20T18:00:31Z",
     "privacy": "public",
     "duration": "PT34S",
-    "views": 1046,
-    "likes": 19,
+    "views": 1048,
+    "likes": 20,
     "comments": 1
    },
    {
@@ -294,7 +294,7 @@
     "published": "2026-11-20T01:00:01Z",
     "privacy": "public",
     "duration": "PT26S",
-    "views": 984,
+    "views": 986,
     "likes": 12,
     "comments": 1
    },
@@ -969,7 +969,7 @@
     "comments": 1
    }
   ],
-  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/yt-analytics.readonly",
+  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/yt-analytics.readonly https://www.googleapis.com/auth/youtube.force-ssl",
   "analytics_by_video": {
    "columns": [
     "video",
@@ -1792,7 +1792,7 @@
    ],
    [
     "SHORTS",
-    15329,
+    15325,
     3583
    ],
    [
@@ -2071,12 +2071,12 @@
     "caption": "Zion National Park history: 1.1 miles. 6 windows. $500,000.\n\nThe Zion-Mount Carm",
     "likes": 0,
     "comments": 1,
-    "views": 134,
-    "reach": 120,
+    "views": 202,
+    "reach": 181,
     "saved": 0,
     "shares": 0,
     "total_interactions": 1,
-    "ig_reels_avg_watch_time": 7504
+    "ig_reels_avg_watch_time": 8784
    },
    {
     "id": "17958451176335761",
@@ -2084,12 +2084,12 @@
     "caption": "A logger strung fifty thousand feet of wire up Zion's east rim, and according to",
     "likes": 3,
     "comments": 1,
-    "views": 541,
-    "reach": 503,
+    "views": 547,
+    "reach": 506,
     "saved": 0,
     "shares": 0,
     "total_interactions": 5,
-    "ig_reels_avg_watch_time": 8486
+    "ig_reels_avg_watch_time": 8484
    },
    {
     "id": "17991113517108830",
@@ -2123,12 +2123,12 @@
     "caption": "A lake that lasted seven hundred years, then filled itself in. When a mountainsi",
     "likes": 17,
     "comments": 1,
-    "views": 1884,
-    "reach": 1713,
+    "views": 1886,
+    "reach": 1715,
     "saved": 1,
     "shares": 1,
     "total_interactions": 22,
-    "ig_reels_avg_watch_time": 14831
+    "ig_reels_avg_watch_time": 14826
    },
    {
     "id": "17995762931901279",
@@ -3582,11 +3582,21 @@
   "handle": "alphadogstudio",
   "videos": [
    {
+    "id": "7711521522552179982",
+    "at": "2026-11-24T00:02:09Z",
+    "title": "Zion National Park history: 1.1 miles. 6 windows. $500,000. Save this...",
+    "duration": 40,
+    "views": 77,
+    "likes": 0,
+    "comments": 0,
+    "shares": 0
+   },
+   {
     "id": "7711196409533435149",
     "at": "2026-11-23T03:00:43Z",
     "title": "A logger strung fifty thousand feet of wire up Zion's east rim, and a...",
     "duration": 37,
-    "views": 122,
+    "views": 128,
     "likes": 3,
     "comments": 0,
     "shares": 0
@@ -3596,8 +3606,8 @@
     "at": "2026-11-23T00:01:09Z",
     "title": "When the two bores of Zion's tunnel finally met, a newspaper reported...",
     "duration": 34,
-    "views": 126,
-    "likes": 3,
+    "views": 129,
+    "likes": 5,
     "comments": 0,
     "shares": 0
    },
@@ -3616,7 +3626,7 @@
     "at": "2026-11-21T03:01:30Z",
     "title": "A lake that lasted seven hundred years, then filled itself in. When a...",
     "duration": 33,
-    "views": 658,
+    "views": 662,
     "likes": 8,
     "comments": 0,
     "shares": 0
@@ -3626,7 +3636,7 @@
     "at": "2026-11-21T00:03:28Z",
     "title": "Five thousand tons of rock, and no visitor killed. In nineteen sixty-...",
     "duration": 25,
-    "views": 238,
+    "views": 239,
     "likes": 3,
     "comments": 0,
     "shares": 0
@@ -3866,7 +3876,7 @@
     "at": "2026-11-09T00:02:08Z",
     "title": "George Cowan was shot through the thigh, then in the head, and left f...",
     "duration": 47,
-    "views": 188,
+    "views": 189,
     "likes": 3,
     "comments": 0,
     "shares": 0
@@ -4126,12 +4136,12 @@
     "at": "2026-10-26T04:10:00Z",
     "title": "Found dead under an oak in 1882. Revolver in hand, boots gone. The ju...",
     "duration": 30,
-    "views": 1375,
+    "views": 1376,
     "likes": 61,
     "comments": 2,
     "shares": 1
    }
   ],
-  "listed": 72
+  "listed": 73
  }
 }
