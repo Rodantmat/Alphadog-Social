@@ -4415,14 +4415,29 @@
   "platform": "instagram_story",
   "file": "zion_p3_z3t6.mp4",
   "at": "2026-11-24T19:00:00Z",
-  "story_v2": "They saw the paintings. They doubted it was real. | zion3"
+  "story_v2": "They saw the paintings. They doubted it was real. | zion3",
+  "done": {
+   "media_id": "18086476736374813",
+   "story": true,
+   "at": "2026-11-24T19:09:41Z"
+  }
  },
  {
   "id": "z3t6_fb",
   "platform": "facebook_story",
   "file": "zion_p3_z3t6.mp4",
   "at": "2026-11-24T19:00:00Z",
-  "story_v2": "They saw the paintings. They doubted it was real. | zion3"
+  "story_v2": "They saw the paintings. They doubted it was real. | zion3",
+  "done": {
+   "video_id": "3155617717980603",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "1969333810718207"
+   },
+   "story": true,
+   "at": "2026-11-24T19:09:41Z"
+  }
  },
  {
   "id": "z3t7_ig",
