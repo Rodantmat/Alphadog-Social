@@ -4386,14 +4386,29 @@
   "platform": "instagram_story",
   "file": "zion_p3_z3t5.mp4",
   "at": "2026-11-24T02:00:00Z",
-  "story_v2": "Nearly 5 million visits a year | zion3"
+  "story_v2": "Nearly 5 million visits a year | zion3",
+  "done": {
+   "media_id": "18091769999285628",
+   "story": true,
+   "at": "2026-11-24T02:07:45Z"
+  }
  },
  {
   "id": "z3t5_fb",
   "platform": "facebook_story",
   "file": "zion_p3_z3t5.mp4",
   "at": "2026-11-24T02:00:00Z",
-  "story_v2": "Nearly 5 million visits a year | zion3"
+  "story_v2": "Nearly 5 million visits a year | zion3",
+  "done": {
+   "video_id": "1828903154825020",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "1689398709398609"
+   },
+   "story": true,
+   "at": "2026-11-24T02:07:45Z"
+  }
  },
  {
   "id": "z3t6_ig",
