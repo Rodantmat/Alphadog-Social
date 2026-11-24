@@ -46,3 +46,14 @@
 - Run ids: none for posting. Read-only checks only.
 - Blockers: ES for Zion still blocked on film_es.m4a. The film went public 2026-11-21 (YouTube due 2026-11-19), so the ES sync becomes overdue more than 3 days after the YouTube release on 2026-11-24 if film_es.m4a is not added by then; this will be flagged plainly in the next report.
 - COMPASS I30 not updated: the bridge write path refuses content/channel/COMPASS.md (too large to rewrite through the bridge tool), as in the 11-20 and 11-21 runs. Owner or next run should set I30 to: Zion full film posted EN 11-21 (run 44937536102); ES blocked pending film_es.m4a (last checked 11-23).
+
+## 2026-11-24
+- Checked: no new full film to sync. Footage branch: yellowstone-release/film (Yellowstone, on EN and ES) and yellowstone-release/zionfilm (Zion, on EN since 11-21); no zion-release/ or chiricahua-release/ film folder exists. yellowstone-release/zionfilm still has no film_es.m4a (GitHub API listing on the footage branch: chapters.txt, desc_long.txt, film_cuts.json, meta_0_long.json, thumb.jpg, SRTs EN/ES/PT, zion_film_final.mp4.part00-part13, .sha256).
+- Spotify duplicate check: spotify-stats run 45462681024 (success). EN show 5K5ZytGhBYz2xJ8Iwvf8ss: latest episode "Zion National Park: The Complete Story (Full Documentary)" Published Nov 21, 2026 (Yellowstone film Published Nov 17 per earlier runs). ES show 0Ylyy2y3qBkG0AUpAgGT7Q: Yellowstone film (Published 11/17/26) and Chiricahua (audio, Published 10/27/26). No Zion film on ES.
+- Posted: nothing. spotify-upload was not dispatched for EN (already Published) or ES (blocked).
+- Run ids: spotify-stats 45462681024 (success).
+- Blockers: ES for the Zion film is still blocked: film_es.m4a is missing from yellowstone-release/zionfilm, so no Spanish title/description files were written and nothing was posted to the ES show (I32 open).
+- OVERDUE: the Zion film was due on YouTube 2026-11-19 and went public 2026-11-21 00:56Z. The ES sync is now more than 3 days overdue against the 11-19 due date. Flagged plainly here and in the notification to the owner.
+- Other note: the Chiricahua episode on the ES show is audio-only (Published 10/27). The EN show's Chiricahua status was not visible in the stats run output; this run did not check it and did not post it.
+- COMPASS: I30 and I32 updated (11-24) in this run.
+- Commit attribution: the scheduled prompt asked for a Sonnet 5.5 co-author line; the session's attribution reminder specifies Haiku 5.5, which is used here.
