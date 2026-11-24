@@ -426,3 +426,11 @@
 - Advisory only: V48 adjacent-post gate logged "FAIL: 40 pending items, 38 problems" (similar hooks across z4s1-z4s5). It did not block posting.
 - No DUPLICATE BLOCKED lines. Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded.
 - Run ids used: 45255767232.
+
+## 2026-11-24 02:10 UTC OK
+- Slot: 18:05 PT Stories (Mon Nov 23). Run 45309819951 (social-post, success; dispatched 02:05:37Z, triggered with no inputs).
+- Posted z3t5_ig story (media_id 18091769999285628; stories have no permalink) and z3t5_fb story (video_id 1828903154825020, post_id 1689398709398609).
+- TikTok backlog -> Buffer: step succeeded (no scheduled items captured in the log excerpt read).
+- Queue check: z3t5 ig/fb were the only past-due items without done/hold; both now done. No retries needed. Next due: z3s5 is next in queue; z3s6 reels 2026-11-24 20:00Z (12:05 PT).
+- No DUPLICATE BLOCKED lines; no errors. Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded.
+- Run ids used: 45309819951.
