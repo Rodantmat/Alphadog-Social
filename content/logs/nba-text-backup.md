@@ -47,3 +47,6 @@ Slate 10 games; P3 status success (finished ~13:35 PT). Pipeline text step deliv
 
 ## 2026-11-24T21:34Z OK
 Slate 3 games; P3 status success (finished before 13:29 PT). Pipeline text step delivered: rodo and friend rows present in text_alert_log (both sent 21:32Z, pipeline format with accumulated line), no fallback needed. Slips exist (32 live, 7 Underdog, 1 Sleeper, 2 Betr, 3 Fliff). Earlier at 19:47Z an ALERT "P3 status unknown" was logged for rodo (pipeline, before P3 finished). Gmail sending not checked (no fallback needed). No fallback texts sent.
+
+## 2026-11-25T21:37Z OK
+Slate 9 games; P3 status success (run_key 2026-11-25, seen at 21:34Z). Pipeline text step delivered: rodo (21:35:28Z) and friend (21:35:24Z) rows present in text_alert_log, pipeline, no fallback needed. Slips exist (52 live, 12 Underdog, 13 Sleeper, 3 Betr, 14 Fliff). Friend snapshot step not needed (friend row exists). No fallback texts sent. Gmail not used (no send).
