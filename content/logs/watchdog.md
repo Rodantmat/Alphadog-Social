@@ -396,3 +396,10 @@
 - YouTube: 1 comment overdue (PeSqdBWNoz8, after 20:06Z) - triggered yt-followup 45482563747 (success): log "comment posted PeSqdBWNoz8 106 chars". 10 others not yet due (earliest w7bg-vJ-qoc, 2026-11-25T01:06Z).
 - yt-link latest success 45411689497 (2026-11-24 14:13Z), within 12h; 02:35Z backup dispatch not applicable at this run time (20:41Z), not dispatched.
 - Run ids: yt-followup 45482563747; social-post 45477220154, 45466649983, 45462332474, 45343253052; yt-link 45411689497.
+
+## 2026-11-25 01:40 UTC OK
+- All posts on time: 0 missed items in content/social_queue.json (224 checked, no holds, none past due unposted). All past-due TikTok backlog items (content/tiktok_backlog.json, due <= 2026-11-25T03:00Z) have "scheduled".
+- Latest social-post runs in window: 45523179926 (01:06Z) success; 45477220154 (Nov 24 20:06Z) success; 45466649983 (19:06Z) success. No social-post failures.
+- YouTube: 1 comment overdue (w7bg-vJ-qoc, after 01:06Z, ~34 min) - triggered yt-followup 45526922228 (success): log "comment posted w7bg-vJ-qoc 106 chars". 9 others not yet due (earliest 2026-11-25T20:06Z).
+- yt-link latest success 45411689497 (2026-11-24 14:13Z), within 12h; 02:35Z backup dispatch not applicable at this run time (01:40Z), not dispatched.
+- Run ids: yt-followup 45526922228; social-post 45523179926, 45477220154, 45466649983; yt-link 45411689497.
