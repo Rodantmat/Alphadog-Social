@@ -1,13 +1,33 @@
 {
- "at": "2026-11-24T23:04:30Z",
+ "at": "2026-11-25T20:37:40Z",
  "youtube": {
   "channel": {
-   "viewCount": "18951",
+   "viewCount": "19358",
    "subscriberCount": "29",
    "hiddenSubscriberCount": false,
-   "videoCount": "68"
+   "videoCount": "70"
   },
   "videos": [
+   {
+    "id": "AzJRwVa9nt8",
+    "title": "1904: nobody believed this painting was real #Shorts",
+    "published": "2026-11-25T20:00:08Z",
+    "privacy": "public",
+    "duration": "PT40S",
+    "views": 5,
+    "likes": 1,
+    "comments": 1
+   },
+   {
+    "id": "w7bg-vJ-qoc",
+    "title": "8 ranchers. 1 petition. A national monument #Shorts",
+    "published": "2026-11-25T01:00:20Z",
+    "privacy": "public",
+    "duration": "PT48S",
+    "views": 0,
+    "likes": 0,
+    "comments": 1
+   },
    {
     "id": "PeSqdBWNoz8",
     "title": "75 horses for a president. 5 weeks later, he was dead #Shorts",
@@ -24,7 +44,7 @@
     "published": "2026-11-24T01:00:17Z",
     "privacy": "public",
     "duration": "PT31S",
-    "views": 127,
+    "views": 159,
     "likes": 2,
     "comments": 4
    },
@@ -34,8 +54,8 @@
     "published": "2026-11-23T20:00:33Z",
     "privacy": "public",
     "duration": "PT41S",
-    "views": 724,
-    "likes": 13,
+    "views": 921,
+    "likes": 15,
     "comments": 3
    },
    {
@@ -104,7 +124,7 @@
     "published": "2026-11-23T01:00:39Z",
     "privacy": "public",
     "duration": "PT38S",
-    "views": 823,
+    "views": 835,
     "likes": 15,
     "comments": 1
    },
@@ -114,7 +134,7 @@
     "published": "2026-11-22T20:00:16Z",
     "privacy": "public",
     "duration": "PT35S",
-    "views": 532,
+    "views": 533,
     "likes": 6,
     "comments": 1
    },
@@ -139,32 +159,12 @@
     "comments": 0
    },
    {
-    "id": "AzJRwVa9nt8",
-    "title": "1904: nobody believed this painting was real #Shorts",
-    "published": "2026-11-22T09:03:24Z",
-    "privacy": "private",
-    "duration": "PT40S",
-    "views": 0,
-    "likes": 0,
-    "comments": 0
-   },
-   {
-    "id": "w7bg-vJ-qoc",
-    "title": "8 ranchers. 1 petition. A national monument #Shorts",
-    "published": "2026-11-22T09:03:21Z",
-    "privacy": "private",
-    "duration": "PT48S",
-    "views": 0,
-    "likes": 0,
-    "comments": 0
-   },
-   {
     "id": "GRAWb3Xymmw",
     "title": "146 tons of dynamite. No GPS. No lasers #Shorts",
     "published": "2026-11-22T01:00:17Z",
     "privacy": "public",
     "duration": "PT32S",
-    "views": 790,
+    "views": 792,
     "likes": 13,
     "comments": 3
    },
@@ -174,7 +174,7 @@
     "published": "2026-11-21T00:56:05Z",
     "privacy": "public",
     "duration": "PT33M54S",
-    "views": 107,
+    "views": 108,
     "likes": 2,
     "comments": 0
    },
@@ -284,7 +284,7 @@
     "published": "2026-11-20T18:00:31Z",
     "privacy": "public",
     "duration": "PT34S",
-    "views": 1048,
+    "views": 1050,
     "likes": 20,
     "comments": 1
    },
@@ -294,7 +294,7 @@
     "published": "2026-11-20T01:00:01Z",
     "privacy": "public",
     "duration": "PT26S",
-    "views": 987,
+    "views": 986,
     "likes": 12,
     "comments": 1
    },
@@ -324,7 +324,7 @@
     "published": "2026-11-18T18:00:09Z",
     "privacy": "public",
     "duration": "PT36S",
-    "views": 610,
+    "views": 619,
     "likes": 7,
     "comments": 1
    },
@@ -334,7 +334,7 @@
     "published": "2026-11-18T01:00:30Z",
     "privacy": "public",
     "duration": "PT24S",
-    "views": 1150,
+    "views": 1151,
     "likes": 15,
     "comments": 1
    },
@@ -444,7 +444,7 @@
     "published": "2026-11-12T20:00:33Z",
     "privacy": "public",
     "duration": "PT13M5S",
-    "views": 113,
+    "views": 118,
     "likes": 2,
     "comments": 2
    },
@@ -514,7 +514,7 @@
     "published": "2026-11-12T20:00:33Z",
     "privacy": "public",
     "duration": "PT13M5S",
-    "views": 113,
+    "views": 118,
     "likes": 2,
     "comments": 2
    },
@@ -544,7 +544,7 @@
     "published": "2026-11-08T16:00:33Z",
     "privacy": "public",
     "duration": "PT10M53S",
-    "views": 110,
+    "views": 123,
     "likes": 2,
     "comments": 1
    },
@@ -604,7 +604,7 @@
     "published": "2026-11-05T20:00:12Z",
     "privacy": "public",
     "duration": "PT34M55S",
-    "views": 163,
+    "views": 164,
     "likes": 2,
     "comments": 4
    },
@@ -774,7 +774,7 @@
     "published": "2026-11-01T00:00:11Z",
     "privacy": "public",
     "duration": "PT46S",
-    "views": 11,
+    "views": 12,
     "likes": 0,
     "comments": 1
    },
@@ -969,7 +969,7 @@
     "comments": 1
    }
   ],
-  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/yt-analytics.readonly",
+  "scopes": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/yt-analytics.readonly",
   "analytics_by_video": {
    "columns": [
     "video",
@@ -1029,11 +1029,11 @@
     ],
     [
      "BuIp2REquPw",
-     1046,
+     1048,
      280,
      23,
-     68.67,
-     19,
+     68.75,
+     20,
      1,
      2,
      1
@@ -1062,10 +1062,10 @@
     ],
     [
      "U2fo4PZtsoE",
-     997,
+     998,
      286,
      25,
-     70.95,
+     70.98,
      23,
      1,
      0,
@@ -1073,36 +1073,36 @@
     ],
     [
      "NtLVgTN1dKU",
-     979,
-     149,
+     986,
+     150,
      15,
-     59.42000000000001,
+     59.07,
      12,
      1,
      0,
      1
     ],
     [
-     "GRAWb3Xymmw",
-     778,
-     125,
-     16,
-     52.95000000000001,
-     12,
-     2,
-     0,
-     2
-    ],
-    [
      "SQcoms6EFOU",
-     666,
-     154,
+     810,
+     182,
      21,
-     56.7,
-     14,
+     55.3,
+     15,
      0,
      0,
      1
+    ],
+    [
+     "GRAWb3Xymmw",
+     798,
+     128,
+     16,
+     52.93,
+     13,
+     2,
+     0,
+     2
     ],
     [
      "FtSXblbpc3U",
@@ -1117,11 +1117,22 @@
     ],
     [
      "J_uFe3-xCVQ",
-     608,
+     609,
      203,
      29,
      80.87,
      7,
+     1,
+     0,
+     0
+    ],
+    [
+     "G3-diOgRqZ4",
+     564,
+     129,
+     19,
+     48.64,
+     13,
      1,
      0,
      0
@@ -1133,6 +1144,17 @@
      17,
      61.809999999999995,
      9,
+     0,
+     0,
+     0
+    ],
+    [
+     "NNK2KmB2RIg",
+     523,
+     112,
+     19,
+     54.83,
+     5,
      0,
      0,
      0
@@ -1158,17 +1180,6 @@
      1,
      0,
      2
-    ],
-    [
-     "NNK2KmB2RIg",
-     444,
-     96,
-     19,
-     55.86,
-     5,
-     0,
-     0,
-     0
     ],
     [
      "0c8WvCxQWHY",
@@ -1238,10 +1249,10 @@
     ],
     [
      "nEf7KCM5Ors",
-     156,
-     2532,
-     1315,
-     62.81,
+     161,
+     2593,
+     1302,
+     62.14999999999999,
      2,
      0,
      0,
@@ -1257,6 +1268,39 @@
      0,
      0,
      0
+    ],
+    [
+     "UIScDxTtq3k",
+     115,
+     14,
+     16,
+     52.459999999999994,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     "1KUANk1uGtU",
+     112,
+     340,
+     260,
+     33.19,
+     2,
+     1,
+     2,
+     1
+    ],
+    [
+     "Hlr80lyDlwA",
+     109,
+     315,
+     211,
+     32.45,
+     2,
+     0,
+     0,
+     1
     ],
     [
      "2Ge5FJpCz3c",
@@ -1281,33 +1325,22 @@
      0
     ],
     [
-     "1KUANk1uGtU",
-     106,
-     299,
-     250,
-     31.94,
+     "ugASzW14E9s",
+     107,
+     557,
+     457,
+     22.48,
      2,
+     0,
      1,
-     2,
-     0
-    ],
-    [
-     "Hlr80lyDlwA",
-     100,
-     276,
-     209,
-     32.15,
-     2,
-     0,
-     0,
      1
     ],
     [
      "LfoM0KAi8Yo",
-     95,
+     96,
      550,
-     514,
-     34.06,
+     507,
+     33.54,
      3,
      0,
      0,
@@ -1315,7 +1348,7 @@
     ],
     [
      "cpWUzLRok5I",
-     95,
+     96,
      12,
      22,
      64.47,
@@ -1323,17 +1356,6 @@
      1,
      0,
      0
-    ],
-    [
-     "ugASzW14E9s",
-     91,
-     545,
-     467,
-     22.96,
-     2,
-     0,
-     1,
-     1
     ],
     [
      "GBtH7GfGO3o",
@@ -1347,22 +1369,22 @@
      1
     ],
     [
-     "vfEdsxIDZZ0",
+     "tb-0953M_T8",
      85,
      13,
-     16,
-     49.87,
+     15,
+     62.53999999999999,
      0,
      1,
      0,
      0
     ],
     [
-     "tb-0953M_T8",
+     "vfEdsxIDZZ0",
      85,
      13,
-     15,
-     62.53999999999999,
+     16,
+     49.87,
      0,
      1,
      0,
@@ -1459,9 +1481,9 @@
     [
      "30zzYRt_Mgk",
      21,
-     86,
-     320,
-     50.32,
+     88,
+     328,
+     51.56,
      1,
      0,
      0,
@@ -1479,17 +1501,6 @@
      0
     ],
     [
-     "tLN9SN6m6rs",
-     20,
-     2,
-     19,
-     58.02,
-     0,
-     1,
-     0,
-     0
-    ],
-    [
      "eNV_qLTs2Js",
      20,
      2,
@@ -1497,6 +1508,17 @@
      66.15,
      0,
      0,
+     0,
+     0
+    ],
+    [
+     "tLN9SN6m6rs",
+     20,
+     2,
+     19,
+     58.02,
+     0,
+     1,
      0,
      0
     ],
@@ -1567,6 +1589,17 @@
      0
     ],
     [
+     "bWSnXlwtW04",
+     11,
+     1,
+     22,
+     49.46,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
      "VrWOyOk0urw",
      9,
      1,
@@ -1589,44 +1622,11 @@
      0
     ],
     [
-     "bWSnXlwtW04",
-     8,
-     1,
-     19,
-     43.41,
-     0,
-     0,
-     0,
-     0
-    ],
-    [
      "x1PAl5B-IeI",
      5,
      1,
      24,
      50.36999999999999,
-     0,
-     0,
-     0,
-     0
-    ],
-    [
-     "McdCi05pBzg",
-     4,
-     0,
-     5,
-     13.01,
-     0,
-     0,
-     0,
-     0
-    ],
-    [
-     "uTzcrqnoa4I",
-     4,
-     0,
-     0,
-     0,
      0,
      0,
      0,
@@ -1644,11 +1644,33 @@
      0
     ],
     [
+     "McdCi05pBzg",
+     4,
+     0,
+     5,
+     13.01,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
      "av9mIcktn6A",
      4,
      1,
      44,
      76.93,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "uTzcrqnoa4I",
+     4,
+     0,
+     0,
+     0,
      0,
      0,
      0,
@@ -1677,22 +1699,22 @@
      0
     ],
     [
-     "iHu31E8tX_k",
+     "EuS8OlyY9I4",
      2,
      0,
-     0,
-     0,
+     21,
+     41.57,
      0,
      0,
      0,
      0
     ],
     [
-     "EuS8OlyY9I4",
+     "iHu31E8tX_k",
      2,
      0,
-     21,
-     41.57,
+     0,
+     0,
      0,
      0,
      0,
@@ -1710,7 +1732,7 @@
      0
     ],
     [
-     "ShKXhJameWs",
+     "7TWuloRJytw",
      1,
      0,
      0,
@@ -1722,6 +1744,17 @@
     ],
     [
      "M7G6z5k_mm0",
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     "ShKXhJameWs",
      1,
      0,
      0,
@@ -1752,17 +1785,6 @@
      0,
      0,
      0
-    ],
-    [
-     "7TWuloRJytw",
-     1,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0
     ]
    ]
   },
@@ -1770,31 +1792,31 @@
    [
     "NO_LINK_OTHER",
     29,
-    317
+    319
    ],
    [
     "SUBSCRIBER",
-    192,
-    134
+    214,
+    149
    ],
    [
     "YT_CHANNEL",
-    108,
-    156
+    110,
+    158
    ],
    [
     "YT_SEARCH",
-    492,
-    211
+    503,
+    213
    ],
    [
     "RELATED_VIDEO",
-    269,
-    3497
+    281,
+    3633
    ],
    [
     "YT_OTHER_PAGE",
-    124,
+    127,
     87
    ],
    [
@@ -1814,12 +1836,12 @@
    ],
    [
     "SHORTS",
-    16730,
-    3876
+    17650,
+    4066
    ],
    [
     "HASHTAGS",
-    3,
+    4,
     0
    ],
    [
@@ -2091,22 +2113,48 @@
   "profile": {
    "username": "alphadog.studio",
    "followers_count": 164,
-   "media_count": 99,
+   "media_count": 101,
    "id": "28926959546914399"
   },
   "media": [
    {
+    "id": "18084272645361052",
+    "at": "2026-11-25T20:10:51+0000",
+    "caption": "Zion National Park history: 1904: nobody believed this painting was real\n\nIn the",
+    "likes": 1,
+    "comments": 1,
+    "views": 12,
+    "reach": 2,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 3,
+    "ig_reels_avg_watch_time": 1984
+   },
+   {
+    "id": "17920021770516608",
+    "at": "2026-11-25T01:12:02+0000",
+    "caption": "Zion National Park history: 8 ranchers. 1 petition. A national monument.\n\nIn 190",
+    "likes": 1,
+    "comments": 1,
+    "views": 152,
+    "reach": 141,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 2,
+    "ig_reels_avg_watch_time": 8770
+   },
+   {
     "id": "17994475794079439",
     "at": "2026-11-24T20:14:43+0000",
     "caption": "Zion National Park history: 75 horses for a president. 5 weeks later, he was dea",
-    "likes": 2,
+    "likes": 3,
     "comments": 1,
-    "views": 168,
-    "reach": 146,
+    "views": 201,
+    "reach": 178,
     "saved": 0,
     "shares": 0,
-    "total_interactions": 4,
-    "ig_reels_avg_watch_time": 6792
+    "total_interactions": 5,
+    "ig_reels_avg_watch_time": 7575
    },
    {
     "id": "18651296119039497",
@@ -2114,12 +2162,12 @@
     "caption": "Zion National Park history: 3,700 visitors in 1920. 55,000 by 1930.\n\nIn 1920 abo",
     "likes": 2,
     "comments": 1,
-    "views": 213,
-    "reach": 193,
+    "views": 216,
+    "reach": 197,
     "saved": 0,
     "shares": 0,
     "total_interactions": 3,
-    "ig_reels_avg_watch_time": 6566
+    "ig_reels_avg_watch_time": 6498
    },
    {
     "id": "18102194156093368",
@@ -2127,12 +2175,12 @@
     "caption": "Zion National Park history: 1.1 miles. 6 windows. $500,000.\n\nThe Zion-Mount Carm",
     "likes": 0,
     "comments": 1,
-    "views": 323,
-    "reach": 279,
+    "views": 324,
+    "reach": 280,
     "saved": 0,
     "shares": 0,
     "total_interactions": 1,
-    "ig_reels_avg_watch_time": 7545
+    "ig_reels_avg_watch_time": 7530
    },
    {
     "id": "17958451176335761",
@@ -2140,12 +2188,12 @@
     "caption": "A logger strung fifty thousand feet of wire up Zion's east rim, and according to",
     "likes": 4,
     "comments": 1,
-    "views": 555,
-    "reach": 515,
+    "views": 559,
+    "reach": 518,
     "saved": 0,
     "shares": 0,
     "total_interactions": 7,
-    "ig_reels_avg_watch_time": 8422
+    "ig_reels_avg_watch_time": 8379
    },
    {
     "id": "17991113517108830",
@@ -2153,12 +2201,12 @@
     "caption": "When the two bores of Zion's tunnel finally met, a newspaper reported they were ",
     "likes": 3,
     "comments": 1,
-    "views": 443,
-    "reach": 406,
+    "views": 446,
+    "reach": 409,
     "saved": 0,
     "shares": 0,
     "total_interactions": 5,
-    "ig_reels_avg_watch_time": 15131
+    "ig_reels_avg_watch_time": 15048
    },
    {
     "id": "18662911897009668",
@@ -2166,12 +2214,12 @@
     "caption": "Two crews dug toward each other through a mile of solid sandstone in Zion, using",
     "likes": 6,
     "comments": 1,
-    "views": 385,
-    "reach": 338,
+    "views": 388,
+    "reach": 340,
     "saved": 1,
     "shares": 0,
     "total_interactions": 9,
-    "ig_reels_avg_watch_time": 9368
+    "ig_reels_avg_watch_time": 9345
    },
    {
     "id": "17921000661536177",
@@ -2179,12 +2227,12 @@
     "caption": "A lake that lasted seven hundred years, then filled itself in. When a mountainsi",
     "likes": 17,
     "comments": 1,
-    "views": 1890,
-    "reach": 1719,
+    "views": 1891,
+    "reach": 1720,
     "saved": 1,
     "shares": 1,
     "total_interactions": 22,
-    "ig_reels_avg_watch_time": 14816
+    "ig_reels_avg_watch_time": 14808
    },
    {
     "id": "17995762931901279",
@@ -2205,12 +2253,12 @@
     "caption": "Fewer than eighty deer became six hundred. Two Oregon State ecologists argue tha",
     "likes": 7,
     "comments": 1,
-    "views": 392,
-    "reach": 367,
+    "views": 393,
+    "reach": 368,
     "saved": 1,
     "shares": 0,
     "total_interactions": 10,
-    "ig_reels_avg_watch_time": 10274
+    "ig_reels_avg_watch_time": 10252
    },
    {
     "id": "18135357649700925",
@@ -2257,12 +2305,12 @@
     "caption": "About four hundred and thirty people cut off, and one road gone. On the night of",
     "likes": 1,
     "comments": 1,
-    "views": 166,
-    "reach": 156,
+    "views": 167,
+    "reach": 157,
     "saved": 0,
     "shares": 0,
     "total_interactions": 2,
-    "ig_reels_avg_watch_time": 6966
+    "ig_reels_avg_watch_time": 6958
    },
    {
     "id": "18166314229497442",
@@ -2270,12 +2318,12 @@
     "caption": "Ninety Hoover Dams. That's how much concrete you'd need to rebuild the mountains",
     "likes": 6,
     "comments": 1,
-    "views": 512,
-    "reach": 459,
+    "views": 513,
+    "reach": 460,
     "saved": 0,
     "shares": 1,
     "total_interactions": 9,
-    "ig_reels_avg_watch_time": 10148
+    "ig_reels_avg_watch_time": 10134
    },
    {
     "id": "18102651209398802",
@@ -2335,12 +2383,12 @@
     "caption": "Since 2022 you need a lottery permit to climb Angels Landing. Nearly 400,000 wer",
     "likes": 14,
     "comments": 1,
-    "views": 658,
-    "reach": 581,
+    "views": 661,
+    "reach": 582,
     "saved": 2,
     "shares": 0,
     "total_interactions": 19,
-    "ig_reels_avg_watch_time": 8763
+    "ig_reels_avg_watch_time": 8823
    },
    {
     "id": "18451682179120205",
@@ -2348,12 +2396,12 @@
     "caption": "At least seventeen people have died at Angels Landing in Zion. The last half mil",
     "likes": 31,
     "comments": 1,
-    "views": 2103,
+    "views": 2106,
     "reach": 1887,
     "saved": 7,
     "shares": 3,
     "total_interactions": 45,
-    "ig_reels_avg_watch_time": 12289
+    "ig_reels_avg_watch_time": 12279
    },
    {
     "id": "18093897830223298",
@@ -2413,12 +2461,12 @@
     "caption": "On September 14, 2015, a storm over Zion National Park sent a flash flood throug",
     "likes": 3,
     "comments": 1,
-    "views": 216,
-    "reach": 183,
+    "views": 217,
+    "reach": 184,
     "saved": 0,
     "shares": 0,
     "total_interactions": 4,
-    "ig_reels_avg_watch_time": 8587
+    "ig_reels_avg_watch_time": 8565
    },
    {
     "id": "17992652076079802",
@@ -2718,32 +2766,6 @@
     "shares": 0,
     "total_interactions": 6,
     "ig_reels_avg_watch_time": 10266
-   },
-   {
-    "id": "17885314107523107",
-    "at": "2026-10-31T19:31:26+0000",
-    "caption": "Steamboat, the tallest active geyser in the world, is \"entirely unpredictable.\" ",
-    "likes": 3,
-    "comments": 1,
-    "views": 123,
-    "reach": 109,
-    "saved": 0,
-    "shares": 0,
-    "total_interactions": 4,
-    "ig_reels_avg_watch_time": 7655
-   },
-   {
-    "id": "18480467539114616",
-    "at": "2026-10-31T19:30:10+0000",
-    "caption": "Yellowstone's most likely \"eruption\" is steam, not lava. Clogged underground pip",
-    "likes": 3,
-    "comments": 1,
-    "views": 241,
-    "reach": 209,
-    "saved": 0,
-    "shares": 0,
-    "total_interactions": 4,
-    "ig_reels_avg_watch_time": 12850
    }
   ]
  },
@@ -2754,6 +2776,22 @@
    "id": "103210859154410"
   },
   "posts": [
+   {
+    "id": "103210859154410_1129814896484169",
+    "at": "2026-11-25T20:11:35+0000",
+    "text": "Zion National Park history: 1904: nobody believed this painting was real\n\nIn the",
+    "reactions": 0,
+    "comments": 1,
+    "shares": 0
+   },
+   {
+    "id": "103210859154410_1128923086573350",
+    "at": "2026-11-25T01:12:43+0000",
+    "text": "Zion National Park history: 8 ranchers. 1 petition. A national monument.\n\nIn 190",
+    "reactions": 1,
+    "comments": 1,
+    "shares": 0
+   },
    {
     "id": "103210859154410_1128718573260468",
     "at": "2026-11-24T20:15:26+0000",
@@ -3137,25 +3175,27 @@
     "reactions": 1,
     "comments": 1,
     "shares": 0
-   },
-   {
-    "id": "103210859154410_1103972702401722",
-    "at": "2026-10-31T19:32:03+0000",
-    "text": "Steamboat, the tallest active geyser in the world, is \"entirely unpredictable.\" ",
-    "reactions": 0,
-    "comments": 1,
-    "shares": 0
-   },
-   {
-    "id": "103210859154410_1103971822401810",
-    "at": "2026-10-31T19:30:51+0000",
-    "text": "Yellowstone's most likely \"eruption\" is steam, not lava. Clogged underground pip",
-    "reactions": 0,
-    "comments": 1,
-    "shares": 0
    }
   ],
   "reels": [
+   {
+    "id": "1686052222867879",
+    "at": "2026-11-25T20:11:03+0000",
+    "text": "Zion National Park history: 1904: nobody believed this painting was real\n\nIn the",
+    "fb_reels_total_plays": 0,
+    "blue_reels_play_count": 0,
+    "post_video_avg_time_watched": 0,
+    "post_video_followers": 0
+   },
+   {
+    "id": "1836079010877039",
+    "at": "2026-11-25T01:12:11+0000",
+    "text": "Zion National Park history: 8 ranchers. 1 petition. A national monument.\n\nIn 190",
+    "fb_reels_total_plays": 2,
+    "blue_reels_play_count": 1,
+    "post_video_avg_time_watched": 7534,
+    "post_video_followers": 0
+   },
    {
     "id": "2013923989993327",
     "at": "2026-11-24T20:14:54+0000",
@@ -3587,24 +3627,6 @@
     "blue_reels_play_count": 2,
     "post_video_avg_time_watched": 8667,
     "post_video_followers": 0
-   },
-   {
-    "id": "1164334449452804",
-    "at": "2026-10-31T19:31:36+0000",
-    "text": "Steamboat, the tallest active geyser in the world, is \"entirely unpredictable.\" ",
-    "fb_reels_total_plays": 1,
-    "blue_reels_play_count": 1,
-    "post_video_avg_time_watched": 2599,
-    "post_video_followers": 0
-   },
-   {
-    "id": "1001930895526390",
-    "at": "2026-10-31T19:30:23+0000",
-    "text": "Yellowstone's most likely \"eruption\" is steam, not lava. Clogged underground pip",
-    "fb_reels_total_plays": 1,
-    "blue_reels_play_count": 1,
-    "post_video_avg_time_watched": 1568,
-    "post_video_followers": 0
    }
   ]
  },
@@ -3612,12 +3634,32 @@
   "handle": "alphadogstudio",
   "videos": [
    {
+    "id": "7711938760706968845",
+    "at": "2026-11-25T03:01:21Z",
+    "title": "Zion National Park history: 8 ranchers. 1 petition. A national monume...",
+    "duration": 47,
+    "views": 336,
+    "likes": 17,
+    "comments": 1,
+    "shares": 3
+   },
+   {
+    "id": "7711892764845149454",
+    "at": "2026-11-25T00:02:55Z",
+    "title": "Zion National Park history: 75 horses for a president. 5 weeks later,...",
+    "duration": 43,
+    "views": 4,
+    "likes": 0,
+    "comments": 0,
+    "shares": 0
+   },
+   {
     "id": "7711567643815316750",
     "at": "2026-11-24T03:01:15Z",
     "title": "Zion National Park history: 3,700 visitors in 1920. 55,000 by 1930. S...",
     "duration": 30,
-    "views": 190,
-    "likes": 7,
+    "views": 224,
+    "likes": 11,
     "comments": 0,
     "shares": 0
    },
@@ -3626,8 +3668,8 @@
     "at": "2026-11-24T00:02:09Z",
     "title": "Zion National Park history: 1.1 miles. 6 windows. $500,000. Save this...",
     "duration": 40,
-    "views": 177,
-    "likes": 2,
+    "views": 193,
+    "likes": 4,
     "comments": 0,
     "shares": 0
    },
@@ -3636,7 +3678,7 @@
     "at": "2026-11-23T03:00:43Z",
     "title": "A logger strung fifty thousand feet of wire up Zion's east rim, and a...",
     "duration": 37,
-    "views": 131,
+    "views": 134,
     "likes": 3,
     "comments": 0,
     "shares": 0
@@ -3646,7 +3688,7 @@
     "at": "2026-11-23T00:01:09Z",
     "title": "When the two bores of Zion's tunnel finally met, a newspaper reported...",
     "duration": 34,
-    "views": 146,
+    "views": 149,
     "likes": 5,
     "comments": 0,
     "shares": 0
@@ -3656,7 +3698,7 @@
     "at": "2026-11-22T03:00:51Z",
     "title": "Two crews dug toward each other through a mile of solid sandstone in ...",
     "duration": 31,
-    "views": 148,
+    "views": 152,
     "likes": 2,
     "comments": 0,
     "shares": 0
@@ -3666,7 +3708,7 @@
     "at": "2026-11-21T03:01:30Z",
     "title": "A lake that lasted seven hundred years, then filled itself in. When a...",
     "duration": 33,
-    "views": 685,
+    "views": 704,
     "likes": 8,
     "comments": 0,
     "shares": 0
@@ -3676,7 +3718,7 @@
     "at": "2026-11-21T00:03:28Z",
     "title": "Five thousand tons of rock, and no visitor killed. In nineteen sixty-...",
     "duration": 25,
-    "views": 240,
+    "views": 242,
     "likes": 3,
     "comments": 0,
     "shares": 0
@@ -3686,7 +3728,7 @@
     "at": "2026-11-20T03:01:46Z",
     "title": "Fewer than eighty deer became six hundred. Two Oregon State ecologist...",
     "duration": 35,
-    "views": 119,
+    "views": 121,
     "likes": 3,
     "comments": 0,
     "shares": 0
@@ -3696,7 +3738,7 @@
     "at": "2026-11-20T00:04:06Z",
     "title": "A hundred and eight days. On January twenty-sixth, nineteen sixty-six...",
     "duration": 25,
-    "views": 112,
+    "views": 114,
     "likes": 1,
     "comments": 0,
     "shares": 0
@@ -3706,7 +3748,7 @@
     "at": "2026-11-19T03:01:30Z",
     "title": "Three thousand feet up, a slab of sandstone let go. August twenty-fou...",
     "duration": 35,
-    "views": 387,
+    "views": 390,
     "likes": 7,
     "comments": 0,
     "shares": 0
@@ -3716,7 +3758,7 @@
     "at": "2026-11-19T00:04:24Z",
     "title": "Two hundred and sixty-five thousand board feet of lumber, down a wire...",
     "duration": 23,
-    "views": 171,
+    "views": 173,
     "likes": 2,
     "comments": 0,
     "shares": 0
@@ -3726,7 +3768,7 @@
     "at": "2026-11-18T03:01:40Z",
     "title": "About four hundred and thirty people cut off, and one road gone. On t...",
     "duration": 34,
-    "views": 120,
+    "views": 122,
     "likes": 1,
     "comments": 0,
     "shares": 0
@@ -3736,7 +3778,7 @@
     "at": "2026-11-18T00:04:57Z",
     "title": "Ninety Hoover Dams. That's how much concrete you'd need to rebuild th...",
     "duration": 27,
-    "views": 200,
+    "views": 202,
     "likes": 3,
     "comments": 0,
     "shares": 0
@@ -3776,7 +3818,7 @@
     "at": "2026-11-15T03:01:18Z",
     "title": "In 2021 park crews hauled almost five tons of human waste off the toi...",
     "duration": 21,
-    "views": 8394,
+    "views": 8395,
     "likes": 21,
     "comments": 0,
     "shares": 3
@@ -3856,7 +3898,7 @@
     "at": "2026-11-12T00:04:12Z",
     "title": "On September 14, 2015, a storm over Zion National Park sent a flash f...",
     "duration": 23,
-    "views": 112,
+    "views": 114,
     "likes": 1,
     "comments": 0,
     "shares": 0
@@ -4166,7 +4208,7 @@
     "at": "2026-10-28T00:05:47Z",
     "title": "America just got its 64th national park, and most people have never h...",
     "duration": 30,
-    "views": 1851,
+    "views": 1853,
     "likes": 37,
     "comments": 2,
     "shares": 1
@@ -4176,12 +4218,12 @@
     "at": "2026-10-26T04:10:00Z",
     "title": "Found dead under an oak in 1882. Revolver in hand, boots gone. The ju...",
     "duration": 30,
-    "views": 1383,
+    "views": 1390,
     "likes": 61,
     "comments": 2,
     "shares": 1
    }
   ],
-  "listed": 74
+  "listed": 76
  }
 }
