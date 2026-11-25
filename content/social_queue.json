@@ -4302,7 +4302,13 @@
   "at": "2026-11-25T20:00:00Z",
   "caption": "Zion National Park history: 1904: nobody believed this painting was real\n\nIn the summer of 1903 painter Frederick Dellenbaugh came to Zion. His canvases were shown at the 1904 World's Fair in St.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): Zion, Part 3 — The Impossible Tunnel, by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
-  "thumb_ms": 1200
+  "thumb_ms": 1200,
+  "done": {
+   "media_id": "18084272645361052",
+   "permalink": "https://www.instagram.com/reel/DgLW006KRJL/",
+   "posted": "2026-11-25T20:10:51+0000",
+   "at": "2026-11-25T20:09:00Z"
+  }
  },
  {
   "id": "z3s8_fb",
@@ -4310,7 +4316,40 @@
   "file": "zion_p3_z3s8.mp4",
   "at": "2026-11-25T20:00:00Z",
   "caption": "Zion National Park history: 1904: nobody believed this painting was real\n\nIn the summer of 1903 painter Frederick Dellenbaugh came to Zion. His canvases were shown at the 1904 World's Fair in St.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): Zion, Part 3 — The Impossible Tunnel, by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
+  "done": {
+   "video_id": "1686052222867879",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1129814896484169"
+   },
+   "permalink": "https://www.facebook.com/reel/1686052222867879/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 10343670
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-25T20:11:03+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1686052222867879_2340058816843279"
+   },
+   "status_errors": null,
+   "at": "2026-11-25T20:09:00Z"
+  }
  },
  {
   "id": "z3s9_ig",
