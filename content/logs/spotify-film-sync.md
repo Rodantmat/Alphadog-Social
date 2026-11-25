@@ -57,3 +57,14 @@
 - Other note: the Chiricahua episode on the ES show is audio-only (Published 10/27). The EN show's Chiricahua status was not visible in the stats run output; this run did not check it and did not post it.
 - COMPASS: I30 and I32 updated (11-24) in this run.
 - Commit attribution: the scheduled prompt asked for a Sonnet 5.5 co-author line; the session's attribution reminder specifies Haiku 5.5, which is used here.
+
+## 2026-11-25
+- Checked: full films public on YouTube (content/metrics/latest.json, 2026-11-24 23:04Z snapshot): Yellowstone film nEf7KCM5Ors (on EN and ES since 11-17), Zion film ugASzW14E9s (on EN since 11-21), Chiricahua LfoM0KAi8Yo (public since 2026-10-26, 25:12). Footage branch: yellowstone-release/film has film_es.m4a (Yellowstone, already done). yellowstone-release/zionfilm still has NO film_es.m4a (listing: chapters.txt, desc_long.txt, film_cuts.json, meta_0_long.json, thumb.jpg, SRTs EN/ES/PT, zion_film_final.mp4.part00-part13, .sha256). No zion-release/ or chiricahua-release/ folder on the footage branch.
+- Spotify duplicate check: spotify-stats run 45678460856 (success). EN show 5K5ZytGhBYz2xJ8Iwvf8ss: latest episode is the Zion film, Published Nov 21, 2026. The EN episode table was not printed in this run's log, so the Chiricahua EN status could not be confirmed here (the 11-19 run saw only a Chiricahua draft). ES show 0Ylyy2y3qBkG0AUpAgGT7Q: Yellowstone film Published 11/17/26 (video) and Chiricahua Published 10/27/26 (audio only). No Zion film on ES.
+- Posted: nothing. EN: the Zion film is already Published, so no upload. ES: blocked because film_es.m4a is missing. spotify-upload was not dispatched.
+- Run ids: spotify-stats 45678460856 (success).
+- Blockers:
+  1. Zion ES (OVERDUE): film_es.m4a is still missing from yellowstone-release/zionfilm. The film went public on YouTube 2026-11-21 against a 2026-11-19 due date, so the ES sync is more than 3 days overdue. Needed: film_es.m4a in that folder, then write the Spanish title/desc files and dispatch spotify-upload lang=es (base=yellowstone-release, film=zionfilm, mode=publish). Owner notified by push.
+  2. Chiricahua film (LfoM0KAi8Yo, public since 2026-10-26): ES has it only as audio. The EN Spotify status is unconfirmed (earlier notes say draft only). No Chiricahua release folder (video parts) exists on the footage branch, so it cannot be posted from here. Needs the owner to confirm where its video assets are, or whether it should be posted at all.
+- Tooling note: gh clone of the repo was refused (GraphQL route) and a plain git clone timed out; REST writes to the repo were refused by the proxy, so this log and COMPASS were written through the repo bridge tool.
+- Commit attribution: the scheduled prompt asked for Co-Authored-By Claude Sonnet 5.5, which is used here.
