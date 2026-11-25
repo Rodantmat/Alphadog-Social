@@ -44,7 +44,12 @@ jobs:
           r = urllib.request.Request(f"https://www.googleapis.com/youtube/v3/videos?part=status&id={new}", headers={"Authorization": f"Bearer {tok}"})
           print("new", new, json.loads(urllib.request.urlopen(r).read())["items"][0]["status"])
           PY
-            rm -f "$GITHUB_WORKSPACE/content/pending/comment_$old.json" "$GITHUB_WORKSPACE/content/pending/ctext_$old.txt"
+            P="$GITHUB_WORKSPACE/content/pending"
+            if [ -f "$P/comment_$old.json" ]; then
+              sed "s/$old/$new/g" "$P/comment_$old.json" > "$P/comment_$new.json"
+              [ -f "$P/ctext_$old.txt" ] && cp "$P/ctext_$old.txt" "$P/ctext_$new.txt"
+              rm -f "$P/comment_$old.json" "$P/ctext_$old.txt"
+            fi
             echo "$s $old -> $new" >> $GITHUB_WORKSPACE/content/published/zion_p4_shorts_replaced.txt
           done
       - name: Save
