@@ -76,7 +76,7 @@ if MOTION>=2:
         scs=[load_scene(x) for x in imgs]; endim=np.asarray(Image.open(endpng).convert("RGB").resize((W,H)))
         n=len(imgs); B=[0.0]+bounds+[bounds_end[0]]            # scene k covers B[k]..B[k+1]; end card after narration
         NF=int(round(total*FPS))
-        pr=subprocess.Popen(["ffmpeg","-v","error","-y","-f","rawvideo","-pix_fmt","rgb24","-s",f"{W}x{H}","-r",str(FPS),"-i","-","-an","-c:v","libx264","-preset","veryfast","-crf","19","-pix_fmt","yuv420p",out],stdin=subprocess.PIPE)
+        pr=subprocess.Popen(["ffmpeg","-v","error","-y","-f","rawvideo","-pix_fmt","rgb24","-s",f"{W}x{H}","-r",str(FPS),"-i","-","-an","-c:v","libx264","-preset","veryfast","-crf","21","-pix_fmt","yuv420p",out],stdin=subprocess.PIPE)
         def scene_frame(k,t):
             if k==n: return endim
             t0=B[k]-D/2 if k>0 else 0.0; t1=B[k+1]+D/2; return frame_of(scs[k],k,(t-t0)/(t1-t0))

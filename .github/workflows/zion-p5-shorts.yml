@@ -21,7 +21,7 @@ jobs:
           git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
           cd /tmp/fbs && git sparse-checkout set --no-cone /zion-narr/p5/am_michael /zion5 /yellowstone-shorts/zion5
       - name: Build
-        run: python3 -c "import glob,os;from PIL import Image;[Image.open(f).convert('RGB').save(f[:-4]+'.jpg',quality=95) for f in glob.glob('/tmp/fbs/zion5/img/*.png')]" && MOTION=2 NARR=/tmp/fbs/zion-narr/p5/am_michael IMG=/tmp/fbs/zion5/img AI=/nonexistent SEGS=content/zion/p5_segments.json SPEC=content/zion/tools/shorts_p5_spec.json OUT=/tmp/fbs/yellowstone-shorts/zion5 THUMB=content/zion/p3_thumb.jpg python3 content/zion/tools/build_shorts_p3.py ${{ inputs.only }}
+        run: python3 -c "import glob,os;from PIL import Image;[Image.open(f).convert('RGB').save(os.path.splitext(f)[0]+'.jpg',quality=95) for f in glob.glob('/tmp/fbs/zion5/img/*.png')+glob.glob('/tmp/fbs/zion5/img/*.jpeg')]" && MOTION=2 NARR=/tmp/fbs/zion-narr/p5/am_michael IMG=/tmp/fbs/zion5/img AI=/nonexistent SEGS=content/zion/p5_segments.json SPEC=content/zion/tools/shorts_p5_spec.json OUT=/tmp/fbs/yellowstone-shorts/zion5 THUMB=content/zion/p3_thumb.jpg python3 content/zion/tools/build_shorts_p3.py ${{ inputs.only }}
       - name: Metas + QA
         run: |
           cd /tmp/fbs/yellowstone-shorts/zion5 && rm -rf _z5* && cd - >/dev/null
