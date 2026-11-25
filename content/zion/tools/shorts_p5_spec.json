@@ -85,8 +85,8 @@
    "hook": "Rockville's red sandstone telegraph office",
    "imgs": [
     "commons_13d8d9de1c",
-    "commons_fc35be32a8",
     "commons_8bd497c2cf",
+    "commons_4d637d31ac",
     "commons_c716f79a31"
    ],
    "file": "zion_p5_z5s4.mp4",
@@ -162,5 +162,11 @@
    "caption": "",
    "url": ""
   }
- ]
+ ],
+ "focus": {
+  "commons_13d8d9de1c": [
+   0.68,
+   0.45
+  ]
+ }
 }

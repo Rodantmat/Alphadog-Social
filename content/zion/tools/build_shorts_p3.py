@@ -48,14 +48,16 @@ if MOTION>=2:
     import cv2
     A=W/H
     def ease_(u): u=min(1.0,max(0.0,u)); return u*u*(3-2*u)          # smoothstep ease in/out
-    def load_scene(src):
+    def load_scene(src,fo=None):
         im=Image.open(f"{IMG}/{src}.jpg").convert("RGB"); w0,h0=im.size; mx,my=int(w0*0.045),int(h0*0.045)
         a=np.asarray(im.crop((mx,my,w0-mx,h0-my)))
         if a.shape[0]>2400: f=2400/a.shape[0]; a=cv2.resize(a,(int(a.shape[1]*f),2400),interpolation=cv2.INTER_AREA)
         g=cv2.cvtColor(a,cv2.COLOR_RGB2GRAY).astype(np.float32); g=cv2.GaussianBlur(g,(0,0),3)
         gx=cv2.Sobel(g,cv2.CV_32F,1,0); gy=cv2.Sobel(g,cv2.CV_32F,0,1); e=cv2.GaussianBlur(np.hypot(gx,gy),(0,0),max(a.shape)/25)
         hh,ww=e.shape; e=e**2; ys,xs=np.mgrid[0:hh,0:ww]; tot=e.sum()+1e-6
-        return {"a":a,"fx":float((e*xs).sum()/tot),"fy":float((e*ys).sum()/tot)}
+        fx,fy=float((e*xs).sum()/tot),float((e*ys).sum()/tot)
+        if fo: fx,fy=fo[0]*a.shape[1],fo[1]*a.shape[0]
+        return {"a":a,"fx":fx,"fy":fy}
     def window(sc,k,u):
         a=sc["a"]; h,w=a.shape[:2]; hc=min(h,w/A); e=ease_(u)
         z0,z1=(1.0,1.10) if k%2==0 else (1.10,1.0); z=z0+(z1-z0)*e; hw=hc/z; ww=hw*A
@@ -73,7 +75,7 @@ if MOTION>=2:
         M=np.float32([[s_,0,-x0*s_],[0,s_,-y0*s_]])
         return cv2.warpAffine(sc["a"],M,(W,H),flags=cv2.INTER_CUBIC,borderMode=cv2.BORDER_REPLICATE)
     def render_motion(imgs,bounds,total,endpng,out,D=0.5):
-        scs=[load_scene(x) for x in imgs]; endim=np.asarray(Image.open(endpng).convert("RGB").resize((W,H)))
+        scs=[load_scene(x,FOCUS.get(x)) for x in imgs]; endim=np.asarray(Image.open(endpng).convert("RGB").resize((W,H)))
         n=len(imgs); B=[0.0]+bounds+[bounds_end[0]]            # scene k covers B[k]..B[k+1]; end card after narration
         NF=int(round(total*FPS))
         pr=subprocess.Popen(["ffmpeg","-v","error","-y","-f","rawvideo","-pix_fmt","rgb24","-s",f"{W}x{H}","-r",str(FPS),"-i","-","-an","-c:v","libx264","-preset","veryfast","-crf","21","-pix_fmt","yuv420p",out],stdin=subprocess.PIPE)
@@ -91,6 +93,7 @@ if MOTION>=2:
         pr.stdin.close(); pr.wait()
         if pr.returncode: raise SystemExit("motion render failed")
 bounds_end=[0.0]
+FOCUS={}
 def F(sz): return ImageFont.truetype(BOLD,sz)
 def end_card(path,line1,line2,story):
     t=Image.open(THUMB).convert("RGB")
@@ -112,15 +115,16 @@ def music(n,key,total):
             for det in (-0.6,0,0.8): y+=np.sin(2*np.pi*(r*m+det)*x+j+key)*(0.5/(1+j*0.4))
         env=np.minimum(1,np.minimum(np.arange(len(y))/(SR*2),(len(y)-np.arange(len(y)))/(SR*2))); bed[sl]+=(y*env).astype(np.float32)
     return bed/max(1e-6,np.abs(bed).max())
+FOCUS.update(SPEC.get("focus",{}))
 for n,it in enumerate(SPEC["items"]):
     if want and it["id"] not in want: continue
     story=it["kind"]=="story"; GAP=0.25; tmp=f"{OUT}/_{it['id']}"; os.makedirs(tmp,exist_ok=True)
-    voice=[]; mask=[]; caps=[]; t=0.5
+    voice=[]; mask=[]; caps=[]; t=0.5; segst=[]
     lead=np.zeros(int(0.5*SR),np.float32); voice.append(lead); mask.append(np.zeros(len(lead),bool))
     for s in it["segs"]:
         p=f"{NARR}/{s}.m4a"; d=dur(p)
         raw=subprocess.run(["ffmpeg","-v","error","-i",p,"-f","f32le","-ac","1","-ar",str(SR),"-"],capture_output=True).stdout; a=np.frombuffer(raw,np.float32)
-        tot=d+GAP; arr=np.zeros(int(tot*SR),np.float32); arr[:len(a)]=a[:len(arr)]; m=np.zeros(len(arr),bool); m[:len(a)]=True; voice.append(arr); mask.append(m)
+        segst.append(t); tot=d+GAP; arr=np.zeros(int(tot*SR),np.float32); arr[:len(a)]=a[:len(arr)]; m=np.zeros(len(arr),bool); m[:len(a)]=True; voice.append(arr); mask.append(m)
         ss=chunk(sents(SEGS[s])); L=sum(len(x) for x in ss); tt=t
         for x in ss:
             dd=d*len(x)/L; caps.append((tt,tt+dd,x)); tt+=dd
@@ -130,12 +134,15 @@ for n,it in enumerate(SPEC["items"]):
     # shots
     imgs=it["imgs"]; ec=f"{tmp}/end.png"; end_card(ec,it["end1"],it["end2"],story)
     if MOTION>=2:
-        n_=len(imgs); cands=sorted({round(c[0],2) for c in caps[1:]}|{round(x,2) for x in np.cumsum([0.5]+[0])}); b=[]; prev=0.0
-        starts=[c[0] for c in caps]
+        n_=len(imgs); b=[]; prev=0.0; starts=[c[0] for c in caps]
         for k in range(1,n_):
-            tgt=k*narr_len/n_; ok=[c for c in starts if c-prev>=2.6 and narr_len-c>=2.6]; pick=min(ok,key=lambda c:abs(c-tgt)) if ok else tgt
-            if abs(pick-tgt)>0.45*narr_len/n_: pick=tgt
-            b.append(pick); prev=pick
+            tgt=k*narr_len/n_; sl=narr_len/n_
+            def pick_from(L,tol):
+                ok=[c for c in L if c-prev>=2.6 and narr_len-c>=2.6 and abs(c-tgt)<=tol*sl]; return min(ok,key=lambda c:abs(c-tgt)) if ok else None
+            pk=pick_from(segst,0.45)
+            if pk is None: pk=pick_from(starts,0.35)
+            if pk is None: pk=tgt
+            b.append(pk); prev=pk
         bounds_end[0]=narr_len; vo=f"{tmp}/v.mp4"; render_motion(imgs,b,total,ec,vo)
     else:
         per=(narr_len)/len(imgs); clips=[]
