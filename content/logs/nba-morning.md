@@ -144,3 +144,12 @@
 - Strategies: no cap changes. A_wsteals_5flex yellow cap 4, A_core_3power / A_regular_5power / A_wrebounds_4flex yellow cap 1, C_wstocks_4flex paper (CLEAN 21), B_demon_3flex / B_demon_5flex red (REQUAL HOLD 11-09). _ROTATION normal (cap 0): steals ok (ewma 0.506), turnovers ok (0.631).
 - Edge monitors: PP z 2.97 (34 slates), UD z 2.39 (34 slates), both RUNNING, no ALARM.
 - Boards 11-24 (3 games): 0 rows for every app and sportsbook so far (same early-morning pattern as prior days). Watch P2B ~08:06 PT.
+
+## 2026-11-25 13:55 UTC ACTION
+- Market term: review revert (carried). audit_market_coverage not run: github_trigger_workflow 403 (token lacks actions:write), 7th day running. Last verdict 11-18 NOT READY, 28 dates. 11-24 window rungs 609, avg 2.53 books (3-game slate).
+- Pipelines: P2A 11-25 success (03:31-03:42 PT); P2A/P2B/P3 11-24 all success (P3 claimed 13:17 PT, finished 13:26 PT). Scheduler tick ~1 min old. P3 11-24 soft-failed grep NOT done (P3 run outside the visible GitHub run window). Outside the pipeline: NBA Friend Page Run failed 11-24 15:50 PT (later runs success); NBA Honest Referee failed 11-24 14:44 PT.
+- PP 11-24 (PLAY): 1 slip (H_P10_3power_top3, 3/3), 1u staked, 6u returned, net +5u, ROI +500%. Season: 162 slips, 162u, 189.1u, +27.1u, ROI +16.7%.
+- UD P5 (shadow) 11-24: 2 slips, 2u, 0 returned, -2u, ROI -100%. Season P5 payout-based (stake>0, graded): 115 slips, 108.5u, 133.93u (payout overstates half-stake rows; profit column not re-queried).
+- Strategies: no state/cap changes on the 12 strategies vs 11-23 history. A_wsteals_5flex yellow cap 4 (9 slips, +2.2u), A_core_3power / A_regular_5power / A_wrebounds_4flex yellow cap 1, C_wstocks_4flex paper (cap 2, -3u), B_demon_3flex / B_demon_5flex red (REQUAL HOLD 11-09). CHANGE: _ROTATION state normal -> rotation, live_cap 0 -> 1 (steals ok -> cool, ewma 0.430, trail10 0.338; turnovers ok 0.686).
+- Edge monitors: PP z 3.08 (35 slates, look 0), UD z 1.49 (35 slates), both RUNNING (information only), no ALARM.
+- Boards 11-25 (9 games): PrizePicks 2,744, Underdog 2,223, Sleeper 1,333, Fliff 602. Betr 0 and all sportsbooks 0 so far (Betr is P3-window only; sportsbooks empty at this hour as on 11-23/11-24). Watch P2B ~08:06 PT.
