@@ -434,3 +434,11 @@
 - Queue check: z3t5 ig/fb were the only past-due items without done/hold; both now done. No retries needed. Next due: z3s5 is next in queue; z3s6 reels 2026-11-24 20:00Z (12:05 PT).
 - No DUPLICATE BLOCKED lines; no errors. Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded.
 - Run ids used: 45309819951.
+
+## 2026-11-25 01:13 UTC OK
+- Slot: 17:05 PT Reels (Tue Nov 24). Run 45523179926 (social-post, success; dispatched 01:06:01Z, triggered with no inputs).
+- Posted z3s7_ig https://www.instagram.com/reel/DgJUgEGKTnP/ (IG ProcessingFailedError x2, recovered via video_url fallback) and z3s7_fb https://www.facebook.com/reel/1836079010877039/.
+- TikTok backlog -> Buffer: zion_p4_z4s3.mp4 scheduled for 2026-11-28T22:00Z (Buffer 6b063489c4ff71faa822cc4c); 2 still pending.
+- Queue check: z3s7 ig/fb were the only past-due items without done/hold; both now done. No retries needed. Next due: z3s8 reels, then z3s9/z3s10.
+- No DUPLICATE BLOCKED lines; no errors. Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded.
+- Run ids used: 45523179926.
