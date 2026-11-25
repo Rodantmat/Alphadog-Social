@@ -12,7 +12,9 @@
    "imgs": [
     "commons_21c5f5d384",
     "commons_8c58756718",
-    "commons_bf8eb1fe76"
+    "commons_bf8eb1fe76",
+    "commons_c981a5065b",
+    "commons_1aa6bc0296"
    ],
    "file": "zion_p5_z5s1.mp4",
    "key": 30,
@@ -34,7 +36,10 @@
    "imgs": [
     "commons_520c10848a",
     "commons_a7ccee7f89",
-    "commons_ed85004448"
+    "commons_ed85004448",
+    "commons_e29964430d",
+    "commons_6b927f9fe4",
+    "commons_c3948e65f1"
    ],
    "file": "zion_p5_z5s2.mp4",
    "key": 31,
@@ -56,7 +61,10 @@
    "imgs": [
     "commons_ad95a0bc89",
     "commons_bfa30d7ac1",
-    "commons_e53d36ea72"
+    "commons_e53d36ea72",
+    "commons_2c7dab77e5",
+    "commons_9c756bae15",
+    "commons_f2b68e7257"
    ],
    "file": "zion_p5_z5s3.mp4",
    "key": 32,
@@ -76,6 +84,7 @@
    ],
    "hook": "Rockville's red sandstone telegraph office",
    "imgs": [
+    "commons_13d8d9de1c",
     "commons_fc35be32a8",
     "commons_8bd497c2cf",
     "commons_c716f79a31"
@@ -100,7 +109,9 @@
    "imgs": [
     "commons_c4da7fb228",
     "commons_89039807d5",
-    "commons_6685ba8204"
+    "commons_6685ba8204",
+    "commons_6f18a748ef",
+    "commons_99a161eb20"
    ],
    "file": "zion_p5_z5s5.mp4",
    "key": 34,
@@ -119,8 +130,10 @@
    ],
    "hook": "Grafton in three dates",
    "imgs": [
-    "commons_2c7dab77e5",
-    "commons_0b4065691c"
+    "commons_97130c110e",
+    "commons_0b4065691c",
+    "commons_3227861c5b",
+    "commons_a6f6551dd6"
    ],
    "file": "zion_p5_z5t1.mp4",
    "key": 35,
@@ -139,7 +152,8 @@
    "hook": "Springdale's first tourists",
    "imgs": [
     "commons_cec779b77e",
-    "commons_99a161eb20"
+    "commons_82b94054fa",
+    "commons_88171d0ae8"
    ],
    "file": "zion_p5_z5t2.mp4",
    "key": 36,

@@ -42,6 +42,55 @@ def shot(src,d,out,k,pre=None):
         a,b=(0.1,0.9) if k%2==0 else (0.9,0.1)
         vf=f"scale={W+1}:-2:flags=lanczos,crop={W}:{H}:x=0:y='(ih-{H})*({a}+({b}-{a})*t/{d:.3f})'" if h*(W+1)/w>=H else f"scale=-2:{H+1}:flags=lanczos,crop={W}:{H}:x='(iw-{W})*0.5':y=0"
     run(["ffmpeg","-v","error","-y","-loop","1","-framerate",str(FPS),"-i",p,"-t",f"{d:.3f}","-vf",vf+f",fps={FPS},format=yuv420p","-an","-c:v","libx264","-preset","veryfast","-crf","20",out])
+
+MOTION=int(os.environ.get("MOTION","1"))
+if MOTION>=2:
+    import cv2
+    A=W/H
+    def ease_(u): u=min(1.0,max(0.0,u)); return u*u*(3-2*u)          # smoothstep ease in/out
+    def load_scene(src):
+        im=Image.open(f"{IMG}/{src}.jpg").convert("RGB"); w0,h0=im.size; mx,my=int(w0*0.045),int(h0*0.045)
+        a=np.asarray(im.crop((mx,my,w0-mx,h0-my)))
+        if a.shape[0]>2400: f=2400/a.shape[0]; a=cv2.resize(a,(int(a.shape[1]*f),2400),interpolation=cv2.INTER_AREA)
+        g=cv2.cvtColor(a,cv2.COLOR_RGB2GRAY).astype(np.float32); g=cv2.GaussianBlur(g,(0,0),3)
+        gx=cv2.Sobel(g,cv2.CV_32F,1,0); gy=cv2.Sobel(g,cv2.CV_32F,0,1); e=cv2.GaussianBlur(np.hypot(gx,gy),(0,0),max(a.shape)/25)
+        hh,ww=e.shape; e=e**2; ys,xs=np.mgrid[0:hh,0:ww]; tot=e.sum()+1e-6
+        return {"a":a,"fx":float((e*xs).sum()/tot),"fy":float((e*ys).sum()/tot)}
+    def window(sc,k,u):
+        a=sc["a"]; h,w=a.shape[:2]; hc=min(h,w/A); e=ease_(u)
+        z0,z1=(1.0,1.10) if k%2==0 else (1.10,1.0); z=z0+(z1-z0)*e; hw=hc/z; ww=hw*A
+        fr_x=max(0.0,w-hc*A); fr_y=max(0.0,h-hc)           # free travel at z=1
+        fx=min(max(sc["fx"],ww/2),w-ww/2); fy=min(max(sc["fy"],hw/2),h-hw/2)
+        ox,oy=-0.35*fr_x*(1 if fx>w/2 else -1)*-1, -0.35*fr_y*(1 if fy>h/2 else -1)*-1
+        # start away from the focus point, end on it (push-in) or the reverse (pull-out)
+        sx,sy=fx+(-0.35*fr_x if fx>w/2 else 0.35*fr_x), fy+(-0.35*fr_y if fy>h/2 else 0.35*fr_y)
+        t0,t1=((sx,sy),(fx,fy)) if k%2==0 else ((fx,fy),(sx,sy))
+        cx=t0[0]+(t1[0]-t0[0])*e; cy=t0[1]+(t1[1]-t0[1])*e
+        cx=min(max(cx,ww/2),w-ww/2); cy=min(max(cy,hw/2),h-hw/2)
+        return cx-ww/2,cy-hw/2,hw
+    def frame_of(sc,k,u):
+        x0,y0,hw=window(sc,k,u); s_=H/hw
+        M=np.float32([[s_,0,-x0*s_],[0,s_,-y0*s_]])
+        return cv2.warpAffine(sc["a"],M,(W,H),flags=cv2.INTER_CUBIC,borderMode=cv2.BORDER_REPLICATE)
+    def render_motion(imgs,bounds,total,endpng,out,D=0.5):
+        scs=[load_scene(x) for x in imgs]; endim=np.asarray(Image.open(endpng).convert("RGB").resize((W,H)))
+        n=len(imgs); B=[0.0]+bounds+[bounds_end[0]]            # scene k covers B[k]..B[k+1]; end card after narration
+        NF=int(round(total*FPS))
+        pr=subprocess.Popen(["ffmpeg","-v","error","-y","-f","rawvideo","-pix_fmt","rgb24","-s",f"{W}x{H}","-r",str(FPS),"-i","-","-an","-c:v","libx264","-preset","veryfast","-crf","19","-pix_fmt","yuv420p",out],stdin=subprocess.PIPE)
+        def scene_frame(k,t):
+            if k==n: return endim
+            t0=B[k]-D/2 if k>0 else 0.0; t1=B[k+1]+D/2; return frame_of(scs[k],k,(t-t0)/(t1-t0))
+        for f in range(NF):
+            t=f/FPS; k=0
+            while k<n and t>=B[k+1]+D/2: k+=1
+            fr=scene_frame(k,t)
+            if k<n and t>=B[k+1]-D/2:       # dissolve into the next scene (both keep moving)
+                al=ease_((t-(B[k+1]-D/2))/D); fr=cv2.addWeighted(fr,1-al,scene_frame(k+1,t),al,0)
+            elif k>0 and t<B[k]+D/2 and False: pass
+            pr.stdin.write(np.ascontiguousarray(fr).tobytes())
+        pr.stdin.close(); pr.wait()
+        if pr.returncode: raise SystemExit("motion render failed")
+bounds_end=[0.0]
 def F(sz): return ImageFont.truetype(BOLD,sz)
 def end_card(path,line1,line2,story):
     t=Image.open(THUMB).convert("RGB")
@@ -79,13 +128,22 @@ for n,it in enumerate(SPEC["items"]):
     narr_len=t; ECARD=2.5 if story else 3.0; total=narr_len+ECARD
     V=np.concatenate(voice); V=np.concatenate([V,np.zeros(int(total*SR)-len(V),np.float32)]); M=np.concatenate(mask+[np.zeros(len(V)-sum(len(x) for x in mask),bool)])
     # shots
-    imgs=it["imgs"]; per=(narr_len)/len(imgs); clips=[]
-    for k,src in enumerate(imgs):
-        o=f"{tmp}/s{k}.mp4"; shot(src,per,o,k); clips.append(o)
-    ec=f"{tmp}/end.png"; end_card(ec,it["end1"],it["end2"],story)
-    eo=f"{tmp}/end.mp4"; run(["ffmpeg","-v","error","-y","-loop","1","-framerate",str(FPS),"-i",ec,"-t",f"{ECARD}","-vf","format=yuv420p","-c:v","libx264","-preset","veryfast","-crf","20",eo])
-    open(f"{tmp}/c.txt","w").write("".join(f"file '{os.path.abspath(c)}'\n" for c in clips+[eo]))
-    vo=f"{tmp}/v.mp4"; run(["ffmpeg","-v","error","-y","-f","concat","-safe","0","-i",f"{tmp}/c.txt","-c","copy",vo])
+    imgs=it["imgs"]; ec=f"{tmp}/end.png"; end_card(ec,it["end1"],it["end2"],story)
+    if MOTION>=2:
+        n_=len(imgs); cands=sorted({round(c[0],2) for c in caps[1:]}|{round(x,2) for x in np.cumsum([0.5]+[0])}); b=[]; prev=0.0
+        starts=[c[0] for c in caps]
+        for k in range(1,n_):
+            tgt=k*narr_len/n_; ok=[c for c in starts if c-prev>=2.6 and narr_len-c>=2.6]; pick=min(ok,key=lambda c:abs(c-tgt)) if ok else tgt
+            if abs(pick-tgt)>0.45*narr_len/n_: pick=tgt
+            b.append(pick); prev=pick
+        bounds_end[0]=narr_len; vo=f"{tmp}/v.mp4"; render_motion(imgs,b,total,ec,vo)
+    else:
+        per=(narr_len)/len(imgs); clips=[]
+        for k,src in enumerate(imgs):
+            o=f"{tmp}/s{k}.mp4"; shot(src,per,o,k); clips.append(o)
+        eo=f"{tmp}/end.mp4"; run(["ffmpeg","-v","error","-y","-loop","1","-framerate",str(FPS),"-i",ec,"-t",f"{ECARD}","-vf","format=yuv420p","-c:v","libx264","-preset","veryfast","-crf","20",eo])
+        open(f"{tmp}/c.txt","w").write("".join(f"file '{os.path.abspath(c)}'\n" for c in clips+[eo]))
+        vo=f"{tmp}/v.mp4"; run(["ffmpeg","-v","error","-y","-f","concat","-safe","0","-i",f"{tmp}/c.txt","-c","copy",vo])
     # overlay: hook title (first 4.5 s) + sentence captions, rendered with PIL (no drawtext: its line breaks rendered as tofu boxes)
     def wrap(txt,font,maxw):
         words=txt.split(); lines=[]; cur=""
