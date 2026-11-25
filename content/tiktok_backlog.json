@@ -564,7 +564,12 @@
   "file": "zion_p4_z4s3.mp4",
   "due": "2026-11-28T22:00:00Z",
   "service": "tiktok",
-  "text": "Zion National Park history: The switchbacks Zion's CCC crews built. Save this for your trip, full story on YouTube (AlphaDog Studio).\\n\\n#zionnationalpark #nationalparks #history #utah #hiddenhistory"
+  "text": "Zion National Park history: The switchbacks Zion's CCC crews built. Save this for your trip, full story on YouTube (AlphaDog Studio).\\n\\n#zionnationalpark #nationalparks #history #utah #hiddenhistory",
+  "scheduled": {
+   "buffer_id": "6b063489c4ff71faa822cc4c",
+   "at": "2026-11-25T01:06:14Z",
+   "due": "2026-11-28T22:00:00Z"
+  }
  },
  {
   "mode": "post",
