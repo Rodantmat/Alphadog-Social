@@ -403,3 +403,10 @@
 - YouTube: 1 comment overdue (w7bg-vJ-qoc, after 01:06Z, ~34 min) - triggered yt-followup 45526922228 (success): log "comment posted w7bg-vJ-qoc 106 chars". 9 others not yet due (earliest 2026-11-25T20:06Z).
 - yt-link latest success 45411689497 (2026-11-24 14:13Z), within 12h; 02:35Z backup dispatch not applicable at this run time (01:40Z), not dispatched.
 - Run ids: yt-followup 45526922228; social-post 45523179926, 45477220154, 45466649983; yt-link 45411689497.
+
+## 2026-11-25 02:35 UTC OK
+- All posts on time: 0 missed items in content/social_queue.json (224 checked; 198 past-due all done, no holds, none unposted). All past-due TikTok backlog items (due <= 2026-11-25T03:00Z) have "scheduled" (content/tiktok_backlog.json); first unscheduled item zion_p4_z4s4 is due 2026-11-29, not yet due.
+- social-post: latest visible runs 45530448985 (02:05Z) and 45523179926 (01:06Z) both success; no social-post failures in the visible run window. Older runs from the prior check (45477220154, 45466649983) were success in the prior log, not re-checked this run.
+- YouTube: 9 pending comment files, none overdue (earliest "after" 2026-11-25T20:06Z, AzJRwVa9nt8); yt-followup not triggered.
+- yt-link: latest success 45505256141 (2026-11-24 22:54Z), within 12h; 02:35Z backup dispatch not needed, not dispatched.
+- Run ids: social-post 45530448985, 45523179926; yt-link 45505256141.
