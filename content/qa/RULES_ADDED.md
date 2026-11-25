@@ -11,3 +11,8 @@
 - Safe area for 1080x1920: hook below y=288, captions end at y<=1440 (asserted in build_shorts_p3.py), no text in outer 108 px side margins.
 - Long caption sentences are split at commas/conjunctions to <=95 chars; never a 6+ line box.
 - Fixing a scheduled YouTube Short = upload the new one with the same publish_at (yt-p3-replace.yml), keep old private with publishAt cleared, drop old queued comment. Verify with yt-delete mode=list that old ones show publishAt None.
+
+## 2026-11-25 Shorts length rule (data-driven)
+- Zion-era public Shorts >=48 h old (n=22): <30 s median 986 views, 73% avg viewed; 30-40 s median 576, 60%; 40-60 s n=1. The three Part 3 Shorts at 40-47 s earned 159 / 0 / 0 views on YouTube.
+- Rule: every new Short is 24-30 s (about 45-55 spoken words incl. hook), a numeric or object hook in the first line, and an end card. Stories 15-25 s. A Short over 32 s must be cut before queueing (QA analyzer: length gate).
+- Replacement procedure now carries the queued link comment over to the new video (yt-p3-replace / yt-p4-replace).
