@@ -4245,7 +4245,14 @@
   "at": "2026-11-25T01:00:00Z",
   "caption": "Zion National Park history: 8 ranchers. 1 petition. A national monument.\n\nIn 1908 eight ranchers from southern Utah asked for a land survey of Zion Canyon. On July 31, 1909, President Taft signed the proclamation creating Mukuntuweap National Monument.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): Zion, Part 3 — The Impossible Tunnel, by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
-  "thumb_ms": 1200
+  "thumb_ms": 1200,
+  "done": {
+   "media_id": "17920021770516608",
+   "permalink": "https://www.instagram.com/reel/DgJUgEGKTnP/",
+   "posted": "2026-11-25T01:12:02+0000",
+   "via": "video_url",
+   "at": "2026-11-25T01:08:46Z"
+  }
  },
  {
   "id": "z3s7_fb",
@@ -4253,7 +4260,40 @@
   "file": "zion_p3_z3s7.mp4",
   "at": "2026-11-25T01:00:00Z",
   "caption": "Zion National Park history: 8 ranchers. 1 petition. A national monument.\n\nIn 1908 eight ranchers from southern Utah asked for a land survey of Zion Canyon. On July 31, 1909, President Taft signed the proclamation creating Mukuntuweap National Monument.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): Zion, Part 3 — The Impossible Tunnel, by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
+  "done": {
+   "video_id": "1836079010877039",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1128923086573350"
+   },
+   "permalink": "https://www.facebook.com/reel/1836079010877039/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 16152841
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-25T01:12:11+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1836079010877039_1000467905917241"
+   },
+   "status_errors": null,
+   "at": "2026-11-25T01:08:46Z"
+  }
  },
  {
   "id": "z3s8_ig",
