@@ -6,7 +6,6 @@
    "segs": [
     "g_101",
     "g_102",
-    "g_103",
     "g_104"
    ],
    "hook": "Grafton, Utah: the town that moved after one night",
@@ -116,8 +115,7 @@
    "segs": [
     "g_201",
     "g_202",
-    "g_203",
-    "g_204"
+    "g_203"
    ],
    "hook": "Grafton in three dates",
    "imgs": [
@@ -136,7 +134,6 @@
    "kind": "story",
    "segs": [
     "s_201",
-    "s_202",
     "s_203"
    ],
    "hook": "Springdale's first tourists",
