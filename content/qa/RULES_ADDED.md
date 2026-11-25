@@ -16,3 +16,9 @@
 - Zion-era public Shorts >=48 h old (n=22): <30 s median 986 views, 73% avg viewed; 30-40 s median 576, 60%; 40-60 s n=1. The three Part 3 Shorts at 40-47 s earned 159 / 0 / 0 views on YouTube.
 - Rule: every new Short is 24-30 s (about 45-55 spoken words incl. hook), a numeric or object hook in the first line, and an end card. Stories 15-25 s. A Short over 32 s must be cut before queueing (QA analyzer: length gate).
 - Replacement procedure now carries the queued link comment over to the new video (yt-p3-replace / yt-p4-replace).
+
+## 2026-11-25 Motion & cadence standard (research-grounded, see content/channel/RESEARCH_2026-11-25.md)
+- Builds use MOTION=2: sub-pixel float crops (no integer stair-step), smoothstep ease, push-in/pull-out toward the picture's detail centroid, 0.5 s dissolves between scenes (never a hard cut), scene cuts land on narration-segment starts, per-image `focus` override in the spec when the subject is text/sign.
+- A scene is 4-5 s: >=5 distinct pictures per 30 s Short, >=4 per Story where material allows; a picture matching the sentence on screen (cut at the segment that names it).
+- tools/motion_qa.py is a build gate: hard cut, freeze >1.2 s => the build fails before commit.
+- Template risk (YouTube July 2026 inauthentic-content clarification): vary hook formula/structure across a series, one story arc per video, every claim sourced in the factcheck file, keep synthetic disclosure on.
