@@ -4,11 +4,10 @@
    "id": "z4s1",
    "kind": "short",
    "segs": [
-    "p4_001",
-    "p4_002",
-    "p4_003",
-    "p4_004",
-    "p4_005"
+    "p4_101",
+    "p4_102",
+    "p4_103",
+    "p4_104"
    ],
    "hook": "Reveille at six: a day in a CCC camp",
    "imgs": [
@@ -27,11 +26,10 @@
    "id": "z4s2",
    "kind": "short",
    "segs": [
-    "p4_006",
-    "p4_007",
-    "p4_008",
-    "p4_009",
-    "p4_010"
+    "p4_105",
+    "p4_106",
+    "p4_107",
+    "p4_108"
    ],
    "hook": "$30 a month, and $25 went home",
    "imgs": [
@@ -50,9 +48,9 @@
    "id": "z4s3",
    "kind": "short",
    "segs": [
-    "p4_011",
-    "p4_012",
-    "p4_013"
+    "p4_109",
+    "p4_110",
+    "p4_111"
    ],
    "hook": "The switchbacks Zion's CCC crews built",
    "imgs": [
@@ -73,10 +71,9 @@
    "id": "z4s4",
    "kind": "short",
    "segs": [
-    "p4_014",
-    "p4_015",
-    "p4_016",
-    "p4_017"
+    "p4_112",
+    "p4_113",
+    "p4_114"
    ],
    "hook": "Zion's bighorn vanished. Then 14 came back.",
    "imgs": [
@@ -96,11 +93,10 @@
    "id": "z4s5",
    "kind": "short",
    "segs": [
-    "p4_018",
-    "p4_019",
-    "p4_020",
-    "p4_021",
-    "p4_022"
+    "p4_115",
+    "p4_116",
+    "p4_117",
+    "p4_118"
    ],
    "hook": "From 14 sheep to more than 500",
    "imgs": [
