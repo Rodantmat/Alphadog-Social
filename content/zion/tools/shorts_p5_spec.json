@@ -1,0 +1,155 @@
+{
+ "items": [
+  {
+   "id": "z5s1",
+   "kind": "short",
+   "segs": [
+    "g_101",
+    "g_102",
+    "g_103",
+    "g_104"
+   ],
+   "hook": "Grafton, Utah: the town that moved after one night",
+   "imgs": [
+    "commons_21c5f5d384",
+    "commons_8c58756718",
+    "commons_bf8eb1fe76"
+   ],
+   "file": "zion_p5_z5s1.mp4",
+   "key": 30,
+   "end1": "More Zion history",
+   "end2": "Full documentary on YouTube",
+   "caption": "Founded in 1859, wrecked by the Great Flood of 1862, then rebuilt a mile upriver. The story of Grafton, Utah, beside Zion.",
+   "url": ""
+  },
+  {
+   "id": "z5s2",
+   "kind": "short",
+   "segs": [
+    "g_105",
+    "g_106",
+    "g_107",
+    "g_108"
+   ],
+   "hook": "Grafton emptied in 1866. Then it grew",
+   "imgs": [
+    "commons_520c10848a",
+    "commons_a7ccee7f89",
+    "commons_ed85004448"
+   ],
+   "file": "zion_p5_z5s2.mp4",
+   "key": 31,
+   "end1": "More Zion history",
+   "end2": "Full documentary on YouTube",
+   "caption": "Evacuated in 1866 during the Black Hawk War, then back to a census peak of 106 in 1910. Grafton, Utah.",
+   "url": ""
+  },
+  {
+   "id": "z5s3",
+   "kind": "short",
+   "segs": [
+    "g_109",
+    "g_110",
+    "g_111",
+    "g_112"
+   ],
+   "hook": "Grafton faded until almost no one was left",
+   "imgs": [
+    "commons_ad95a0bc89",
+    "commons_bfa30d7ac1",
+    "commons_e53d36ea72"
+   ],
+   "file": "zion_p5_z5s3.mp4",
+   "key": 32,
+   "end1": "More Zion history",
+   "end2": "Full documentary on YouTube",
+   "caption": "A slow fade, almost everyone gone by the mid 1940s, then a film location and a restoration. Grafton, Utah.",
+   "url": ""
+  },
+  {
+   "id": "z5s4",
+   "kind": "short",
+   "segs": [
+    "r_101",
+    "r_102",
+    "r_103",
+    "r_104"
+   ],
+   "hook": "Rockville's red sandstone telegraph office",
+   "imgs": [
+    "commons_fc35be32a8",
+    "commons_8bd497c2cf",
+    "commons_c716f79a31"
+   ],
+   "file": "zion_p5_z5s4.mp4",
+   "key": 33,
+   "end1": "More Zion history",
+   "end2": "Full documentary on YouTube",
+   "caption": "Rockville, Utah: a red sandstone house with a telegraph and post office, listed on the National Register in 1972.",
+   "url": ""
+  },
+  {
+   "id": "z5s5",
+   "kind": "short",
+   "segs": [
+    "s_101",
+    "s_102",
+    "s_103",
+    "s_104"
+   ],
+   "hook": "How Springdale got its name",
+   "imgs": [
+    "commons_c4da7fb228",
+    "commons_89039807d5",
+    "commons_6685ba8204"
+   ],
+   "file": "zion_p5_z5s5.mp4",
+   "key": 34,
+   "end1": "More Zion history",
+   "end2": "Full documentary on YouTube",
+   "caption": "Springdale began in 1862 as a cotton mission farm town at the mouth of Zion Canyon. Local lore explains the name.",
+   "url": ""
+  },
+  {
+   "id": "z5t1",
+   "kind": "story",
+   "segs": [
+    "g_201",
+    "g_202",
+    "g_203",
+    "g_204"
+   ],
+   "hook": "Grafton in three dates",
+   "imgs": [
+    "commons_2c7dab77e5",
+    "commons_0b4065691c"
+   ],
+   "file": "zion_p5_z5t1.mp4",
+   "key": 35,
+   "end1": "More Zion history",
+   "end2": "Full documentary on YouTube",
+   "caption": "",
+   "url": ""
+  },
+  {
+   "id": "z5t2",
+   "kind": "story",
+   "segs": [
+    "s_201",
+    "s_202",
+    "s_203"
+   ],
+   "hook": "Springdale's first tourists",
+   "imgs": [
+    "commons_cec779b77e",
+    "commons_99a161eb20"
+   ],
+   "file": "zion_p5_z5t2.mp4",
+   "key": 36,
+   "end1": "More Zion history",
+   "end2": "Full documentary on YouTube",
+   "caption": "",
+   "url": ""
+  }
+ ]
+}
