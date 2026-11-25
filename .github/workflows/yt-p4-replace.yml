@@ -1,0 +1,55 @@
+name: yt-p4-replace
+# Re-upload fixed Part 4 Shorts from footage:yellowstone-shorts/zion4 (same metadata + publish_at), then unschedule the old private upload (stays private) and drop its queued comment.
+on:
+  workflow_dispatch:
+    inputs:
+      pairs: { description: "newId:oldVideoId comma list, e.g. z3s2:vWgu0gq3KM0", required: true }
+permissions:
+  contents: write
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Fetch media
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          mkdir -p /tmp/rel
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
+          (cd /tmp/fbs && git sparse-checkout set --no-cone "/yellowstone-shorts/zion4") && cp /tmp/fbs/yellowstone-shorts/zion4/* /tmp/rel/
+      - name: Replace
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          PAIRS: ${{ inputs.pairs }}
+        run: |
+          pip -q install requests >/dev/null 2>&1 || true
+          cd /tmp/rel
+          for p in ${PAIRS//,/ }; do
+            s=${p%%:*}; old=${p##*:}
+            python $GITHUB_WORKSPACE/scripts/yt_upload.py meta_$s.json 2>&1 | tee up_$s.log
+            new=$(grep -oP '^VIDEO_ID=\K[\w-]{11}' up_$s.log | head -1); [ -n "$new" ] || { echo "upload failed $s"; exit 1; }
+            python3 - "$old" "$new" <<'PY'
+          import json, os, sys, urllib.parse, urllib.request
+          old, new = sys.argv[1], sys.argv[2]
+          d = urllib.parse.urlencode({"client_id": os.environ["YT_CLIENT_ID"], "client_secret": os.environ["YT_CLIENT_SECRET"], "refresh_token": os.environ["YT_REFRESH_TOKEN"], "grant_type": "refresh_token"}).encode()
+          tok = json.loads(urllib.request.urlopen(urllib.request.Request("https://oauth2.googleapis.com/token", data=d)).read())["access_token"]
+          body = {"id": old, "status": {"privacyStatus": "private", "selfDeclaredMadeForKids": False, "embeddable": True, "license": "youtube"}}
+          r = urllib.request.Request("https://www.googleapis.com/youtube/v3/videos?part=status", data=json.dumps(body).encode(), method="PUT", headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json"})
+          print("unscheduled old", old, json.loads(urllib.request.urlopen(r).read())["status"])
+          r = urllib.request.Request(f"https://www.googleapis.com/youtube/v3/videos?part=status&id={new}", headers={"Authorization": f"Bearer {tok}"})
+          print("new", new, json.loads(urllib.request.urlopen(r).read())["items"][0]["status"])
+          PY
+            rm -f "$GITHUB_WORKSPACE/content/pending/comment_$old.json" "$GITHUB_WORKSPACE/content/pending/ctext_$old.txt"
+            echo "$s $old -> $new" >> $GITHUB_WORKSPACE/content/published/zion_p4_shorts_replaced.txt
+          done
+      - name: Save
+        if: always()
+        run: |
+          git config user.name "alphadog-bot"; git config user.email "bot@users.noreply.github.com"
+          git add content/pending content/published; git commit -qm "yt-p4-replace: replaced shorts" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; git rebase --abort 2>/dev/null || true; sleep $((i*5)); done; exit 1
