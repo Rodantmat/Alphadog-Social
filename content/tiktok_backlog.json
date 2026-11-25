@@ -577,7 +577,12 @@
   "file": "zion_p4_z4s4.mp4",
   "due": "2026-11-29T05:00:00Z",
   "service": "tiktok",
-  "text": "Zion National Park history: Zion's bighorn vanished. Then 14 came back. Save this for your trip, full story on YouTube (AlphaDog Studio).\\n\\n#zionnationalpark #nationalparks #history #utah #hiddenhistory"
+  "text": "Zion National Park history: Zion's bighorn vanished. Then 14 came back. Save this for your trip, full story on YouTube (AlphaDog Studio).\\n\\n#zionnationalpark #nationalparks #history #utah #hiddenhistory",
+  "scheduled": {
+   "buffer_id": "6b06d1781deee71c12377b23",
+   "at": "2026-11-25T12:15:49Z",
+   "due": "2026-11-29T05:00:00Z"
+  }
  },
  {
   "mode": "post",
