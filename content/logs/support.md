@@ -449,3 +449,6 @@ No new messages (list run 45774788262): answered 0, escalated 0, spam 0. Run com
 
 ## 2026-11-26 08:24 UTC OK
 No new messages (list run 45782600607): answered 0, escalated 0, spam 0. Run took ~1.5 min but completed successfully.
+
+## 2026-11-26 09:27 UTC OK
+No new messages (list run 45791352602): answered 0, escalated 0, spam 0. Alphadog_Bridge dispatch returned 403; dispatched via GitHub connector instead. Run took ~2.3 min (slow checkout) but completed successfully.
