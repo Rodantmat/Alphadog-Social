@@ -428,3 +428,11 @@
 - Other: pages build runs all success in window.
 - Logging: social_get_file/social_put_file not used for the write (file is 48 KB, put needs the full text); appended locally and pushed to main via git instead.
 - Run ids checked: social-post 45881009499, 45831525932; yt-followup 45880527161; yt-link 45825799438.
+
+## 2026-11-26 20:40 UTC OK
+- All posts on time: 0 missed items in social_queue.json (238 items; all 210 past-due have "done" or "hold"). TikTok backlog: every past-due item has "scheduled".
+- social-post: latest runs in window 45888510917 (20:05Z), 45881009499 (19:05Z), 45831525932 (13:41Z) all success. Only 3 social-post runs in the 30-run window; no 4th found.
+- YouTube: 1 comment overdue (XYvuD5a9tU8, after 20:06Z). Triggered yt-followup; log: "comment posted XYvuD5a9tU8 106 chars". The other 11 pending comments have future "after" times.
+- yt-link: latest run 45825799438 (13:05Z) success; no failures in window. Backup dispatch not applicable (run at 20:35Z, not the 02:35Z run); not dispatched.
+- Run ids: yt-followup 45892278759 (dispatched); social-post 45888510917, 45881009499, 45831525932; yt-link 45825799438.
+- Logging: put_file not used (file is 49 KB); appended locally and pushed to main via git.
