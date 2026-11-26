@@ -4358,7 +4358,13 @@
   "at": "2026-11-26T01:00:00Z",
   "caption": "Zion National Park history: Taller than 11 ft 4 in? This tunnel says no.\n\nZion's tunnel was built for 1920s cars. One window was closed by ice, another by a rockslide in 1958, and anything over 11 feet 4 inches tall needs a permit and one-way traffic.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): Zion, Part 3 — The Impossible Tunnel, by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
-  "thumb_ms": 1200
+  "thumb_ms": 1200,
+  "done": {
+   "media_id": "18101137097545657",
+   "permalink": "https://www.instagram.com/reel/DgL4-TjACPv/",
+   "posted": "2026-11-26T01:09:11+0000",
+   "at": "2026-11-26T01:08:44Z"
+  }
  },
  {
   "id": "z3s9_fb",
@@ -4366,7 +4372,40 @@
   "file": "zion_p3_z3s9.mp4",
   "at": "2026-11-26T01:00:00Z",
   "caption": "Zion National Park history: Taller than 11 ft 4 in? This tunnel says no.\n\nZion's tunnel was built for 1920s cars. One window was closed by ice, another by a rockslide in 1958, and anything over 11 feet 4 inches tall needs a permit and one-way traffic.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): Zion, Part 3 — The Impossible Tunnel, by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
+  "done": {
+   "video_id": "1510492490937876",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1129993266466332"
+   },
+   "permalink": "https://www.facebook.com/reel/1510492490937876/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 7683464
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-26T01:09:21+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1510492490937876_1747316503624278"
+   },
+   "status_errors": null,
+   "at": "2026-11-26T01:08:44Z"
+  }
  },
  {
   "id": "z3s10_ig",
