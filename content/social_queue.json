@@ -4792,14 +4792,29 @@
   "platform": "instagram_story",
   "file": "zion_p4_z4t1.mp4",
   "at": "2026-11-26T19:00:00Z",
-  "story_v2": "12 pounds in two months | zion4"
+  "story_v2": "12 pounds in two months | zion4",
+  "done": {
+   "media_id": "17916098763509100",
+   "story": true,
+   "at": "2026-11-26T19:08:39Z"
+  }
  },
  {
   "id": "z4t1_fb",
   "platform": "facebook_story",
   "file": "zion_p4_z4t1.mp4",
   "at": "2026-11-26T19:00:00Z",
-  "story_v2": "12 pounds in two months | zion4"
+  "story_v2": "12 pounds in two months | zion4",
+  "done": {
+   "video_id": "1713468253901698",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "1701239498196011"
+   },
+   "story": true,
+   "at": "2026-11-26T19:08:39Z"
+  }
  },
  {
   "id": "z4t2_ig",
