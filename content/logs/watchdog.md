@@ -410,3 +410,11 @@
 - YouTube: 9 pending comment files, none overdue (earliest "after" 2026-11-25T20:06Z, AzJRwVa9nt8); yt-followup not triggered.
 - yt-link: latest success 45505256141 (2026-11-24 22:54Z), within 12h; 02:35Z backup dispatch not needed, not dispatched.
 - Run ids: social-post 45530448985, 45523179926; yt-link 45505256141.
+
+## 2026-11-26 01:35 UTC OK
+- All posts on time: 0 missed items in content/social_queue.json (238 items: 204 past-due all done, 34 future, no holds). All past-due TikTok backlog items (content/tiktok_backlog.json) have "scheduled".
+- social-post: visible runs 45733364255 (2026-11-26 01:05Z) and 45710625889 (2026-11-25 22:08Z) both success; no social-post failures in the 100-run window (only 2 social-post runs fell in it).
+- YouTube: 13 pending comment files; earliest "after" 2026-11-26T01:06Z (0fT1Q3iBt-M), only ~30 min at check time, so not yet overdue; yt-followup not triggered. Next watchdog run covers it.
+- yt-link: latest success 45717019811 (2026-11-25 22:53Z), within 12h; no yt-link failure in window; 02:35Z backup dispatch not applicable at this run (01:35Z), not dispatched.
+- Other (outside scope): pages build cancellations superseded by successes; yt-link/comment jobs clean.
+- Run ids checked: social-post 45733364255, 45710625889; yt-link 45717019811; yt-followup 45722854117 (last).
