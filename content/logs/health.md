@@ -113,3 +113,10 @@
 - YouTube 29 subs (+6 in 7 d), 19,358 views (+9,700 in 7 d), long-form 74.5 h of 8,000 (+34.6 h in 7 d). RELATED_VIDEO 281 views/3,633 min. Median Short 85; 1.1 miles/6 windows 930, dog-on-wire 835; Part 3 Shorts at 44-47 s got 0 views (I35). IG median 200 (top 2,106), FB 152 flat, TikTok median 173 (top 8,396). .git 164 MB.
 - Details: content/metrics/health_2026-11-25.md. COMPASS rows I02, I06, I11, I20, I24b, I29, I32, I33 updated; I38 added.
 
+## 2026-11-26T23:00Z ALERT
+- Lead time: Stories last 11-28 02:00Z (1.1 d, 3 IG + 3 FB, under 5; 17th report). IG/FB Reels last 12-02 01:00Z (5.1 d OK), TikTok last 12-02 03:00Z. Nothing for the Zion FILM (108 views) or after Part 5 (I29/I33, 12th report).
+- yt-link: 19:37Z cron skipped an 18th evening (I11); dispatched once (run 45907867463). Runs 02:38Z, 13:18Z OK.
+- 0 real failures in last 30 runs, 0 missed posts, no duplicates, 11 pending comments none overdue, no viewer comments. Spotify ES for the film still blocked (I32, 6th report).
+- YouTube 29 subs (flat), 19,648 views (+290 in 24 h, sharp slowdown, I39), long-form 75.6 h of 8,000 (+1.1 h). RELATED_VIDEO 286 views/3,716 min. Median Short 86, no new outliers. IG median 200 (top 2,106), FB 152 flat, TikTok median 168 (top 8,396). .git 164 MB.
+- Details: content/metrics/health_2026-11-26.md. COMPASS rows I02, I11, I20, I24b, I29, I32, I33, I38 updated; I39 added.
+
