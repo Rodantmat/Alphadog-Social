@@ -4414,7 +4414,13 @@
   "at": "2026-11-26T20:00:00Z",
   "caption": "Zion National Park history: The road to Bryce: 149 miles around\n\nZion Canyon is a box canyon: the road went in and came out the same way. To drive from Zion to Bryce Canyon you had to go 149 miles the long way around.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): Zion, Part 3 — The Impossible Tunnel, by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
-  "thumb_ms": 1200
+  "thumb_ms": 1200,
+  "done": {
+   "media_id": "18105024557067323",
+   "permalink": "https://www.instagram.com/reel/DgN7dZkzd-w/",
+   "posted": "2026-11-26T20:09:25+0000",
+   "at": "2026-11-26T20:08:56Z"
+  }
  },
  {
   "id": "z3s10_fb",
@@ -4422,7 +4428,40 @@
   "file": "zion_p3_z3s10.mp4",
   "at": "2026-11-26T20:00:00Z",
   "caption": "Zion National Park history: The road to Bryce: 149 miles around\n\nZion Canyon is a box canyon: the road went in and came out the same way. To drive from Zion to Bryce Canyon you had to go 149 miles the long way around.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): Zion, Part 3 — The Impossible Tunnel, by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
+  "done": {
+   "video_id": "2151252012205607",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1130866453045680"
+   },
+   "permalink": "https://www.facebook.com/reel/2151252012205607/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 5801569
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-26T20:09:34+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "2151252012205607_1497069832347855"
+   },
+   "status_errors": null,
+   "at": "2026-11-26T20:08:56Z"
+  }
  },
  {
   "id": "z3t1_ig",
