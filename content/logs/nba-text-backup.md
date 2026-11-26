@@ -50,3 +50,6 @@ Slate 3 games; P3 status success (finished before 13:29 PT). Pipeline text step 
 
 ## 2026-11-25T21:37Z OK
 Slate 9 games; P3 status success (run_key 2026-11-25, seen at 21:34Z). Pipeline text step delivered: rodo (21:35:28Z) and friend (21:35:24Z) rows present in text_alert_log, pipeline, no fallback needed. Slips exist (52 live, 12 Underdog, 13 Sleeper, 3 Betr, 14 Fliff). Friend snapshot step not needed (friend row exists). No fallback texts sent. Gmail not used (no send).
+
+## 2026-11-26T21:16Z OK
+No slate: nba_calendar.slate_games has 0 games for 2026-11-26 (PT), so no P3 wait, no texts needed. P3 run not expected; no pipeline_runs row for today yet. No fallback texts sent. Gmail not used (no send).
