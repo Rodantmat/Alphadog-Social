@@ -458,3 +458,11 @@
 - Queue check: z4t1 ig/fb were the only past-due items without done/hold; both now done. No retries needed. Next due: z3s10 reels 2026-11-26 20:00Z (12:05 PT).
 - No DUPLICATE BLOCKED lines; no errors. Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded.
 - Run ids used: 45881009499.
+
+## 2026-11-26 20:20 UTC OK
+- Slot: 12:05 PT Reels (Thu Nov 26). Run 45888510917 (social-post, success; dispatched 20:05:56Z, triggered with no inputs).
+- Posted z3s10_ig https://www.instagram.com/reel/DgN7dZkzd-w/ (IG media_id 18105024557067323) and z3s10_fb https://www.facebook.com/reel/2151252012205607/ (FB post_id 1130866453045680). No retries needed.
+- TikTok backlog -> Buffer: "nothing to feed" (no unscheduled items due within 4 days).
+- Queue check (from run log): z3s10 ig/fb were the only past-due items without done/hold; both now done. Pending items (z3s11 onward) not yet due.
+- No DUPLICATE BLOCKED lines; no errors. Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded.
+- Run ids used: 45888510917.
