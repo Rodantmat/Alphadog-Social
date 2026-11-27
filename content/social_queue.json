@@ -4899,14 +4899,29 @@
   "platform": "instagram_story",
   "file": "zion_p4_z4t2.mp4",
   "at": "2026-11-27T02:00:00Z",
-  "story_v2": "Rams clash from July to October | zion4"
+  "story_v2": "Rams clash from July to October | zion4",
+  "done": {
+   "media_id": "18104096642428760",
+   "story": true,
+   "at": "2026-11-27T02:08:40Z"
+  }
  },
  {
   "id": "z4t2_fb",
   "platform": "facebook_story",
   "file": "zion_p4_z4t2.mp4",
   "at": "2026-11-27T02:00:00Z",
-  "story_v2": "Rams clash from July to October | zion4"
+  "story_v2": "Rams clash from July to October | zion4",
+  "done": {
+   "video_id": "1954290752200622",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "29519550264344713"
+   },
+   "story": true,
+   "at": "2026-11-27T02:08:40Z"
+  }
  },
  {
   "id": "z5s1_ig",
