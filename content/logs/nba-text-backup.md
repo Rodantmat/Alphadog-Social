@@ -53,3 +53,6 @@ Slate 9 games; P3 status success (run_key 2026-11-25, seen at 21:34Z). Pipeline 
 
 ## 2026-11-26T21:16Z OK
 No slate: nba_calendar.slate_games has 0 games for 2026-11-26 (PT), so no P3 wait, no texts needed. P3 run not expected; no pipeline_runs row for today yet. No fallback texts sent. Gmail not used (no send).
+
+## 2026-11-27T22:20Z OK
+Slate 11 games; P3 run_key 2026-11-27 ended status cancelled (not success). Pipeline text step delivered: rodo (22:13:59Z, slips text) and friend (22:13:58Z) rows present in text_alert_log, pipeline, no fallback sent. Earlier, at 22:04Z, the pipeline logged an ALERT "AlphaDog ALERT: P3 failed, slips not ready" for rodo, which went out before the slips text. A jessi row (22:17Z) also logged, outside this check. Friend snapshot present. No fallback texts sent. Gmail not used (no send).
