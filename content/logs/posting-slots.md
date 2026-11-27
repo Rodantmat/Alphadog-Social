@@ -474,3 +474,12 @@
 - TikTok backlog -> Buffer: step succeeded; nothing reported as scheduled.
 - No DUPLICATE BLOCKED lines. Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded.
 - Run ids used: 45920552824 (scheduled). Manual dispatch: no run id found.
+
+## 2026-11-27 19:11 UTC OK
+- Slot: 11:05 PT Stories (Thu Nov 27). Triggered via social_trigger_workflow (no inputs); run 46054308183 (social-post, success; created 19:06:24Z).
+- Posted z5t1_ig story (media_id 18123459172967201; stories have no permalink) and z5t1_fb story (video_id 1738677274345942, post_id 1703512938005446; FB reports video still processing).
+- TikTok backlog -> Buffer: step succeeded; "Anything due?" ran, no new items reported as scheduled.
+- Queue check: 246 items; z5t1 ig/fb were the only past-due items without done/hold; both now done. No retries needed.
+- No DUPLICATE BLOCKED lines; no errors. Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded.
+- Next due: z4s1 ig/fb reels 2026-11-27 20:00Z (12:05 PT).
+- Run ids used: 46054308183.
