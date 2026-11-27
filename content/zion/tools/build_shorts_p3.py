@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 NARR=os.environ["NARR"]; IMG=os.environ["IMG"]; AI=os.environ["AI"]; OUT=os.environ["OUT"]; THUMB=os.environ["THUMB"]
 SEGS={s["id"]:s["text"] for s in json.load(open(os.environ.get("SEGS","content/zion/p3_segments.json")))}
 SPEC=json.load(open(os.environ.get("SPEC","content/zion/tools/shorts_p3_spec.json")))
-SR=48000; W,H=1080,1920; FPS=30
+SR=48000; W,H=1080,1920; FPS=30; OWN=os.environ.get('OWN','content/zion/own/clips')
 BOLD="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 want=sys.argv[1:]; os.makedirs(OUT,exist_ok=True)
 def run(c): subprocess.run(c,check=True,stdout=subprocess.DEVNULL,stderr=subprocess.PIPE)
@@ -74,14 +74,32 @@ if MOTION>=2:
         x0,y0,hw=window(sc,k,u); s_=H/hw
         M=np.float32([[s_,0,-x0*s_],[0,s_,-y0*s_]])
         return cv2.warpAffine(sc["a"],M,(W,H),flags=cv2.INTER_CUBIC,borderMode=cv2.BORDER_REPLICATE)
+    class VScene:
+        """own video clip (720x1280 proxy, already rotated): plays in REAL TIME from a start offset, no loop, no freeze, no zoom"""
+        def __init__(s_,spec):
+            name,_,off=spec[2:].partition("@"); s_.cap=cv2.VideoCapture(f"{OWN}/{name}.mp4"); s_.fps=s_.cap.get(cv2.CAP_PROP_FPS) or 30.0
+            s_.n=int(s_.cap.get(cv2.CAP_PROP_FRAME_COUNT)); s_.off=float(off or 0); s_.last=None; s_.name=name
+            s_.cap.set(cv2.CAP_PROP_POS_FRAMES,int(s_.off*s_.fps)); s_.i=int(s_.off*s_.fps)-1
+        def get(s_,u):
+            want_=int((s_.off+max(0.0,u))*s_.fps)
+            if want_>=s_.n: raise SystemExit(f"own clip {s_.name} too short: needs frame {want_} of {s_.n} (choose another clip/offset)")
+            while s_.i<want_:
+                ok,fr=s_.cap.read(); s_.i+=1
+                if not ok: raise SystemExit(f"own clip {s_.name} read failed at {s_.i}")
+                s_.last=fr
+            fr=cv2.cvtColor(s_.last,cv2.COLOR_BGR2RGB); h_,w_=fr.shape[:2]
+            if (w_,h_)!=(W,H): fr=cv2.resize(fr,(W,H),interpolation=cv2.INTER_CUBIC)
+            return fr
     def render_motion(imgs,bounds,total,endpng,out,D=0.5):
-        scs=[load_scene(x,FOCUS.get(x)) for x in imgs]; endim=np.asarray(Image.open(endpng).convert("RGB").resize((W,H)))
+        scs=[VScene(x) if x.startswith('V:') else load_scene(x,FOCUS.get(x)) for x in imgs]; endim=np.asarray(Image.open(endpng).convert("RGB").resize((W,H)))
         n=len(imgs); B=[0.0]+bounds+[bounds_end[0]]            # scene k covers B[k]..B[k+1]; end card after narration
         NF=int(round(total*FPS))
         pr=subprocess.Popen(["ffmpeg","-v","error","-y","-f","rawvideo","-pix_fmt","rgb24","-s",f"{W}x{H}","-r",str(FPS),"-i","-","-an","-c:v","libx264","-preset","veryfast","-crf","21","-pix_fmt","yuv420p",out],stdin=subprocess.PIPE)
         def scene_frame(k,t):
             if k==n: return endim
-            t0=B[k]-D/2 if k>0 else 0.0; t1=B[k+1]+D/2; return frame_of(scs[k],k,(t-t0)/(t1-t0))
+            t0=B[k]-D/2 if k>0 else 0.0; t1=B[k+1]+D/2
+            if isinstance(scs[k],VScene): return scs[k].get(t-t0)
+            return frame_of(scs[k],k,(t-t0)/(t1-t0))
         for f in range(NF):
             t=f/FPS; k=0
             while k<n and t>=B[k+1]+D/2: k+=1
