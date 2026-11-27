@@ -120,3 +120,10 @@
 - YouTube 29 subs (flat), 19,648 views (+290 in 24 h, sharp slowdown, I39), long-form 75.6 h of 8,000 (+1.1 h). RELATED_VIDEO 286 views/3,716 min. Median Short 86, no new outliers. IG median 200 (top 2,106), FB 152 flat, TikTok median 168 (top 8,396). .git 164 MB.
 - Details: content/metrics/health_2026-11-26.md. COMPASS rows I02, I11, I20, I24b, I29, I32, I33, I38 updated; I39 added.
 
+## 2026-11-27T23:00Z ALERT
+- Lead time: Stories last 11-28 19:00Z (0.8 d, 2 IG + 2 FB, under 5; 18th report). IG/FB Reels last 12-03 20:00Z (5.9 d OK), TikTok last 12-03 22:00Z (5 items not yet in Buffer). Nothing for the Zion FILM (108 views, 22 % avg view) or after Part 6 (I29/I33, 13th report).
+- yt-link: 19:37Z cron skipped a 19th evening (I11); dispatched once (run 46079336491, in progress at write time). Runs 02:36Z, 13:16Z OK.
+- 0 failed runs in last 30, 0 missed posts, no duplicates, 12 pending comments (private Shorts) none overdue, no viewer comments. Part 4 Short Y3ztJLv8Igg public on time, title intact. Spotify ES for the film still blocked (I32, 7th report).
+- YouTube 29 subs (flat), 20,718 views (+1,070 in 24 h, slowdown reversed), long-form 77.4 h of 8,000 (+1.8 h; +26.2 h in 7 d). RELATED_VIDEO 296 views/3,776 min. Median Short 98; 25-30 s re-cut "Taller than 11 ft 4 in" 1,026 views at ~21 h (10.5x) vs 0-5 for 44-47 s Shorts. IG median 199 (top 2,106), FB 152 flat, TikTok median 173 (top 8,396).
+- Details: content/metrics/health_2026-11-27.md. COMPASS rows I02, I11, I20, I24b, I29, I30, I32, I33, I35, I38, I39 updated; EDITING_RULES growth log appended.
+
