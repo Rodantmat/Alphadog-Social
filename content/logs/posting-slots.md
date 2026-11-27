@@ -483,3 +483,11 @@
 - No DUPLICATE BLOCKED lines; no errors. Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded.
 - Next due: z4s1 ig/fb reels 2026-11-27 20:00Z (12:05 PT).
 - Run ids used: 46054308183.
+
+## 2026-11-27 20:22 UTC OK
+- Slot: 12:05 PT Reels (Thu Nov 27). Run 46061264439 (social-post, success; created 20:05:59Z, triggered with no inputs).
+- Posted z4s1_ig https://www.instagram.com/reel/DgQgOUqy0rU/ (IG media_id 17911330281580160) and z4s1_fb https://www.facebook.com/reel/1188766567157432/ (FB post_id 1131955976270061). No retries needed.
+- TikTok backlog -> Buffer: step succeeded; nothing reported as scheduled.
+- Queue check: 246 items; 0 past-due items without done/hold after the run. Next due: z4s2 ig/fb reels 2026-11-28 01:00Z.
+- No DUPLICATE BLOCKED lines; no errors. Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded.
+- Run ids used: 46061264439.
