@@ -4787,7 +4787,13 @@
   "at": "2026-11-27T20:00:00Z",
   "caption": "Zion National Park history: Reveille at six: a day in a CCC camp\n\nReveille at six, work until five, lights out at ten. This is a day in a Civilian Conservation Corps camp, as the National Park Service describes it.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): the Zion documentary by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
-  "thumb_ms": 1200
+  "thumb_ms": 1200,
+  "done": {
+   "media_id": "17911330281580160",
+   "permalink": "https://www.instagram.com/reel/DgQgOUqy0rU/",
+   "posted": "2026-11-27T20:09:06+0000",
+   "at": "2026-11-27T20:08:41Z"
+  }
  },
  {
   "id": "z4s1_fb",
@@ -4795,7 +4801,40 @@
   "file": "zion_p4_z4s1.mp4",
   "at": "2026-11-27T20:00:00Z",
   "caption": "Zion National Park history: Reveille at six: a day in a CCC camp\n\nReveille at six, work until five, lights out at ten. This is a day in a Civilian Conservation Corps camp, as the National Park Service describes it.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): the Zion documentary by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
+  "done": {
+   "video_id": "1188766567157432",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1131955976270061"
+   },
+   "permalink": "https://www.facebook.com/reel/1188766567157432/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 8315237
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-27T20:09:16+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1188766567157432_1345680904277070"
+   },
+   "status_errors": null,
+   "at": "2026-11-27T20:08:41Z"
+  }
  },
  {
   "id": "z4s2_ig",
