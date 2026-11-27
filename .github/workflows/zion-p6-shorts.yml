@@ -1,0 +1,37 @@
+name: zion-p6-shorts
+# Build the Zion Part 6 Shorts + Stories (1080x1920, narration audio, end card to the film) and commit to footage yellowstone-shorts/zion6/ with YouTube metas.
+on:
+  workflow_dispatch:
+    inputs:
+      only: { description: "optional space-separated item ids; empty = all", default: "" }
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: sudo apt-get -qq update >/dev/null && sudo apt-get -qq install -y ffmpeg fonts-dejavu-core >/dev/null && pip -q install numpy pillow opencv-python-headless
+      - name: Fetch media
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
+          cd /tmp/fbs && git sparse-checkout set --no-cone /zion-narr/p6/am_michael /zion6 /yellowstone-shorts/zion6
+      - name: Own-footage mix gate (owner rule)
+        run: python3 content/zion/tools/own_mix_qa.py content/zion/tools/shorts_p6_spec.json
+      - name: Build
+        run: cp content/zion/own/*.jpg /tmp/fbs/zion6/img/ && python3 -c "import glob,os;from PIL import Image;[Image.open(f).convert('RGB').save(os.path.splitext(f)[0]+'.jpg',quality=95) for f in glob.glob('/tmp/fbs/zion6/img/*.png')+glob.glob('/tmp/fbs/zion6/img/*.jpeg')]" && MOTION=2 NARR=/tmp/fbs/zion-narr/p6/am_michael IMG=/tmp/fbs/zion6/img AI=/nonexistent SEGS=content/zion/p6_segments.json SPEC=content/zion/tools/shorts_p6_spec.json OUT=/tmp/fbs/yellowstone-shorts/zion6 THUMB=content/zion/p3_thumb.jpg python3 content/zion/tools/build_shorts_p3.py ${{ inputs.only }}
+      - name: Metas + QA
+        run: |
+          cd /tmp/fbs/yellowstone-shorts/zion6 && rm -rf _z6* && cd - >/dev/null
+          python3 content/zion/tools/p6_pack.py --metas /tmp/fbs/yellowstone-shorts/zion6
+          cd /tmp/fbs/yellowstone-shorts/zion6 && for f in zion_p6_*.mp4; do ffprobe -v error -show_entries stream=codec_type,width,height:format=duration -of compact $f | tr '\n' ' '; echo $f; done; ls | wc -l
+      - name: Motion QA gate (no hard cuts, no freezes)
+        run: python3 content/zion/tools/motion_qa.py /tmp/fbs/yellowstone-shorts/zion6
+      - name: Commit to footage
+        run: |
+          cd /tmp/fbs && git config user.name alphadog-bot && git config user.email bot@users.noreply.github.com
+          git add yellowstone-shorts/zion6 && git commit -qm "zion6: shorts + stories" && for i in 1 2 3 4 5; do git pull -q --rebase origin footage && git push -q origin HEAD:footage && break; sleep $((i*5)); done

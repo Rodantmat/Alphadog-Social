@@ -1,0 +1,125 @@
+{
+ "focus": {
+  "commons_dd88b7aba0": [
+   0.25,
+   0.5
+  ]
+ },
+ "items": [
+  {
+   "id": "z6s1",
+   "kind": "short",
+   "segs": [
+    "s_601",
+    "s_602",
+    "s_603"
+   ],
+   "hook": "Angels Landing, 1924: no chains, no switchbacks",
+   "imgs": [
+    "V:al_cliffs@0",
+    "commons_605cc2f00e",
+    "V:al_wall@0",
+    "V:al_cliffs@9",
+    "commons_10399aaf91",
+    "V:al_overlook@5.5"
+   ],
+   "at": [
+    "no chains",
+    "A newspaper",
+    "narrowing from",
+    "The trail cut",
+    "The chains were"
+   ],
+   "file": "zion_p6_z6s1.mp4",
+   "key": 40,
+   "end1": "More Zion history",
+   "end2": "Full documentary on YouTube",
+   "caption": "In 1924 there were no chains and no Walter's Wiggles on the way up Angels Landing. A newspaper said the ridge narrowed from ten feet to ten inches. Own footage from our Zion trip.",
+   "url": ""
+  },
+  {
+   "id": "z6s2",
+   "kind": "short",
+   "segs": [
+    "s_611",
+    "s_612",
+    "s_613"
+   ],
+   "hook": "21 switchbacks cut into solid rock in 1926",
+   "imgs": [
+    "V:al_wiggles@0",
+    "commons_e30e86b29d",
+    "V:al_wiggles@8",
+    "commons_14572f0f69",
+    "V:misc_wall@0"
+   ],
+   "at": [
+    "cut into solid",
+    "It is named",
+    "the first superintendent",
+    "It is the last hurdle"
+   ],
+   "file": "zion_p6_z6s2.mp4",
+   "key": 41,
+   "end1": "More Zion history",
+   "end2": "Full documentary on YouTube",
+   "caption": "Walter's Wiggles: 21 steep switchbacks cut into solid rock in 1926, named for Walter Ruesch, Zion's first superintendent. The last hurdle before Scout Lookout.",
+   "url": ""
+  },
+  {
+   "id": "z6s3",
+   "kind": "short",
+   "segs": [
+    "s_621",
+    "s_622",
+    "s_623"
+   ],
+   "hook": "16 miles, 80% in a river: Zion's Narrows",
+   "imgs": [
+    "V:narrows_e@0",
+    "V:nar_creek@0",
+    "commons_dd88b7aba0",
+    "V:narrows_d@0",
+    "V:myst_d@0",
+    "V:myst_b@0"
+   ],
+   "at": [
+    "starting outside",
+    "The walls rise",
+    "In places",
+    "The park says",
+    "wading, walking"
+   ],
+   "file": "zion_p6_z6s3.mp4",
+   "key": 42,
+   "end1": "More Zion history",
+   "end2": "Full documentary on YouTube",
+   "caption": "The Narrows from the top down: 16 miles one way from Chamberlain's Ranch, walls up to 1,000 feet, in places only 30 feet wide. Our own footage from the Virgin River.",
+   "url": ""
+  },
+  {
+   "id": "z6t1",
+   "kind": "story",
+   "segs": [
+    "s_641",
+    "s_642"
+   ],
+   "hook": "Zion Narrows: 10 to 14 hours, or 2 days",
+   "imgs": [
+    "V:narrows_a@0",
+    "V:narrows_g@0",
+    "commons_de360108cf"
+   ],
+   "at": [
+    "or two days",
+    "The park closes"
+   ],
+   "file": "zion_p6_z6t1.mp4",
+   "key": 43,
+   "end1": "The Narrows story",
+   "end2": "Full documentary on YouTube",
+   "caption": "Zion Narrows top-down: time and closures.",
+   "url": ""
+  }
+ ]
+}

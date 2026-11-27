@@ -2,12 +2,14 @@
 """Zion Part 3 Shorts + Stories: 1080x1920 full-screen stills (pan, no letterbox), narration from the film's own segment audio,
 hook title, sentence captions, original synthesized music bed (different key/voicing per item), end card to the full documentary.
 env: NARR IMG AI SEGS REL(thumb dir/out) OUT ; usage: build_shorts_p3.py [id ...]"""
-import json, os, subprocess, sys, textwrap, numpy as np
+import json, os, re, subprocess, sys, textwrap, numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 NARR=os.environ["NARR"]; IMG=os.environ["IMG"]; AI=os.environ["AI"]; OUT=os.environ["OUT"]; THUMB=os.environ["THUMB"]
 SEGS={s["id"]:s["text"] for s in json.load(open(os.environ.get("SEGS","content/zion/p3_segments.json")))}
 SPEC=json.load(open(os.environ.get("SPEC","content/zion/tools/shorts_p3_spec.json")))
 SR=48000; W,H=1080,1920; FPS=30; OWN=os.environ.get('OWN','content/zion/own/clips')
+NUMW=set('one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty thirty forty fifty sixty seventy eighty ninety hundred thousand million'.split())
+STOPCAP=set('a an the in it its is he she they we i on of at to but and as for from this that there then when while after before with'.split())
 BOLD="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 want=sys.argv[1:]; os.makedirs(OUT,exist_ok=True)
 def run(c): subprocess.run(c,check=True,stdout=subprocess.DEVNULL,stderr=subprocess.PIPE)
@@ -134,6 +136,13 @@ def music(n,key,total):
         env=np.minimum(1,np.minimum(np.arange(len(y))/(SR*2),(len(y)-np.arange(len(y)))/(SR*2))); bed[sl]+=(y*env).astype(np.float32)
     return bed/max(1e-6,np.abs(bed).max())
 FOCUS.update(SPEC.get("focus",{}))
+def anchor_time(segids,segst_,phrase):
+    """start time of a phrase (case-insensitive, within one segment's text; spread over the segment's audio by character position)"""
+    for sid,st_ in zip(segids,segst_):
+        txt=SEGS[sid]; i=txt.lower().find(phrase.lower())
+        if i>=0:
+            d_=dur(f"{NARR}/{sid}.m4a"); return st_+d_*i/max(1,len(txt))
+    print("WARN anchor not found:",phrase); return None
 for n,it in enumerate(SPEC["items"]):
     if want and it["id"] not in want: continue
     story=it["kind"]=="story"; GAP=0.25; tmp=f"{OUT}/_{it['id']}"; os.makedirs(tmp,exist_ok=True)
@@ -157,6 +166,10 @@ for n,it in enumerate(SPEC["items"]):
             tgt=k*narr_len/n_; sl=narr_len/n_
             def pick_from(L,tol):
                 ok=[c for c in L if c-prev>=2.6 and narr_len-c>=2.6 and abs(c-tgt)<=tol*sl]; return min(ok,key=lambda c:abs(c-tgt)) if ok else None
+            ph_=(it.get("at") or [None]*n_)[k-1] if it.get("at") else None
+            if ph_:
+                tt_=anchor_time(it["segs"],segst,ph_)
+                if tt_ is not None and tt_-prev>=2.2 and narr_len-tt_>=2.2: b.append(tt_); prev=tt_; continue
             pk=pick_from(segst,0.45)
             if pk is None: pk=pick_from(starts,0.35)
             if pk is None: pk=tgt
@@ -185,7 +198,11 @@ for n,it in enumerate(SPEC["items"]):
         im=Image.new("RGBA",(Wc,Hc),(0,0,0,0)); d=ImageDraw.Draw(im)
         if box: d.rounded_rectangle((0,0,Wc-1,Hc-1),radius=18,fill=(0,0,0,125))
         for i,l in enumerate(lines):
-            w_=font.getbbox(l)[2]; d.text(((Wc-w_)//2,pad+i*(lh+line_gap)),l,font=font,fill=(255,255,255,255),stroke_width=stroke,stroke_fill=(0,0,0,255))
+            w_=font.getbbox(l)[2]; x_=(Wc-w_)//2; y_=pad+i*(lh+line_gap)
+            for j_,wd in enumerate(l.split(" ")):
+                core=re.sub(r"[^A-Za-z0-9'-]","",wd); first=(j_==0 and i==0)
+                gold=bool(re.search(r"\d",wd)) or core.lower().split("-")[0] in NUMW or (core[:1].isupper() and not first and core.lower() not in STOPCAP)
+                d.text((x_,y_),wd,font=font,fill=(255,205,70,255) if gold else (255,255,255,255),stroke_width=stroke,stroke_fill=(0,0,0,255)); x_+=font.getlength(wd+" ")
         return im
     ovs=[]  # (png, x, y, t0, t1)
     hk=card(wrap(it["hook"],F(70),700),F(70),10,8,False,5); hp=f"{tmp}/hook.png"; hk.save(hp); ovs.append((hp,(W-hk.width)//2,330,0,4.5))
