@@ -466,3 +466,11 @@
 - Queue check (from run log): z3s10 ig/fb were the only past-due items without done/hold; both now done. Pending items (z3s11 onward) not yet due.
 - No DUPLICATE BLOCKED lines; no errors. Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded.
 - Run ids used: 45888510917.
+
+## 2026-11-27 01:14 UTC ALERT
+- Slot: 17:05 PT Reels (Thu Nov 26). Scheduled run 45920552824 (social-post, success, 01:05:33Z). Posted z3s11_ig https://www.instagram.com/reel/DgOdwR4htQ1/ (IG media_id 17921970264542712) and z3s11_fb https://www.facebook.com/reel/1163605349491775/ (FB post_id 1131055476360111). No retries needed.
+- ALERT is tooling only, no post missed: my manual social_trigger_workflow dispatch (no inputs) returned 204 accepted, but no new social-post run appeared in social_list_workflow_runs for about 10 minutes. Not retried (nothing was due).
+- Queue check: 238 items; 0 past-due items without done/hold after the run. Next due: z4t2_ig story 2026-11-27 02:00Z; z4s1 ig/fb reels 2026-11-27 20:00Z.
+- TikTok backlog -> Buffer: step succeeded; nothing reported as scheduled.
+- No DUPLICATE BLOCKED lines. Non-fatal: download-artifact "shorts" and "promo" not found (expired); footage-branch fallback step succeeded.
+- Run ids used: 45920552824 (scheduled). Manual dispatch: no run id found.
