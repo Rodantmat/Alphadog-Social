@@ -10,13 +10,13 @@ def slot(n):   # Shorts alternate 20:00Z and 01:00Z (next day) starting at START
 def sslot(n):  # Stories alternate 19:00Z and 02:00Z (next day) starting at SSTART
     return (SSTART+dt.timedelta(days=(n+1)//2)).replace(hour=19 if n%2==0 else 2)
 TAGS="#Zion #ZionNationalPark #History #NationalParks"
-CR="Video: the channel's own footage from Zion (2021). Photos: Ken Lund (CC BY-SA 2.0, Wikimedia Commons); NPS, HABS/HAER, NARA and Hillers/Beaman (public domain); Zion Narrows stream (CC0)."
+CR="Video: the channel's own footage from Zion (2021). Photos: NPS, HABS/HAER, NARA (Beaman/Hillers) and Wikimedia Commons (public domain, CC0)."
 def cap(i): return f"{i['caption']}\n\n{CR}\n\n▶ The full documentary is on YouTube: search AlphaDog Studio, Zion — link in the first comment 👇\n\n{TAGS}"
 if "--metas" in sys.argv:
     out=sys.argv[sys.argv.index("--metas")+1]
     for n,i in enumerate(shorts):
         t=slot(n+OFF); title=i["hook"].rstrip(".")+" #Shorts"
-        m={"file":i["file"],"title":title,"description":f"{i['caption']}\n\n{CR}\n\n▶ Full Zion documentary: {Y}\n\n#Shorts #Zion #History #NationalParks","tags":["Zion","national parks","Zion National Park","Shorts","history",(["Grafton Utah","ghost town","Utah history"] if i["id"] in ("z5s1","z5s2","z5s3","z5t1") else ["Rockville Utah","Springdale Utah","Utah history"])],"category":"27","privacy":"private","publish_at":z(t),"made_for_kids":False,"synthetic":True,"language":"en",
+        m={"file":i["file"],"title":title,"description":f"{i['caption']}\n\n{CR}\n\n▶ Full Zion documentary: {Y}\n\n#Shorts #Zion #History #NationalParks","tags":["Zion","national parks","Zion National Park","Shorts","history","hiking","Utah",*({"z6s1":["Angels Landing"],"z6s2":["Angels Landing","Walter's Wiggles"],"z6s3":["Zion Narrows","Virgin River"]}.get(i["id"],[]))],"category":"27","privacy":"private","publish_at":z(t),"made_for_kids":False,"synthetic":False,"language":"en",
            "queue_comment":{"after":z(t+dt.timedelta(minutes=6)),"text":f"▶ Watch the full documentary here: {Y}\nThe full Zion documentary, with the history behind these places."}}
         json.dump(m,open(f"{out}/meta_{i['id']}.json","w"),ensure_ascii=False,indent=1)
 if "--queue" in sys.argv:
