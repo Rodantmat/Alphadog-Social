@@ -17,7 +17,7 @@
    "hook": "Angels Landing, 1924: no chains, no switchbacks",
    "imgs": [
     "V:al_cliffs@0",
-    "commons_605cc2f00e",
+    "commons_86d7d603e4",
     "V:al_wall@0",
     "V:al_cliffs@9",
     "commons_10399aaf91",
@@ -121,5 +121,11 @@
    "caption": "Zion Narrows top-down: time and closures.",
    "url": ""
   }
- ]
+ ],
+ "trim": {
+  "commons_10399aaf91": 0.09,
+  "commons_14572f0f69": 0.07,
+  "commons_e30e86b29d": 0.06,
+  "commons_b2e77e39e1": 0.07
+ }
 }

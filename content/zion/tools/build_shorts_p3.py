@@ -51,7 +51,7 @@ if MOTION>=2:
     A=W/H
     def ease_(u): u=min(1.0,max(0.0,u)); return u*u*(3-2*u)          # smoothstep ease in/out
     def load_scene(src,fo=None):
-        im=Image.open(f"{IMG}/{src}.jpg").convert("RGB"); w0,h0=im.size; mx,my=int(w0*0.045),int(h0*0.045)
+        im=Image.open(f"{IMG}/{src}.jpg").convert("RGB"); w0,h0=im.size; tr_=TRIM.get(src,0.045); mx,my=int(w0*tr_),int(h0*tr_)
         a=np.asarray(im.crop((mx,my,w0-mx,h0-my)))
         if a.shape[0]>2400: f=2400/a.shape[0]; a=cv2.resize(a,(int(a.shape[1]*f),2400),interpolation=cv2.INTER_AREA)
         g=cv2.cvtColor(a,cv2.COLOR_RGB2GRAY).astype(np.float32); g=cv2.GaussianBlur(g,(0,0),3)
@@ -114,6 +114,8 @@ if MOTION>=2:
         if pr.returncode: raise SystemExit("motion render failed")
 bounds_end=[0.0]
 FOCUS={}
+TRIM=SPEC.get('trim',{})
+CAPSZ=int(os.environ.get('CAPSZ','46'))
 def F(sz): return ImageFont.truetype(BOLD,sz)
 def end_card(path,line1,line2,story):
     t=Image.open(THUMB).convert("RGB")
@@ -207,7 +209,7 @@ for n,it in enumerate(SPEC["items"]):
     ovs=[]  # (png, x, y, t0, t1)
     hk=card(wrap(it["hook"],F(70),700),F(70),10,8,False,5); hp=f"{tmp}/hook.png"; hk.save(hp); ovs.append((hp,(W-hk.width)//2,330,0,4.5))
     for i,(a_,b_,x) in enumerate(caps):
-        cp=card(wrap(x,F(46),700),F(46),16,6,True,4); pp=f"{tmp}/cap{i}.png"; cp.save(pp); assert 1130+cp.height<=1440, f'caption too tall {cp.height} in {it["id"]}'; ovs.append((pp,(W-cp.width)//2,1130,a_,b_))
+        cp=card(wrap(x,F(CAPSZ),700 if CAPSZ<=46 else 880),F(CAPSZ),16,6,True,4); pp=f"{tmp}/cap{i}.png"; cp.save(pp); assert 1130+cp.height<=1440, f'caption too tall {cp.height} in {it["id"]}'; ovs.append((pp,(W-cp.width)//2,1130,a_,b_))
     cmd=["ffmpeg","-v","error","-y","-i",vo]
     for o in ovs: cmd+=["-i",o[0]]
     fc=""; last="0:v"

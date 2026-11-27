@@ -20,10 +20,12 @@ jobs:
         run: |
           git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
           cd /tmp/fbs && git sparse-checkout set --no-cone /zion-narr/p6/am_michael /zion6 /yellowstone-shorts/zion6
+      - name: Film thumbnail for the end card (CTA to the full film)
+        run: curl -sL -o /tmp/film_thumb.jpg https://i.ytimg.com/vi/ugASzW14E9s/maxresdefault.jpg && python3 -c "from PIL import Image;i=Image.open('/tmp/film_thumb.jpg');assert i.width>=640;print('thumb',i.size)" || cp content/zion/p3_thumb.jpg /tmp/film_thumb.jpg
       - name: Own-footage mix gate (owner rule)
         run: python3 content/zion/tools/own_mix_qa.py content/zion/tools/shorts_p6_spec.json
       - name: Build
-        run: cp content/zion/own/*.jpg /tmp/fbs/zion6/img/ && python3 -c "import glob,os;from PIL import Image;[Image.open(f).convert('RGB').save(os.path.splitext(f)[0]+'.jpg',quality=95) for f in glob.glob('/tmp/fbs/zion6/img/*.png')+glob.glob('/tmp/fbs/zion6/img/*.jpeg')]" && MOTION=2 NARR=/tmp/fbs/zion-narr/p6/am_michael IMG=/tmp/fbs/zion6/img AI=/nonexistent SEGS=content/zion/p6_segments.json SPEC=content/zion/tools/shorts_p6_spec.json OUT=/tmp/fbs/yellowstone-shorts/zion6 THUMB=content/zion/p3_thumb.jpg python3 content/zion/tools/build_shorts_p3.py ${{ inputs.only }}
+        run: cp content/zion/own/*.jpg /tmp/fbs/zion6/img/ && python3 -c "import glob,os;from PIL import Image;[Image.open(f).convert('RGB').save(os.path.splitext(f)[0]+'.jpg',quality=95) for f in glob.glob('/tmp/fbs/zion6/img/*.png')+glob.glob('/tmp/fbs/zion6/img/*.jpeg')]" && MOTION=2 NARR=/tmp/fbs/zion-narr/p6/am_michael IMG=/tmp/fbs/zion6/img AI=/nonexistent SEGS=content/zion/p6_segments.json SPEC=content/zion/tools/shorts_p6_spec.json OUT=/tmp/fbs/yellowstone-shorts/zion6 CAPSZ=56 THUMB=/tmp/film_thumb.jpg python3 content/zion/tools/build_shorts_p3.py ${{ inputs.only }}
       - name: Metas + QA
         run: |
           cd /tmp/fbs/yellowstone-shorts/zion6 && rm -rf _z6* && cd - >/dev/null
