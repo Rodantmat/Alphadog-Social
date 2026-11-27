@@ -1,0 +1,38 @@
+name: footage-prune-files
+# Remove individual FILES (list in content/cleanup/footage_delete.txt on main) from the TIP of the footage branch via Git Data API.
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run: { description: "1 = list only", default: "1" }
+permissions:
+  contents: write
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - env: { DRY: "${{ inputs.dry_run }}" }
+        run: |
+          python3 - <<'EOF'
+          import json, os, subprocess, sys, time
+          R = os.environ["GITHUB_REPOSITORY"]
+          def api(path, method="GET", body=None):
+              cmd = ["gh", "api", "-X", method, f"repos/{R}/{path}"]
+              if body is not None: cmd += ["--input", "-"]
+              p = subprocess.run(cmd, input=json.dumps(body) if body is not None else None, capture_output=True, text=True)
+              if p.returncode: raise SystemExit(f"API {method} {path} failed: {p.stderr or p.stdout}")
+              return json.loads(p.stdout)
+          want = [l.strip() for l in open("content/cleanup/footage_delete.txt") if l.strip()]
+          tip = api("git/ref/heads/footage")["object"]["sha"]; tree = api(f"git/commits/{tip}")["tree"]["sha"]
+          full = api(f"git/trees/{tree}?recursive=1"); assert not full.get("truncated")
+          have = {e["path"]: e["size"] for e in full["tree"] if e["type"] == "blob"}
+          hit = [p for p in want if p in have]; miss = [p for p in want if p not in have]
+          print(f"{len(hit)} found {sum(have[p] for p in hit)/1e6:.1f} MB; {len(miss)} already gone: {miss[:5]}")
+          if os.environ["DRY"] == "1": sys.exit(0)
+          nt = api("git/trees", "POST", {"base_tree": tree, "tree": [{"path": p, "mode": "100644", "type": "blob", "sha": None} for p in hit]})["sha"]
+          nc = api("git/commits", "POST", {"message": "footage: remove posted finals (archived to owner's D:\\Rodo\\Projects)", "tree": nt, "parents": [tip]})["sha"]
+          api("git/refs/heads/footage", "PATCH", {"sha": nc, "force": False}); print("PUSHED", nc)
+          EOF
