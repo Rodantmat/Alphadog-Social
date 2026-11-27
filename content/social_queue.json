@@ -4673,7 +4673,13 @@
   "at": "2026-11-27T01:00:00Z",
   "caption": "Zion National Park history: July 4, 1930: a governor, a prayer and live radio\n\nThe tunnel was dedicated on July fourth, nineteen thirty. Utah's governor, George Dern, was there.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): Zion, Part 3 — The Impossible Tunnel, by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
-  "thumb_ms": 1200
+  "thumb_ms": 1200,
+  "done": {
+   "media_id": "17921970264542712",
+   "permalink": "https://www.instagram.com/reel/DgOdwR4htQ1/",
+   "posted": "2026-11-27T01:09:04+0000",
+   "at": "2026-11-27T01:08:37Z"
+  }
  },
  {
   "id": "z3s11_fb",
@@ -4681,7 +4687,40 @@
   "file": "zion_p3_z3s11.mp4",
   "at": "2026-11-27T01:00:00Z",
   "caption": "Zion National Park history: July 4, 1930: a governor, a prayer and live radio\n\nThe tunnel was dedicated on July fourth, nineteen thirty. Utah's governor, George Dern, was there.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): Zion, Part 3 — The Impossible Tunnel, by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
+  "done": {
+   "video_id": "1163605349491775",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1131055476360111"
+   },
+   "permalink": "https://www.facebook.com/reel/1163605349491775/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 8845717
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-27T01:09:13+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1163605349491775_2225827401308552"
+   },
+   "status_errors": null,
+   "at": "2026-11-27T01:08:37Z"
+  }
  },
  {
   "id": "z3t8_ig",
