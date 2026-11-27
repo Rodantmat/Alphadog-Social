@@ -5013,14 +5013,29 @@
   "platform": "instagram_story",
   "file": "zion_p5_z5t1.mp4",
   "at": "2026-11-27T19:00:00Z",
-  "story_v2": "Grafton in three dates | zion5"
+  "story_v2": "Grafton in three dates | zion5",
+  "done": {
+   "media_id": "18123459172967201",
+   "story": true,
+   "at": "2026-11-27T19:09:03Z"
+  }
  },
  {
   "id": "z5t1_fb",
   "platform": "facebook_story",
   "file": "zion_p5_z5t1.mp4",
   "at": "2026-11-27T19:00:00Z",
-  "story_v2": "Grafton in three dates | zion5"
+  "story_v2": "Grafton in three dates | zion5",
+  "done": {
+   "video_id": "1738677274345942",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/page-stories-api.",
+    "post_id": "1703512938005446"
+   },
+   "story": true,
+   "at": "2026-11-27T19:09:03Z"
+  }
  },
  {
   "id": "z5t2_ig",
