@@ -22,3 +22,4 @@
 - A scene is 4-5 s: >=5 distinct pictures per 30 s Short, >=4 per Story where material allows; a picture matching the sentence on screen (cut at the segment that names it).
 - tools/motion_qa.py is a build gate: hard cut, freeze >1.2 s => the build fails before commit.
 - Template risk (YouTube July 2026 inauthentic-content clarification): vary hook formula/structure across a series, one story arc per video, every claim sourced in the factcheck file, keep synthetic disclosure on.
+- V50 (2026-11-26, owner): every Short/Story/documentary mixes the owner's own D: video clips with archival/outside material; copy the early successful (Chiricahua sh1-sh3) structure: hook, 6-9 shots each starting on the phrase it illustrates, mostly moving clips, gold numbers/names in captions, end card = FULL film thumbnail. Enforced by own_mix_qa.py in the build workflow (first scene own, >=40% own scenes, >=1 own clip per Short, no clip window reused, still:clip <= 1.5:1).
