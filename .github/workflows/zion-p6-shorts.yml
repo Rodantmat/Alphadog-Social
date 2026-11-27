@@ -25,7 +25,7 @@ jobs:
       - name: Own-footage mix gate (owner rule)
         run: python3 content/zion/tools/own_mix_qa.py content/zion/tools/shorts_p6_spec.json
       - name: Build
-        run: cp content/zion/own/*.jpg /tmp/fbs/zion6/img/ && python3 -c "import glob,os;from PIL import Image;[Image.open(f).convert('RGB').save(os.path.splitext(f)[0]+'.jpg',quality=95) for f in glob.glob('/tmp/fbs/zion6/img/*.png')+glob.glob('/tmp/fbs/zion6/img/*.jpeg')]" && MOTION=2 NARR=/tmp/fbs/zion-narr/p6/am_michael IMG=/tmp/fbs/zion6/img AI=/nonexistent SEGS=content/zion/p6_segments.json SPEC=content/zion/tools/shorts_p6_spec.json OUT=/tmp/fbs/yellowstone-shorts/zion6 CAPSZ=56 THUMB=/tmp/film_thumb.jpg python3 content/zion/tools/build_shorts_p3.py ${{ inputs.only }}
+        run: cp content/zion/own/*.jpg /tmp/fbs/zion6/img/ && python3 -c "import glob,os;from PIL import Image;[Image.open(f).convert('RGB').save(os.path.splitext(f)[0]+'.jpg',quality=95) for f in glob.glob('/tmp/fbs/zion6/img/*.png')+glob.glob('/tmp/fbs/zion6/img/*.jpeg')]" && MOTION=2 NARR=/tmp/fbs/zion-narr/p6/am_michael IMG=/tmp/fbs/zion6/img AI=/nonexistent SEGS=content/zion/p6_segments.json SPEC=content/zion/tools/shorts_p6_spec.json OUT=/tmp/fbs/yellowstone-shorts/zion6 CAPSZ=52 THUMB=/tmp/film_thumb.jpg python3 content/zion/tools/build_shorts_p3.py ${{ inputs.only }}
       - name: Metas + QA
         run: |
           cd /tmp/fbs/yellowstone-shorts/zion6 && rm -rf _z6* && cd - >/dev/null
