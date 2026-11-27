@@ -162,3 +162,11 @@
 - Strategies: no state/cap changes vs 11-25 (A_wsteals_5flex yellow cap 4; A_core_3power/A_regular_5power/A_wrebounds_4flex yellow cap 1; C_wstocks_4flex/D_points/A_core_5flex paper; B_demon_3flex/5flex red; _ROTATION rotation cap 1; H_* active cap 1).
 - Edge monitors: PP z 2.83 (look 30, UNDECIDED), UD z 1.95 (look 30, UNDECIDED), no ALARM. Note: latest look row is 30 (decided 11-20), lower than the 35 slates logged 11-25.
 - Boards 11-26: no games on the slate (Thanksgiving; next slate 11-27) - 0 rows expected.
+
+## 2026-11-27 13:58 UTC ACTION
+- Market term: review revert (carried). audit_market_coverage not run: github_trigger_workflow 403 (token lacks actions:write), 9th day running. Last verdict 11-18 NOT READY, 28 dates. 11-26 window rungs 0 (no slate, Thanksgiving - not a flag by itself).
+- Pipelines: P2A 11-27 success (03:31-03:41 PT); P2A/P2B/P3 11-26 all success (P3 claimed 13:17 PT, finished 13:21 PT, despite no slate 11-26). No failures, no missing P2A. Scheduler tick 12s old. P3 11-26 soft-failed grep NOT done (run outside visible window).
+- Yesterday (11-26): no slate (slate_games has 0 games 11-26; 9 on 11-25, 11 today, 5 on 11-28) - no new PP/UD slips to grade. Season totals carried from 11-26 entry: PP 164 slips, +25.9u, ROI +15.8%; UD P5 118 slips, +25.97u, ROI +23.3%.
+- Strategies: no state/cap changes vs 11-26 entry (24 strategies: A_wsteals_5flex yellow cap 4; A_core_3power/A_regular_5power/A_wrebounds_4flex yellow cap 1; C_wstocks_4flex cap 2, D_points_3power cap 2, W_core_3power cap 3 paper; B_demon_3flex/5flex red; _ROTATION rotation cap 1; ten H_P* + H_FB1 active cap 1).
+- Edge monitors: PP z 3.10 (36 slates, RUNNING information only), UD z 1.95 (36 slates, RUNNING), no ALARM.
+- Boards 11-27 (11 games): PrizePicks 4,246, Underdog 3,458, Sleeper 2,077, Betr 1,125, Fliff 1,040. No app empty. Sportsbooks 0 so far (same early-morning pattern; not an app).
