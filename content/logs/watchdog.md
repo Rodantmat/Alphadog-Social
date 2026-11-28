@@ -444,3 +444,12 @@
 - yt-link: latest run 46003809073 (13:03Z) success; 02:35Z backup dispatch not applicable at this run time, not dispatched.
 - Run ids checked: social-post 46054308183, 46018946215; yt-link 46003809073.
 - Logging: put_file not used (file is 50 KB); appended locally and pushed to main via git.
+
+## 2026-11-28 02:36 UTC OK
+- All posts on time: 0 missed items in social_queue.json (246 items; none past-due without done/hold). TikTok backlog: every past-due item has "scheduled".
+- social-post: latest visible runs 46096372838 (02:05Z), 46091343046 (01:05Z), 46081505169 (23:15Z) all success; the 4th-latest is outside the 30-run listing window, no failure seen.
+- No failed workflow runs in the last 30 runs.
+- YouTube: 11 pending comments, earliest "after" 2026-11-28T20:06Z; yt-followup not triggered.
+- yt-link: latest run 46096594390 (02:08Z) success, within 12h; 02:35Z backup dispatch not needed, not dispatched.
+- Run ids checked: social-post 46096372838, 46091343046, 46081505169; yt-link 46096594390, 46079336491.
+- Logging: social_put_file skipped (file 51 KB); appended locally and pushed to main via git.
