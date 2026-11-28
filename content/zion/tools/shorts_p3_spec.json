@@ -9,10 +9,10 @@
    ],
    "hook": "146 tons of dynamite. No GPS. No lasers.",
    "imgs": [
-    "z3_commons_zmc_tunnel_1",
-    "z3x_haer_zmc_13",
     "z3_loc_haer_ut0272",
-    "z3_loc_haer_ut0271"
+    "z3x_haer_zmc_13",
+    "z3x_mukuntuweap_5",
+    "commons_9e0fb50141"
    ],
    "file": "zion_p3_z3s1.mp4",
    "key": 0,
@@ -174,13 +174,10 @@
    ],
    "hook": "1904: nobody believed this painting was real",
    "imgs": [
-    "z3_commons_dellenbaugh_1",
-    "z3_commons_dellenbaugh_4",
     "z3_commons_dellenbaugh_3",
+    "z3_commons_dellenbaugh_1",
     "z3_npg_dellenbaugh_zion_canyon_1903",
-    "z3_commons_world_fair_1904_1",
-    "z3_commons_world_fair_1904_3",
-    "z3_commons_dellenbaugh_2"
+    "z3_commons_world_fair_1904_1"
    ],
    "file": "zion_p3_z3s8.mp4",
    "key": 7,
@@ -202,10 +199,8 @@
     "z3_commons_zmc_tunnel_1",
     "z3x_haer_zmc_6",
     "z3_loc_haer_ut0271",
-    "z3_loc_haer_ut0272",
-    "z3_commons_zmc_tunnel_2",
-    "z3x_haer_zmc_14",
-    "z3_npg_tunnel_west_portal_1928"
+    "commons_50247b1530",
+    "commons_7435fde568"
    ],
    "file": "zion_p3_z3s9.mp4",
    "key": 8,
@@ -224,10 +219,10 @@
    ],
    "hook": "The road to Bryce: 149 miles around",
    "imgs": [
+    "commons_73229365dc",
     "z3x_haer_switch_8",
-    "z3x_toquerville_5",
-    "z3x_zion_1920s_2",
-    "z3x_zion_1920s_8"
+    "commons_53c2f1cb64",
+    "commons_94703ba56d"
    ],
    "file": "zion_p3_z3s10.mp4",
    "key": 9,
@@ -380,10 +375,10 @@
    ],
    "hook": "July 4, 1930: a governor, a prayer and live radio",
    "imgs": [
+    "commons_4c91145097",
     "z3x_gov_dern_1",
-    "z3x_haer_zmc_5",
-    "z3x_haer_zmc_20",
-    "z3x_haer_zmc_16"
+    "commons_5b7ed60511",
+    "commons_4f4781e47a"
    ],
    "file": "zion_p3_z3s11.mp4",
    "key": 17,
