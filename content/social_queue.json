@@ -4843,7 +4843,13 @@
   "at": "2026-11-28T01:00:00Z",
   "caption": "Zion National Park history: $30 a month, and $25 went home\n\nThirty dollars a month, twenty-five of it sent home to family. Here is who joined the Civilian Conservation Corps, and what a term looked like.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): the Zion documentary by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
   "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
-  "thumb_ms": 1200
+  "thumb_ms": 1200,
+  "done": {
+   "media_id": "18167243473498367",
+   "permalink": "https://www.instagram.com/reel/DgRCmRphbiO/",
+   "posted": "2026-11-28T01:09:29+0000",
+   "at": "2026-11-28T01:09:01Z"
+  }
  },
  {
   "id": "z4s2_fb",
@@ -4851,7 +4857,40 @@
   "file": "zion_p4_z4s2.mp4",
   "at": "2026-11-28T01:00:00Z",
   "caption": "Zion National Park history: $30 a month, and $25 went home\n\nThirty dollars a month, twenty-five of it sent home to family. Here is who joined the Civilian Conservation Corps, and what a term looked like.\n\nSend this to someone who has hiked Zion, or is planning to. Save it for your trip.\n\n▶ Full documentary on YouTube (link in the first comment): the Zion documentary by AlphaDog Studio\n\n#ZionNationalPark #NationalParkHistory #UtahHistory #HiddenHistory #Zion",
-  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk"
+  "comment": "▶ Full documentary on YouTube: https://youtu.be/30zzYRt_Mgk",
+  "done": {
+   "video_id": "1735974691221793",
+   "finish": {
+    "success": true,
+    "message": "Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.",
+    "post_id": "1132141816251477"
+   },
+   "permalink": "https://www.facebook.com/reel/1735974691221793/",
+   "status": {
+    "video_status": "ready",
+    "uploading_phase": {
+     "status": "complete",
+     "bytes_transferred": 8757978
+    },
+    "processing_phase": {
+     "status": "complete"
+    },
+    "publishing_phase": {
+     "status": "complete",
+     "publish_status": "published",
+     "publish_time": "2026-11-28T01:09:38+0000"
+    },
+    "copyright_check_status": {
+     "status": "complete",
+     "matches_found": false
+    }
+   },
+   "comment": {
+    "id": "1735974691221793_2539871599872264"
+   },
+   "status_errors": null,
+   "at": "2026-11-28T01:09:01Z"
+  }
  },
  {
   "id": "z4s3_ig",
