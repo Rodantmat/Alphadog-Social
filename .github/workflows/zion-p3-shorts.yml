@@ -28,7 +28,8 @@ jobs:
           python3 content/zion/tools/p3_pack.py --metas /tmp/fbs/yellowstone-shorts/zion3
           cd /tmp/fbs/yellowstone-shorts/zion3 && for f in zion_p3_*.mp4; do ffprobe -v error -show_entries stream=codec_type,width,height:format=duration -of compact $f | tr '\n' ' '; echo $f; done; ls | wc -l
       - name: Colour-mix QA gate (no grayscale overdose; colour cover)
-        run: python3 content/zion/tools/color_mix_qa.py $(find /tmp/fbs/yellowstone-shorts/zion3 -name 'zion_p3_*.mp4' -mmin -90 | sort)
+        run: |
+          cd /tmp/fbs/yellowstone-shorts/zion3; ONLY="${{ inputs.only }}"; if [ -n "$ONLY" ]; then F=$(for i in $ONLY; do echo zion_p3_$i.mp4; done); else F=$(ls zion_p3_*.mp4); fi; cd - >/dev/null; python3 content/zion/tools/color_mix_qa.py $(for x in $F; do echo /tmp/fbs/yellowstone-shorts/zion3/$x; done)
       - name: Commit to footage
         run: |
           cd /tmp/fbs && git config user.name alphadog-bot && git config user.email bot@users.noreply.github.com

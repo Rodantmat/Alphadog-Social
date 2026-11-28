@@ -30,7 +30,8 @@ jobs:
       - name: Motion QA gate (no hard cuts, no freezes)
         run: python3 content/zion/tools/motion_qa.py /tmp/fbs/yellowstone-shorts/zion5
       - name: Colour-mix QA gate (no grayscale overdose; colour cover)
-        run: python3 content/zion/tools/color_mix_qa.py $(find /tmp/fbs/yellowstone-shorts/zion5 -name 'zion_p5_*.mp4' -mmin -90 | sort)
+        run: |
+          cd /tmp/fbs/yellowstone-shorts/zion5; ONLY="${{ inputs.only }}"; if [ -n "$ONLY" ]; then F=$(for i in $ONLY; do echo zion_p5_$i.mp4; done); else F=$(ls zion_p5_*.mp4); fi; cd - >/dev/null; python3 content/zion/tools/color_mix_qa.py $(for x in $F; do echo /tmp/fbs/yellowstone-shorts/zion5/$x; done)
       - name: Commit to footage
         run: |
           cd /tmp/fbs && git config user.name alphadog-bot && git config user.email bot@users.noreply.github.com
