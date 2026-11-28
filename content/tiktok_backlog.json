@@ -642,7 +642,12 @@
   "file": "zion_p5_z5s4.mp4",
   "due": "2026-12-02T00:00:00Z",
   "service": "tiktok",
-  "text": "Rockville, Utah: a red sandstone house with a telegraph and post office, listed on the National Register in 1972.\\n\\nPhotos: inkknife_2000, Don Graham and Ivy I. Anderson (CC BY-SA, Wikimedia Commons); George A. Grant / National Park Service, Donald W. Dickensheets and Brian C. Grogan / HABS-HAER (public domain).\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Zion\\n\\n#Zion #ZionNationalPark #History #NationalParks"
+  "text": "Rockville, Utah: a red sandstone house with a telegraph and post office, listed on the National Register in 1972.\\n\\nPhotos: inkknife_2000, Don Graham and Ivy I. Anderson (CC BY-SA, Wikimedia Commons); George A. Grant / National Park Service, Donald W. Dickensheets and Brian C. Grogan / HABS-HAER (public domain).\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Zion\\n\\n#Zion #ZionNationalPark #History #NationalParks",
+  "scheduled": {
+   "buffer_id": "6b0a28fa41454797eadba6cf",
+   "at": "2026-11-28T01:05:58Z",
+   "due": "2026-12-02T00:00:00Z"
+  }
  },
  {
   "mode": "post",
