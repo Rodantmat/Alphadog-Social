@@ -19,9 +19,9 @@ jobs:
         env: { GH_TOKEN: "${{ github.token }}" }
         run: |
           git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
-          cd /tmp/fbs && git sparse-checkout set --no-cone /zion-narr/p5/am_michael /zion5 /yellowstone-shorts/zion5
+          cd /tmp/fbs && git sparse-checkout set --no-cone /yellowstone-media/zion3/img /zion4/img /zion4b/img /zion5/img /zion-narr/p5/am_michael /zion5 /yellowstone-shorts/zion5
       - name: Build
-        run: cp content/zion/own/*.jpg /tmp/fbs/zion5/img/ && python3 -c "import glob,os;from PIL import Image;[Image.open(f).convert('RGB').save(os.path.splitext(f)[0]+'.jpg',quality=95) for f in glob.glob('/tmp/fbs/zion5/img/*.png')+glob.glob('/tmp/fbs/zion5/img/*.jpeg')]" && MOTION=2 NARR=/tmp/fbs/zion-narr/p5/am_michael IMG=/tmp/fbs/zion5/img AI=/nonexistent SEGS=content/zion/p5_segments.json SPEC=content/zion/tools/shorts_p5_spec.json OUT=/tmp/fbs/yellowstone-shorts/zion5 THUMB=content/zion/p3_thumb.jpg python3 content/zion/tools/build_shorts_p3.py ${{ inputs.only }}
+        run: cp content/zion/own/*.jpg /tmp/fbs/zion5/img/ && python3 -c "import glob,os;from PIL import Image;[Image.open(f).convert('RGB').save(os.path.splitext(f)[0]+'.jpg',quality=95) for f in glob.glob('/tmp/fbs/zion5/img/*.png')+glob.glob('/tmp/fbs/zion5/img/*.jpeg')]" && MOTION=2 XIMG=/tmp/fbs/yellowstone-media/zion3/img:/tmp/fbs/zion4/img:/tmp/fbs/zion4b/img:/tmp/fbs/zion5/img NARR=/tmp/fbs/zion-narr/p5/am_michael IMG=/tmp/fbs/zion5/img AI=/nonexistent SEGS=content/zion/p5_segments.json SPEC=content/zion/tools/shorts_p5_spec.json OUT=/tmp/fbs/yellowstone-shorts/zion5 THUMB=content/zion/p3_thumb.jpg python3 content/zion/tools/build_shorts_p3.py ${{ inputs.only }}
       - name: Metas + QA
         run: |
           cd /tmp/fbs/yellowstone-shorts/zion5 && rm -rf _z5* && cd - >/dev/null
@@ -29,6 +29,8 @@ jobs:
           cd /tmp/fbs/yellowstone-shorts/zion5 && for f in zion_p5_*.mp4; do ffprobe -v error -show_entries stream=codec_type,width,height:format=duration -of compact $f | tr '\n' ' '; echo $f; done; ls | wc -l
       - name: Motion QA gate (no hard cuts, no freezes)
         run: python3 content/zion/tools/motion_qa.py /tmp/fbs/yellowstone-shorts/zion5
+      - name: Colour-mix QA gate (no grayscale overdose; colour cover)
+        run: python3 content/zion/tools/color_mix_qa.py $(find /tmp/fbs/yellowstone-shorts/zion5 -name 'zion_p5_*.mp4' -mmin -90 | sort)
       - name: Commit to footage
         run: |
           cd /tmp/fbs && git config user.name alphadog-bot && git config user.email bot@users.noreply.github.com

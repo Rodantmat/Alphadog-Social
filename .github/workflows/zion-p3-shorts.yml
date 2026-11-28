@@ -19,14 +19,16 @@ jobs:
         env: { GH_TOKEN: "${{ github.token }}" }
         run: |
           git clone -q --depth 1 --filter=blob:none --sparse --branch footage "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/fbs
-          cd /tmp/fbs && git sparse-checkout set --no-cone /zion-narr/p3/am_michael /yellowstone-media/zion3 /zion-ai/zn3_c3 /yellowstone-shorts/zion3
+          cd /tmp/fbs && git sparse-checkout set --no-cone /yellowstone-media/zion3/img /zion4/img /zion4b/img /zion5/img /zion-narr/p3/am_michael /yellowstone-media/zion3 /zion-ai/zn3_c3 /yellowstone-shorts/zion3
       - name: Build
-        run: NARR=/tmp/fbs/zion-narr/p3/am_michael IMG=/tmp/fbs/yellowstone-media/zion3/img AI=/tmp/fbs/zion-ai/zn3_c3 OUT=/tmp/fbs/yellowstone-shorts/zion3 THUMB=content/zion/p3_thumb.jpg python3 content/zion/tools/build_shorts_p3.py ${{ inputs.only }}
+        run: XIMG=/tmp/fbs/zion4/img:/tmp/fbs/zion4b/img:/tmp/fbs/zion5/img NARR=/tmp/fbs/zion-narr/p3/am_michael IMG=/tmp/fbs/yellowstone-media/zion3/img AI=/tmp/fbs/zion-ai/zn3_c3 OUT=/tmp/fbs/yellowstone-shorts/zion3 THUMB=content/zion/p3_thumb.jpg python3 content/zion/tools/build_shorts_p3.py ${{ inputs.only }}
       - name: Metas + QA
         run: |
           cd /tmp/fbs/yellowstone-shorts/zion3 && rm -rf _z3* && cd - >/dev/null
           python3 content/zion/tools/p3_pack.py --metas /tmp/fbs/yellowstone-shorts/zion3
           cd /tmp/fbs/yellowstone-shorts/zion3 && for f in zion_p3_*.mp4; do ffprobe -v error -show_entries stream=codec_type,width,height:format=duration -of compact $f | tr '\n' ' '; echo $f; done; ls | wc -l
+      - name: Colour-mix QA gate (no grayscale overdose; colour cover)
+        run: python3 content/zion/tools/color_mix_qa.py $(find /tmp/fbs/yellowstone-shorts/zion3 -name 'zion_p3_*.mp4' -mmin -90 | sort)
       - name: Commit to footage
         run: |
           cd /tmp/fbs && git config user.name alphadog-bot && git config user.email bot@users.noreply.github.com

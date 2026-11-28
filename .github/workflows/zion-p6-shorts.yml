@@ -33,6 +33,8 @@ jobs:
           cd /tmp/fbs/yellowstone-shorts/zion6 && for f in zion_p6_*.mp4; do ffprobe -v error -show_entries stream=codec_type,width,height:format=duration -of compact $f | tr '\n' ' '; echo $f; done; ls | wc -l
       - name: Motion QA gate (no hard cuts, no freezes)
         run: python3 content/zion/tools/motion_qa.py /tmp/fbs/yellowstone-shorts/zion6
+      - name: Colour-mix QA gate (no grayscale overdose; colour cover)
+        run: python3 content/zion/tools/color_mix_qa.py $(find /tmp/fbs/yellowstone-shorts/zion6 -name 'zion_p6_*.mp4' -mmin -90 | sort)
       - name: Commit to footage
         run: |
           cd /tmp/fbs && git config user.name alphadog-bot && git config user.email bot@users.noreply.github.com

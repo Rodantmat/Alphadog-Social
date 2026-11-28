@@ -7,6 +7,18 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 NARR=os.environ["NARR"]; IMG=os.environ["IMG"]; AI=os.environ["AI"]; OUT=os.environ["OUT"]; THUMB=os.environ["THUMB"]
 SEGS={s["id"]:s["text"] for s in json.load(open(os.environ.get("SEGS","content/zion/p3_segments.json")))}
 SPEC=json.load(open(os.environ.get("SPEC","content/zion/tools/shorts_p3_spec.json")))
+def _xfill():
+    import glob,shutil
+    for it in SPEC.get("items",[]):
+        for s_ in it.get("imgs",[]):
+            if s_.startswith("V:") or os.path.exists(f"{IMG}/{s_}.jpg"): continue
+            for d in os.environ.get("XIMG","").split(":"):
+                for e in ("jpg","jpeg","png"):
+                    q=f"{d}/{s_}.{e}"
+                    if d and os.path.exists(q):
+                        Image.open(q).convert("RGB").save(f"{IMG}/{s_}.jpg",quality=95); break
+                if os.path.exists(f"{IMG}/{s_}.jpg"): break
+_xfill()
 SR=48000; W,H=1080,1920; FPS=30; OWN=os.environ.get('OWN','content/zion/own/clips')
 NUMW=set('one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty thirty forty fifty sixty seventy eighty ninety hundred thousand million'.split())
 STOPCAP=set('a an the in it its is he she they we i on of at to but and as for from this that there then when while after before with'.split())

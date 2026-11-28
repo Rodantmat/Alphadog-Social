@@ -9,8 +9,11 @@
    ],
    "hook": "146 tons of dynamite. No GPS. No lasers.",
    "imgs": [
+    "z3_commons_zmc_tunnel_1",
     "z3x_haer_zmc_13",
+    "z3_loc_haer_ut0272",
     "z3_npg_blasting_gallery_uhl",
+    "z3_loc_haer_ut0271",
     "z3x_haer_pine_3",
     "z3x_haer_zmc_17",
     "z3_commons_zmc_tunnel_6"
@@ -31,8 +34,11 @@
    ],
    "hook": "A mile of rock. Off by 3 inches.",
    "imgs": [
+    "commons_58912ac89a",
     "z3x_haer_zmc_19",
+    "commons_58ae99e0e0",
     "z3x_haer_zmc_8",
+    "commons_8c47521882",
     "z3x_haer_zmc_4",
     "z3x_haer_zmc_11",
     "z3x_haer_switch_7"
@@ -54,8 +60,11 @@
    ],
    "hook": "The dog that rode a wire 2,000 feet down",
    "imgs": [
+    "z3x_mukuntuweap_1",
     "z3x_haer_zmc_9",
+    "z3x_mukuntuweap_2",
     "z3x_haer_zmc_18",
+    "z3x_mukuntuweap_3",
     "z3x_toquerville_3",
     "A:D01",
     "z3x_haer_switch_2"
@@ -76,8 +85,11 @@
    ],
    "hook": "1.1 miles. 6 windows. $500,000.",
    "imgs": [
+    "z3x_haer_switch_1",
     "z3_commons_zmc_tunnel_4",
+    "commons_88171d0ae8",
     "z3x_haer_pine_4",
+    "commons_b68ce0781f",
     "z3x_haer_pine_5",
     "z3x_haer_zmc_12",
     "z3x_haer_zmc_7",
@@ -99,7 +111,9 @@
    ],
    "hook": "3,700 visitors in 1920. 55,000 by 1930.",
    "imgs": [
+    "z3x_springdale_1",
     "z3x_springdale_6",
+    "commons_a4c3b635ac",
     "z3x_zion_1920s_3",
     "z3x_zion_1920s_7",
     "z3x_springdale_5",
@@ -121,7 +135,9 @@
    ],
    "hook": "75 horses for a president. 5 weeks later, he was dead.",
    "imgs": [
+    "commons_32637a2964",
     "z3x_harding_west_1",
+    "commons_657ff8e330",
     "z3x_harding_west_2",
     "z3x_zion_1920s_1",
     "z3x_zion_1920s_9",
