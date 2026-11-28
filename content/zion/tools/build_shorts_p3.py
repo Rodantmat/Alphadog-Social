@@ -230,7 +230,10 @@ for n,it in enumerate(SPEC["items"]):
          dict(acc=(170,235,110),hk=(70,300,"l",True,0,4.5),cy=1060,box=False,calign="c",cbar=False,alpha=0,hs=70)][ST]
     hsz,hy,hal,hbar,h0,h1=STY["hk"]
     hk=card(wrap(it["hook"],F(hsz),700),F(hsz),10,8,False,5,STY["acc"],hal,hbar); hp=f"{tmp}/hook.png"; hk.save(hp)
-    hx=70 if hal=="l" else (W-hk.width)//2; ovs.append((hp,hx,hy,h0,h1))
+    hx=70 if hal=="l" else (W-hk.width)//2
+    if ST==1: hy=min(hy,1450-hk.height)            # keep the lower-third title inside the phone-safe area
+    if ST==2: hy=max(300,min(hy,1130-hk.height))   # centred title must end above the caption box
+    ovs.append((hp,hx,hy,h0,h1))
     for i,(a_,b_,x) in enumerate(caps):
         cp=card(wrap(x,F(CAPSZ),700 if CAPSZ<=46 else 900),F(CAPSZ),16,6,STY["box"],6 if not STY["box"] else 4,STY["acc"],STY["calign"],STY["cbar"],STY["alpha"]); pp=f"{tmp}/cap{i}.png"; cp.save(pp)
         assert STY["cy"]+cp.height<=1480, f'caption too tall {cp.height} in {it["id"]}'
