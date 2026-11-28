@@ -6,3 +6,7 @@ z5s2 7zJxvLjM4Ek -> -kEGO8dw7zk
 z5s3 I3SZS4cOKSM -> 4uMIUTCd9Us
 z5s4 CYeywyL8zM4 -> K2sxrMKeaKo
 z5s5 f136dbkOceg -> bTqRyxX-uwk
+z5s2 -kEGO8dw7zk -> YWKXvmVLD18
+z5s3 4uMIUTCd9Us -> xEqDcOZYHMA
+z5s4 K2sxrMKeaKo -> 58d1HXTL4rE
+z5s5 bTqRyxX-uwk -> LdC139z0nPY
