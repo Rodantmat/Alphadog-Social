@@ -35,7 +35,8 @@
    "end1": "More Zion history",
    "end2": "Full documentary on YouTube",
    "caption": "In 1924 there were no chains and no Walter's Wiggles on the way up Angels Landing. A newspaper said the ridge narrowed from ten feet to ten inches. ",
-   "url": ""
+   "url": "",
+   "style": 2
   },
   {
    "id": "z6s2",
@@ -64,7 +65,8 @@
    "end1": "More Zion history",
    "end2": "Full documentary on YouTube",
    "caption": "Walter's Wiggles: 21 steep switchbacks cut into solid rock in 1926, named for Walter Ruesch, Zion's first superintendent. The last hurdle before Scout Lookout.",
-   "url": ""
+   "url": "",
+   "style": 3
   },
   {
    "id": "z6s3",
@@ -95,7 +97,8 @@
    "end1": "More Zion history",
    "end2": "Full documentary on YouTube",
    "caption": "The Narrows from the top down: 16 miles one way from Chamberlain's Ranch, walls up to 1,000 feet, in places only 30 feet wide. Our own footage from the Virgin River.",
-   "url": ""
+   "url": "",
+   "style": 0
   },
   {
    "id": "z6t1",
@@ -119,7 +122,8 @@
    "end1": "The Narrows story",
    "end2": "Full documentary on YouTube",
    "caption": "Zion Narrows top-down: time and closures.",
-   "url": ""
+   "url": "",
+   "style": 1
   }
  ],
  "trim": {

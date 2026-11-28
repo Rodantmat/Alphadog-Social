@@ -21,7 +21,8 @@
    "end1": "More Zion history",
    "end2": "Full documentary on YouTube",
    "caption": "Reveille at six, work until five, lights out at ten. This is a day in a Civilian Conservation Corps camp, as the National Park Service describes it.",
-   "url": ""
+   "url": "",
+   "style": 0
   },
   {
    "id": "z4s2",
@@ -45,7 +46,8 @@
    "end1": "More Zion history",
    "end2": "Full documentary on YouTube",
    "caption": "Thirty dollars a month, twenty-five of it sent home to family. Here is who joined the Civilian Conservation Corps, and what a term looked like.",
-   "url": ""
+   "url": "",
+   "style": 1
   },
   {
    "id": "z4s3",
@@ -67,7 +69,8 @@
    "end1": "Zion Part 3",
    "end2": "Full documentary on YouTube",
    "caption": "Below the Zion\u2013Mount Carmel Tunnel, Civilian Conservation Corps crews sloped the banks and built the retaining walls, mostly by hand.",
-   "url": ""
+   "url": "",
+   "style": 2
   },
   {
    "id": "z4s4",
@@ -89,7 +92,8 @@
    "end1": "More Zion history",
    "end2": "Full documentary on YouTube",
    "caption": "Desert bighorn sheep were gone from Zion by the mid-1900s. Then fourteen were brought back by 1978.",
-   "url": ""
+   "url": "",
+   "style": 3
   },
   {
    "id": "z4s5",
@@ -112,7 +116,8 @@
    "end1": "More Zion history",
    "end2": "Full documentary on YouTube",
    "caption": "Fourteen desert bighorn in 1978, more than five hundred by 2018. Here is how they live on the cliffs of Zion, and what worries biologists now.",
-   "url": ""
+   "url": "",
+   "style": 0
   },
   {
    "id": "z4t1",
@@ -131,7 +136,8 @@
    "end1": "More Zion history",
    "end2": "Full documentary on YouTube",
    "caption": "",
-   "url": ""
+   "url": "",
+   "style": 1
   },
   {
    "id": "z4t2",
@@ -150,7 +156,8 @@
    "end1": "More Zion history",
    "end2": "Full documentary on YouTube",
    "caption": "",
-   "url": ""
+   "url": "",
+   "style": 2
   }
  ]
 }

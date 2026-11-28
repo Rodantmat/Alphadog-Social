@@ -205,23 +205,36 @@ for n,it in enumerate(SPEC["items"]):
             else: lines.append(cur); cur=w_
         if cur: lines.append(cur)
         return lines
-    def card(lines,font,pad,line_gap,box,stroke):
+    def card(lines,font,pad,line_gap,box,stroke,acc=(255,205,70),align="c",bar=False,alpha=125):
         hs=[font.getbbox(l)[3]-font.getbbox(l)[1] for l in lines]; asc=font.getmetrics()[0]
         wmax=max(font.getbbox(l)[2] for l in lines); lh=font.getmetrics()[0]+font.getmetrics()[1]
-        Wc=wmax+2*pad; Hc=len(lines)*lh+(len(lines)-1)*line_gap+2*pad
+        bw_=14 if bar else 0
+        Wc=wmax+2*pad+bw_; Hc=len(lines)*lh+(len(lines)-1)*line_gap+2*pad
         im=Image.new("RGBA",(Wc,Hc),(0,0,0,0)); d=ImageDraw.Draw(im)
-        if box: d.rounded_rectangle((0,0,Wc-1,Hc-1),radius=18,fill=(0,0,0,125))
+        if box: d.rounded_rectangle((0,0,Wc-1,Hc-1),radius=18,fill=(0,0,0,alpha))
+        if bar: d.rectangle((0,0,bw_-4,Hc-1),fill=acc+(255,))
         for i,l in enumerate(lines):
-            w_=font.getbbox(l)[2]; x_=(Wc-w_)//2; y_=pad+i*(lh+line_gap)
+            w_=font.getbbox(l)[2]; x_=(bw_+pad) if align=="l" else bw_+(Wc-bw_-w_)//2; y_=pad+i*(lh+line_gap)
             for j_,wd in enumerate(l.split(" ")):
                 core=re.sub(r"[^A-Za-z0-9'-]","",wd); first=(j_==0 and i==0)
                 gold=bool(re.search(r"\d",wd)) or core.lower().split("-")[0] in NUMW or (core[:1].isupper() and not first and core.lower() not in STOPCAP)
-                d.text((x_,y_),wd,font=font,fill=(255,205,70,255) if gold else (255,255,255,255),stroke_width=stroke,stroke_fill=(0,0,0,255)); x_+=font.getlength(wd+" ")
+                d.text((x_,y_),wd,font=font,fill=acc+(255,) if gold else (255,255,255,255),stroke_width=stroke,stroke_fill=(0,0,0,255)); x_+=font.getlength(wd+" ")
         return im
     ovs=[]  # (png, x, y, t0, t1)
-    hk=card(wrap(it["hook"],F(70),700),F(70),10,8,False,5); hp=f"{tmp}/hook.png"; hk.save(hp); ovs.append((hp,(W-hk.width)//2,330,0,4.5))
+    # layout variety (owner correction 2026-11-27: too much of the same): 4 title/caption styles, deterministic per item, rotated by id
+    import zlib
+    ST=it.get("style"); ST=int(ST) if ST is not None else zlib.crc32(it["id"].encode())%4
+    STY=[dict(acc=(255,205,70),hk=(70,330,"c",False,0,4.5),cy=1130,box=True,calign="c",cbar=False,alpha=125,hs=70),
+         dict(acc=(90,215,255),hk=(76,1170,"l",True,0,4.5),cy=330,box=False,calign="c",cbar=False,alpha=0,hs=76),
+         dict(acc=(255,140,110),hk=(86,740,"c",False,0,3.6),cy=1190,box=True,calign="l",cbar=True,alpha=170,hs=86),
+         dict(acc=(170,235,110),hk=(70,300,"l",True,0,4.5),cy=1060,box=False,calign="c",cbar=False,alpha=0,hs=70)][ST]
+    hsz,hy,hal,hbar,h0,h1=STY["hk"]
+    hk=card(wrap(it["hook"],F(hsz),700),F(hsz),10,8,False,5,STY["acc"],hal,hbar); hp=f"{tmp}/hook.png"; hk.save(hp)
+    hx=70 if hal=="l" else (W-hk.width)//2; ovs.append((hp,hx,hy,h0,h1))
     for i,(a_,b_,x) in enumerate(caps):
-        cp=card(wrap(x,F(CAPSZ),700 if CAPSZ<=46 else 900),F(CAPSZ),16,6,True,4); pp=f"{tmp}/cap{i}.png"; cp.save(pp); assert 1130+cp.height<=1440, f'caption too tall {cp.height} in {it["id"]}'; ovs.append((pp,(W-cp.width)//2,1130,a_,b_))
+        cp=card(wrap(x,F(CAPSZ),700 if CAPSZ<=46 else 900),F(CAPSZ),16,6,STY["box"],6 if not STY["box"] else 4,STY["acc"],STY["calign"],STY["cbar"],STY["alpha"]); pp=f"{tmp}/cap{i}.png"; cp.save(pp)
+        assert STY["cy"]+cp.height<=1480, f'caption too tall {cp.height} in {it["id"]}'
+        cx=70 if STY["calign"]=="l" else (W-cp.width)//2; ovs.append((pp,cx,STY["cy"],a_,b_))
     cmd=["ffmpeg","-v","error","-y","-i",vo]
     for o in ovs: cmd+=["-i",o[0]]
     fc=""; last="0:v"

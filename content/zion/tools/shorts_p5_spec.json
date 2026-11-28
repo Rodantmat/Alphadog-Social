@@ -21,7 +21,8 @@
    "end1": "More Zion history",
    "end2": "Full documentary on YouTube",
    "caption": "Founded in 1859, wrecked by the Great Flood of 1862, then rebuilt a mile upriver. The story of Grafton, Utah, beside Zion.",
-   "url": ""
+   "url": "",
+   "style": 1
   },
   {
    "id": "z5s2",
@@ -46,7 +47,8 @@
    "end1": "More Zion history",
    "end2": "Full documentary on YouTube",
    "caption": "Evacuated in 1866 during the Black Hawk War, then back to a census peak of 106 in 1910. Grafton, Utah.",
-   "url": ""
+   "url": "",
+   "style": 2
   },
   {
    "id": "z5s3",
@@ -71,7 +73,8 @@
    "end1": "More Zion history",
    "end2": "Full documentary on YouTube",
    "caption": "A slow fade, almost everyone gone by the mid 1940s, then a film location and a restoration. Grafton, Utah.",
-   "url": ""
+   "url": "",
+   "style": 3
   },
   {
    "id": "z5s4",
@@ -95,7 +98,8 @@
    "end1": "More Zion history",
    "end2": "Full documentary on YouTube",
    "caption": "Rockville, Utah: a red sandstone house with a telegraph and post office, listed on the National Register in 1972.",
-   "url": ""
+   "url": "",
+   "style": 0
   },
   {
    "id": "z5s5",
@@ -119,7 +123,8 @@
    "end1": "More Zion history",
    "end2": "Full documentary on YouTube",
    "caption": "Springdale began in 1862 as a cotton mission farm town at the mouth of Zion Canyon. Local lore explains the name.",
-   "url": ""
+   "url": "",
+   "style": 1
   },
   {
    "id": "z5t1",
@@ -141,7 +146,8 @@
    "end1": "More Zion history",
    "end2": "Full documentary on YouTube",
    "caption": "",
-   "url": ""
+   "url": "",
+   "style": 2
   },
   {
    "id": "z5t2",
@@ -161,7 +167,8 @@
    "end1": "More Zion history",
    "end2": "Full documentary on YouTube",
    "caption": "",
-   "url": ""
+   "url": "",
+   "style": 3
   }
  ],
  "focus": {
