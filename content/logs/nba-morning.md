@@ -170,3 +170,12 @@
 - Strategies: no state/cap changes vs 11-26 entry (24 strategies: A_wsteals_5flex yellow cap 4; A_core_3power/A_regular_5power/A_wrebounds_4flex yellow cap 1; C_wstocks_4flex cap 2, D_points_3power cap 2, W_core_3power cap 3 paper; B_demon_3flex/5flex red; _ROTATION rotation cap 1; ten H_P* + H_FB1 active cap 1).
 - Edge monitors: PP z 3.10 (36 slates, RUNNING information only), UD z 1.95 (36 slates, RUNNING), no ALARM.
 - Boards 11-27 (11 games): PrizePicks 4,246, Underdog 3,458, Sleeper 2,077, Betr 1,125, Fliff 1,040. No app empty. Sportsbooks 0 so far (same early-morning pattern; not an app).
+
+## 2026-11-28 13:55 UTC ACTION
+- Pipelines: P3 11-27 status CANCELLED (claimed 13:16 PT, finished 14:02 PT; slate day, 11 games) - the only failed/non-success run; P2A 11-27 success, P2B 11-27 success, P2A 11-28 success (03:44-03:56 PT). Scheduler tick 11s old. P3 soft-failed grep NOT done (log not pulled).
+- Market term: review revert (carried). audit_market_coverage not run: github_trigger_workflow 403 (token lacks actions:write), 10th day running. Last verdict 11-18 NOT READY, 28 dates. 11-27 window rungs 2,630, avg 2.33 books (non-zero).
+- PP 11-27 (PLAY): 4 slips (graded), 4u staked, 0.8u returned, net -3.2u, ROI -80%. (47 graded_shadow slips, 46u staked, 42.2u payout - not PLAY.) Season: 168 slips, 168u, 190.7u, +22.7u, ROI +13.5%.
+- UD P5 (shadow) 11-27: 3 slips, 3u, 0 returned, -3u, ROI -100%. Season P5 (stake>0): 121 slips, 114.5u, payout 148.65u (payout-based; overstates half-stake rows). UD live T/C/H not queried.
+- Strategies: no state/cap changes vs 11-27 history. A_wsteals_5flex yellow cap 4; A_core_3power/A_regular_5power/A_wrebounds_4flex yellow cap 1; C_wstocks_4flex paper cap 2 (-3u); B_demon_3flex/5flex red (REQUAL HOLD 11-09); _ROTATION rotation cap 1 (steals cool ewma 0.457, turnovers ok 0.637). H_NP16/NP2/NP3/NP4 rows updated 11-27 21:46 UTC (active cap 1).
+- Edge monitors: PP z 3.27 (37 slates, RUNNING information only), UD z 2.14 (37 slates), no ALARM.
+- Boards 11-28 (5 games): 0 rows for every app and sportsbook so far (same early-morning pattern as prior days; 11-27 filled later: PP 43,088, UD 27,772, Sleeper 19,271, Betr 9,051, Fliff 11,174, 10 sportsbooks).
