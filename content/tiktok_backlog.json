@@ -655,7 +655,12 @@
   "file": "zion_p5_z5s5.mp4",
   "due": "2026-12-02T03:00:00Z",
   "service": "tiktok",
-  "text": "Springdale began in 1862 as a cotton mission farm town at the mouth of Zion Canyon. Local lore explains the name.\\n\\nPhotos: inkknife_2000, Don Graham and Ivy I. Anderson (CC BY-SA, Wikimedia Commons); George A. Grant / National Park Service, Donald W. Dickensheets and Brian C. Grogan / HABS-HAER (public domain).\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Zion\\n\\n#Zion #ZionNationalPark #History #NationalParks"
+  "text": "Springdale began in 1862 as a cotton mission farm town at the mouth of Zion Canyon. Local lore explains the name.\\n\\nPhotos: inkknife_2000, Don Graham and Ivy I. Anderson (CC BY-SA, Wikimedia Commons); George A. Grant / National Park Service, Donald W. Dickensheets and Brian C. Grogan / HABS-HAER (public domain).\\n\\n▶ Full documentary on YouTube: search AlphaDog Studio, Zion\\n\\n#Zion #ZionNationalPark #History #NationalParks",
+  "scheduled": {
+   "buffer_id": "6b0a5e34eab081a3f5243027",
+   "at": "2026-11-28T04:53:03Z",
+   "due": "2026-12-02T03:00:00Z"
+  }
  },
  {
   "mode": "post",
