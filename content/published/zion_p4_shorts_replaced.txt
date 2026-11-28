@@ -8,3 +8,6 @@ z4s2 F2i0A_ikqaI -> 3i2gQQ1wsXA
 z4s3 Zmt-FODfw6s -> ZNzjbXeVbmo
 z4s4 grzdSIswykk -> mvZyZfB5Izo
 z4s5 5NIPsvZ9bmY -> lc7yYZy31eM
+z4s3 ZNzjbXeVbmo -> nOcVlhxtZF4
+z4s4 mvZyZfB5Izo -> iHhDT4iqQlk
+z4s5 lc7yYZy31eM -> uq9Tu8Q28qs
